@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (haskell)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:33:47 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-06-22</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-22.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (haskell)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:35:24 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-06-22</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-22.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I finished parts of the phonebook task today.  The code looks ugly,
 and very un-haskelly.  I asked for feedback on it, but I guess its
 just too ugly for anyone to take the time out to comment on it, and
