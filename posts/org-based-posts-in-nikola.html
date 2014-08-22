@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="punchagan">
+    <title>Org based posts in Nikola | Noetic Nought</title>
+    
+            <link href="/assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+
+    
+
+
+
+    
+<link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="four columns sidebar">
+            <nav>
+            <!--Sidebar content-->
+
+            <h1 id="blog-title">
+                <a href="http://punchagan.muse-amuse.in/" title="Noetic Nought">Noetic Nought</a>
+            </h1>
+            <hr>
+            
+            
+            <hr>
+            <div id="social">
+            
+    
+
+            </div>
+            
+    <ul>
+            <li> <a href="/index.html"> Home </a> </li>
+            <li> <a href="/archive.html"> Archives </a> </li>
+            <li> <a href="/tags/index.html"> Tags </a> </li>
+            <li> <a href="/tags/bookmarks.html"> Bookmarks </a> </li>
+            <li> <a href="/tags/quotes.html"> Quotes </a> </li>
+            <li> <a href="/rss.xml"> RSS </a> </li>
+            <li> <a href="https://github.com/punchagan"> GitHub </a> </li>
+            <li> <a href="https://twitter.com/punchagan"> Twitter </a> </li>
+    </ul>
+
+            <hr>
+            
+<span class="navbar-form pull-left">
+<input type="text" id="tipue_search_input" placeholder="Search this site">
+</span>
+<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+
+            </nav>
+        </div>
+        <div class="eleven columns content">
+            
+    
+    <div class="postbox">
+        <h1>
+                Org based posts in Nikola
+        </h1>
+        <div class="post"> <p>
+<a href="http://binchen.org/">Chen Bin</a> asked me to share my Nikola+Org work-flow, and share an
+example post.
+</p>
+
+<p>
+The org source for any post can be found by changing the URL of a post
+from <code>.html</code> to <code>.org</code>.
+</p>
+
+<p>
+I don't have much of a work-flow, because I don't post too often, but
+here is what I typically do, to make a new post.
+</p>
+
+<p>
+I start off by creating a new post using
+</p>
+
+<div class="highlight"><pre><span class="err">$</span> <span class="n">nikola</span> <span class="n">new_post</span>
+</pre></div>
+
+<p>
+and then give the post a title and start editing the post in Emacs.
+</p>
+
+<p>
+I have a simple snippet that lets me insert tags, based on existing
+tags.
+</p>
+
+<script src="https://gist.github.com/6629020.js"></script>
+
+<p>
+Once I'm happy with the content of a post, I run <code>nikola auto</code> to
+build the source and serve it locally, and see if the post "looks"
+reasonable, after being rendered.
+</p>
+
+<p>
+Once, I'm happy with it, I commit the post and deploy it using <code>nikola
+deploy</code>.
+</p>
+
+<div class="highlight"><pre><span class="err">#</span> <span class="nt">you</span> <span class="nt">may</span> <span class="nt">use</span> <span class="nt">rsync</span><span class="o">:</span>
+<span class="err">#</span> <span class="s2">"rsync -rav output/* joe@my.site:/srv/www/site"</span>
+<span class="err">#</span> <span class="nt">And</span> <span class="nt">then</span> <span class="nt">do</span> <span class="nt">a</span> <span class="nt">backup</span><span class="o">,</span> <span class="nt">or</span> <span class="nt">ping</span> <span class="nt">pingomatic</span><span class="o">.</span>
+<span class="err">#</span> <span class="nt">To</span> <span class="nt">do</span> <span class="nt">manual</span> <span class="nt">deployment</span><span class="o">,</span> <span class="nt">set</span> <span class="nt">it</span> <span class="nt">to</span> <span class="cp">[]</span>
+<span class="nt">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="cp">[</span>
+    <span class="s1">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
+    <span class="s1">'git checkout master'</span><span class="p">,</span>
+    <span class="s1">'nikola build'</span><span class="p">,</span>
+    <span class="s1">'./commit-changes || true'</span><span class="p">,</span>
+    <span class="s1">'nikola github_deploy'</span><span class="p">,</span>
+<span class="cp">]</span>
+
+
+<span class="err">#</span> <span class="nt">List</span> <span class="nt">XML-RPC</span> <span class="nt">services</span> <span class="o">(</span><span class="nt">preferred</span><span class="o">)</span> <span class="nt">in</span> <span class="nt">PING_XMLRPC_SERVICES</span> <span class="nt">and</span> <span class="nt">HTTP</span>
+<span class="err">#</span> <span class="nt">GET</span> <span class="nt">services</span> <span class="o">(</span><span class="nt">web</span> <span class="nt">pages</span><span class="o">)</span> <span class="nt">in</span> <span class="nt">PING_GET_SERVICES</span><span class="o">.</span>
+<span class="err">#</span> <span class="nt">Consider</span> <span class="nt">adding</span> <span class="err">`</span><span class="nt">nikola</span> <span class="nt">ping</span><span class="err">`</span> <span class="nt">as</span> <span class="nt">the</span> <span class="nt">last</span> <span class="nt">entry</span> <span class="nt">in</span> <span class="nt">DEPLOY_COMMANDS</span><span class="o">.</span>
+</pre></div>
+
+<p>
+I also have a plugin, that posts captured bookmarks and quotes onto
+the blog, with a single command. I should probably make the sources of
+my blog open, and push it onto GitHub.
+</p> </div>
+        
+    <div class="meta">
+        <span class="date">
+            <time class="published" datetime="2014-04-20T17:35:10+05:30">2014-04-20 17:35</time>
+        </span>
+        <ul class="tags">
+            <li><a href="/tags/blog.html">blog</a></li>
+            <li><a href="/tags/nikola.html">nikola</a></li>
+            <li><a href="/tags/orgmode.html">orgmode</a></li>
+        </ul>
+    </div>
+
+            
+    <ul class="pager">
+        <li class="previous">
+            <a href="/posts/bookmarks-2014-04-11.html">← Previous post</a>
+        </li>
+        <li class="next">
+            <a href="/posts/bookmarks-2014-04-29.html">Next post →</a>
+        </li>
+    </ul>
+
+            
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="rusticreverie",
+            disqus_url="http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html",
+        disqus_title="Org based posts in Nikola",
+        disqus_identifier="cache/posts/org-based-posts-in-nikola.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+
+    
+
+
+            <div class="footer">
+                <small>© 2014
+<a href="mailto:punchagan%5B@T%5Dmuse-amuse.in">punchagan</a> -
+<a href="http://getnikola.com">Nikola</a> powered -
+
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+Creative Commons Attribution 3.0 Unported License</a>
+ -
+<a href="http://themes.getnikola.com/#lagom4ni">lagom4ni</a> theme</small>
+            </div>
+        </div>
+    </div>
+    
+            <script src="/assets/js/all-nocdn.js" type="text/javascript"></script>
+
+    
+    
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21111013-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="/assets/js/tipuesearch_set.js"></script>
+<script type="text/javascript" src="/assets/js/tipuesearch.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        'mode': 'json',
+        'contentLocation': '/assets/js/tipuesearch_content.json',
+        'showUrl': false
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (python)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:27:04 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-19</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-19.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent most of the day working through David Beazly's tutorials on
+generators and coroutines, and it was mind bending.
+&lt;/li&gt;
+&lt;li&gt;I learnt about &lt;code&gt;send&lt;/code&gt; and &lt;code&gt;throw&lt;/code&gt; methods on generators!  I hadn't heard of
+them before, and was totally surprised to come across them.
+&lt;/li&gt;
+&lt;li&gt;I spent a little time late in the day getting class diffs working, and
+refactoring the api-diff tool to remove duplication of code between classes
+and modules. But, not very happy with the way I did it.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-19.html</guid><pubDate>Wed, 20 Aug 2014 22:06:53 GMT</pubDate></item><item><title>Hacker School, 2014-08-18</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-18.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I refactored the API-diff code, and am pretty happy with what I have right
+now, and need to add support for diffing Classes. I'm considering using
+&lt;a href="http://www.astroid.org"&gt;Atstroid&lt;/a&gt; instead of Python's &lt;code&gt;ast&lt;/code&gt; module, since some of the work that I want
+to do, has already been done for me.
+&lt;/li&gt;
+&lt;li&gt;With the white-boarding group, we worked on a set of simple exercises for
+strings and arrays.
+&lt;/li&gt;
+&lt;li&gt;José Valim's presentation on Elixir was interesting and got me reading up a
+stuff about concurrency, and related stuff.  Thanks!
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>elixir</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-18.html</guid><pubDate>Tue, 19 Aug 2014 17:11:49 GMT</pubDate></item><item><title>Hacker School, 2014-08-17</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-17.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Friday&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Updated my HS profile page with projects that I worked on, and a short bio.
+&lt;/li&gt;
+&lt;li&gt;Joined the group discussing algorithmic complexity
+&lt;/li&gt;
+&lt;li&gt;Submitted a pull request to blaggregator to fix issues with broken profile
+images.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Saturday &amp;amp; Sunday&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+I almost didn't write any code during the weekend.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-17.html</guid><pubDate>Tue, 19 Aug 2014 01:59:07 GMT</pubDate></item><item><title>Hacker School, 2014-08-14</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-14.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent the morning cleaning up the "repr" functions of the diff classes, so
+that the diff of functions between two modules can be printed out in a
+somewhat meaningful way.
+&lt;/li&gt;
+
+&lt;li&gt;I spent most of the afternoon, preparing to make a small presentation on how
+&lt;code&gt;sys.path&lt;/code&gt; works in Python.  I thought I didn't do as good a job of it, as I
+would've liked, but Tom thought it was not too bad…
+&lt;/li&gt;
+
+&lt;li&gt;Looks like another of those days, where I didn't get much done…  I spent
+the evening finishing off &lt;a href="http://craphound.com/homeland/"&gt;Homeland&lt;/a&gt;. It's a brilliant book, and everyone who
+cares about the Government and policies and technology MUST read it!  Thanks
+Cory.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-14.html</guid><pubDate>Fri, 15 Aug 2014 22:09:59 GMT</pubDate></item><item><title>Hacker School, 2014-08-13</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-13.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I feel like I didn't get much done yesterday.
+&lt;/li&gt;
+&lt;li&gt;I mostly worked on the API differ, but didn't get much done.  I have a few
+tests, and some code for diffing two functions, but I'm not very happy with
+it.
+&lt;/li&gt;
+&lt;li&gt;I helped Giorgio and Carlos with using my client only &lt;code&gt;hs_oauth&lt;/code&gt;
+script/library, for their Zulip bot.
+&lt;/li&gt;
+&lt;li&gt;The white boarding group worked on some binary related problems, and it was
+fun.
+&lt;/li&gt;
+&lt;li&gt;I looked at how the HS OAuth backend works on blaggregator and thought about
+how to go about fixing the issue of broken images on the site.  The problem
+happens because the image URLs are returned from the HS API calls, that are
+made whenever a user logs in(?), and the URLs are cached.  Since, HS uses
+cloudfront for its assets, the URLs expire after a period of time, and the
+cached urls in blag's database need to be updated.  There could be two ways
+of doing it -
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Check if the URL 404s, every time a URL is requested, on the server side.
+&lt;/li&gt;
+&lt;li&gt;Do it on the client side, with some javascript magic.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+Intuitively, I feel like 2. would be better, but Madhu suggested
+that 1. wouldn't be that bad either.  We could try both out, and see which
+works better I suppose.
+&lt;/p&gt;
+
+&lt;p&gt;
+I'd be interested to try this out, sometime.
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-13.html</guid><pubDate>Thu, 14 Aug 2014 15:11:59 GMT</pubDate></item><item><title>Hacker School, 2014-08-12</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-12.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;An issue I was seeing with &lt;code&gt;pip&lt;/code&gt; and a package installed in
+&lt;code&gt;system-site-packages&lt;/code&gt; turned out to be non-reproducible.  It was probably
+PEBKAC.
+&lt;/li&gt;
+&lt;li&gt;I was wondering around in the morning trying to find something to work on.
+&lt;/li&gt;
+&lt;li&gt;I decided to work on Pankaj's idea to write a tool that gives you API
+differences between two versions of a library.  It would be useful to have
+the list of public API changes in a library you use, to estimate the cost of
+updating to the newer version, without having to manually go through all the
+changes.
+&lt;/li&gt;
+&lt;li&gt;I spent some time talking to Sophia, and looking at her FTP server's
+refactored code.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-12.html</guid><pubDate>Wed, 13 Aug 2014 14:30:30 GMT</pubDate></item><item><title>Hacker School, 2014-08-11</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-11.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent about an hour in the morning testing out the staging blaggregator
+instance, and things seemed to work as expected.  Side note, I got added as a
+collaborator on the blaggregator repo!
+&lt;/li&gt;
+&lt;li&gt;We worked through the first chapter on getting video working, but we mostly
+ended up just copying code rather than actually understanding/carefully
+studying it.  I'm not sure how I feel about it, but we got to display fancy
+stuff.
+&lt;/li&gt;
+&lt;li&gt;I wasn't feeling like working on any of my 'old'/'ongoing' projects, and
+since Mondays don't feel very productive, I worked on writing a couple of
+simple scripts to create twitter lists of HSers, batch wise.
+
+&lt;p&gt;
+For the HS API, I just reused some old code I had lying around from my
+experiments with the OAuth2 API, though I had to tweak it a little bit to be
+able to actually login, using requests. Something about CSRF tokens seems to
+have changed.
+&lt;/p&gt;
+
+&lt;p&gt;
+In the process, I found that twitter's API isn't very pleasant to use.  Or
+may be it's the fact that I was using python twitter client without getting
+my own client id/key, but the whole experience of dealing with the twitter
+API wasn't a pleasant one at all!
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Amber, Daria and I also spent about an hour white-boarding some problems from
+the Cracking the Code Interview book.
+&lt;/li&gt;
+&lt;li&gt;I ended up fixing some minor issues with blaggregator and am hoping that the
+long pending PR will be merged today.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>django</category><category>hackerschool</category><category>python</category><category>twitter</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-11.html</guid><pubDate>Mon, 11 Aug 2014 15:16:08 GMT</pubDate></item><item><title>Hacker School, 2014-08-08</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-08.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent the morning doing some white-boarding interview practice with a Jorge
+and Brian.
+&lt;/li&gt;
+&lt;li&gt;I spent the rest of the day, playing with PyPy and working through &lt;a href="http://morepypy.blogspot.in/2011/04/tutorial-writing-interpreter-with-pypy.html"&gt;a tutorial&lt;/a&gt;
+that teaches us to write a BF interpreter.
+&lt;/li&gt;
+&lt;li&gt;I spent the Saturday revamping my Emacs config.  The main issue with my
+config was having a "package" list, of all the packages that the
+configuration uses, in case we are trying to duplicate it elsewhere.  I
+noticed that this gets out of sync, because I install packages by hand and
+never update this list.  I wrote up &lt;a href="https://github.com/punchagan/dot-emacs/blob/master/user-lisp/setup-defuns.el"&gt;some code&lt;/a&gt;, that keeps this list in sync
+with all the packages I have installed.  I configured el-get to play well
+with my config, and am pretty happy with my setup, though I still have to add
+some matching/searching features with helm/ido/whatever else.
+&lt;/li&gt;
+&lt;li&gt;I spent the Sunday writing a patch to &lt;a href="https://github.com/punchagan/xtab/tree/kill-by-memory"&gt;xtab&lt;/a&gt; to be able to limit the number of
+tabs in Chromium by the memory it uses.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>chrome</category><category>emacs</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-08.html</guid><pubDate>Sun, 10 Aug 2014 00:56:22 GMT</pubDate></item><item><title>Hacker School, 2014-08-03</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-03.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Friday&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;On Friday, I didn't do the exercises that everyone else doing job prep were
+doing.  I wanted to continue writing C code, and continued to work on the
+&lt;code&gt;bencode&lt;/code&gt; parser in C.  I barely was able to finish adding support for lists.
+&lt;/li&gt;
+&lt;li&gt;I got comfortable using Valgrind, in the process of debugging a stupidity of
+not using &lt;code&gt;realloc&lt;/code&gt; correctly.
+&lt;/li&gt;
+&lt;li&gt;What I was able to write with Python in an hour or so, I have been writing
+for about a day, in C, and haven't yet finished it!  It definitely doesn't
+help that my C is very rusty…
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Saturday &amp;amp; Sunday&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;I didn't work much, and went around New York with Madhu.  We went to quite
+a few places around here, the highlight being, the view of Manhattan's
+skyline from the Staten Island Ferry.
+&lt;/li&gt;
+&lt;li&gt;NYC's library also had an interesting exhibhition on the history of
+America, just before and during WW-I.
+&lt;/li&gt;
+&lt;li&gt;On Sunday, I tried out Mary TTS on the raspberry pi, and it is simply
+unusable.
+&lt;/li&gt;
+&lt;li&gt;I then, started writing a simple wrapper around Google's tts that is used
+by Google translate.
+&lt;/li&gt;
+&lt;li&gt;The TTS part is more or less working right now, the next step would be to
+deploy it on the RaspberryPi and start using it as a radio, to see what my
+needs are like. Hooking it up to &lt;a href="https://github.com/jasperproject/jasper-client"&gt;Jasper client&lt;/a&gt; seems like a good idea,
+right now… though I'm not sure if it would work very well, with the pi's
+audio output drowning out the voice commands.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>C</category><category>hackerschool</category><category>python</category><category>raspberry-pi</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-03.html</guid><pubDate>Mon, 04 Aug 2014 20:10:41 GMT</pubDate></item><item><title>Hacker School, 2014-07-28</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;There seemed to be excitement in the space to have Jessica around.  We had
+coffee with her, and I chatted with her briefly. She encouraged me to try and
+send a patch to CPython, that involved debugging and fixing some C issues.
+&lt;/li&gt;
+&lt;li&gt;I spent some time with Tom, while he tried to get &lt;code&gt;cinspect&lt;/code&gt; working for him,
+and it seemed like having the developer next to you, helped.  As always.  We
+didn't make any fixes to the code, but it worked.
+&lt;/li&gt;
+&lt;li&gt;I spent the afternoon, adding tests for a simple issue, to see how patches are sent.
+&lt;/li&gt;
+&lt;li&gt;Later, I paired with Sophia for an hour to refactor the vcs code. It's
+beginning to look much better than what it used to, and I like that.
+&lt;/li&gt;
+&lt;li&gt;Jessica's talk on buffer overflows was enlightening and entertaining. It was
+very similar to a talk that Max gave on one of the thursdays, but it was
+exciting nevertheless.
+&lt;/li&gt;
+&lt;li&gt;After the talk, I am inspired to try and work through the Hacking: Art of
+exploitation, at some point. I'm beginning to feel like time at HackerSchool
+running out!
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>C</category><category>hackerschool</category><category>python</category><category>version_control</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-28.html</guid><pubDate>Tue, 29 Jul 2014 02:23:39 GMT</pubDate></item></channel></rss>

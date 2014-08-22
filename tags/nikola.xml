@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (nikola)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:27:04 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-05</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-05.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;Spent a couple of hours in the morning, trying to revive a html template for
+blaggregator, that I missed out on committing previously, and wiped out due
+to negligence in using `git clean`.
+&lt;/li&gt;
+&lt;li&gt;Spent time post lunch working through the first two chapters of the baking pi
+course, by myself, reading up different references, and finally getting how
+I/O is mapped to the memory in ARM.
+&lt;/li&gt;
+&lt;li&gt;Actually, almost.  A variant of the example that I thought should work,
+doesn't.  So, I need to think/talk about it today.
+&lt;/li&gt;
+&lt;li&gt;I sent a patch to Nikola for the lastdeploy timestamp being UTC.  I was
+hoping to work around an &lt;a href="https://github.com/sursh/blaggregator/issues/56"&gt;issue&lt;/a&gt; with Blaggregator, by somehow fixing it on the
+client side, but that's probably not the right way to go about it.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>nikola</category><category>raspberry-pi</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-05.html</guid><pubDate>Wed, 06 Aug 2014 03:44:33 GMT</pubDate></item><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;a href="http://binchen.org/"&gt;Chen Bin&lt;/a&gt; asked me to share my Nikola+Org work-flow, and share an
+example post.
+&lt;/p&gt;
+
+&lt;p&gt;
+The org source for any post can be found by changing the URL of a post
+from &lt;code&gt;.html&lt;/code&gt; to &lt;code&gt;.org&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+I don't have much of a work-flow, because I don't post too often, but
+here is what I typically do, to make a new post.
+&lt;/p&gt;
+
+&lt;p&gt;
+I start off by creating a new post using
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;nikola&lt;/span&gt; &lt;span class="n"&gt;new_post&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+and then give the post a title and start editing the post in Emacs.
+&lt;/p&gt;
+
+&lt;p&gt;
+I have a simple snippet that lets me insert tags, based on existing
+tags.
+&lt;/p&gt;
+
+&lt;script src="https://gist.github.com/6629020.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;
+Once I'm happy with the content of a post, I run &lt;code&gt;nikola auto&lt;/code&gt; to
+build the source and serve it locally, and see if the post "looks"
+reasonable, after being rendered.
+&lt;/p&gt;
+
+&lt;p&gt;
+Once, I'm happy with it, I commit the post and deploy it using &lt;code&gt;nikola
+deploy&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;you&lt;/span&gt; &lt;span class="nt"&gt;may&lt;/span&gt; &lt;span class="nt"&gt;use&lt;/span&gt; &lt;span class="nt"&gt;rsync&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="s2"&gt;"rsync -rav output/* joe@my.site:/srv/www/site"&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;And&lt;/span&gt; &lt;span class="nt"&gt;then&lt;/span&gt; &lt;span class="nt"&gt;do&lt;/span&gt; &lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="nt"&gt;backup&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;or&lt;/span&gt; &lt;span class="nt"&gt;ping&lt;/span&gt; &lt;span class="nt"&gt;pingomatic&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;To&lt;/span&gt; &lt;span class="nt"&gt;do&lt;/span&gt; &lt;span class="nt"&gt;manual&lt;/span&gt; &lt;span class="nt"&gt;deployment&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;set&lt;/span&gt; &lt;span class="nt"&gt;it&lt;/span&gt; &lt;span class="nt"&gt;to&lt;/span&gt; &lt;span class="cp"&gt;[]&lt;/span&gt;
+&lt;span class="nt"&gt;DEPLOY_COMMANDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="cp"&gt;[&lt;/span&gt;
+    &lt;span class="s1"&gt;'nikola orphans|xargs rm || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'git checkout master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'nikola build'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'./commit-changes || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'nikola github_deploy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="cp"&gt;]&lt;/span&gt;
+
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;List&lt;/span&gt; &lt;span class="nt"&gt;XML-RPC&lt;/span&gt; &lt;span class="nt"&gt;services&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;preferred&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;in&lt;/span&gt; &lt;span class="nt"&gt;PING_XMLRPC_SERVICES&lt;/span&gt; &lt;span class="nt"&gt;and&lt;/span&gt; &lt;span class="nt"&gt;HTTP&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;GET&lt;/span&gt; &lt;span class="nt"&gt;services&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;web&lt;/span&gt; &lt;span class="nt"&gt;pages&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;in&lt;/span&gt; &lt;span class="nt"&gt;PING_GET_SERVICES&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;Consider&lt;/span&gt; &lt;span class="nt"&gt;adding&lt;/span&gt; &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="nt"&gt;nikola&lt;/span&gt; &lt;span class="nt"&gt;ping&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt; &lt;span class="nt"&gt;as&lt;/span&gt; &lt;span class="nt"&gt;the&lt;/span&gt; &lt;span class="nt"&gt;last&lt;/span&gt; &lt;span class="nt"&gt;entry&lt;/span&gt; &lt;span class="nt"&gt;in&lt;/span&gt; &lt;span class="nt"&gt;DEPLOY_COMMANDS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+I also have a plugin, that posts captured bookmarks and quotes onto
+the blog, with a single command. I should probably make the sources of
+my blog open, and push it onto GitHub.
+&lt;/p&gt;</description><category>blog</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</guid><pubDate>Sun, 20 Apr 2014 12:05:10 GMT</pubDate></item><item><title>Bookmarks and Quotes plugin</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I used to have a separate page for bookmarks and quotes on the old
+blog.  They will now be shared as regular posts with 5 or more
+bookmarks/quotes.  I use a bookmarklet in my browser to capture links
+to an org-file using org-capture protocol and then I have a small
+plugin to Nikola, that looks at such captured bookmarks and quotes and
+makes new posts out of them.  This workflow is inspired by Brett
+Trepestra's &lt;a href="http://brettterpstra.com/2013/01/15/a-web-excursions-system-for-static-blogs/"&gt;web excursions&lt;/a&gt; plugin.
+&lt;/p&gt;
+
+&lt;p&gt;
+The plugin is currently a part of my blog source, and not published to
+Nikola's plugin repository since it is very specific to my setup.  But
+if anybody is interested, I can publish the code somewhere public.
+&lt;/p&gt;
+
+&lt;p&gt;
+If you are interested to get these links and bookmarks into your feed
+reader, you can subscribe to their feed: &lt;a href="http://punchagan.muse-amuse.in/categories/quotes.xml"&gt;quotes&lt;/a&gt;, &lt;a href="http://punchagan.muse-amuse.in/categories/bookmarks.xml"&gt;bookmarks&lt;/a&gt;.  These
+posts will also make it to the main feed, though.
+&lt;/p&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sun, 20 Oct 2013 00:26:13 GMT</pubDate></item></channel></rss>

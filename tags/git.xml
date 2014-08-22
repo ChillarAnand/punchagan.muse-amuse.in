@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (git)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:27:04 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-06-23</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-23.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;The Apprenticeship patterns book is very interesting!  I shall
+continue to read it and start create daily/weekly rituals from the
+actions prescribed in the book!
+&lt;/li&gt;
+&lt;li&gt;I was reading &lt;a href="http://blogs.collab.net/git/protect-git-history#.U6fixh-caV4"&gt;this post&lt;/a&gt; on &lt;code&gt;git gc&lt;/code&gt;, &lt;code&gt;reflog&lt;/code&gt;, etc. and wanted to
+see what the default values were for some of the configurable
+variables.  But, the git config command didn't help.  Developer/code
+defaults are also a part of the "config" system, and any tools to
+inspect config variables should display them, if no other values
+have been set explicitly!
+&lt;/li&gt;
+&lt;li&gt;"If experience is built upon failure as much as success, then you
+need a more or less private space where you can seek out failure."
+– Apprenticeship Patterns.
+&lt;/li&gt;
+&lt;li&gt;Our check-in groups changed, but 3 of us from our last check-in
+group are together again!
+&lt;/li&gt;
+&lt;li&gt;Most of the day was spent with Git.  In the morning, I learned that
+setting &lt;code&gt;push.default&lt;/code&gt; to &lt;code&gt;nothing&lt;/code&gt; will prevent pushing any
+branches without specifying explicitly which branch I want to push.
+&lt;/li&gt;
+&lt;li&gt;Also, later in the day, Alan gave a presentation mapping the
+internals of git to the commands, trying to give everyone a better
+mental model of Git.
+&lt;/li&gt;
+&lt;li&gt;I spent some time trying to get &lt;code&gt;jedi&lt;/code&gt; integration for &lt;code&gt;emacs&lt;/code&gt;. It
+should've worked out of the box, but I'm not sure the ELPA
+repositories have proper dependency/version management.  Seems to be
+the problem, everywhere!  Dependencies of a package get updated, and
+the package starts acting up…
+&lt;/li&gt;
+&lt;li&gt;Chaitu sent me a link about solving mazes using Finite Automata, and
+I spent some time trying to write a simple solver, and compare it
+with Nava's breadth first search.  But, it looks like we broke her
+code during the refactor.  I may get back to this, at some point.
+&lt;/li&gt;
+&lt;li&gt;I also spent a few minutes talking to Kyle, while he was trying to
+implement a simple version of the NTP protocol.  The algorithm it
+turns out, is pretty simple.
+&lt;/li&gt;
+&lt;li&gt;I started reading a little bit on crypt-analysis for Simple
+Substitution ciphers, and I'll try implementing one of the
+algorithms today.
+&lt;/li&gt;
+&lt;li&gt;The day ended with yummy pizza and video watching!  We watched –
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Bret Victor, &lt;a href="http://vimeo.com/36579366"&gt;Inventing on Principle&lt;/a&gt; (54 min)
+&lt;/li&gt;
+&lt;li&gt;Gary Bernhardt, &lt;a href="https://www.destroyallsoftware.com/talks/wat"&gt;WAT&lt;/a&gt; (4 min)
+&lt;/li&gt;
+&lt;li&gt;Guy Steele, &lt;a href="https://www.youtube.com/watch?v=_ahvzDzKdB0"&gt;Growing a Language&lt;/a&gt; (53 min)
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>conference</category><category>git</category><category>hackerschool</category><category>principle</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-23.html</guid><pubDate>Mon, 23 Jun 2014 08:38:29 GMT</pubDate></item><item><title>A git-diff tip</title><link>http://punchagan.muse-amuse.in/posts/a-git-diff-tip.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+One of the things with git that you can mess-up, if you are not
+used to, is git diff.  A friend of mine was trying to add a couple
+of new files, and changes to existing files.  But, he was on the
+wrong branch, and wanted to change to a different branch, before
+committing.  Being new to git, he wanted to take a patch.  Reset
+the changes, apply the patch back.
+&lt;/p&gt;
+
+&lt;p&gt;
+This is what he did
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;new_file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;old_file1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="n"&gt;old_file2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;don&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;old_file3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Oh, damn, I want to change the branch.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;diff&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;reset&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;hard&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;checkout&lt;/span&gt; &lt;span class="n"&gt;other&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Let me commit my changes…
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;apply&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;show&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Oh crap!  Where are my new files?  They aren't commited!  Lemme
+add them.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ls&lt;/span&gt; &lt;span class="n"&gt;new_file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;span class="nl"&gt;ls:&lt;/span&gt; &lt;span class="n"&gt;cannot&lt;/span&gt; &lt;span class="n"&gt;access&lt;/span&gt; &lt;span class="n"&gt;new_file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;such&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;directory&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Dammit!  Where are my changes gone?
+&lt;/p&gt;
+
+&lt;p&gt;
+The problem was with &lt;code&gt;git diff&lt;/code&gt;.  It gives only the only the
+un-staged changes.  &lt;code&gt;--cached&lt;/code&gt; option has to specified, to get the
+staged changes in the diff output.  &lt;code&gt;git diff HEAD&lt;/code&gt; shows diff
+output with both staged and un-staged changes.
+&lt;/p&gt;
+
+&lt;p&gt;
+But the whole workflow above is a beginners workflow.  A user
+comfortable with git would've committed and then moved the commit
+around using cherry-pick or the like.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="s"&gt;"My awesome changes."&lt;/span&gt;  &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;committed&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;branch1&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;checkout&lt;/span&gt; &lt;span class="n"&gt;other&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;cherry&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pick&lt;/span&gt; &lt;span class="n"&gt;branch1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>git</category><category>version_control</category><guid>http://punchagan.muse-amuse.in/posts/a-git-diff-tip.html</guid><pubDate>Thu, 23 Aug 2012 03:06:00 GMT</pubDate></item><item><title>GetHub: Chrome Notifications for Github updates</title><link>http://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Over the last two days, I hacked up my first Chrome extension.
+I've been using Chrome only for the past couple of weeks or so and
+I begin to like it, though some of the extensions aren't as mature
+as I would've liked.
+&lt;/p&gt;
+
+&lt;p&gt;
+The original idea was floated by my friend,  Madhu, and Lee helped
+me quite a bit, while I was working on it.
+&lt;/p&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;What does it do?&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+It is a simple extension, that shows pop-ups, whenever there is
+an update in your GitHub "Wall" (yes, this is a Facebook world)
+or News Feed as they call it.
+&lt;/p&gt;
+
+&lt;p&gt;
+After installation, you will need to save your &lt;code&gt;username&lt;/code&gt; and
+&lt;code&gt;token&lt;/code&gt; for the extension to work.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Where to get it?&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+Presently, you will need to get it from GitHub.
+&lt;/p&gt;
+
+&lt;p&gt;
+I might add it to the Chrome Web Store, once I see more people
+using it.  I couldn't justify, to myself, paying the initial
+one-time verification fee that Google asks for.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;UPDATE&lt;/b&gt;: &lt;span class="timestamp-wrapper"&gt;&lt;span class="timestamp"&gt;[2011-03-04 Fri]&lt;/span&gt;&lt;/span&gt; Added GetHub to the store
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;Comments and Feedback&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Feel free to write to me at &lt;code&gt;punchagan+gethub@jeemail.com&lt;/code&gt;
+&lt;/li&gt;
+&lt;li&gt;Or file issues at GitHub.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+Happy GitHubbing!
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>chrome</category><category>code</category><category>first</category><category>git</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</guid><pubDate>Wed, 02 Mar 2011 05:34:00 GMT</pubDate></item><item><title>Git powered wikis improved: My bit</title><link>http://punchagan.muse-amuse.in/posts/git-powered-wikis-improved-my-bit.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I accidentally came across the blog-post Git-powered wikis
+improved - GitHub. And this particular paragraph caught my
+eye:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+The new editor has the capability to support every markup
+language that GitHub Wikis support. If you're a fan of Markdown,
+Textile, pod or RDoc, the function bar buttons (e.g. bold,
+italic, underline, etc.) will now work. We've even written brand
+new inline help for many of GitHub Wiki's supported markup
+languages.
+&lt;/p&gt;
+
+&lt;p&gt;
+The language definitions the editor uses are JSON-based and easy
+to edit. If you'd like us to support a markup language that we
+don't currently support, Gollum, GitHub's wiki software, is
+entirely open source – fork our code and send us a pull request
+with changes that support your choice language.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+I sent a quick patch for org-mode in the function bar, and it has
+been accepted.  :)
+&lt;/p&gt;
+
+&lt;p&gt;
+If not anything more, I hope, at least a couple of curious people
+will explore org-mode and find it useful.
+&lt;/p&gt;</description><category>code</category><category>contribute</category><category>emacs</category><category>foss</category><category>git</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/git-powered-wikis-improved-my-bit.html</guid><pubDate>Fri, 04 Feb 2011 22:55:00 GMT</pubDate></item><item><title>git vs. mercurial</title><link>http://punchagan.muse-amuse.in/posts/git-vs-mercurial.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+At work, we use hg and to be frank, I haven't really got the
+hang of using it well. I've recently started using git for my own
+work and I'm loving it.
+&lt;/p&gt;
+
+&lt;p&gt;
+I chose git because
+&lt;/p&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;github seems to be a nice place to hang around, as compared to
+bit-bucket.
+&lt;/li&gt;
+&lt;li&gt;org-mode uses git and I need to learn to use git, if I intend
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+contribute anything to org-mode.
+&lt;/p&gt;
+
+&lt;p&gt;
+But after using git for a month or so, I'm totally loving using
+git. The way it handles merges is awesome. People go gaga over
+it's speed.
+&lt;/p&gt;
+
+&lt;p&gt;
+But for me, it's the way it handles branches. I can have any
+number of branches on my machine, while pushing only changes in
+the master branch, upstream. I can easily merge changes from one
+branch to another. After putting up a lot of fight, I couldn't
+make hg do this. Not as well as git does it!
+&lt;/p&gt;
+
+&lt;p&gt;
+I've now decided to convert my personal repositories to git.
+&lt;/p&gt;
+
+&lt;p&gt;
+This blog post shows how to.
+&lt;/p&gt;</description><category>git</category><guid>http://punchagan.muse-amuse.in/posts/git-vs-mercurial.html</guid><pubDate>Sun, 01 Aug 2010 23:58:00 GMT</pubDate></item></channel></rss>

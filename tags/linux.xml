@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (linux)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:27:04 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Let there be light, in skype!</title><link>http://punchagan.muse-amuse.in/posts/let-there-be-light-in-skype.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+At home, my video would always show a silhouette in G+ and Skype, and
+I always thought that this was because the lighting at home was not
+sufficient.  At office, the video was decent.  But, moving to sit
+right under the light also didn't help much.
+&lt;/p&gt;
+
+&lt;p&gt;
+Struggling with a bunch of tools like &lt;code&gt;v4lctl&lt;/code&gt;, &lt;code&gt;guvcview&lt;/code&gt; didn't
+help. But, during these struggles I noticed that &lt;code&gt;cheese&lt;/code&gt; would show
+me bright and cheerful, while all the other programs showed my
+silhouette.
+&lt;/p&gt;
+
+&lt;p&gt;
+I set out to "fake" the output of &lt;code&gt;cheese&lt;/code&gt; as a video device that
+skype and other programs could use. But, I didn't have to go all the
+way.  I ended up using &lt;a href="https://github.com/umlaeute/v4l2loopback/"&gt;v4l2loopback&lt;/a&gt; to create a loopback video device,
+and just using &lt;code&gt;gst-launch&lt;/code&gt; to redirect video to that device, did the
+trick!  Thanks gstreamer!  Thanks v4l2loopback! :)
+&lt;/p&gt;
+
+&lt;p&gt;
+Here's a convenient &lt;a href="https://gist.github.com/punchagan/9859210"&gt;script&lt;/a&gt; to use it every time I need it.
+&lt;/p&gt;
+
+&lt;script src="https://gist.github.com/9859210.js"&gt;&lt;/script&gt;</description><category>hack</category><category>linux</category><guid>http://punchagan.muse-amuse.in/posts/let-there-be-light-in-skype.html</guid><pubDate>Sat, 29 Mar 2014 17:52:27 GMT</pubDate></item><item><title>numpy, pacman and me</title><link>http://punchagan.muse-amuse.in/posts/numpy-pacman-and-me.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I'm now officially a part of the Arch Linux community! Arch Linux
+is a lightweight and flexible Linux® distribution that tries to
+Keep It Simple.
+&lt;/p&gt;
+
+&lt;p&gt;
+I have started using arch from less than a week or so. It took me
+a while, not too long, to realize the beauty of this distro. I was
+trying to tweak the settings of my org-mode's remember (on
+Karmic), trying to make it work the way I liked it. After breaking
+my head with .emacs and lisp for a while, I realized the version
+of my org-mode was way different from the version of the docs, I
+was reading. It didn't take long to figure out, which version of
+org-mode to get. As a matter of curiosity, I checked AUR for the
+version, and true to Arch's reputation it was bleeding edge! I was
+still using Karmic, since I hadn't got my Arch installation
+working the way I like it, yet. Out of laziness. sudo reboot; to
+hell with laziness!
+&lt;/p&gt;
+
+&lt;p&gt;
+I was setting up things I regularly use, tweaking my way
+around. After a day or so, I find python-numpy is out of date. And
+to top it, an orphaned package! I didn't feel one bit good about
+this. After some futile attempts to suppress my discomfort, I sat
+down to work.
+&lt;/p&gt;
+
+&lt;p&gt;
+After an afternoon of effort, I created my first PKGBUILD. :) I
+now have python-numpy installed using pacman! Pleasure to join the
+Arch User Community! Also, thanks to lifeeth and Lynus Vaz, for
+the sparks.
+&lt;/p&gt;
+
+&lt;p&gt;
+PS: I'm using Arch with Openbox. It's neat! PPS: org-mode is
+really awesome! It's a world in itself. life in plain text,
+truly!]
+&lt;/p&gt;</description><category>linux</category><category>numpy</category><category>ology</category><category>orgmode</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/numpy-pacman-and-me.html</guid><pubDate>Sun, 31 Jan 2010 06:14:00 GMT</pubDate></item></channel></rss>

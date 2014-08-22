@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (unicode)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:27:05 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-07-09</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-09.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;Unicode issues: it turned out that (atleast) one of the files had a character
+that wasn't UTF-8 encoded. I got around it by trying 'utf-8', if not falling
+back to 'iso-8859-1'.  Now that I think about it, I should fallback to
+'utf-8' with replace, if that doesn't work either.
+&lt;/li&gt;
+&lt;li&gt;I did a little clean up on the way the indexes were stored, to be able to
+have a &lt;code&gt;getfile&lt;/code&gt;, to mimic &lt;code&gt;inspect&lt;/code&gt;'s API.
+&lt;/li&gt;
+&lt;li&gt;I also "improved" the IPython startup script to monkey-patch the source code
+formatter/colorizer to not break with C modules.
+&lt;/li&gt;
+&lt;li&gt;The one-on-one with Allison was pretty useful, and I feel a little more
+relaxed now.
+&lt;/li&gt;
+&lt;li&gt;I paired with Kyle to get streaming audio working for his OSX app.  It
+doesn't work yet, but we made progress! Hope to get it working today.
+&lt;/li&gt;
+&lt;li&gt;I spent the late evening trying to refactor some of the code and clean it up.
+&lt;/li&gt;
+&lt;li&gt;Also, updating the py-clang code to the latest version fixed the issue of
+unknown cursor kinds.
+&lt;/li&gt;
+&lt;li&gt;I may present my project in today's presentations!
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><category>unicode</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-09.html</guid><pubDate>Thu, 10 Jul 2014 14:21:45 GMT</pubDate></item></channel></rss>

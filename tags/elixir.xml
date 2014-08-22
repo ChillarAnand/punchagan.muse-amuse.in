@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (elixir)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:27:05 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-18</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-18.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I refactored the API-diff code, and am pretty happy with what I have right
+now, and need to add support for diffing Classes. I'm considering using
+&lt;a href="http://www.astroid.org"&gt;Atstroid&lt;/a&gt; instead of Python's &lt;code&gt;ast&lt;/code&gt; module, since some of the work that I want
+to do, has already been done for me.
+&lt;/li&gt;
+&lt;li&gt;With the white-boarding group, we worked on a set of simple exercises for
+strings and arrays.
+&lt;/li&gt;
+&lt;li&gt;José Valim's presentation on Elixir was interesting and got me reading up a
+stuff about concurrency, and related stuff.  Thanks!
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>elixir</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-18.html</guid><pubDate>Tue, 19 Aug 2014 17:11:49 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (intro)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:27:04 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-06-09</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-09.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Finally, I'm at Hacker School.  The day began with introductions,
+breakfast and welcomes to HackerSchool.
+&lt;/p&gt;
+
+&lt;p&gt;
+The four rules of Hacker School were reiterated to all of us:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;No (Feigning) surprise
+&lt;/li&gt;
+&lt;li&gt;No Well-actuallys
+&lt;/li&gt;
+&lt;li&gt;No Backseat driving
+&lt;/li&gt;
+&lt;li&gt;No Subtle-isms
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+It was made clear that each of us should watch ourselves not to break
+these rules, and being called on breaking these rules is totally cool,
+and we should stop about it and think for a moment and move-on.
+Breaking the rules doesn't make us bad hacker schoolers.  We are all
+here to learn!
+&lt;/p&gt;
+
+&lt;p&gt;
+I liked the idea of all of us being asked to list out the things that
+we are nervous about, and excited about.  I was happy to find that a
+lot of the people were nervous about the similar kinds of things I was
+nervous about.  I'm not alone!
+&lt;/p&gt;
+
+&lt;p&gt;
+After the check-ins, I started off with the Introduction to &lt;a href="http://www.seas.upenn.edu/~cis194/"&gt;Haskell course&lt;/a&gt; by
+&lt;a href="http://www.cis.upenn.edu/~byorgey/"&gt;Brent Yorgey&lt;/a&gt;.  What I did was mostly a recap of what I learned from the first
+few chapters of &lt;a href="http://learnyouahaskell.com"&gt;Learn you a Haskell&lt;/a&gt;.  I learnt about how credit card numbers
+are validated, apart from learning a little bit about lazy evaluation and
+thunks.
+&lt;/p&gt;
+
+&lt;p&gt;
+The day ended with burritos and game night Mafia!
+&lt;/p&gt;</description><category>hackerschool</category><category>haskell</category><category>intro</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-09.html</guid><pubDate>Tue, 10 Jun 2014 14:21:06 GMT</pubDate></item></channel></rss>

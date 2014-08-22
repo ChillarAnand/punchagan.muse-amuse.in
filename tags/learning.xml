@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (learning)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:27:05 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-07-22</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-22.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Mel's talks&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Mel's talk in the morning was brilliant!  I wonder why it's not a part of
+recommended reading for Hacker Schoolers, or referred to, in the manual.
+&lt;/li&gt;
+&lt;li&gt;Logically, it makes sense that Mel came now, so that she didn't have to come
+twice to talk to the firsts and seconds, but it would have been great to have
+had this talk in the first week of Hacker School!
+&lt;/li&gt;
+&lt;li&gt;Mel gave us a lot of new information and insights into education and learning
+styles. I also like the fact that she gave us all a good vocabulary to think
+about and discuss stuff related to learning. I will try to think, and apply
+as much of this as I can, for the rest of my time here.
+&lt;/li&gt;
+&lt;li&gt;She talked about &lt;a href="http://blog.melchua.com/2014/02/10/test-driven-learning-setting-learning-goals-for-yourself-software-engineering-edition/"&gt;test driven learning&lt;/a&gt; which seemed very interesting. Instead
+of just saying, "wow that would be an interesting thing to do", stop for a
+moment, think about what you are trying to learn, and how you will assess if
+you have learnt what you wanted to, and then dive into the project.
+&lt;/li&gt;
+&lt;li&gt;The &lt;a href="http://www.engr.ncsu.edu/learningstyles/ilsweb.html"&gt;learning styles&lt;/a&gt; workshop was pretty good too, though I feel like I don't
+know myself well enough, and I unable to properly "bucket" myself.  Later, I
+took a &lt;a href="http://www.engr.ncsu.edu/learningstyles/ilsweb.html"&gt;quiz&lt;/a&gt;, and ended up fairly close to the middle, in all the dimensions.
+&lt;/li&gt;
+&lt;li&gt;Mel introduced us to the idea of &lt;a href="http://www.scribd.com/doc/201816780/A-Cognitive-Apprenticeship-Primer"&gt;cognitive apprenticeship&lt;/a&gt;, and encouraged us
+to try out the different modes when pairing. I really liked the idea of &lt;a href="http://en.wikipedia.org/wiki/Zone_of_proximal_development"&gt;Zone
+of proximal development&lt;/a&gt; and I will try to take the advice of spending most of
+the rest of my time here in this zone.
+&lt;/li&gt;
+&lt;li&gt;Do I (really) care?  Motivation and mindset, …
+&lt;/li&gt;
+&lt;li&gt;Be courageous!
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Airplay and Raspberry Pi&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;I was trying to wrap libshairport and use it on the RPi to be able to listen
+to songs being streamed on Airplay, and use that data to drive the LEDs.
+&lt;/li&gt;
+&lt;li&gt;Shairport, a tool written in C seemed to work.  My attempts to wrap
+&lt;code&gt;libshairport&lt;/code&gt;, which is a fork of &lt;code&gt;shairport&lt;/code&gt; converting it into a library,
+failed miserably.
+&lt;/li&gt;
+&lt;li&gt;The trouble was essentially getting Airplay to discover my service.  I tried
+a bunch of things with &lt;code&gt;pybonjour&lt;/code&gt; and &lt;code&gt;avahi&lt;/code&gt;, but wasn't able to get it
+right.
+&lt;/li&gt;
+&lt;li&gt;Finally, I tried just announcing the service with &lt;code&gt;shairport&lt;/code&gt;, and actually
+running a python script that wraps &lt;code&gt;libshairport&lt;/code&gt; to listen to the data.
+But, this didn't work and iTunes complained that this Airplay device is not
+compatible. Before going much further with this, I found &lt;code&gt;shairplay&lt;/code&gt; which is
+a tool similar to &lt;code&gt;shairport&lt;/code&gt;, but came with a library, and also Python
+bindings!  I happily used this to get stuff working!
+&lt;/li&gt;
+&lt;li&gt;I'm interested to see today, what exactly I was missing yesterday!
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;Emacs club&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;I demoed org-mode to a bunch of people for about half an hour, and it was
+good to see people being blown away by what it can do, exactly the way I
+was, when I first came across it.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-4" class="outline-2"&gt;
+&lt;h2 id="sec-4"&gt;Today&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Work on RPi to clean up a few things for the party.
+&lt;/li&gt;
+&lt;li&gt;Compare &lt;code&gt;libshairplay&lt;/code&gt; and &lt;code&gt;libshairport&lt;/code&gt; to see what I was doing wrong,
+yesterday.
+&lt;/li&gt;
+&lt;li&gt;May be write up the whole thing, and make the code available.
+&lt;/li&gt;
+&lt;li&gt;Learn a little bit about Parsers from rntz.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>hackerschool</category><category>learning</category><category>python</category><category>raspberry-pi</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-22.html</guid><pubDate>Tue, 22 Jul 2014 14:46:36 GMT</pubDate></item><item><title>Teach Yourself Programming in Ten Years!!</title><link>http://punchagan.muse-amuse.in/posts/teach-yourself-programming-in-ten-years.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Here's an interesting article by Peter Norvig, Director of
+Research Google I have just copied the whole essay here… also
+here's a link to the Original one…
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;Update:&lt;/b&gt; - &lt;span class="timestamp-wrapper"&gt;&lt;span class="timestamp"&gt;[2010-10-11 Mon]&lt;/span&gt;&lt;/span&gt; - Removed the copied content
+&lt;/p&gt;</description><category>lafootgiri</category><category>learning</category><category>life</category><category>ology</category><guid>http://punchagan.muse-amuse.in/posts/teach-yourself-programming-in-ten-years.html</guid><pubDate>Fri, 02 Feb 2007 14:05:00 GMT</pubDate></item></channel></rss>

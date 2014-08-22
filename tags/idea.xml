@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (idea)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:27:05 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-06-11</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-11.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Plan&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+Continue with the Haskell tutorials, with additional reading from
+Real World Haskell.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Actual&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Finished exercises 4 and 5.
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Learnt about Type classes in Haskell and how to create them and
+make data types instances of them.
+&lt;/li&gt;
+&lt;li&gt;Also came across a new algorithm of sieving called the &lt;a href="http://en.wikipedia.org/wiki/Sieve_of_Sundaram"&gt;Sieve of
+Sundaram&lt;/a&gt;, which was discovered by a student.  Surprisingly, I
+never heard of it before!
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;Miscellaneous&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;A few of us had an interesting discussion about various places
+people grew up in and visited, and the cultures, etc.
+&lt;/li&gt;
+&lt;li&gt;Idea: implement a GitHub dashboard for organizations (say, HS
+batches) that give you different statistics, and interesting
+graphs. (Use elm?) [Update: Tom is working on HS and GitHub
+integration. So, that's perfect!]
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>github</category><category>hackerschool</category><category>haskell</category><category>idea</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-11.html</guid><pubDate>Wed, 11 Jun 2014 19:02:11 GMT</pubDate></item><item><title>Scraping Google Groups</title><link>http://punchagan.muse-amuse.in/posts/scraping-google-groups.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I was playing around with a few ideas for creating a timeline for the
+mumbai ultimate group, and as a part of playing around with stuff, for
+that idea, I ended up wanting to scrape all the emails on our google
+group.  After looking around a little bit, I failed to find anything
+that claims to be able to do this.
+&lt;/p&gt;
+
+&lt;p&gt;
+So I ended up writing my own &lt;a href="https://gist.github.com/punchagan/7947337"&gt;hacky script&lt;/a&gt; to download all the emails
+sent on the group.  Like I said, this is a hack and can be improved
+quite a bit, but I am not inclined to do anything about it, right
+now.  Since, everything about google groups is ajaxy, this script uses
+selenium and does things on the page, that one would do by hand.  It's
+not something that I am proud of, but it does the job!
+&lt;/p&gt;</description><category>email</category><category>hack</category><category>idea</category><category>mumbai</category><category>ultimate</category><guid>http://punchagan.muse-amuse.in/posts/scraping-google-groups.html</guid><pubDate>Wed, 01 Jan 2014 00:55:58 GMT</pubDate></item><item><title>Pair Blogging</title><link>http://punchagan.muse-amuse.in/posts/pair-blogging.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I like the idea of pair blogging. Cate and Sacha, seem to be doing
+it (intentionally or not). One person blogs on a topic he/she's
+presently thinking about and the other person posts his/her views
+on the same issue.  Well, comments are meant for that, but a blog
+post seems to give you greater freedom.
+&lt;/p&gt;
+
+&lt;p&gt;
+PS: I called it pair-blogging. I don't know if it already has a
+name or if pair-blogging means something else.
+&lt;/p&gt;</description><category>idea</category><category>note</category><guid>http://punchagan.muse-amuse.in/posts/pair-blogging.html</guid><pubDate>Sun, 08 Aug 2010 04:05:00 GMT</pubDate></item><item><title>Change &amp; Free flow</title><link>http://punchagan.muse-amuse.in/posts/change-free-flow.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+No.  Not the Obama change.  I'm talking of change as in small
+denominations of cash.  Everybody is reluctant to part with
+it.  There's always a problem with getting it.  I'm often worried
+before getting into a bus or an auto, or going to a shop whether
+or not the guy would give me change for a 50, 100 or a 500.
+People so reluctant to "part" with it. What are they saving it
+for?
+&lt;/p&gt;
+
+&lt;p&gt;
+I think the situation would be much better if people readily gave
+it, when required.  There would be a free flow and if not anything
+more, I wouldn't have to worry about it when going somewhere.
+But, I "feel" this would actually reduce the instances when both
+the parties don't have enough change with them. What do you think?
+&lt;/p&gt;</description><category>idea</category><category>money</category><category>note</category><category>people</category><guid>http://punchagan.muse-amuse.in/posts/change-free-flow.html</guid><pubDate>Fri, 30 Jul 2010 10:33:00 GMT</pubDate></item><item><title>Competition and Population</title><link>http://punchagan.muse-amuse.in/posts/competition-and-population.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I've often got bad service from "service providers" - hotels,
+restaurants, phone services, Internet services etc. I guess that's
+due to the population in India. If one customer goes back unhappy
+that doesn't really make a difference, because there would be
+hundred others already waiting in the queue.
+&lt;/p&gt;
+
+&lt;p&gt;
+You, as a, service provider would get your share of customers and
+profits, no matter how bad you are. Thanks to the population.
+&lt;/p&gt;
+
+&lt;p&gt;
+One solution could be, to write about the bad service you got from
+a provider and make people aware of it, but often there aren't
+enough options, for others to choose from. Inevitably, the bad
+service provider is going to get some customers. What's the way
+out?
+&lt;/p&gt;</description><category>idea</category><category>note</category><guid>http://punchagan.muse-amuse.in/posts/competition-and-population.html</guid><pubDate>Fri, 30 Jul 2010 10:25:00 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (lisp)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 10:27:05 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp as an Alternative to Java</title><link>http://punchagan.muse-amuse.in/posts/lisp-as-an-alternative-to-java.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Here's more on LISP… one more article from Peter Norvig.. This
+is another of his on my blog… Look at the follow-up study
+document.. its good…
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;Update:&lt;/b&gt; - &lt;span class="timestamp-wrapper"&gt;&lt;span class="timestamp"&gt;[2010-10-11 Mon]&lt;/span&gt;&lt;/span&gt; - Removed the article's copy.
+&lt;/p&gt;</description><category>lisp</category><category>ology</category><guid>http://punchagan.muse-amuse.in/posts/lisp-as-an-alternative-to-java.html</guid><pubDate>Sat, 03 Mar 2007 01:26:00 GMT</pubDate></item><item><title>Popularly Unpopular??</title><link>http://punchagan.muse-amuse.in/posts/popularly-unpopular.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Popular opinion isn't everything….. Its not necessary that we
+always go with the popular opinion, or take that option which most
+people endorse.. here's a case in point… an article by Paul
+Graham..(You can also read it @
+&lt;a href="http://www.paulgraham.com/iflisp.html"&gt;http://www.paulgraham.com/iflisp.html&lt;/a&gt;)
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;Update&lt;/b&gt; - &lt;span class="timestamp-wrapper"&gt;&lt;span class="timestamp"&gt;[2010-10-11 Mon]&lt;/span&gt;&lt;/span&gt; - Removed the copy of the article.
+&lt;/p&gt;</description><category>blab</category><category>lisp</category><category>ology</category><guid>http://punchagan.muse-amuse.in/posts/popularly-unpopular.html</guid><pubDate>Thu, 01 Mar 2007 07:43:00 GMT</pubDate></item></channel></rss>
