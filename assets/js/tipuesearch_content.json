@@ -1,6 +1,18 @@
 {
   "pages": [
     {
+      "text": "I finished going through the third of Dave Beazley's tutorials on Generators\nand Co-routines.\n\nAlso refactored api-diff to use astroid, instead of the ast module.  Kinda\nhappy with what I have, for now. May be more, later\u2026", 
+      "tags": "hackerschool,python", 
+      "loc": "/posts/hacker-school-2014-08-20.html", 
+      "title": "Hacker School, 2014-08-20"
+    }, 
+    {
+      "text": "I added an additional view to xtab, to see all the pages that were killed,\nand reopen them, if you so choose.\n\nAlso, cleaned up the api-diff project and renamed it to what-changed.\n\nStarted thinking about building the GitHub organization dashboard, that I\nthought would be interesting to have, since the 1st or 2nd week of Hacker\nSchool.\n\nA bunch of awesome thursday presentations, and job fair and awesome food by\nChef Warren!", 
+      "tags": "hackerschool,jobs,python", 
+      "loc": "/posts/hacker-school-2014-08-21.html", 
+      "title": "Hacker School, 2014-08-21"
+    }, 
+    {
       "text": "I spent most of the day working through David Beazly's tutorials on\ngenerators and coroutines, and it was mind bending.\n\nI learnt about send and throw methods on generators!  I hadn't heard of\nthem before, and was totally surprised to come across them.\n\nI spent a little time late in the day getting class diffs working, and\nrefactoring the api-diff tool to remove duplication of code between classes\nand modules. But, not very happy with the way I did it.", 
       "tags": "hackerschool,python", 
       "loc": "/posts/hacker-school-2014-08-19.html", 

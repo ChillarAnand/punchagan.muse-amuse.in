@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (python)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 22:42:27 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-19</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-19.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (python)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 22:45:34 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-20</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-20.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I finished going through the third of Dave Beazley's tutorials on Generators
+and Co-routines.
+&lt;/li&gt;
+&lt;li&gt;Also refactored api-diff to use astroid, instead of the ast module.  Kinda
+happy with what I have, for now. May be more, later…
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-20.html</guid><pubDate>Sat, 23 Aug 2014 02:43:04 GMT</pubDate></item><item><title>Hacker School, 2014-08-21</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-21.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I added an additional view to xtab, to see all the pages that were killed,
+and reopen them, if you so choose.
+&lt;/li&gt;
+&lt;li&gt;Also, cleaned up the &lt;code&gt;api-diff&lt;/code&gt; project and renamed it to &lt;a href="https://github.com/punchagan/what-changed"&gt;what-changed&lt;/a&gt;.
+&lt;/li&gt;
+&lt;li&gt;Started thinking about building the GitHub organization dashboard, that I
+thought would be interesting to have, since the 1st or 2nd week of Hacker
+School.
+&lt;/li&gt;
+&lt;li&gt;A bunch of awesome thursday presentations, and job fair and awesome food by
+Chef Warren!
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>jobs</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-21.html</guid><pubDate>Fri, 22 Aug 2014 14:33:34 GMT</pubDate></item><item><title>Hacker School, 2014-08-19</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-19.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I spent most of the day working through David Beazly's tutorials on
 generators and coroutines, and it was mind bending.
 &lt;/li&gt;
@@ -164,69 +184,4 @@ some matching/searching features with helm/ido/whatever else.
 &lt;li&gt;I spent the Sunday writing a patch to &lt;a href="https://github.com/punchagan/xtab/tree/kill-by-memory"&gt;xtab&lt;/a&gt; to be able to limit the number of
 tabs in Chromium by the memory it uses.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>chrome</category><category>emacs</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-08.html</guid><pubDate>Sun, 10 Aug 2014 00:56:22 GMT</pubDate></item><item><title>Hacker School, 2014-08-03</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-03.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;Friday&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;On Friday, I didn't do the exercises that everyone else doing job prep were
-doing.  I wanted to continue writing C code, and continued to work on the
-&lt;code&gt;bencode&lt;/code&gt; parser in C.  I barely was able to finish adding support for lists.
-&lt;/li&gt;
-&lt;li&gt;I got comfortable using Valgrind, in the process of debugging a stupidity of
-not using &lt;code&gt;realloc&lt;/code&gt; correctly.
-&lt;/li&gt;
-&lt;li&gt;What I was able to write with Python in an hour or so, I have been writing
-for about a day, in C, and haven't yet finished it!  It definitely doesn't
-help that my C is very rusty…
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;Saturday &amp;amp; Sunday&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;I didn't work much, and went around New York with Madhu.  We went to quite
-a few places around here, the highlight being, the view of Manhattan's
-skyline from the Staten Island Ferry.
-&lt;/li&gt;
-&lt;li&gt;NYC's library also had an interesting exhibhition on the history of
-America, just before and during WW-I.
-&lt;/li&gt;
-&lt;li&gt;On Sunday, I tried out Mary TTS on the raspberry pi, and it is simply
-unusable.
-&lt;/li&gt;
-&lt;li&gt;I then, started writing a simple wrapper around Google's tts that is used
-by Google translate.
-&lt;/li&gt;
-&lt;li&gt;The TTS part is more or less working right now, the next step would be to
-deploy it on the RaspberryPi and start using it as a radio, to see what my
-needs are like. Hooking it up to &lt;a href="https://github.com/jasperproject/jasper-client"&gt;Jasper client&lt;/a&gt; seems like a good idea,
-right now… though I'm not sure if it would work very well, with the pi's
-audio output drowning out the voice commands.
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>C</category><category>hackerschool</category><category>python</category><category>raspberry-pi</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-03.html</guid><pubDate>Mon, 04 Aug 2014 20:10:41 GMT</pubDate></item><item><title>Hacker School, 2014-07-28</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
-&lt;li&gt;There seemed to be excitement in the space to have Jessica around.  We had
-coffee with her, and I chatted with her briefly. She encouraged me to try and
-send a patch to CPython, that involved debugging and fixing some C issues.
-&lt;/li&gt;
-&lt;li&gt;I spent some time with Tom, while he tried to get &lt;code&gt;cinspect&lt;/code&gt; working for him,
-and it seemed like having the developer next to you, helped.  As always.  We
-didn't make any fixes to the code, but it worked.
-&lt;/li&gt;
-&lt;li&gt;I spent the afternoon, adding tests for a simple issue, to see how patches are sent.
-&lt;/li&gt;
-&lt;li&gt;Later, I paired with Sophia for an hour to refactor the vcs code. It's
-beginning to look much better than what it used to, and I like that.
-&lt;/li&gt;
-&lt;li&gt;Jessica's talk on buffer overflows was enlightening and entertaining. It was
-very similar to a talk that Max gave on one of the thursdays, but it was
-exciting nevertheless.
-&lt;/li&gt;
-&lt;li&gt;After the talk, I am inspired to try and work through the Hacking: Art of
-exploitation, at some point. I'm beginning to feel like time at HackerSchool
-running out!
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>C</category><category>hackerschool</category><category>python</category><category>version_control</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-28.html</guid><pubDate>Tue, 29 Jul 2014 02:23:39 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>chrome</category><category>emacs</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-08.html</guid><pubDate>Sun, 10 Aug 2014 00:56:22 GMT</pubDate></item></channel></rss>
