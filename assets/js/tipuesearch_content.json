@@ -1,7 +1,7 @@
 {
   "pages": [
     {
-      "text": "Friday\n\n\nI started playing around with React.js to see how I could build the GitHub\norganization dashboard, that I plan to.\n\n\n\n\n\nSaturday\n\n\nGot a horrendous idea of implementing a disqus-like commenting system using\nGitHub's issue comments, and ran with it.  It seems technically feasible\nbased on some initial implementation.  I need to clean-up/rewrite the\nprototype code on Monday.\n\n\n\n\n\nSunday\n\n\nI spent the Sunday with cousins at Central Park Zoo, Upper East Side River\n\n\n\nfront.", 
+      "text": "Friday\n\n\nI started playing around with React.js to see how I could build the GitHub\norganization dashboard, that I plan to.\n\n\n\n\n\nSaturday\n\n\nGot a horrendous idea of implementing a disqus-like commenting system using\nGitHub's issue comments, and ran with it.  It seems technically feasible\nbased on some initial implementation.  I need to clean-up/rewrite the\nprototype code on Monday.\n\n\n\n\n\nSunday\n\n\nSpent the day with cousins at Central Park Zoo, Upper East Side River\nfront.", 
       "tags": "hackerschool,javascript", 
       "loc": "/posts/hacker-school-2014-08-24.html", 
       "title": "Hacker School, 2014-08-24"
