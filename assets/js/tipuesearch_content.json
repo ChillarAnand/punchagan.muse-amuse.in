@@ -1,6 +1,12 @@
 {
   "pages": [
     {
+      "text": "I spent most of the day refactoring the code for the LED Bot, and am happy\nwith the way it looks right now.\n\nMy talk at Hack and Tell went OK.  I was distracted by livereveal not\ndisplaying properly on the smaller resolution, and not being able to mirror\nscreens!\n\nThere were a bunch of interesting talks presented by the\nothers. http://comparea.org, Taxis and Rainbows were the most interesting\nones for me.", 
+      "tags": "hackerschool,python", 
+      "loc": "/posts/hacker-school-2014-08-26.html", 
+      "title": "Hacker School, 2014-08-26"
+    }, 
+    {
       "text": "Friday\n\n\nI started playing around with React.js to see how I could build the GitHub\norganization dashboard, that I plan to.\n\n\n\n\n\nSaturday\n\n\nGot a horrendous idea of implementing a disqus-like commenting system using\nGitHub's issue comments, and ran with it.  It seems technically feasible\nbased on some initial implementation.  I need to clean-up/rewrite the\nprototype code on Monday.\n\n\n\n\n\nSunday\n\n\nSpent the day with cousins at Central Park Zoo, Upper East Side River\nfront.", 
       "tags": "hackerschool,javascript", 
       "loc": "/posts/hacker-school-2014-08-24.html", 
