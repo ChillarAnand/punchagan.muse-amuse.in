@@ -1,6 +1,12 @@
 {
   "pages": [
     {
+      "text": "I spent the whole of yesterday just working on the LED-bot.\n\nSpent some time cleaning up meta-stuff about the project, making it a real\npackage, adding a setup.py, added LICENSE & AUTHOR files, etc.\n\nI found it really frustrating that there's no good/standard way to remove\nduplication of information between pip's requirements.txt and\ninstall_requires\n\nWe got the bot running on the Beagle Bone, but it turned out to be too slow.\nAfter some playing around with trying to get rid of Python for-loops, I was\nable to use PIL's image.tobytes and some image cropping to get the data to\nbe sent to the LEDs, and it sped up the display quite a bit.", 
+      "tags": "PIL,hackerschool,python", 
+      "loc": "/posts/hacker-school-2014-08-27.html", 
+      "title": "Hacker School, 2014-08-27"
+    }, 
+    {
       "text": "I spent most of the day refactoring the code for the LED Bot, and am happy\nwith the way it looks right now.\n\nMy talk at Hack and Tell went OK.  I was distracted by livereveal not\ndisplaying properly on the smaller resolution, and not being able to mirror\nscreens!\n\nThere were a bunch of interesting talks presented by the\nothers. http://comparea.org, Taxis and Rainbows were the most interesting\nones for me.", 
       "tags": "hackerschool,python", 
       "loc": "/posts/hacker-school-2014-08-26.html", 

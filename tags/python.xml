@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (python)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Wed, 27 Aug 2014 11:29:58 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-26</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-26.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (python)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Thu, 28 Aug 2014 10:29:31 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-27</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-27.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent the whole of yesterday just working on the LED-bot.
+&lt;/li&gt;
+&lt;li&gt;Spent some time cleaning up meta-stuff about the project, making it a real
+package, adding a setup.py, added LICENSE &amp;amp; AUTHOR files, etc.
+&lt;/li&gt;
+&lt;li&gt;I found it really frustrating that there's no good/standard way to remove
+duplication of information between pip's &lt;code&gt;requirements.txt&lt;/code&gt; and
+&lt;code&gt;install_requires&lt;/code&gt;
+&lt;/li&gt;
+&lt;li&gt;We got the bot running on the Beagle Bone, but it turned out to be too slow.
+After some playing around with trying to get rid of Python for-loops, I was
+able to use PIL's &lt;code&gt;image.tobytes&lt;/code&gt; and some image cropping to get the data to
+be sent to the LEDs, and it sped up the display quite a bit.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>PIL</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-27.html</guid><pubDate>Thu, 28 Aug 2014 13:51:30 GMT</pubDate></item><item><title>Hacker School, 2014-08-26</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-26.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I spent most of the day refactoring the code for the LED Bot, and am happy
 with the way it looks right now.
 &lt;/li&gt;
@@ -143,38 +158,4 @@ changes.
 &lt;li&gt;I spent some time talking to Sophia, and looking at her FTP server's
 refactored code.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-12.html</guid><pubDate>Wed, 13 Aug 2014 14:30:30 GMT</pubDate></item><item><title>Hacker School, 2014-08-11</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-11.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
-&lt;li&gt;I spent about an hour in the morning testing out the staging blaggregator
-instance, and things seemed to work as expected.  Side note, I got added as a
-collaborator on the blaggregator repo!
-&lt;/li&gt;
-&lt;li&gt;We worked through the first chapter on getting video working, but we mostly
-ended up just copying code rather than actually understanding/carefully
-studying it.  I'm not sure how I feel about it, but we got to display fancy
-stuff.
-&lt;/li&gt;
-&lt;li&gt;I wasn't feeling like working on any of my 'old'/'ongoing' projects, and
-since Mondays don't feel very productive, I worked on writing a couple of
-simple scripts to create twitter lists of HSers, batch wise.
-
-&lt;p&gt;
-For the HS API, I just reused some old code I had lying around from my
-experiments with the OAuth2 API, though I had to tweak it a little bit to be
-able to actually login, using requests. Something about CSRF tokens seems to
-have changed.
-&lt;/p&gt;
-
-&lt;p&gt;
-In the process, I found that twitter's API isn't very pleasant to use.  Or
-may be it's the fact that I was using python twitter client without getting
-my own client id/key, but the whole experience of dealing with the twitter
-API wasn't a pleasant one at all!
-&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;Amber, Daria and I also spent about an hour white-boarding some problems from
-the Cracking the Code Interview book.
-&lt;/li&gt;
-&lt;li&gt;I ended up fixing some minor issues with blaggregator and am hoping that the
-long pending PR will be merged today.
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>django</category><category>hackerschool</category><category>python</category><category>twitter</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-11.html</guid><pubDate>Mon, 11 Aug 2014 15:16:08 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-12.html</guid><pubDate>Wed, 13 Aug 2014 14:30:30 GMT</pubDate></item></channel></rss>

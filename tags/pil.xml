@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (PIL)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Thu, 28 Aug 2014 10:29:31 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-27</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-27.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent the whole of yesterday just working on the LED-bot.
+&lt;/li&gt;
+&lt;li&gt;Spent some time cleaning up meta-stuff about the project, making it a real
+package, adding a setup.py, added LICENSE &amp;amp; AUTHOR files, etc.
+&lt;/li&gt;
+&lt;li&gt;I found it really frustrating that there's no good/standard way to remove
+duplication of information between pip's &lt;code&gt;requirements.txt&lt;/code&gt; and
+&lt;code&gt;install_requires&lt;/code&gt;
+&lt;/li&gt;
+&lt;li&gt;We got the bot running on the Beagle Bone, but it turned out to be too slow.
+After some playing around with trying to get rid of Python for-loops, I was
+able to use PIL's &lt;code&gt;image.tobytes&lt;/code&gt; and some image cropping to get the data to
+be sent to the LEDs, and it sped up the display quite a bit.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>PIL</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-27.html</guid><pubDate>Thu, 28 Aug 2014 13:51:30 GMT</pubDate></item></channel></rss>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="author" content="punchagan">
-    <title>Hacker School, 2014-08-26 | Noetic Nought</title>
+    <title>Hacker School, 2014-08-27 | Noetic Nought</title>
     
             <link href="/assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
@@ -65,27 +65,31 @@
     
     <div class="postbox">
         <h1>
-                Hacker School, 2014-08-26
+                Hacker School, 2014-08-27
         </h1>
         <div class="post"> <ul class="org-ul">
-<li>I spent most of the day refactoring the code for the LED Bot, and am happy
-with the way it looks right now.
+<li>I spent the whole of yesterday just working on the LED-bot.
 </li>
-<li>My talk at Hack and Tell went OK.  I was distracted by <a href="https://github.com/damianavila/live_reveal">live<sub>reveal</sub></a> not
-displaying properly on the smaller resolution, and not being able to mirror
-screens!
+<li>Spent some time cleaning up meta-stuff about the project, making it a real
+package, adding a setup.py, added LICENSE &amp; AUTHOR files, etc.
 </li>
-<li>There were a bunch of interesting talks presented by the
-others. <a href="http://comparea.org">http://comparea.org</a>, <a href="https://medium.com/@vijayp/of-taxis-and-rainbows-f6bc289679a1">Taxis and Rainbows</a> were the most interesting
-ones for me.
+<li>I found it really frustrating that there's no good/standard way to remove
+duplication of information between pip's <code>requirements.txt</code> and
+<code>install_requires</code>
+</li>
+<li>We got the bot running on the Beagle Bone, but it turned out to be too slow.
+After some playing around with trying to get rid of Python for-loops, I was
+able to use PIL's <code>image.tobytes</code> and some image cropping to get the data to
+be sent to the LEDs, and it sped up the display quite a bit.
 </li>
 </ul> </div>
         
     <div class="meta">
         <span class="date">
-            <time class="published" datetime="2014-08-27T10:23:27-04:00">2014-08-27 10:23</time>
+            <time class="published" datetime="2014-08-28T09:51:30-04:00">2014-08-28 09:51</time>
         </span>
         <ul class="tags">
+            <li><a href="/tags/pil.html">PIL</a></li>
             <li><a href="/tags/hackerschool.html">hackerschool</a></li>
             <li><a href="/tags/python.html">python</a></li>
         </ul>
@@ -94,10 +98,7 @@ ones for me.
             
     <ul class="pager">
         <li class="previous">
-            <a href="/posts/hacker-school-2014-08-24.html">← Previous post</a>
-        </li>
-        <li class="next">
-            <a href="/posts/hacker-school-2014-08-27.html">Next post →</a>
+            <a href="/posts/hacker-school-2014-08-26.html">← Previous post</a>
         </li>
     </ul>
 
@@ -106,9 +107,9 @@ ones for me.
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="rusticreverie",
-            disqus_url="http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-26.html",
-        disqus_title="Hacker School, 2014-08-26",
-        disqus_identifier="cache/posts/hacker-school-2014-08-26.html",
+            disqus_url="http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-27.html",
+        disqus_title="Hacker School, 2014-08-27",
+        disqus_identifier="cache/posts/hacker-school-2014-08-27.html",
         disqus_config = function () {
             this.language = "en";
         };
