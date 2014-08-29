@@ -1,6 +1,12 @@
 {
   "pages": [
     {
+      "text": "All good things must come to an end, and so did our batch!  We got our Hacker\nSchool t-shirts, and had a super fun picnic at Prospect Park.", 
+      "tags": "hackerschool", 
+      "loc": "/posts/hacker-school-2014-08-28.html", 
+      "title": "Hacker School, 2014-08-28"
+    }, 
+    {
       "text": "I spent the whole of yesterday just working on the LED-bot.\n\nSpent some time cleaning up meta-stuff about the project, making it a real\npackage, adding a setup.py, added LICENSE & AUTHOR files, etc.\n\nI found it really frustrating that there's no good/standard way to remove\nduplication of information between pip's requirements.txt and\ninstall_requires\n\nWe got the bot running on the Beagle Bone, but it turned out to be too slow.\nAfter some playing around with trying to get rid of Python for-loops, I was\nable to use PIL's image.tobytes and some image cropping to get the data to\nbe sent to the LEDs, and it sped up the display quite a bit.", 
       "tags": "PIL,hackerschool,python", 
       "loc": "/posts/hacker-school-2014-08-27.html", 

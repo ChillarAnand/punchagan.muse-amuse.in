@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (hackerschool)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Thu, 28 Aug 2014 10:29:28 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-27</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-27.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (hackerschool)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 29 Aug 2014 12:26:41 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-28</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+All good things must come to an end, and so did our batch!  We got our Hacker
+School t-shirts, and had a super fun picnic at Prospect Park.
+&lt;/p&gt;</description><category>hackerschool</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-28.html</guid><pubDate>Fri, 29 Aug 2014 16:24:44 GMT</pubDate></item><item><title>Hacker School, 2014-08-27</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-27.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I spent the whole of yesterday just working on the LED-bot.
 &lt;/li&gt;
 &lt;li&gt;Spent some time cleaning up meta-stuff about the project, making it a real
@@ -137,40 +140,4 @@ the evening finishing off &lt;a href="http://craphound.com/homeland/"&gt;Homelan
 cares about the Government and policies and technology MUST read it!  Thanks
 Cory.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-14.html</guid><pubDate>Fri, 15 Aug 2014 22:09:59 GMT</pubDate></item><item><title>Hacker School, 2014-08-13</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-13.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
-&lt;li&gt;I feel like I didn't get much done yesterday.
-&lt;/li&gt;
-&lt;li&gt;I mostly worked on the API differ, but didn't get much done.  I have a few
-tests, and some code for diffing two functions, but I'm not very happy with
-it.
-&lt;/li&gt;
-&lt;li&gt;I helped Giorgio and Carlos with using my client only &lt;code&gt;hs_oauth&lt;/code&gt;
-script/library, for their Zulip bot.
-&lt;/li&gt;
-&lt;li&gt;The white boarding group worked on some binary related problems, and it was
-fun.
-&lt;/li&gt;
-&lt;li&gt;I looked at how the HS OAuth backend works on blaggregator and thought about
-how to go about fixing the issue of broken images on the site.  The problem
-happens because the image URLs are returned from the HS API calls, that are
-made whenever a user logs in(?), and the URLs are cached.  Since, HS uses
-cloudfront for its assets, the URLs expire after a period of time, and the
-cached urls in blag's database need to be updated.  There could be two ways
-of doing it -
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;Check if the URL 404s, every time a URL is requested, on the server side.
-&lt;/li&gt;
-&lt;li&gt;Do it on the client side, with some javascript magic.
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-Intuitively, I feel like 2. would be better, but Madhu suggested
-that 1. wouldn't be that bad either.  We could try both out, and see which
-works better I suppose.
-&lt;/p&gt;
-
-&lt;p&gt;
-I'd be interested to try this out, sometime.
-&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-13.html</guid><pubDate>Thu, 14 Aug 2014 15:11:59 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-14.html</guid><pubDate>Fri, 15 Aug 2014 22:09:59 GMT</pubDate></item></channel></rss>

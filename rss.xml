@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>punchagan's home on the web.</description><language>en</language><lastBuildDate>Thu, 28 Aug 2014 10:29:28 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-27</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-27.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>punchagan's home on the web.</description><language>en</language><lastBuildDate>Fri, 29 Aug 2014 12:26:40 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-28</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+All good things must come to an end, and so did our batch!  We got our Hacker
+School t-shirts, and had a super fun picnic at Prospect Park.
+&lt;/p&gt;</description><category>hackerschool</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-28.html</guid><pubDate>Fri, 29 Aug 2014 16:24:44 GMT</pubDate></item><item><title>Hacker School, 2014-08-27</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-27.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I spent the whole of yesterday just working on the LED-bot.
 &lt;/li&gt;
 &lt;li&gt;Spent some time cleaning up meta-stuff about the project, making it a real
@@ -178,20 +181,4 @@ he started “My Basic Income”, a new initiative looking to raise enough money
 to pay someone $1,300 a month for a year, no strings attached.
 &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-08-15.html</guid><pubDate>Sat, 16 Aug 2014 02:07:28 GMT</pubDate></item><item><title>Hacker School, 2014-08-14</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-14.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
-&lt;li&gt;I spent the morning cleaning up the "repr" functions of the diff classes, so
-that the diff of functions between two modules can be printed out in a
-somewhat meaningful way.
-&lt;/li&gt;
-
-&lt;li&gt;I spent most of the afternoon, preparing to make a small presentation on how
-&lt;code&gt;sys.path&lt;/code&gt; works in Python.  I thought I didn't do as good a job of it, as I
-would've liked, but Tom thought it was not too bad…
-&lt;/li&gt;
-
-&lt;li&gt;Looks like another of those days, where I didn't get much done…  I spent
-the evening finishing off &lt;a href="http://craphound.com/homeland/"&gt;Homeland&lt;/a&gt;. It's a brilliant book, and everyone who
-cares about the Government and policies and technology MUST read it!  Thanks
-Cory.
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-14.html</guid><pubDate>Fri, 15 Aug 2014 22:09:59 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-08-15.html</guid><pubDate>Sat, 16 Aug 2014 02:07:28 GMT</pubDate></item></channel></rss>
