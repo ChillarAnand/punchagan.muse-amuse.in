@@ -1,50 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (orgmode)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Sun, 07 Sep 2014 12:54:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-07-21</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-21.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;Yesterday&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;It was exciting to have so many new Hacker Schoolers in the space.  But, the
-excitement was kinda distracting too.
-&lt;/li&gt;
-
-&lt;li&gt;I spent most of the day looking at shairport, and libshairport and trying to
-wrap it, so I can use it to get data for the spectrum analyzer via the
-Air-play protocol.  I was able to call it using &lt;code&gt;ctypes&lt;/code&gt;, but it doesn't seem
-discoverable.
-&lt;/li&gt;
-
-&lt;li&gt;I also briefly looked at Julia and &lt;a href="http://dwm.suckless.org"&gt;dwm&lt;/a&gt;, to try and port dwm to Julia.  It
-doesn't seem like too much work, but is going to take me a while given how
-comfortable I'm with both Julia and C.
-&lt;/li&gt;
-
-&lt;li&gt;Yaron Minsky's talk on distributed systems was a great introduction to
-Distributed systems.
-&lt;/li&gt;
-
-&lt;li&gt;After the talk, I spent a little time updating my notes from an old org-mode
-workshop to present it at the emacs user group meet up today.
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;Today&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;I hope to get the spectrum analyzer to use &lt;code&gt;libshairport&lt;/code&gt; and be able to play
-music sent through Air play.
-&lt;/li&gt;
-
-&lt;li&gt;Spend some time talking to the emacs user group about org-mode.
-&lt;/li&gt;
-
-&lt;li&gt;If I have any time, after getting this to work, I may play around with the
-dwm port.
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>hackerschool</category><category>julia</category><category>orgmode</category><category>python</category><category>raspberry-pi</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-21.html</guid><pubDate>Tue, 22 Jul 2014 14:46:29 GMT</pubDate></item><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (orgmode)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Tue, 09 Sep 2014 09:40:58 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://binchen.org/"&gt;Chen Bin&lt;/a&gt; asked me to share my Nikola+Org work-flow, and share an
 example post.
 &lt;/p&gt;
@@ -306,4 +261,250 @@ writer.  :)
 
 &lt;p&gt;
 You can get the latest version from here
-&lt;/p&gt;</description><category>emacs</category><category>haskell</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/pandoc-can-now-do-org.html</guid><pubDate>Mon, 06 Dec 2010 17:52:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>emacs</category><category>haskell</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/pandoc-can-now-do-org.html</guid><pubDate>Mon, 06 Dec 2010 17:52:00 GMT</pubDate></item><item><title>WP to org-mode + hyde + disqus</title><link>http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Hello World!
+&lt;/p&gt;
+
+&lt;p&gt;
+My first post at my new home.  Obviously, it was going to be about the
+move.  You knew it, didn't you? ;)
+&lt;/p&gt;
+
+&lt;p&gt;
+Well, I got some space on the web, along with a few friends.  Thanks to
+my org-mode fanboyism, I now use it to maintain my homepage.  I've
+successfully completed import of my Wordpress posts and comments. :)
+&lt;/p&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;I now use&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Emacs and Org-mode &lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; to write my posts.
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org-hyde.el&lt;/code&gt; &lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt; to publish &lt;code&gt;html&lt;/code&gt; in a &lt;code&gt;hyde&lt;/code&gt;
+parse-able format.
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hyde&lt;/code&gt; &lt;sup&gt;&lt;a id="fnr.3" name="fnr.3" class="footref" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fn.3"&gt;3&lt;/a&gt;&lt;/sup&gt; to convert the &lt;code&gt;html&lt;/code&gt; pages into a blog.
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org-publish&lt;/code&gt; to publish other pages in my home page.
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git&lt;/code&gt; &lt;sup&gt;&lt;a id="fnr.4" name="fnr.4" class="footref" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fn.4"&gt;4&lt;/a&gt;&lt;/sup&gt; and a &lt;code&gt;bash&lt;/code&gt; script for publishing.
+&lt;/li&gt;
+&lt;li&gt;Disqus &lt;sup&gt;&lt;a id="fnr.5" name="fnr.5" class="footref" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fn.5"&gt;5&lt;/a&gt;&lt;/sup&gt; for the comment system.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+Yes, I know it sounds rather complicated. :) But, now that I
+have it set up, it's not all that difficult to make a post.
+It's just a matter of one &lt;code&gt;git commit&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt;.  I need to
+fine-tune the shell script a bit, though.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;How I moved&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+The move definitely wasn't trivial.  I guess, I could've started
+afresh but, what fun would that have been? ;)
+&lt;/p&gt;
+
+&lt;p&gt;
+This roughly how I did things – in the order that I did them.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
+&lt;h3 id="sec-2-1"&gt;Choosing &lt;code&gt;hyde&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;p&gt;
+I looked at a handful of options to maintain a blog, using
+org-mode — &lt;code&gt;blorg&lt;/code&gt;, &lt;code&gt;org-jekyll&lt;/code&gt;, &lt;code&gt;blorgit&lt;/code&gt;, &lt;code&gt;ikiwiki&lt;/code&gt;.
+After some assessment, I decided upon &lt;code&gt;org-jekyll&lt;/code&gt; and
+&lt;code&gt;jekyll&lt;/code&gt;.  But then, I accidentally stumbled upon &lt;code&gt;hyde&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+I decided to go with &lt;code&gt;hyde&lt;/code&gt; instead of &lt;code&gt;jekyll&lt;/code&gt; &lt;sup&gt;&lt;a id="fnr.6" name="fnr.6" class="footref" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fn.6"&gt;6&lt;/a&gt;&lt;/sup&gt;
+since
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;It's in Python.  I didn't want to start figuring out Ruby,
+now.
+&lt;/li&gt;
+&lt;li&gt;It uses Django templates &lt;sup&gt;&lt;a id="fnr.7" name="fnr.7" class="footref" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fn.7"&gt;7&lt;/a&gt;&lt;/sup&gt;.  And Django is
+something, I wish to learn.  I've started with that. :)
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2-2" class="outline-3"&gt;
+&lt;h3 id="sec-2-2"&gt;Clean up &lt;code&gt;org-jekyll&lt;/code&gt; to work with &lt;code&gt;hyde&lt;/code&gt;.&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-2"&gt;
+&lt;p&gt;
+I then "ported" &lt;code&gt;org-jekyll.el&lt;/code&gt; into &lt;code&gt;org-hyde.el&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;removed stuff like categories and languages, that I was not
+going to use.
+&lt;/li&gt;
+&lt;li&gt;Added some code w.r.t timestamps, from org2blog, to it, so
+that my older &lt;code&gt;org2blog&lt;/code&gt; posts could be easily ported.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2-3" class="outline-3"&gt;
+&lt;h3 id="sec-2-3"&gt;Clean up older org2blog posts&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-3"&gt;
+&lt;p&gt;
+&lt;code&gt;org2blog&lt;/code&gt; can post either buffers or subtrees.  I had posts in
+both formats.  I converted all of them into subtrees of one
+tree, using some Python.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2-4" class="outline-3"&gt;
+&lt;h3 id="sec-2-4"&gt;Import older posts&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-4"&gt;
+&lt;p&gt;
+This was the most painful posts.  Importing all the old posts
+from Wordpress.  &lt;code&gt;org-mode&lt;/code&gt; really needs a XHTML/XML importer!
+&lt;/p&gt;
+
+&lt;p&gt;
+I did all sorts of crazy stuff to get this done.
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;used pandoc to convert html to &lt;code&gt;markdown&lt;/code&gt;
+&lt;/li&gt;
+&lt;li&gt;wrote some throw away regex code to convert &lt;code&gt;markdown&lt;/code&gt; to
+      &lt;code&gt;org-mode&lt;/code&gt;.
+&lt;/li&gt;
+&lt;li&gt;wrote more regex code to convert &lt;code&gt;html&lt;/code&gt; to &lt;code&gt;org-mode&lt;/code&gt;.
+&lt;/li&gt;
+&lt;li&gt;hacked up a lot of stuff and finally got all the posts into
+      &lt;code&gt;org&lt;/code&gt; format! :)
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-5" class="outline-3"&gt;
+&lt;h3 id="sec-2-5"&gt;A workflow for publishing&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-5"&gt;
+&lt;p&gt;
+Set up &lt;code&gt;git&lt;/code&gt; along with some &lt;code&gt;bash&lt;/code&gt; code, to have a mechanism
+to minimize the effort in making a blog post.  All this is
+still a lot of work, compared to the ease with which I used to
+use &lt;code&gt;org2blog&lt;/code&gt;.  That's partly due to &lt;code&gt;ssh&lt;/code&gt; restrictions in my
+hostel.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2-6" class="outline-3"&gt;
+&lt;h3 id="sec-2-6"&gt;CSS clean-up&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-6"&gt;
+&lt;p&gt;
+I'm using the same CSS for &lt;code&gt;org-mode&lt;/code&gt; published files and
+&lt;code&gt;hyde&lt;/code&gt; published files. I had to clean up my &lt;code&gt;hyde&lt;/code&gt; templates
+and the CSS to make both of them look similar.
+&lt;/p&gt;
+
+&lt;p&gt;
+My first tryst with CSS hasn't been all that bad. :)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2-7" class="outline-3"&gt;
+&lt;h3 id="sec-2-7"&gt;Installing disqus and importing comments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-7"&gt;
+&lt;p&gt;
+Using disqus was one thing, I wasn't sure I wanted to do.  I
+would've loved it if comments could be managed with org-mode
+too. ;) &lt;sup&gt;&lt;a id="fnr.8" name="fnr.8" class="footref" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fn.8"&gt;8&lt;/a&gt;&lt;/sup&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Anyway, I finally decided to go with it, and I'm quite happy
+with it. :)
+&lt;/p&gt;
+
+&lt;p&gt;
+I loved the ease with which comments could be imported.
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Import Wordpress comments using the export &lt;code&gt;xml&lt;/code&gt; file.
+&lt;/li&gt;
+&lt;li&gt;Generate a CSV file containing the URL map – mapping the
+newer urls to the older ones.
+&lt;/li&gt;
+&lt;li&gt;Upload the CSV file and tada!
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;Conclusion&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+I got to learn quite a few things, during all of this.  I also
+have some bits of code, that I can share with you, in case you
+are interested.  Leave a comment, if you wish. :)
+&lt;/p&gt;
+
+&lt;p&gt;
+I'm just hoping to reduce the additional steps required in
+publishing to ensure it doesn't add to my already erratic
+blogging habits.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+Org-mode - Homepage
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+Org-hyde is a &lt;i&gt;port&lt;/i&gt; of org-jekyll.el
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.3" name="fn.3" class="footnum" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fnr.3"&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+Hyde - Github
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.4" name="fn.4" class="footnum" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fnr.4"&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+Git - Homepage
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.5" name="fn.5" class="footnum" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fnr.5"&gt;5&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+Disqus - Homepage
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.6" name="fn.6" class="footnum" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fnr.6"&gt;6&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+Github - Jekyll
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.7" name="fn.7" class="footnum" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fnr.7"&gt;7&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+Documentation - Django Templates
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.8" name="fn.8" class="footnum" href="http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html#fnr.8"&gt;8&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+I feel it is capable of doing that.  It's just my
+incapability that prevented me from trying it out.
+&lt;/p&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;</description><category>orgmode</category><category>wordpress</category><guid>http://punchagan.muse-amuse.in/posts/wp-to-org-mode-hyde-disqus.html</guid><pubDate>Fri, 22 Oct 2010 18:49:00 GMT</pubDate></item></channel></rss>

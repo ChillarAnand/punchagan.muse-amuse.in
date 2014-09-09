@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (hackerschool-checkins)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Tue, 09 Sep 2014 09:40:58 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-28</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+All good things must come to an end, and so did our batch!  We got our Hacker
+School t-shirts, and had a super fun picnic at Prospect Park.
+&lt;/p&gt;</description><category>hackerschool</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-28.html</guid><pubDate>Fri, 29 Aug 2014 16:24:44 GMT</pubDate></item><item><title>Hacker School, 2014-08-27</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-27.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent the whole of yesterday just working on the LED-bot.
+&lt;/li&gt;
+&lt;li&gt;Spent some time cleaning up meta-stuff about the project, making it a real
+package, adding a setup.py, added LICENSE &amp;amp; AUTHOR files, etc.
+&lt;/li&gt;
+&lt;li&gt;I found it really frustrating that there's no good/standard way to remove
+duplication of information between pip's &lt;code&gt;requirements.txt&lt;/code&gt; and
+&lt;code&gt;install_requires&lt;/code&gt;
+&lt;/li&gt;
+&lt;li&gt;We got the bot running on the Beagle Bone, but it turned out to be too slow.
+After some playing around with trying to get rid of Python for-loops, I was
+able to use PIL's &lt;code&gt;image.tobytes&lt;/code&gt; and some image cropping to get the data to
+be sent to the LEDs, and it sped up the display quite a bit.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>PIL</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-27.html</guid><pubDate>Thu, 28 Aug 2014 13:51:30 GMT</pubDate></item><item><title>Hacker School, 2014-08-26</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-26.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent most of the day refactoring the code for the LED Bot, and am happy
+with the way it looks right now.
+&lt;/li&gt;
+&lt;li&gt;My talk at Hack and Tell went OK.  I was distracted by &lt;a href="https://github.com/damianavila/live_reveal"&gt;live&lt;sub&gt;reveal&lt;/sub&gt;&lt;/a&gt; not
+displaying properly on the smaller resolution, and not being able to mirror
+screens!
+&lt;/li&gt;
+&lt;li&gt;There were a bunch of interesting talks presented by the
+others. &lt;a href="http://comparea.org"&gt;http://comparea.org&lt;/a&gt;, &lt;a href="https://medium.com/@vijayp/of-taxis-and-rainbows-f6bc289679a1"&gt;Taxis and Rainbows&lt;/a&gt; were the most interesting
+ones for me.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-26.html</guid><pubDate>Wed, 27 Aug 2014 14:23:27 GMT</pubDate></item><item><title>Hacker School, 2014-08-24</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-24.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Friday&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;I started playing around with React.js to see how I could build the GitHub
+organization dashboard, that I plan to.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Saturday&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Got a horrendous idea of implementing a disqus-like commenting system using
+GitHub's issue comments, and ran with it.  It seems technically feasible
+based on some initial implementation.  I need to clean-up/rewrite the
+prototype code on Monday.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;Sunday&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Spent the day with cousins at Central Park Zoo, Upper East Side River
+front.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>hackerschool</category><category>javascript</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-24.html</guid><pubDate>Mon, 25 Aug 2014 14:23:53 GMT</pubDate></item><item><title>Hacker School, 2014-08-20</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-20.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I finished going through the third of Dave Beazley's tutorials on Generators
+and Co-routines.
+&lt;/li&gt;
+&lt;li&gt;Also refactored api-diff to use astroid, instead of the ast module.  Kinda
+happy with what I have, for now. May be more, later…
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-20.html</guid><pubDate>Sat, 23 Aug 2014 02:43:04 GMT</pubDate></item><item><title>Hacker School, 2014-08-21</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-21.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I added an additional view to xtab, to see all the pages that were killed,
+and reopen them, if you so choose.
+&lt;/li&gt;
+&lt;li&gt;Also, cleaned up the &lt;code&gt;api-diff&lt;/code&gt; project and renamed it to &lt;a href="https://github.com/punchagan/what-changed"&gt;what-changed&lt;/a&gt;.
+&lt;/li&gt;
+&lt;li&gt;Started thinking about building the GitHub organization dashboard, that I
+thought would be interesting to have, since the 1st or 2nd week of Hacker
+School.
+&lt;/li&gt;
+&lt;li&gt;A bunch of awesome thursday presentations, and job fair and awesome food by
+Chef Warren!
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>jobs</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-21.html</guid><pubDate>Fri, 22 Aug 2014 14:33:34 GMT</pubDate></item><item><title>Hacker School, 2014-08-19</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-19.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent most of the day working through David Beazly's tutorials on
+generators and coroutines, and it was mind bending.
+&lt;/li&gt;
+&lt;li&gt;I learnt about &lt;code&gt;send&lt;/code&gt; and &lt;code&gt;throw&lt;/code&gt; methods on generators!  I hadn't heard of
+them before, and was totally surprised to come across them.
+&lt;/li&gt;
+&lt;li&gt;I spent a little time late in the day getting class diffs working, and
+refactoring the api-diff tool to remove duplication of code between classes
+and modules. But, not very happy with the way I did it.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-19.html</guid><pubDate>Wed, 20 Aug 2014 22:06:53 GMT</pubDate></item><item><title>Hacker School, 2014-08-18</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-18.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I refactored the API-diff code, and am pretty happy with what I have right
+now, and need to add support for diffing Classes. I'm considering using
+&lt;a href="http://www.astroid.org"&gt;Atstroid&lt;/a&gt; instead of Python's &lt;code&gt;ast&lt;/code&gt; module, since some of the work that I want
+to do, has already been done for me.
+&lt;/li&gt;
+&lt;li&gt;With the white-boarding group, we worked on a set of simple exercises for
+strings and arrays.
+&lt;/li&gt;
+&lt;li&gt;José Valim's presentation on Elixir was interesting and got me reading up a
+stuff about concurrency, and related stuff.  Thanks!
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>elixir</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-18.html</guid><pubDate>Tue, 19 Aug 2014 17:11:49 GMT</pubDate></item><item><title>Hacker School, 2014-08-17</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-17.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Friday&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Updated my HS profile page with projects that I worked on, and a short bio.
+&lt;/li&gt;
+&lt;li&gt;Joined the group discussing algorithmic complexity
+&lt;/li&gt;
+&lt;li&gt;Submitted a pull request to blaggregator to fix issues with broken profile
+images.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Saturday &amp;amp; Sunday&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+I almost didn't write any code during the weekend.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-17.html</guid><pubDate>Tue, 19 Aug 2014 01:59:07 GMT</pubDate></item><item><title>Hacker School, 2014-08-14</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-14.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent the morning cleaning up the "repr" functions of the diff classes, so
+that the diff of functions between two modules can be printed out in a
+somewhat meaningful way.
+&lt;/li&gt;
+
+&lt;li&gt;I spent most of the afternoon, preparing to make a small presentation on how
+&lt;code&gt;sys.path&lt;/code&gt; works in Python.  I thought I didn't do as good a job of it, as I
+would've liked, but Tom thought it was not too bad…
+&lt;/li&gt;
+
+&lt;li&gt;Looks like another of those days, where I didn't get much done…  I spent
+the evening finishing off &lt;a href="http://craphound.com/homeland/"&gt;Homeland&lt;/a&gt;. It's a brilliant book, and everyone who
+cares about the Government and policies and technology MUST read it!  Thanks
+Cory.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-14.html</guid><pubDate>Fri, 15 Aug 2014 22:09:59 GMT</pubDate></item></channel></rss>
