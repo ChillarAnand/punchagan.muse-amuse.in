@@ -1,6 +1,12 @@
 {
   "pages": [
     {
+      "text": "Write your page here.", 
+      "tags": "", 
+      "loc": "/pages/index.html", 
+      "title": "About"
+    }, 
+    {
       "text": "All good things must come to an end, and so did our batch!  We got our Hacker\nSchool t-shirts, and had a super fun picnic at Prospect Park.", 
       "tags": "hackerschool", 
       "loc": "/posts/hacker-school-2014-08-28.html", 

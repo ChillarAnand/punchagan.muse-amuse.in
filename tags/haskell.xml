@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (haskell)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Sun, 14 Sep 2014 22:41:49 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Pandoc can now do Org</title><link>http://punchagan.muse-amuse.in/posts/pandoc-can-now-do-org.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (haskell)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Tue, 16 Sep 2014 13:42:14 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Pandoc can now do Org</title><link>http://punchagan.muse-amuse.in/posts/pandoc-can-now-do-org.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Pandoc is a haskell library and a command line tool, that can
 convert markup from one to another and it does it pretty well.
 Until now it supported quite a few markups, but not orgmode.  But
