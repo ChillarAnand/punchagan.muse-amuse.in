@@ -1,9 +1,9 @@
 {
   "pages": [
     {
-      "text": "Write your page here.", 
+      "text": "Noetic Nought is punchagan's home on the web. He records his experiences and\nfeelings through his journey of life here. He loves creating things by making\ncomputers flip bits, chasing flying Frisbees and long walks or bike rides. He's\nalso interested in learning to learn better, and express his ideas better.\n\n\n\npunchagan collects his favorite quotes here, and look here to find the kind of\nstuff he reads and likes.  He went to Hacker School, in the Summer of 2014 and\nloved it.\n\n\n\nHe occasionally tweets here, and you can find his code here. You can email him\nat punchagan at this domain.", 
       "tags": "", 
-      "loc": "/pages/index.html", 
+      "loc": "/index.html", 
       "title": "About"
     }, 
     {
@@ -591,7 +591,7 @@
     {
       "text": "The page you were looking for could not be found.\n\n\n\nIf you reached here, by following a link, please report the broken URL\nto the author.\n\n\n\nYou can either use the search bar, or wait to see if we can\nautomatically find the post you were looking for!\n\n\n\n  Searching for related posts ...", 
       "tags": "", 
-      "loc": "/pages/404.html", 
+      "loc": "/404.html", 
       "title": "Oops! Page not found!"
     }, 
     {
