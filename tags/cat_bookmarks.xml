@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (bookmarks)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Wed, 17 Sep 2014 00:26:05 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Bookmarks [2014-08-15]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-08-15.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (bookmarks)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 10 Oct 2014 14:54:33 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Bookmarks [2014-10-10]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-10-10.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="http://graydon.livejournal.com/186550.html"&gt;frog hop - technicalities: "not rocket science" (the story of monotone and bors)&lt;/a&gt;
+
+&lt;p&gt;
+The Not Rocket Science Rule Of Software Engineering: automatically maintain a
+repository of code that always passes all the tests
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://pbs.twimg.com/media/BwIsAVMIUAEReH3.jpg"&gt;Intellectual conversations - Image (500×700)&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="http://firstround.com/article/What-to-Do-at-the-Crossroads-of-Should-and-Must"&gt;When You're at the Crossroads of Should and Must&lt;/a&gt;
+  This is a story about two roads — Should and Must. It’s a pep talk for anyone
+who’s chosen Should far too long — months, years, maybe a lifetime, and feels
+like it’s about time they give Must a shot.
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="http://rampantgames.com/blog/?p=7745"&gt;Black Triangles&lt;/a&gt;
+  And when progress seems a little slow because you are doing a bunch of
+hardcore architecture work, just remember it’s a black triangle.
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="http://alyssafrazee.com/unstructured-time.html"&gt;motivation and unstructured time: successes and failures - alyssa frazee&lt;/a&gt;
+
+&lt;p&gt;
+some of the tactics I've tried to get myself into "working mode."
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-10-10.html</guid><pubDate>Fri, 10 Oct 2014 09:24:19 GMT</pubDate></item><item><title>Bookmarks [2014-08-15]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-08-15.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="http://www.gigamonkeys.com/code-reading/"&gt;Code is not literature&lt;/a&gt;
 
 &lt;p&gt;
@@ -444,70 +476,4 @@ for learning C. You can print the evaluation of expressions, examine
 raw bytes in memory, and tinker with the type system using ptype.
 &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-02-21.html</guid><pubDate>Sat, 22 Feb 2014 02:22:35 GMT</pubDate></item><item><title>Bookmarks [2014-02-12]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-02-12.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="http://shkspr.mobi/blog/2014/02/learning-to-code-vs-learning-computer-science/"&gt;Learning to Code vs Learning Computer Science ← Terence Eden's Blog&lt;/a&gt;
-
-&lt;p&gt;
-Learning to code is merely teaching people to spell.
-&lt;/p&gt;
-
-&lt;p&gt;
-Computer Science is about what makes a poem beautiful, why
-alliteration is alluring, how iambic pentameter unlocks the secrets
-of Shakespeare.
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="http://www.jeffknupp.com/blog/2014/01/28/need-a-project-idea-scratch-your-own-itch/"&gt;Need a Project Idea? Scratch Your Own Itch&lt;/a&gt;
-
-&lt;p&gt;
-how do you determine a need that isn't being fulfilled and might be
-the basis for a project/business? Two ways. You could ask people
-what problems they have that you might be able to help solve, or
-(for introverts like me) examine what processes or services feel
-needlessly difficult in your own life.
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="http://blog.ted.com/2013/06/20/generating-a-sculpture-from-a-hair-the-work-of-heather-dewey-hagborg/"&gt;Generating a portrait from a hair: The work of Heather Dewey-Hagborg | TED Blog&lt;/a&gt;
-
-&lt;p&gt;
-Dewey-Hagborg’s work is super interesting, not to mention searingly
-contemporary. “It’s a very accessible way for the public to engage
-with this new technology. It really brings to light how powerful it
-is, the idea that a hair from your head can fall on your street and
-a perfect stranger can pick it up and know something about it,” she
-says, adding: “With DNA sequencing becoming faster and cheaper, this
-is the world we’re all going to be living in.”
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="http://www.paperplanes.de/2014/2/10/standing-desk.html"&gt;paperplanes. A Standing Desk Love Affair&lt;/a&gt;
-
-&lt;p&gt;
-Standing up all day can be tough at first, but I'm much happier
-working like that. Plus, when you finally switch off at night,
-you'll feel like you've done more than just think and type.
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="http://ouseful.open.ac.uk/blogarchive/014885.html"&gt;OUseful Info: The Cost of Meetings - How Much Return on Investment Do YOU Get?&lt;/a&gt;
-
-&lt;p&gt;
-If the counter is displayed during the meeting, then everyone can
-decide whether or not the meeting is generating a sensible
-return. Whoever has the courage to call off a meeting on the grounds
-it probably isn't worth it should get 10% of the expected meeting
-costs saved to spend on a project of their choice (no meetings
-allowed ;-).
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="http://blog.braegger.pw/5-ways-to-burn-out-programming/"&gt;5 Ways To Burn Out Programming&lt;/a&gt;
-
-&lt;p&gt;
-In short, it's easy to burnout. Do these 5 things, and you can
-burnout too.
-&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-02-12.html</guid><pubDate>Thu, 13 Feb 2014 01:02:46 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-02-21.html</guid><pubDate>Sat, 22 Feb 2014 02:22:35 GMT</pubDate></item></channel></rss>
