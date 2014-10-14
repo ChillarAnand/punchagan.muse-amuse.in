@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (software)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Fri, 10 Oct 2014 14:54:35 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Best Practices for Scientific Computing</title><link>http://punchagan.muse-amuse.in/posts/best-practices-for-scientific-computing.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (software)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Tue, 14 Oct 2014 10:18:15 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Learning to use Org-drill</title><link>http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Org-drill is an Org-mode extension that provides spaced-repetition and
+flash-card functionality.  It has a &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;wonderful documentation on Worg&lt;/a&gt;, but
+somehow I couldn't get myself to read the whole document, and setup org-drill,
+until now.
+&lt;/p&gt;
+
+&lt;p&gt;
+The setup is quite straight forward, once you have org-mode along with the
+&lt;code&gt;contrib&lt;/code&gt; packages.  Just &lt;code&gt;(require 'org-drill)&lt;/code&gt;, and you are all set!  To add
+a new card, all you need to do is add a &lt;code&gt;:drill:&lt;/code&gt; tag to the items you wish to
+"Org-drill".  You can start a review session with simply &lt;code&gt;M-x org-drill&lt;/code&gt;.  You
+will be shown flash cards, and you can rate how correct and comfortable you
+were, in answering the questions.  Based on your responses, the cards are
+scheduled for review.  Start another review session, whenever you need one!
+&lt;/p&gt;
+
+&lt;p&gt;
+What I could only understand once I got myself to read the whole document was
+that:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;The default scope of a drill session is the current file.  But, you can start
+sessions with scopes like current tree, current directory, or a specified
+list of files. This is super-useful!
+&lt;/li&gt;
+
+&lt;li&gt;The review sessions are not automatically scheduled, based on when you
+schedule failed flash-cards.  Scheduling the review for a card only sets a
+due-date for them, and effects, what you are asked in your next session.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+Cram mode and incremental reading are also things I want to try, as I go along.
+&lt;/p&gt;
+
+&lt;p&gt;
+Happy Learning!
+&lt;/p&gt;</description><category>learning</category><category>orgmode</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</guid><pubDate>Tue, 14 Oct 2014 04:07:04 GMT</pubDate></item><item><title>Best Practices for Scientific Computing</title><link>http://punchagan.muse-amuse.in/posts/best-practices-for-scientific-computing.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Shantanu and I gave a short talk titled "Software Carpentry for
 Scientists" for the graduate students of Chemical Engineering
 department, IISc, this Friday.  We gave a short introduction to

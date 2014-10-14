@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
       <meta charset="utf-8">
-    <meta name="description" content="For an idle mind is the devil's workshop.">
+    <meta name="description" content="">
     <meta name="author" content="punchagan">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
   
 
   <title>
-      Posts for year 2014 · Noetic Nought
+      Learning to use Org-drill · Noetic Nought
   </title>
 
 </head>
@@ -93,25 +93,94 @@ Creative Commons Attribution 3.0 Unported License</a>
       </div>
 
       <div class="container content">
-<article class="listpage">
-    <header>
-        <h1>Posts for year 2014</h1>
-    </header>
-    <ul class="postlist">
-        <li>
-<a href="/posts/learning-to-use-org-drill.html" class="listtitle">Learning to use Org-drill</a> <time class="listdate" datetime="2014-10-14T00:07:04-04:00" title="Publication date">14 Oct 2014</time>
+<article class="post post-text h-entry hentry postpage" itemscope="itemscope">
+            <header>
+                <h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/learning-to-use-org-drill.html" class="u-url">Learning to use Org-drill</a></h1>
+
+            <span class="post-date">14 Oct 2014</span>
+        </header>
+
+    <div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+Org-drill is an Org-mode extension that provides spaced-repetition and
+flash-card functionality.  It has a <a href="http://orgmode.org/worg/org-contrib/org-drill.html">wonderful documentation on Worg</a>, but
+somehow I couldn't get myself to read the whole document, and setup org-drill,
+until now.
+</p>
+
+<p>
+The setup is quite straight forward, once you have org-mode along with the
+<code>contrib</code> packages.  Just <code>(require 'org-drill)</code>, and you are all set!  To add
+a new card, all you need to do is add a <code>:drill:</code> tag to the items you wish to
+"Org-drill".  You can start a review session with simply <code>M-x org-drill</code>.  You
+will be shown flash cards, and you can rate how correct and comfortable you
+were, in answering the questions.  Based on your responses, the cards are
+scheduled for review.  Start another review session, whenever you need one!
+</p>
+
+<p>
+What I could only understand once I got myself to read the whole document was
+that:
+</p>
+
+<ul class="org-ul">
+<li>The default scope of a drill session is the current file.  But, you can start
+sessions with scopes like current tree, current directory, or a specified
+list of files. This is super-useful!
 </li>
-        <li>
-<a href="/posts/oauth2-demystified.html" class="listtitle">OAuth2 demystified</a> <time class="listdate" datetime="2014-06-20T10:09:51-04:00" title="Publication date">20 Jun 2014</time>
+
+<li>The review sessions are not automatically scheduled, based on when you
+schedule failed flash-cards.  Scheduling the review for a card only sets a
+due-date for them, and effects, what you are asked in your next session.
 </li>
-        <li>
-<a href="/posts/org-based-posts-in-nikola.html" class="listtitle">Org based posts in Nikola</a> <time class="listdate" datetime="2014-04-20T17:35:10+05:30" title="Publication date">20 Apr 2014</time>
-</li>
-        <li>
-<a href="/posts/let-there-be-light-in-skype.html" class="listtitle">Let there be light, in skype!</a> <time class="listdate" datetime="2014-03-29T23:22:27+05:30" title="Publication date">29 Mar 2014</time>
-</li>
-    </ul>
+</ul>
+
+<p>
+Cram mode and incremental reading are also things I want to try, as I go along.
+</p>
+
+<p>
+Happy Learning!
+</p>
+    </div>
+    <aside class="postpromonav">
+    <nav>
+            <div class="pagination">
+            <span class="pagination-item older">
+                <a href="/posts/oauth2-demystified.html" rel="prev" title="OAuth2 demystified">Previous post</a>
+            </span>
+        </div>
+
+    </nav>
+    </aside>
+        <section class="comments">
+        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="rusticreverie",
+            disqus_url="http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html",
+        disqus_title="Learning to use Org-drill",
+        disqus_identifier="cache/posts/learning-to-use-org-drill.html",
+        disqus_config = function () {
+            this.language = "";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+    
 </article>
+               <script>var disqus_shortname="rusticreverie";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+
+
       </div>
     </div>
 
