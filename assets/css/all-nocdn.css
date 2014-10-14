@@ -1114,6 +1114,26 @@ a.pagination-item:hover {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
 
+
+/* Footnote related tweaks */
+.footnotes {
+    display: none;
+    margin-top: 5em;
+}
+
+#footnotes {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-top: #eee double 1px;
+    padding-top: 2em;
+    font-size: 75%;
+}
+
+.footdef sup {
+    float: left;
+    margin-right: 0.2em;
+}
+
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

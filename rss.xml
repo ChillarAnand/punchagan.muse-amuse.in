@@ -1,5 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><language>en</language><lastBuildDate>Tue, 14 Oct 2014 10:18:15 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Learning to use Org-drill</title><link>http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><language>en</language><lastBuildDate>Tue, 14 Oct 2014 18:49:05 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making PyCon India better (for myself)</title><link>http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I've &lt;a href="http://punchagan.muse-amuse.in/posts/posts/notes-from-pycon.html"&gt;ranted before&lt;/a&gt; about PyCon not meeting my expectations, and I even skipped
+going to the last PyCon.  Somehow, I hoped that it would be better this year,
+but no such thing happened.
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;I should strictly not attend any talks, at the next conference I am at.  Even
+if the topic seems interesting, I should refrain from attending any talks,
+unless I know that a speaker is entertaining.
+&lt;/li&gt;
+
+&lt;li&gt;I should be going there to meet old friends, meet a few new people, and
+mostly hacking on my stuff.  May be aim to show something at the lightning
+talks at the end of second day, based on what I did during the rest of the
+event.
+&lt;/li&gt;
+
+&lt;li&gt;Participate more actively in open spaces, and may be initiate or suggest some
+myself.  Sprints for bug fixing, adding new features to a project may be a
+good way to get new developers to start contributing to FOSS projects.  It
+would be even better to be in touch with folks before the event, and use this
+opportunity to iron out kinks.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+I think the talks could be improved drastically. A lot&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt; has been said,
+already.  Here's a summary of how I see it.
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Beginner/Novice talks doesn't mean bad talks.  A talk with a good narrative,
+that drives home a point, that may be familiar to most of the audience, would
+still make a good talk.  I don't mind reading a good blog post/book on a
+topic I already know, because there is joy in reading/listening to "good"
+stuff.
+&lt;/li&gt;
+
+&lt;li&gt;Talks cannot be judged by titles or an abstract.  Taking inspiration from
+PyCon US, we could
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Ask for a video recording of a previous talk or a short home-made
+recording of the speaker presenting some topic.
+&lt;/li&gt;
+
+&lt;li&gt;Ask for a granular outline &lt;sup&gt;&lt;a id="fnr.3" name="fnr.3" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.3"&gt;3&lt;/a&gt;&lt;/sup&gt; along with rough timing information, instead of
+just an abstract.
+&lt;/li&gt;
+
+&lt;li&gt;Have a bunch of resources &lt;sup&gt;&lt;a id="fnr.4" name="fnr.4" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.4"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.5" name="fnr.5" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.5"&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.6" name="fnr.6" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.6"&gt;6&lt;/a&gt;&lt;/sup&gt; available for speakers to improve on their
+proposals/accepted talks.
+&lt;/li&gt;
+
+&lt;li&gt;Have a bunch of 20 or 30 minute talks, and very few longer (45 min) talk
+slots.
+&lt;/li&gt;
+
+&lt;li&gt;Encourage speakers to try connecting their laptops and iron out
+"presentation" kinks on the day before their talks/lunch/other allotted
+times. Technical issues like fonts being too small, mics not working,
+adjusting the volume/other settings for the speaker, etc. can and should be
+fixed before hand.
+&lt;/li&gt;
+
+&lt;li&gt;The talk review committee could also take notes from attending some of the
+talks, and compare it against their notes when they accepted the talk, to
+improve the talk selection process.  Some of it could be valuable feedback
+for the speakers too.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="https://plus.google.com/+sankarshanmukhopadhyay/posts/8QY4o3hiyLT"&gt;https://plus.google.com/+sankarshanmukhopadhyay/posts/8QY4o3hiyLT&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="https://mail.python.org/pipermail/inpycon/2014-October/009189.html"&gt;https://mail.python.org/pipermail/inpycon/2014-October/009189.html&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.3" name="fn.3" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.3"&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="https://us.pycon.org/2015/speaking/proposal_advice/samples/SpacePug/"&gt;https://us.pycon.org/2015/speaking/proposal_advice/samples/SpacePug/&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.4" name="fn.4" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.4"&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="https://us.pycon.org/2015/speaking/proposal-resources/"&gt;https://us.pycon.org/2015/speaking/proposal-resources/&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.5" name="fn.5" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.5"&gt;5&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="http://doughellmann.com/2011/10/18/how-i-review-a-pycon-talk-proposal.html"&gt;http://doughellmann.com/2011/10/18/how-i-review-a-pycon-talk-proposal.html&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.6" name="fn.6" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.6"&gt;6&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="http://www.craigkerstiens.com/2012/06/19/pro-tips-for-conference-talks/"&gt;http://www.craigkerstiens.com/2012/06/19/pro-tips-for-conference-talks/&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;</description><category>event</category><category>pycon</category><guid>http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html</guid><pubDate>Tue, 14 Oct 2014 11:53:47 GMT</pubDate></item><item><title>Learning to use Org-drill</title><link>http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Org-drill is an Org-mode extension that provides spaced-repetition and
 flash-card functionality.  It has a &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;wonderful documentation on Worg&lt;/a&gt;, but
 somehow I couldn't get myself to read the whole document, and setup org-drill,
@@ -391,23 +495,4 @@ if anybody is interested, I can publish the code somewhere public.
 If you are interested to get these links and bookmarks into your feed
 reader, you can subscribe to their feed: &lt;a href="http://punchagan.muse-amuse.in/categories/quotes.xml"&gt;quotes&lt;/a&gt;, &lt;a href="http://punchagan.muse-amuse.in/categories/bookmarks.xml"&gt;bookmarks&lt;/a&gt;.  These
 posts will also make it to the main feed, though.
-&lt;/p&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sun, 20 Oct 2013 00:26:13 GMT</pubDate></item><item><title>Blogging with Nikola and Org-mode</title><link>http://punchagan.muse-amuse.in/posts/blogging-with-nikola-and-org-mode.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-Sigh! I made yet another change to the way this blog gets published.
-But, I have a feeling this mechanism, is here to stay!
-&lt;/p&gt;
-
-&lt;p&gt;
-We've been using Nikola quite regularly for our &lt;a href="http://ultimatesport.in"&gt;Ultimate site&lt;/a&gt;, and I
-quite like it.  I've also contributed a bunch of features to Nikola to
-get it to work the way I would like it to.  This weekend I ported my
-blog from &lt;a href="https://github.com/renard/o-blog"&gt;o-blog&lt;/a&gt; to &lt;a href="http://getnikola.com"&gt;Nikola&lt;/a&gt;.  The only thing that was stopping me
-from doing it, until now is the fact that all my posts are in
-org markup and porting them over to one of the formats that Nikola
-supports would be a PITA.  So, I wrote a &lt;a href="http://plugins.getnikola.com/#orgmode"&gt;pretty simple plugin&lt;/a&gt; to
-Nikola to support posting from org files.  And then with a &lt;a href="https://gist.github.com/punchagan/6970578"&gt;little
-Python&lt;/a&gt;, I was able to move everything over to use Nikola.
-&lt;/p&gt;
-
-&lt;p&gt;
-Hopefully, I'll keep my blog more updated, from here on!
-&lt;/p&gt;</description><category>blog</category><category>hack</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/blogging-with-nikola-and-org-mode.html</guid><pubDate>Thu, 17 Oct 2013 02:40:47 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sun, 20 Oct 2013 00:26:13 GMT</pubDate></item></channel></rss>
