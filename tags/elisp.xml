@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (elisp)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Tue, 14 Oct 2014 20:21:01 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A couple of counting functions</title><link>http://punchagan.muse-amuse.in/posts/a-couple-of-counting-functions.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (elisp)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/elisp.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 23 Oct 2014 02:35:00 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple org-clock and gnome/pidgin integration</title><link>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I have been trying to get back to using org-mode and its clocking
+functionality, more often than not.  I used to use it a lot, a few years ago,
+and haven't been using it, since I had been in my last job.
+&lt;/p&gt;
+
+&lt;p&gt;
+To help with it, I decided to integrate clocking in and out with changing
+status on Pidgin, and turning notifications on and off in Gnome.  Here's a few
+lines of code that does this for me.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;defadvice&lt;/span&gt; &lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;after&lt;/span&gt; &lt;span class="n"&gt;pc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;optional&lt;/span&gt; &lt;span class="n"&gt;select&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+  &lt;span class="s"&gt;"Turn gnome notifications off."&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dbus&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;signal&lt;/span&gt;
+   &lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
+   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=unavailable"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;defadvice&lt;/span&gt; &lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;after&lt;/span&gt; &lt;span class="n"&gt;pc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;optional&lt;/span&gt; &lt;span class="k"&gt;switch&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt; &lt;span class="n"&gt;fail&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quietly&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+  &lt;span class="s"&gt;"Turn gnome notifications back on."&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dbus&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;signal&lt;/span&gt;
+   &lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
+   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=available"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>elisp</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item><item><title>A couple of counting functions</title><link>http://punchagan.muse-amuse.in/posts/a-couple-of-counting-functions.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I had a strict character limit of 180 chars for something I was
 writing. I just wrote a simple function to count characters in a
 region or a buffer. Another function to count the words.
@@ -25,7 +56,7 @@ region or a buffer. Another function to count the words.
 	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;forward&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;setq&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>elisp</category><category>emacs</category><guid>http://punchagan.muse-amuse.in/posts/a-couple-of-counting-functions.html</guid><pubDate>Fri, 17 Sep 2010 23:40:00 GMT</pubDate></item><item><title>org/elisp - sorting list of org-links on description</title><link>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>elisp</category><category>emacs</category><guid>http://punchagan.muse-amuse.in/posts/a-couple-of-counting-functions.html</guid><pubDate>Fri, 17 Sep 2010 14:10:00 GMT</pubDate></item><item><title>org/elisp - sorting list of org-links on description</title><link>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 A small utility function that I used to sort the names of people
 who commented on my blog.
 &lt;/p&gt;
@@ -50,7 +81,7 @@ and not the names. This function, when used with
 &lt;p&gt;
 Thanks to benny (on #org-mode), I also learnt the difference
 between &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;let*&lt;/code&gt;.
-&lt;/p&gt;</description><category>code</category><category>elisp</category><category>note</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</guid><pubDate>Fri, 20 Aug 2010 04:23:00 GMT</pubDate></item><item><title>Thanks Sacha</title><link>http://punchagan.muse-amuse.in/posts/thanks-sacha.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>code</category><category>elisp</category><category>note</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</guid><pubDate>Thu, 19 Aug 2010 18:53:00 GMT</pubDate></item><item><title>Thanks Sacha</title><link>http://punchagan.muse-amuse.in/posts/thanks-sacha.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I just wanted to thank Sacha Chua for bearing with my newbie elisp
 code and trying out org2blog.
 &lt;/p&gt;
@@ -69,7 +100,7 @@ her request, but she was too quick for me! ;)
 
 &lt;p&gt;
 I'm loving it!
-&lt;/p&gt;</description><category>code</category><category>elisp</category><category>note</category><category>org2blog</category><category>thanks</category><guid>http://punchagan.muse-amuse.in/posts/thanks-sacha.html</guid><pubDate>Fri, 30 Jul 2010 10:59:00 GMT</pubDate></item><item><title>Refile to date-tree</title><link>http://punchagan.muse-amuse.in/posts/refile-to-date-tree.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>code</category><category>elisp</category><category>note</category><category>org2blog</category><category>thanks</category><guid>http://punchagan.muse-amuse.in/posts/thanks-sacha.html</guid><pubDate>Fri, 30 Jul 2010 01:29:00 GMT</pubDate></item><item><title>Refile to date-tree</title><link>http://punchagan.muse-amuse.in/posts/refile-to-date-tree.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Useful to refile notes to the journal file, which is a
 date-tree. &lt;code&gt;org-refile&lt;/code&gt; isn't convenient to refile stuff to a
 date-tree.
@@ -117,4 +148,4 @@ date-tree.
 
 &lt;p&gt;
 Enjoy!
-&lt;/p&gt;</description><category>code</category><category>elisp</category><category>emacs</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/refile-to-date-tree.html</guid><pubDate>Fri, 30 Jul 2010 09:33:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>code</category><category>elisp</category><category>emacs</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/refile-to-date-tree.html</guid><pubDate>Fri, 30 Jul 2010 00:03:00 GMT</pubDate></item></channel></rss>

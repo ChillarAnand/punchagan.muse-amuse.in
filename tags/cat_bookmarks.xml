@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (bookmarks)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Tue, 14 Oct 2014 20:21:01 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Bookmarks [2014-10-10]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-10-10.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (bookmarks)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/cat_bookmarks.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 23 Oct 2014 02:35:03 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Bookmarks [2014-10-10]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-10-10.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="http://graydon.livejournal.com/186550.html"&gt;frog hop - technicalities: "not rocket science" (the story of monotone and bors)&lt;/a&gt;
 
 &lt;p&gt;
@@ -374,7 +374,7 @@ operating system in Rust to learn, and I learned a ton. It’s not
 finished, and it won’t be.
 &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-03-23.html</guid><pubDate>Sun, 23 Mar 2014 17:18:38 GMT</pubDate></item><item><title>Bookmarks [2014-03-12]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-03-12.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-03-23.html</guid><pubDate>Sun, 23 Mar 2014 07:48:38 GMT</pubDate></item><item><title>Bookmarks [2014-03-12]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-03-12.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="http://www.mehdi-khalili.com/never-judge-a-programmer-by-their-commit-history#.UwiURItePPo.hackernews"&gt;Never judge a programmer by their commit history - Mehdi Khalili&lt;/a&gt;
 
 &lt;p&gt;
@@ -430,7 +430,7 @@ What if everybody asked questions when they needed help? What if
 helping people was everyone’s default procrastination method?
 &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-03-12.html</guid><pubDate>Wed, 12 Mar 2014 16:49:22 GMT</pubDate></item><item><title>Bookmarks [2014-02-21]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-02-21.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-03-12.html</guid><pubDate>Wed, 12 Mar 2014 07:19:22 GMT</pubDate></item><item><title>Bookmarks [2014-02-21]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-02-21.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://github.com/ramonasuciu/ghostdriver_tests"&gt;ramonasuciu/ghostdriver&lt;sub&gt;tests&lt;/sub&gt;&lt;/a&gt;
 
 &lt;p&gt;
@@ -476,4 +476,4 @@ for learning C. You can print the evaluation of expressions, examine
 raw bytes in memory, and tinker with the type system using ptype.
 &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-02-21.html</guid><pubDate>Sat, 22 Feb 2014 02:22:35 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-02-21.html</guid><pubDate>Fri, 21 Feb 2014 15:52:35 GMT</pubDate></item></channel></rss>

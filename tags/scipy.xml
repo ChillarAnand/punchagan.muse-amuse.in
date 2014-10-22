@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (scipy)</title><link>http://punchagan.muse-amuse.in/</link><description></description><language>en</language><lastBuildDate>Tue, 14 Oct 2014 20:21:01 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Talks at PyCon India 2012</title><link>http://punchagan.muse-amuse.in/posts/talks-at-pycon-india-2012.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (scipy)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/scipy.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 23 Oct 2014 02:35:00 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Talks at PyCon India 2012</title><link>http://punchagan.muse-amuse.in/posts/talks-at-pycon-india-2012.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 PyCon is back to Bangalore for the 4th edition.  I've been to all
 the previous three editions, and I'm looking forward to this one.
 &lt;/p&gt;
@@ -26,7 +26,7 @@ of PyCon.
 &lt;p&gt;
 Sadly, John Hunter, the lead author of matplotlib, also passed
 away last week.  RIP. :(
-&lt;/p&gt;</description><category>death</category><category>python</category><category>scipy</category><guid>http://punchagan.muse-amuse.in/posts/talks-at-pycon-india-2012.html</guid><pubDate>Mon, 03 Sep 2012 03:12:00 GMT</pubDate></item><item><title>My talk at SciPy.in 2010</title><link>http://punchagan.muse-amuse.in/posts/my-talk-at-scipyin-2010.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>death</category><category>python</category><category>scipy</category><guid>http://punchagan.muse-amuse.in/posts/talks-at-pycon-india-2012.html</guid><pubDate>Sun, 02 Sep 2012 17:42:00 GMT</pubDate></item><item><title>My talk at SciPy.in 2010</title><link>http://punchagan.muse-amuse.in/posts/my-talk-at-scipyin-2010.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I gave a short talk titled, &lt;i&gt;Pictures, Songs and Python&lt;/i&gt; in this
 year's edition of SciPy India.  The talk was a beginner level
 talk, mainly intended to get newbies excited about Python.  My
@@ -39,7 +39,7 @@ Prof. Jayant Kirtane for the Bournville!
 
 &lt;p&gt;
 Here are the talk slides
-&lt;/p&gt;</description><category>python</category><category>scipy</category><guid>http://punchagan.muse-amuse.in/posts/my-talk-at-scipyin-2010.html</guid><pubDate>Mon, 20 Dec 2010 23:17:00 GMT</pubDate></item><item><title>talk at GNUnify' 10</title><link>http://punchagan.muse-amuse.in/posts/talk-at-gnunify-10.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>python</category><category>scipy</category><guid>http://punchagan.muse-amuse.in/posts/my-talk-at-scipyin-2010.html</guid><pubDate>Mon, 20 Dec 2010 12:47:00 GMT</pubDate></item><item><title>talk at GNUnify' 10</title><link>http://punchagan.muse-amuse.in/posts/talk-at-gnunify-10.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Shantanu and I conducted a workshop on Scipy at GNUnify '10. It
 was intended to be an introduction to Scipy and Numpy through
 Image processing. We expected an audience which was python
@@ -60,4 +60,4 @@ event to be better, though.
 &lt;p&gt;
 Slides and Images that we used.  Shantanu's post on the talk is
 here.
-&lt;/p&gt;</description><category>image_processing</category><category>ology</category><category>python</category><category>scipy</category><guid>http://punchagan.muse-amuse.in/posts/talk-at-gnunify-10.html</guid><pubDate>Mon, 01 Mar 2010 01:58:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>image_processing</category><category>ology</category><category>python</category><category>scipy</category><guid>http://punchagan.muse-amuse.in/posts/talk-at-gnunify-10.html</guid><pubDate>Sun, 28 Feb 2010 15:28:00 GMT</pubDate></item></channel></rss>

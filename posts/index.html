@@ -96,6 +96,46 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/simple-org-clock-and-gnomepidgin-integration.html" class="u-url">Simple org-clock and gnome/pidgin integration</a></h1>
+        <span class="post-date">22 Oct 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I have been trying to get back to using org-mode and its clocking
+functionality, more often than not.  I used to use it a lot, a few years ago,
+and haven't been using it, since I had been in my last job.
+</p>
+
+<p>
+To help with it, I decided to integrate clocking in and out with changing
+status on Pidgin, and turning notifications on and off in Gnome.  Here's a few
+lines of code that does this for me.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="n">defadvice</span> <span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">in</span> <span class="p">(</span><span class="n">after</span> <span class="n">pc</span><span class="o">/</span><span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">in</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">optional</span> <span class="n">select</span> <span class="n">start</span><span class="o">-</span><span class="n">time</span><span class="p">))</span>
+  <span class="s">"Turn gnome notifications off."</span>
+  <span class="p">(</span><span class="n">dbus</span><span class="o">-</span><span class="n">send</span><span class="o">-</span><span class="n">signal</span>
+   <span class="o">:</span><span class="n">session</span>
+   <span class="s">"org.gnome.SessionManager"</span>
+   <span class="s">"/org/gnome/SessionManager/Presence"</span>
+   <span class="s">"org.gnome.SessionManager.Presence"</span>
+   <span class="s">"SetStatus"</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">shell</span><span class="o">-</span><span class="n">command</span> <span class="s">"purple-remote setstatus?status=unavailable"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="n">defadvice</span> <span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">out</span> <span class="p">(</span><span class="n">after</span> <span class="n">pc</span><span class="o">/</span><span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">out</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">optional</span> <span class="k">switch</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">state</span> <span class="n">fail</span><span class="o">-</span><span class="n">quietly</span> <span class="n">at</span><span class="o">-</span><span class="n">time</span><span class="p">))</span>
+  <span class="s">"Turn gnome notifications back on."</span>
+  <span class="p">(</span><span class="n">dbus</span><span class="o">-</span><span class="n">send</span><span class="o">-</span><span class="n">signal</span>
+   <span class="o">:</span><span class="n">session</span>
+   <span class="s">"org.gnome.SessionManager"</span>
+   <span class="s">"/org/gnome/SessionManager/Presence"</span>
+   <span class="s">"org.gnome.SessionManager.Presence"</span>
+   <span class="s">"SetStatus"</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">shell</span><span class="o">-</span><span class="n">command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
+</pre></div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/making-pycon-india-better-for-myself.html" class="u-url">Making PyCon India better (for myself)</a></h1>
         <span class="post-date">14 Oct 2014</span>
     </header>
@@ -660,35 +700,6 @@ pair programming with <a href="https://plus.google.com/114995175796183910458/pos
 experience!  To share these lessons with my colleagues, I made a small
 presentation at lunch, to my colleagues.  <a href="https://rawgithub.com/punchagan/340e1350fdfc766c6599/raw/ca1f5fe9bfc1cc503cd8a524e350bd29e8f5f33d/month-with-martin.html">Here are the slides</a> for the
 presentation.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-and-quotes-plugin.html" class="u-url">Bookmarks and Quotes plugin</a></h1>
-        <span class="post-date">19 Oct 2013</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-I used to have a separate page for bookmarks and quotes on the old
-blog.  They will now be shared as regular posts with 5 or more
-bookmarks/quotes.  I use a bookmarklet in my browser to capture links
-to an org-file using org-capture protocol and then I have a small
-plugin to Nikola, that looks at such captured bookmarks and quotes and
-makes new posts out of them.  This workflow is inspired by Brett
-Trepestra's <a href="http://brettterpstra.com/2013/01/15/a-web-excursions-system-for-static-blogs/">web excursions</a> plugin.
-</p>
-
-<p>
-The plugin is currently a part of my blog source, and not published to
-Nikola's plugin repository since it is very specific to my setup.  But
-if anybody is interested, I can publish the code somewhere public.
-</p>
-
-<p>
-If you are interested to get these links and bookmarks into your feed
-reader, you can subscribe to their feed: <a href="http://punchagan.muse-amuse.in/categories/quotes.xml">quotes</a>, <a href="http://punchagan.muse-amuse.in/categories/bookmarks.xml">bookmarks</a>.  These
-posts will also make it to the main feed, though.
 </p>
     </div>
     </article>

@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><language>en</language><lastBuildDate>Tue, 14 Oct 2014 20:21:02 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making PyCon India better (for myself)</title><link>http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 23 Oct 2014 02:35:01 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple org-clock and gnome/pidgin integration</title><link>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I have been trying to get back to using org-mode and its clocking
+functionality, more often than not.  I used to use it a lot, a few years ago,
+and haven't been using it, since I had been in my last job.
+&lt;/p&gt;
+
+&lt;p&gt;
+To help with it, I decided to integrate clocking in and out with changing
+status on Pidgin, and turning notifications on and off in Gnome.  Here's a few
+lines of code that does this for me.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;defadvice&lt;/span&gt; &lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;after&lt;/span&gt; &lt;span class="n"&gt;pc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;optional&lt;/span&gt; &lt;span class="n"&gt;select&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+  &lt;span class="s"&gt;"Turn gnome notifications off."&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dbus&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;signal&lt;/span&gt;
+   &lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
+   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=unavailable"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;defadvice&lt;/span&gt; &lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;after&lt;/span&gt; &lt;span class="n"&gt;pc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;optional&lt;/span&gt; &lt;span class="k"&gt;switch&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt; &lt;span class="n"&gt;fail&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quietly&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+  &lt;span class="s"&gt;"Turn gnome notifications back on."&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dbus&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;signal&lt;/span&gt;
+   &lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
+   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=available"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>elisp</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item><item><title>Making PyCon India better (for myself)</title><link>http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I've &lt;a href="http://punchagan.muse-amuse.in/posts/notes-from-pycon.html"&gt;ranted before&lt;/a&gt; about PyCon not meeting my expectations, and I even skipped
 going to the last PyCon.  Somehow, I hoped that it would be better this year,
 but no such thing happened.
@@ -392,7 +423,7 @@ quite a bit, but I am not inclined to do anything about it, right
 now.  Since, everything about google groups is ajaxy, this script uses
 selenium and does things on the page, that one would do by hand.  It's
 not something that I am proud of, but it does the job!
-&lt;/p&gt;</description><category>email</category><category>hack</category><category>idea</category><category>mumbai</category><category>ultimate</category><guid>http://punchagan.muse-amuse.in/posts/scraping-google-groups.html</guid><pubDate>Wed, 01 Jan 2014 00:55:58 GMT</pubDate></item><item><title>Cold</title><link>http://punchagan.muse-amuse.in/posts/cold.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>email</category><category>hack</category><category>idea</category><category>mumbai</category><category>ultimate</category><guid>http://punchagan.muse-amuse.in/posts/scraping-google-groups.html</guid><pubDate>Tue, 31 Dec 2013 14:25:58 GMT</pubDate></item><item><title>Cold</title><link>http://punchagan.muse-amuse.in/posts/cold.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 It was a pleasant Saturday evening, in the middle of the winter.
 Christmas was just round the corner and love, in the air. The sun was
 just setting, and everything outside his window was given a fresh coat
@@ -458,7 +489,7 @@ the mercury had gone. This wasn't the first night he was spending
 staring into the nothingness. It turned out to be the coldest night,
 in a decade. But that didn't matter to him. Nothing did. Nothing has,
 for a while now; Ever since he turned cold.
-&lt;/p&gt;</description><category>blab</category><category>cold</category><category>fiction</category><category>life</category><category>story</category><guid>http://punchagan.muse-amuse.in/posts/cold.html</guid><pubDate>Wed, 13 Nov 2013 06:03:45 GMT</pubDate></item><item><title>A smarter 404 page.</title><link>http://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>blab</category><category>cold</category><category>fiction</category><category>life</category><category>story</category><guid>http://punchagan.muse-amuse.in/posts/cold.html</guid><pubDate>Tue, 12 Nov 2013 19:33:45 GMT</pubDate></item><item><title>A smarter 404 page.</title><link>http://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://twitter.com/avudem"&gt;Voodoo&lt;/a&gt; found a broken link referring to a one of my posts, on Quora.
 Given that I have changed my site generator a bunch of times now, it
 is quite possible that there are other broken links at various other
@@ -469,30 +500,10 @@ file.  My glue code essentially, just figures out the search term from
 the URL, performs a Fuse search on the json data created by Nikola's
 search plugin, and returns a list of top 5 results.  It just took me
 about an hour to write, but is pretty useful, I think.
-&lt;/p&gt;</description><category>code</category><category>fuzzy-search</category><category>hack</category><category>js</category><guid>http://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</guid><pubDate>Mon, 11 Nov 2013 17:36:53 GMT</pubDate></item><item><title>A Month with Martin</title><link>http://punchagan.muse-amuse.in/posts/a-month-with-martin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>code</category><category>fuzzy-search</category><category>hack</category><category>js</category><guid>http://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</guid><pubDate>Mon, 11 Nov 2013 07:06:53 GMT</pubDate></item><item><title>A Month with Martin</title><link>http://punchagan.muse-amuse.in/posts/a-month-with-martin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 At my &lt;a href="http://enthought.com"&gt;$dayjob&lt;/a&gt;, for the most part of October, I had the fortune of
 pair programming with &lt;a href="https://plus.google.com/114995175796183910458/posts"&gt;Martin&lt;/a&gt; and it was an amazing learning
 experience!  To share these lessons with my colleagues, I made a small
 presentation at lunch, to my colleagues.  &lt;a href="https://rawgithub.com/punchagan/340e1350fdfc766c6599/raw/ca1f5fe9bfc1cc503cd8a524e350bd29e8f5f33d/month-with-martin.html"&gt;Here are the slides&lt;/a&gt; for the
 presentation.
-&lt;/p&gt;</description><guid>http://punchagan.muse-amuse.in/posts/a-month-with-martin.html</guid><pubDate>Sun, 10 Nov 2013 22:13:17 GMT</pubDate></item><item><title>Bookmarks and Quotes plugin</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I used to have a separate page for bookmarks and quotes on the old
-blog.  They will now be shared as regular posts with 5 or more
-bookmarks/quotes.  I use a bookmarklet in my browser to capture links
-to an org-file using org-capture protocol and then I have a small
-plugin to Nikola, that looks at such captured bookmarks and quotes and
-makes new posts out of them.  This workflow is inspired by Brett
-Trepestra's &lt;a href="http://brettterpstra.com/2013/01/15/a-web-excursions-system-for-static-blogs/"&gt;web excursions&lt;/a&gt; plugin.
-&lt;/p&gt;
-
-&lt;p&gt;
-The plugin is currently a part of my blog source, and not published to
-Nikola's plugin repository since it is very specific to my setup.  But
-if anybody is interested, I can publish the code somewhere public.
-&lt;/p&gt;
-
-&lt;p&gt;
-If you are interested to get these links and bookmarks into your feed
-reader, you can subscribe to their feed: &lt;a href="http://punchagan.muse-amuse.in/categories/quotes.xml"&gt;quotes&lt;/a&gt;, &lt;a href="http://punchagan.muse-amuse.in/categories/bookmarks.xml"&gt;bookmarks&lt;/a&gt;.  These
-posts will also make it to the main feed, though.
-&lt;/p&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sun, 20 Oct 2013 00:26:13 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><guid>http://punchagan.muse-amuse.in/posts/a-month-with-martin.html</guid><pubDate>Sun, 10 Nov 2013 11:43:17 GMT</pubDate></item></channel></rss>
