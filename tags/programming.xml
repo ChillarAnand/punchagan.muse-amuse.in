@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (programming)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/programming.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Fri, 24 Oct 2014 20:01:45 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Best Practices for Scientific Computing</title><link>http://punchagan.muse-amuse.in/posts/best-practices-for-scientific-computing.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (programming)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/programming.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 25 Oct 2014 20:09:46 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I stumbled on a &lt;a href="http://rubyrogues.com/178-rr-book-club-refactoring-ruby-with-martin-fowler/"&gt;Ruby Rogues podcast&lt;/a&gt; yesterday, which had &lt;a href="http://martinfowlwer.com"&gt;Martin Fowler&lt;/a&gt; as the
+guest.  I really enjoyed the discussion on Refactoring (the noun, the verb and
+the book!)
+&lt;/p&gt;
+
+&lt;p&gt;
+Martin clarified in the podcast that refactoring (the verb/process) is a
+sequence of very small refactorings, while you keep making sure that you can
+run the test suite always.  A refactoring (noun) is a change where you change
+the structure of the code without any externally observable changes, with the
+intent of making it easier to understand and cheaper to change in future.
+&lt;/p&gt;
+
+&lt;p&gt;
+I also really liked the metaphor of a 'healthy code base'.  Refactoring is,
+then, the process of keeping healthy – exercise, speaking metaphorically.  You
+can stack up all the exercise you need to do, until you get really unfit.
+Refactoring, similarly, needs to be done regularly, to keep the code base
+healthy.  This lets you go faster, in the future.
+&lt;/p&gt;
+
+&lt;p&gt;
+I also really liked the advise about trying to push back the mental contexts
+you build, while trying to debug/understand some code that is not very clear,
+by refactoring the code to make it clearer.  Code needn't be one big chunk of
+cryptographic text.  Code is writing.  It should be clear and understandable.
+Or, at least we should strive to make it so!
+&lt;/p&gt;
+
+&lt;p&gt;
+The discussion, as always on this podcast, was very lively, pleasant and
+enjoyable! Enjoy!
+&lt;/p&gt;</description><category>advice</category><category>code</category><category>programming</category><guid>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</guid><pubDate>Sat, 25 Oct 2014 14:23:25 GMT</pubDate></item><item><title>Best Practices for Scientific Computing</title><link>http://punchagan.muse-amuse.in/posts/best-practices-for-scientific-computing.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Shantanu and I gave a short talk titled "Software Carpentry for
 Scientists" for the graduate students of Chemical Engineering
 department, IISc, this Friday.  We gave a short introduction to
