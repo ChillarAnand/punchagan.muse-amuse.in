@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (principle)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/principle.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 01:47:20 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-06-23</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-23.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;The Apprenticeship patterns book is very interesting!  I shall
+continue to read it and start create daily/weekly rituals from the
+actions prescribed in the book!
+&lt;/li&gt;
+&lt;li&gt;I was reading &lt;a href="http://blogs.collab.net/git/protect-git-history#.U6fixh-caV4"&gt;this post&lt;/a&gt; on &lt;code&gt;git gc&lt;/code&gt;, &lt;code&gt;reflog&lt;/code&gt;, etc. and wanted to
+see what the default values were for some of the configurable
+variables.  But, the git config command didn't help.  Developer/code
+defaults are also a part of the "config" system, and any tools to
+inspect config variables should display them, if no other values
+have been set explicitly!
+&lt;/li&gt;
+&lt;li&gt;"If experience is built upon failure as much as success, then you
+need a more or less private space where you can seek out failure."
+– Apprenticeship Patterns.
+&lt;/li&gt;
+&lt;li&gt;Our check-in groups changed, but 3 of us from our last check-in
+group are together again!
+&lt;/li&gt;
+&lt;li&gt;Most of the day was spent with Git.  In the morning, I learned that
+setting &lt;code&gt;push.default&lt;/code&gt; to &lt;code&gt;nothing&lt;/code&gt; will prevent pushing any
+branches without specifying explicitly which branch I want to push.
+&lt;/li&gt;
+&lt;li&gt;Also, later in the day, Alan gave a presentation mapping the
+internals of git to the commands, trying to give everyone a better
+mental model of Git.
+&lt;/li&gt;
+&lt;li&gt;I spent some time trying to get &lt;code&gt;jedi&lt;/code&gt; integration for &lt;code&gt;emacs&lt;/code&gt;. It
+should've worked out of the box, but I'm not sure the ELPA
+repositories have proper dependency/version management.  Seems to be
+the problem, everywhere!  Dependencies of a package get updated, and
+the package starts acting up…
+&lt;/li&gt;
+&lt;li&gt;Chaitu sent me a link about solving mazes using Finite Automata, and
+I spent some time trying to write a simple solver, and compare it
+with Nava's breadth first search.  But, it looks like we broke her
+code during the refactor.  I may get back to this, at some point.
+&lt;/li&gt;
+&lt;li&gt;I also spent a few minutes talking to Kyle, while he was trying to
+implement a simple version of the NTP protocol.  The algorithm it
+turns out, is pretty simple.
+&lt;/li&gt;
+&lt;li&gt;I started reading a little bit on crypt-analysis for Simple
+Substitution ciphers, and I'll try implementing one of the
+algorithms today.
+&lt;/li&gt;
+&lt;li&gt;The day ended with yummy pizza and video watching!  We watched –
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Bret Victor, &lt;a href="http://vimeo.com/36579366"&gt;Inventing on Principle&lt;/a&gt; (54 min)
+&lt;/li&gt;
+&lt;li&gt;Gary Bernhardt, &lt;a href="https://www.destroyallsoftware.com/talks/wat"&gt;WAT&lt;/a&gt; (4 min)
+&lt;/li&gt;
+&lt;li&gt;Guy Steele, &lt;a href="https://www.youtube.com/watch?v=_ahvzDzKdB0"&gt;Growing a Language&lt;/a&gt; (53 min)
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>conference</category><category>git</category><category>hackerschool</category><category>principle</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-23.html</guid><pubDate>Mon, 23 Jun 2014 08:38:29 GMT</pubDate></item></channel></rss>

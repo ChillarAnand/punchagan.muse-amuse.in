@@ -96,6 +96,40 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/orgelisp-sorting-list-of-org-links-on-description.html" class="u-url">org/elisp - sorting list of org-links on description</a></h1>
+        <span class="post-date">20 Aug 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+A small utility function that I used to sort the names of people
+who commented on my blog.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">org</span><span class="o">-</span><span class="n">get</span><span class="o">-</span><span class="n">link</span><span class="o">-</span><span class="n">desc</span><span class="o">-</span><span class="n">from</span><span class="o">-</span><span class="n">list</span> <span class="p">()</span>
+  <span class="s">""" Get link description of a list item containing just links """</span>
+  <span class="p">(</span><span class="n">let</span><span class="o">*</span> <span class="p">((</span><span class="n">item</span><span class="o">-</span><span class="n">beg</span> <span class="p">(</span><span class="n">point</span><span class="p">))</span>
+       <span class="p">(</span><span class="n">item</span><span class="o">-</span><span class="n">end</span> <span class="p">(</span><span class="n">org</span><span class="o">-</span><span class="n">end</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">item</span><span class="p">))</span>
+       <span class="p">(</span><span class="n">cur</span><span class="o">-</span><span class="n">item</span> <span class="p">(</span><span class="n">buffer</span><span class="o">-</span><span class="n">substring</span><span class="o">-</span><span class="n">no</span><span class="o">-</span><span class="n">properties</span>
+		  <span class="n">item</span><span class="o">-</span><span class="n">beg</span> <span class="n">item</span><span class="o">-</span><span class="n">end</span><span class="p">)))</span>
+    <span class="p">(</span><span class="k">goto</span><span class="o">-</span><span class="kt">char</span> <span class="n">item</span><span class="o">-</span><span class="n">beg</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">org</span><span class="o">-</span><span class="n">columns</span><span class="o">-</span><span class="n">compact</span><span class="o">-</span><span class="n">links</span> <span class="n">cur</span><span class="o">-</span><span class="n">item</span><span class="p">)))</span>
+</pre></div>
+
+<p>
+<code>sort-lines</code> wasn't good enough for me, since it was sorting
+alphabetically and it ended up being the sorted order of the urls
+and not the names. This function, when used with
+<code>org-sort-entries-or-items</code> gave me what I wanted.
+</p>
+
+<p>
+Thanks to benny (on #org-mode), I also learnt the difference
+between <code>let</code> and <code>let*</code>.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/thanks-sacha.html" class="u-url">Thanks Sacha</a></h1>
         <span class="post-date">30 Jul 2010</span>
     </header>

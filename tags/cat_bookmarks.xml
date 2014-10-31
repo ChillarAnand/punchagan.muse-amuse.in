@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (bookmarks)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/cat_bookmarks.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 25 Oct 2014 20:09:44 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Bookmarks [2014-10-10]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-10-10.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (bookmarks)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/cat_bookmarks.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 01:47:19 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Bookmarks [2014-11-01]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-11-01.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="http://thoughtcatalog.com/brianna-wiest/2013/04/50-ways-to-love-someone/"&gt;50 Ways To Love Someone | Thought Catalog&lt;/a&gt;
+
+&lt;p&gt;
+Go for walks together as much as you’re able.
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://research.microsoft.com/en-US/people/kannan/book-no-solutions-aug-21-2014.pdf"&gt;Foundations of Data Science&lt;/a&gt;
+
+&lt;p&gt;
+These notes are a first draft of a book being written by Hopcroft and Kannan
+and in many places are incomplete. However, the notes are in good enough
+shape to prepare lectures for a modern theoretical course in computer
+science. Please do not put solutions to exercises online as it is important
+for students to work out solutions for themselves rather than copy them from
+the internet.
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="http://asyncio.org/"&gt;Asyncio&lt;/a&gt;
+
+&lt;p&gt;
+Curated content from around the net to get started with asyncio
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://github.com/s16h/py-must-watch"&gt;s16h/py-must-watch · GitHub&lt;/a&gt;
+
+&lt;p&gt;
+Must-watch videos about Python.
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://github.com/josephmisiti/awesome-machine-learning#python"&gt;josephmisiti/awesome-machine-learning · GitHub&lt;/a&gt;
+
+&lt;p&gt;
+A curated list of awesome machine learning frameworks, libraries and software
+(by language).
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="http://www.masteringemacs.org/about"&gt;About - Mastering Emacs&lt;/a&gt;
+
+&lt;p&gt;
+The blog will cover all facets of Emacs and will be suitable for beginners
+and – I hope – experts alike.
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-11-01.html</guid><pubDate>Fri, 31 Oct 2014 20:16:45 GMT</pubDate></item><item><title>Bookmarks [2014-10-10]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-10-10.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="http://graydon.livejournal.com/186550.html"&gt;frog hop - technicalities: "not rocket science" (the story of monotone and bors)&lt;/a&gt;
 
 &lt;p&gt;
@@ -430,50 +479,4 @@ What if everybody asked questions when they needed help? What if
 helping people was everyone’s default procrastination method?
 &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-03-12.html</guid><pubDate>Wed, 12 Mar 2014 07:19:22 GMT</pubDate></item><item><title>Bookmarks [2014-02-21]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-02-21.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://github.com/ramonasuciu/ghostdriver_tests"&gt;ramonasuciu/ghostdriver&lt;sub&gt;tests&lt;/sub&gt;&lt;/a&gt;
-
-&lt;p&gt;
-Basic tests with PhantomJS &amp;amp; GhostDriver
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="http://wikichen.is/writing/live-slowly/"&gt;Live Slowly | wikichen&lt;/a&gt;
-
-&lt;p&gt;
-In an afternoon, she taught me how to live slowly, to live better.
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="http://blogs.ch.cam.ac.uk/pmr/2014/02/18/machines-are-better-referees-than-humans-but-well-be-sued-if-we-use-them/"&gt;Machines are better referees than humans but we’ll be sued if we use them « petermr's blog&lt;/a&gt;
-
-&lt;p&gt;
-And the scientific literature will continue to be stuffed full of
-errors. And people will continue to die because of them.
-&lt;/p&gt;
-
-&lt;p&gt;
-Does anyone care? I don’t think so as no-one (ZERO) from a
-University has commented on my analysis of Elsevier’s restrictive
-TDM licence. They’ll just go ahead and sign it. Because it’s the
-easiest thing to do.
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="http://www.boredpanda.com/must-see-historic-moments/"&gt;40 Must-See Photos From The Past | Bored Panda&lt;/a&gt;
-
-&lt;p&gt;
-Perhaps the wars, poverty, fights for freedom and little miracles of
-the past have lessons for us that we can use today?
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="https://www.hackerschool.com/blog/"&gt;Blog - Hacker School&lt;/a&gt;
-
-&lt;p&gt;
-Hopefully I've convinced you that gdb a neat exploratory environment
-for learning C. You can print the evaluation of expressions, examine
-raw bytes in memory, and tinker with the type system using ptype.
-&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-02-21.html</guid><pubDate>Fri, 21 Feb 2014 15:52:35 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-03-12.html</guid><pubDate>Wed, 12 Mar 2014 07:19:22 GMT</pubDate></item></channel></rss>

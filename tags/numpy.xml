@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (numpy)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/numpy.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 25 Oct 2014 20:09:44 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Augmented assignment in Python</title><link>http://punchagan.muse-amuse.in/posts/augmented-assignment-in-python.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (numpy)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/numpy.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 01:47:18 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-07-14</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-14.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;Monday morning checkins for our group had only two people. That was strange!
+Very strange!
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Work on cinspect&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;I wrote up a README since David (an alum at Hacker School) showed interest in
+the project.  But, he probably isn't that interested anymore since the code
+base is Python2.x only.
+&lt;/li&gt;
+&lt;li&gt;I got rid of assumptions that method names would start with the module name
+or the type name, and actually look up references to the names in the
+definitions of types or objects.
+&lt;/li&gt;
+&lt;li&gt;I also improved the test-suite to actually download sources of CPython and
+index them.  They take very very long!!
+&lt;/li&gt;
+&lt;li&gt;I tried to get it working with Numpy, but getting all the headers to include
+wasn't as easy as I assumed it would be!
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>hackerschool</category><category>numpy</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-14.html</guid><pubDate>Tue, 15 Jul 2014 22:25:15 GMT</pubDate></item><item><title>Augmented assignment in Python</title><link>http://punchagan.muse-amuse.in/posts/augmented-assignment-in-python.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 If you are new to &lt;code&gt;Python&lt;/code&gt;, you should probably stop reading here.
 But, if you have used &lt;code&gt;Python&lt;/code&gt; and &lt;code&gt;numpy&lt;/code&gt;, then read on. Before, that
 try these bits of code.

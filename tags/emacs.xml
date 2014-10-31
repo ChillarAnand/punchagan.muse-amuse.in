@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (emacs)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 25 Oct 2014 20:09:44 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org-mode Workshop</title><link>http://punchagan.muse-amuse.in/posts/org-mode-workshop.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (emacs)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 01:47:22 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-08</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-08.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent the morning doing some white-boarding interview practice with a Jorge
+and Brian.
+&lt;/li&gt;
+&lt;li&gt;I spent the rest of the day, playing with PyPy and working through &lt;a href="http://morepypy.blogspot.in/2011/04/tutorial-writing-interpreter-with-pypy.html"&gt;a tutorial&lt;/a&gt;
+that teaches us to write a BF interpreter.
+&lt;/li&gt;
+&lt;li&gt;I spent the Saturday revamping my Emacs config.  The main issue with my
+config was having a "package" list, of all the packages that the
+configuration uses, in case we are trying to duplicate it elsewhere.  I
+noticed that this gets out of sync, because I install packages by hand and
+never update this list.  I wrote up &lt;a href="https://github.com/punchagan/dot-emacs/blob/master/user-lisp/setup-defuns.el"&gt;some code&lt;/a&gt;, that keeps this list in sync
+with all the packages I have installed.  I configured el-get to play well
+with my config, and am pretty happy with my setup, though I still have to add
+some matching/searching features with helm/ido/whatever else.
+&lt;/li&gt;
+&lt;li&gt;I spent the Sunday writing a patch to &lt;a href="https://github.com/punchagan/xtab/tree/kill-by-memory"&gt;xtab&lt;/a&gt; to be able to limit the number of
+tabs in Chromium by the memory it uses.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>chrome</category><category>emacs</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-08.html</guid><pubDate>Sun, 10 Aug 2014 00:56:22 GMT</pubDate></item><item><title>Org-mode Workshop</title><link>http://punchagan.muse-amuse.in/posts/org-mode-workshop.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Well, I'm not sure if it's worth writing about.  I conducted my
 first org-mode workshop along with Prof. Venkatesh Choppella at
 IIIT-Hyderabad.  It was a 3 hour demo+talk kind of a thing, with a
@@ -368,41 +387,4 @@ date-tree.
 
 &lt;p&gt;
 Enjoy!
-&lt;/p&gt;</description><category>code</category><category>elisp</category><category>emacs</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/refile-to-date-tree.html</guid><pubDate>Fri, 30 Jul 2010 00:03:00 GMT</pubDate></item><item><title>Vimperator and Firemacs!</title><link>http://punchagan.muse-amuse.in/posts/vimperator-and-firemacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
- For the uninitiated, vimperator is an emacs plugin to get Firefox
-working with vim keybindings and firemacs &lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="http://punchagan.muse-amuse.in/posts/vimperator-and-firemacs.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; is for emacs keybindings.
-&lt;/p&gt;
-
-&lt;p&gt;
-I'm obsessed with emacs (as should already be evident) and can't
-really edit text without it's key-bindings. There are others like me,
-and hence the firemacs plugin. It's a blessing for my tribe.
-&lt;/p&gt;
-
-&lt;p&gt;
-Firemacs is great, except for the one great feature that it lacks -
-being able to jump to links/textareas without using the mouse.  I've
-seen Nishanth do it with ease, using Vimperator. I wanted to add this
-feature to Firemacs, by copying some code from Vimperator to
-Firemacs.  I directly started looking at the code, but couldn't make
-head or tail of it. I got a few doubts about how Vimperator works,
-since I'd never used it. Nishanth asked me to simply install it and
-try it out.
-&lt;/p&gt;
-
-&lt;p&gt;
-And then we had our EUREKA! moment. Vimperator and Emacs both
-enabled together work seamlessly well. Two obsessed people are happy
-and satisfied! And hopefully many more. :D
-&lt;/p&gt;
-&lt;div id="footnotes"&gt;
-&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
-&lt;div id="text-footnotes"&gt;
-
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="http://punchagan.muse-amuse.in/posts/vimperator-and-firemacs.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
-Key-bindings are a religious thing, in the world of editors!
-&lt;/p&gt;&lt;/div&gt;
-
-
-&lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>ology</category><guid>http://punchagan.muse-amuse.in/posts/vimperator-and-firemacs.html</guid><pubDate>Wed, 28 Jul 2010 11:08:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>code</category><category>elisp</category><category>emacs</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/refile-to-date-tree.html</guid><pubDate>Fri, 30 Jul 2010 00:03:00 GMT</pubDate></item></channel></rss>

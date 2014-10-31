@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (pairing)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/pairing.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 01:47:17 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-06-30</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-30.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;During the weekend, I read up a lot about HMMs and related stuff.
+&lt;/li&gt;
+&lt;li&gt;During the day, I tried to start writing code for different parts of the
+pipeline, and ended up reading about Mel frequency cepstrum related stuff,
+and wrote a little bit of code.
+&lt;/li&gt;
+&lt;li&gt;Later, in the afternoon I paired with some of his iOS code, and helped him
+clean up some of it.  I'm not sure how useful it was for him to pair with me,
+but …
+&lt;/li&gt;
+&lt;li&gt;The day ended with a talk by Jesse at EBay, titled &lt;a href="http://emptysqua.re/blog/write-an-excellent-programming-blog/"&gt;Write an Excellent
+Programming Blog&lt;/a&gt;.  I had already read up his blog post, when the talk was
+announced, and so, most of the content was known, but the Q&amp;amp;A session had
+some interesting suggestions on how to improve your actual writing.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>ios</category><category>pairing</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-30.html</guid><pubDate>Tue, 01 Jul 2014 22:42:48 GMT</pubDate></item></channel></rss>

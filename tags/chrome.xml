@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (chrome)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/chrome.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 25 Oct 2014 20:09:44 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>GitHub Cue: Recommendations for GitHub Repos</title><link>http://punchagan.muse-amuse.in/posts/github-cue-recommendations-for-github-repos.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (chrome)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/chrome.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 01:47:17 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-08</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-08.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent the morning doing some white-boarding interview practice with a Jorge
+and Brian.
+&lt;/li&gt;
+&lt;li&gt;I spent the rest of the day, playing with PyPy and working through &lt;a href="http://morepypy.blogspot.in/2011/04/tutorial-writing-interpreter-with-pypy.html"&gt;a tutorial&lt;/a&gt;
+that teaches us to write a BF interpreter.
+&lt;/li&gt;
+&lt;li&gt;I spent the Saturday revamping my Emacs config.  The main issue with my
+config was having a "package" list, of all the packages that the
+configuration uses, in case we are trying to duplicate it elsewhere.  I
+noticed that this gets out of sync, because I install packages by hand and
+never update this list.  I wrote up &lt;a href="https://github.com/punchagan/dot-emacs/blob/master/user-lisp/setup-defuns.el"&gt;some code&lt;/a&gt;, that keeps this list in sync
+with all the packages I have installed.  I configured el-get to play well
+with my config, and am pretty happy with my setup, though I still have to add
+some matching/searching features with helm/ido/whatever else.
+&lt;/li&gt;
+&lt;li&gt;I spent the Sunday writing a patch to &lt;a href="https://github.com/punchagan/xtab/tree/kill-by-memory"&gt;xtab&lt;/a&gt; to be able to limit the number of
+tabs in Chromium by the memory it uses.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>chrome</category><category>emacs</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-08.html</guid><pubDate>Sun, 10 Aug 2014 00:56:22 GMT</pubDate></item><item><title>GitHub Cue: Recommendations for GitHub Repos</title><link>http://punchagan.muse-amuse.in/posts/github-cue-recommendations-for-github-repos.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 If you aren't already aware of it, I'm one of those people who
 goes around saying, "GitHub is my Facebook".  I spend quite a lot
 of time on GitHub, browsing the work of various people, looking at

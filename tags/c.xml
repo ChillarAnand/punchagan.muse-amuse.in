@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (C)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/c.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 01:47:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-03</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-03.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Friday&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;On Friday, I didn't do the exercises that everyone else doing job prep were
+doing.  I wanted to continue writing C code, and continued to work on the
+&lt;code&gt;bencode&lt;/code&gt; parser in C.  I barely was able to finish adding support for lists.
+&lt;/li&gt;
+&lt;li&gt;I got comfortable using Valgrind, in the process of debugging a stupidity of
+not using &lt;code&gt;realloc&lt;/code&gt; correctly.
+&lt;/li&gt;
+&lt;li&gt;What I was able to write with Python in an hour or so, I have been writing
+for about a day, in C, and haven't yet finished it!  It definitely doesn't
+help that my C is very rusty…
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Saturday &amp;amp; Sunday&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;I didn't work much, and went around New York with Madhu.  We went to quite
+a few places around here, the highlight being, the view of Manhattan's
+skyline from the Staten Island Ferry.
+&lt;/li&gt;
+&lt;li&gt;NYC's library also had an interesting exhibhition on the history of
+America, just before and during WW-I.
+&lt;/li&gt;
+&lt;li&gt;On Sunday, I tried out Mary TTS on the raspberry pi, and it is simply
+unusable.
+&lt;/li&gt;
+&lt;li&gt;I then, started writing a simple wrapper around Google's tts that is used
+by Google translate.
+&lt;/li&gt;
+&lt;li&gt;The TTS part is more or less working right now, the next step would be to
+deploy it on the RaspberryPi and start using it as a radio, to see what my
+needs are like. Hooking it up to &lt;a href="https://github.com/jasperproject/jasper-client"&gt;Jasper client&lt;/a&gt; seems like a good idea,
+right now… though I'm not sure if it would work very well, with the pi's
+audio output drowning out the voice commands.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>C</category><category>hackerschool</category><category>python</category><category>raspberry-pi</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-03.html</guid><pubDate>Mon, 04 Aug 2014 20:10:41 GMT</pubDate></item><item><title>Hacker School, 2014-07-31</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-31.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I continued with doing the initial parts of the book, and didn't pair with
+Stephanie today.
+&lt;/li&gt;
+&lt;li&gt;I gave a super-short presentation, introducing people to &lt;code&gt;pdb&lt;/code&gt;, IPython's
+  &lt;code&gt;tracer&lt;/code&gt;.
+&lt;/li&gt;
+&lt;li&gt;I just started writing a Bencoding parser in C, but I'm having trouble
+thinking about all the memory allocations and stuff.  It feels so
+nostalgic! :P
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>C</category><category>hackerschool</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-31.html</guid><pubDate>Fri, 01 Aug 2014 14:38:57 GMT</pubDate></item><item><title>Hacker School, 2014-07-30</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-30.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;(Re) Learning C&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Stephanie and I worked through the Networking chapter of the book.
+&lt;/li&gt;
+
+&lt;li&gt;We faced some issues with writing 0 bytes to memory, since most of the code
+was dealing with strings. I still haven't figured out how to do this,
+correctly.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>C</category><category>hackerschool</category><category>networking</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-30.html</guid><pubDate>Thu, 31 Jul 2014 12:40:16 GMT</pubDate></item><item><title>Hacker School, 2014-07-29</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-29.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Hacking: learning by breaking stuff&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Post lunch, I started pairing with Stephanie on the exercises in the &lt;a href="http://www.nostarch.com/hacking2.htm"&gt;Hacking&lt;/a&gt;
+book, and that turned out to be super fun!
+&lt;/li&gt;
+&lt;li&gt;We got through the chapter on exploitation, which focussed on stack
+overflows, heap overflows, overflows in function pointers, and string
+formatting exploits.  It acted as more than a gentle refresher for C, and was
+super fun!
+&lt;/li&gt;
+&lt;li&gt;Running the examples on a 64bit system, added an additional amount of
+thinking required, and was good, IMO.
+&lt;/li&gt;
+&lt;li&gt;I hadn't worked along with Stephanie on the material in the first two
+chapters.  So, I went back home and tried to catch up, but couldn't get all
+of it done.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Miscellaneous&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;I spent part of the morning wrapping up the install script for the raspberry
+project, and cleaning up the repository.  &lt;a href="https://github.com/kbeyer/RPi-LED-SpectrumAnalyzer"&gt;It looks reasonable now&lt;/a&gt;, and I
+think I'm done with it until the end of HackerSchool.
+&lt;/li&gt;
+&lt;li&gt;I also tried to look for "easy" python issues that would involve me writing
+some C code, but didn't really find anything other than documentation… I
+guess, I should pick a module and look for bugs in it, instead.
+&lt;/li&gt;
+&lt;li&gt;Also, while chatting with a friend, I had to explain that I don't mention the
+last names of people or link to them, for privacy reasons.  Hacker School is
+particularly careful about not divulging information about who are at Hacker
+School each batch, and I want to keep that tradition.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>C</category><category>hack</category><category>hackerschool</category><category>raspberry-pi</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-29.html</guid><pubDate>Tue, 29 Jul 2014 15:20:24 GMT</pubDate></item><item><title>Hacker School, 2014-07-28</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;There seemed to be excitement in the space to have Jessica around.  We had
+coffee with her, and I chatted with her briefly. She encouraged me to try and
+send a patch to CPython, that involved debugging and fixing some C issues.
+&lt;/li&gt;
+&lt;li&gt;I spent some time with Tom, while he tried to get &lt;code&gt;cinspect&lt;/code&gt; working for him,
+and it seemed like having the developer next to you, helped.  As always.  We
+didn't make any fixes to the code, but it worked.
+&lt;/li&gt;
+&lt;li&gt;I spent the afternoon, adding tests for a simple issue, to see how patches are sent.
+&lt;/li&gt;
+&lt;li&gt;Later, I paired with Sophia for an hour to refactor the vcs code. It's
+beginning to look much better than what it used to, and I like that.
+&lt;/li&gt;
+&lt;li&gt;Jessica's talk on buffer overflows was enlightening and entertaining. It was
+very similar to a talk that Max gave on one of the thursdays, but it was
+exciting nevertheless.
+&lt;/li&gt;
+&lt;li&gt;After the talk, I am inspired to try and work through the Hacking: Art of
+exploitation, at some point. I'm beginning to feel like time at HackerSchool
+running out!
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>C</category><category>hackerschool</category><category>python</category><category>version_control</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-28.html</guid><pubDate>Tue, 29 Jul 2014 02:23:39 GMT</pubDate></item></channel></rss>
