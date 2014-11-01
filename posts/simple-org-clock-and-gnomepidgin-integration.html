@@ -102,7 +102,7 @@ Creative Commons Attribution 3.0 Unported License</a>
 
     <div class="e-content entry-content" itemprop="articleBody text">
     <p>
-<b>See Update <span class="timestamp-wrapper"><span class="timestamp">[2014-11-01 Sat]</span></span> below</b>.
+<b>See update <a href="/posts/simple-org-clock-and-gnomepidgin-integration.html#sec-1">below</a></b>
 </p>
 
 <p>
@@ -138,10 +138,10 @@ lines of code that does this for me.
   <span class="p">(</span><span class="n">shell</span><span class="o">-</span><span class="n">command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
 </pre></div>
 
-<p>
-Update <span class="timestamp-wrapper"><span class="timestamp">[2014-11-01 Sat]</span></span>:
-</p>
-
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Update <span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-01 Sat&gt;</span></span>
+</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 <a href="http://baali.muse-amuse.in">@baali</a> tried to use my code, and it turns out it didn't work for him, because I
 forgot to mention that <code>(ad-activate 'org-clock-in)</code> needs to be run, after the
@@ -182,6 +182,8 @@ Here is the new code.
 <span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">pc</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">off</span><span class="o">-</span><span class="n">notifications</span><span class="p">)</span>
 <span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">out</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">pc</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">notifications</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
     </div>
     <aside class="postpromonav">
     <nav>
