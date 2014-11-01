@@ -178,40 +178,6 @@ lines of code that does this for me.
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-06.html" class="u-url">Hacker School, 2014-07-06</a></h1>
-        <span class="post-date">07 Jul 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-I took it easy during the weekend, and went on a nice camp with my a cousin's
-family to TobyHanna State Park for a day or so, and spent the remaining (long)
-weekend at their place in PA.  It was a pretty nice break!
-</p>
-
-<p>
-Yesterday evening, I talked to Madhu about how ugly my code looked while I was
-trying to use <code>libclang</code>, and he told me that he found a lot of wrapped C++/C
-libraries end up being that way, and I also realized that using the Python AST
-library seemed much cleaner, because it just contained Python objects, but
-representing C/C++ objects in an AST and interacting with them in Python, isn't
-that clean.
-</p>
-
-<p>
-I cleaned up my code, and removed all the ugly regexes to use libclang to do
-the parsing of the libs, and get the source code.  I basically got all the
-tests passing, but they were taking an order of magnitude longer to run.  So, I
-guess the next step is to cache things somehow.
-</p>
-
-<p>
-I also added support for viewing the sources of built-in types.  It was pretty
-simple, once I had everything working with libclang.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/a-smarter-404-page.html" class="u-url">A smarter 404 page.</a></h1>
         <span class="post-date">11 Nov 2013</span>
     </header>
@@ -534,6 +500,40 @@ region or a buffer. Another function to count the words.
 	<span class="p">(</span><span class="n">setq</span> <span class="n">count</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span> <span class="n">count</span><span class="p">))))</span>
     <span class="p">(</span><span class="n">message</span> <span class="p">(</span><span class="kt">int</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">string</span> <span class="n">count</span><span class="p">))))</span>
 </pre></div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/orgelisp-sorting-list-of-org-links-on-description.html" class="u-url">org/elisp - sorting list of org-links on description</a></h1>
+        <span class="post-date">20 Aug 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+A small utility function that I used to sort the names of people
+who commented on my blog.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">org</span><span class="o">-</span><span class="n">get</span><span class="o">-</span><span class="n">link</span><span class="o">-</span><span class="n">desc</span><span class="o">-</span><span class="n">from</span><span class="o">-</span><span class="n">list</span> <span class="p">()</span>
+  <span class="s">""" Get link description of a list item containing just links """</span>
+  <span class="p">(</span><span class="n">let</span><span class="o">*</span> <span class="p">((</span><span class="n">item</span><span class="o">-</span><span class="n">beg</span> <span class="p">(</span><span class="n">point</span><span class="p">))</span>
+       <span class="p">(</span><span class="n">item</span><span class="o">-</span><span class="n">end</span> <span class="p">(</span><span class="n">org</span><span class="o">-</span><span class="n">end</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">item</span><span class="p">))</span>
+       <span class="p">(</span><span class="n">cur</span><span class="o">-</span><span class="n">item</span> <span class="p">(</span><span class="n">buffer</span><span class="o">-</span><span class="n">substring</span><span class="o">-</span><span class="n">no</span><span class="o">-</span><span class="n">properties</span>
+		  <span class="n">item</span><span class="o">-</span><span class="n">beg</span> <span class="n">item</span><span class="o">-</span><span class="n">end</span><span class="p">)))</span>
+    <span class="p">(</span><span class="k">goto</span><span class="o">-</span><span class="kt">char</span> <span class="n">item</span><span class="o">-</span><span class="n">beg</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">org</span><span class="o">-</span><span class="n">columns</span><span class="o">-</span><span class="n">compact</span><span class="o">-</span><span class="n">links</span> <span class="n">cur</span><span class="o">-</span><span class="n">item</span><span class="p">)))</span>
+</pre></div>
+
+<p>
+<code>sort-lines</code> wasn't good enough for me, since it was sorting
+alphabetically and it ended up being the sorted order of the urls
+and not the names. This function, when used with
+<code>org-sort-entries-or-items</code> gave me what I wanted.
+</p>
+
+<p>
+Thanks to benny (on #org-mode), I also learnt the difference
+between <code>let</code> and <code>let*</code>.
+</p>
     </div>
     </article>
 </div>

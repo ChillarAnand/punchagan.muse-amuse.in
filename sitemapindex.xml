@@ -21,10 +21,6 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/audio.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/awesome.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
@@ -49,15 +45,7 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/bookmarks.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/bug.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/c.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
@@ -97,15 +85,7 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/cpython.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/cricket.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/crypto.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
@@ -117,23 +97,7 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/django.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/dtmf.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/elisp.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/elixir.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/elm.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
@@ -158,10 +122,6 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/fest.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/fft.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
@@ -205,10 +165,6 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/goals.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/hack.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
@@ -222,10 +178,6 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/herohawk.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/hmm.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
@@ -265,19 +217,7 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/intro.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/ios.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/irc.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/javascript.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
@@ -285,15 +225,7 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/jobs.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/js.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/julia.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
@@ -365,10 +297,6 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/networking.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/newbie.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
@@ -393,10 +321,6 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/oauth.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/oauth2.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
@@ -413,14 +337,6 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/pairing.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/pandas.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/passwords.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
@@ -430,10 +346,6 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/photo.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/pil.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
@@ -449,19 +361,11 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/principle.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/programming.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/project.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/projects.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
@@ -478,18 +382,6 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/quark.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/quotable-quotes.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/quotes.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/raspberry-pi.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
@@ -557,10 +449,6 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/twitter.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/ubuntu.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
@@ -569,19 +457,7 @@
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/unicode.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/vcs.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/version_control.xml</loc>
-  <lastmod>2014-11-01</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://punchagan.muse-amuse.in/tags/vm.xml</loc>
   <lastmod>2014-11-01</lastmod>
  </sitemap>
  <sitemap>

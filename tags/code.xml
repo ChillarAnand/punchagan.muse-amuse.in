@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (code)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/code.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 01:47:17 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (code)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/code.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 13:11:52 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I stumbled on a &lt;a href="http://rubyrogues.com/178-rr-book-club-refactoring-ruby-with-martin-fowler/"&gt;Ruby Rogues podcast&lt;/a&gt; yesterday, which had &lt;a href="http://martinfowlwer.com"&gt;Martin Fowler&lt;/a&gt; as the
 guest.  I really enjoyed the discussion on Refactoring (the noun, the verb and
 the book!)
@@ -63,32 +63,7 @@ lines of code that does this for me.
    &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=available"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>elisp</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item><item><title>Hacker School, 2014-07-06</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-06.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I took it easy during the weekend, and went on a nice camp with my a cousin's
-family to TobyHanna State Park for a day or so, and spent the remaining (long)
-weekend at their place in PA.  It was a pretty nice break!
-&lt;/p&gt;
-
-&lt;p&gt;
-Yesterday evening, I talked to Madhu about how ugly my code looked while I was
-trying to use &lt;code&gt;libclang&lt;/code&gt;, and he told me that he found a lot of wrapped C++/C
-libraries end up being that way, and I also realized that using the Python AST
-library seemed much cleaner, because it just contained Python objects, but
-representing C/C++ objects in an AST and interacting with them in Python, isn't
-that clean.
-&lt;/p&gt;
-
-&lt;p&gt;
-I cleaned up my code, and removed all the ugly regexes to use libclang to do
-the parsing of the libs, and get the source code.  I basically got all the
-tests passing, but they were taking an order of magnitude longer to run.  So, I
-guess the next step is to cache things somehow.
-&lt;/p&gt;
-
-&lt;p&gt;
-I also added support for viewing the sources of built-in types.  It was pretty
-simple, once I had everything working with libclang.
-&lt;/p&gt;</description><category>code</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-06.html</guid><pubDate>Tue, 08 Jul 2014 03:28:39 GMT</pubDate></item><item><title>A smarter 404 page.</title><link>http://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>elisp</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item><item><title>A smarter 404 page.</title><link>http://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://twitter.com/avudem"&gt;Voodoo&lt;/a&gt; found a broken link referring to a one of my posts, on Quora.
 Given that I have changed my site generator a bunch of times now, it
 is quite possible that there are other broken links at various other
@@ -345,4 +320,29 @@ region or a buffer. Another function to count the words.
 	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;forward&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;setq&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>elisp</category><category>emacs</category><guid>http://punchagan.muse-amuse.in/posts/a-couple-of-counting-functions.html</guid><pubDate>Fri, 17 Sep 2010 14:10:00 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>elisp</category><category>emacs</category><guid>http://punchagan.muse-amuse.in/posts/a-couple-of-counting-functions.html</guid><pubDate>Fri, 17 Sep 2010 14:10:00 GMT</pubDate></item><item><title>org/elisp - sorting list of org-links on description</title><link>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+A small utility function that I used to sort the names of people
+who commented on my blog.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;defun&lt;/span&gt; &lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;link&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;desc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;from&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="s"&gt;""" Get link description of a list item containing just links """&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;beg&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;point&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cur&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;buffer&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;substring&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;no&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;properties&lt;/span&gt;
+		  &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;beg&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;goto&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;beg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;compact&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt; &lt;span class="n"&gt;cur&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+&lt;code&gt;sort-lines&lt;/code&gt; wasn't good enough for me, since it was sorting
+alphabetically and it ended up being the sorted order of the urls
+and not the names. This function, when used with
+&lt;code&gt;org-sort-entries-or-items&lt;/code&gt; gave me what I wanted.
+&lt;/p&gt;
+
+&lt;p&gt;
+Thanks to benny (on #org-mode), I also learnt the difference
+between &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;let*&lt;/code&gt;.
+&lt;/p&gt;</description><category>code</category><category>elisp</category><category>note</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</guid><pubDate>Thu, 19 Aug 2010 18:53:00 GMT</pubDate></item></channel></rss>

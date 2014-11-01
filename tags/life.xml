@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (life)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/life.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 01:47:20 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Learning about Spaced Repetition, SuperMemo, Org-drill, et al.</title><link>http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (life)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/life.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 13:11:52 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Learning about Spaced Repetition, SuperMemo, Org-drill, et al.</title><link>http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I have been reading a bunch of articles on the SuperMemo site (including the
 &lt;a href="http://www.supermemo.com/english/ol.htm"&gt;original thesis&lt;/a&gt; of P. A. Wozniack, the creator of SuperMemo).  I initially
 started off trying to understand the algorithms SM2,5 and 8 which org-drill
@@ -78,37 +78,7 @@ mentally. Exercise, sleep, eat well, avoid caffeine.
 
 &lt;li&gt;Try &lt;a href="http://www.supermemo.com/help/read.htm"&gt;incremental&lt;/a&gt; &lt;a href="http://www.supermemo.com/articles/devour.htm"&gt;reading&lt;/a&gt;, as an input source of items into your memory system.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>learning</category><category>life</category><category>memory</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</guid><pubDate>Fri, 24 Oct 2014 13:37:07 GMT</pubDate></item><item><title>Hacker School, 2014-06-25</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-25.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
-&lt;li&gt;I like how some of the people here are taking check-ins so seriously.  A
-bunch of people posted messages on Zulip, informing that they would not be
-able to make it to check-ins, and seemed quite sorry about it.
-&lt;/li&gt;
-&lt;li&gt;Check-ins are indeed useful.  At the end of every day, I review my work
-wondering what I did, and sometimes end up pushing myself harder, to have
-something reasonable to talk about during the check-ins!
-&lt;/li&gt;
-&lt;li&gt;Yesterday, I read up about FFTs and ended up playing around with &lt;code&gt;fft&lt;/code&gt; in
-  &lt;code&gt;scipy&lt;/code&gt;, and played around with audacity, etc.  Nothing concrete, really.
-&lt;/li&gt;
-&lt;li&gt;There was a "goals" workshop by Stacey, where she talked about how to get the
-most out of this batch of Hacker School, and then we split into groups of 3,
-and presented our goal-statements to each other, and gave our impressions of
-each others' goals.
-&lt;/li&gt;
-&lt;li&gt;I didn't really have a goal, but the exercise seemed to help, anyway.
-&lt;/li&gt;
-&lt;li&gt;Also, I think it is making me nervous to treat Hacker School as
-super-important.  It is important to make the best use of every hour, every
-minute here, but at the same time, I shouldn't be constantly worrying about
-whether or not, whatever I'm doing is the best use of my time here.
-&lt;/li&gt;
-&lt;li&gt;I think I would like to form some good habits, and make a few good friends,
-more than finish projects and build something uber-cool.  Of course, it would
-be great to build awesome stuff (and may be the only reasonable way to form
-habits, and make friends) but I shouldn't worry too much about time running
-out. Never Graduate!
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>fft</category><category>goals</category><category>hackerschool</category><category>life</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-25.html</guid><pubDate>Wed, 25 Jun 2014 13:51:07 GMT</pubDate></item><item><title>Cold</title><link>http://punchagan.muse-amuse.in/posts/cold.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/ul&gt;</description><category>learning</category><category>life</category><category>memory</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</guid><pubDate>Fri, 24 Oct 2014 13:37:07 GMT</pubDate></item><item><title>Cold</title><link>http://punchagan.muse-amuse.in/posts/cold.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 It was a pleasant Saturday evening, in the middle of the winter.
 Christmas was just round the corner and love, in the air. The sun was
 just setting, and everything outside his window was given a fresh coat
@@ -453,4 +423,33 @@ Inspired by
 &lt;li&gt;Annie Dillard, "How we spend our days is, of course, how we
 spend our lives"
 &lt;/li&gt;
-&lt;/ol&gt;</description><category>blab</category><category>inspiration</category><category>life</category><category>poem</category><guid>http://punchagan.muse-amuse.in/posts/to-do-or-not-to-do.html</guid><pubDate>Wed, 22 Apr 2009 08:29:00 GMT</pubDate></item></channel></rss>
+&lt;/ol&gt;</description><category>blab</category><category>inspiration</category><category>life</category><category>poem</category><guid>http://punchagan.muse-amuse.in/posts/to-do-or-not-to-do.html</guid><pubDate>Wed, 22 Apr 2009 08:29:00 GMT</pubDate></item><item><title>who am I?</title><link>http://punchagan.muse-amuse.in/posts/who-am-i.html</link><dc:creator>punchagan</dc:creator><description>&lt;p class="verse"&gt;
+dead and lifeless, in a box I lie&lt;br&gt;
+just my size, to be buried deep somewhere,&lt;br&gt;
+arranged with flowers, bright and fragrant&lt;br&gt;
+more alive than dead, are they&lt;br&gt;
+the final goodbye I have said,&lt;br&gt;
+gone am I, never to return–but&lt;br&gt;
+who am I, who am I, who am I?&lt;br&gt;
+&lt;br&gt;
+am I –&lt;br&gt;
+the knowledge I arduously gained,&lt;br&gt;
+from all the books I read and re-read.&lt;br&gt;
+the wealth and riches I made,&lt;br&gt;
+at the cost of sweat, often also blood.&lt;br&gt;
+the skill with utmost care I groomed,&lt;br&gt;
+for that, today, has me world-renowned.&lt;br&gt;
+the numerous battles I braved,&lt;br&gt;
+where win or loss never, only a fight mattered.&lt;br&gt;
+all those dreams I dared to dream,&lt;br&gt;
+and the goals I never, or have, reached.&lt;br&gt;
+&lt;br&gt;
+None of it, I realised, am I,&lt;br&gt;
+but, who am I, who am I, who am I&lt;br&gt;
+deep and loud, for one last time I wonder&lt;br&gt;
+"the difference, you make to the world,&lt;br&gt;
+is who you are", my Master answered,&lt;br&gt;
+"Life's fragrance is in service,&lt;br&gt;
+it grows and unfurls, far and wide,&lt;br&gt;
+long after you are lifeless and dead"&lt;br&gt;
+&lt;/p&gt;</description><category>blab</category><category>life</category><category>poem</category><guid>http://punchagan.muse-amuse.in/posts/who-am-i.html</guid><pubDate>Tue, 02 Dec 2008 10:44:00 GMT</pubDate></item></channel></rss>
