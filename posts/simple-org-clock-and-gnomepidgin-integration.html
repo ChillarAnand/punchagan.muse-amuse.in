@@ -102,6 +102,10 @@ Creative Commons Attribution 3.0 Unported License</a>
 
     <div class="e-content entry-content" itemprop="articleBody text">
     <p>
+<b>See Update <span class="timestamp-wrapper"><span class="timestamp">[2014-11-01 Sat]</span></span> below</b>.
+</p>
+
+<p>
 I have been trying to get back to using org-mode and its clocking
 functionality, more often than not.  I used to use it a lot, a few years ago,
 and haven't been using it, since I had been in my last job.
@@ -132,6 +136,51 @@ lines of code that does this for me.
    <span class="s">"org.gnome.SessionManager.Presence"</span>
    <span class="s">"SetStatus"</span> <span class="mi">0</span><span class="p">)</span>
   <span class="p">(</span><span class="n">shell</span><span class="o">-</span><span class="n">command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
+</pre></div>
+
+<p>
+Update <span class="timestamp-wrapper"><span class="timestamp">[2014-11-01 Sat]</span></span>:
+</p>
+
+<p>
+<a href="http://baali.muse-amuse.in">@baali</a> tried to use my code, and it turns out it didn't work for him, because I
+forgot to mention that <code>(ad-activate 'org-clock-in)</code> needs to be run, after the
+<code>defadvice</code> code.  I have no idea how it worked for me, without doing that.
+May be because I have <code>defadvice</code> for other functions?
+</p>
+
+<p>
+Also, while debugging this, I found that <code>defadvice</code> is a deprecated way of
+doing this, and <code>add-function</code> is the way to go now.  But, instead of advising
+the function, I decided to make use of <code>org-clock-in-hook</code>.
+</p>
+
+<p>
+Here is the new code.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">pc</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">off</span><span class="o">-</span><span class="n">notifications</span> <span class="p">()</span>
+  <span class="s">"Turn gnome notifications off."</span>
+  <span class="p">(</span><span class="n">dbus</span><span class="o">-</span><span class="n">send</span><span class="o">-</span><span class="n">signal</span>
+   <span class="o">:</span><span class="n">session</span>
+   <span class="s">"org.gnome.SessionManager"</span>
+   <span class="s">"/org/gnome/SessionManager/Presence"</span>
+   <span class="s">"org.gnome.SessionManager.Presence"</span>
+   <span class="s">"SetStatus"</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">shell</span><span class="o">-</span><span class="n">command</span> <span class="s">"purple-remote setstatus?status=unavailable"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="n">defun</span> <span class="n">pc</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">notifications</span> <span class="p">()</span>
+  <span class="s">"Turn gnome notifications back on."</span>
+  <span class="p">(</span><span class="n">dbus</span><span class="o">-</span><span class="n">send</span><span class="o">-</span><span class="n">signal</span>
+   <span class="o">:</span><span class="n">session</span>
+   <span class="s">"org.gnome.SessionManager"</span>
+   <span class="s">"/org/gnome/SessionManager/Presence"</span>
+   <span class="s">"org.gnome.SessionManager.Presence"</span>
+   <span class="s">"SetStatus"</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">shell</span><span class="o">-</span><span class="n">command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">pc</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">off</span><span class="o">-</span><span class="n">notifications</span><span class="p">)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">out</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">pc</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">notifications</span><span class="p">)</span>
 </pre></div>
     </div>
     <aside class="postpromonav">

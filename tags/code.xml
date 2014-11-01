@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (code)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/code.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 13:11:52 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (code)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/code.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 13:40:45 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I stumbled on a &lt;a href="http://rubyrogues.com/178-rr-book-club-refactoring-ruby-with-martin-fowler/"&gt;Ruby Rogues podcast&lt;/a&gt; yesterday, which had &lt;a href="http://martinfowlwer.com"&gt;Martin Fowler&lt;/a&gt; as the
 guest.  I really enjoyed the discussion on Refactoring (the noun, the verb and
 the book!)
@@ -33,6 +33,10 @@ Or, at least we should strive to make it so!
 The discussion, as always on this podcast, was very lively, pleasant and
 enjoyable! Enjoy!
 &lt;/p&gt;</description><category>advice</category><category>code</category><category>programming</category><guid>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</guid><pubDate>Sat, 25 Oct 2014 14:23:25 GMT</pubDate></item><item><title>Simple org-clock and gnome/pidgin integration</title><link>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;b&gt;See Update &lt;span class="timestamp-wrapper"&gt;&lt;span class="timestamp"&gt;[2014-11-01 Sat]&lt;/span&gt;&lt;/span&gt; below&lt;/b&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
 I have been trying to get back to using org-mode and its clocking
 functionality, more often than not.  I used to use it a lot, a few years ago,
 and haven't been using it, since I had been in my last job.
@@ -63,6 +67,51 @@ lines of code that does this for me.
    &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=available"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Update &lt;span class="timestamp-wrapper"&gt;&lt;span class="timestamp"&gt;[2014-11-01 Sat]&lt;/span&gt;&lt;/span&gt;:
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="http://baali.muse-amuse.in"&gt;@baali&lt;/a&gt; tried to use my code, and it turns out it didn't work for him, because I
+forgot to mention that &lt;code&gt;(ad-activate 'org-clock-in)&lt;/code&gt; needs to be run, after the
+&lt;code&gt;defadvice&lt;/code&gt; code.  I have no idea how it worked for me, without doing that.
+May be because I have &lt;code&gt;defadvice&lt;/code&gt; for other functions?
+&lt;/p&gt;
+
+&lt;p&gt;
+Also, while debugging this, I found that &lt;code&gt;defadvice&lt;/code&gt; is a deprecated way of
+doing this, and &lt;code&gt;add-function&lt;/code&gt; is the way to go now.  But, instead of advising
+the function, I decided to make use of &lt;code&gt;org-clock-in-hook&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+Here is the new code.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;defun&lt;/span&gt; &lt;span class="n"&gt;pc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;turn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;off&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="s"&gt;"Turn gnome notifications off."&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dbus&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;signal&lt;/span&gt;
+   &lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
+   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=unavailable"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;defun&lt;/span&gt; &lt;span class="n"&gt;pc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;turn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="s"&gt;"Turn gnome notifications back on."&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dbus&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;signal&lt;/span&gt;
+   &lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
+   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
+   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=available"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;in&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;pc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;turn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;off&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;notifications&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;pc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;turn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;notifications&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>elisp</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item><item><title>A smarter 404 page.</title><link>http://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://twitter.com/avudem"&gt;Voodoo&lt;/a&gt; found a broken link referring to a one of my posts, on Quora.
 Given that I have changed my site generator a bunch of times now, it
