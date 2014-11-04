@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (learning)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/learning.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 13:42:47 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Learning about Spaced Repetition, SuperMemo, Org-drill, et al.</title><link>http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (learning)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/learning.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 04 Nov 2014 23:07:38 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>More input sources for org-drill</title><link>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I've been trying to use &lt;code&gt;org-drill&lt;/code&gt; regularly for the last few weeks.  I don't
+know how well it's been going but I have been sticking to the routine
+religiously.  I haven't yet really tried out incremental reading, but in an
+attempt to make it as easy as possible, I wanted to have a pdf-reader
+integration, and some kind of integration with Kindle highlights.  Browser
+integration is pretty straight-forward, thanks to some &lt;a href="http://orgmode.org/worg/org-contrib/org-protocol.html#sec-6"&gt;simple java-script&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+I looked for a pdf-reader with some sort of plugin support, but I found nothing
+in Evince or Okular.  I thought about &lt;code&gt;pdfjs&lt;/code&gt; but it seemed slightly clunky to
+open pdfs in a browser, though I might shift to this if I don't like what I
+finally ended up with.  Good old &lt;code&gt;xpdf&lt;/code&gt; seemed to be the only pdf reader that
+had some support for custom keybindings that allowed users to run external
+commands.  With a &lt;a href="https://github.com/punchagan/dot-emacs/blob/master/xpdf-capture"&gt;little Python&lt;/a&gt;, I was able to setup a work-flow to capture
+snippets from &lt;code&gt;xpdf&lt;/code&gt;, to add to org-drill. Custom key-bindings somehow don't
+seem to work on &lt;code&gt;xpdf&lt;/code&gt; bundled on Ubuntu. So, I ended up downloading and using
+the binary available on the xpdf site.
+&lt;/p&gt;
+
+&lt;p&gt;
+For Kindle highlights support, with minor updates to Thamer Mahmoud's &lt;a href="https://github.com/punchagan/clip2org"&gt;clip2org&lt;/a&gt;,
+I have a simple way of getting all the "new" clippings/highlights as org-drill
+headlines.  I haven't really started using this, and once I do, I may end-up
+automating even the merging of these items into the org-drill notes file.  I'm
+looking forward to making better use of my Kindle, with this feature!
+&lt;/p&gt;
+
+&lt;p&gt;
+I don't know if it would be useful to have more context information like
+section titles/chapter titles when capturing from html/pdf, but it seems like
+an interesting problem to try to solve.
+&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item><item><title>Learning about Spaced Repetition, SuperMemo, Org-drill, et al.</title><link>http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I have been reading a bunch of articles on the SuperMemo site (including the
 &lt;a href="http://www.supermemo.com/english/ol.htm"&gt;original thesis&lt;/a&gt; of P. A. Wozniack, the creator of SuperMemo).  I initially
 started off trying to understand the algorithms SM2,5 and 8 which org-drill

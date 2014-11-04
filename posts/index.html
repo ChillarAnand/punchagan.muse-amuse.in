@@ -96,6 +96,48 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/more-input-sources-for-org-drill.html" class="u-url">More input sources for org-drill</a></h1>
+        <span class="post-date">04 Nov 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I've been trying to use <code>org-drill</code> regularly for the last few weeks.  I don't
+know how well it's been going but I have been sticking to the routine
+religiously.  I haven't yet really tried out incremental reading, but in an
+attempt to make it as easy as possible, I wanted to have a pdf-reader
+integration, and some kind of integration with Kindle highlights.  Browser
+integration is pretty straight-forward, thanks to some <a href="http://orgmode.org/worg/org-contrib/org-protocol.html#sec-6">simple java-script</a>.
+</p>
+
+<p>
+I looked for a pdf-reader with some sort of plugin support, but I found nothing
+in Evince or Okular.  I thought about <code>pdfjs</code> but it seemed slightly clunky to
+open pdfs in a browser, though I might shift to this if I don't like what I
+finally ended up with.  Good old <code>xpdf</code> seemed to be the only pdf reader that
+had some support for custom keybindings that allowed users to run external
+commands.  With a <a href="https://github.com/punchagan/dot-emacs/blob/master/xpdf-capture">little Python</a>, I was able to setup a work-flow to capture
+snippets from <code>xpdf</code>, to add to org-drill. Custom key-bindings somehow don't
+seem to work on <code>xpdf</code> bundled on Ubuntu. So, I ended up downloading and using
+the binary available on the xpdf site.
+</p>
+
+<p>
+For Kindle highlights support, with minor updates to Thamer Mahmoud's <a href="https://github.com/punchagan/clip2org">clip2org</a>,
+I have a simple way of getting all the "new" clippings/highlights as org-drill
+headlines.  I haven't really started using this, and once I do, I may end-up
+automating even the merging of these items into the org-drill notes file.  I'm
+looking forward to making better use of my Kindle, with this feature!
+</p>
+
+<p>
+I don't know if it would be useful to have more context information like
+section titles/chapter titles when capturing from html/pdf, but it seems like
+an interesting problem to try to solve.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/martin-fowler-on-refactoring-rubyrogues.html" class="u-url">Martin Fowler on Refactoring @ RubyRogues</a></h1>
         <span class="post-date">25 Oct 2014</span>
     </header>
@@ -774,85 +816,10 @@ not something that I am proud of, but it does the job!
 </p>
     </div>
     </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/cold.html" class="u-url">Cold</a></h1>
-        <span class="post-date">13 Nov 2013</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-It was a pleasant Saturday evening, in the middle of the winter.
-Christmas was just round the corner and love, in the air. The sun was
-just setting, and everything outside his window was given a fresh coat
-of snow, tickled by the red, quickly fading light. Not that he
-noticed. He stared blankly out of the window, looking at nothing in
-particular. He had just woke up from his afternoon nap, but he'd buy
-it, if you told him he'd been sleeping for a year…
-</p>
-
-<p>
-You could see the icy river, crawling ahead, from his window.  People
-walking over the bridge, a few camera flashes going off, people
-stopping over and looking far ahead into the horizon, collecting their
-thoughts, couples walking hand-in-hand enjoying each others'
-company… You could see it all, from up there! But, as they say, you
-only see what you look for. And he, couldn't see any of this. His
-looked out of his window, and saw none of this.
-</p>
-
-<p>
-He is walking down the same bridge. He didn't know where he was going;
-his head at least. His legs did; as always. He was walking down in his
-regular yellow shirt and black jeans, that you could mistake for a
-uniform, if you followed him for a few days. Extremely under-dressed
-for the chilly night, one would say. He kept walking down the main
-street, lined with shops brightly lit up for the festive season. The
-pavement bustled with with people walking with a spring in their step
-– the spring that the festive season, and all the love in the air
-brought to you. Not that he noticed it, or had any of it in his step.
-</p>
-
-<p>
-Soon, he's walking through the park. The park that was built to
-celebrate time, ticking away, furiously. Or to celebrate the time
-everyone in the world had, to enjoy themselves. He walked past the
-skating rink, with lots of people having the time of their life ice
-skating, and a lot more, awaiting their turn. The first timers, old
-and young, making up for their inexperience, with their excitement;
-holding onto whatever they can, to finish their next round, to start
-their next. The veterans, taking the center-stage and showing off
-their moves! He was barely aware of their presence and just walked on,
-past all the action.
-</p>
-
-<p>
-The music festival; he walked past it to, like the crowd didn't exist,
-the noise didn't, the music didn't; like there was nothing happening!
-The fountain "felt" no different. The cold breeze, did sprinkle the
-water to quite a distance and everybody kept a safe distance to avoid
-the chilling shower, except for the kids, who found it amusing to run
-into the shower for a split second and run back madly. How could he
-walk just by it, and not feel a thing!
-</p>
-
-<p>
-The lakefront. That is where his legs always brought him, at the
-end. The brilliantly lit skyline was a delight to watch, but I don't
-believe he saw any of it. He just stared into it, blankly. He kept
-staring, as the night got chillier, and the neighborhood kept getting
-more and more deserted. Seconds ticked away, minutes and hours passed
-by! He stayed on, staring ahead. It didn't matter how much below zero
-the mercury had gone. This wasn't the first night he was spending
-staring into the nothingness. It turned out to be the coldest night,
-in a decade. But that didn't matter to him. Nothing did. Nothing has,
-for a while now; Ever since he turned cold.
-</p>
-    </div>
-    </article>
 </div>
         <div class="pagination">
             <span class="pagination-item newer">
-                <a href="/posts/index-15.html" rel="next">Older posts</a>
+                <a href="/posts/index-16.html" rel="next">Older posts</a>
             </span>
         </div>
 

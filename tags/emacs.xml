@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (emacs)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 01 Nov 2014 13:42:47 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org-mode Workshop</title><link>http://punchagan.muse-amuse.in/posts/org-mode-workshop.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (emacs)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 04 Nov 2014 23:07:36 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>More input sources for org-drill</title><link>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I've been trying to use &lt;code&gt;org-drill&lt;/code&gt; regularly for the last few weeks.  I don't
+know how well it's been going but I have been sticking to the routine
+religiously.  I haven't yet really tried out incremental reading, but in an
+attempt to make it as easy as possible, I wanted to have a pdf-reader
+integration, and some kind of integration with Kindle highlights.  Browser
+integration is pretty straight-forward, thanks to some &lt;a href="http://orgmode.org/worg/org-contrib/org-protocol.html#sec-6"&gt;simple java-script&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+I looked for a pdf-reader with some sort of plugin support, but I found nothing
+in Evince or Okular.  I thought about &lt;code&gt;pdfjs&lt;/code&gt; but it seemed slightly clunky to
+open pdfs in a browser, though I might shift to this if I don't like what I
+finally ended up with.  Good old &lt;code&gt;xpdf&lt;/code&gt; seemed to be the only pdf reader that
+had some support for custom keybindings that allowed users to run external
+commands.  With a &lt;a href="https://github.com/punchagan/dot-emacs/blob/master/xpdf-capture"&gt;little Python&lt;/a&gt;, I was able to setup a work-flow to capture
+snippets from &lt;code&gt;xpdf&lt;/code&gt;, to add to org-drill. Custom key-bindings somehow don't
+seem to work on &lt;code&gt;xpdf&lt;/code&gt; bundled on Ubuntu. So, I ended up downloading and using
+the binary available on the xpdf site.
+&lt;/p&gt;
+
+&lt;p&gt;
+For Kindle highlights support, with minor updates to Thamer Mahmoud's &lt;a href="https://github.com/punchagan/clip2org"&gt;clip2org&lt;/a&gt;,
+I have a simple way of getting all the "new" clippings/highlights as org-drill
+headlines.  I haven't really started using this, and once I do, I may end-up
+automating even the merging of these items into the org-drill notes file.  I'm
+looking forward to making better use of my Kindle, with this feature!
+&lt;/p&gt;
+
+&lt;p&gt;
+I don't know if it would be useful to have more context information like
+section titles/chapter titles when capturing from html/pdf, but it seems like
+an interesting problem to try to solve.
+&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item><item><title>Org-mode Workshop</title><link>http://punchagan.muse-amuse.in/posts/org-mode-workshop.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Well, I'm not sure if it's worth writing about.  I conducted my
 first org-mode workshop along with Prof. Venkatesh Choppella at
 IIIT-Hyderabad.  It was a 3 hour demo+talk kind of a thing, with a
@@ -368,41 +401,4 @@ date-tree.
 
 &lt;p&gt;
 Enjoy!
-&lt;/p&gt;</description><category>code</category><category>elisp</category><category>emacs</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/refile-to-date-tree.html</guid><pubDate>Fri, 30 Jul 2010 00:03:00 GMT</pubDate></item><item><title>Vimperator and Firemacs!</title><link>http://punchagan.muse-amuse.in/posts/vimperator-and-firemacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
- For the uninitiated, vimperator is an emacs plugin to get Firefox
-working with vim keybindings and firemacs &lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="http://punchagan.muse-amuse.in/posts/vimperator-and-firemacs.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; is for emacs keybindings.
-&lt;/p&gt;
-
-&lt;p&gt;
-I'm obsessed with emacs (as should already be evident) and can't
-really edit text without it's key-bindings. There are others like me,
-and hence the firemacs plugin. It's a blessing for my tribe.
-&lt;/p&gt;
-
-&lt;p&gt;
-Firemacs is great, except for the one great feature that it lacks -
-being able to jump to links/textareas without using the mouse.  I've
-seen Nishanth do it with ease, using Vimperator. I wanted to add this
-feature to Firemacs, by copying some code from Vimperator to
-Firemacs.  I directly started looking at the code, but couldn't make
-head or tail of it. I got a few doubts about how Vimperator works,
-since I'd never used it. Nishanth asked me to simply install it and
-try it out.
-&lt;/p&gt;
-
-&lt;p&gt;
-And then we had our EUREKA! moment. Vimperator and Emacs both
-enabled together work seamlessly well. Two obsessed people are happy
-and satisfied! And hopefully many more. :D
-&lt;/p&gt;
-&lt;div id="footnotes"&gt;
-&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
-&lt;div id="text-footnotes"&gt;
-
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="http://punchagan.muse-amuse.in/posts/vimperator-and-firemacs.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
-Key-bindings are a religious thing, in the world of editors!
-&lt;/p&gt;&lt;/div&gt;
-
-
-&lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>ology</category><guid>http://punchagan.muse-amuse.in/posts/vimperator-and-firemacs.html</guid><pubDate>Wed, 28 Jul 2010 11:08:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>code</category><category>elisp</category><category>emacs</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/refile-to-date-tree.html</guid><pubDate>Fri, 30 Jul 2010 00:03:00 GMT</pubDate></item></channel></rss>
