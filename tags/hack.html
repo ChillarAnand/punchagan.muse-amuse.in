@@ -96,6 +96,42 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/erc-notifications-when-emacs-not-in-focus.html" class="u-url">erc-notifications when Emacs not in focus</a></h1>
+        <span class="post-date">06 Nov 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I have been trying to get ERC working with notifications. Julien Danjou's
+wonderful [[notifications[[ module for ERC is great, but it is annoying to get
+notifications even when Emacs is in focus.
+</p>
+
+<p>
+I had looked at <a href="https://github.com/eqyiel/circe-notifications/blob/master/circe-notifications.el">circe-notifications</a>, which has the feature but uses xdotool and
+xprop to do it.  I was looking for something simpler, though… and it suddenly
+struck me that I have an auto-save hook in Emacs that is run when I focus out
+of it.  I wondered if I could disable and enable notifications on focus, and it
+worked.
+</p>
+
+<p>
+In case it is useful for somebody else -
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">modules</span> <span class="err">'</span><span class="n">notifications</span><span class="p">)</span>
+<span class="p">(</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">focus</span><span class="o">-</span><span class="n">out</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">enable</span><span class="p">)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">focus</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">disable</span><span class="p">)</span>
+</pre></div>
+
+<p>
+I wonder if there are some corner cases where this doesn't work, and that's why
+the author of circe-notifications chose the tools that he did.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/more-input-sources-for-org-drill.html" class="u-url">More input sources for org-drill</a></h1>
         <span class="post-date">04 Nov 2014</span>
     </header>
@@ -552,46 +588,12 @@ Later that day the MIT News Office issued a press release titled
 </p>
     </div>
     </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/a-free-software-hack.html" class="u-url">A "Free Software" Hack!!</a></h1>
-        <span class="post-date">10 Oct 2006</span>
-    </header>
-    <div class="e-content entry-content">
-    <div class="figure">
-<p><img src="/images/freesoftware.hack.jpg" alt="freesoftware.hack.jpg">
-</p>
 </div>
-
-<pre class="example">
-Date: Sun, 31 Aug 2003 23:45:42 -0500
-From: "Harley D. Eades III"
-To: rms@gnu.org
-Subject: Tribute to freedom.
-
-Hello,
-
-One late rainy night I had an idea. There is a hill on IL route 29
-in Peoria IL, that people climb and write a small message across
-this hill for everyone to view from a far. What would be better
-than spreading my two most favorite words across this hill. So we
-set out with a little over 200 garbage bags and nearly 400
-nails. 12:30am and rainy so you can figure that a hill of that
-size is going to be slippery (lol) nearly falling down hill with
-every step we start building each letter. At around 2:30am we have
-finished and now the sun will rise over a hill which spreads the
-words Free Software to every person that passes by. This is by far
-a vary small non-complex hack but I beleve it is a hack in it
-self. This is a tribute to Free Software [and the GNU Project].
-
-Happy Hacking
-Harley D. Eades III
-FSF Associate Member
-Hacker
-</pre>
-    </div>
-    </article>
-</div>
+        <div class="pagination">
+            <span class="pagination-item newer">
+                <a href="/tags/hack-1.html" rel="next">Older posts</a>
+            </span>
+        </div>
 
 
       </div>

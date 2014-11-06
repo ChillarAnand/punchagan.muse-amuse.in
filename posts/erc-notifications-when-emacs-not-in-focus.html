@@ -25,7 +25,7 @@
   
 
   <title>
-      More input sources for org-drill · Noetic Nought
+      erc-notifications when Emacs not in focus · Noetic Nought
   </title>
 
 </head>
@@ -95,61 +95,46 @@ Creative Commons Attribution 3.0 Unported License</a>
       <div class="container content">
 <article class="post post-text h-entry hentry postpage" itemscope="itemscope">
             <header>
-                <h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/more-input-sources-for-org-drill.html" class="u-url">More input sources for org-drill</a></h1>
+                <h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/erc-notifications-when-emacs-not-in-focus.html" class="u-url">erc-notifications when Emacs not in focus</a></h1>
 
-            <span class="post-date">04 Nov 2014</span>
+            <span class="post-date">06 Nov 2014</span>
         </header>
 
     <div class="e-content entry-content" itemprop="articleBody text">
     <p>
-I've been trying to use <code>org-drill</code> regularly for the last few weeks.  I don't
-know how well it's been going but I have been sticking to the routine
-religiously.  I haven't yet really tried out incremental reading, but in an
-attempt to make it as easy as possible, I wanted to have a pdf-reader
-integration, and some kind of integration with Kindle highlights.  Browser
-integration is pretty straight-forward, thanks to some <a href="http://orgmode.org/worg/org-contrib/org-protocol.html#sec-6">simple java-script</a>.
+I have been trying to get ERC working with notifications. Julien Danjou's
+wonderful [[notifications[[ module for ERC is great, but it is annoying to get
+notifications even when Emacs is in focus.
 </p>
 
 <p>
-I looked for a pdf-reader with some sort of plugin support, but I found nothing
-in Evince or Okular.  I thought about <code>pdfjs</code> but it seemed slightly clunky to
-open pdfs in a browser, though I might shift to this if I don't like what I
-finally ended up with.  Good old <code>xpdf</code> seemed to be the only pdf reader that
-had some support for custom keybindings that allowed users to run external
-commands.  With a <a href="https://github.com/punchagan/dot-emacs/blob/master/xpdf-capture">little Python</a>, I was able to setup a work-flow to capture
-snippets from <code>xpdf</code>, to add to org-drill. Custom key-bindings somehow don't
-seem to work on <code>xpdf</code> bundled on Ubuntu. So, I ended up downloading and using
-the binary available on the xpdf site.
+I had looked at <a href="https://github.com/eqyiel/circe-notifications/blob/master/circe-notifications.el">circe-notifications</a>, which has the feature but uses xdotool and
+xprop to do it.  I was looking for something simpler, though… and it suddenly
+struck me that I have an auto-save hook in Emacs that is run when I focus out
+of it.  I wondered if I could disable and enable notifications on focus, and it
+worked.
 </p>
 
 <p>
-For Kindle highlights support, with minor updates to Thamer Mahmoud's <a href="https://github.com/punchagan/clip2org">clip2org</a>,
-I have a simple way of getting all the "new" clippings/highlights as org-drill
-headlines.  I haven't really started using this, and once I do, I may end-up
-automating even the merging of these items into the org-drill notes file.  I'm
-looking forward to making better use of my Kindle, with this feature!
+In case it is useful for somebody else -
 </p>
 
-<p>
-I don't know if it would be useful to have more context information like
-section titles/chapter titles when capturing from html/pdf, but it seems like
-an interesting problem to try to solve.
-</p>
+<div class="highlight"><pre><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">modules</span> <span class="err">'</span><span class="n">notifications</span><span class="p">)</span>
+<span class="p">(</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">focus</span><span class="o">-</span><span class="n">out</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">enable</span><span class="p">)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">focus</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">disable</span><span class="p">)</span>
+</pre></div>
 
 <p>
-Also, it might be easier(?) if I probably tried to have a DE level keybinding, and
-some code to get selection and file name of the currently active
-window/application.
+I wonder if there are some corner cases where this doesn't work, and that's why
+the author of circe-notifications chose the tools that he did.
 </p>
     </div>
     <aside class="postpromonav">
     <nav>
             <div class="pagination">
             <span class="pagination-item older">
-                <a href="/posts/martin-fowler-on-refactoring-rubyrogues.html" rel="prev" title="Martin Fowler on Refactoring @ RubyRogues">Previous post</a>
-            </span>
-            <span class="pagination-item newer">
-                <a href="/posts/erc-notifications-when-emacs-not-in-focus.html" rel="next" title="erc-notifications when Emacs not in focus">Next post</a>
+                <a href="/posts/more-input-sources-for-org-drill.html" rel="prev" title="More input sources for org-drill">Previous post</a>
             </span>
         </div>
 
@@ -160,9 +145,9 @@ window/application.
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="rusticreverie",
-            disqus_url="http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html",
-        disqus_title="More input sources for org-drill",
-        disqus_identifier="cache/posts/more-input-sources-for-org-drill.html",
+            disqus_url="http://punchagan.muse-amuse.in/posts/erc-notifications-when-emacs-not-in-focus.html",
+        disqus_title="erc-notifications when Emacs not in focus",
+        disqus_identifier="cache/posts/erc-notifications-when-emacs-not-in-focus.html",
         disqus_config = function () {
             this.language = "en";
         };

@@ -96,6 +96,42 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/erc-notifications-when-emacs-not-in-focus.html" class="u-url">erc-notifications when Emacs not in focus</a></h1>
+        <span class="post-date">06 Nov 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I have been trying to get ERC working with notifications. Julien Danjou's
+wonderful [[notifications[[ module for ERC is great, but it is annoying to get
+notifications even when Emacs is in focus.
+</p>
+
+<p>
+I had looked at <a href="https://github.com/eqyiel/circe-notifications/blob/master/circe-notifications.el">circe-notifications</a>, which has the feature but uses xdotool and
+xprop to do it.  I was looking for something simpler, though… and it suddenly
+struck me that I have an auto-save hook in Emacs that is run when I focus out
+of it.  I wondered if I could disable and enable notifications on focus, and it
+worked.
+</p>
+
+<p>
+In case it is useful for somebody else -
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">modules</span> <span class="err">'</span><span class="n">notifications</span><span class="p">)</span>
+<span class="p">(</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">focus</span><span class="o">-</span><span class="n">out</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">enable</span><span class="p">)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">focus</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">disable</span><span class="p">)</span>
+</pre></div>
+
+<p>
+I wonder if there are some corner cases where this doesn't work, and that's why
+the author of circe-notifications chose the tools that he did.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/more-input-sources-for-org-drill.html" class="u-url">More input sources for org-drill</a></h1>
         <span class="post-date">04 Nov 2014</span>
     </header>
@@ -796,30 +832,6 @@ Here's a convenient <a href="https://gist.github.com/punchagan/9859210">script</
 </p>
 
 <script src="https://gist.github.com/9859210.js"></script>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/scraping-google-groups.html" class="u-url">Scraping Google Groups</a></h1>
-        <span class="post-date">31 Dec 2013</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-I was playing around with a few ideas for creating a timeline for the
-mumbai ultimate group, and as a part of playing around with stuff, for
-that idea, I ended up wanting to scrape all the emails on our google
-group.  After looking around a little bit, I failed to find anything
-that claims to be able to do this.
-</p>
-
-<p>
-So I ended up writing my own <a href="https://gist.github.com/punchagan/7947337">hacky script</a> to download all the emails
-sent on the group.  Like I said, this is a hack and can be improved
-quite a bit, but I am not inclined to do anything about it, right
-now.  Since, everything about google groups is ajaxy, this script uses
-selenium and does things on the page, that one would do by hand.  It's
-not something that I am proud of, but it does the job!
-</p>
     </div>
     </article>
 </div>

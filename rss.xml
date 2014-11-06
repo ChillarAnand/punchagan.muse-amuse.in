@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 04 Nov 2014 23:12:16 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>More input sources for org-drill</title><link>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 06 Nov 2014 18:20:15 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>erc-notifications when Emacs not in focus</title><link>http://punchagan.muse-amuse.in/posts/erc-notifications-when-emacs-not-in-focus.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I have been trying to get ERC working with notifications. Julien Danjou's
+wonderful [[notifications[[ module for ERC is great, but it is annoying to get
+notifications even when Emacs is in focus.
+&lt;/p&gt;
+
+&lt;p&gt;
+I had looked at &lt;a href="https://github.com/eqyiel/circe-notifications/blob/master/circe-notifications.el"&gt;circe-notifications&lt;/a&gt;, which has the feature but uses xdotool and
+xprop to do it.  I was looking for something simpler, though… and it suddenly
+struck me that I have an auto-save hook in Emacs that is run when I focus out
+of it.  I wondered if I could disable and enable notifications on focus, and it
+worked.
+&lt;/p&gt;
+
+&lt;p&gt;
+In case it is useful for somebody else -
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;erc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;modules&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;notifications&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;erc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;notifications&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;focus&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;erc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;notifications&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;focus&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;in&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;erc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;notifications&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;disable&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+I wonder if there are some corner cases where this doesn't work, and that's why
+the author of circe-notifications chose the tools that he did.
+&lt;/p&gt;</description><category>emacs</category><category>hack</category><guid>http://punchagan.muse-amuse.in/posts/erc-notifications-when-emacs-not-in-focus.html</guid><pubDate>Thu, 06 Nov 2014 12:35:12 GMT</pubDate></item><item><title>More input sources for org-drill</title><link>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I've been trying to use &lt;code&gt;org-drill&lt;/code&gt; regularly for the last few weeks.  I don't
 know how well it's been going but I have been sticking to the routine
 religiously.  I haven't yet really tried out incremental reading, but in an
@@ -609,19 +636,4 @@ trick!  Thanks gstreamer!  Thanks v4l2loopback! :)
 Here's a convenient &lt;a href="https://gist.github.com/punchagan/9859210"&gt;script&lt;/a&gt; to use it every time I need it.
 &lt;/p&gt;
 
-&lt;script src="https://gist.github.com/9859210.js"&gt;&lt;/script&gt;</description><category>hack</category><category>linux</category><guid>http://punchagan.muse-amuse.in/posts/let-there-be-light-in-skype.html</guid><pubDate>Sat, 29 Mar 2014 17:52:27 GMT</pubDate></item><item><title>Scraping Google Groups</title><link>http://punchagan.muse-amuse.in/posts/scraping-google-groups.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I was playing around with a few ideas for creating a timeline for the
-mumbai ultimate group, and as a part of playing around with stuff, for
-that idea, I ended up wanting to scrape all the emails on our google
-group.  After looking around a little bit, I failed to find anything
-that claims to be able to do this.
-&lt;/p&gt;
-
-&lt;p&gt;
-So I ended up writing my own &lt;a href="https://gist.github.com/punchagan/7947337"&gt;hacky script&lt;/a&gt; to download all the emails
-sent on the group.  Like I said, this is a hack and can be improved
-quite a bit, but I am not inclined to do anything about it, right
-now.  Since, everything about google groups is ajaxy, this script uses
-selenium and does things on the page, that one would do by hand.  It's
-not something that I am proud of, but it does the job!
-&lt;/p&gt;</description><category>email</category><category>hack</category><category>idea</category><category>mumbai</category><category>ultimate</category><guid>http://punchagan.muse-amuse.in/posts/scraping-google-groups.html</guid><pubDate>Tue, 31 Dec 2013 14:25:58 GMT</pubDate></item></channel></rss>
+&lt;script src="https://gist.github.com/9859210.js"&gt;&lt;/script&gt;</description><category>hack</category><category>linux</category><guid>http://punchagan.muse-amuse.in/posts/let-there-be-light-in-skype.html</guid><pubDate>Sat, 29 Mar 2014 17:52:27 GMT</pubDate></item></channel></rss>
