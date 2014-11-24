@@ -27,7 +27,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
   
 
   <title>
-      erc-notifications when Emacs not in focus · Noetic Nought
+      Using tmux to "screen share" · Noetic Nought
   </title>
 
 </head>
@@ -97,49 +97,89 @@ Creative Commons Attribution 3.0 Unported License</a>
       <div class="container content">
 <article class="post post-text h-entry hentry postpage" itemscope="itemscope">
             <header>
-                <h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/erc-notifications-when-emacs-not-in-focus.html" class="u-url">erc-notifications when Emacs not in focus</a></h1>
+                <h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/using-tmux-to-screen-share.html" class="u-url">Using tmux to "screen share"</a></h1>
 
-            <span class="post-date">06 Nov 2014</span>
+            <span class="post-date">24 Nov 2014</span>
         </header>
 
     <div class="e-content entry-content" itemprop="articleBody text">
     <p>
-I have been trying to get ERC working with notifications. Julien Danjou's
-wonderful <a href="https://julien.danjou.info/blog/2012/erc-notifications">notifications</a> module for ERC is great, but it is annoying to get
-notifications even when Emacs is in focus.
+I wanted to pair with a friend of mine, exploring Magit mode in Emacs.  There
+are a couple of projects to make it easy to use tmux(-like) to simplify this.
 </p>
+
+<ul class="org-ul">
+<li>
+<a href="https://github.com/non/pairing">pairing</a> lets you share a screen and pair, on a common server where both the
+users have access to.  But I wanted to use my machine, instead of the
+server.
+</li>
+
+<li>
+<i>tmate</i> gets around the restriction of having a common server where both users
+have access, but needs a custom install of tmux, and the use of a 3rd party
+service.
+</li>
+</ul>
 
 <p>
-I had looked at <a href="https://github.com/eqyiel/circe-notifications/blob/master/circe-notifications.el">circe-notifications</a>, which has the feature but uses xdotool and
-xprop to do it.  I was looking for something simpler, though… and it suddenly
-struck me that I have an auto-save hook in Emacs that is run when I focus out
-of it.  I wondered if I could disable and enable notifications on focus, and it
-worked.
+I worked around this, using an ssh reverse tunnels.  Here are the steps, for
+anyone who'd like to reproduce.
 </p>
 
-<p>
-In case it is useful for somebody else -
-</p>
+<ol class="org-ol">
+<li>Add your partner(-in-crime)'s ssh key to authorized keys on a server that
+has a public IP (<code>example.com</code>, let's say).
+</li>
 
-<div class="highlight"><pre><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">modules</span> <span class="err">'</span><span class="n">notifications</span><span class="p">)</span>
-<span class="p">(</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">focus</span><span class="o">-</span><span class="n">out</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">enable</span><span class="p">)</span>
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">focus</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">erc</span><span class="o">-</span><span class="n">notifications</span><span class="o">-</span><span class="n">disable</span><span class="p">)</span>
+<li>Add your server's key to authorized keys on your local machine.
+</li>
+
+<li>Create a reverse tunnel from your machine to the server.
+
+<div class="highlight"><pre><span class="n">ssh</span> <span class="o">-</span><span class="n">fNR</span> <span class="mi">19999</span><span class="o">:</span><span class="n">localhost</span><span class="o">:</span><span class="mi">22</span> <span class="n">server_user</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span>
 </pre></div>
 
 <p>
-I wonder if there are some corner cases where this doesn't work, and that's why
-the author of circe-notifications chose the tools that he did.
+<code>-R 19999</code> essentially forwards port 19999 on <code>example.com</code> to
+localhost's 22.  <code>-fN</code> is to say no terminal, send connection to background.
 </p>
+</li>
+
+<li>Your partner first ssh's to example.com and then ssh's to your laptop.
+
+<p>
+On your partner's machine
+</p>
+
+<div class="highlight"><pre><span class="n">ssh</span> <span class="n">server_user</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span>
+</pre></div>
+
+<p>
+On the server, your partner does
+</p>
+<div class="highlight"><pre><span class="n">ssh</span> <span class="n">your_username</span><span class="err">@</span><span class="n">localhost</span> <span class="o">-</span><span class="n">p</span> <span class="mi">19999</span>
+</pre></div>
+
+<p>
+Your partner is on your machine, and can run <code>rm -rf</code>!  But, hopefully
+they'll only run <code>tmux attach</code>.  Obviously, do this only with people you
+trust!
+</p>
+</li>
+
+<li>Start a tmux session locally.
+</li>
+
+<li>Profit!
+</li>
+</ol>
     </div>
     <aside class="postpromonav">
     <nav>
             <div class="pagination">
             <span class="pagination-item older">
-                <a href="/posts/more-input-sources-for-org-drill.html" rel="prev" title="More input sources for org-drill">Previous post</a>
-            </span>
-            <span class="pagination-item newer">
-                <a href="/posts/using-tmux-to-screen-share.html" rel="next" title="Using tmux to " screen share>Next post</a>
+                <a href="/posts/erc-notifications-when-emacs-not-in-focus.html" rel="prev" title="erc-notifications when Emacs not in focus">Previous post</a>
             </span>
         </div>
 
@@ -150,9 +190,9 @@ the author of circe-notifications chose the tools that he did.
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="rusticreverie",
-            disqus_url="http://punchagan.muse-amuse.in/posts/erc-notifications-when-emacs-not-in-focus.html",
-        disqus_title="erc-notifications when Emacs not in focus",
-        disqus_identifier="cache/posts/erc-notifications-when-emacs-not-in-focus.html",
+            disqus_url="http://punchagan.muse-amuse.in/posts/using-tmux-to-screen-share.html",
+        disqus_title="Using tmux to \"screen share\"",
+        disqus_identifier="cache/posts/using-tmux-to-screen-share.html",
         disqus_config = function () {
             this.language = "en";
         };

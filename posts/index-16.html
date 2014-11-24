@@ -98,6 +98,41 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/let-there-be-light-in-skype.html" class="u-url">Let there be light, in skype!</a></h1>
+        <span class="post-date">29 Mar 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+At home, my video would always show a silhouette in G+ and Skype, and
+I always thought that this was because the lighting at home was not
+sufficient.  At office, the video was decent.  But, moving to sit
+right under the light also didn't help much.
+</p>
+
+<p>
+Struggling with a bunch of tools like <code>v4lctl</code>, <code>guvcview</code> didn't
+help. But, during these struggles I noticed that <code>cheese</code> would show
+me bright and cheerful, while all the other programs showed my
+silhouette.
+</p>
+
+<p>
+I set out to "fake" the output of <code>cheese</code> as a video device that
+skype and other programs could use. But, I didn't have to go all the
+way.  I ended up using <a href="https://github.com/umlaeute/v4l2loopback/">v4l2loopback</a> to create a loopback video device,
+and just using <code>gst-launch</code> to redirect video to that device, did the
+trick!  Thanks gstreamer!  Thanks v4l2loopback! :)
+</p>
+
+<p>
+Here's a convenient <a href="https://gist.github.com/punchagan/9859210">script</a> to use it every time I need it.
+</p>
+
+<script src="https://gist.github.com/9859210.js"></script>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/scraping-google-groups.html" class="u-url">Scraping Google Groups</a></h1>
         <span class="post-date">31 Dec 2013</span>
     </header>

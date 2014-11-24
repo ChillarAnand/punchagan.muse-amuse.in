@@ -98,6 +98,85 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/using-tmux-to-screen-share.html" class="u-url">Using tmux to "screen share"</a></h1>
+        <span class="post-date">24 Nov 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I wanted to pair with a friend of mine, exploring Magit mode in Emacs.  There
+are a couple of projects to make it easy to use tmux(-like) to simplify this.
+</p>
+
+<ul class="org-ul">
+<li>
+<a href="https://github.com/non/pairing">pairing</a> lets you share a screen and pair, on a common server where both the
+users have access to.  But I wanted to use my machine, instead of the
+server.
+</li>
+
+<li>
+<i>tmate</i> gets around the restriction of having a common server where both users
+have access, but needs a custom install of tmux, and the use of a 3rd party
+service.
+</li>
+</ul>
+
+<p>
+I worked around this, using an ssh reverse tunnels.  Here are the steps, for
+anyone who'd like to reproduce.
+</p>
+
+<ol class="org-ol">
+<li>Add your partner(-in-crime)'s ssh key to authorized keys on a server that
+has a public IP (<code>example.com</code>, let's say).
+</li>
+
+<li>Add your server's key to authorized keys on your local machine.
+</li>
+
+<li>Create a reverse tunnel from your machine to the server.
+
+<div class="highlight"><pre><span class="n">ssh</span> <span class="o">-</span><span class="n">fNR</span> <span class="mi">19999</span><span class="o">:</span><span class="n">localhost</span><span class="o">:</span><span class="mi">22</span> <span class="n">server_user</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span>
+</pre></div>
+
+<p>
+<code>-R 19999</code> essentially forwards port 19999 on <code>example.com</code> to
+localhost's 22.  <code>-fN</code> is to say no terminal, send connection to background.
+</p>
+</li>
+
+<li>Your partner first ssh's to example.com and then ssh's to your laptop.
+
+<p>
+On your partner's machine
+</p>
+
+<div class="highlight"><pre><span class="n">ssh</span> <span class="n">server_user</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span>
+</pre></div>
+
+<p>
+On the server, your partner does
+</p>
+<div class="highlight"><pre><span class="n">ssh</span> <span class="n">your_username</span><span class="err">@</span><span class="n">localhost</span> <span class="o">-</span><span class="n">p</span> <span class="mi">19999</span>
+</pre></div>
+
+<p>
+Your partner is on your machine, and can run <code>rm -rf</code>!  But, hopefully
+they'll only run <code>tmux attach</code>.  Obviously, do this only with people you
+trust!
+</p>
+</li>
+
+<li>Start a tmux session locally.
+</li>
+
+<li>Profit!
+</li>
+</ol>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/erc-notifications-when-emacs-not-in-focus.html" class="u-url">erc-notifications when Emacs not in focus</a></h1>
         <span class="post-date">06 Nov 2014</span>
     </header>
@@ -799,41 +878,6 @@ I also have a plugin, that posts captured bookmarks and quotes onto
 the blog, with a single command. I should probably make the sources of
 my blog open, and push it onto GitHub.
 </p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/let-there-be-light-in-skype.html" class="u-url">Let there be light, in skype!</a></h1>
-        <span class="post-date">29 Mar 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-At home, my video would always show a silhouette in G+ and Skype, and
-I always thought that this was because the lighting at home was not
-sufficient.  At office, the video was decent.  But, moving to sit
-right under the light also didn't help much.
-</p>
-
-<p>
-Struggling with a bunch of tools like <code>v4lctl</code>, <code>guvcview</code> didn't
-help. But, during these struggles I noticed that <code>cheese</code> would show
-me bright and cheerful, while all the other programs showed my
-silhouette.
-</p>
-
-<p>
-I set out to "fake" the output of <code>cheese</code> as a video device that
-skype and other programs could use. But, I didn't have to go all the
-way.  I ended up using <a href="https://github.com/umlaeute/v4l2loopback/">v4l2loopback</a> to create a loopback video device,
-and just using <code>gst-launch</code> to redirect video to that device, did the
-trick!  Thanks gstreamer!  Thanks v4l2loopback! :)
-</p>
-
-<p>
-Here's a convenient <a href="https://gist.github.com/punchagan/9859210">script</a> to use it every time I need it.
-</p>
-
-<script src="https://gist.github.com/9859210.js"></script>
     </div>
     </article>
 </div>

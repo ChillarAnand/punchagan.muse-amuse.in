@@ -1,5 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 13 Nov 2014 13:55:56 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>erc-notifications when Emacs not in focus</title><link>http://punchagan.muse-amuse.in/posts/erc-notifications-when-emacs-not-in-focus.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 24 Nov 2014 18:45:55 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using tmux to "screen share"</title><link>http://punchagan.muse-amuse.in/posts/using-tmux-to-screen-share.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I wanted to pair with a friend of mine, exploring Magit mode in Emacs.  There
+are a couple of projects to make it easy to use tmux(-like) to simplify this.
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="https://github.com/non/pairing"&gt;pairing&lt;/a&gt; lets you share a screen and pair, on a common server where both the
+users have access to.  But I wanted to use my machine, instead of the
+server.
+&lt;/li&gt;
+
+&lt;li&gt;&lt;i&gt;tmate&lt;/i&gt; gets around the restriction of having a common server where both users
+have access, but needs a custom install of tmux, and the use of a 3rd party
+service.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+I worked around this, using an ssh reverse tunnels.  Here are the steps, for
+anyone who'd like to reproduce.
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Add your partner(-in-crime)'s ssh key to authorized keys on a server that
+has a public IP (&lt;code&gt;example.com&lt;/code&gt;, let's say).
+&lt;/li&gt;
+
+&lt;li&gt;Add your server's key to authorized keys on your local machine.
+&lt;/li&gt;
+
+&lt;li&gt;Create a reverse tunnel from your machine to the server.
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fNR&lt;/span&gt; &lt;span class="mi"&gt;19999&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;localhost&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt; &lt;span class="n"&gt;server_user&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;example&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+&lt;code&gt;-R 19999&lt;/code&gt; essentially forwards port 19999 on &lt;code&gt;example.com&lt;/code&gt; to
+localhost's 22.  &lt;code&gt;-fN&lt;/code&gt; is to say no terminal, send connection to background.
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Your partner first ssh's to example.com and then ssh's to your laptop.
+
+&lt;p&gt;
+On your partner's machine
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="n"&gt;server_user&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;example&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+On the server, your partner does
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="n"&gt;your_username&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;localhost&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="mi"&gt;19999&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Your partner is on your machine, and can run &lt;code&gt;rm -rf&lt;/code&gt;!  But, hopefully
+they'll only run &lt;code&gt;tmux attach&lt;/code&gt;.  Obviously, do this only with people you
+trust!
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Start a tmux session locally.
+&lt;/li&gt;
+
+&lt;li&gt;Profit!
+&lt;/li&gt;
+&lt;/ol&gt;</description><guid>http://punchagan.muse-amuse.in/posts/using-tmux-to-screen-share.html</guid><pubDate>Mon, 24 Nov 2014 13:08:21 GMT</pubDate></item><item><title>erc-notifications when Emacs not in focus</title><link>http://punchagan.muse-amuse.in/posts/erc-notifications-when-emacs-not-in-focus.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I have been trying to get ERC working with notifications. Julien Danjou's
 wonderful &lt;a href="https://julien.danjou.info/blog/2012/erc-notifications"&gt;notifications&lt;/a&gt; module for ERC is great, but it is annoying to get
 notifications even when Emacs is in focus.
@@ -610,30 +678,4 @@ deploy&lt;/code&gt;.
 I also have a plugin, that posts captured bookmarks and quotes onto
 the blog, with a single command. I should probably make the sources of
 my blog open, and push it onto GitHub.
-&lt;/p&gt;</description><category>blog</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</guid><pubDate>Sun, 20 Apr 2014 12:05:10 GMT</pubDate></item><item><title>Let there be light, in skype!</title><link>http://punchagan.muse-amuse.in/posts/let-there-be-light-in-skype.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-At home, my video would always show a silhouette in G+ and Skype, and
-I always thought that this was because the lighting at home was not
-sufficient.  At office, the video was decent.  But, moving to sit
-right under the light also didn't help much.
-&lt;/p&gt;
-
-&lt;p&gt;
-Struggling with a bunch of tools like &lt;code&gt;v4lctl&lt;/code&gt;, &lt;code&gt;guvcview&lt;/code&gt; didn't
-help. But, during these struggles I noticed that &lt;code&gt;cheese&lt;/code&gt; would show
-me bright and cheerful, while all the other programs showed my
-silhouette.
-&lt;/p&gt;
-
-&lt;p&gt;
-I set out to "fake" the output of &lt;code&gt;cheese&lt;/code&gt; as a video device that
-skype and other programs could use. But, I didn't have to go all the
-way.  I ended up using &lt;a href="https://github.com/umlaeute/v4l2loopback/"&gt;v4l2loopback&lt;/a&gt; to create a loopback video device,
-and just using &lt;code&gt;gst-launch&lt;/code&gt; to redirect video to that device, did the
-trick!  Thanks gstreamer!  Thanks v4l2loopback! :)
-&lt;/p&gt;
-
-&lt;p&gt;
-Here's a convenient &lt;a href="https://gist.github.com/punchagan/9859210"&gt;script&lt;/a&gt; to use it every time I need it.
-&lt;/p&gt;
-
-&lt;script src="https://gist.github.com/9859210.js"&gt;&lt;/script&gt;</description><category>hack</category><category>linux</category><guid>http://punchagan.muse-amuse.in/posts/let-there-be-light-in-skype.html</guid><pubDate>Sat, 29 Mar 2014 17:52:27 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>blog</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</guid><pubDate>Sun, 20 Apr 2014 12:05:10 GMT</pubDate></item></channel></rss>
