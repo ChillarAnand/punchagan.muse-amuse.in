@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (blog)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/blog.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 24 Nov 2014 19:08:26 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (blog)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/blog.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 26 Nov 2014 17:37:46 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://binchen.org/"&gt;Chen Bin&lt;/a&gt; asked me to share my Nikola+Org work-flow, and share an
 example post.
 &lt;/p&gt;
@@ -18,7 +18,7 @@ here is what I typically do, to make a new post.
 I start off by creating a new post using
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;nikola&lt;/span&gt; &lt;span class="n"&gt;new_post&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;nikola new_post
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -43,22 +43,21 @@ Once, I'm happy with it, I commit the post and deploy it using &lt;code&gt;nikol
 deploy&lt;/code&gt;.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;you&lt;/span&gt; &lt;span class="nt"&gt;may&lt;/span&gt; &lt;span class="nt"&gt;use&lt;/span&gt; &lt;span class="nt"&gt;rsync&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="s2"&gt;"rsync -rav output/* joe@my.site:/srv/www/site"&lt;/span&gt;
-&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;And&lt;/span&gt; &lt;span class="nt"&gt;then&lt;/span&gt; &lt;span class="nt"&gt;do&lt;/span&gt; &lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="nt"&gt;backup&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;or&lt;/span&gt; &lt;span class="nt"&gt;ping&lt;/span&gt; &lt;span class="nt"&gt;pingomatic&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
-&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;To&lt;/span&gt; &lt;span class="nt"&gt;do&lt;/span&gt; &lt;span class="nt"&gt;manual&lt;/span&gt; &lt;span class="nt"&gt;deployment&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;set&lt;/span&gt; &lt;span class="nt"&gt;it&lt;/span&gt; &lt;span class="nt"&gt;to&lt;/span&gt; &lt;span class="cp"&gt;[]&lt;/span&gt;
-&lt;span class="nt"&gt;DEPLOY_COMMANDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="cp"&gt;[&lt;/span&gt;
-    &lt;span class="s1"&gt;'nikola orphans|xargs rm || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s1"&gt;'git checkout master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s1"&gt;'nikola build'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s1"&gt;'./commit-changes || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s1"&gt;'nikola github_deploy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="cp"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Commands to execute to deploy. Can be anything, for example,&lt;/span&gt;
+&lt;span class="c"&gt;# you may use rsync:&lt;/span&gt;
+&lt;span class="c"&gt;# "rsync -rav output/* joe@my.site:/srv/www/site"&lt;/span&gt;
+&lt;span class="c"&gt;# And then do a backup, or ping pingomatic.&lt;/span&gt;
+&lt;span class="c"&gt;# To do manual deployment, set it to []&lt;/span&gt;
+&lt;span class="n"&gt;DEPLOY_COMMANDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 
-
-&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;List&lt;/span&gt; &lt;span class="nt"&gt;XML-RPC&lt;/span&gt; &lt;span class="nt"&gt;services&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;preferred&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;in&lt;/span&gt; &lt;span class="nt"&gt;PING_XMLRPC_SERVICES&lt;/span&gt; &lt;span class="nt"&gt;and&lt;/span&gt; &lt;span class="nt"&gt;HTTP&lt;/span&gt;
-&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;GET&lt;/span&gt; &lt;span class="nt"&gt;services&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;web&lt;/span&gt; &lt;span class="nt"&gt;pages&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;in&lt;/span&gt; &lt;span class="nt"&gt;PING_GET_SERVICES&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
-&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nt"&gt;Consider&lt;/span&gt; &lt;span class="nt"&gt;adding&lt;/span&gt; &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="nt"&gt;nikola&lt;/span&gt; &lt;span class="nt"&gt;ping&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt; &lt;span class="nt"&gt;as&lt;/span&gt; &lt;span class="nt"&gt;the&lt;/span&gt; &lt;span class="nt"&gt;last&lt;/span&gt; &lt;span class="nt"&gt;entry&lt;/span&gt; &lt;span class="nt"&gt;in&lt;/span&gt; &lt;span class="nt"&gt;DEPLOY_COMMANDS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+    &lt;span class="s"&gt;'default'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+	&lt;span class="s"&gt;'nikola deploy assert-fork'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="s"&gt;'nikola orphans|xargs rm || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="s"&gt;'git checkout master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="s"&gt;'nikola build'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="s"&gt;'./commit-changes || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="s"&gt;'nikola github_deploy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="s"&gt;'git push origin master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;

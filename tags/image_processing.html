@@ -152,23 +152,24 @@ through a Bayer filter.
 <p>
 Here's some <code>python</code> code to do the same. (uses <code>matplotlib</code>)
 </p>
-<div class="highlight"><pre><span class="n">def</span> <span class="n">show_channels</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="o">:</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">:</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">show_channels</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
 	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
-	<span class="n">J</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span>
 	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
 
-<span class="n">def</span> <span class="n">show_grey_channels</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="o">:</span>
+<span class="k">def</span> <span class="nf">show_grey_channels</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
     <span class="n">K</span> <span class="o">=</span> <span class="n">average</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
 	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
-	<span class="n">J</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">K</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">K</span>
 	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
 	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Pixelating the blue channel</h2>
 <div class="outline-text-2" id="text-2">
@@ -188,36 +189,37 @@ difference between blue and red was less noticeable, I feel.
 Here's the code.
 </p>
 
-<div class="highlight"><pre>def zoom<span class="p">(</span>x<span class="p">,</span> factor<span class="o">=</span><span class="m">2</span><span class="p">)</span><span class="o">:</span>
-    rows<span class="p">,</span> cols <span class="o">=</span> x.shape
-    row_stride<span class="p">,</span> col_stride <span class="o">=</span> x.strides
-    view <span class="o">=</span> np.lib.stride_tricks.as_strided<span class="p">(</span>x<span class="p">,</span>
-			<span class="p">(</span>rows<span class="p">,</span> factor<span class="p">,</span> cols<span class="p">,</span> factor<span class="p">),</span>
-			<span class="p">(</span>row_stride<span class="p">,</span> <span class="m">0</span><span class="p">,</span> col_stride<span class="p">,</span> <span class="m">0</span><span class="p">))</span>
-    <span class="kr">return</span> view.reshape<span class="p">((</span>rows<span class="o">*</span>factor<span class="p">,</span> cols<span class="o">*</span>factor<span class="p">))</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">zoom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">row_stride</span><span class="p">,</span> <span class="n">col_stride</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">strides</span>
+    <span class="n">view</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">stride_tricks</span><span class="o">.</span><span class="n">as_strided</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>
+			<span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">factor</span><span class="p">),</span>
+			<span class="p">(</span><span class="n">row_stride</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">col_stride</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">view</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">rows</span><span class="o">*</span><span class="n">factor</span><span class="p">,</span> <span class="n">cols</span><span class="o">*</span><span class="n">factor</span><span class="p">))</span>
 
-def subsample<span class="p">(</span>I<span class="p">)</span><span class="o">:</span>
-    <span class="kr">for</span> i <span class="kr">in</span> range<span class="p">(</span><span class="m">3</span><span class="p">)</span><span class="o">:</span>
-	J <span class="o">=</span> I.copy<span class="p">()</span>
-	J<span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">,</span> i<span class="p">]</span> <span class="o">=</span> zoom<span class="p">(</span>I<span class="p">[</span><span class="o">::</span><span class="m">4</span><span class="p">,</span> <span class="o">::</span><span class="m">4</span><span class="p">,</span> i<span class="p">],</span> <span class="m">4</span><span class="p">)</span>
-	figure<span class="p">(</span>i<span class="p">)</span>
-	title<span class="p">(</span><span class="s">"%s channel subsampled"</span> <span class="o">%colors[i])</span>
-<span class="o">	imshow(J)</span>
+<span class="k">def</span> <span class="nf">subsample</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	<span class="n">J</span> <span class="o">=</span> <span class="n">I</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoom</span><span class="p">(</span><span class="n">I</span><span class="p">[::</span><span class="mi">4</span><span class="p">,</span> <span class="p">::</span><span class="mi">4</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
+	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+	<span class="n">title</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> channel subsampled"</span> <span class="o">%</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
 
-<span class="o">def swap_subsample(I, k=1):</span>
-<span class="o">    for c, color in enumerate(colors):</span>
-<span class="o">	print "%</span>s <span class="o">&lt;--</span> <span class="o">%s" %</span><span class="p">(</span>colors<span class="p">[</span>c<span class="p">],</span> colors<span class="p">[(</span>c<span class="o">+</span>k<span class="p">)</span><span class="o">%3])</span>
-<span class="o">    for i in range(3):</span>
-<span class="o">	J = zeros_like(I)</span>
-<span class="o">	for j in range(3):</span>
-<span class="o">	    J[:, :, j] = I[:, :, (j+k)%</span><span class="m">3</span><span class="p">]</span>
-	J<span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">,</span> i<span class="p">]</span> <span class="o">=</span> zoom<span class="p">(</span>I<span class="p">[</span><span class="o">::</span><span class="m">4</span><span class="p">,</span> <span class="o">::</span><span class="m">4</span><span class="p">,</span> <span class="p">(</span>i<span class="o">+</span>k<span class="p">)</span><span class="o">%3], 4)</span>
-<span class="o">	figure(i+10)</span>
-<span class="o">	title("%</span>s channel subsampled<span class="s">"</span><span class="err"> %colors[i])</span>
-	imshow<span class="p">(</span>J<span class="p">)</span>
+<span class="k">def</span> <span class="nf">swap_subsample</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+	<span class="k">print</span> <span class="s">"</span><span class="si">%s</span><span class="s"> &lt;-- </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">colors</span><span class="p">[(</span><span class="n">c</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	    <span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">]</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoom</span><span class="p">(</span><span class="n">I</span><span class="p">[::</span><span class="mi">4</span><span class="p">,</span> <span class="p">::</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
+	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
+	<span class="n">title</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> channel subsampled"</span> <span class="o">%</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Images</h2>
 <div class="outline-text-2" id="text-3">

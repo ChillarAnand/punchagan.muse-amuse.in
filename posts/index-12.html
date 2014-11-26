@@ -226,23 +226,24 @@ through a Bayer filter.
 <p>
 Here's some <code>python</code> code to do the same. (uses <code>matplotlib</code>)
 </p>
-<div class="highlight"><pre><span class="n">def</span> <span class="n">show_channels</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="o">:</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">:</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">show_channels</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
 	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
-	<span class="n">J</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span>
 	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
 
-<span class="n">def</span> <span class="n">show_grey_channels</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="o">:</span>
+<span class="k">def</span> <span class="nf">show_grey_channels</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
     <span class="n">K</span> <span class="o">=</span> <span class="n">average</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
 	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
-	<span class="n">J</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">K</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">K</span>
 	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
 	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Pixelating the blue channel</h2>
 <div class="outline-text-2" id="text-2">
@@ -262,36 +263,37 @@ difference between blue and red was less noticeable, I feel.
 Here's the code.
 </p>
 
-<div class="highlight"><pre>def zoom<span class="p">(</span>x<span class="p">,</span> factor<span class="o">=</span><span class="m">2</span><span class="p">)</span><span class="o">:</span>
-    rows<span class="p">,</span> cols <span class="o">=</span> x.shape
-    row_stride<span class="p">,</span> col_stride <span class="o">=</span> x.strides
-    view <span class="o">=</span> np.lib.stride_tricks.as_strided<span class="p">(</span>x<span class="p">,</span>
-			<span class="p">(</span>rows<span class="p">,</span> factor<span class="p">,</span> cols<span class="p">,</span> factor<span class="p">),</span>
-			<span class="p">(</span>row_stride<span class="p">,</span> <span class="m">0</span><span class="p">,</span> col_stride<span class="p">,</span> <span class="m">0</span><span class="p">))</span>
-    <span class="kr">return</span> view.reshape<span class="p">((</span>rows<span class="o">*</span>factor<span class="p">,</span> cols<span class="o">*</span>factor<span class="p">))</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">zoom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">row_stride</span><span class="p">,</span> <span class="n">col_stride</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">strides</span>
+    <span class="n">view</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">stride_tricks</span><span class="o">.</span><span class="n">as_strided</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>
+			<span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">factor</span><span class="p">),</span>
+			<span class="p">(</span><span class="n">row_stride</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">col_stride</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">view</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">rows</span><span class="o">*</span><span class="n">factor</span><span class="p">,</span> <span class="n">cols</span><span class="o">*</span><span class="n">factor</span><span class="p">))</span>
 
-def subsample<span class="p">(</span>I<span class="p">)</span><span class="o">:</span>
-    <span class="kr">for</span> i <span class="kr">in</span> range<span class="p">(</span><span class="m">3</span><span class="p">)</span><span class="o">:</span>
-	J <span class="o">=</span> I.copy<span class="p">()</span>
-	J<span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">,</span> i<span class="p">]</span> <span class="o">=</span> zoom<span class="p">(</span>I<span class="p">[</span><span class="o">::</span><span class="m">4</span><span class="p">,</span> <span class="o">::</span><span class="m">4</span><span class="p">,</span> i<span class="p">],</span> <span class="m">4</span><span class="p">)</span>
-	figure<span class="p">(</span>i<span class="p">)</span>
-	title<span class="p">(</span><span class="s">"%s channel subsampled"</span> <span class="o">%colors[i])</span>
-<span class="o">	imshow(J)</span>
+<span class="k">def</span> <span class="nf">subsample</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	<span class="n">J</span> <span class="o">=</span> <span class="n">I</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoom</span><span class="p">(</span><span class="n">I</span><span class="p">[::</span><span class="mi">4</span><span class="p">,</span> <span class="p">::</span><span class="mi">4</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
+	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+	<span class="n">title</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> channel subsampled"</span> <span class="o">%</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
 
-<span class="o">def swap_subsample(I, k=1):</span>
-<span class="o">    for c, color in enumerate(colors):</span>
-<span class="o">	print "%</span>s <span class="o">&lt;--</span> <span class="o">%s" %</span><span class="p">(</span>colors<span class="p">[</span>c<span class="p">],</span> colors<span class="p">[(</span>c<span class="o">+</span>k<span class="p">)</span><span class="o">%3])</span>
-<span class="o">    for i in range(3):</span>
-<span class="o">	J = zeros_like(I)</span>
-<span class="o">	for j in range(3):</span>
-<span class="o">	    J[:, :, j] = I[:, :, (j+k)%</span><span class="m">3</span><span class="p">]</span>
-	J<span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">,</span> i<span class="p">]</span> <span class="o">=</span> zoom<span class="p">(</span>I<span class="p">[</span><span class="o">::</span><span class="m">4</span><span class="p">,</span> <span class="o">::</span><span class="m">4</span><span class="p">,</span> <span class="p">(</span>i<span class="o">+</span>k<span class="p">)</span><span class="o">%3], 4)</span>
-<span class="o">	figure(i+10)</span>
-<span class="o">	title("%</span>s channel subsampled<span class="s">"</span><span class="err"> %colors[i])</span>
-	imshow<span class="p">(</span>J<span class="p">)</span>
+<span class="k">def</span> <span class="nf">swap_subsample</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+	<span class="k">print</span> <span class="s">"</span><span class="si">%s</span><span class="s"> &lt;-- </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">colors</span><span class="p">[(</span><span class="n">c</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	    <span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">]</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoom</span><span class="p">(</span><span class="n">I</span><span class="p">[::</span><span class="mi">4</span><span class="p">,</span> <span class="p">::</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
+	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
+	<span class="n">title</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> channel subsampled"</span> <span class="o">%</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Images</h2>
 <div class="outline-text-2" id="text-3">
@@ -338,16 +340,16 @@ Below is a bash snippet that tries to incorporates both the
 changes. :)
 </p>
 
-<div class="highlight"><pre><span class="n">found</span><span class="o">=</span><span class="mi">0</span>
+<div class="highlight"><pre><span class="nv">found</span><span class="o">=</span>0
 
-<span class="k">for</span> <span class="n">win</span> <span class="n">in</span> <span class="err">`</span><span class="n">xdotool</span> <span class="n">search</span> <span class="o">--</span><span class="n">class</span> <span class="err">$</span><span class="mi">1</span><span class="err">`</span><span class="p">;</span>
+<span class="k">for</span> win in <span class="sb">`</span>xdotool search --class <span class="nv">$1</span><span class="sb">`</span><span class="p">;</span>
 <span class="k">do</span>
-<span class="k">if</span> <span class="p">[</span> <span class="err">`</span><span class="n">xdotool</span> <span class="n">get_desktop_for_window</span> <span class="err">$</span><span class="n">win</span><span class="err">`</span> <span class="o">-</span><span class="n">eq</span> <span class="err">`</span><span class="n">xdotool</span> <span class="n">get_desktop</span><span class="err">`</span> <span class="p">];</span>
-<span class="n">then</span> <span class="n">found</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
-<span class="n">fi</span><span class="p">;</span>
-<span class="n">done</span>
+<span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>xdotool get_desktop_for_window <span class="nv">$win</span><span class="sb">`</span> -eq <span class="sb">`</span>xdotool get_desktop<span class="sb">`</span> <span class="o">]</span><span class="p">;</span>
+<span class="k">then</span> <span class="nv">found</span><span class="o">=</span>1<span class="p">;</span> <span class="nb">break</span><span class="p">;</span>
+<span class="k">fi</span><span class="p">;</span>
+<span class="k">done</span>
 
-<span class="k">if</span> <span class="p">[</span> <span class="err">$</span><span class="n">found</span> <span class="o">-</span><span class="n">eq</span> <span class="mi">1</span> <span class="p">];</span> <span class="n">then</span> <span class="n">xdotool</span> <span class="n">windowactivate</span> <span class="err">$</span><span class="n">win</span><span class="p">;</span> <span class="k">else</span> <span class="err">$</span><span class="mi">1</span><span class="p">;</span> <span class="n">fi</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$found</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> xdotool windowactivate <span class="nv">$win</span><span class="p">;</span> <span class="k">else</span> <span class="nv">$1</span><span class="p">;</span> <span class="k">fi</span>
 </pre></div>
 
 <p>
@@ -439,6 +441,7 @@ in Politics.
 </ul>
 </div>
 </div>
+
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">India</h2>
 <div class="outline-text-2" id="text-2">
@@ -484,31 +487,42 @@ growth of economy, and influencing the global economy
 </p>
 </div>
 </div>
+
 <div id="outline-container-sec-2-1-2" class="outline-4">
 <h4 id="sec-2-1-2">Dark Corners</h4>
 <div class="outline-text-4" id="text-2-1-2">
 </div>
 <ul class="org-ul">
-<li>Vote buying<br><ul class="org-ul">
-<li>Poverty, Illiteracy<br>
+<li>
+<a id="sec-2-1-2-1" name="sec-2-1-2-1"></a>Vote buying<br><ul class="org-ul">
+<li>
+<a id="sec-2-1-2-1-1" name="sec-2-1-2-1-1"></a>Poverty, Illiteracy<br>
 </li>
 
-<li>Power struggle without reference to Ideologies/outcomes<br>
+<li>
+<a id="sec-2-1-2-1-2" name="sec-2-1-2-1-2"></a>Power struggle without reference to Ideologies/outcomes<br>
 </li>
 
-<li>Only change in players, no change of outcomes<br>
+<li>
+<a id="sec-2-1-2-1-3" name="sec-2-1-2-1-3"></a>Only change in players, no change of outcomes<br>
 </li>
 </ul>
 </li>
-<li>Freebies after election<br>
+
+<li>
+<a id="sec-2-1-2-2" name="sec-2-1-2-2"></a>Freebies after election<br>
 </li>
 
-<li>Dividing based on primordial loyalties<br><ul class="org-ul"><li>No sense that any party would make any difference<br><ul class="org-ul"><li>Emotional Purchase is only available<br>
+<li>
+<a id="sec-2-1-2-3" name="sec-2-1-2-3"></a>Dividing based on primordial loyalties<br><ul class="org-ul"><li>
+<a id="sec-2-1-2-3-1" name="sec-2-1-2-3-1"></a>No sense that any party would make any difference<br><ul class="org-ul"><li>
+<a id="sec-2-1-2-3-1-1" name="sec-2-1-2-3-1-1"></a>Emotional Purchase is only available<br>
 </li></ul>
 </li></ul>
 </li>
 </ul>
 </div>
+
 <div id="outline-container-sec-2-1-3" class="outline-4">
 <h4 id="sec-2-1-3">Argument</h4>
 <div class="outline-text-4" id="text-2-1-3">
@@ -520,37 +534,52 @@ way.
 </div>
 
 <ul class="org-ul">
-<li>Comparison with China<br><ul class="org-ul"><li>Argument against Democracy is detrimental to economies<br><ul class="org-ul">
-<li>Autocracy - everything bad that happened<br>
+<li>
+<a id="sec-2-1-3-1" name="sec-2-1-3-1"></a>Comparison with China<br><ul class="org-ul"><li>
+<a id="sec-2-1-3-1-1" name="sec-2-1-3-1-1"></a>Argument against Democracy is detrimental to economies<br><ul class="org-ul">
+<li>
+<a id="sec-2-1-3-1-1-1" name="sec-2-1-3-1-1-1"></a>Autocracy - everything bad that happened<br>
 </li>
 
-<li>Democratization - everything good that happened<br><ul class="org-ul">
-<li>it's more than just voting<br>
+<li>
+<a id="sec-2-1-3-1-1-2" name="sec-2-1-3-1-1-2"></a>Democratization - everything good that happened<br><ul class="org-ul">
+<li>
+<a id="sec-2-1-3-1-1-2-1" name="sec-2-1-3-1-1-2-1"></a>it's more than just voting<br>
 </li>
 
-<li>in some respects China is perhaps more democratic than India<br>
+<li>
+<a id="sec-2-1-3-1-1-2-2" name="sec-2-1-3-1-1-2-2"></a>in some respects China is perhaps more democratic than India<br>
 </li>
 </ul>
 </li>
 </ul>
 </li></ul>
 </li>
-<li>What India needs<br><ul class="org-ul">
-<li>Art of democratization of our society<br><ul class="org-ul">
-<li>even after we have 7700 words in the constitution on this issue<br>
+
+<li>
+<a id="sec-2-1-3-2" name="sec-2-1-3-2"></a>What India needs<br><ul class="org-ul">
+<li>
+<a id="sec-2-1-3-2-1" name="sec-2-1-3-2-1"></a>Art of democratization of our society<br><ul class="org-ul">
+<li>
+<a id="sec-2-1-3-2-1-1" name="sec-2-1-3-2-1-1"></a>even after we have 7700 words in the constitution on this issue<br>
 </li>
 
-<li>We created over structured under powered local governments.<br>
+<li>
+<a id="sec-2-1-3-2-1-2" name="sec-2-1-3-2-1-2"></a>We created over structured under powered local governments.<br>
 </li>
 
-<li>recognize the merit of de-centralization<br><ul class="org-ul">
-<li>link between authority and accountability<br>
+<li>
+<a id="sec-2-1-3-2-1-3" name="sec-2-1-3-2-1-3"></a>recognize the merit of de-centralization<br><ul class="org-ul">
+<li>
+<a id="sec-2-1-3-2-1-3-1" name="sec-2-1-3-2-1-3-1"></a>link between authority and accountability<br>
 </li>
 
-<li>understanding of link between vote and public good<br>
+<li>
+<a id="sec-2-1-3-2-1-3-2" name="sec-2-1-3-2-1-3-2"></a>understanding of link between vote and public good<br>
 </li>
 
-<li>link between taxes and services rendered<br><div class="outline-text-8" id="text-2-1-3-2-1-3-3">
+<li>
+<a id="sec-2-1-3-2-1-3-3" name="sec-2-1-3-2-1-3-3"></a>link between taxes and services rendered<br><div class="outline-text-8" id="text-2-1-3-2-1-3-3">
 <ul class="org-ul">
 <li>tax avoidance is a national sport!
 </li>
@@ -561,41 +590,61 @@ way.
 </li>
 </ul>
 </li>
-<li>Rule of Law<br><ul class="org-ul">
-<li>impeccable system of law normative-ly<br>
+
+<li>
+<a id="sec-2-1-3-2-2" name="sec-2-1-3-2-2"></a>Rule of Law<br><ul class="org-ul">
+<li>
+<a id="sec-2-1-3-2-2-1" name="sec-2-1-3-2-2-1"></a>impeccable system of law normative-ly<br>
 </li>
 
-<li>weak, in practice<br>
+<li>
+<a id="sec-2-1-3-2-2-2" name="sec-2-1-3-2-2-2"></a>weak, in practice<br>
 </li>
 
-<li>simple elegant answers exist.<br><ul class="org-ul"><li>administrative forms comission<br>
+<li>
+<a id="sec-2-1-3-2-2-3" name="sec-2-1-3-2-2-3"></a>simple elegant answers exist.<br><ul class="org-ul"><li>
+<a id="sec-2-1-3-2-2-3-1" name="sec-2-1-3-2-2-3-1"></a>administrative forms comission<br>
 </li></ul>
 </li>
-<li>Culture of VIPs, cronyism, …<br>
+
+<li>
+<a id="sec-2-1-3-2-2-4" name="sec-2-1-3-2-2-4"></a>Culture of VIPs, cronyism, …<br>
 </li>
 </ul>
 </li>
-<li>Fight Corruption<br><ul class="org-ul">
-<li>corruption in India is Ubiquitous!<br>
+
+<li>
+<a id="sec-2-1-3-2-3" name="sec-2-1-3-2-3"></a>Fight Corruption<br><ul class="org-ul">
+<li>
+<a id="sec-2-1-3-2-3-1" name="sec-2-1-3-2-3-1"></a>corruption in India is Ubiquitous!<br>
 </li>
 
-<li>answers are self-evident<br><ul class="org-ul"><li>institutional mechanisms<br>
+<li>
+<a id="sec-2-1-3-2-3-2" name="sec-2-1-3-2-3-2"></a>answers are self-evident<br><ul class="org-ul"><li>
+<a id="sec-2-1-3-2-3-2-1" name="sec-2-1-3-2-3-2-1"></a>institutional mechanisms<br>
 </li></ul>
 </li>
 </ul>
 </li>
-<li>Electoral System<br><ul class="org-ul">
-<li>Proportional Representation<br>
+
+<li>
+<a id="sec-2-1-3-2-4" name="sec-2-1-3-2-4"></a>Electoral System<br><ul class="org-ul">
+<li>
+<a id="sec-2-1-3-2-4-1" name="sec-2-1-3-2-4-1"></a>Proportional Representation<br>
 </li>
 
-<li>Presidential system<br>
+<li>
+<a id="sec-2-1-3-2-4-2" name="sec-2-1-3-2-4-2"></a>Presidential system<br>
 </li>
 
-<li>Old fashioned - first past the post system needs to go<br><ul class="org-ul">
-<li>One vote can change things<br>
+<li>
+<a id="sec-2-1-3-2-4-3" name="sec-2-1-3-2-4-3"></a>Old fashioned - first past the post system needs to go<br><ul class="org-ul">
+<li>
+<a id="sec-2-1-3-2-4-3-1" name="sec-2-1-3-2-4-3-1"></a>One vote can change things<br>
 </li>
 
-<li>Vote buying will continue<br>
+<li>
+<a id="sec-2-1-3-2-4-3-2" name="sec-2-1-3-2-4-3-2"></a>Vote buying will continue<br>
 </li>
 </ul>
 </li>
@@ -605,6 +654,7 @@ way.
 </li>
 </ul>
 </div>
+
 <div id="outline-container-sec-2-1-4" class="outline-4">
 <h4 id="sec-2-1-4">Challenge</h4>
 <div class="outline-text-4" id="text-2-1-4">
@@ -619,6 +669,7 @@ the rest of the world!
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Questions</h2>
 <div class="outline-text-2" id="text-3">
@@ -651,6 +702,7 @@ the rest of the world!
 <h4 id="sec-3-2-5">politics - improved only by better and more politics, not revulsion</h4>
 </div>
 </div>
+
 <div id="outline-container-sec-3-3" class="outline-3">
 <h3 id="sec-3-3">Telangana issue</h3>
 <div class="outline-text-3" id="text-3-3">
@@ -672,33 +724,41 @@ the rest of the world!
 <div class="outline-text-4" id="text-3-3-4">
 </div>
 <ul class="org-ul">
-<li>there's nothing wrong with having markers<br>
+<li>
+<a id="sec-3-3-4-1" name="sec-3-3-4-1"></a>there's nothing wrong with having markers<br>
 </li>
 
-<li>some uniform principle<br>
+<li>
+<a id="sec-3-3-4-2" name="sec-3-3-4-2"></a>some uniform principle<br>
 </li>
 </ul>
 </div>
+
 <div id="outline-container-sec-3-3-5" class="outline-4">
 <h4 id="sec-3-3-5">big city is seeking a separate state-hood</h4>
 <div class="outline-text-4" id="text-3-3-5">
 </div>
 <ul class="org-ul">
-<li>could happen with another state<br>
+<li>
+<a id="sec-3-3-5-1" name="sec-3-3-5-1"></a>could happen with another state<br>
 </li>
 
-<li>how do we resolve it?<br>
+<li>
+<a id="sec-3-3-5-2" name="sec-3-3-5-2"></a>how do we resolve it?<br>
 </li>
 </ul>
 </div>
+
 <div id="outline-container-sec-3-3-6" class="outline-4">
 <h4 id="sec-3-3-6">Once these things are resolved, it doesn't matter what happens.</h4>
 <div class="outline-text-4" id="text-3-3-6">
 </div>
-<ul class="org-ul"><li>the real answer lies in de-centralization<br>
+<ul class="org-ul"><li>
+<a id="sec-3-3-6-1" name="sec-3-3-6-1"></a>the real answer lies in de-centralization<br>
 </li></ul>
 </div>
 </div>
+
 <div id="outline-container-sec-3-4" class="outline-3">
 <h3 id="sec-3-4">Rule of Law and Democracy</h3>
 <div class="outline-text-3" id="text-3-4">
@@ -715,13 +775,16 @@ the rest of the world!
 <h4 id="sec-3-4-3">delivery of rule of law is weak</h4>
 <div class="outline-text-4" id="text-3-4-3">
 </div>
-<ul class="org-ul"><li>we have to set that right<br>
+<ul class="org-ul"><li>
+<a id="sec-3-4-3-1" name="sec-3-4-3-1"></a>we have to set that right<br>
 </li></ul>
 </div>
+
 <div id="outline-container-sec-3-4-4" class="outline-4">
 <h4 id="sec-3-4-4">freedom and economic growth are compatible - show this to the world!</h4>
 </div>
 </div>
+
 <div id="outline-container-sec-3-5" class="outline-3">
 <h3 id="sec-3-5">Maoist insurgency</h3>
 <div class="outline-text-3" id="text-3-5">
@@ -738,6 +801,7 @@ the rest of the world!
 <h4 id="sec-3-5-3">hierarchy of principles - preserving of constitutional order</h4>
 </div>
 </div>
+
 <div id="outline-container-sec-3-6" class="outline-3">
 <h3 id="sec-3-6">Positive experiences during your term as legislator</h3>
 <div class="outline-text-3" id="text-3-6">
@@ -747,16 +811,20 @@ the rest of the world!
 <div class="outline-text-4" id="text-3-6-1">
 </div>
 <ul class="org-ul">
-<li>do whatever it takes to stay in power<br>
+<li>
+<a id="sec-3-6-1-1" name="sec-3-6-1-1"></a>do whatever it takes to stay in power<br>
 </li>
 
-<li>they are not villians<br><ul class="org-ul"><li>political framework<br>
+<li>
+<a id="sec-3-6-1-2" name="sec-3-6-1-2"></a>they are not villians<br><ul class="org-ul"><li>
+<a id="sec-3-6-1-2-1" name="sec-3-6-1-2-1"></a>political framework<br>
 </li></ul>
 </li>
 </ul>
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4">Conclusion</h2>
 <div class="outline-text-2" id="text-4">
@@ -895,7 +963,7 @@ successfully completed import of my Wordpress posts and comments. :)
 </li>
 <li>
 <code>org-hyde.el</code> <sup><a id="fnr.2" name="fnr.2" class="footref" href="/posts/wp-to-org-mode-hyde-disqus.html#fn.2">2</a></sup> to publish <code>html</code> in a <code>hyde</code>
-parse-able format.
+    parse-able format.
 </li>
 <li>
 <code>hyde</code> <sup><a id="fnr.3" name="fnr.3" class="footref" href="/posts/wp-to-org-mode-hyde-disqus.html#fn.3">3</a></sup> to convert the <code>html</code> pages into a blog.
@@ -919,6 +987,7 @@ fine-tune the shell script a bit, though.
 </p>
 </div>
 </div>
+
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">How I moved</h2>
 <div class="outline-text-2" id="text-2">
@@ -958,6 +1027,7 @@ something, I wish to learn.  I've started with that. :)
 </ol>
 </div>
 </div>
+
 <div id="outline-container-sec-2-2" class="outline-3">
 <h3 id="sec-2-2">Clean up <code>org-jekyll</code> to work with <code>hyde</code>.</h3>
 <div class="outline-text-3" id="text-2-2">
@@ -975,6 +1045,7 @@ that my older <code>org2blog</code> posts could be easily ported.
 </ul>
 </div>
 </div>
+
 <div id="outline-container-sec-2-3" class="outline-3">
 <h3 id="sec-2-3">Clean up older org2blog posts</h3>
 <div class="outline-text-3" id="text-2-3">
@@ -985,6 +1056,7 @@ tree, using some Python.
 </p>
 </div>
 </div>
+
 <div id="outline-container-sec-2-4" class="outline-3">
 <h3 id="sec-2-4">Import older posts</h3>
 <div class="outline-text-3" id="text-2-4">
@@ -1001,16 +1073,17 @@ I did all sorts of crazy stuff to get this done.
 <li>used pandoc to convert html to <code>markdown</code>
 </li>
 <li>wrote some throw away regex code to convert <code>markdown</code> to
-      <code>org-mode</code>.
+<code>org-mode</code>.
 </li>
 <li>wrote more regex code to convert <code>html</code> to <code>org-mode</code>.
 </li>
 <li>hacked up a lot of stuff and finally got all the posts into
-      <code>org</code> format! :)
+<code>org</code> format! :)
 </li>
 </ul>
 </div>
 </div>
+
 
 <div id="outline-container-sec-2-5" class="outline-3">
 <h3 id="sec-2-5">A workflow for publishing</h3>
@@ -1024,6 +1097,7 @@ hostel.
 </p>
 </div>
 </div>
+
 <div id="outline-container-sec-2-6" class="outline-3">
 <h3 id="sec-2-6">CSS clean-up</h3>
 <div class="outline-text-3" id="text-2-6">
@@ -1038,6 +1112,7 @@ My first tryst with CSS hasn't been all that bad. :)
 </p>
 </div>
 </div>
+
 <div id="outline-container-sec-2-7" class="outline-3">
 <h3 id="sec-2-7">Installing disqus and importing comments</h3>
 <div class="outline-text-3" id="text-2-7">
@@ -1068,6 +1143,7 @@ newer urls to the older ones.
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Conclusion</h2>
 <div class="outline-text-2" id="text-3">
@@ -1154,20 +1230,20 @@ But, if you have used <code>Python</code> and <code>numpy</code>, then read on. 
 try these bits of code.
 </p>
 
-<div class="highlight"><pre><span class="n">import</span> <span class="n">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mf">0.5</span><span class="n">j</span>
-<span class="n">print</span> <span class="n">a</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mf">0.5j</span>
+<span class="k">print</span> <span class="n">a</span>
 </pre></div>
 
 <p>
 The "same thing", in a slightly different way.
 </p>
 
-<div class="highlight"><pre><span class="n">import</span> <span class="n">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5</span><span class="n">j</span>
-<span class="n">print</span> <span class="n">a</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
+<span class="k">print</span> <span class="n">a</span>
 </pre></div>
 
 <p>
@@ -1194,10 +1270,10 @@ trouble.
 The right way to use the augmented assignment operator, would be:
 </p>
 
-<div class="highlight"><pre><span class="n">import</span> <span class="n">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">complex</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5</span><span class="n">j</span>
-<span class="n">print</span> <span class="n">a</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
+<span class="k">print</span> <span class="n">a</span>
 </pre></div>
 
 <p>

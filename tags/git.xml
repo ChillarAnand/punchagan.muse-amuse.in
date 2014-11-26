@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (git)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/git.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 24 Nov 2014 19:08:26 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A git-diff tip</title><link>http://punchagan.muse-amuse.in/posts/a-git-diff-tip.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (git)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/git.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 26 Nov 2014 17:37:46 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A git-diff tip</title><link>http://punchagan.muse-amuse.in/posts/a-git-diff-tip.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 One of the things with git that you can mess-up, if you are not
 used to, is git diff.  A friend of mine was trying to add a couple
 of new files, and changes to existing files.  But, he was on the
@@ -12,26 +12,26 @@ the changes, apply the patch back.
 This is what he did
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;new_file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;old_file1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="n"&gt;old_file2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;don&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;old_file3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git add new_file.txt
+git add old_file1.txt old_file2.txt &lt;span class="c"&gt;# don't add old_file3.txt&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
 Oh, damn, I want to change the branch.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;diff&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;reset&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;hard&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;checkout&lt;/span&gt; &lt;span class="n"&gt;other&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git diff &amp;gt; a.patch
+git reset --hard
+git checkout other-branch
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
 Let me commit my changes…
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;apply&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;show&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git apply a.patch
+git commit -m
+git show
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -39,8 +39,8 @@ Oh crap!  Where are my new files?  They aren't commited!  Lemme
 add them.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ls&lt;/span&gt; &lt;span class="n"&gt;new_file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
-&lt;span class="nl"&gt;ls:&lt;/span&gt; &lt;span class="n"&gt;cannot&lt;/span&gt; &lt;span class="n"&gt;access&lt;/span&gt; &lt;span class="n"&gt;new_file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;such&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;directory&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ls new_file.txt
+ls: cannot access new_file.txt: No such file or directory
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -60,10 +60,10 @@ comfortable with git would've committed and then moved the commit
 around using cherry-pick or the like.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="s"&gt;"My awesome changes."&lt;/span&gt;  &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;committed&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;branch1&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;checkout&lt;/span&gt; &lt;span class="n"&gt;other&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;cherry&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pick&lt;/span&gt; &lt;span class="n"&gt;branch1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git add &amp;lt;all-files&amp;gt;
+git commit -m &lt;span class="s2"&gt;"My awesome changes."&lt;/span&gt;  &lt;span class="c"&gt;#committed on branch1&lt;/span&gt;
+git checkout other-branch
+git cherry-pick branch1
 &lt;/pre&gt;&lt;/div&gt;</description><category>git</category><category>version_control</category><guid>http://punchagan.muse-amuse.in/posts/a-git-diff-tip.html</guid><pubDate>Wed, 22 Aug 2012 17:36:00 GMT</pubDate></item><item><title>GetHub: Chrome Notifications for Github updates</title><link>http://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Over the last two days, I hacked up my first Chrome extension.
 I've been using Chrome only for the past couple of weeks or so and
@@ -91,6 +91,7 @@ After installation, you will need to save your &lt;code&gt;username&lt;/code&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
 &lt;div id="outline-container-sec-2" class="outline-2"&gt;
 &lt;h2 id="sec-2"&gt;Where to get it?&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
@@ -109,6 +110,7 @@ one-time verification fee that Google asks for.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
 &lt;div id="outline-container-sec-3" class="outline-2"&gt;
 &lt;h2 id="sec-3"&gt;Comments and Feedback&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;

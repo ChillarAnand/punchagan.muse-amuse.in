@@ -134,11 +134,11 @@ We have our two classes, <code>A</code> and <code>B</code> defined in the <code>
 module.
 </p>
 
-<div class="highlight"><pre><span class="n">class</span> <span class="n">A</span><span class="p">(</span><span class="n">object</span><span class="p">)</span><span class="o">:</span>
-    <span class="n">pass</span>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
 
-<span class="n">class</span> <span class="n">B</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">:</span>
-    <span class="n">pass</span>
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">pass</span>
 </pre></div>
 
 <p>
@@ -146,27 +146,27 @@ We run <code>foo.py</code> and scratch our heads for a while, before
 figuring out what's wrong…
 </p>
 
-<div class="highlight"><pre><span class="cp"># We add the directory containing out package 'baz' to sys.path to be</span>
-<span class="cp"># able to import using the package name.</span>
-<span class="n">import</span> <span class="n">sys</span>
-<span class="n">sys</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="err">'</span><span class="o">/</span><span class="n">tmp</span><span class="err">'</span><span class="p">)</span>
+<div class="highlight"><pre><span class="c"># We add the directory containing out package 'baz' to sys.path to be</span>
+<span class="c"># able to import using the package name.</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">'/tmp'</span><span class="p">)</span>
 
-<span class="cp"># We import A from bar module present in the same directory as foo</span>
-<span class="n">from</span> <span class="n">bar</span> <span class="n">import</span> <span class="n">A</span>
-<span class="cp"># We import B from bar, but refer to it, as a submodule of baz</span>
-<span class="n">from</span> <span class="n">baz</span><span class="p">.</span><span class="n">bar</span> <span class="n">import</span> <span class="n">B</span>
+<span class="c"># We import A from bar module present in the same directory as foo</span>
+<span class="kn">from</span> <span class="nn">bar</span> <span class="kn">import</span> <span class="n">A</span>
+<span class="c"># We import B from bar, but refer to it, as a submodule of baz</span>
+<span class="kn">from</span> <span class="nn">baz.bar</span> <span class="kn">import</span> <span class="n">B</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
 
-<span class="n">print</span> <span class="s">"isinstance(b, A) --&gt;"</span><span class="p">,</span> <span class="n">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">"isinstance(b, A) --&gt;"</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">cls</span> <span class="n">in</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span><span class="o">:</span>
-    <span class="n">print</span> <span class="s">"%s --&gt;"</span> <span class="o">%</span><span class="n">cls</span><span class="p">,</span> <span class="n">cls</span>
+<span class="k">for</span> <span class="n">cls</span> <span class="ow">in</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">"</span><span class="si">%s</span><span class="s"> --&gt;"</span> <span class="o">%</span><span class="n">cls</span><span class="p">,</span> <span class="n">cls</span>
 
-<span class="k">for</span> <span class="n">module</span> <span class="n">in</span> <span class="n">sys</span><span class="p">.</span><span class="n">modules</span><span class="o">:</span>
-    <span class="k">if</span> <span class="err">'</span><span class="n">bar</span><span class="err">'</span> <span class="n">in</span> <span class="n">module</span><span class="o">:</span>
-	<span class="n">print</span> <span class="n">module</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">modules</span><span class="p">[</span><span class="n">module</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s">'bar'</span> <span class="ow">in</span> <span class="n">module</span><span class="p">:</span>
+	<span class="k">print</span> <span class="n">module</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">module</span><span class="p">]</span>
 </pre></div>
 
 <pre class="example">

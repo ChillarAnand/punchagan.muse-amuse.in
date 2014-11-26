@@ -166,25 +166,25 @@ status on Pidgin, and turning notifications on and off in Gnome.  Here's a few
 lines of code that does this for me.
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="n">defadvice</span> <span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">in</span> <span class="p">(</span><span class="n">after</span> <span class="n">pc</span><span class="o">/</span><span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">in</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">optional</span> <span class="n">select</span> <span class="n">start</span><span class="o">-</span><span class="n">time</span><span class="p">))</span>
+<div class="highlight"><pre><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">org-clock-in</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">pc/org-clock-in</span> <span class="p">(</span><span class="k">&amp;optional</span> <span class="nv">select</span> <span class="nv">start-time</span><span class="p">))</span>
   <span class="s">"Turn gnome notifications off."</span>
-  <span class="p">(</span><span class="n">dbus</span><span class="o">-</span><span class="n">send</span><span class="o">-</span><span class="n">signal</span>
-   <span class="o">:</span><span class="n">session</span>
+  <span class="p">(</span><span class="nv">dbus-send-signal</span>
+   <span class="ss">:session</span>
    <span class="s">"org.gnome.SessionManager"</span>
    <span class="s">"/org/gnome/SessionManager/Presence"</span>
    <span class="s">"org.gnome.SessionManager.Presence"</span>
    <span class="s">"SetStatus"</span> <span class="mi">2</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">shell</span><span class="o">-</span><span class="n">command</span> <span class="s">"purple-remote setstatus?status=unavailable"</span><span class="p">))</span>
+  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=unavailable"</span><span class="p">))</span>
 
-<span class="p">(</span><span class="n">defadvice</span> <span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">out</span> <span class="p">(</span><span class="n">after</span> <span class="n">pc</span><span class="o">/</span><span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">out</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">optional</span> <span class="k">switch</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">state</span> <span class="n">fail</span><span class="o">-</span><span class="n">quietly</span> <span class="n">at</span><span class="o">-</span><span class="n">time</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">defadvice</span> <span class="nv">org-clock-out</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">pc/org-clock-out</span> <span class="p">(</span><span class="k">&amp;optional</span> <span class="nv">switch-to-state</span> <span class="nv">fail-quietly</span> <span class="nv">at-time</span><span class="p">))</span>
   <span class="s">"Turn gnome notifications back on."</span>
-  <span class="p">(</span><span class="n">dbus</span><span class="o">-</span><span class="n">send</span><span class="o">-</span><span class="n">signal</span>
-   <span class="o">:</span><span class="n">session</span>
+  <span class="p">(</span><span class="nv">dbus-send-signal</span>
+   <span class="ss">:session</span>
    <span class="s">"org.gnome.SessionManager"</span>
    <span class="s">"/org/gnome/SessionManager/Presence"</span>
    <span class="s">"org.gnome.SessionManager.Presence"</span>
    <span class="s">"SetStatus"</span> <span class="mi">0</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">shell</span><span class="o">-</span><span class="n">command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
+  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
 </pre></div>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -208,28 +208,28 @@ the function, I decided to make use of <code>org-clock-in-hook</code>.
 Here is the new code.
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">pc</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">off</span><span class="o">-</span><span class="n">notifications</span> <span class="p">()</span>
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/turn-off-notifications</span> <span class="p">()</span>
   <span class="s">"Turn gnome notifications off."</span>
-  <span class="p">(</span><span class="n">dbus</span><span class="o">-</span><span class="n">send</span><span class="o">-</span><span class="n">signal</span>
-   <span class="o">:</span><span class="n">session</span>
+  <span class="p">(</span><span class="nv">dbus-send-signal</span>
+   <span class="ss">:session</span>
    <span class="s">"org.gnome.SessionManager"</span>
    <span class="s">"/org/gnome/SessionManager/Presence"</span>
    <span class="s">"org.gnome.SessionManager.Presence"</span>
    <span class="s">"SetStatus"</span> <span class="mi">2</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">shell</span><span class="o">-</span><span class="n">command</span> <span class="s">"purple-remote setstatus?status=unavailable"</span><span class="p">))</span>
+  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=unavailable"</span><span class="p">))</span>
 
-<span class="p">(</span><span class="n">defun</span> <span class="n">pc</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">notifications</span> <span class="p">()</span>
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/turn-on-notifications</span> <span class="p">()</span>
   <span class="s">"Turn gnome notifications back on."</span>
-  <span class="p">(</span><span class="n">dbus</span><span class="o">-</span><span class="n">send</span><span class="o">-</span><span class="n">signal</span>
-   <span class="o">:</span><span class="n">session</span>
+  <span class="p">(</span><span class="nv">dbus-send-signal</span>
+   <span class="ss">:session</span>
    <span class="s">"org.gnome.SessionManager"</span>
    <span class="s">"/org/gnome/SessionManager/Presence"</span>
    <span class="s">"org.gnome.SessionManager.Presence"</span>
    <span class="s">"SetStatus"</span> <span class="mi">0</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">shell</span><span class="o">-</span><span class="n">command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
+  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
 
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">pc</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">off</span><span class="o">-</span><span class="n">notifications</span><span class="p">)</span>
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">org</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">out</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">pc</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">notifications</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'org-clock-in-hook</span> <span class="ss">'pc/turn-off-notifications</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'org-clock-out-hook</span> <span class="ss">'pc/turn-on-notifications</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -309,7 +309,7 @@ here is what I typically do, to make a new post.
 I start off by creating a new post using
 </p>
 
-<div class="highlight"><pre><span class="err">$</span> <span class="n">nikola</span> <span class="n">new_post</span>
+<div class="highlight"><pre><span class="nv">$ </span>nikola new_post
 </pre></div>
 
 <p>
@@ -334,22 +334,21 @@ Once, I'm happy with it, I commit the post and deploy it using <code>nikola
 deploy</code>.
 </p>
 
-<div class="highlight"><pre><span class="err">#</span> <span class="nt">you</span> <span class="nt">may</span> <span class="nt">use</span> <span class="nt">rsync</span><span class="o">:</span>
-<span class="err">#</span> <span class="s2">"rsync -rav output/* joe@my.site:/srv/www/site"</span>
-<span class="err">#</span> <span class="nt">And</span> <span class="nt">then</span> <span class="nt">do</span> <span class="nt">a</span> <span class="nt">backup</span><span class="o">,</span> <span class="nt">or</span> <span class="nt">ping</span> <span class="nt">pingomatic</span><span class="o">.</span>
-<span class="err">#</span> <span class="nt">To</span> <span class="nt">do</span> <span class="nt">manual</span> <span class="nt">deployment</span><span class="o">,</span> <span class="nt">set</span> <span class="nt">it</span> <span class="nt">to</span> <span class="cp">[]</span>
-<span class="nt">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="cp">[</span>
-    <span class="s1">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
-    <span class="s1">'git checkout master'</span><span class="p">,</span>
-    <span class="s1">'nikola build'</span><span class="p">,</span>
-    <span class="s1">'./commit-changes || true'</span><span class="p">,</span>
-    <span class="s1">'nikola github_deploy'</span><span class="p">,</span>
-<span class="cp">]</span>
+<div class="highlight"><pre><span class="c"># Commands to execute to deploy. Can be anything, for example,</span>
+<span class="c"># you may use rsync:</span>
+<span class="c"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
+<span class="c"># And then do a backup, or ping pingomatic.</span>
+<span class="c"># To do manual deployment, set it to []</span>
+<span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
 
-
-<span class="err">#</span> <span class="nt">List</span> <span class="nt">XML-RPC</span> <span class="nt">services</span> <span class="o">(</span><span class="nt">preferred</span><span class="o">)</span> <span class="nt">in</span> <span class="nt">PING_XMLRPC_SERVICES</span> <span class="nt">and</span> <span class="nt">HTTP</span>
-<span class="err">#</span> <span class="nt">GET</span> <span class="nt">services</span> <span class="o">(</span><span class="nt">web</span> <span class="nt">pages</span><span class="o">)</span> <span class="nt">in</span> <span class="nt">PING_GET_SERVICES</span><span class="o">.</span>
-<span class="err">#</span> <span class="nt">Consider</span> <span class="nt">adding</span> <span class="err">`</span><span class="nt">nikola</span> <span class="nt">ping</span><span class="err">`</span> <span class="nt">as</span> <span class="nt">the</span> <span class="nt">last</span> <span class="nt">entry</span> <span class="nt">in</span> <span class="nt">DEPLOY_COMMANDS</span><span class="o">.</span>
+    <span class="s">'default'</span><span class="p">:</span> <span class="p">[</span>
+	<span class="s">'nikola deploy assert-fork'</span><span class="p">,</span>
+	<span class="s">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
+	<span class="s">'git checkout master'</span><span class="p">,</span>
+	<span class="s">'nikola build'</span><span class="p">,</span>
+	<span class="s">'./commit-changes || true'</span><span class="p">,</span>
+	<span class="s">'nikola github_deploy'</span><span class="p">,</span>
+	<span class="s">'git push origin master'</span><span class="p">,</span>
 </pre></div>
 
 <p>

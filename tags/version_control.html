@@ -115,26 +115,26 @@ the changes, apply the patch back.
 This is what he did
 </p>
 
-<div class="highlight"><pre><span class="n">git</span> <span class="n">add</span> <span class="n">new_file</span><span class="p">.</span><span class="n">txt</span>
-<span class="n">git</span> <span class="n">add</span> <span class="n">old_file1</span><span class="p">.</span><span class="n">txt</span> <span class="n">old_file2</span><span class="p">.</span><span class="n">txt</span> <span class="err">#</span> <span class="n">don</span><span class="err">'</span><span class="n">t</span> <span class="n">add</span> <span class="n">old_file3</span><span class="p">.</span><span class="n">txt</span>
+<div class="highlight"><pre>git add new_file.txt
+git add old_file1.txt old_file2.txt <span class="c"># don't add old_file3.txt</span>
 </pre></div>
 
 <p>
 Oh, damn, I want to change the branch.
 </p>
 
-<div class="highlight"><pre><span class="n">git</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">.</span><span class="n">patch</span>
-<span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="n">other</span><span class="o">-</span><span class="n">branch</span>
+<div class="highlight"><pre>git diff &gt; a.patch
+git reset --hard
+git checkout other-branch
 </pre></div>
 
 <p>
 Let me commit my changes…
 </p>
 
-<div class="highlight"><pre><span class="n">git</span> <span class="n">apply</span> <span class="n">a</span><span class="p">.</span><span class="n">patch</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span>
-<span class="n">git</span> <span class="n">show</span>
+<div class="highlight"><pre>git apply a.patch
+git commit -m
+git show
 </pre></div>
 
 <p>
@@ -142,8 +142,8 @@ Oh crap!  Where are my new files?  They aren't commited!  Lemme
 add them.
 </p>
 
-<div class="highlight"><pre><span class="n">ls</span> <span class="n">new_file</span><span class="p">.</span><span class="n">txt</span>
-<span class="nl">ls:</span> <span class="n">cannot</span> <span class="n">access</span> <span class="n">new_file</span><span class="p">.</span><span class="n">txt</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
+<div class="highlight"><pre>ls new_file.txt
+ls: cannot access new_file.txt: No such file or directory
 </pre></div>
 
 <p>
@@ -163,10 +163,10 @@ comfortable with git would've committed and then moved the commit
 around using cherry-pick or the like.
 </p>
 
-<div class="highlight"><pre><span class="n">git</span> <span class="n">add</span> <span class="o">&lt;</span><span class="n">all</span><span class="o">-</span><span class="n">files</span><span class="o">&gt;</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">"My awesome changes."</span>  <span class="err">#</span><span class="n">committed</span> <span class="n">on</span> <span class="n">branch1</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="n">other</span><span class="o">-</span><span class="n">branch</span>
-<span class="n">git</span> <span class="n">cherry</span><span class="o">-</span><span class="n">pick</span> <span class="n">branch1</span>
+<div class="highlight"><pre>git add &lt;all-files&gt;
+git commit -m <span class="s2">"My awesome changes."</span>  <span class="c">#committed on branch1</span>
+git checkout other-branch
+git cherry-pick branch1
 </pre></div>
     </div>
     </article>

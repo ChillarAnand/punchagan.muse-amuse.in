@@ -109,26 +109,26 @@ writing. I just wrote a simple function to count characters in a
 region or a buffer. Another function to count the words.
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">count</span><span class="o">-</span><span class="n">chars</span> <span class="p">()</span>
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">count-chars</span> <span class="p">()</span>
   <span class="s">"Count the number of chars in a buffer or region."</span>
-  <span class="p">(</span><span class="n">interactive</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">let</span><span class="o">*</span> <span class="p">((</span><span class="n">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">region</span><span class="o">-</span><span class="n">active</span><span class="o">-</span><span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">region</span><span class="o">-</span><span class="n">beginning</span><span class="p">)</span> <span class="p">(</span><span class="n">point</span><span class="o">-</span><span class="n">min</span><span class="p">)))</span>
-	 <span class="p">(</span><span class="n">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">region</span><span class="o">-</span><span class="n">active</span><span class="o">-</span><span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">region</span><span class="o">-</span><span class="n">end</span><span class="p">)</span> <span class="p">(</span><span class="n">point</span><span class="o">-</span><span class="n">max</span><span class="p">))))</span>
-	 <span class="p">(</span><span class="n">message</span> <span class="p">(</span><span class="n">number</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">string</span> <span class="p">(</span><span class="o">-</span> <span class="n">end</span> <span class="n">beg</span><span class="p">)))))</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-beginning</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-min</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-end</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-max</span><span class="p">))))</span>
+	 <span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nv">number-to-string</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">end</span> <span class="nv">beg</span><span class="p">)))))</span>
 </pre></div>
 
-<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">count</span><span class="o">-</span><span class="n">words</span> <span class="p">()</span>
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">count-words</span> <span class="p">()</span>
   <span class="s">"Count the number of words in a buffer or region."</span>
-  <span class="p">(</span><span class="n">interactive</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">let</span><span class="o">*</span> <span class="p">((</span><span class="n">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">region</span><span class="o">-</span><span class="n">active</span><span class="o">-</span><span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">region</span><span class="o">-</span><span class="n">beginning</span><span class="p">)</span> <span class="p">(</span><span class="n">point</span><span class="o">-</span><span class="n">min</span><span class="p">)))</span>
-	 <span class="p">(</span><span class="n">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">region</span><span class="o">-</span><span class="n">active</span><span class="o">-</span><span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">region</span><span class="o">-</span><span class="n">end</span><span class="p">)</span> <span class="p">(</span><span class="n">point</span><span class="o">-</span><span class="n">max</span><span class="p">)))</span>
-	 <span class="p">(</span><span class="n">count</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="p">(</span><span class="n">save</span><span class="o">-</span><span class="n">excursion</span>
-      <span class="p">(</span><span class="k">goto</span><span class="o">-</span><span class="kt">char</span> <span class="n">beg</span><span class="p">)</span>
-      <span class="p">(</span><span class="k">while</span> <span class="p">(</span><span class="o">&lt;</span> <span class="p">(</span><span class="n">point</span><span class="p">)</span> <span class="n">end</span><span class="p">)</span>
-	<span class="p">(</span><span class="n">forward</span><span class="o">-</span><span class="n">word</span><span class="p">)</span>
-	<span class="p">(</span><span class="n">setq</span> <span class="n">count</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span> <span class="n">count</span><span class="p">))))</span>
-    <span class="p">(</span><span class="n">message</span> <span class="p">(</span><span class="kt">int</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">string</span> <span class="n">count</span><span class="p">))))</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-beginning</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-min</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-end</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-max</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nb">count</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">save-excursion</span>
+      <span class="p">(</span><span class="nv">goto-char</span> <span class="nv">beg</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">while</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="p">(</span><span class="nv">point</span><span class="p">)</span> <span class="nv">end</span><span class="p">)</span>
+	<span class="p">(</span><span class="nv">forward-word</span><span class="p">)</span>
+	<span class="p">(</span><span class="k">setq</span> <span class="nb">count</span> <span class="p">(</span><span class="nb">1+</span> <span class="nb">count</span><span class="p">))))</span>
+    <span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nv">int-to-string</span> <span class="nb">count</span><span class="p">))))</span>
 </pre></div>
     </div>
     <aside class="postpromonav">

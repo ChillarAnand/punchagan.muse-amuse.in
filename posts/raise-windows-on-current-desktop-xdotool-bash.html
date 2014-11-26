@@ -121,16 +121,16 @@ Below is a bash snippet that tries to incorporates both the
 changes. :)
 </p>
 
-<div class="highlight"><pre><span class="n">found</span><span class="o">=</span><span class="mi">0</span>
+<div class="highlight"><pre><span class="nv">found</span><span class="o">=</span>0
 
-<span class="k">for</span> <span class="n">win</span> <span class="n">in</span> <span class="err">`</span><span class="n">xdotool</span> <span class="n">search</span> <span class="o">--</span><span class="n">class</span> <span class="err">$</span><span class="mi">1</span><span class="err">`</span><span class="p">;</span>
+<span class="k">for</span> win in <span class="sb">`</span>xdotool search --class <span class="nv">$1</span><span class="sb">`</span><span class="p">;</span>
 <span class="k">do</span>
-<span class="k">if</span> <span class="p">[</span> <span class="err">`</span><span class="n">xdotool</span> <span class="n">get_desktop_for_window</span> <span class="err">$</span><span class="n">win</span><span class="err">`</span> <span class="o">-</span><span class="n">eq</span> <span class="err">`</span><span class="n">xdotool</span> <span class="n">get_desktop</span><span class="err">`</span> <span class="p">];</span>
-<span class="n">then</span> <span class="n">found</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
-<span class="n">fi</span><span class="p">;</span>
-<span class="n">done</span>
+<span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>xdotool get_desktop_for_window <span class="nv">$win</span><span class="sb">`</span> -eq <span class="sb">`</span>xdotool get_desktop<span class="sb">`</span> <span class="o">]</span><span class="p">;</span>
+<span class="k">then</span> <span class="nv">found</span><span class="o">=</span>1<span class="p">;</span> <span class="nb">break</span><span class="p">;</span>
+<span class="k">fi</span><span class="p">;</span>
+<span class="k">done</span>
 
-<span class="k">if</span> <span class="p">[</span> <span class="err">$</span><span class="n">found</span> <span class="o">-</span><span class="n">eq</span> <span class="mi">1</span> <span class="p">];</span> <span class="n">then</span> <span class="n">xdotool</span> <span class="n">windowactivate</span> <span class="err">$</span><span class="n">win</span><span class="p">;</span> <span class="k">else</span> <span class="err">$</span><span class="mi">1</span><span class="p">;</span> <span class="n">fi</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$found</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> xdotool windowactivate <span class="nv">$win</span><span class="p">;</span> <span class="k">else</span> <span class="nv">$1</span><span class="p">;</span> <span class="k">fi</span>
 </pre></div>
 
 <p>

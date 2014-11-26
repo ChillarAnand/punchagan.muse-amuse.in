@@ -137,7 +137,7 @@ has a public IP (<code>example.com</code>, let's say).
 
 <li>Create a reverse tunnel from your machine to the server.
 
-<div class="highlight"><pre><span class="n">ssh</span> <span class="o">-</span><span class="n">fNR</span> <span class="mi">19999</span><span class="o">:</span><span class="n">localhost</span><span class="o">:</span><span class="mi">22</span> <span class="n">server_user</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span>
+<div class="highlight"><pre>ssh -fNR 19999:localhost:22 server_user@example.com
 </pre></div>
 
 <p>
@@ -152,13 +152,13 @@ localhost's 22.  <code>-fN</code> is to say no terminal, send connection to back
 On your partner's machine
 </p>
 
-<div class="highlight"><pre><span class="n">ssh</span> <span class="n">server_user</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span>
+<div class="highlight"><pre>ssh server_user@example.com
 </pre></div>
 
 <p>
 On the server, your partner does
 </p>
-<div class="highlight"><pre><span class="n">ssh</span> <span class="n">your_username</span><span class="err">@</span><span class="n">localhost</span> <span class="o">-</span><span class="n">p</span> <span class="mi">19999</span>
+<div class="highlight"><pre>ssh your_username@localhost -p 19999
 </pre></div>
 
 <p>
