@@ -13,7 +13,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
       <meta charset="utf-8">
-    <meta name="description" content="Posts about emacs">
+    <meta name="description" content="None">
     <meta name="author" content="punchagan">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -96,6 +96,292 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/some-fun-from-org-mode.html" class="u-url">Some fun from #org-mode</a></h1>
+        <span class="post-date">02 Oct 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+This is a conversation from #org-mode, published without
+permission from <code>plovs</code>, <code>BerntH</code> and <code>bremner</code>. If any of you
+want any of the content removed, I will do so.
+</p>
+
+<blockquote>
+<p>
+&lt;punchagan&gt; hi all
+</p>
+
+<p>
+&lt;BerntH&gt; hi punchagan   [18:36]
+</p>
+
+<p>
+&lt;punchagan&gt; BerntH: ever used/tried blorg or blorgit?  [18:47]
+</p>
+
+<p>
+&lt;punchagan&gt; I like the way org-publish works, but blorg exports one org file as a blog. If blorg were to be re-written on top of org-publish, how should it be done? use one file per post or just one file for the whole blog?  [18:52]
+</p>
+
+<p>
+&lt;bremner&gt; punchagan: another option is to use ikiwiki and use the org-mode plugin to render pages. This is what i do, although only a bit of the site is in org.  [19:44]
+</p>
+
+<p>
+&lt;punchagan&gt; bremner: can I have a look at your site?  [19:45]
+</p>
+
+<p>
+&lt;bremner&gt; sure, it ain't pretty, but: www.cs.unb.ca/~bremner  [19:46]
+</p>
+
+<p>
+&lt;punchagan&gt; thanks. I'll keep this in mind.   [19:47]
+</p>
+
+<p>
+&lt;punchagan&gt; I just loved the way this site looks and behaves – <a href="http://julien.danjou.info/projects.html">http://julien.danjou.info/projects.html</a>
+</p>
+
+<p>
+&lt;bremner&gt; well, the side bar at least is possible with ikiwiki. Other than that I suppose it is mainly a matter of css  [19:48]
+</p>
+
+<p>
+&lt;BerntH&gt; punchagan: nope  [19:49]
+</p>
+
+<p>
+&lt;punchagan&gt; ok BerntH  [19:50]
+</p>
+
+<p>
+&lt;plovs&gt; punchagan ikiwiki does have an org-mode plugin  [19:56]
+</p>
+
+<p>
+&lt;punchagan&gt; plovs: yes, bremner told me that and I've seen on Worg too. :)
+</p>
+
+<p>
+&lt;plovs&gt; punchagan ah, yes, sorry
+</p>
+
+<p>
+&lt;punchagan&gt; plovs: it's alright.   [19:59]
+</p>
+
+<p>
+&lt;plovs&gt; punchagan another possibility is org2blog, which uses wordpress
+</p>
+
+<p>
+&lt;punchagan&gt; plovs: I'm the author of it. :D
+</p>
+
+<p>
+&lt;plovs&gt; lol, ik, <b>that</b> punchagan   [20:17]
+</p>
+
+<p>
+&lt;punchagan&gt; lol
+</p>
+
+<p>
+&lt;punchagan&gt; plovs: were you kidding? or serious?  [20:19]
+</p>
+
+<p>
+&lt;plovs&gt; punchagan sorry to say i was serious, but it will not happen again :-)
+</p>
+
+<p>
+&lt;plovs&gt; i really like org2blog, played with it yesterday
+</p>
+
+<p>
+&lt;punchagan&gt; plovs: no. I was just wondering if you were playing around with me. :P
+</p>
+
+<p>
+&lt;punchagan&gt; I'm happy some one thinks it is useful.
+</p>
+
+<p>
+&lt;plovs&gt; lol, no, i just didn't recognized your name, although it is kind of hard to miss  [20:21]
+</p>
+
+<p>
+&lt;punchagan&gt; I hope you don't mind, if I make this anecdote public?
+</p>
+</blockquote>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/a-couple-of-counting-functions.html" class="u-url">A couple of counting functions</a></h1>
+        <span class="post-date">17 Sep 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I had a strict character limit of 180 chars for something I was
+writing. I just wrote a simple function to count characters in a
+region or a buffer. Another function to count the words.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">count-chars</span> <span class="p">()</span>
+  <span class="s">"Count the number of chars in a buffer or region."</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-beginning</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-min</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-end</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-max</span><span class="p">))))</span>
+	 <span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nv">number-to-string</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">end</span> <span class="nv">beg</span><span class="p">)))))</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">count-words</span> <span class="p">()</span>
+  <span class="s">"Count the number of words in a buffer or region."</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-beginning</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-min</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-end</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-max</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nb">count</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">save-excursion</span>
+      <span class="p">(</span><span class="nv">goto-char</span> <span class="nv">beg</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">while</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="p">(</span><span class="nv">point</span><span class="p">)</span> <span class="nv">end</span><span class="p">)</span>
+	<span class="p">(</span><span class="nv">forward-word</span><span class="p">)</span>
+	<span class="p">(</span><span class="k">setq</span> <span class="nb">count</span> <span class="p">(</span><span class="nb">1+</span> <span class="nb">count</span><span class="p">))))</span>
+    <span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nv">int-to-string</span> <span class="nb">count</span><span class="p">))))</span>
+</pre></div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/orgelisp-sorting-list-of-org-links-on-description.html" class="u-url">org/elisp - sorting list of org-links on description</a></h1>
+        <span class="post-date">20 Aug 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+A small utility function that I used to sort the names of people
+who commented on my blog.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">org-get-link-desc-from-list</span> <span class="p">()</span>
+  <span class="s">""" Get link description of a list item containing just links """</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">item-beg</span> <span class="p">(</span><span class="nv">point</span><span class="p">))</span>
+       <span class="p">(</span><span class="nv">item-end</span> <span class="p">(</span><span class="nv">org-end-of-item</span><span class="p">))</span>
+       <span class="p">(</span><span class="nv">cur-item</span> <span class="p">(</span><span class="nv">buffer-substring-no-properties</span>
+		  <span class="nv">item-beg</span> <span class="nv">item-end</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nv">goto-char</span> <span class="nv">item-beg</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">org-columns-compact-links</span> <span class="nv">cur-item</span><span class="p">)))</span>
+</pre></div>
+
+<p>
+<code>sort-lines</code> wasn't good enough for me, since it was sorting
+alphabetically and it ended up being the sorted order of the urls
+and not the names. This function, when used with
+<code>org-sort-entries-or-items</code> gave me what I wanted.
+</p>
+
+<p>
+Thanks to benny (on #org-mode), I also learnt the difference
+between <code>let</code> and <code>let*</code>.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/advice-programming-in-elisp.html" class="u-url">Advice - Programming in Elisp</a></h1>
+        <span class="post-date">06 Aug 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+Below is a mail sent by Eric Schulte to the org-mode mailing list
+answering a query on how to write elisp for org-mode. I am
+reproducing it here, since it is useful advice for me. The actual
+thread is here.
+</p>
+
+<hr>
+<p>
+The way that I learned how to program in emacs lisp was mainly
+using two commands `elisp-index-search' bound to `C-h e' on my
+system, and most importantly `describe-function' bound to `C-h f'.
+With `describe-function' you can look at the source code of
+functions whose behavior you are familiar with, you can then copy
+portions of the code to your <b>scratch</b> buffer where they can be
+edited and evaluated with `eval-defun' bound to `C-M-x'.  Now with
+Babel, instead of doing this in the scratch buffer you could do
+this in emacs-lisp code blocks in an org file, enabling notes and
+hierarchical organization – it can be nice to have your noodling
+all collected in one file for later reference.
+</p>
+
+<p>
+If you are going to do any serious work with lisp, I would
+emphatically recommend using paredit-mode, and becoming friends
+with the Sexp movement functions
+</p>
+
+<p>
+C-M-f        runs the command paredit-forward
+C-M-b        runs the command paredit-backward
+C-M-u        runs the command backward-up-list
+C-M-k        runs the command kill-sexp
+C-y        runs the command yank
+</p>
+
+<p>
+They allow you to manipulate lisp code on the level of logical
+expressions, the utility of which can not be over stated.
+</p>
+
+<p>
+As for working with Org-mode in particular, I'd recommend looking
+at the documentation and source-code of Org-mode functions with
+`describe-function', and then looking for how these functions are
+actually used in the Org-mode code base with `rgrep'.
+</p>
+
+<p>
+For a more structured learning experience, I've heard very good
+things about <a href="http://www.gnu.org/software/emacs/emacs-lisp-intro/">http://www.gnu.org/software/emacs/emacs-lisp-intro/</a>,
+although I haven't used it myself.
+</p>
+
+<p>
+Hope this helps.  Happy Hacking – Eric
+</p>
+<hr>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/thanks-sacha.html" class="u-url">Thanks Sacha</a></h1>
+        <span class="post-date">30 Jul 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I just wanted to thank Sacha Chua for bearing with my newbie elisp
+code and trying out org2blog.
+</p>
+
+<p>
+Also, thanks for the two patches she sent.
+</p>
+<ol class="org-ol">
+<li>Feature addition - Posting sub-trees instead of whole buffers.
+I had this feature in mind, and had started working on it after
+her request, but she was too quick for me! ;)
+</li>
+<li>Cleaning up of the code that uploads images.
+</li>
+</ol>
+
+<p>
+I'm loving it!
+</p>
+    </div>
+    </article>
     <article class="h-entry post-text">
     <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/refile-to-date-tree.html" class="u-url">Refile to date-tree</a></h1>
@@ -501,126 +787,11 @@ Chaitu - Poetic Paradigm
 </div>
     </div>
     </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/not-so-floppix.html" class="u-url">Not so Floppix...</a></h1>
-        <span class="post-date">11 Dec 2007</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-<b>Disambiguation:</b> The original Linux on 2 Floppies is here.
-</p>
-
-<p>
-I, post this from a remastered version of Knoppix that we named
-Floppix!
-</p>
-
-<p>
-It all actually began, with me deciding to do a bit of Emacs-ing
-at home during the winter hols but I don't have a Linux box at
-home. Live-CD is the way to go! But then Emacs doesn't \*usually\*
-go with Live-CDs. So I decided to get around making my own. :)
-[Dunnet "Dunnet Game"),
-an Adventure game in Emacs, played a crucial role in motivating me
-to go ahead!] The rest as they say is history….
-</p>
-
-<p>
-Actually, I tried a debootstrap from my Debian etch but I couldn't
-manage to get the initrd working. [[<a href="http://avudem.blogspot.com">http://avudem.blogspot.com</a>
-"Voodoo"][I ain't this geekish, its only that I am incapable of
-putting these terms in a simpler language.] After numerous futile
-attempt, I gave up for the time being and that's when the genius
-of [Voodoo]] came in, he took a different route. Remastering
-Knoppix.[Modifying an existing Live-CD of Knoppix]
-</p>
-
-<p>
-I won't get into the exact details of how we got about it. There's
-a lot of online help available for that.
-</p>
-
-<p>
-A few highlights, for the curious reader…
-</p>
-
-<ul class="org-ul">
-<li>got rid of the default KDE and replaced it with
-Fluxbox. [actually Floppix = Fluxbox + Knoppix :P]
-</li>
-<li>added emacs, cmucl, slime, octave, linuxdcpp, vlc and others.
-</li>
-<li>got rid of other packages which we weren't going to use.
-</li>
-<li>changed the boot message
-</li>
-<li>changed the default background image.
-</li>
-<li>removed the default boot image [ couldn't change it as the image
-we chose wasn't being properly converted to lss16 format ]
-</li>
-<li>tested the CD with Qemu [size of the iso got more than 700MB]
-</li>
-<li>removed a few other not so regularly used packages [including
-wine!]
-</li>
-<li>burnt the CD
-</li>
-<li>Logged in!
-</li>
-</ul>
-
-<p>
-Now, that I've logged in, I realize we managed to quite a decent
-job. Obviously we weren't perfect. It was the first time and done
-in quite a hurry. [btw, we have our end-sems going on; I've no
-exam tomorrow though] I was able to listen to music, connect to
-the DC, play a game of dunnet and make a blogpost! We also missed
-a few packages, for instance a screen shot capture program! But it
-ain't too bad, still a long way to go though!
-</p>
-
-<p>
-Just hoping we manage to make it better, as we get better at it!
-;)
-</p>
-
-<p>
-Here comes FloppixV0.1!
-</p>
-
-
-<hr>
-
-<p>
-Update [3/1/08]: I never knew that GIMP could capture screenshots!
-ImageMagick can do that too. I had two programs at hand and
-thought I had none! Here's a Screenshot of the Floppix Desktop.
-</p>
-
-
-<div class="figure">
-<p><img src="/images/floppix_desktop.jpg" alt="floppix_desktop.jpg">
-</p>
-</div>
-
-<p>
-Picture Source [for the Background Image] : 9
-</p>
-
-<hr>
-
-<p>
-Update 2 [4/1/08]: There is already a floppy distro of Linux
-called Floppix. I knew about this only when some one searching for
-it reached my blog. Guess I should do something about this. [I'll
-be able to do it only after getting back to campus,though]
-</p>
-    </div>
-    </article>
 </div>
         <div class="pagination">
+            <span class="pagination-item newer">
+                <a href="/tags/emacs-2.html" rel="next">Older posts</a>
+            </span>
             <span class="pagination-item older">
                 <a href="/tags/emacs.html" rel="prev">Newer posts</a>
             </span>

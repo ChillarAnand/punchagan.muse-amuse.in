@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (note)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/note.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 26 Nov 2014 23:39:15 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>cStringIO and unicode</title><link>http://punchagan.muse-amuse.in/posts/cstringio-and-unicode.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (note)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/note.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 10 Dec 2014 01:02:12 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>cStringIO and unicode</title><link>http://punchagan.muse-amuse.in/posts/cstringio-and-unicode.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 StringIO in the cStringIO module in Python 2.7.2 doesn't handle
 unicode strings properly.  This bug has bitten me on a couple of
 occasions, in the recent past.
@@ -241,7 +241,7 @@ and not the names. This function, when used with
 &lt;p&gt;
 Thanks to benny (on #org-mode), I also learnt the difference
 between &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;let*&lt;/code&gt;.
-&lt;/p&gt;</description><category>code</category><category>elisp</category><category>note</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</guid><pubDate>Thu, 19 Aug 2010 18:53:00 GMT</pubDate></item><item><title>Contributing to FOSS</title><link>http://punchagan.muse-amuse.in/posts/contributing-to-foss.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>code</category><category>emacs</category><category>note</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</guid><pubDate>Thu, 19 Aug 2010 18:53:00 GMT</pubDate></item><item><title>Contributing to FOSS</title><link>http://punchagan.muse-amuse.in/posts/contributing-to-foss.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 gora asked for some good links (on ##linux-india) to redirect
 newbies, enthusiastic about contributing to FOSS.
 &lt;/p&gt;

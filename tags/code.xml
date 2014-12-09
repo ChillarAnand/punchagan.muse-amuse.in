@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (code)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/code.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 26 Nov 2014 23:39:15 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (code)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/code.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 10 Dec 2014 01:02:12 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I stumbled on a &lt;a href="http://rubyrogues.com/178-rr-book-club-refactoring-ruby-with-martin-fowler/"&gt;Ruby Rogues podcast&lt;/a&gt; yesterday, which had &lt;a href="http://martinfowlwer.com"&gt;Martin Fowler&lt;/a&gt; as the
 guest.  I really enjoyed the discussion on Refactoring (the noun, the verb and
 the book!)
@@ -113,7 +113,7 @@ Here is the new code.
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'org-clock-out-hook&lt;/span&gt; &lt;span class="ss"&gt;'pc/turn-on-notifications&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>code</category><category>elisp</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item><item><title>A smarter 404 page.</title><link>http://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>code</category><category>emacs</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item><item><title>A smarter 404 page.</title><link>http://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://twitter.com/avudem"&gt;Voodoo&lt;/a&gt; found a broken link referring to a one of my posts, on Quora.
 Given that I have changed my site generator a bunch of times now, it
 is quite possible that there are other broken links at various other
@@ -372,7 +372,7 @@ region or a buffer. Another function to count the words.
 	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;forward-word&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nb"&gt;count&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;1+&lt;/span&gt; &lt;span class="nb"&gt;count&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;message&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;int-to-string&lt;/span&gt; &lt;span class="nb"&gt;count&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>elisp</category><category>emacs</category><guid>http://punchagan.muse-amuse.in/posts/a-couple-of-counting-functions.html</guid><pubDate>Fri, 17 Sep 2010 14:10:00 GMT</pubDate></item><item><title>org/elisp - sorting list of org-links on description</title><link>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>emacs</category><guid>http://punchagan.muse-amuse.in/posts/a-couple-of-counting-functions.html</guid><pubDate>Fri, 17 Sep 2010 14:10:00 GMT</pubDate></item><item><title>org/elisp - sorting list of org-links on description</title><link>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 A small utility function that I used to sort the names of people
 who commented on my blog.
 &lt;/p&gt;
@@ -397,4 +397,4 @@ and not the names. This function, when used with
 &lt;p&gt;
 Thanks to benny (on #org-mode), I also learnt the difference
 between &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;let*&lt;/code&gt;.
-&lt;/p&gt;</description><category>code</category><category>elisp</category><category>note</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</guid><pubDate>Thu, 19 Aug 2010 18:53:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>code</category><category>emacs</category><category>note</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/orgelisp-sorting-list-of-org-links-on-description.html</guid><pubDate>Thu, 19 Aug 2010 18:53:00 GMT</pubDate></item></channel></rss>

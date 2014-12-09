@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (learning)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/learning.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 26 Nov 2014 23:39:14 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>More input sources for org-drill</title><link>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (learning)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/learning.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 10 Dec 2014 01:02:12 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>More input sources for org-drill</title><link>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I've been trying to use &lt;code&gt;org-drill&lt;/code&gt; regularly for the last few weeks.  I don't
 know how well it's been going but I have been sticking to the routine
 religiously.  I haven't yet really tried out incremental reading, but in an
@@ -157,7 +157,7 @@ Cram mode and incremental reading are also things I want to try, as I go along.
 
 &lt;p&gt;
 Happy Learning!
-&lt;/p&gt;</description><category>learning</category><category>orgmode</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</guid><pubDate>Tue, 14 Oct 2014 04:07:04 GMT</pubDate></item><item><title>Teach Yourself Programming in Ten Years!!</title><link>http://punchagan.muse-amuse.in/posts/teach-yourself-programming-in-ten-years.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>emacs</category><category>learning</category><category>orgmode</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</guid><pubDate>Tue, 14 Oct 2014 04:07:04 GMT</pubDate></item><item><title>Teach Yourself Programming in Ten Years!!</title><link>http://punchagan.muse-amuse.in/posts/teach-yourself-programming-in-ten-years.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Here's an interesting article by Peter Norvig, Director of
 Research Google I have just copied the whole essay here… also
 here's a link to the Original one…
