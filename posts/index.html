@@ -98,6 +98,35 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/jabber-message-queue.html" class="u-url">Jabber message queue</a></h1>
+        <span class="post-date">10 Dec 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I've always wanted to be able to queue up messages to send to friends, until I
+go online the next time.  I tried using email instead of chat a few times, or
+just ended up staying online with a busy status.
+</p>
+
+<p>
+Finally, now that I have started using jabber-mode for chatting from within
+Emacs, I took out the time to write a queuing system for sending chat messages,
+similar to the mail queue for smtpmail.  Instead of persisting sexps, though,
+I persist the messages in a JSON format and the queue is flushed every time I
+connect to jabber, in a <code>jabber-post-connect-hook</code>.
+</p>
+
+<p>
+To make the interface as similar to the interface available when I am online, I
+hacked completion for the to ID using email addresses in my address book
+(<code>mu4e~contact-list</code>).  I really like the fact that the chat buffer opens up,
+and I can type and send messages like I usually do.  Hitting <code>RET</code> after typing
+a message queues it up, instead of trying to send it. Smooth!
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/using-tmux-to-screen-share.html" class="u-url">Using tmux to "screen share"</a></h1>
         <span class="post-date">24 Nov 2014</span>
     </header>
@@ -807,80 +836,6 @@ projects.
 </p>
 </div>
 </div>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/org-based-posts-in-nikola.html" class="u-url">Org based posts in Nikola</a></h1>
-        <span class="post-date">20 Apr 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-<a href="http://binchen.org/">Chen Bin</a> asked me to share my Nikola+Org work-flow, and share an
-example post.
-</p>
-
-<p>
-The org source for any post can be found by changing the URL of a post
-from <code>.html</code> to <code>.org</code>.
-</p>
-
-<p>
-I don't have much of a work-flow, because I don't post too often, but
-here is what I typically do, to make a new post.
-</p>
-
-<p>
-I start off by creating a new post using
-</p>
-
-<div class="highlight"><pre><span class="nv">$ </span>nikola new_post
-</pre></div>
-
-<p>
-and then give the post a title and start editing the post in Emacs.
-</p>
-
-<p>
-I have a simple snippet that lets me insert tags, based on existing
-tags.
-</p>
-
-<script src="https://gist.github.com/6629020.js"></script>
-
-<p>
-Once I'm happy with the content of a post, I run <code>nikola auto</code> to
-build the source and serve it locally, and see if the post "looks"
-reasonable, after being rendered.
-</p>
-
-<p>
-Once, I'm happy with it, I commit the post and deploy it using <code>nikola
-deploy</code>.
-</p>
-
-<div class="highlight"><pre><span class="c"># Commands to execute to deploy. Can be anything, for example,</span>
-<span class="c"># you may use rsync:</span>
-<span class="c"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
-<span class="c"># And then do a backup, or ping pingomatic.</span>
-<span class="c"># To do manual deployment, set it to []</span>
-<span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
-
-    <span class="s">'default'</span><span class="p">:</span> <span class="p">[</span>
-	<span class="s">'nikola deploy assert-fork'</span><span class="p">,</span>
-	<span class="s">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
-	<span class="s">'git checkout master'</span><span class="p">,</span>
-	<span class="s">'nikola build'</span><span class="p">,</span>
-	<span class="s">'./commit-changes || true'</span><span class="p">,</span>
-	<span class="s">'nikola github_deploy'</span><span class="p">,</span>
-	<span class="s">'git push origin master'</span><span class="p">,</span>
-</pre></div>
-
-<p>
-I also have a plugin, that posts captured bookmarks and quotes onto
-the blog, with a single command. I should probably make the sources of
-my blog open, and push it onto GitHub.
-</p>
     </div>
     </article>
 </div>

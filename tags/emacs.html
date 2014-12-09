@@ -98,6 +98,35 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/jabber-message-queue.html" class="u-url">Jabber message queue</a></h1>
+        <span class="post-date">10 Dec 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I've always wanted to be able to queue up messages to send to friends, until I
+go online the next time.  I tried using email instead of chat a few times, or
+just ended up staying online with a busy status.
+</p>
+
+<p>
+Finally, now that I have started using jabber-mode for chatting from within
+Emacs, I took out the time to write a queuing system for sending chat messages,
+similar to the mail queue for smtpmail.  Instead of persisting sexps, though,
+I persist the messages in a JSON format and the queue is flushed every time I
+connect to jabber, in a <code>jabber-post-connect-hook</code>.
+</p>
+
+<p>
+To make the interface as similar to the interface available when I am online, I
+hacked completion for the to ID using email addresses in my address book
+(<code>mu4e~contact-list</code>).  I really like the fact that the chat buffer opens up,
+and I can type and send messages like I usually do.  Hitting <code>RET</code> after typing
+a message queues it up, instead of trying to send it. Smooth!
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/erc-notifications-when-emacs-not-in-focus.html" class="u-url">erc-notifications when Emacs not in focus</a></h1>
         <span class="post-date">06 Nov 2014</span>
     </header>
@@ -523,43 +552,6 @@ your headings are, what level your current sub-heading is at, etc.
 org-addict. ;)).  With org-mode it's so intuitive!  It's so easy
 to find out, with just one quick look!  I don't think any other
 markup has this coolness! Org-mode FTW!
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/pandoc-can-now-do-org.html" class="u-url">Pandoc can now do Org</a></h1>
-        <span class="post-date">06 Dec 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Pandoc is a haskell library and a command line tool, that can
-convert markup from one to another and it does it pretty well.
-Until now it supported quite a few markups, but not orgmode.  But
-now, Orgmode support has been added! Yay!
-</p>
-
-<p>
-But, it can only read from other formats and write to org-mode
-format.  The other way around, is not possible, but you can do
-that straight from org-mode, right?
-</p>
-
-<p>
-I've often felt the need for an org-importer and hence decided to
-do something about it.  I stumbled upon Pandoc, when I was moving
-my blog, and found it pretty neat.  After, yet another request for
-an importer, on the org-mode mailing list, I decided to look at
-Pandoc.  I was somehow under the impression that it was written in
-Python.  But it turned out, I had to learn Haskell!  A good excuse
-to learn a new language, eh?  I brushed through a tutorial for a
-couple of days (and was blown off by the paradigm of the language)
-and was able to port the RST writer in Pandoc, to an Org
-writer.  :)
-</p>
-
-<p>
-You can get the latest version from here
 </p>
     </div>
     </article>

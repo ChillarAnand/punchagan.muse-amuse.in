@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 10 Dec 2014 01:02:06 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using tmux to "screen share"</title><link>http://punchagan.muse-amuse.in/posts/using-tmux-to-screen-share.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 10 Dec 2014 03:39:47 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Jabber message queue</title><link>http://punchagan.muse-amuse.in/posts/jabber-message-queue.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I've always wanted to be able to queue up messages to send to friends, until I
+go online the next time.  I tried using email instead of chat a few times, or
+just ended up staying online with a busy status.
+&lt;/p&gt;
+
+&lt;p&gt;
+Finally, now that I have started using jabber-mode for chatting from within
+Emacs, I took out the time to write a queuing system for sending chat messages,
+similar to the mail queue for smtpmail.  Instead of persisting sexps, though,
+I persist the messages in a JSON format and the queue is flushed every time I
+connect to jabber, in a &lt;code&gt;jabber-post-connect-hook&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+To make the interface as similar to the interface available when I am online, I
+hacked completion for the to ID using email addresses in my address book
+(&lt;code&gt;mu4e~contact-list&lt;/code&gt;).  I really like the fact that the chat buffer opens up,
+and I can type and send messages like I usually do.  Hitting &lt;code&gt;RET&lt;/code&gt; after typing
+a message queues it up, instead of trying to send it. Smooth!
+&lt;/p&gt;</description><category>emacs</category><category>hack</category><guid>http://punchagan.muse-amuse.in/posts/jabber-message-queue.html</guid><pubDate>Tue, 09 Dec 2014 21:57:14 GMT</pubDate></item><item><title>Using tmux to "screen share"</title><link>http://punchagan.muse-amuse.in/posts/using-tmux-to-screen-share.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I wanted to pair with a friend of mine, exploring Magit mode in Emacs.  There
 are a couple of projects to make it easy to use tmux(-like) to simplify this.
 &lt;/p&gt;
@@ -616,69 +636,4 @@ for use with requests.  I think I'm going to use this in my future
 projects.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>hackerschool</category><category>oauth2</category><guid>http://punchagan.muse-amuse.in/posts/oauth2-demystified.html</guid><pubDate>Fri, 20 Jun 2014 14:09:51 GMT</pubDate></item><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-&lt;a href="http://binchen.org/"&gt;Chen Bin&lt;/a&gt; asked me to share my Nikola+Org work-flow, and share an
-example post.
-&lt;/p&gt;
-
-&lt;p&gt;
-The org source for any post can be found by changing the URL of a post
-from &lt;code&gt;.html&lt;/code&gt; to &lt;code&gt;.org&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;
-I don't have much of a work-flow, because I don't post too often, but
-here is what I typically do, to make a new post.
-&lt;/p&gt;
-
-&lt;p&gt;
-I start off by creating a new post using
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;nikola new_post
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-and then give the post a title and start editing the post in Emacs.
-&lt;/p&gt;
-
-&lt;p&gt;
-I have a simple snippet that lets me insert tags, based on existing
-tags.
-&lt;/p&gt;
-
-&lt;script src="https://gist.github.com/6629020.js"&gt;&lt;/script&gt;
-
-&lt;p&gt;
-Once I'm happy with the content of a post, I run &lt;code&gt;nikola auto&lt;/code&gt; to
-build the source and serve it locally, and see if the post "looks"
-reasonable, after being rendered.
-&lt;/p&gt;
-
-&lt;p&gt;
-Once, I'm happy with it, I commit the post and deploy it using &lt;code&gt;nikola
-deploy&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Commands to execute to deploy. Can be anything, for example,&lt;/span&gt;
-&lt;span class="c"&gt;# you may use rsync:&lt;/span&gt;
-&lt;span class="c"&gt;# "rsync -rav output/* joe@my.site:/srv/www/site"&lt;/span&gt;
-&lt;span class="c"&gt;# And then do a backup, or ping pingomatic.&lt;/span&gt;
-&lt;span class="c"&gt;# To do manual deployment, set it to []&lt;/span&gt;
-&lt;span class="n"&gt;DEPLOY_COMMANDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-
-    &lt;span class="s"&gt;'default'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
-	&lt;span class="s"&gt;'nikola deploy assert-fork'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-	&lt;span class="s"&gt;'nikola orphans|xargs rm || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-	&lt;span class="s"&gt;'git checkout master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-	&lt;span class="s"&gt;'nikola build'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-	&lt;span class="s"&gt;'./commit-changes || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-	&lt;span class="s"&gt;'nikola github_deploy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-	&lt;span class="s"&gt;'git push origin master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-I also have a plugin, that posts captured bookmarks and quotes onto
-the blog, with a single command. I should probably make the sources of
-my blog open, and push it onto GitHub.
-&lt;/p&gt;</description><category>blog</category><category>emacs</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</guid><pubDate>Sun, 20 Apr 2014 12:05:10 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>hackerschool</category><category>oauth2</category><guid>http://punchagan.muse-amuse.in/posts/oauth2-demystified.html</guid><pubDate>Fri, 20 Jun 2014 14:09:51 GMT</pubDate></item></channel></rss>

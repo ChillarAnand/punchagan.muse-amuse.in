@@ -98,6 +98,35 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/jabber-message-queue.html" class="u-url">Jabber message queue</a></h1>
+        <span class="post-date">10 Dec 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I've always wanted to be able to queue up messages to send to friends, until I
+go online the next time.  I tried using email instead of chat a few times, or
+just ended up staying online with a busy status.
+</p>
+
+<p>
+Finally, now that I have started using jabber-mode for chatting from within
+Emacs, I took out the time to write a queuing system for sending chat messages,
+similar to the mail queue for smtpmail.  Instead of persisting sexps, though,
+I persist the messages in a JSON format and the queue is flushed every time I
+connect to jabber, in a <code>jabber-post-connect-hook</code>.
+</p>
+
+<p>
+To make the interface as similar to the interface available when I am online, I
+hacked completion for the to ID using email addresses in my address book
+(<code>mu4e~contact-list</code>).  I really like the fact that the chat buffer opens up,
+and I can type and send messages like I usually do.  Hitting <code>RET</code> after typing
+a message queues it up, instead of trying to send it. Smooth!
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/erc-notifications-when-emacs-not-in-focus.html" class="u-url">erc-notifications when Emacs not in focus</a></h1>
         <span class="post-date">06 Nov 2014</span>
     </header>
@@ -562,34 +591,6 @@ Jordan's one liner
 
 </div>
 </div>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/is-disney-buying-mit.html" class="u-url">Is Disney buying MIT??</a></h1>
-        <span class="post-date">25 Oct 2006</span>
-    </header>
-    <div class="e-content entry-content">
-    <div class="figure">
-<p><img src="http://hacks.mit.edu/Hacks/by_year/1998/disney_buys_mit/web.hacked.screenshot.medium.gif" alt="web.hacked.screenshot.medium.gif">
-</p>
-</div>
-
-<p>
-On April Fools Day of 1998, hackers broke into the MIT web server
-and changed the MIT home page to indicate that The Walt Disney
-Company had purchased MIT for $6.9 billion.
-</p>
-
-<p>
-The hacked page contained a link fake to a press release titled
-<i>Walt Disney Corporation to Acquire MIT for $6.9 Billion</i>.
-</p>
-
-<p>
-Later that day the MIT News Office issued a press release titled
-<i>MIT says "Disney buys MIT" hack revealed by low price</i>
-</p>
     </div>
     </article>
 </div>

@@ -13,7 +13,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
       <meta charset="utf-8">
-    <meta name="description" content="For an idle mind is the devil's workshop.">
+    <meta name="description" content="">
     <meta name="author" content="punchagan">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
   
 
   <title>
-      Posts for year 2014 · Noetic Nought
+      Jabber message queue · Noetic Nought
   </title>
 
 </head>
@@ -95,49 +95,74 @@ Creative Commons Attribution 3.0 Unported License</a>
       </div>
 
       <div class="container content">
-<article class="listpage">
-    <header>
-        <h1>Posts for year 2014</h1>
-    </header>
-    <ul class="postlist">
-        <li>
-<a href="/posts/jabber-message-queue.html" class="listtitle">Jabber message queue</a> <time class="listdate" datetime="2014-12-10T03:27:14+05:30" title="10 Dec 2014">10 Dec 2014</time>
-</li>
-        <li>
-<a href="/posts/using-tmux-to-screen-share.html" class="listtitle">Using tmux to "screen share"</a> <time class="listdate" datetime="2014-11-24T18:38:21+05:30" title="24 Nov 2014">24 Nov 2014</time>
-</li>
-        <li>
-<a href="/posts/erc-notifications-when-emacs-not-in-focus.html" class="listtitle">erc-notifications when Emacs not in focus</a> <time class="listdate" datetime="2014-11-06T18:05:12+05:30" title="06 Nov 2014">06 Nov 2014</time>
-</li>
-        <li>
-<a href="/posts/more-input-sources-for-org-drill.html" class="listtitle">More input sources for org-drill</a> <time class="listdate" datetime="2014-11-04T07:25:04+05:30" title="04 Nov 2014">04 Nov 2014</time>
-</li>
-        <li>
-<a href="/posts/martin-fowler-on-refactoring-rubyrogues.html" class="listtitle">Martin Fowler on Refactoring @ RubyRogues</a> <time class="listdate" datetime="2014-10-25T19:53:25+05:30" title="25 Oct 2014">25 Oct 2014</time>
-</li>
-        <li>
-<a href="/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html" class="listtitle">Learning about Spaced Repetition, SuperMemo, Org-drill, et al.</a> <time class="listdate" datetime="2014-10-24T19:07:07+05:30" title="24 Oct 2014">24 Oct 2014</time>
-</li>
-        <li>
-<a href="/posts/simple-org-clock-and-gnomepidgin-integration.html" class="listtitle">Simple org-clock and gnome/pidgin integration</a> <time class="listdate" datetime="2014-10-22T16:43:35-04:00" title="22 Oct 2014">22 Oct 2014</time>
-</li>
-        <li>
-<a href="/posts/making-pycon-india-better-for-myself.html" class="listtitle">Making PyCon India better (for myself)</a> <time class="listdate" datetime="2014-10-14T07:53:47-04:00" title="14 Oct 2014">14 Oct 2014</time>
-</li>
-        <li>
-<a href="/posts/learning-to-use-org-drill.html" class="listtitle">Learning to use Org-drill</a> <time class="listdate" datetime="2014-10-14T00:07:04-04:00" title="14 Oct 2014">14 Oct 2014</time>
-</li>
-        <li>
-<a href="/posts/oauth2-demystified.html" class="listtitle">OAuth2 demystified</a> <time class="listdate" datetime="2014-06-20T10:09:51-04:00" title="20 Jun 2014">20 Jun 2014</time>
-</li>
-        <li>
-<a href="/posts/org-based-posts-in-nikola.html" class="listtitle">Org based posts in Nikola</a> <time class="listdate" datetime="2014-04-20T17:35:10+05:30" title="20 Apr 2014">20 Apr 2014</time>
-</li>
-        <li>
-<a href="/posts/let-there-be-light-in-skype.html" class="listtitle">Let there be light, in skype!</a> <time class="listdate" datetime="2014-03-29T23:22:27+05:30" title="29 Mar 2014">29 Mar 2014</time>
-</li>
-    </ul>
+<article class="post post-text h-entry hentry postpage" itemscope="itemscope">
+            <header>
+                <h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/jabber-message-queue.html" class="u-url">Jabber message queue</a></h1>
+
+            <span class="post-date">10 Dec 2014</span>
+        </header>
+
+    <div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+I've always wanted to be able to queue up messages to send to friends, until I
+go online the next time.  I tried using email instead of chat a few times, or
+just ended up staying online with a busy status.
+</p>
+
+<p>
+Finally, now that I have started using jabber-mode for chatting from within
+Emacs, I took out the time to write a queuing system for sending chat messages,
+similar to the mail queue for smtpmail.  Instead of persisting sexps, though,
+I persist the messages in a JSON format and the queue is flushed every time I
+connect to jabber, in a <code>jabber-post-connect-hook</code>.
+</p>
+
+<p>
+To make the interface as similar to the interface available when I am online, I
+hacked completion for the to ID using email addresses in my address book
+(<code>mu4e~contact-list</code>).  I really like the fact that the chat buffer opens up,
+and I can type and send messages like I usually do.  Hitting <code>RET</code> after typing
+a message queues it up, instead of trying to send it. Smooth!
+</p>
+    </div>
+    <aside class="postpromonav">
+    <nav>
+            <div class="pagination">
+            <span class="pagination-item older">
+                <a href="/posts/using-tmux-to-screen-share.html" rel="prev" title="Using tmux to " screen share>Previous post</a>
+            </span>
+        </div>
+
+    </nav>
+    </aside>
+        <section class="comments">
+        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="rusticreverie",
+            disqus_url="http://punchagan.muse-amuse.in/posts/jabber-message-queue.html",
+        disqus_title="Jabber message queue",
+        disqus_identifier="cache/posts/jabber-message-queue.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+    
 </article>
+               <script>var disqus_shortname="rusticreverie";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+
+
       </div>
     </div>
 
