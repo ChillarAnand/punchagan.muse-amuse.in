@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (emacs)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 10 Dec 2014 03:39:47 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Jabber message queue</title><link>http://punchagan.muse-amuse.in/posts/jabber-message-queue.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (emacs)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 10 Dec 2014 05:48:31 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Jabber message queue</title><link>http://punchagan.muse-amuse.in/posts/jabber-message-queue.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I've always wanted to be able to queue up messages to send to friends, until I
 go online the next time.  I tried using email instead of chat a few times, or
 just ended up staying online with a busy status.
@@ -7,10 +7,10 @@ just ended up staying online with a busy status.
 
 &lt;p&gt;
 Finally, now that I have started using jabber-mode for chatting from within
-Emacs, I took out the time to write a queuing system for sending chat messages,
-similar to the mail queue for smtpmail.  Instead of persisting sexps, though,
-I persist the messages in a JSON format and the queue is flushed every time I
-connect to jabber, in a &lt;code&gt;jabber-post-connect-hook&lt;/code&gt;.
+Emacs, I took out the time to write a "queuing system" for sending chat
+messages, similar to the mail queue for smtpmail.  Instead of persisting sexps,
+though, I persist the messages in a JSON format and the queue is flushed every
+time I connect to jabber, in a &lt;code&gt;jabber-post-connect-hook&lt;/code&gt;.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -19,6 +19,10 @@ hacked completion for the to ID using email addresses in my address book
 (&lt;code&gt;mu4e~contact-list&lt;/code&gt;).  I really like the fact that the chat buffer opens up,
 and I can type and send messages like I usually do.  Hitting &lt;code&gt;RET&lt;/code&gt; after typing
 a message queues it up, instead of trying to send it. Smooth!
+&lt;/p&gt;
+
+&lt;p&gt;
+The code is in my &lt;a href="https://github.com/punchagan/dot-emacs/blob/7a5e184146194b9e28fd7edbb94ddd6c3bde845e/user-lisp/setup-jabber.el#L35-93"&gt;.emacs&lt;/a&gt;
 &lt;/p&gt;</description><category>emacs</category><category>hack</category><guid>http://punchagan.muse-amuse.in/posts/jabber-message-queue.html</guid><pubDate>Tue, 09 Dec 2014 21:57:14 GMT</pubDate></item><item><title>erc-notifications when Emacs not in focus</title><link>http://punchagan.muse-amuse.in/posts/erc-notifications-when-emacs-not-in-focus.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I have been trying to get ERC working with notifications. Julien Danjou's
 wonderful &lt;a href="https://julien.danjou.info/blog/2012/erc-notifications"&gt;notifications&lt;/a&gt; module for ERC is great, but it is annoying to get
