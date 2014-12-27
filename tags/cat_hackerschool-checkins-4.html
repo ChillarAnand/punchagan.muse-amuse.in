@@ -27,7 +27,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
   
 
   <title>
-      Posts about hackerschool-checkins · Noetic Nought
+      Posts about hackerschool-checkins (old posts, page 4) · Noetic Nought
   </title>
 
 </head>
@@ -51,7 +51,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
       <a class="sidebar-nav-item" href="/posts/index.html">Blog</a>
       <a class="sidebar-nav-item" href="/archive.html">Archives</a>
       <a class="sidebar-nav-item" href="/tags/index.html">Tags</a>
-      <a class="sidebar-nav-item active" href="/tags/cat_hackerschool-checkins.html">HackerSchool</a>
+      <a class="sidebar-nav-item" href="/tags/cat_hackerschool-checkins.html">HackerSchool</a>
       <a class="sidebar-nav-item" href="/tags/cat_bookmarks.html">Bookmarks</a>
       <a class="sidebar-nav-item" href="/tags/cat_quotes.html">Quotes</a>
       <a class="sidebar-nav-item" href="/rss.xml">RSS</a>
@@ -98,386 +98,508 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-02.html" class="u-url">Hacker School, 2014-07-02</a></h1>
-        <span class="post-date">05 Jul 2014</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-30.html" class="u-url">Hacker School, 2014-07-30</a></h1>
+        <span class="post-date">31 Jul 2014</span>
     </header>
     <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I pushed the code onto <a href="https://github.com/punchagan/cinspect">github</a> to let Allison and Tom review it, and Tom was
-quite excited by the idea of having it.
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">(Re) Learning C</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Stephanie and I worked through the Networking chapter of the book.
 </li>
-<li>I added a startup script in IPython, to monkey-patch it to use my code for
-introspection.
-</li>
-<li>Having never written a C-extension, I read up the Python docs on <a href="https://docs.python.org/2/extending/extending.html">writing C
-extensions</a>, and played around a little with <a href="https://github.com/eliben/pycparser/">pycparser</a>, but it didn't seem to
-work too well with the Python's sources.
-</li>
-<li>I later went to the New York Public Library to see <a href="http://www.nypl.org/press/press-release/2013/06/26/new-york-public-library-display-historic-copies-declaration-independe">a copy of the Declaration
-of Independence in Thomas Jefferson’s hand.</a>
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-03.html" class="u-url">Hacker School, 2014-07-03</a></h1>
-        <span class="post-date">05 Jul 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I got distracted trying to add a hack to Hacker School's <a href="https://github.com/sursh/blaggregator">blaggregator</a>, to
-enable posting to different channels on zulip.
-</li>
-<li>I learnt a few things about Django.  Commented out references to views that
-don't exists breaks templating.  Formsets didn't seem very convenient to use,
-for editing data showing the user only partial forms.
-</li>
-<li>I played around with Clang for a bit, to try and use libclang to parse the C
-code for inspection, instead of writing one myself.  It sometimes feels like
-an overkill, but it feels like it'll make the whole code more robust.  I'm
-not sure.  I'll need to play around for a bit more to decide.
-</li>
-<li>I also finally got around to fix the resolution of my tty shells.  I was in a
-bus, and wanted my laptop's battery to last longer, and decided to use a tty
-shell with just emacs running. But, the resolution sucked.  So, I
-fixed. Essentially it involved removing a blacklist file that an old version
-of Nvidia drivers left behind in
-<code>/usr/share/grub-gfxpayload-lists/blacklist/</code> and setting
-<code>GRUB_GFXMODE=1920x1080</code> in <code>/etc/default/grub</code>.
-</li>
-<li>Later in the evening I also bought the domain <code>octo.cat</code>, given there were a
-bunch of people buying cat domains, and talking about it on Zulip!
-</li>
-</ul>
 
-<p>
-Update [7/7/14]: I forgot to write about the presentations.  There were
-interesting presentations!
-</p>
+<li>We faced some issues with writing 0 bytes to memory, since most of the code
+was dealing with strings. I still haven't figured out how to do this,
+correctly.
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-29.html" class="u-url">Hacker School, 2014-07-29</a></h1>
+        <span class="post-date">29 Jul 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Hacking: learning by breaking stuff</h2>
+<div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li>
-<a href="https://github.com/ambimorph/protagonist">Protagonist</a>
+<li>Post lunch, I started pairing with Stephanie on the exercises in the <a href="http://www.nostarch.com/hacking2.htm">Hacking</a>
+  book, and that turned out to be super fun!
 </li>
-<li>
-<a href="https://github.com/pirate/mesh-networking">mesh networking</a>
+<li>We got through the chapter on exploitation, which focussed on stack
+overflows, heap overflows, overflows in function pointers, and string
+formatting exploits.  It acted as more than a gentle refresher for C, and was
+super fun!
 </li>
-<li>
-<a href="http://writing.brianruslim.com/2014/06/30/the-execution-context/">The Execution Context</a>
+<li>Running the examples on a 64bit system, added an additional amount of
+thinking required, and was good, IMO.
 </li>
-<li>
-<a href="https://github.com/stijlist/toolmaker/">toolmaker</a>
-</li>
-<li>
-<a href="http://blog.ontoillogical.com/blog/2014/07/03/doorbot-overflow/">Building a better doorbot</a>
-</li>
-<li>
-<a href="https://github.com/buybackoff/Fredis">Fredis</a>
+<li>I hadn't worked along with Stephanie on the material in the first two
+chapters.  So, I went back home and tried to catch up, but couldn't get all
+of it done.
 </li>
 </ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-01.html" class="u-url">Hacker School, 2014-07-01</a></h1>
-        <span class="post-date">02 Jul 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I happily let myself get distracted from all the math!  I had seen a <a href="https://twitter.com/ballingt/status/483394809411825665">tweet</a> by
-Tom during the weekend, asking if there was any package that let users
-inspect C sources of builtin modules like ruby's <a href="https://github.com/pry/pry-doc/">pry-doc</a>
-</li>
-<li>I spent the morning playing around with pry-doc, reading its code, etc.
-</li>
-<li>The latter part of the day was spent pairing with Tom, and figuring out what
-needs to be done to write a first cut version of something like this.  Ugly
-regexes, FTW! I have something that works for most of the stuff, it seems!
-</li>
-<li>I also attended an interesting talk about Bit-torrent clients by an alum.
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-30.html" class="u-url">Hacker School, 2014-06-30</a></h1>
-        <span class="post-date">01 Jul 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>During the weekend, I read up a lot about HMMs and related stuff.
-</li>
-<li>During the day, I tried to start writing code for different parts of the
-pipeline, and ended up reading about Mel frequency cepstrum related stuff,
-and wrote a little bit of code.
-</li>
-<li>Later, in the afternoon I paired with some of his iOS code, and helped him
-clean up some of it.  I'm not sure how useful it was for him to pair with me,
-but …
-</li>
-<li>The day ended with a talk by Jesse at EBay, titled <a href="http://emptysqua.re/blog/write-an-excellent-programming-blog/">Write an Excellent
-Programming Blog</a>.  I had already read up his blog post, when the talk was
-announced, and so, most of the content was known, but the Q&amp;A session had
-some interesting suggestions on how to improve your actual writing.
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-27.html" class="u-url">Hacker School, 2014-06-27</a></h1>
-        <span class="post-date">29 Jun 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>This Friday we worked on building our own URL shorteners.  It was a fun
-exercise, and I built one that is not persistent, in the two hours.  I worked
-on a not so important problem of having sorted query parameters, instead of
-the more important problem of having a persistent server.  Anyway, I should
-be building something that works, first, before trying to solve the more
-interesting problems.  At least on Fridays.
-</li>
-<li>I watched this old but interesting talk by Brandon Rhodes, titled <a href="http://pyvideo.org/video/276/the-mighty-dictionary-55">The Mighty
-Dictionary</a>, and played around with his <a href="https://github.com/brandon-rhodes/pycon2010-mighty-dictionary/blob/master/figures/_dictinfo.py">_dictinfo</a> module after-wards.
-</li>
-<li>I spent the rest of the evening reading up about Markov chains and Hidden
-Markov Models. I'm happy to finally understand what these terms mean, after
-seeing them being thrown around for so many years!
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-26.html" class="u-url">Hacker School, 2014-06-26</a></h1>
-        <span class="post-date">26 Jun 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I played around a little bit with my <code>emacs</code> configuration and got <code>jedi</code>
-  working, with virtualenvs, thanks to <code>virtualenvwrapper.el</code>
-</li>
-<li>Continue to work on the singal processing stuff and built a DTMF decoder
-using FFTs.  It's able to decode audacity generated audio, but not recorded
-ones. I'm not sure what I'm doing wrong, yet.
-</li>
-<li>As with every Thursday, there were a bunch of interesting presentations:
-<ul class="org-ul">
-<li>A rice cooker hooked up to an arduino in an afternoon!
-</li>
-<li>A presentation on how scopes act as monoids
-</li>
-<li>An implementation of <a href="http://people.csail.mit.edu/mrub/vidmag/">Eularian Video Magnification</a>
-</li>
-<li>A regex engine visualizer using NetworkX.
-</li>
-<li>A <a href="https://github.com/ambimorph/protagonist">tag system to organize your files</a>
-</li>
-<li>A web-socket based chat client
-</li>
-<li>A Go Parser written in Go
-</li>
-<li>…
-</li>
-</ul>
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-25.html" class="u-url">Hacker School, 2014-06-25</a></h1>
-        <span class="post-date">25 Jun 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I like how some of the people here are taking check-ins so seriously.  A
-bunch of people posted messages on Zulip, informing that they would not be
-able to make it to check-ins, and seemed quite sorry about it.
-</li>
-<li>Check-ins are indeed useful.  At the end of every day, I review my work
-wondering what I did, and sometimes end up pushing myself harder, to have
-something reasonable to talk about during the check-ins!
-</li>
-<li>Yesterday, I read up about FFTs and ended up playing around with <code>fft</code> in
-<code>scipy</code>, and played around with audacity, etc.  Nothing concrete, really.
-</li>
-<li>There was a "goals" workshop by Stacey, where she talked about how to get the
-most out of this batch of Hacker School, and then we split into groups of 3,
-and presented our goal-statements to each other, and gave our impressions of
-each others' goals.
-</li>
-<li>I didn't really have a goal, but the exercise seemed to help, anyway.
-</li>
-<li>Also, I think it is making me nervous to treat Hacker School as
-super-important.  It is important to make the best use of every hour, every
-minute here, but at the same time, I shouldn't be constantly worrying about
-whether or not, whatever I'm doing is the best use of my time here.
-</li>
-<li>I think I would like to form some good habits, and make a few good friends,
-more than finish projects and build something uber-cool.  Of course, it would
-be great to build awesome stuff (and may be the only reasonable way to form
-habits, and make friends) but I shouldn't worry too much about time running
-out. Never Graduate!
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-24.html" class="u-url">Hacker School, 2014-06-24</a></h1>
-        <span class="post-date">24 Jun 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I worked for the whole day on implementing <i>an algorithm</i> to analyze a
-cipher text, and guess the substitution cipher used.  The algorithm
-was pretty straight forward, and I had it "mostly" working, in a
-couple of hours.
-</li>
-<li>I then began to refactor it, and found that there was what looked
-like a bug, and I "fixed" it mindlessly.  I was essentially trying
-to swap 2 rows, and columns of a pandas data frame.  I had a
-data-frame <code>D</code> and its copy <code>D_</code>.  I was trying to swap 2 rows and
-columns of <code>D_</code>.  I found that the code was initially using the data
-from <code>D</code> to do the swap.  To fix it, I checked if tuple unpacking
-did the right thing.  It looked like it did.  So, I used something
-like <code>_D['a'], D_['b'] = D_['b'], D_['a']</code>.  Essentially, changed <code>D</code>
-on the right hand side to <code>D_</code>.  I thought I had tested this on the
-terminal, but after hours of debugging (along with fixing another
-minor issue), I later found out that the tuple unpacking doesn't
-work and the swapped rows and columns actually become equal!  I had
-suspected this initially, and had "tested" this manually, I
-thought.  These are the kinds of things that should have tests for,
-I think.  It wouldn't have taken me too long to write a test, and I
-could have been totally sure that it works!  (I was manually reading
-off values in the array, and probably messed up somewhere)
+</div>
+</div>
 
-<p>
-FWIW, the code now reads <code>_D['a'], D_['b'] = D_['b'].copy(),
-  D_['a'].copy()</code>
-</p>
-</li>
-<li>The algo seems to need about 1000 characters to get past the 90%
-accuracy mark.  I could probably tweak it a little to perform
-better, but I'm going to leave it here, for now, and move on to the
-signal processing parts.  I'm not totally sure how the signal
-processing would work, and whether we could actually map back the
-keystrokes to a substitution cipher enciphered text.
-</li>
-<li>If required, the tweaks could be -
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Miscellaneous</h2>
+<div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li>Use trigrams instead of bigrams
+<li>I spent part of the morning wrapping up the install script for the raspberry
+project, and cleaning up the repository.  <a href="https://github.com/kbeyer/RPi-LED-SpectrumAnalyzer">It looks reasonable now</a>, and I
+think I'm done with it until the end of HackerSchool.
 </li>
-<li>Add a degree of dictionary look-ups: May be something like,
-look-up all the deciphered words, and try not swapping the
-characters that appear in most of the words that are in the
-dictionary.
+<li>I also tried to look for "easy" python issues that would involve me writing
+some C code, but didn't really find anything other than documentation… I
+guess, I should pick a module and look for bugs in it, instead.
+</li>
+<li>Also, while chatting with a friend, I had to explain that I don't mention the
+last names of people or link to them, for privacy reasons.  Hacker School is
+particularly careful about not divulging information about who are at Hacker
+School each batch, and I want to keep that tradition.
 </li>
 </ul>
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-28.html" class="u-url">Hacker School, 2014-07-28</a></h1>
+        <span class="post-date">28 Jul 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>There seemed to be excitement in the space to have Jessica around.  We had
+coffee with her, and I chatted with her briefly. She encouraged me to try and
+send a patch to CPython, that involved debugging and fixing some C issues.
 </li>
-<li>This paper is 20 years old, and there would surely be work by others
-building on top of this, or doing it totally differently.
+<li>I spent some time with Tom, while he tried to get <code>cinspect</code> working for him,
+and it seemed like having the developer next to you, helped.  As always.  We
+didn't make any fixes to the code, but it worked.
+</li>
+<li>I spent the afternoon, adding tests for a simple issue, to see how patches are sent.
+</li>
+<li>Later, I paired with Sophia for an hour to refactor the vcs code. It's
+beginning to look much better than what it used to, and I like that.
+</li>
+<li>Jessica's talk on buffer overflows was enlightening and entertaining. It was
+very similar to a talk that Max gave on one of the thursdays, but it was
+exciting nevertheless.
+</li>
+<li>After the talk, I am inspired to try and work through the Hacking: Art of
+exploitation, at some point. I'm beginning to feel like time at HackerSchool
+running out!
 </li>
 </ul>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-23.html" class="u-url">Hacker School, 2014-06-23</a></h1>
-        <span class="post-date">23 Jun 2014</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-25.html" class="u-url">Hacker School, 2014-07-25</a></h1>
+        <span class="post-date">25 Jul 2014</span>
     </header>
     <div class="e-content entry-content">
     <ul class="org-ul">
-<li>The Apprenticeship patterns book is very interesting!  I shall
-continue to read it and start create daily/weekly rituals from the
-actions prescribed in the book!
+<li>We worked on writing our own (toy) version control system on Friday, as a
+part of job prep.  I paired with Sophia, and we got upto the point where we
+had diffs working, when we decided to refactor the code with some tests and
+stuff.
 </li>
-<li>I was reading <a href="http://blogs.collab.net/git/protect-git-history#.U6fixh-caV4">this post</a> on <code>git gc</code>, <code>reflog</code>, etc. and wanted to
-see what the default values were for some of the configurable
-variables.  But, the git config command didn't help.  Developer/code
-defaults are also a part of the "config" system, and any tools to
-inspect config variables should display them, if no other values
-have been set explicitly!
+<li>The party was brilliant with a lot of activity.  All the project
+installations looked so cool, and it was so much fun!
 </li>
-<li>"If experience is built upon failure as much as success, then you
-need a more or less private space where you can seek out failure."
-– Apprenticeship Patterns.
+<li>I spent some time during the weekend watching the "Anatomy of Matplotlib"
+lectures.
 </li>
-<li>Our check-in groups changed, but 3 of us from our last check-in
-group are together again!
+<li>I started some work with poking around Matplotlib's template backend, and
+trying to start writing and ascii backend.
 </li>
-<li>Most of the day was spent with Git.  In the morning, I learned that
-setting <code>push.default</code> to <code>nothing</code> will prevent pushing any
-branches without specifying explicitly which branch I want to push.
-</li>
-<li>Also, later in the day, Alan gave a presentation mapping the
-internals of git to the commands, trying to give everyone a better
-mental model of Git.
-</li>
-<li>I spent some time trying to get <code>jedi</code> integration for <code>emacs</code>. It
-should've worked out of the box, but I'm not sure the ELPA
-repositories have proper dependency/version management.  Seems to be
-the problem, everywhere!  Dependencies of a package get updated, and
-the package starts acting up…
-</li>
-<li>Chaitu sent me a link about solving mazes using Finite Automata, and
-I spent some time trying to write a simple solver, and compare it
-with Nava's breadth first search.  But, it looks like we broke her
-code during the refactor.  I may get back to this, at some point.
-</li>
-<li>I also spent a few minutes talking to Kyle, while he was trying to
-implement a simple version of the NTP protocol.  The algorithm it
-turns out, is pretty simple.
-</li>
-<li>I started reading a little bit on crypt-analysis for Simple
-Substitution ciphers, and I'll try implementing one of the
-algorithms today.
-</li>
-<li>The day ended with yummy pizza and video watching!  We watched –
-<ul class="org-ul">
-<li>Bret Victor, <a href="http://vimeo.com/36579366">Inventing on Principle</a> (54 min)
-</li>
-<li>Gary Bernhardt, <a href="https://www.destroyallsoftware.com/talks/wat">WAT</a> (4 min)
-</li>
-<li>Guy Steele, <a href="https://www.youtube.com/watch?v=_ahvzDzKdB0">Growing a Language</a> (53 min)
-</li>
-</ul>
+<li>Also, I was trying to help UC setup <a href="https://github.com/andrewrk/groovebasin">GrooveBasin</a> on his raspberry pi, and
+helped him configure <a href="https://github.com/jasperproject/jasper-client">jasper</a> on it.
 </li>
 </ul>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-21.html" class="u-url">Hacker School, 2014-06-21</a></h1>
-        <span class="post-date">22 Jun 2014</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-24.html" class="u-url">Hacker School, 2014-07-24</a></h1>
+        <span class="post-date">24 Jul 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Glowing LEDs and me</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>It turned out that the SPI driver exposed a faster way to write bits, writing
+to all the LEDs at once, instead of one at a time, and this was sufficient to
+get things working!
+</li>
+
+<li>Kyle and I started to have enough, of the glowing LEDs and decided to wrap up
+the project, but, Nick had different ideas for us! We had talked about having
+the music stream via airplay, but Nick got his DJing tools, and it would be
+too bad to not use it for the party, but doing that meant Airplay's delay
+wouldn't help the DJ. So, we connected a line-in, and thought we'd be done if
+we just read the input and used that data. But, it turns out that's not so
+simple because sending data over the wire, added noise to it, and in a whole
+range of frequencies! I tried removing all the fourier coefficients which
+were lower than a threshold, but I felt like it didn't work very well, until
+Nick reduced the gain of this output on the amp to the very minimum. Finally,
+Kyle and I decided that this was good enough for the party!
+</li>
+
+<li>I also hacked up a quick script to read a font file, and use the grey values
+to get ascii characters to show up on the LED strip.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Miscellaneous</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>While trying to find the RPi on the network, I learnt that <code>sudo nmap -sP
+  10.0.1.*</code> gives us the hostname as well, instead of just IPs.  <code>sudo</code> being
+the key, here.
+</li>
+
+<li>Kyle and I went and grabbed dinner in a restaurant in west village. It was
+good to sit down and talk about various things, and eat. The glowing LEDs
+were totally out of my mind for that period, and the break was good!
+</li>
+
+<li>There were a bunch of HSers doing mock-interviews and it was fun to watch, so
+I stayed on until quite late, when all of us headed out together.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Today</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>I'm excited about trying to build a small version control system from
+scratch today!
+</li>
+
+<li>Though I have had quite a bit of glowing LEDs in my face for the past week,
+I may suck up to it, and figure out how to do scrolling text on the
+display.
+</li>
+
+<li>Also, excited to see how all the cool projects will come together in the
+party tonight!
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-23.html" class="u-url">Hacker School, 2014-07-23</a></h1>
+        <span class="post-date">23 Jul 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Shairplay and WS2801</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Kyle mounted the LEDs onto a cardboard, and packaged it to look cool.
+</li>
+
+<li>We thought we were done with the project, until we found out we weren't!  The
+LEDs all lighted up correctly, when we played the audio from a file on disk,
+but streaming messed something up!  Only the first few columns lighted up,
+when we were listening on the stream.
+</li>
+
+<li>We spent the whole evening trying to debug the issue, and eliminated quite a
+few hypothesis, but weren't able to fix it, yet.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Miscellaneous</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>rntz live coded a parser for us yesterday, and I learnt a few things about
+parsers.  I'm glad I went to the discussion/talk.
+</li>
+
+<li>I started working through the videos of Anatomy of Matplotlib, and hope to
+get new insights into how it works.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Today</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Today will be spent mostly trying to get streaming audio working.
+</li>
+
+<li>I feel like debugging this, will take my understanding of the
+hardware-software interface to a new level.
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-22.html" class="u-url">Hacker School, 2014-07-22</a></h1>
+        <span class="post-date">22 Jul 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Mel's talks</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Mel's talk in the morning was brilliant!  I wonder why it's not a part of
+recommended reading for Hacker Schoolers, or referred to, in the manual.
+</li>
+<li>Logically, it makes sense that Mel came now, so that she didn't have to come
+twice to talk to the firsts and seconds, but it would have been great to have
+had this talk in the first week of Hacker School!
+</li>
+<li>Mel gave us a lot of new information and insights into education and learning
+styles. I also like the fact that she gave us all a good vocabulary to think
+about and discuss stuff related to learning. I will try to think, and apply
+as much of this as I can, for the rest of my time here.
+</li>
+<li>She talked about <a href="http://blog.melchua.com/2014/02/10/test-driven-learning-setting-learning-goals-for-yourself-software-engineering-edition/">test driven learning</a> which seemed very interesting. Instead
+of just saying, "wow that would be an interesting thing to do", stop for a
+moment, think about what you are trying to learn, and how you will assess if
+you have learnt what you wanted to, and then dive into the project.
+</li>
+<li>The <a href="http://www.engr.ncsu.edu/learningstyles/ilsweb.html">learning styles</a> workshop was pretty good too, though I feel like I don't
+know myself well enough, and I unable to properly "bucket" myself.  Later, I
+took a <a href="http://www.engr.ncsu.edu/learningstyles/ilsweb.html">quiz</a>, and ended up fairly close to the middle, in all the dimensions.
+</li>
+<li>Mel introduced us to the idea of <a href="http://www.scribd.com/doc/201816780/A-Cognitive-Apprenticeship-Primer">cognitive apprenticeship</a>, and encouraged us
+to try out the different modes when pairing. I really liked the idea of <a href="http://en.wikipedia.org/wiki/Zone_of_proximal_development">Zone
+of proximal development</a> and I will try to take the advice of spending most of
+the rest of my time here in this zone.
+</li>
+<li>Do I (really) care?  Motivation and mindset, …
+</li>
+<li>Be courageous!
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Airplay and Raspberry Pi</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>I was trying to wrap libshairport and use it on the RPi to be able to listen
+to songs being streamed on Airplay, and use that data to drive the LEDs.
+</li>
+<li>Shairport, a tool written in C seemed to work.  My attempts to wrap
+<code>libshairport</code>, which is a fork of <code>shairport</code> converting it into a library,
+failed miserably.
+</li>
+<li>The trouble was essentially getting Airplay to discover my service.  I tried
+a bunch of things with <code>pybonjour</code> and <code>avahi</code>, but wasn't able to get it
+right.
+</li>
+<li>Finally, I tried just announcing the service with <code>shairport</code>, and actually
+running a python script that wraps <code>libshairport</code> to listen to the data.
+But, this didn't work and iTunes complained that this Airplay device is not
+compatible. Before going much further with this, I found <code>shairplay</code> which is
+a tool similar to <code>shairport</code>, but came with a library, and also Python
+bindings!  I happily used this to get stuff working!
+</li>
+<li>I'm interested to see today, what exactly I was missing yesterday!
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Emacs club</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>I demoed org-mode to a bunch of people for about half an hour, and it was
+good to see people being blown away by what it can do, exactly the way I
+was, when I first came across it.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Today</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Work on RPi to clean up a few things for the party.
+</li>
+<li>Compare <code>libshairplay</code> and <code>libshairport</code> to see what I was doing wrong,
+yesterday.
+</li>
+<li>May be write up the whole thing, and make the code available.
+</li>
+<li>Learn a little bit about Parsers from rntz.
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-21.html" class="u-url">Hacker School, 2014-07-21</a></h1>
+        <span class="post-date">22 Jul 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Yesterday</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>It was exciting to have so many new Hacker Schoolers in the space.  But, the
+excitement was kinda distracting too.
+</li>
+
+<li>I spent most of the day looking at shairport, and libshairport and trying to
+wrap it, so I can use it to get data for the spectrum analyzer via the
+Air-play protocol.  I was able to call it using <code>ctypes</code>, but it doesn't seem
+discoverable.
+</li>
+
+<li>I also briefly looked at Julia and <a href="http://dwm.suckless.org">dwm</a>, to try and port dwm to Julia.  It
+doesn't seem like too much work, but is going to take me a while given how
+comfortable I'm with both Julia and C.
+</li>
+
+<li>Yaron Minsky's talk on distributed systems was a great introduction to
+Distributed systems.
+</li>
+
+<li>After the talk, I spent a little time updating my notes from an old org-mode
+workshop to present it at the emacs user group meet up today.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Today</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>I hope to get the spectrum analyzer to use <code>libshairport</code> and be able to play
+music sent through Air play.
+</li>
+
+<li>Spend some time talking to the emacs user group about org-mode.
+</li>
+
+<li>If I have any time, after getting this to work, I may play around with the
+dwm port.
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-20.html" class="u-url">Hacker School, 2014-07-20</a></h1>
+        <span class="post-date">21 Jul 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Saturday &amp; Sunday</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>During the weekend, I had this idea of building a personalized "radio" for
+myself using a Raspberry pi.  The idea is to have a service where all my
+bookmarks, and feeds are accumulated to, instead of eating up valuable
+browser tab real estate.  And then, I could use a Raspberry pi to randomly
+play content off of it, based on a theme.
+</li>
+
+<li>I worked on getting things together for it, during the weekend.  The project
+is more like a "thing that needs to be done", rather than something that puts
+me out of my comfort zone, atleast as far as I can see. So, I'm just going to
+work on it as a background thing, between other projects, etc.
+</li>
+
+<li>Festival seemed OK initially, while I was trying things out, but when I
+actually used it to read me a blog post, it was really terrible!  I tried
+demos of a few commercial tools, and they seem much better than what festival
+had to offer.  I wonder what it would take to get Festival, up there.  I
+tried using Google's translate service's tts (unofficial API) and it seemed
+so good!  But, it limits each request to 100 bytes, and the audio will have
+to be downloaded via the Network.
+</li>
+
+<li>Madhu pointed me to MaryTTS, which seemed to be an active project and it
+seemed to be much better than Festival, though not as good as Google's tts.
+I'm going to try getting it to run on a Pi, next.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Monday</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>I don't really know what I'm doing to work on, today.  I have been playing
+around with the Pi, for the past week-ish, and it has been fun!  Kyle and I
+will probably work more on tweaking it, to get it to work the way we want
+it, for the party!
+</li>
+
+<li>I also did a little bit of Julia with Sean, and it was fun.  I may try
+playing around with it, a little bit, but not sure what to work on.  May be
+continue working through the think-complexity book using Julia?
+</li>
+
+<li>Or jump into something I totally don't know about, inspired by listening to
+Julia Evans' podcast for Ruby Rogues.  I just got this idea of trying to
+write a window manager to understand how X works, and what wayland is…  I
+could try porting dwm or i3wm to Julia.
+</li>
+
+<li>There's a whole new bunch of excited Hacker Schoolers in the space, and its
+very exciting!
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-18.html" class="u-url">Hacker School, 2014-07-18</a></h1>
+        <span class="post-date">19 Jul 2014</span>
     </header>
     <div class="e-content entry-content">
     <ul class="org-ul">
-<li>I spent most of Saturday, thinking about what I should be doing for
-the next few weeks, and what I really want to get out of Hacker
-School.
+<li>We worked on a couple of simple Google code jam problems
 </li>
-<li>I had a good discussion with Naren about things that he works on,
-and the kind of things that he sees as hard, what kind of things
-interest me, and what I want to do post Hacker School.  I always
-knew, I didn't really have an area of expertise or an area that I'm
-super interested in, where I want to work.  This discussion only was
-a verbalizing of those thoughts.
+<li>And then implemented an LRU
 </li>
-<li>I am not sure, I am very happy with the way I have been learning
-Haskell.  The UPenn course has been reasonably good with the
-exercises provided, and I have been learning through "pseudo"
-projects.  But, I'm wondering if I should pick up a more concrete
-project.
+<li>All of this in Julia, and it was fun.
 </li>
-<li>I played around a little bit with Elm and started something to try
-and write <a href="https://github.com/huckerdom/layout">Layout</a> using Elm.
-</li>
-<li>I tried cleaning up the phonebook problem from Friday. It works, but
-can definitely be improved with some help from a more experienced
-Haskeller.
+<li>I headed home early-ish, to catch up on some sleep.
 </li>
 </ul>
     </div>
@@ -485,10 +607,10 @@ Haskeller.
 </div>
         <div class="pagination">
             <span class="pagination-item newer">
-                <a href="/tags/cat_hackerschool-checkins-5.html" rel="next">Older posts</a>
+                <a href="/tags/cat_hackerschool-checkins-3.html" rel="next">Older posts</a>
             </span>
             <span class="pagination-item older">
-                <a href="/tags/cat_hackerschool-checkins-3.html" rel="prev">Newer posts</a>
+                <a href="/tags/cat_hackerschool-checkins-5.html" rel="prev">Newer posts</a>
             </span>
         </div>
 
