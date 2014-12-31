@@ -98,6 +98,142 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/augmented-assignment-in-python.html" class="u-url">Augmented assignment in Python</a></h1>
+        <span class="post-date">04 Oct 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+If you are new to <code>Python</code>, you should probably stop reading here.
+But, if you have used <code>Python</code> and <code>numpy</code>, then read on. Before, that
+try these bits of code.
+</p>
+
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mf">0.5j</span>
+<span class="k">print</span> <span class="n">a</span>
+</pre></div>
+
+<p>
+The "same thing", in a slightly different way.
+</p>
+
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
+<span class="k">print</span> <span class="n">a</span>
+</pre></div>
+
+<p>
+Both the code blocks, look really the same, until you look carefully.
+Under normal circumstances <code>a = a + b</code> and <code>a += b</code> behave exactly
+similarly, and we really don't need to bother about the differences
+between them.
+</p>
+
+<p>
+But, <code>+=</code>, which is an augmented assignment operator, actually tries
+to perform the operation in-place, unlike the other statement where
+<code>+</code> actually returns a new object which is again being referenced by
+the name <code>a</code>.
+</p>
+
+<p>
+But, when dealing with <code>numpy</code> arrays, this will lead to trouble.
+When assigning to an array, it's <code>dtype</code> is not changed and hence the
+trouble.
+</p>
+
+<p>
+The right way to use the augmented assignment operator, would be:
+</p>
+
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
+<span class="k">print</span> <span class="n">a</span>
+</pre></div>
+
+<p>
+The same thing is explained in this thread.  Also, Thanks to
+Bhanukiran for asking me this.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/notes-from-pycon.html" class="u-url">Notes from Pycon</a></h1>
+        <span class="post-date">29 Sep 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+Just back after attending PyCon India '10. It was not as exciting
+as I hoped it would be.  That's generally the case with any
+conference I attend.  (I guess, I expect too much from them. :P)
+</p>
+
+<p>
+The keynote by David Goodger (pronounced like Badger :) was
+"Good".  It was a very simple one talking of how to get Python
+into the workplace.  His simple recommendation was to use Python
+if we saw any opportunity where it could be used, without
+bothering about permissions, convincing people etc.  "It's better
+to ask for forgiveness, than for permission."  He spoke of myths
+around Python – scripting language, dynamic language, too much
+white space, toy language, nobody uses it.  He concluded the talk,
+by saying mentioning Indian driving to be an indication of some
+quick reflexes that we Indians have. ;) On the whole it was an
+enlightening, humorous and enjoyable talk.
+</p>
+
+<p>
+I didn't attend too many of other talks.  Amongst the ones that I
+did attend, I particularly liked the one by Asim Mittal on using
+the Nintendo Wii with Python.
+</p>
+
+<p>
+On some thought about my experiences at conferences, I think
+conferences shouldn't have any talks at all.  Or atleast, I
+shouldn't be attending conferences for talks.  They are an excuse
+to catch-up with people.  Conferences should have only lightning
+talks of 10 mins and sprints.  Talks, with an extensive
+explanation of stuff that can be easily found on the web, are a
+waste of time.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/pycon-india-10.html" class="u-url">PyCon India '10</a></h1>
+        <span class="post-date">16 Aug 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+Looks like PyCon India 2010 is going to be great fun!  With 80
+talk submissions, quite a few interesting ones, this time's PyCon
+should be much better than last year's.  Also, David Goodger of
+docutils and ReST fame will be the keynote speaker!
+</p>
+
+<ul class="org-ul">
+<li>Dates: <span class="timestamp-wrapper"><span class="timestamp">[2010-09-25 Sat]–[2010-09-26 Sun]</span></span>
+</li>
+<li>Venue: MSRIT, Bangalore
+</li>
+<li>RSVP here!
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="http://in.pycon.org/2010/static/images/badges/supporter-small.png" alt="supporter-small.png">
+</p>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/sage-days-25-mumbai-india.html" class="u-url">Sage Days 25, Mumbai, India</a></h1>
         <span class="post-date">21 Jul 2010</span>
     </header>
@@ -478,7 +614,7 @@ Hyderabad!
 </div>
         <div class="pagination">
             <span class="pagination-item older">
-                <a href="/tags/python.html" rel="prev">Newer posts</a>
+                <a href="/tags/python-2.html" rel="prev">Newer posts</a>
             </span>
         </div>
 

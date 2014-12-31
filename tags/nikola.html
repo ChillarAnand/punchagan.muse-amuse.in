@@ -98,6 +98,31 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-08-05.html" class="u-url">Hacker School, 2014-08-05</a></h1>
+        <span class="post-date">05 Aug 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>Spent a couple of hours in the morning, trying to revive a html template for
+blaggregator, that I missed out on committing previously, and wiped out due
+to negligence in using `git clean`.
+</li>
+<li>Spent time post lunch working through the first two chapters of the baking pi
+course, by myself, reading up different references, and finally getting how
+I/O is mapped to the memory in ARM.
+</li>
+<li>Actually, almost.  A variant of the example that I thought should work,
+doesn't.  So, I need to think/talk about it today.
+</li>
+<li>I sent a patch to Nikola for the lastdeploy timestamp being UTC.  I was
+hoping to work around an <a href="https://github.com/sursh/blaggregator/issues/56">issue</a> with Blaggregator, by somehow fixing it on the
+client side, but that's probably not the right way to go about it.
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/org-based-posts-in-nikola.html" class="u-url">Org based posts in Nikola</a></h1>
         <span class="post-date">20 Apr 2014</span>
     </header>
@@ -146,7 +171,10 @@ Once, I'm happy with it, I commit the post and deploy it using <code>nikola
 deploy</code>.
 </p>
 
-<div class="highlight"><pre><span class="c"># Commands to execute to deploy. Can be anything, for example,</span>
+<div class="highlight"><pre><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s">'gh-pages'</span>
+<span class="n">GITHUB_REMOTE_NAME</span> <span class="o">=</span> <span class="s">'origin'</span>
+
+<span class="c"># Commands to execute to deploy. Can be anything, for example,</span>
 <span class="c"># you may use rsync:</span>
 <span class="c"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
 <span class="c"># And then do a backup, or ping pingomatic.</span>
@@ -159,8 +187,6 @@ deploy</code>.
 	<span class="s">'git checkout master'</span><span class="p">,</span>
 	<span class="s">'nikola build'</span><span class="p">,</span>
 	<span class="s">'./commit-changes || true'</span><span class="p">,</span>
-	<span class="s">'nikola github_deploy'</span><span class="p">,</span>
-	<span class="s">'git push origin master'</span><span class="p">,</span>
 </pre></div>
 
 <p>

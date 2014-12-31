@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (nikola)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/nikola.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 28 Dec 2014 02:19:51 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (nikola)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/nikola.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 01 Jan 2015 02:54:14 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-05</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-05.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;Spent a couple of hours in the morning, trying to revive a html template for
+blaggregator, that I missed out on committing previously, and wiped out due
+to negligence in using `git clean`.
+&lt;/li&gt;
+&lt;li&gt;Spent time post lunch working through the first two chapters of the baking pi
+course, by myself, reading up different references, and finally getting how
+I/O is mapped to the memory in ARM.
+&lt;/li&gt;
+&lt;li&gt;Actually, almost.  A variant of the example that I thought should work,
+doesn't.  So, I need to think/talk about it today.
+&lt;/li&gt;
+&lt;li&gt;I sent a patch to Nikola for the lastdeploy timestamp being UTC.  I was
+hoping to work around an &lt;a href="https://github.com/sursh/blaggregator/issues/56"&gt;issue&lt;/a&gt; with Blaggregator, by somehow fixing it on the
+client side, but that's probably not the right way to go about it.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>hackerschool</category><category>nikola</category><category>raspberry-pi</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-05.html</guid><pubDate>Wed, 06 Aug 2014 03:44:33 GMT</pubDate></item><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://binchen.org/"&gt;Chen Bin&lt;/a&gt; asked me to share my Nikola+Org work-flow, and share an
 example post.
 &lt;/p&gt;
@@ -43,7 +59,10 @@ Once, I'm happy with it, I commit the post and deploy it using &lt;code&gt;nikol
 deploy&lt;/code&gt;.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Commands to execute to deploy. Can be anything, for example,&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'gh-pages'&lt;/span&gt;
+&lt;span class="n"&gt;GITHUB_REMOTE_NAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'origin'&lt;/span&gt;
+
+&lt;span class="c"&gt;# Commands to execute to deploy. Can be anything, for example,&lt;/span&gt;
 &lt;span class="c"&gt;# you may use rsync:&lt;/span&gt;
 &lt;span class="c"&gt;# "rsync -rav output/* joe@my.site:/srv/www/site"&lt;/span&gt;
 &lt;span class="c"&gt;# And then do a backup, or ping pingomatic.&lt;/span&gt;
@@ -56,8 +75,6 @@ deploy&lt;/code&gt;.
 	&lt;span class="s"&gt;'git checkout master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'nikola build'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'./commit-changes || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-	&lt;span class="s"&gt;'nikola github_deploy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-	&lt;span class="s"&gt;'git push origin master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;

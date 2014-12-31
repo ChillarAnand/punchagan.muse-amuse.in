@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (elm)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/elm.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 01 Jan 2015 02:54:15 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-06-18</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-18.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;Amber &lt;a href="http://www.subsymbol.org/2014/06/hacker-school-tuesday-june-17th-2014.html"&gt;talked about&lt;/a&gt; "exploring only until the current task is done"
+and moving on, which is could really be a lost opportunity to learn
+something new and gain a better understanding of the system I am
+working with.
+&lt;/li&gt;
+&lt;li&gt;Having something (anything not directly related to the current
+project I'm working on) scheduled for later in the day, doesn't seem
+to do me much good. I feel distracted for quite a long period before
+the scheduled time.
+&lt;/li&gt;
+&lt;li&gt;Abstractions and layers were talked about in the second exercise on
+Applicatives… Layering, FTW!
+&lt;/li&gt;
+&lt;li&gt;I spent about an hour or so in the afternoon reading the paper, &lt;a href="https://www.cs.purdue.edu/homes/gkrichar/papers/onward2013-wuerthinger-truffle.pdf"&gt;One
+VM to rule them all&lt;/a&gt;.  It talked about Truffle: an API to implement
+an AST parser for any language and Graal: a JIT compiler for the
+ASTs.  Later in the day, I also went to the &lt;a href="http://www.meetup.com/papers-we-love/events/178049922/"&gt;Papers we love&lt;/a&gt; meetup.
+The presentation and the talks were quite interesting!
+&lt;/li&gt;
+&lt;li&gt;I also started looking at &lt;a href="http://elm-lang.org"&gt;Elm&lt;/a&gt; and playing with it.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>elm</category><category>hackerschool</category><category>haskell</category><category>vm</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-18.html</guid><pubDate>Wed, 18 Jun 2014 14:29:29 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (version_control)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/version_control.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 28 Dec 2014 02:19:51 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A git-diff tip</title><link>http://punchagan.muse-amuse.in/posts/a-git-diff-tip.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (version_control)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/version_control.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 01 Jan 2015 02:54:12 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-07-28</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;There seemed to be excitement in the space to have Jessica around.  We had
+coffee with her, and I chatted with her briefly. She encouraged me to try and
+send a patch to CPython, that involved debugging and fixing some C issues.
+&lt;/li&gt;
+&lt;li&gt;I spent some time with Tom, while he tried to get &lt;code&gt;cinspect&lt;/code&gt; working for him,
+and it seemed like having the developer next to you, helped.  As always.  We
+didn't make any fixes to the code, but it worked.
+&lt;/li&gt;
+&lt;li&gt;I spent the afternoon, adding tests for a simple issue, to see how patches are sent.
+&lt;/li&gt;
+&lt;li&gt;Later, I paired with Sophia for an hour to refactor the vcs code. It's
+beginning to look much better than what it used to, and I like that.
+&lt;/li&gt;
+&lt;li&gt;Jessica's talk on buffer overflows was enlightening and entertaining. It was
+very similar to a talk that Max gave on one of the thursdays, but it was
+exciting nevertheless.
+&lt;/li&gt;
+&lt;li&gt;After the talk, I am inspired to try and work through the Hacking: Art of
+exploitation, at some point. I'm beginning to feel like time at HackerSchool
+running out!
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>C</category><category>hackerschool</category><category>python</category><category>version_control</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-28.html</guid><pubDate>Tue, 29 Jul 2014 02:23:39 GMT</pubDate></item><item><title>A git-diff tip</title><link>http://punchagan.muse-amuse.in/posts/a-git-diff-tip.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 One of the things with git that you can mess-up, if you are not
 used to, is git diff.  A friend of mine was trying to add a couple
 of new files, and changes to existing files.  But, he was on the

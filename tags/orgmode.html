@@ -286,6 +286,61 @@ Happy Learning!
     </article>
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-21.html" class="u-url">Hacker School, 2014-07-21</a></h1>
+        <span class="post-date">22 Jul 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Yesterday</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>It was exciting to have so many new Hacker Schoolers in the space.  But, the
+excitement was kinda distracting too.
+</li>
+
+<li>I spent most of the day looking at shairport, and libshairport and trying to
+wrap it, so I can use it to get data for the spectrum analyzer via the
+Air-play protocol.  I was able to call it using <code>ctypes</code>, but it doesn't seem
+discoverable.
+</li>
+
+<li>I also briefly looked at Julia and <a href="http://dwm.suckless.org">dwm</a>, to try and port dwm to Julia.  It
+doesn't seem like too much work, but is going to take me a while given how
+comfortable I'm with both Julia and C.
+</li>
+
+<li>Yaron Minsky's talk on distributed systems was a great introduction to
+Distributed systems.
+</li>
+
+<li>After the talk, I spent a little time updating my notes from an old org-mode
+workshop to present it at the emacs user group meet up today.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Today</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>I hope to get the spectrum analyzer to use <code>libshairport</code> and be able to play
+music sent through Air play.
+</li>
+
+<li>Spend some time talking to the emacs user group about org-mode.
+</li>
+
+<li>If I have any time, after getting this to work, I may play around with the
+dwm port.
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/org-based-posts-in-nikola.html" class="u-url">Org based posts in Nikola</a></h1>
         <span class="post-date">20 Apr 2014</span>
     </header>
@@ -334,7 +389,10 @@ Once, I'm happy with it, I commit the post and deploy it using <code>nikola
 deploy</code>.
 </p>
 
-<div class="highlight"><pre><span class="c"># Commands to execute to deploy. Can be anything, for example,</span>
+<div class="highlight"><pre><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s">'gh-pages'</span>
+<span class="n">GITHUB_REMOTE_NAME</span> <span class="o">=</span> <span class="s">'origin'</span>
+
+<span class="c"># Commands to execute to deploy. Can be anything, for example,</span>
 <span class="c"># you may use rsync:</span>
 <span class="c"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
 <span class="c"># And then do a backup, or ping pingomatic.</span>
@@ -347,8 +405,6 @@ deploy</code>.
 	<span class="s">'git checkout master'</span><span class="p">,</span>
 	<span class="s">'nikola build'</span><span class="p">,</span>
 	<span class="s">'./commit-changes || true'</span><span class="p">,</span>
-	<span class="s">'nikola github_deploy'</span><span class="p">,</span>
-	<span class="s">'git push origin master'</span><span class="p">,</span>
 </pre></div>
 
 <p>
@@ -521,48 +577,6 @@ program code.
 <p>
 Yay! I can now write code, that can go into Org-mode and Emacs!
 I'm looking forward to this!
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/changes-to-blog.html" class="u-url">Changes to Blog</a></h1>
-        <span class="post-date">02 Feb 2011</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Well, as you can see, I've changed my blog a bit.  I had been
-trying to make it gel well with org-mode and looking for ways to
-allow me to share arbit stuff with separate feeds for tags,
-separate pages with independent feeds, etc.
-</p>
-
-<p>
-I finally got around to tweaking the code of reprise to be able to
-do this.  There are still a few things I would like to change, but
-I'll make the changes gradually.  The looks are also straight from
-uddigal's reprise, with a few tiny tweaks.  I hope it is alright
-to be using it.  I really liked the theme.
-</p>
-
-<p>
-Every tag now has a separate feed. <code>/tags/emacs.atom</code> will give
-you the feed of <code>emacs</code> for instance. Also, I plan to have a
-couple of more pages, one for all the interesting links I come
-across and another for interesting quotes.  Both of these pages,
-have their own feeds too (<code>quotes.atom</code> and <code>links.atom</code>).
-</p>
-
-<p>
-In the spirit of minimalism, I got rid of comments.  I've been
-looking for ways of having comments without all the javascript
-cruft from disqus, but I didn't find any satisfactory way to do
-this.  So, the site will have no comments.  You can write to me,
-in case you've something to say to me.
-</p>
-
-<p>
-Adios.
 </p>
     </div>
     </article>
