@@ -98,213 +98,224 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/org-based-posts-in-nikola.html" class="u-url">Org based posts in Nikola</a></h1>
-        <span class="post-date">20 Apr 2014</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/the-joy-of-a-project.html" class="u-url">The Joy of a 'Project!'</a></h1>
+        <span class="post-date">06 Nov 2006</span>
     </header>
     <div class="e-content entry-content">
     <p>
-<a href="http://binchen.org/">Chen Bin</a> asked me to share my Nikola+Org work-flow, and share an
-example post.
+Just finished the 'Test-2'. Here's the first
+post that can genuinely be called "mine"…
 </p>
 
 <p>
-The org source for any post can be found by changing the URL of a post
-from <code>.html</code> to <code>.org</code>.
+With my last minute 'C2S' plans [Co-operate to Survive… does it
+ring any bells??] failing to work, the tests did their job,cleaned
+me up [both literally and metaphorically]. Though I didn't learn
+much while preparing for the tests, the syllabus gave me a brain
+wave (surprised to find that my Brain is still ticking…. after
+more than one year of Engg.) : Build my first Computer game!!
+[Don't expect too much from it… I'm a novice at programming and
+my game doesn't even have a GUI as of now!]
 </p>
 
 <p>
-I don't have much of a work-flow, because I don't post too often, but
-here is what I typically do, to make a new post.
+I had been doing a l'l bit of C programming off late but, I never
+learnt 'file management' until the "Test-2" forced me to, and
+Viola! I embarked on a self assigned, "Project - Hangman".
 </p>
 
 <p>
-I start off by creating a new post using
-</p>
-
-<div class="highlight"><pre><span class="nv">$ </span>nikola new_post
-</pre></div>
-
-<p>
-and then give the post a title and start editing the post in Emacs.
+Here's a peek at the game… [after a lot of
+testing and debugging (the use of technical terms is just a matter
+of "phantee")]
 </p>
 
 <p>
-I have a simple snippet that lets me insert tags, based on existing
-tags.
-</p>
-
-<script src="https://gist.github.com/6629020.js"></script>
-
-<p>
-Once I'm happy with the content of a post, I run <code>nikola auto</code> to
-build the source and serve it locally, and see if the post "looks"
-reasonable, after being rendered.
+"Phantee"- a typical hyderabadi term; has no literal english
+translation; refers to "concealing ignorance in style" ??
 </p>
 
 <p>
-Once, I'm happy with it, I commit the post and deploy it using <code>nikola
-deploy</code>.
+The basics were quite simple and were done in
+two hours… but then began the real test! The program needed a
+lot of improvements to make it "Playable" but, the tests were less
+than a week away.
 </p>
 
-<div class="highlight"><pre><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s">'gh-pages'</span>
-<span class="n">GITHUB_REMOTE_NAME</span> <span class="o">=</span> <span class="s">'origin'</span>
-
-<span class="c"># Commands to execute to deploy. Can be anything, for example,</span>
-<span class="c"># you may use rsync:</span>
-<span class="c"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
-<span class="c"># And then do a backup, or ping pingomatic.</span>
-<span class="c"># To do manual deployment, set it to []</span>
-<span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
-
-    <span class="s">'default'</span><span class="p">:</span> <span class="p">[</span>
-	<span class="s">'nikola deploy assert-fork'</span><span class="p">,</span>
-	<span class="s">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
-	<span class="s">'git checkout master'</span><span class="p">,</span>
-	<span class="s">'nikola build'</span><span class="p">,</span>
-	<span class="s">'./commit-changes || true'</span><span class="p">,</span>
-</pre></div>
+<p>
+I managed to find enough time even during the
+tests (it doesn't really matter whether you spend a week, a day or
+just an hour mugging - you are bound to be cleaned up!), and
+finished most of the stuff within a week.
+</p>
 
 <p>
-I also have a plugin, that posts captured bookmarks and quotes onto
-the blog, with a single command. I should probably make the sources of
-my blog open, and push it onto GitHub.
+There were quite a few road blocks which I had to get
+around. Amongst other things, obtaining a 'decent' database of
+words was one. Initially, I wrote another program for building up
+a dbase of your own. This wasn't good enough…. so, with some
+ideas from Arunodai, I successfully integrated a dbase of 14000
+words [picked it from another version of hangman] with my own
+version. After one whole week of debugging and improving {with an
+annoying disturbance called 'Test-2'}, now my game is quite
+'playable' (i.e it can be played by people other than me).
+</p>
+
+<p>
+So you might say, "what's the big-deal about writing a simple
+program of about hundred lines, that can randomly display words
+and check if you guess it right within seven turns?". This l'll
+project of mine may seem like a Pro'jest' to many! [writing a
+complex code, messing it up, debugging it for one whole week, etc
+just for the sake of creating a simple game, that can be played if
+you have a friend,a pen and a paper. Doing so much&lt;span
+class="text"&gt; for a game, that already has 'n' version,
+seems very foolish and a collosal waste
+of time and effort. Doesn't it??] Obviously, that's not a great
+achievement, its not something thats worth a mention in the
+Guiness Book of World Records or something. But it taught me a lot
+of stuff, stuff that you can't learn from books,stuff that you
+can't learn by mugging [I wonder if you can learn anything under
+the sun by "Mugging"], stuff that you can only learn by
+experience.I learnt a lot more of Computer Programming through
+this project, than I learnt through two, '3-point' courses!! {Of
+course, I wouldn't have even dreamt of doing such a thing, if not
+for these two courses, that introduced me to programming and
+taught me the essentials}. Can't such projects make the other
+courses a joy too?
+</p>
+
+<p>
+This brings me to our recent TRW [Technical Report Writing]
+project. You might wonder what kind of projects could be given in
+this kind of a course. We were asked to write a report on 'Waste
+Management' in our college, and to include some suggestions on the
+ways to improve it. Though this was an interesting job, with scope
+for some field activity and other such stuff, we [a group of six
+members] successfully turned the 'project' into a Pro'jest'!!
+[that's my personal view; the others in the group may
+disagree].But still, we learnt a lot on Report writing. A lot more
+than what we learnt by reading pages and pages of instructions, on
+the techniques of writing good reports,by the so called experts.
+</p>
+
+<p>
+Both the projects helped me understand stuff better and to put
+them to use. Why can't all courses have little projects, along
+with the routine stuff? Will it not improve my understanding of
+the subject matter? Will I not learn a great deal of things more
+than I do by mugging things up, just a week before the tests? Will
+it not be an experience, a lesson, of its own??
+</p>
+
+<blockquote>
+<p>
+I see and I forget.
+I hear and I remember.
+I do and I understand.
+–A Chinese Proverb.
+</p>
+</blockquote>
+
+<p>
+I wonder if my "Engineering", will ever be a joy for me?
+</p>
+
+<p>
+I am looking forward to more Projects… to make engineering a joy
+for me!! [it doesn't matter even if they're self-assigned ;-) ]
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/let-there-be-light-in-skype.html" class="u-url">Let there be light, in skype!</a></h1>
-        <span class="post-date">29 Mar 2014</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/is-disney-buying-mit.html" class="u-url">Is Disney buying MIT??</a></h1>
+        <span class="post-date">25 Oct 2006</span>
     </header>
     <div class="e-content entry-content">
-    <p>
-At home, my video would always show a silhouette in G+ and Skype, and
-I always thought that this was because the lighting at home was not
-sufficient.  At office, the video was decent.  But, moving to sit
-right under the light also didn't help much.
+    <div class="figure">
+<p><img src="http://hacks.mit.edu/Hacks/by_year/1998/disney_buys_mit/web.hacked.screenshot.medium.gif" alt="web.hacked.screenshot.medium.gif">
+</p>
+</div>
+
+<p>
+On April Fools Day of 1998, hackers broke into the MIT web server
+and changed the MIT home page to indicate that The Walt Disney
+Company had purchased MIT for $6.9 billion.
 </p>
 
 <p>
-Struggling with a bunch of tools like <code>v4lctl</code>, <code>guvcview</code> didn't
-help. But, during these struggles I noticed that <code>cheese</code> would show
-me bright and cheerful, while all the other programs showed my
-silhouette.
+The hacked page contained a link fake to a press release titled
+<i>Walt Disney Corporation to Acquire MIT for $6.9 Billion</i>.
 </p>
 
 <p>
-I set out to "fake" the output of <code>cheese</code> as a video device that
-skype and other programs could use. But, I didn't have to go all the
-way.  I ended up using <a href="https://github.com/umlaeute/v4l2loopback/">v4l2loopback</a> to create a loopback video device,
-and just using <code>gst-launch</code> to redirect video to that device, did the
-trick!  Thanks gstreamer!  Thanks v4l2loopback! :)
-</p>
-
-<p>
-Here's a convenient <a href="https://gist.github.com/punchagan/9859210">script</a> to use it every time I need it.
-</p>
-
-<script src="https://gist.github.com/9859210.js"></script>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/scraping-google-groups.html" class="u-url">Scraping Google Groups</a></h1>
-        <span class="post-date">31 Dec 2013</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-I was playing around with a few ideas for creating a timeline for the
-mumbai ultimate group, and as a part of playing around with stuff, for
-that idea, I ended up wanting to scrape all the emails on our google
-group.  After looking around a little bit, I failed to find anything
-that claims to be able to do this.
-</p>
-
-<p>
-So I ended up writing my own <a href="https://gist.github.com/punchagan/7947337">hacky script</a> to download all the emails
-sent on the group.  Like I said, this is a hack and can be improved
-quite a bit, but I am not inclined to do anything about it, right
-now.  Since, everything about google groups is ajaxy, this script uses
-selenium and does things on the page, that one would do by hand.  It's
-not something that I am proud of, but it does the job!
+Later that day the MIT News Office issued a press release titled
+<i>MIT says "Disney buys MIT" hack revealed by low price</i>
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/cold.html" class="u-url">Cold</a></h1>
-        <span class="post-date">13 Nov 2013</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/a-free-software-hack.html" class="u-url">A "Free Software" Hack!!</a></h1>
+        <span class="post-date">10 Oct 2006</span>
     </header>
     <div class="e-content entry-content">
-    <p>
-It was a pleasant Saturday evening in the middle of the winter. Christmas was
-just round the corner and love in the air. The sun was just setting and
-everything outside his window was given a fresh coat of snow, tickled by the
-red, quickly fading light. Not that he noticed. He stared blankly out of the
-window, looking at nothing in particular. He had just woken up from his
-afternoon nap; but he'd buy it if you told him he'd been sleeping for a year…
+    <div class="figure">
+<p><img src="/images/freesoftware.hack.jpg" alt="freesoftware.hack.jpg">
 </p>
+</div>
+
+<pre class="example">
+Date: Sun, 31 Aug 2003 23:45:42 -0500
+From: "Harley D. Eades III"
+To: rms@gnu.org
+Subject: Tribute to freedom.
+
+Hello,
+
+One late rainy night I had an idea. There is a hill on IL route 29
+in Peoria IL, that people climb and write a small message across
+this hill for everyone to view from a far. What would be better
+than spreading my two most favorite words across this hill. So we
+set out with a little over 200 garbage bags and nearly 400
+nails. 12:30am and rainy so you can figure that a hill of that
+size is going to be slippery (lol) nearly falling down hill with
+every step we start building each letter. At around 2:30am we have
+finished and now the sun will rise over a hill which spreads the
+words Free Software to every person that passes by. This is by far
+a vary small non-complex hack but I beleve it is a hack in it
+self. This is a tribute to Free Software [and the GNU Project].
+
+Happy Hacking
+Harley D. Eades III
+FSF Associate Member
+Hacker
+</pre>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/back-to-the-basics.html" class="u-url">Back to the Basics!!</a></h1>
+        <span class="post-date">03 Sep 2006</span>
+    </header>
+    <div class="e-content entry-content">
+    <div class="figure">
+<p><img src="/images/macaulay.jpg" alt="macaulay.jpg">
+</p>
+</div>
 
 <p>
-You could see the icy river crawling ahead, from his window.  People walking
-over the bridge, a few camera flashes going off, people stopping over and
-looking far ahead into the horizon – collecting their thoughts, couples
-walking hand-in-hand enjoying each others' company; You could see it all, from
-up there! But, as they say, you only see what you look for. And he, couldn't
-see any of this. His looked out of his window and saw none of this.
-</p>
-
-<p>
-He is walking down the same bridge. He didn't know where he was going; his head
-at least. His legs did; as always. He was walking down in his regular yellow
-shirt and black jeans, that you could mistake for a uniform, if you followed
-him for a few days. Extremely under-dressed for the chilly night, one would
-say. He kept walking down the main street, lined with shops brightly lit up for
-the festive season. The pavement bustled with with people walking with a spring
-in their step – the spring that the festive season and all the love in the air
-brought to you. Not that he noticed it, or had any of it in his step.
-</p>
-
-<p>
-Soon, he's walking through the park. The park that was built to celebrate time,
-ticking away furiously. Or to celebrate the time everyone in the world had, to
-enjoy themselves. He walked past the skating rink, with lots of people having
-the time of their life, ice skating; and a lot more, awaiting their turn. The
-first timers, old and young, making up for their inexperience, with their
-excitement; holding onto whatever they can, to finish each round, to start the
-next! The veterans, taking the center-stage and showing off their moves!  He
-was barely aware of their presence and just walked on, past all the action.
-</p>
-
-<p>
-The music festival; he walked past it too, like the crowd didn't exist, the
-noise didn't, the music didn't; like there was nothing happening! The fountain
-"felt" no different. The cold breeze, did sprinkle the water to quite a
-distance and everybody kept a safe distance to avoid the chilling shower,
-except for the kids, who found it amusing to run into the shower for a split
-second and run back madly. How could he walk just by it, and not feel a thing!
-</p>
-
-<p>
-The lakefront. That is where his legs always brought him in the end. The
-brilliantly lit skyline was a delight to watch, but I don't believe he saw any
-of it. He just stared into it, blankly. He kept staring, as the night got
-chillier and the surroundings kept getting more and more deserted. Seconds
-ticked away, minutes and hours passed by! He stayed on, staring ahead. It
-didn't matter how much below zero the mercury had gone. This wasn't the first
-night he was spending staring into the nothingness. It turned out to be the
-coldest night, in a decade. But that didn't matter to him. Nothing did. Nothing
-has, for a while now; Ever since he turned cold.
+/The National Ideals of India are Renunciation and
+Service. Intensify her in those channels and the rest will take
+care of itself.  -Swami Vivekananda/
 </p>
     </div>
     </article>
 </div>
         <div class="pagination">
-            <span class="pagination-item newer">
-                <a href="/posts/index-15.html" rel="next">Older posts</a>
-            </span>
             <span class="pagination-item older">
-                <a href="/posts/index.html" rel="prev">Newer posts</a>
+                <a href="/posts/index-15.html" rel="prev">Newer posts</a>
             </span>
         </div>
 

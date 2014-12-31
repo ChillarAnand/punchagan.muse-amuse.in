@@ -98,696 +98,514 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/welcome-to-the-un-conference.html" class="u-url">Welcome to the Un-Conference</a></h1>
-        <span class="post-date">14 Feb 2007</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/org-based-posts-in-nikola.html" class="u-url">Org based posts in Nikola</a></h1>
+        <span class="post-date">20 Apr 2014</span>
     </header>
     <div class="e-content entry-content">
     <p>
-<b>Here comes the WikiCamp!!</b>
+<a href="http://binchen.org/">Chen Bin</a> asked me to share my Nikola+Org work-flow, and share an
+example post.
 </p>
 
 <p>
-Its all about understanding and harnessing the power of wikis…
+The org source for any post can be found by changing the URL of a post
+from <code>.html</code> to <code>.org</code>.
 </p>
 
 <p>
-It aims to bring together the best minds from the Wiki/Internet
-space to talk about issues,opportunities,future and evolution of
-this powerful tool…
+I don't have much of a work-flow, because I don't post too often, but
+here is what I typically do, to make a new post.
 </p>
 
 <p>
-Demystifying terms like Collaborative Knowledge Sharing, Wisdom of
-Crowds, Crowd Sourcing…
+I start off by creating a new post using
+</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>nikola new_post
+</pre></div>
+
+<p>
+and then give the post a title and start editing the post in Emacs.
 </p>
 
 <p>
-To enliven the "Spirit of Sharing"…. [That's what it means to
-me!]
+I have a simple snippet that lets me insert tags, based on existing
+tags.
+</p>
+
+<script src="https://gist.github.com/6629020.js"></script>
+
+<p>
+Once I'm happy with the content of a post, I run <code>nikola auto</code> to
+build the source and serve it locally, and see if the post "looks"
+reasonable, after being rendered.
 </p>
 
 <p>
-The event is scheduled for the 25th of February, and the venue is
-at Tidel Park, Chennai.
+Once, I'm happy with it, I commit the post and deploy it using <code>nikola
+deploy</code>.
 </p>
 
-<p>
-Who's the Organiser?? Everyone is. WikiCamp runs as an
-unconference, where everyone is an organizer and there is no
-passive audience. So it is as much your event.The overall
-co-ordination is being done by The Knowledge Foundation, the same
-group behind events such as Barcamp Chennai, Blogcamp and
-Proto.in.
-</p>
+<div class="highlight"><pre><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s">'gh-pages'</span>
+<span class="n">GITHUB_REMOTE_NAME</span> <span class="o">=</span> <span class="s">'origin'</span>
+
+<span class="c"># Commands to execute to deploy. Can be anything, for example,</span>
+<span class="c"># you may use rsync:</span>
+<span class="c"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
+<span class="c"># And then do a backup, or ping pingomatic.</span>
+<span class="c"># To do manual deployment, set it to []</span>
+<span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
+
+    <span class="s">'default'</span><span class="p">:</span> <span class="p">[</span>
+	<span class="s">'nikola deploy assert-fork'</span><span class="p">,</span>
+	<span class="s">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
+	<span class="s">'git checkout master'</span><span class="p">,</span>
+	<span class="s">'nikola build'</span><span class="p">,</span>
+	<span class="s">'./commit-changes || true'</span><span class="p">,</span>
+</pre></div>
 
 <p>
-I am a Promoter of this event… You can be one too…. just write
-a post in your blog space… and help in telling the world about
-it…
-</p>
-
-<p>
-Wanna Participate?
+I also have a plugin, that posts captured bookmarks and quotes onto
+the blog, with a single command. I should probably make the sources of
+my blog open, and push it onto GitHub.
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/planning-to-save-a-sem.html" class="u-url">Planning... to save a Sem!!??</a></h1>
-        <span class="post-date">13 Feb 2007</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/let-there-be-light-in-skype.html" class="u-url">Let there be light, in skype!</a></h1>
+        <span class="post-date">29 Mar 2014</span>
     </header>
     <div class="e-content entry-content">
     <p>
-We are less than a week away from our supposedly dreaded
-'test-1'… n i have no clue even about what the syllabus is, in
-each course… There's 'Theory of Relativity', of which i'm able
-to make no head or tail.. then there's 'Electrical Sciences',
-which totally "transformed" my plans for this
-sem… then…SPM.. muP.. POM… MT.. C&amp;amp;S………
+At home, my video would always show a silhouette in G+ and Skype, and
+I always thought that this was because the lighting at home was not
+sufficient.  At office, the video was decent.  But, moving to sit
+right under the light also didn't help much.
 </p>
 
 <p>
-There are loads and loads of other stuff too…
+Struggling with a bunch of tools like <code>v4lctl</code>, <code>guvcview</code> didn't
+help. But, during these struggles I noticed that <code>cheese</code> would show
+me bright and cheerful, while all the other programs showed my
+silhouette.
 </p>
 
 <p>
-Relativity… Emacs…. C++… Python… Table Tennis… learning
-a bit of Music… picking up practical electronic
-skills… reading a few books…(quite a few actually..).. and so
-on…. [not to forget.. attending classes… doing a bit of course
-related work…]. The list seems only to be growing everyday…
+I set out to "fake" the output of <code>cheese</code> as a video device that
+skype and other programs could use. But, I didn't have to go all the
+way.  I ended up using <a href="https://github.com/umlaeute/v4l2loopback/">v4l2loopback</a> to create a loopback video device,
+and just using <code>gst-launch</code> to redirect video to that device, did the
+trick!  Thanks gstreamer!  Thanks v4l2loopback! :)
 </p>
 
 <p>
-There's nothing that I've crossed out yet.. there's not one thing
-that's done to perfection…[with a third of the sem already
-through!!] {I already get the feeling.. its "Another sem down the
-drain"}
+Here's a convenient <a href="https://gist.github.com/punchagan/9859210">script</a> to use it every time I need it.
 </p>
 
-<p>
-But didn't I begin this sem with plans to "rock" it?? Wasn't I
-supposed to attend all the classes that I possible can?? What's it
-that I've been doing for the past 5-6 weeks?
-</p>
-
-<p>
-I don't know!! I really can't pinpoint what's been achieved in the
-past one month or so… [other than of course quite a considerable
-amount of sleep…….]
-</p>
-
-<p>
-Why are things so horribly out of place?? What's to be done.. to
-get on track asap.. I wonder… What should my priorities be? Why
-am I being overwhelmed by the things I got to do?
-</p>
-
-<p>
-I realise this time of my life is as precious as any
-other… (probably more…) and i need to make the most of
-it…. but what is that "most"?? [It's definitely not sleep!]
-</p>
-
-<p class="verse">
-I wish to put together,<br>
-all my time, energy and matter<br>
-to do a job, little<br>
-that will ob'ly be infinitesimal<br>
-It wouldn't make me a hero<br>
-but shouldn't amount to zero…<br>
-<br>
-to me, something tangible<br>
-definitely seems possible<br>
-because nothing is impossible<br>
-if there is the quantum of struggle…<br>
-<br>
-but it must come<br>
-before I get back home<br>
-needn't create an uproar<br>
-but before the end of semsester four<br>
-</p>
-
-<p>
-[Don't mistake this for a poem… for it is not!! Its just some
-scribbling of mine.. which will keep me alive if at the end of
-this sem… there's nothing other than this.. which is
-tangible… something concrete.. something "see"able]
-</p>
-
-<p>
-Sometimes I lie awake at night, and I ask, "Where have I gone
-wrong?"  Then a voice inside says to me, "This is going to take
-more than one night."  – Charles M. Schulz
-</p>
-
-<p class="verse">
-Little Things.<br>
-Little drops of water,<br>
-Little grains of sand,<br>
-Make the mighty ocean<br>
-And the pleasant land.<br>
-Thus the little minutes,<br>
-Humble though they be,<br>
-Make the mighty ages<br>
-Of eternity.<br>
-–  Ebenezer Cobham Brewer.<br>
-</p>
+<script src="https://gist.github.com/9859210.js"></script>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/teach-yourself-programming-in-ten-years.html" class="u-url">Teach Yourself Programming in Ten Years!!</a></h1>
-        <span class="post-date">02 Feb 2007</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/scraping-google-groups.html" class="u-url">Scraping Google Groups</a></h1>
+        <span class="post-date">31 Dec 2013</span>
     </header>
     <div class="e-content entry-content">
     <p>
-Here's an interesting article by Peter Norvig, Director of
-Research Google I have just copied the whole essay here… also
-here's a link to the Original one…
+I was playing around with a few ideas for creating a timeline for the
+mumbai ultimate group, and as a part of playing around with stuff, for
+that idea, I ended up wanting to scrape all the emails on our google
+group.  After looking around a little bit, I failed to find anything
+that claims to be able to do this.
 </p>
 
 <p>
-<b>Update:</b> - <span class="timestamp-wrapper"><span class="timestamp">[2010-10-11 Mon]</span></span> - Removed the copied content
+So I ended up writing my own <a href="https://gist.github.com/punchagan/7947337">hacky script</a> to download all the emails
+sent on the group.  Like I said, this is a hack and can be improved
+quite a bit, but I am not inclined to do anything about it, right
+now.  Since, everything about google groups is ajaxy, this script uses
+selenium and does things on the page, that one would do by hand.  It's
+not something that I am proud of, but it does the job!
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/happy-gnew-year.html" class="u-url">Happy gNew Year!!</a></h1>
-        <span class="post-date">01 Jan 2007</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/cold.html" class="u-url">Cold</a></h1>
+        <span class="post-date">13 Nov 2013</span>
     </header>
     <div class="e-content entry-content">
     <p>
-Hi! I'm a bit late…(courtesy:lightning quick network speeds
-@coll…{I started this post a couple of weeks back, at
-home… and its been rotting all this while, in my drafts!} ) [Its
-already time when the resolutions taken just a couple of weeks
-back fade away into oblivion… ] but anyways.. Wish You a Very
-Happy gNew Year!! oops.. Happy New Year!
+It was a pleasant Saturday evening in the middle of the winter. Christmas was
+just round the corner and love in the air. The sun was just setting and
+everything outside his window was given a fresh coat of snow, tickled by the
+red, quickly fading light. Not that he noticed. He stared blankly out of the
+window, looking at nothing in particular. He had just woken up from his
+afternoon nap; but he'd buy it if you told him he'd been sleeping for a year…
 </p>
 
 <p>
-Actually this year started of for me not as the usual Happy New
-Year.. but as Happy gNew Year! I have been gifted a new PC by my
-mom n dad for the new year… and that too an AMD system, (Believe
-it or Not..) preloaded with Linux Red Hat Enterprise Linux 4]!
-{Its like a fairy tale for me…} Its an AMD Athlon 3200+ with
-(512+256)MB RAM and 80GBHDD…. and an awesome 17" TFT Monitor!!
+You could see the icy river crawling ahead, from his window.  People walking
+over the bridge, a few camera flashes going off, people stopping over and
+looking far ahead into the horizon – collecting their thoughts, couples
+walking hand-in-hand enjoying each others' company; You could see it all, from
+up there! But, as they say, you only see what you look for. And he, couldn't
+see any of this. His looked out of his window and saw none of this.
 </p>
 
 <p>
-I am happy that my resolutions to have a go at the comp… [ and
-use it to the best of my abilities to learn about s/w and
-h/w…. to try n imbibe in myself the spirit of true hacking…]
-haven't yet gone down the drain! { I've already ripped open the
-HCL company seal on my box… and opened it up a couple of times
-to fiddle with my HDD and RAM… }
+He is walking down the same bridge. He didn't know where he was going; his head
+at least. His legs did; as always. He was walking down in his regular yellow
+shirt and black jeans, that you could mistake for a uniform, if you followed
+him for a few days. Extremely under-dressed for the chilly night, one would
+say. He kept walking down the main street, lined with shops brightly lit up for
+the festive season. The pavement bustled with with people walking with a spring
+in their step – the spring that the festive season and all the love in the air
+brought to you. Not that he noticed it, or had any of it in his step.
 </p>
 
 <p>
-A couple of days after I got the comp… I tried installing
-Debian… and being a NooB doesn't help..(does it?).. I messed up
-the X-Server…  After some desperate attempts to get the thing
-working.. I gave up……. [I had some ebooks etc. downloaded on
-my comp at home, which I wished to dump on my comp]. So I
-persisted… I tried FC 6 [Fedora Core] …. everything was fine
-until the final step… FC refused to show me the Login screen!!
-Finally at 3 am I gave up…. I planned to get the most valuable
-stuff onto a CD and set things right, back in the comforts of my
-room and the company of Voodoo, but that was not to be….
+Soon, he's walking through the park. The park that was built to celebrate time,
+ticking away furiously. Or to celebrate the time everyone in the world had, to
+enjoy themselves. He walked past the skating rink, with lots of people having
+the time of their life, ice skating; and a lot more, awaiting their turn. The
+first timers, old and young, making up for their inexperience, with their
+excitement; holding onto whatever they can, to finish each round, to start the
+next! The veterans, taking the center-stage and showing off their moves!  He
+was barely aware of their presence and just walked on, past all the action.
 </p>
 
 <p>
-At 10am, (I just woke up then), I find that the comp at home
-refuses to turn ON!! I thought it was some petty problem like a
-loose contact somewhere, which could be set right easily.. but
-after an hour of struggle.. I realise that the problem is
-serious.. {The SMPS had blown off} [looks like a Hindi
-Movie,doesn't it??]
+The music festival; he walked past it too, like the crowd didn't exist, the
+noise didn't, the music didn't; like there was nothing happening! The fountain
+"felt" no different. The cold breeze, did sprinkle the water to quite a
+distance and everybody kept a safe distance to avoid the chilling shower,
+except for the kids, who found it amusing to run into the shower for a split
+second and run back madly. How could he walk just by it, and not feel a thing!
 </p>
 
 <p>
-Then began the real fun!! I somehow managed to connect the old
-hard disk to the new Mother Board…[my new cabinet is quite
-small… I now realize that I placed the HDD in quite a precarious
-position…].. but there was no OS on either HDD… [the "Windows"
-on the old one…. din't open… they felt awkward in their new
-environs… ;-) ] I would have returned back to coll without any
-of my stuff.. but for Knoppix (live) … it saved the day for me!!
-Finally I managed to dump my stuff onto the new HDD… [All 's
-well that ends well!! :-)] Now I've got both the Linux distro's
-[Debian and FC-6] along with all the stuff I collected at home! [
-Thanks to V00d00!! ] along with a little confidence that I am not
-too bad at handling H/W!
-</p>
-
-<p>
-When I look back at this whole episode… It feels as if nature
-had conspired…. to keep this one resolution of mine ALIVE…. to
-ignite in me the fire of "the spirit of true hacking"… [ I hope
-that I play my part well.. (nature played its brilliantly…) and
-pick up a zillionth part of the commitment ( and dedication to
-hacking) of the Hackers from the Hacker Land!! ]
-</p>
-
-<p>
-Here's a pic of one of the very few cool things I could get my
-comp to do….. [ I accessed the Remote Desktop Server on my own
-system…..]
-</p>
-
-
-<div class="figure">
-<p><img src="/images/fav.png" alt="fav.png">
-</p>
-</div>
-
-<p>
-The Hacker Ethic : Access to computers and anything which might
-teach you something about the way the world works should be
-unlimited and total. Always yield to the Hands-On Imperative! –
-Steven Levy's "Hackers : The Heroes of The Computer Revolution"
+The lakefront. That is where his legs always brought him in the end. The
+brilliantly lit skyline was a delight to watch, but I don't believe he saw any
+of it. He just stared into it, blankly. He kept staring, as the night got
+chillier and the surroundings kept getting more and more deserted. Seconds
+ticked away, minutes and hours passed by! He stayed on, staring ahead. It
+didn't matter how much below zero the mercury had gone. This wasn't the first
+night he was spending staring into the nothingness. It turned out to be the
+coldest night, in a decade. But that didn't matter to him. Nothing did. Nothing
+has, for a while now; Ever since he turned cold.
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/aweful-science.html" class="u-url">Awe[ful] @ Science !!?!??!</a></h1>
-        <span class="post-date">21 Dec 2006</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/a-smarter-404-page.html" class="u-url">A smarter 404 page.</a></h1>
+        <span class="post-date">11 Nov 2013</span>
     </header>
     <div class="e-content entry-content">
     <p>
-I was at the B.M Birla Science Musuem yesterday… it was calm
-with no one in there.. the only people i could see were the
-sweepers and cleaners.. the place was dull and lifeless… I dint
-like it.. but slowly.. as the afternoon progressed.. people
-started coming in and by 5 in the evening.. there were quite a few
-in. The museum seemed to have sprung to life suddenly… there was
-a lot of action all around with people enjoying in ( and trying to
-understand) the wonderful world of science….
-</p>
-
-<p>
-A lot of kids had come along with their parents… to dive into
-the world of science… they were enjoying it… the parents also
-turned into kids and were having great fun… it was a great
-sight… the parents tried their best to demistify the
-happenings… those with a science background did it from thier
-knowledge.. the others patiently went through the explanations…
-</p>
-
-<p>
-The kids were thoroughly enjoying it… I don't know if they would
-later on in life remember what they learnt now… but definitely a
-love for science and physics will be ignited in their hearts, it
-will fill their consciousness… the spirit of curiosity will have
-multiplied manifold… even the elders..connected with the child
-somewhere deep within themselves… they too enjoyed the wonders
-of the world of science…[and ofcourse the company and thrill in
-the eyes of their kids..] I too enjoyed the experience… the
-experiments and the thrill of the others brought a smile to my
-face too…. but it set me thinking…
-</p>
-
-<p>
-If science can inspire so much awe.. what's happening at our
-engineering colleges? When people have the chance to learn a whole
-lot of science and put it to practical use… why isn't it that
-they are excited about it? Why is it that people just endup
-mugging a few formulae just before exams and get over with it?
-Where's the problem? Where is that curiosity, all of us had as a
-child, lost?
-</p>
-
-<p>
-I can recollect, in the last sem while doing experiments in the MT
-lab there wasn't even a tenth of the awe or joy… that i could
-see and feel at the museum… why?? Is it that the child within
-us.. [the future engineers] dead? { If that's true.. then the
-country is in deep trouble..} But I don't think that's true… I
-enjoyed my visit to the museum totally…and I am sure every other
-'to be engineer' would have too.. then where's the trouble?
-</p>
-
-<p>
-I don't know exactly… but I wonder if its because everything is
-equated to marks and grades… all that matters to an engineering
-student [and the world around him/her..] is his/her CG or
-%age… Is this what the country needs? Were the 'temples of
-Learning'- the IIT's and a whole lot of other technical
-institutions set-up for this very pupose? Of what use are those
-engineers to the country, who aren't in awe of science and
-engineering, whose spirit of curiosity has been overpowered and
-suppressed by the present education system?
-</p>
-
-<p>
-Isn't it time we have a closer look at our education system… why
-are we still sticking to the 'British sytem' introduced during a
-colonial rule.. to break the back bone of our nation… to supress
-our ability to think rationally.. to produce third rate clerks to
-work for them at lower wages? Why is the emphasis on marks and
-grades growing exponentially? Shouldn't we start working to cut
-this growth at its root? Is this sytem good enough to produce
-"real" engineers, doctors, lawyers, journos, CA's, architects,
-designers, writers, artists etc etc..
-</p>
-
-<p>
-Where have all the gurukuls of the ancient past and the
-Santiniketans of the recent past gone? Isn't the country in
-desparate need of more of these 'temples of learning'??
-</p>
-
-<p>
-<i>The highest education is that which does not merely give us
-information but makes our life in harmony with all existence.</i> –
-Rabindranath Tagore
-</p>
-
-<p>
-<i>Science is a wonderful thing if one does not have to earn one's
-living at it</i> –Albert Einstein
+<a href="http://twitter.com/avudem">Voodoo</a> found a broken link referring to a one of my posts, on Quora.
+Given that I have changed my site generator a bunch of times now, it
+is quite possible that there are other broken links at various other
+places.  So, I implemented a smart <a href="http://punchagan.muse-amuse.in/this-is-a-fun-hack">404 page</a> for the site, yesterday.
+It is very similar to something I came across on <a href="http://brettterpstra.com/2013/04/07/fun-with-intelligent-404-pages/">brettterpstra</a>'s site.
+I just <a href="http://punchagan.muse-amuse.in/assets/js/suggestions.js">hooked up</a> <a href="http://kiro.me/projects/fuse.html">fuse.js</a> with Nikola's <a href="http://getnikola.com/handbook.html#local-search">tipue-search plugin</a>'s output
+file.  My glue code essentially, just figures out the search term from
+the URL, performs a Fuse search on the json data created by Nikola's
+search plugin, and returns a list of top 5 results.  It just took me
+about an hour to write, but is pretty useful, I think.
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/the-journey-minus-the-man.html" class="u-url">The Journey minus "The Man!"</a></h1>
-        <span class="post-date">17 Dec 2006</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/a-month-with-martin.html" class="u-url">A Month with Martin</a></h1>
+        <span class="post-date">10 Nov 2013</span>
     </header>
     <div class="e-content entry-content">
     <p>
-I am back Home!! After one more ordinary semester, (academically,
-otherwise quite a dramatic one actually) finally i'm back home! On
-my way back home……
-</p>
-
-<p>
-It was 3:30 am. After about half an hour's struggle to put myself
-to sleep, I gave up. I don't know if it was the chill of the
-night, the stink of the urinals or the shared berth that I slept
-on, I couldn't sleep. I decided to get up and have a stroll
-around. After some random walks, I sat down at the TTE's seat and
-waited and waited and waited….
-</p>
-
-<p>
-My last journey home, at the end of second sem was also quite
-similar. I spent a lot of time at the TTE's seat…unable to
-sleep… waiting, waiting and waiting.. but it was quite
-different…. I was in the elite company of Hari (Hari Charan
-a.k.a Prongs… his nick in CS)
-</p>
-
-<p>
-That journey is still very fresh in my memory… I spent most of
-it with him; The morning was busy and lively with DumbC's n stuff
-like that. In the afternoon while the others were enjoying a good
-nap, we tried studying some C programming. [ he just loved
-programming and was excited about doing a lotta cool stuff during
-the summer] But the afternoon heat got the better of me and
-eventually i fell asleep…{I think, I induced a bit of sleep to
-him too ;-) }
-</p>
-
-<p>
-That night is a most unforgettable one… after all our guys went
-to sleep, both of us decided to spend some time listening to songs
-and try to put ourselves to sleep. [ The songs of RDB aren't
-lullabies by any measure! and the train was running too fast: we
-couldn't hear clearly with just one earphone each, even if we were
-on the top berth]
-</p>
-
-<p>
-So, we ended up discussing matters of common interest… we
-chatted on topics ranging from Movies to Religion and Culture to
-Dan Brown [he told me the whole story of Deception point in his
-trademark style!] to Games and Programming. I spoke my heart
-out… {and so did he; as he always did} [haven't had any other
-discussion which comes close to it] After a couple of hours, we
-decided to get down and move around, to enjoy the cool breeze, to
-look at the villages and the fields going past… We shared the
-seat of the TTE for about an hour [that was the only window where
-we could sit : all the others had ppl sleeping beside them]
-… looking out of the window… enjoying the breeze.. [and each
-other's company : I thoroughly enjoyed his.. hope it was the same
-with him too] and waiting, waiting and waiting…
-</p>
-
-<p>
-We had already spent three nights waiting for him, but still
-didn't lose hope. We hoped he would some how return or would be
-found safe somewhere under the sun. But that was not to be. He
-never returned… and all that was ever found was his body :
-lifeless… The rough seas had him their victim… "There's no
-more Hari Charan, ra!". Those were the words of nine.
-</p>
-
-<p>
-Yes he is no more.Yet he is always here, immortal within our
-hearts… his memories we cherish with pride… proud to have
-known him and known by him… with awe and reverence we think of
-him… we just love him! But I'll always miss that call of his,
-"Chogni!"
-</p>
-
-<p class="verse">
-<i>Luka Chuppi bahut hui…</i><br>
-<i>saamne aa ja naa…</i><br>
-<i>kahan kahan dhoonda tujhe…</i><br>
-<i>thak gai hai ab teri maa…</i><br>
-</p>
-
-<p>
-<i>Edit:</i>
-<i>1. 9's Post on Hari is here</i>
-<i>2. Arunodai's Post on Hari is here</i>
+At my <a href="http://enthought.com">$dayjob</a>, for the most part of October, I had the fortune of
+pair programming with <a href="https://plus.google.com/114995175796183910458/posts">Martin</a> and it was an amazing learning
+experience!  To share these lessons with my colleagues, I made a small
+presentation at lunch, to my colleagues.  <a href="https://rawgithub.com/punchagan/340e1350fdfc766c6599/raw/ca1f5fe9bfc1cc503cd8a524e350bd29e8f5f33d/month-with-martin.html">Here are the slides</a> for the
+presentation.
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/the-joy-of-a-project.html" class="u-url">The Joy of a 'Project!'</a></h1>
-        <span class="post-date">06 Nov 2006</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-and-quotes-plugin.html" class="u-url">Bookmarks and Quotes plugin</a></h1>
+        <span class="post-date">19 Oct 2013</span>
     </header>
     <div class="e-content entry-content">
     <p>
-Just finished the 'Test-2'. Here's the first
-post that can genuinely be called "mine"…
+I used to have a separate page for bookmarks and quotes on the old
+blog.  They will now be shared as regular posts with 5 or more
+bookmarks/quotes.  I use a bookmarklet in my browser to capture links
+to an org-file using org-capture protocol and then I have a small
+plugin to Nikola, that looks at such captured bookmarks and quotes and
+makes new posts out of them.  This workflow is inspired by Brett
+Trepestra's <a href="http://brettterpstra.com/2013/01/15/a-web-excursions-system-for-static-blogs/">web excursions</a> plugin.
 </p>
 
 <p>
-With my last minute 'C2S' plans [Co-operate to Survive… does it
-ring any bells??] failing to work, the tests did their job,cleaned
-me up [both literally and metaphorically]. Though I didn't learn
-much while preparing for the tests, the syllabus gave me a brain
-wave (surprised to find that my Brain is still ticking…. after
-more than one year of Engg.) : Build my first Computer game!!
-[Don't expect too much from it… I'm a novice at programming and
-my game doesn't even have a GUI as of now!]
+The plugin is currently a part of my blog source, and not published to
+Nikola's plugin repository since it is very specific to my setup.  But
+if anybody is interested, I can publish the code somewhere public.
 </p>
 
 <p>
-I had been doing a l'l bit of C programming off late but, I never
-learnt 'file management' until the "Test-2" forced me to, and
-Viola! I embarked on a self assigned, "Project - Hangman".
-</p>
-
-<p>
-Here's a peek at the game… [after a lot of
-testing and debugging (the use of technical terms is just a matter
-of "phantee")]
-</p>
-
-<p>
-"Phantee"- a typical hyderabadi term; has no literal english
-translation; refers to "concealing ignorance in style" ??
-</p>
-
-<p>
-The basics were quite simple and were done in
-two hours… but then began the real test! The program needed a
-lot of improvements to make it "Playable" but, the tests were less
-than a week away.
-</p>
-
-<p>
-I managed to find enough time even during the
-tests (it doesn't really matter whether you spend a week, a day or
-just an hour mugging - you are bound to be cleaned up!), and
-finished most of the stuff within a week.
-</p>
-
-<p>
-There were quite a few road blocks which I had to get
-around. Amongst other things, obtaining a 'decent' database of
-words was one. Initially, I wrote another program for building up
-a dbase of your own. This wasn't good enough…. so, with some
-ideas from Arunodai, I successfully integrated a dbase of 14000
-words [picked it from another version of hangman] with my own
-version. After one whole week of debugging and improving {with an
-annoying disturbance called 'Test-2'}, now my game is quite
-'playable' (i.e it can be played by people other than me).
-</p>
-
-<p>
-So you might say, "what's the big-deal about writing a simple
-program of about hundred lines, that can randomly display words
-and check if you guess it right within seven turns?". This l'll
-project of mine may seem like a Pro'jest' to many! [writing a
-complex code, messing it up, debugging it for one whole week, etc
-just for the sake of creating a simple game, that can be played if
-you have a friend,a pen and a paper. Doing so much&lt;span
-class="text"&gt; for a game, that already has 'n' version,
-seems very foolish and a collosal waste
-of time and effort. Doesn't it??] Obviously, that's not a great
-achievement, its not something thats worth a mention in the
-Guiness Book of World Records or something. But it taught me a lot
-of stuff, stuff that you can't learn from books,stuff that you
-can't learn by mugging [I wonder if you can learn anything under
-the sun by "Mugging"], stuff that you can only learn by
-experience.I learnt a lot more of Computer Programming through
-this project, than I learnt through two, '3-point' courses!! {Of
-course, I wouldn't have even dreamt of doing such a thing, if not
-for these two courses, that introduced me to programming and
-taught me the essentials}. Can't such projects make the other
-courses a joy too?
-</p>
-
-<p>
-This brings me to our recent TRW [Technical Report Writing]
-project. You might wonder what kind of projects could be given in
-this kind of a course. We were asked to write a report on 'Waste
-Management' in our college, and to include some suggestions on the
-ways to improve it. Though this was an interesting job, with scope
-for some field activity and other such stuff, we [a group of six
-members] successfully turned the 'project' into a Pro'jest'!!
-[that's my personal view; the others in the group may
-disagree].But still, we learnt a lot on Report writing. A lot more
-than what we learnt by reading pages and pages of instructions, on
-the techniques of writing good reports,by the so called experts.
-</p>
-
-<p>
-Both the projects helped me understand stuff better and to put
-them to use. Why can't all courses have little projects, along
-with the routine stuff? Will it not improve my understanding of
-the subject matter? Will I not learn a great deal of things more
-than I do by mugging things up, just a week before the tests? Will
-it not be an experience, a lesson, of its own??
-</p>
-
-<blockquote>
-<p>
-I see and I forget.
-I hear and I remember.
-I do and I understand.
-–A Chinese Proverb.
-</p>
-</blockquote>
-
-<p>
-I wonder if my "Engineering", will ever be a joy for me?
-</p>
-
-<p>
-I am looking forward to more Projects… to make engineering a joy
-for me!! [it doesn't matter even if they're self-assigned ;-) ]
+If you are interested to get these links and bookmarks into your feed
+reader, you can subscribe to their feed: <a href="http://punchagan.muse-amuse.in/categories/quotes.xml">quotes</a>, <a href="http://punchagan.muse-amuse.in/categories/bookmarks.xml">bookmarks</a>.  These
+posts will also make it to the main feed, though.
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/is-disney-buying-mit.html" class="u-url">Is Disney buying MIT??</a></h1>
-        <span class="post-date">25 Oct 2006</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/blogging-with-nikola-and-org-mode.html" class="u-url">Blogging with Nikola and Org-mode</a></h1>
+        <span class="post-date">16 Oct 2013</span>
     </header>
     <div class="e-content entry-content">
-    <div class="figure">
-<p><img src="http://hacks.mit.edu/Hacks/by_year/1998/disney_buys_mit/web.hacked.screenshot.medium.gif" alt="web.hacked.screenshot.medium.gif">
-</p>
-</div>
-
-<p>
-On April Fools Day of 1998, hackers broke into the MIT web server
-and changed the MIT home page to indicate that The Walt Disney
-Company had purchased MIT for $6.9 billion.
+    <p>
+Sigh! I made yet another change to the way this blog gets published.
+But, I have a feeling this mechanism, is here to stay!
 </p>
 
 <p>
-The hacked page contained a link fake to a press release titled
-<i>Walt Disney Corporation to Acquire MIT for $6.9 Billion</i>.
+We've been using Nikola quite regularly for our <a href="http://ultimatesport.in">Ultimate site</a>, and I
+quite like it.  I've also contributed a bunch of features to Nikola to
+get it to work the way I would like it to.  This weekend I ported my
+blog from <a href="https://github.com/renard/o-blog">o-blog</a> to <a href="http://getnikola.com">Nikola</a>.  The only thing that was stopping me
+from doing it, until now is the fact that all my posts are in
+org markup and porting them over to one of the formats that Nikola
+supports would be a PITA.  So, I wrote a <a href="http://plugins.getnikola.com/#orgmode">pretty simple plugin</a> to
+Nikola to support posting from org files.  And then with a <a href="https://gist.github.com/punchagan/6970578">little
+Python</a>, I was able to move everything over to use Nikola.
 </p>
 
 <p>
-Later that day the MIT News Office issued a press release titled
-<i>MIT says "Disney buys MIT" hack revealed by low price</i>
+Hopefully, I'll keep my blog more updated, from here on!
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/a-free-software-hack.html" class="u-url">A "Free Software" Hack!!</a></h1>
-        <span class="post-date">10 Oct 2006</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/unread-8762.html" class="u-url">Unread (8,762)</a></h1>
+        <span class="post-date">03 Jun 2013</span>
     </header>
     <div class="e-content entry-content">
-    <div class="figure">
-<p><img src="/images/freesoftware.hack.jpg" alt="freesoftware.hack.jpg">
+    <p>
+I am unread.  Unlike you, who classify yourselves as well-read or
+not, I am classified as unread or not.  Well, you could call me
+not well-read too, I guess.  I was looked at once, my innards
+glanced through, and was hurriedly marked as unread, starred and
+tagged.  Given my length, the care with which I was composed, and
+the flurry with which I was stowed away, I probably contain
+something important, to be read at the opportune moment, something
+to be cherished and to be replied to with diligence and care.  I
+felt a sense of pride.
 </p>
-</div>
 
-<pre class="example">
-Date: Sun, 31 Aug 2003 23:45:42 -0500
-From: "Harley D. Eades III"
-To: rms@gnu.org
-Subject: Tribute to freedom.
+<p>
+I got composed and sent weeks ago, and have been lying here
+untouched, since.  I get buried deeper and deeper every day, with
+a daily flood of newer stuff piling up onto me.  While my
+composer, eagerly awaits a reply, (less and less eagerly each day,
+though) I have lost all hope of being read and replied to.  I
+curse myself for carrying something so important.  A thousand
+other replies have been sent, and a few thousand others composed
+here, but my turn hasn't come, yet.
+</p>
 
-Hello,
+<p>
+How I wish, it'd be my turn today.  How I wish, I could push my
+way up through to the top of the stack.  How I wish, I could see
+the eager wait come to an end!  How I wish, I'm given the
+attention I deserved, today!  Reply, ASAP!
+</p>
 
-One late rainy night I had an idea. There is a hill on IL route 29
-in Peoria IL, that people climb and write a small message across
-this hill for everyone to view from a far. What would be better
-than spreading my two most favorite words across this hill. So we
-set out with a little over 200 garbage bags and nearly 400
-nails. 12:30am and rainy so you can figure that a hill of that
-size is going to be slippery (lol) nearly falling down hill with
-every step we start building each letter. At around 2:30am we have
-finished and now the sun will rise over a hill which spreads the
-words Free Software to every person that passes by. This is by far
-a vary small non-complex hack but I beleve it is a hack in it
-self. This is a tribute to Free Software [and the GNU Project].
-
-Happy Hacking
-Harley D. Eades III
-FSF Associate Member
-Hacker
-</pre>
+<p>
+PS: Apologies for all those emails that are still starred and
+unread, in my Inbox…
+</p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/back-to-the-basics.html" class="u-url">Back to the Basics!!</a></h1>
-        <span class="post-date">03 Sep 2006</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/surat-ultimate-open.html" class="u-url">Surat Ultimate Open</a></h1>
+        <span class="post-date">26 Mar 2013</span>
     </header>
     <div class="e-content entry-content">
-    <div class="figure">
-<p><img src="/images/macaulay.jpg" alt="macaulay.jpg">
+    <p>
+About 20 of us, gathered at Andheri Station, to leave for Surat.
+I was the only one playing in his/her first tournament, and it was
+exciting to be a part of a squad, going to a tournament.  A first
+in my life.  We had two teams, A and B, or better known as Storm
+and Chasers.  I was playing for the Chasers team.  The train
+journey was pretty uneventful for me, unfortunately so, because of
+a mixed up ticket booking and only 4 of us, sitting in the AC
+coach.  I ended up reading or sleeping for most part of the
+journey.  I didn't realize, we could just walk into the other
+coach where most of the others were having a lot of fun!
 </p>
-</div>
 
 <p>
-/The National Ideals of India are Renunciation and
-Service. Intensify her in those channels and the rest will take
-care of itself.  -Swami Vivekananda/
+Fountainhead School was the venue for the tournament, and they
+had arranged for transport, accommodation and food and drinks,
+all through the tournament.  The organization for the tournament
+was pretty good, I must say!  We had a bus pick us up at the
+railway station, and getting into the bus felt like we were some
+big team with our own team bus, and stuff (though, there was also
+the Silent Voice team on the bus ;).  Ganesh and I had a little
+chat in the bus, and he was recollecting his experiences in his
+first tournament, and was asking me what I expected from the
+tournament, and I didn't really have a good answer, because I was
+too excited.  But, I really enjoyed the chat with him.
+</p>
+
+<p>
+We all crashed at the school library for the night, for a hard day
+in the field on the next day.  We rushed to the field, early next
+morning, about half a km of walk from the school, the playing
+field was in the middle of some fields and we warmed up to a
+lovely sun rise.  Storm had their first game at 7, against Dream
+Catchers, and they started a little rusty in the first half, but
+came back strongly in the second one to beat them 11-7.  This was
+going to be closest their opposition was going to come to winning!
+Chasers had their first game against Silent Voice, a team from
+Ahmedabad.  We got together as a team for the first time, really,
+and having just one substitute player didn't really help much.  We
+got thrashed by Silent voice, 11-4 or 11-5.  Chasers got the next
+game as a bye, since Lay Lapak failed to turn up for the
+tournament and this meant we slid up the table and got to play the
+Dream Catchers from Ahmedabad.  Craig reached in time, from
+Mumbai, for this game, and we gave them a decent fight in this
+game, though the score line didn't really suggest it.  We were
+doing way too many mistakes (and repeating them!) near the
+end-zones and they were costing us a lot.  The highlight of these
+games, though, was the spectacular layouts by Cheerag on D. Storm,
+meanwhile, thrashed the HAT team 11-0, and beat Surat Trailblazers
+convincingly.
+</p>
+
+<p>
+A lot of the teams had school kids on them, who were playing
+astonishingly well.  The pick out of those was Jumbish, which had
+10 to 15 year olds, jumping all over the place and giving their
+opposition a run for their money.  The moment of the tournament
+for me was a catch by a Jumbish player, who jumped ahead of him,
+to take a catch, flipped over in the air without placing his hands
+on to the ground, and landed on his feet and made a perfectly nice
+pass to his team-mate!  Exciting stuff to watch!  Pune also has a
+nice Ultimate program for kids, and their team Royal Spirits was
+playing some good Ultimate.
+</p>
+
+<p>
+The last game of the day was Storm vs. Flying Spirits from Pune,
+who were second on the points table, after Storm.  But Storm was
+clinical in their execution, and "Bagel-ed" [read as, thrashed
+11-0] Flying Spirits.
+</p>
+
+<p>
+At the end of the day, we had a good dinner and lots of ice-cream
+and discussed our favorite moments of the day.  I felt proud to
+have featured in atleast one person's favorite moments, in my
+first tournament! W00t!  Some of us fooled around on the dance
+floor for a while, to some Gujarati and Bollywood music.
+</p>
+
+<p>
+The next day started with us playing Royal Spirits (Pune).  We
+started off strongly, but ended up giving away some easy scores
+towards the end of the game, and ended up drawing the game at 6
+all.  Our next game against Storm was another Bagel for Storm.
+They played zone on us, and though we were as patient as we could
+be, we simply didn't have enough skill and team work to score
+against them.  Our next game against Flying Spirits was a very
+good game, and I'd rate it the best amongst our games.  We played
+a good stack and played hard on D, and were able to keep the
+scores at 5-5 until the last 5 minutes, when they scored and
+finished winners.  The Flying Spirits admitted to us giving them a
+good competition and making them work hard for their goals.  Our
+last game was against Zero Gravity, a team from the school
+itself, and our first victory!  We started off pretty strongly,
+and were able to finish the game 10-5.
+</p>
+
+<p>
+The final between Storm and Cats-Dogs (Delhi) was so much fun to
+watch.  Storm stuck to their clinical performance and everyone
+seemed to be playing at their best!  They came out winners 13-4
+in a game that lasted close to an hour and a half.  All the other
+games, btw, were games-to-11 and time capped to 55 minutes.
+Storm also managed to win the Spirit award for the tournament,
+and it is the first time in Indian Ultimate's history that a team
+won both the tournament and the spirit award!
+</p>
+
+<p>
+The tournament was a lot of fun and a lot of learning for me.  I
+learnt a lot of things from everyone playing there, specially from
+the players in Storm.  I know I'll carry forward some wonderful
+memories from my first tournament, thanks to everyone from Storm
+Chasers and everybody else, who I played against.  I really liked
+the idea of spirit circles after the games, where each team
+discussed the game and appreciated the other team about particular
+aspects of their team and play and suggested areas that they could
+work on, to improve themselves.  I also hung out around some of
+the spirit circles of Storm and their opposition and I really
+loved listening to Apu speak to the opposition.  On almost every
+occasion, it gave me goosebumps!  Thanks Apu, for showing us, what
+the spirit of the game should mean to each of us.  Ganesh
+mentioned, in the chat we had on the bus to the school, that I'd
+learn a lot more than just Ultimate, and it turned out to be true.
+I got to learn a lot about my team, and everybody on Storm
+chasers.  I experienced what it feels like, to be a part of a
+squad or a team, for the first time and it feels great, in short!
+Thanks Ganesh for the chat, and all the inspiration on-and-off the
+field.  In the middle of one of the games, Willis walked up to me
+and told me to be more confident on the field and move more
+crisply on the field.  I'm not sure, that will change in one game,
+but that is something I'll remember for a long time to come.
+Kayleigh reminded me of one of the good catches I took on day-1,
+by having it in her favorite moments of the day.  As someone
+playing in his first tournament, that's a pretty big deal!  Thanks
+to Willis and Kayleigh for all the encouragement, guidance and
+training!  Thanks to Parag for drilling it into our team, that we
+are going to keep the game's tempo high, but our tempers low.  The
+tournament was much more fun, that way.  Thanks to Robo for giving
+me the cleats, and the encouragement during many a practice
+session.  Thanks to Rose for being the wonderful captain that she
+was, thanks to Cheerag for showing us how much one can give on D,
+thanks to Craig, Diti, Rakesh, Sheryll and Vishal for being
+supportive and being patient with me and all my blunders.  Thanks
+to Pixie for all the morning practice sessions, while we were
+waiting for everyone else to turn up.  Thanks to Mak for help from
+the shouting helping me out from the side lines.  Thanks to Jimmy,
+Megna, and Sarah, for making me feel a part of the squad, and for
+being a part of the wonderful Storm!  Here are some pictures,
+thanks to Shantanu and Saurabh, who traveled all the way to Surat
+to watch, cheer and capture!
+</p>
+
+<p>
+Even if, our team won just one out of the 6 games we played, it
+was an Ultimate tourney.  Literally!  Looking forward to future
+tournaments.
 </p>
     </div>
     </article>
 </div>
         <div class="pagination">
+            <span class="pagination-item newer">
+                <a href="/posts/index-2.html" rel="next">Older posts</a>
+            </span>
             <span class="pagination-item older">
-                <a href="/posts/index-2.html" rel="prev">Newer posts</a>
+                <a href="/posts/index.html" rel="prev">Newer posts</a>
             </span>
         </div>
 

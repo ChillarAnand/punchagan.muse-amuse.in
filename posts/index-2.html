@@ -98,577 +98,702 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/a-second-blog.html" class="u-url">A Second Blog...</a></h1>
-        <span class="post-date">04 Apr 2007</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/best-practices-for-scientific-computing.html" class="u-url">Best Practices for Scientific Computing</a></h1>
+        <span class="post-date">24 Dec 2012</span>
     </header>
     <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>It can't really be called a Second Blog… because I won't be
-posting any new stuff there…
+    <p>
+Shantanu and I gave a short talk titled "Software Carpentry for
+Scientists" for the graduate students of Chemical Engineering
+department, IISc, this Friday.  We gave a short introduction to
+Git, TDD, Numpy/Scipy, etc and mentioned a few things from Greg
+Wilson et al's paper.
+</p>
+
+<p>
+I promised to revert to them with links to a few resources.  I
+figured it would be more beneficial, if I just put it in a
+publicly available place.
+</p>
+
+<p>
+A summary of the paper by Greg Wilson et. al., is below.
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Useful resources</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">Software Carpentry</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Paper by Greg Wilson et. al.
 </li>
-<li>I just started it to have a Wordpress experience…
-</li>
-<li>I started it to know.. to compare… and to choose…
-</li>
-<li>I started it just for fun…
-</li>
-<li>I started it because Blogspot may soon be blocked on campus!!!
+<li>Software Carpentry
 </li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">Git &amp; version control</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>
+<a href="http://bit.ly/VfbOww">http://bit.ly/VfbOww</a>
+</li>
+<li>
+<a href="http://karlagius.com/2009/01/09/version-control-for-the-masses/">http://karlagius.com/2009/01/09/version-control-for-the-masses/</a>
+</li>
+<li>
+<a href="http://try.github.com">http://try.github.com</a>
+</li>
+<li>
+<a href="http://betterexplained.com/articles/a-visual-guide-to-version-control/">http://betterexplained.com/articles/a-visual-guide-to-version-control/</a>
+</li>
+<li>
+<a href="http://betterexplained.com/articles/intro-to-distributed-version-control-illustrated/">http://betterexplained.com/articles/intro-to-distributed-version-control-illustrated/</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">TDD</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>
+<a href="http://software-carpentry.org/4_0/test/index.html">http://software-carpentry.org/4_0/test/index.html</a>
+</li>
+<li>
+<a href="https://www.google.co.in/?q=TDD+matlab">https://www.google.co.in/?q=TDD+matlab</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4">SciPy</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>
+<a href="http://scipy-lectures.github.com">http://scipy-lectures.github.com</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5">Python</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>
+<a href="http://docs.python.org/tutorial">http://docs.python.org/tutorial</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6">GUI tools in Python</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>
+<a href="http://code.enthought.com/projects/traits/docs/html/tutorials/traits_ui_scientific_app.html">http://code.enthought.com/projects/traits/docs/html/tutorials/traits_ui_scientific_app.html</a>
+</li>
+<li>
+<a href="http://docs.enthought.com/traits">http://docs.enthought.com/traits</a>
+</li>
+<li>
+<a href="http://docs.enthought.com/traitsui">http://docs.enthought.com/traitsui</a>
+</li>
+<li>
+<a href="http://docs.enthought.com/enaml">http://docs.enthought.com/enaml</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Summary of paper by Greg Wilson et. al.</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>Write programs for people, not computers
+<ul class="org-ul">
+<li>a program should not require its readers to hold more than a
+handful of facts in memory at once.
+</li>
+<li>names should be consistent, distinctive and meaningful.
+</li>
+<li>code style and formatting should be consistent.
+</li>
+<li>all aspects of software development should be broken down
+into tasks roughly an hour long
+</li>
+</ul>
+</li>
+<li>Automate repetitive tasks
+<ul class="org-ul">
+<li>rely on the computer to repeat tasks
+</li>
+<li>save recent commands in a file for re-use
+</li>
+<li>use a build to automate scientific work-flows
+</li>
+</ul>
+</li>
+<li>Use the computer to record history
+<ul class="org-ul">
+<li>software tools should be used to track computational work
+automatically.
+</li>
+</ul>
+</li>
+<li>Make incremental changes
+<ul class="org-ul">
+<li>work in small steps with frequent feedback and course
+correction
+</li>
+</ul>
+</li>
+<li>Use version control
+<ul class="org-ul">
+<li>use a version control system
+</li>
+<li>everything that has been created manually should be put in
+version control
+</li>
+</ul>
+</li>
+<li>Don't repeat yourself (or others)
+<ul class="org-ul">
+<li>every piece of data must have a single authoritative
+representation in the system
+</li>
+<li>code should be modularized rather than copied and pasted
+</li>
+<li>re-use code instead of rewriting it
+</li>
+</ul>
+</li>
+<li>Plan for mistakes
+<ul class="org-ul">
+<li>add assertions to programs to check their operation
+</li>
+<li>use an off-the-shelf unit testing library
+</li>
+<li>use all available oracles when testing programs
+</li>
+<li>turn bugs into test cases
+</li>
+<li>use a symbolic debugger
+</li>
+</ul>
+</li>
+<li>Optimize software only after it works correctly
+<ul class="org-ul">
+<li>use a profiler to identify bottlenecks
+</li>
+<li>write code in the highest-level language possible
+</li>
+</ul>
+</li>
+<li>Document design and purpose, not mechanics
+<ul class="org-ul">
+<li>document interfaces and reasons, not implementations
+</li>
+<li>refactor code instead of explaining how it works
+</li>
+<li>embed the documentation for a piece of software in that software
+</li>
+</ul>
+</li>
+<li>Collaborate
+<ul class="org-ul">
+<li>use pre-merge code reviews
+</li>
+<li>use pair programming when bringing someone new up to speed
+and when tackling particularly tricky problems
+</li>
+<li>use an issue tracking tool
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/windowsc-doors-or-homes.html" class="u-url">Windows©, Doors or Homes!??!</a></h1>
-        <span class="post-date">01 Apr 2007</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/cstringio-and-unicode.html" class="u-url">cStringIO and unicode</a></h1>
+        <span class="post-date">03 Dec 2012</span>
     </header>
     <div class="e-content entry-content">
     <p>
-A couple of days back.. one guy called green<sub>mamba</sub> asked me.. "Why
-do you use Linux (GNU/Linux) and not Windows? What is it that
-makes LinuxGNU/Linux] so special for you?" I avoided that
-question then.. {I was in no mood of answering questions… Exams
-had finished just the day before!!}  I am trying to answer it
-now… green<sub>mamba</sub> also told me that Roopesh said, "I use it
-because I can look at the source code. I am allowed to look at how
-things work and fiddle with the way they work!"… I knew it
-immediately that this was not the reason for me.[I rarely looked
-at source code… and making changes to it.. haha..] So what is
-it? I think I can answer this question if I get back to the time
-when I started using Linux…[hehe.. not too long ago!! :P]
+StringIO in the cStringIO module in Python 2.7.2 doesn't handle
+unicode strings properly.  This bug has bitten me on a couple of
+occasions, in the recent past.
 </p>
 
 <p>
-So how did I start using GNU/Linux? How did "we" first meet? It
-was during last summer holidays.. that Voods sent me this link
-… [I had definitely used GNU/Linux on a few occasions
-before… but.. this was when I really began using it…] and
-within hours I was a fan of GNU/Linux!![and Richard M Stallman
-(RMS)]
+Just making a note for myself:
+</p>
+
+<ol class="org-ol">
+<li>Use StringIO if speed doesn't matter so much.
+</li>
+<li>Whenever possible, just convert the input to StringIO to a
+string, if what you are doing doesn't really require unicode
+strings.
+</li>
+</ol>
+
+
+<p>
+Or may be it's just time to move up to Python 2.7.3
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/3-tips-for-those-shipping-commercial-apps.html" class="u-url">3 tips for those shipping (commercial) apps</a></h1>
+        <span class="post-date">28 Nov 2012</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+Here are some very generic (and paraphrased) notes from a short
+talk today, by Deepankar Sharma.
+</p>
+
+<ol class="org-ol">
+<li>Whenever you release a new major version, make sure you keep a
+copy of the whole "ecosystem" to be able to run it whenever you
+want.  At any point in time, you should be able to run any
+version of your software.
+</li>
+<li>When writing benchmarks/tests/etc., try and ensure that you
+cover a broad spectrum of test data, to try and replicate the
+different types of data that users could possibly have.
+</li>
+<li>Don't develop applications with modes.  Be very careful before
+you add a new mode to your application, effectively adding one
+more code path to maintain.
+</li>
+<li>(Bonus) Beware of too much extensibility
+</li>
+</ol>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/just-one-day.html" class="u-url">Just one day</a></h1>
+        <span class="post-date">26 Nov 2012</span>
+    </header>
+    <div class="e-content entry-content">
+    <p class="verse">
+The ripples on the quiet lake,<br>
+twinkling stars on a moonless night,<br>
+and his lonely, crazy, thoughts,<br>
+yet again, his faithful companions<br>
+on another of those countless nights,<br>
+searching for meaning, awaiting the dawn.<br>
+<br>
+the night crawled by, as he drifted afloat,<br>
+memories of the past and dreams of the future,<br>
+until approaching footsteps, brought him back<br>
+did the chill of the wind, get to his head?<br>
+or was his guarded secret, not his anymore?<br>
+<br>
+Before his thoughts, collect, he could,<br>
+his friend, from far away lands unknown,<br>
+was there with him, to share his thoughts,<br>
+to hear the wind hum the tunes of yore,<br>
+while the stars and the lake, as a duo, danced.<br>
+<br>
+They watch the sun rise, from atop the hillock,<br>
+basking in the warmth, and see the town wake up,<br>
+lose themselves in the woods below,<br>
+on their way back, rest by the lake shore,<br>
+watching it, silently, shine in the daylight,<br>
+letting it wet their feet and clear his head.<br>
+<br>
+Together, they cook themselves, a delicious meal,<br>
+n enjoy it, with some of the choicest old wine.<br>
+Catch-up on things, and yearn for more, discuss<br>
+all the many things, under the sun, and over,<br>
+without a clue, as to how much time flew by.<br>
+<br>
+Riding away, as fast as they could, they reach,<br>
+just in time, as the sun set, over the seas,<br>
+perched on bicycles, in mirrored positions, with<br>
+resonating thoughts, the horizon, they watch<br>
+the sun set, the beach light up, and the fair begin.<br>
+<br>
+They ate and drank, sung and danced and<br>
+just had a good time, for the rest of the night,<br>
+indulging, in all that the fair could offer.<br>
+the night was long, but if wouldn't go on forever,<br>
+pretty well, they knew, they day was to end.<br>
+<br>
+the twinkling stars they watched, yet again,<br>
+but to the sea's song, on the still warm sand<br>
+slowly, but steadily, into sleep he drifted,<br>
+only to be awake, moments later, with the<br>
+bright sun coming harshly down upon him,<br>
+lighting up the lake, like a carpet of jewels.<br>
+<br>
+all he had, once again, were just his thoughts,<br>
+the lake, and not the sea, by his side,<br>
+with fading impressions of an impossible dream<br>
+after all, wasn't it just too much action,<br>
+for just one day, for a life engulfed by ennui?<br>
+<br>
+One some day, he told himself, and walked away.<br>
+</p>
+
+<hr>
+
+<p>
+Inspired by a friend.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/gustaakh-dil.html" class="u-url">Gustaakh Dil</a></h1>
+        <span class="post-date">24 Nov 2012</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I really liked this song, गुस्ताख दिल (Gustaakh dil) from the movie
+English Vinglish.  Lyrics by Swanand Kirkire are deep and
+meaningful as usual!
 </p>
 
 <p>
-So its the "philosophy"… The philosophy of Free
-Software… [Free as in Freedom, not as in Free Beer…(English is
-a wierd wierd Language…)]… The philosophy of Open
-Source… that brought me to it… This song says it the best…
+I was looking for the lyrics on the web, and none of the sites
+seemed to have got it totally right.  Shantanu and I listened to
+it a bunch of times and think we have got it all right, here.
 </p>
 
 <p class="verse">
-Free Software Song –RMS<br>
+गुस्ताख दिल<br>
+दिल में मुश्किल<br>
+मुश्किल में दिल<br>
+(मुश्किल में दिल)<br>
 <br>
-Join us now and share the software;<br>
-You'll be free, hackers, you'll be free.<br>
+गुस्ताख दिल<br>
+थोडा संगदिल<br>
+थोडा बुज़दिल<br>
 <br>
-Join us now and share the software;<br>
-You'll be free, hackers, you'll be free.<br>
+दर्द के दर पे<br>
+ठहरा है क्यों?<br>
+सज़ाएँ सज़ाएँ<br>
+ये खुद को क्यों देता नई?<br>
 <br>
-Hoarders may get piles of money,<br>
-That is true, hackers, that is true.<br>
-But they cannot help their neighbors;<br>
-That's not good, hackers, that's not good.<br>
+हँसने की धुन में<br>
+रोता है क्यों?<br>
+सही क्या गलत क्या<br>
+कुछ भी ये समझता नहीं<br>
 <br>
-When we have enough free software<br>
-At our call, hackers, at our call,<br>
-We'll throw out those dirty licenses<br>
-Ever more, hackers, ever more.<br>
+गुस्ताख दिल<br>
+दिल में मुश्किल<br>
+मुश्किल में दिल<br>
+(मुश्किल में दिल)<br>
 <br>
-Join us now and share the software;<br>
-You'll be free, hackers, you'll be free.<br>
+है बर्फ सी साँसों में<br>
+आँखों में धुंआ धुंआ<br>
+ये हर पल क्यों खेले है<br>
+ग़म का ख़ुशी का जुआं  जुआं<br>
 <br>
-Join us now and share the software;<br>
-You'll be free, hackers, you'll be free.<br>
-</p>
-
-<p>
-now I continue to use it.. for a variety of reasons..[they are NOT
-in the order of their priority/importance]
-</p>
-
-<ul class="org-ul">
-<li>Firstly, using Linux gives me a sense of community… a sense of
-oneness [this can't happen with Windows.. because you can't
-share stuff… :-(]
-</li>
-<li>I have begun to hate the concept of Proprietary Software… can
-you believe that.. "Sharing stuff..  makes us PIRATES!!"
-</li>
-
-<li>I am a growing fan of the Command Line… It simply rocks!!
-</li>
-
-<li>There's almost no problem of Viruses/Malware.. You simply don't
-need an Anti-Virus..(that needs to be updated every night.. or
-u'll have nightmares…)
-</li>
-
-<li>Then there's this wonderful concept of Live-CDs.. {specially
-Knoppix.. Its absolutely awesome!} It put me(us?) out of
-soup… a lotta times…
-</li>
-
-<li>The fiddle factor… I have just started to fiddle with
-things(…source codes… I added a small feature to my
-dc-client Microdc2].. the feature of away messages.. it feels
-gr8! :P)
-</li>
-
-<li>One of my best friend is using it too! [you know who…]
-</li>
-
-<li>The Mascot looks cool!! ;) [I liked the GNU mascot too! (It's on
-my side-bar) ]
-</li>
-
-<li>The name "LINUX"!! [There's so many flavors(Distros) of
-Linux.. that I can keep trying different ones.. all my
-life :P.. presently with Slackware!]
-</li>
-
-<li>Its Fun!! and I want to use it…
-</li>
-
-<li>and finally… Windows sucks! [I don't have to use it… :P]!!
-</li>
-</ul>
-
-<p>
-Value your freedom or you will lose it, teaches history. "Don't
-bother us with politics," respond those who don't want to learn.
-–Richard Stallman
-</p>
-
-<p>
-When you say, "I wrote a program that crashed Windows", people
-just stare at you blankly and say, "Hey, I got those with the
-system, for free".  –Linus Torvalds
-</p>
-
-<p>
-"What happens when you read some doc and either it doesn't answer
- your question or is demonstrably wrong? In Linux, you say "Linux
- sucks" and go read the code. In Windows/Oracle/etc you say
- "Windows sucks" and start banging your head against the wall."
- — Denis Vlasenko on linux kernel mailing list
-</p>
-
-<p>
-"The box said that I needed to have Windows 98 or better… so I
-installed Linux."  – LinuxNewbie.org
+ये उम्मीदों भरा<br>
+ये खुद से ही डरा<br>
+सुलझे धागों में उलझा है क्यों?<br>
+सलाहें सलाहें<br>
+ये खुद की भी सुनता नहीं<br>
+<br>
+गुस्ताख दिल<br>
+दिल में मुश्किल<br>
+मुश्किल में दिल<br>
+(मुश्किल में दिल)<br>
+<br>
+क्यों बातों ही बातों में<br>
+फिसलती है जुबां जुबां<br>
+किसी शेह न ठेहेरती है<br>
+बेहेक्ति है निगाह निगाह<br>
+<br>
+ये कैसे कब हुआ,<br>
+ये कहदो क्यों हुआ<br>
+गिरता नहीं तो संभालता है क्यों?<br>
+झुकाए झुकाए मग़रूर  झुकता नहीं<br>
+<br>
+गुस्ताख दिल<br>
+दिल में मुश्किल<br>
+मुश्किल में दिल<br>
+(मुश्किल में दिल)<br>
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/andharu-mahanubhavule-andariki-vandanamulu.html" class="u-url">Andharu Mahanubhavule... Andariki Vandanamulu..</a></h1>
-        <span class="post-date">27 Mar 2007</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/error-missing-one-hebrew-character.html" class="u-url">Error: Missing one hebrew character</a></h1>
+        <span class="post-date">21 Nov 2012</span>
     </header>
     <div class="e-content entry-content">
     <p>
-There's a post already with 'exactly' this name…. by 9… here…
-But this post doesn't have much to do with his post… [or may be it does??]
+Dear owner-of-a-random-web-startup,
 </p>
 
 <p>
-Here's a Quote on Mahatma Gandhi…
-/Generations to come, it may be, will scarcely believe that such a
-one, as this, ever in flesh and blood walked upon this earth. –
-Albert Einstein/
+Thank you for starting your brand new, awesome web service.  But,
+please don't expect me to use it, if you ask me to have a password
+with atleast one upper-case letter, one numeral, one symbol and
+one unicode hindi character and 20 hebrew characters.  Is it
+really so essential to enforce such complicated rules on my
+passwords, making it difficult for me to remember what password I
+used?  Isn't OAuth and OpenID so much easier to use?  If you
+really want to enforce such complex rules on my password, at least
+show the arbitrary rules you enforce on me, at the login prompt too!
 </p>
 
 <p>
-I was just wondering…. what would happen if the name Albert
-Einstein was replaced by punchagan… and it turned out
-that.. there's a huge huge list of candidates for replacing
-Mahatma Gandhi… [This is with due respect to the Mahatma and
-Einstein.. I don't, in any sense, intend to say that the Mahatma
-was not a Mahatma…]
-</p>
-
-<p>
-All I want to say is… I am seeing a whole lot of new things, in
-people around me, that inspire awe and respect in me… that every
-person is unique… every person is special.. every person can
-teach you something…. there's something to learn from
-everyperson… that makes me believe God,truly, created man in his
-own image…
-</p>
-
-<p>
-I am grateful to all the people around me (and those not around
-any more..)… who have shown, are showing, and will be showing me
-things bright and beautiful… wise and wonderful… which
-otherwise I would have failed to see..
-</p>
-
-<p>
-I am grateful… for getting me back on track.. when i go
-directionless,.. for setting me examples to emulate,… for being
-with me whenever i needed and will need you…
-</p>
-
-<p>
-[ I would've loved to write down each and every name here…. but
-that's too big a job for this little being to achieve… ]
-</p>
-
-
-<p>
-As William Arthur Ward says….
-</p>
-
-<blockquote>
-<p>
-Feeling gratitude and not expressing it is like wrapping a present
-and not giving it.
-</p>
-</blockquote>
-
-<p>
-To All Jaani's of the World… Thanks a Lot… (I know that's too
-small a word… but that's all I can give right now…)
-</p>
-
-<p>
-/"God created man in His own image…. ﻿ God saw everything that He
-had made, and indeed it was very good."/ Gen 1:27, 31
-</p>
-
-<p>
-“A friend is one with whom you are comfortable, to whom you are
-loyal, through whom you are blessed, and for whom you are
-grateful.”  – William Arthur Ward
-</p>
-
-<p>
-In everyone's life, at some time, our inner fire goes out. It is
-then burst into flame by an encounter with another human being. We
-should all be thankful for those people who rekindle the inner
-spirit.  – Albert Schweitzer
-</p>
-
-<p>
-Sometimes it not the wealth you have but what's inside you that
-others need.  – Anonymous
+Sincerely,
+A frustrated-web-monkey
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/long-lost-letters.html" class="u-url">Long Lost Letters....</a></h1>
-        <span class="post-date">24 Mar 2007</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/talks-at-pycon-india-2012.html" class="u-url">Talks at PyCon India 2012</a></h1>
+        <span class="post-date">02 Sep 2012</span>
     </header>
     <div class="e-content entry-content">
     <p>
-A few days back I received a letter from a friend, via post! [I
-know most of you can't believe this… but ya.. its true..] I
-wouldn't have believed it too… if only he didn't tell that to me
-when we met online… {He spoilt the fun for me! :-(} So before
-going to dinner one day…(a couple of weeks back..).. I checked
-out the Hostel Assistants room for any post…. and "it" was right
-on top of the pile!! [Now that I speak of a pile don't imagine
-that a lot of people here get personal letters… most of them
-were business correspondence, magazines or likewise…]
-Neways.. it was a great feeling to even look at it!! A white
-envelope… and my name on it.. in his most familiar writing on
-it…[no.. i don't get letters from him often.. we have been
-classmates for quite some time.. so…] … the stamp [A leapard
-cat!]… and the two postmarks.. [of Pilani &amp;amp;
-Zuarinagar!! :-P]… Holding the letter in my hand.. it felt
-wonderful!! [I wanted to read it right then…. but went along for
-dinner…]
+PyCon is back to Bangalore for the 4th edition.  I've been to all
+the previous three editions, and I'm looking forward to this one.
 </p>
 
 <p>
-After dinner… and a little time in the Children's
-Park… [relaxing.. wid 9,UC,Voodoo n Ringo]… I opened it! It
-was absolutely thrilling… to see a couple of pages written in
-ink [he still uses ink pens!! ;-)]… With full enthu.. i read the
-letter.. and obviously once wasn't enough to satiate my hunger.. i
-went through it over and over and over… [i wanted to scribble
-down a reply ASAP… but we had waves and quark coming up.. so i
-waited for them to get over (I could've written another one
-right??)…to get more matter into my letter..]
+I haven't spoken at any of the previous editions, and hadn't
+even really considered speaking at the previous editions.
+But, this time, I proposed a couple of talks, and both of them
+have been accepted! Woot! Lots of work ahead of me, but I'm
+really looking forward to give good talks.  I'll be talking
+about Enaml, and showing a brief demo of all the wonderful
+things it makes possible.  In the other talk, I'll give a
+brief overview of the latest happenings in the SciPy community
+and the projects to look forward to and contribute to.  Pankaj
+and I will be talking together on this.
+</p>
+
+
+<p>
+Also, Kenneth (lawgon) will be deeply missed at this edition
+of PyCon.
 </p>
 
 <p>
-Why is such a simple joy of getting a letter from a friend [there
-is email.. but… for me its nowhere close to snail mail…]
-become so rare these days?? [Something that was such a regular
-feature of the recent past.. is almost extinct now!!] Telephone
-and the Internet…. they are the culprits… (are they??…..) In
-today's global village… is post a bit too slow for comfort? Will
-survival of the fittest ensure the extiction of this wonderful
-species in the world of communication…??
-</p>
-
-<p>
-Is a letter just a matter of communication…?… Isn't there
-anything more to it… [Obviously there is… otherwise I wouldn't
-be writing a blog-post on it…I would never think of writing a
-post on an e-mail I get!! (unless it is superhuman.. or
-something..)!!] Aren't we losing out on something wonderful??
-</p>
-
-<p>
-To attract good fortune, spend a new coin on an old friend, share
-an old pleasure with a new friend, and lift up the heart of a true
-friend by writing his name on the wings of a dragon.  – Chinese
-Proverb
-</p>
-
-<p>
-The Internet is so big, so powerful and pointless that for some
-people it is a complete substitute for life.  – <i>Andrew Brown</i>
+Sadly, John Hunter, the lead author of matplotlib, also passed
+away last week.  RIP. :(
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/revelations.html" class="u-url">Revelations....</a></h1>
-        <span class="post-date">18 Mar 2007</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/browsing-the-streets-with-firefox.html" class="u-url">Browsing the streets with Firefox</a></h1>
+        <span class="post-date">02 Sep 2012</span>
     </header>
     <div class="e-content entry-content">
     <p>
-Revelations..Revelations…Revelations.
+I bought a new bike, about a month ago, and today was the first
+longish ride on it.  Well, longish compared to my ~1.5km rides to
+the office.
 </p>
 
 <p>
-Such wonderful things they are… bringing to us.. such a joy
-[even if its about something not so pleasant…]… the joy of
-discovering things.. of realising a truth… that was hidden
-somewhere within… brought out with an elegant swoooosh!!…
+At 19:45, I just set out to get some fresh air.  After sitting for
+two days, inside the house, by the evening on Sunday, I tend to
+get stuffy.  I started riding westward and the fresh air got to my
+head, I ended up pedaling too far away to get back, without going
+to the beach.  It was fun, having adrenaline pumping all over.
+But, there was much more traffic than I would've liked.  Anyway,
+one shower on the way up, and one puncture on the way back
+(thankfully, close enough to my house), it was a fun ride on the
+whole.
 </p>
 
 <p>
-We, 9, Voodoo, Ravi, UC n me] were just walking on the
-street… enjoying the evening… after a nice day @ Quark [Day
-2]… We were having a casual discussion… not discussing
-anything in particular… but somehow the discussion led to a
-project uc,ravi n me [ and probably the others are too..(they
-didn't talk abt it…)] are interested in… [i don't wanna give
-any more info abt the project.. bcos it may seem over-ambitious to
-a few.. not that it hasn't been done already…. but…]
-neways….
-</p>
-
-<p>
-so… while we were talkin abt it… uc said, he didn't have any
-clue about that thing worked… and we all were wondering
-too… thinking about some possible solutions/methods….[I was
-actually trying to recollect something i came across… some time
-back…] but then suddenly 9 jumped in, to say…
-</p>
-
-<blockquote>
-<p>
-Don't think about how 'that' works… Just think about how 'YOU'
-would make it work!!
-</p>
-</blockquote>
-
-<p>
-Oh my God!! now that's what's a REVELATION… I was just
-dumb-struck… that one small statement of his… drowned me in
-its depths… I feel I still haven't come out of it… A big big
-revelation at the most unexpected of times, at the most unexpected
-of places…. [though 9 wouldn't agree with this… being his
-usual modest self…]
-</p>
-
-<p>
-Its been proved time and again… "they" can occur
-anywhere… anytime and to anyone… while you are on the
-street.. in your room.. at work… or even in the loo… [Most ppl
-have a lot of them here!!].. we just need to keep our eyes n ears
-open… and most importantly our Mind……  ps: it seems…me not
-delving out the details about our ambitious project.. makes this
-post a little vague, uninteresting n difficult to relate to… but
-still…  In the fields of observation chance favors only the
-prepared mind –Louis Pasteur
-</p>
-
-<p>
-Quotes are nothing but inspiration for the uninspired.  – Richard
-Kemph
+I didn't time myself, but I roughly covered about 25 kms in say
+about ~2 hours.  Hoping to start riding more frequently and going
+on longer rides.
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/essential-extravagance.html" class="u-url">Essential-Extravagance??!!</a></h1>
-        <span class="post-date">10 Mar 2007</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/a-git-diff-tip.html" class="u-url">A git-diff tip</a></h1>
+        <span class="post-date">22 Aug 2012</span>
     </header>
     <div class="e-content entry-content">
     <p>
-A DJ nite's going on here.. for WAVES…. I just went there for a
-while….  The arrangements were pretty good… with Huge huge
-huge spks.. [I can still hear the Music quite loud.. sitting here
-in my room.. which is quite a distance form the Venue…] There's
-real Heart throbbing music [Literally… With speakers of over
-15000W your heart really throbs… dub.. dub.. dub…] being
-played there…
+One of the things with git that you can mess-up, if you are not
+used to, is git diff.  A friend of mine was trying to add a couple
+of new files, and changes to existing files.  But, he was on the
+wrong branch, and wanted to change to a different branch, before
+committing.  Being new to git, he wanted to take a patch.  Reset
+the changes, apply the patch back.
 </p>
 
 <p>
-I was just wondering if we really needed such extravagant
-stuff… I know that such events bring ppl together… but do we
-need to spend so much money just to have a have a good dance with
-friends?? When a large number of people aren't able to get their
-basic neccessities like a Square Meal, Clean drinking water,
-proper clothing and shelter… here we are enjoying a good dance
-with friends… with elaborately made extravagant
-arrangements… [of course the money isn't ours… but…] [ I
-know a lot of guys wud've a lot to say against me…. but.. its
-ok..]
+This is what he did
+</p>
+
+<div class="highlight"><pre>git add new_file.txt
+git add old_file1.txt old_file2.txt <span class="c"># don't add old_file3.txt</span>
+</pre></div>
+
+<p>
+Oh, damn, I want to change the branch.
+</p>
+
+<div class="highlight"><pre>git diff &gt; a.patch
+git reset --hard
+git checkout other-branch
+</pre></div>
+
+<p>
+Let me commit my changes…
+</p>
+
+<div class="highlight"><pre>git apply a.patch
+git commit -m
+git show
+</pre></div>
+
+<p>
+Oh crap!  Where are my new files?  They aren't commited!  Lemme
+add them.
+</p>
+
+<div class="highlight"><pre>ls new_file.txt
+ls: cannot access new_file.txt: No such file or directory
+</pre></div>
+
+<p>
+Dammit!  Where are my changes gone?
 </p>
 
 <p>
-There can't be perfect equality in this world… of which duality
-is an integral part…. every elementary particle has a dual
-nature… so its but obvious that every thing in this world has a
-dual to it… so its not possible to have a perfect world with
-everybody equally placed.. if there is a rich.. then there will be
-a poor… if there is joy.. then there will be despair… if there
-is light.. then there will be darkness…
+The problem was with <code>git diff</code>.  It gives only the only the
+un-staged changes.  <code>--cached</code> option has to specified, to get the
+staged changes in the diff output.  <code>git diff HEAD</code> shows diff
+output with both staged and un-staged changes.
 </p>
 
 <p>
-But can't we do anything… can't we spread the light to every
-place that we possibly could?? Can't we get together to minimize
-the difference? Join the race against nature… do your bit…
+But the whole workflow above is a beginners workflow.  A user
+comfortable with git would've committed and then moved the commit
+around using cherry-pick or the like.
 </p>
 
-<p>
-This, probably, is a good place to start off…
-</p>
+<div class="highlight"><pre>git add &lt;all-files&gt;
+git commit -m <span class="s2">"My awesome changes."</span>  <span class="c">#committed on branch1</span>
+git checkout other-branch
+git cherry-pick branch1
+</pre></div>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/mathematics-and-me.html" class="u-url">Mathematics and Me</a></h1>
-        <span class="post-date">06 Mar 2007</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/an-import-gotcha-in-python.html" class="u-url">An import gotcha in Python</a></h1>
+        <span class="post-date">20 Aug 2012</span>
     </header>
     <div class="e-content entry-content">
     <p>
-Imagine a kid reading Shakespeare's Othello or As You Like
-it…[or may be some other classic poem…] with great difficulty
-he somehow manages to read the whole thing… [with all the
-archaic language etc..] he understands the basic plot and the
-story and likes it… but will he be able to appreciate the work?
-Will he be able to see the beauty of it?? Isn't a good knowledge
-of Language a bare essential for one to enjoy a Literary work??
+Pankaj and I were stuck with this weird bug recently.  We had
+a class <code>A</code> and a subclass <code>B</code> and an instance of B, b, was
+returning False for <code>isinstance(b, A)</code>.
 </p>
 
 <p>
-Now consider a layman… listening to Classical [say Carnatic]
-Music… if he's got no knowledge of the Basic structure and
-organisation of Music in general or a Raga in particular.. then he
-may enjoy the musical work… listen to it happily…. but will he
-get the taste of its nectar from the fine intricacies in it??
-Isn't a basic sense of Music… a knowledge of the language of
-Music necessary to understand the fine points of a Musical piece??
+After some debugging, we found that it was a problem with
+imports, and the same module was being imported twice, using
+two different names – <code>bar</code> and <code>baz.bar</code>.
 </p>
 
 <p>
-Isn't the case similar with Science [Feynman says nature..]??
-Without a proper knowledge base in Mathematics.. how would I
-possibly understand and appreciate Physics/Science (in general..)
-and Relativity in particular?? [I got this feeling, after class
-today, for the zillionth time…] How can I possibly enjoy a
-course in Relativity without a proper Math background???
+Here's a cooked-up example to demonstrate the "bug".  We
+create a package baz, as shown below.
 </p>
 
-<p>
-I need to learn a lot of Mathematics.. its high time I do it… :(
-</p>
+
+<pre class="example">
+$ tree baz
+baz
+├── bar.py
+├── foo.py
+└── __init__.py
+</pre>
 
 <p>
-To those who do not know mathematics it is difficult to get across
-a real feeling as to the beauty, the deepest beauty, of nature
-… If you want to learn about nature, to appreciate nature, it is
-necessary to understand the language that she speaks in.
-–Richard P. Feynman
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/quark-07.html" class="u-url">Quark 07</a></h1>
-        <span class="post-date">05 Mar 2007</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-This post is to promote QUARK'07… This post is here… little
-due to my desire.. and almost totally bcos somebody [the ppl here
-at coll..] expect "us" to do it..
+We have our two classes, <code>A</code> and <code>B</code> defined in the <code>bar</code>
+module.
 </p>
 
-<p>
-Blogspot.. Orkut..[i don't use it any more] were blocked on campus
-[don't ask why cos none of us have been able to figure
-out.. atleast about Blogspot..] but the blocks have been lifted
-for a fortnight.. just so that we can publicise Quark [our
-techfest..] Its from 17th March to 19th March.. check out the link
-for more details..
-</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
 
 <p>
-So ppl.. Quark coming up :)…
+We run <code>foo.py</code> and scratch our heads for a while, before
+figuring out what's wrong…
 </p>
 
-<p>
-and… blocks coming up too :(…
-</p>
+<div class="highlight"><pre><span class="c"># We add the directory containing out package 'baz' to sys.path to be</span>
+<span class="c"># able to import using the package name.</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">'/tmp'</span><span class="p">)</span>
 
-<p>
-[But why Blogspot???]
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/lisp-as-an-alternative-to-java.html" class="u-url">Lisp as an Alternative to Java</a></h1>
-        <span class="post-date">02 Mar 2007</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Here's more on LISP… one more article from Peter Norvig.. This
-is another of his on my blog… Look at the follow-up study
-document.. its good…
-</p>
+<span class="c"># We import A from bar module present in the same directory as foo</span>
+<span class="kn">from</span> <span class="nn">bar</span> <span class="kn">import</span> <span class="n">A</span>
+<span class="c"># We import B from bar, but refer to it, as a submodule of baz</span>
+<span class="kn">from</span> <span class="nn">baz.bar</span> <span class="kn">import</span> <span class="n">B</span>
 
-<p>
-<b>Update:</b> - <span class="timestamp-wrapper"><span class="timestamp">[2010-10-11 Mon]</span></span> - Removed the article's copy.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/popularly-unpopular.html" class="u-url">Popularly Unpopular??</a></h1>
-        <span class="post-date">01 Mar 2007</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Popular opinion isn't everything….. Its not necessary that we
-always go with the popular opinion, or take that option which most
-people endorse.. here's a case in point… an article by Paul
-Graham..(You can also read it @
-<a href="http://www.paulgraham.com/iflisp.html">http://www.paulgraham.com/iflisp.html</a>)
-</p>
+<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
 
-<p>
-<b>Update</b> - <span class="timestamp-wrapper"><span class="timestamp">[2010-10-11 Mon]</span></span> - Removed the copy of the article.
-</p>
+<span class="k">print</span> <span class="s">"isinstance(b, A) --&gt;"</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">cls</span> <span class="ow">in</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">"</span><span class="si">%s</span><span class="s"> --&gt;"</span> <span class="o">%</span><span class="n">cls</span><span class="p">,</span> <span class="n">cls</span>
+
+<span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s">'bar'</span> <span class="ow">in</span> <span class="n">module</span><span class="p">:</span>
+	<span class="k">print</span> <span class="n">module</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">module</span><span class="p">]</span>
+</pre></div>
+
+<pre class="example">
+isinstance(b, A) --&gt; False
+&lt;class 'bar.A'&gt; --&gt; &lt;class 'bar.A'&gt;
+&lt;class 'baz.bar.B'&gt; --&gt; &lt;class 'baz.bar.B'&gt;
+baz.bar &lt;module 'baz.bar' from '/tmp/baz/bar.pyc'&gt;
+bar &lt;module 'bar' from 'bar.pyc'&gt;
+</pre>
     </div>
     </article>
 </div>
         <div class="pagination">
             <span class="pagination-item newer">
-                <a href="/posts/index-1.html" rel="next">Older posts</a>
+                <a href="/posts/index-3.html" rel="next">Older posts</a>
             </span>
             <span class="pagination-item older">
-                <a href="/posts/index-3.html" rel="prev">Newer posts</a>
+                <a href="/posts/index-1.html" rel="prev">Newer posts</a>
             </span>
         </div>
 

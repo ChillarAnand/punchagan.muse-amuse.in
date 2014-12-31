@@ -98,453 +98,796 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/contributing-to-foss.html" class="u-url">Contributing to FOSS</a></h1>
-        <span class="post-date">19 Aug 2010</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/postfix-mailman-for-multiple-domains.html" class="u-url">Postfix + Mailman for Multiple Domains.</a></h1>
+        <span class="post-date">05 Aug 2009</span>
     </header>
     <div class="e-content entry-content">
     <p>
-gora asked for some good links (on ##linux-india) to redirect
-newbies, enthusiastic about contributing to FOSS.
+Well, there are a hazaar tutorials on setting up Postfix and
+Mailman for Debian for a single domain. There were a few for doing
+that for multiple domains also, but nothing comprehensive, if I
+could say so. This link is pretty comprehensive and details all
+the steps for setting up Postfix for a single domain.  Here is all
+you'll want to know about setting up Virtual domains in Postfix.
 </p>
 
 <p>
-I dug up a few links from the web - some that I read, when I
-was starting off with using GNU/Linux and FOSS, others are
-newer links.
+You only need to make a few changes for adding a second (or more)
+domain. You just need to add the <code>virtual_alias_domains</code> and add
+<code>virtual_alias_maps</code>. Here is a glimpse of how my <code>main.cf</code> looks:
+</p>
+
+<pre class="example">
+myhostname = mail.abc.in
+mydomain = abc.in
+mydestination = $myhostname, $mydomain, localhost.$mydomain
+myorigin = /etc/mailname
+virtual_alias_maps =
+                hash:/etc/postfix/virtual-xyz,
+                hash:/etc/postfix/virtual-abc,
+                hash:/var/lib/mailman/data/virtual-mailman
+virtual_alias_domains = xyz.in, mail.xyz.in
+</pre>
+
+<p>
+<code>virtual-xyz</code> and <code>virtual-abc</code> contain the virtual aliases for
+each domain. Note that Postfix expects hash files and hence you
+need to run <code>postmap /etc/postfix/virtual-abc</code> each
+time the file is changed, to keep the hash file in sync with the
+text file that you edit. Also, you need to run <code>postfix reload</code>,
+each time you make changes to <code>main.cf</code> or <code>master.cf</code>
 </p>
 
 <p>
-Just making a note of them here; hoping someone would find it
-useful.
+Fairly straight forward, right? But it took me quite sometime to
+get it all right, since this was the first time I was doing
+anything with Mail Transfer Agents or the like.
 </p>
 
-<ul class="org-ul">
-<li>How to Become a Hacker - A definitive how-to on becoming a
-hacker. Answers all the right questions. :)
-</li>
+<p>
+Now, onto Mailman. Well the Installation Manual of Mailman,
+literally has it all. Here is a look at how my
+<code>mm_cfg.py</code> looks:
+</p>
 
-<li>Philosophy of the GNU Project - This is the page, where I
-started. Thanks to Voodoo for giving me the link to this page. I
-distinctly remember that day. :) I'm going to pass on this link
-to any newbie who comes my way, no matter how much bashing I get
-from other FOSS evangelists.
-</li>
-
-<li>6 Easy Ways To Get Started Programming Open Source - A neat list
-giving steps to get started with programming for open source. I
-like #4. Understanding the social dynamics of the project is an
-important thing which is often overlooked by newbies.
-</li>
-
-<li>OpenHatch - A community site to help newbies get started with
-contributing to FOSS. A cool site. Also, here is a story about
-OpenHatch.
-</li>
-
-<li>Look at the Numbers! - an interesting paper giving quantitative
-data in support of using FOSS.
-</li>
-
-<li>Ubuntu - Code of Conduct - A nice description of general conduct
-expected in any of the FOSS communities, not just Ubuntu.
-</li>
-</ul>
+<pre class="example">
+DEFAULT_EMAIL_HOST = 'abc.in'
+DEFAULT_URL_HOST   = 'mail.abc.in'
+add_virtualhost(DEFAULT_URL_HOST, DEFAULT_EMAIL_HOST)
+POSTFIX_STYLE_VIRTUAL_DOMAINS=['xyz.in']
+add_virtualhost('mail.xyz.in', 'xyz.in')
+MTA='Postfix'
+</pre>
 
 <p>
-I'd be happy to add any other links that any of you share. Thanks!
+The only trouble was to get mailing lists with same names on both
+the domains (which I couldn't get working). I experimented with
+multiple mailman instances but that won't work because the MTA
+can't differentiate between the two instances of mailman. The
+alternative is probably to have two instances of postfix running
+too. But that I felt was like going too far, and gave up. [What if
+we wanted to add another domain to the list?!]
+</p>
+
+<p>
+Also, I had to make a few alterations to the Apache file to allow
+access to the mailman pages without breaking the Zope redirection
+that was already set-up.
+</p>
+
+<p>
+[Thanks to Shantanu and Vattam (and all the hazaar people using
+Postfix and Mailman and cared to document things for the sake of
+others, and of course Google)]
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/one-hundred.html" class="u-url">One Hundred</a></h1>
-        <span class="post-date">17 Aug 2010</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/foss-talks-at-cdeep.html" class="u-url">FOSS talks at CDEEP</a></h1>
+        <span class="post-date">10 Jul 2009</span>
     </header>
     <div class="e-content entry-content">
     <p>
-The previous post, was the <b>One Hundredth</b> post on this blog. As 9
-suggested, I just want to say Yay! and thank my readers!
+I had the opportunity to attend a FOSS talk session organized by
+Center for Distance Education Engineering Programme (CDEEP) as a
+part of the National Mission on Education through ICT. The
+National Mission on Education through ICT has some lofty goals,
+which when reached will take the country ahead by leaps and
+bounds.
 </p>
 
 <p>
-I'd like to thank all the people who gave me those small nudges to
-write something down here and hope at least one person has found
-something useful here.
+The Mission has a budget of $1billion in the 11th Five year plan,
+40% of which will be spent on content generation (all of which
+will be free/open source) and the rest will be spent on making
+available a minimum bandwidth of 1Gbps to the 30,000 odd colleges
+spread over India (out of which around 3000 are Engineering
+colleges). The mission has various projects planned and they are
+picking up steam rapidly. The project I will be working on, for
+the Adoption of Open Source in Engineering and Science Education
+in India, is also a part of this Mission. Prof. Kannan had kick
+started the session with an introduction to the National Mission
+on Education through ICT. The talks were all being webcast to
+various EduSAT centers and on the web.
 </p>
 
 <p>
-Thanks to all the people dropping in here, regularly; Bearing with
-whatever sort of stuff I put up here. :)
+Then, Prof. Pathak talked on, why open source is important. He
+said, (not exactly quoting him) " It is theoritically possible for
+any person to learn and discover things from scratch, but there's
+been only one Ekalavya in the entire history of India." Education
+is a social activity and hence open access to content is
+absolutely vital. He mentioned various things like how IIT-B has
+been working on Creative Commons licensing and other things going
+on here. He ended the talk with a hope that soon India will move
+from being a net taker of Open source to a net giver to open
+source.
 </p>
 
 <p>
-Thanks to everybody who took the time to comment here.
+This was followed by three talks, delivered by developers from
+RedHat meant for programmers who wish to contribute to FLOSS.
 </p>
+
+<p>
+The first talk was by Ramakrishna Reddy, titled 10 things a FLOSS
+developer should know. It was a pretty nice and balanced talk,
+covering a wide range of things. I would like to point out a few
+things, that I liked the most.
+</p>
+
 <ul class="org-ul">
-<li>9
+<li>He clarified the term hacker as soon as he used it.
 </li>
-<li>Abhijeet
+<li>He emphasized a lot on groking code; reading code for fun,
+looking at the code of others, reading as much code as
+possible…
 </li>
-<li>Aditya Sengupta
+<li>He talked of muscle memory of emacsen. I liked the way he talked
+of people being so quick with their editors and how learning to
+use your tools effectively is a big plus
 </li>
-<li>Akash
-</li>
-<li>AlexM
-</li>
-<li>[Amit Sethi]
-</li>
-<li>Anagha
-</li>
-<li>arunchaganty
-</li>
-<li>[arunvudem]
-</li>
-<li>avinashsonee
-</li>
-<li>chaitu
-</li>
-<li>Cuckoo
-</li>
-<li>damodar
-</li>
-<li>fangzhzh
-</li>
-<li>[Illipi]
-</li>
-<li>leezii
-</li>
-<li>Madhusudan.C.S
-</li>
-<li>neha
-</li>
-<li>niku
-</li>
-<li>[Phillip Hagge]
-</li>
-<li>[priya]
-</li>
-<li>rahul
-</li>
-<li>ringO
-</li>
-<li>Rini
-</li>
-<li>Ritesh
-</li>
-<li>rohitj
-</li>
-<li>Sacha Chua
-</li>
-<li>Sandeep
-</li>
-<li>[Shantanu]
-</li>
-<li>[Srinivas Chaganti]
-</li>
-<li>[srujan]
-</li>
-<li>Stefan
-</li>
-<li>Sumanth
-</li>
-<li>Surya
-</li>
-<li>सु
-</li>
-<li>Swapnil
-</li>
-<li>Syam
-</li>
-<li>uc
-</li>
-<li>Vandith
-</li>
-<li>vinaywarrier
+<li>Release often, Release early. Everybody talks of it, but he said
+a few words, which I liked. Some developers don't usually
+release their code as early for the fear of being ridiculed. But
+don't bother, "we are just small people, in the whole galaxy."
 </li>
 </ul>
 
 <p>
-Special thanks to niku, Rini, and ntveem for inspiring me with their
-blogs. [All three of them have moved on to better things than
-blogging.]
+The next talk was by Prasad Pandit on How to use Infrastructure
+for FOSS projects. Prasad talked of Website, Version Control,
+Mailing list, IRC, Bugzilla, Wiki and RSS feeds. He gave quite a
+few examples on how each thing is important, most of the examples
+being his personal experiences.
+</p>
+
+<p>
+The last talk was by Rahul Sundaram and was on Communication in a
+FOSS project. For a change he didn't have slides and the reason
+for that, he said, is that communication in a FOSS project is
+casual and not having slides and walking in with a t-shirt and
+jeans represents that casualness which is a culture of FOSS
+projects' communication.
+</p>
+
+<ul class="org-ul">
+<li>Be polite, but don't be Formal.
+</li>
+<li>Be precise, but do provide a context to what you are saying.
+</li>
+<li>Don't fear that you'll say something foolish, which, will be
+archived for eternity. Mistakes are there to learn from. Not
+just you, but others too.
+</li>
+</ul>
+
+<p>
+He talked of quite a lot of things, but these were the things
+which struck me as particularly interesting/important.
+</p>
+
+<p>
+At the end, all the participants walked out with Fedora 11 DVDs
+from the RedHat/Fedora guys. :D
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/another-win-for-them.html" class="u-url">Another win for them!</a></h1>
-        <span class="post-date">16 Aug 2010</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/to-do-or-not-to-do.html" class="u-url">To do or not to do</a></h1>
+        <span class="post-date">22 Apr 2009</span>
     </header>
     <div class="e-content entry-content">
-    <p>
-South Central Railways(SCR) has banned photography in stations, as
-a measure to prevent Terrorism. Terrorism by definition is "the
-act of terrorizing; a mode of government by terror or
-intimidation." Doesn't this decision by SCR define a victory for
-the people they are trying to stop?
+    <p class="verse">
+Achieve something, I'm often reminded,<br>
+achieve something, something that's worthwhile.<br>
+Don't just kill time, they say,<br>
+for, brutally, it shall kill you someday.<br>
+<br>
+Make the best use of time, I tell myself,<br>
+for I realize, how I spend my days<br>
+is how I'm spending my life and<br>
+I'm going to get just one of it!<br>
+<br>
+But, what is worthwhile, I wonder<br>
+everything seems so good one moment<br>
+and all meaning vanishes the very next.<br>
+I'm utterly confused, somebody help!<br>
+<br>
+Pick one from, spoke my brother,<br>
+the 'everything' that seems good<br>
+and do it right, just, do it right!<br>
+Life, as you live through it, shall<br>
+teach you to do things that are right<br>
+and at the end of it all, you'll<br>
+never regret what you've done<br>
+but, only what you couldn't!<br>
 </p>
 
 <p>
-Anyway, if you are carrying a camera and are tempted to shoot in
-the railway station, go get a permission letter from the Chief
-PRO. :-/
+-—
+</p>
+
+<p>
+Inspired by
+</p>
+<ol class="org-ol">
+<li>a late-night conversation with a friend
+</li>
+<li>Annie Dillard, "How we spend our days is, of course, how we
+spend our lives"
+</li>
+</ol>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/webloggerel-configured.html" class="u-url">Weblogger.el configured!</a></h1>
+        <span class="post-date">19 Mar 2009</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+If you see this post, it means weblogger has been successfully
+configured in emacs.  Emacs Rocks. \m/
+</p>
+
+<p>
+<b>UPDATE <span class="timestamp-wrapper"><span class="timestamp">[2010-09-02]</span></span></b>: I now use org2blog, a small extension to
+ emacs orgmode to post to my blog.
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/pycon-india-10.html" class="u-url">PyCon India '10</a></h1>
-        <span class="post-date">16 Aug 2010</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/who-am-i.html" class="u-url">who am I?</a></h1>
+        <span class="post-date">02 Dec 2008</span>
+    </header>
+    <div class="e-content entry-content">
+    <p class="verse">
+dead and lifeless, in a box I lie<br>
+just my size, to be buried deep somewhere,<br>
+arranged with flowers, bright and fragrant<br>
+more alive than dead, are they<br>
+the final goodbye I have said,<br>
+gone am I, never to return–but<br>
+who am I, who am I, who am I?<br>
+<br>
+am I –<br>
+the knowledge I arduously gained,<br>
+from all the books I read and re-read.<br>
+the wealth and riches I made,<br>
+at the cost of sweat, often also blood.<br>
+the skill with utmost care I groomed,<br>
+for that, today, has me world-renowned.<br>
+the numerous battles I braved,<br>
+where win or loss never, only a fight mattered.<br>
+all those dreams I dared to dream,<br>
+and the goals I never, or have, reached.<br>
+<br>
+None of it, I realised, am I,<br>
+but, who am I, who am I, who am I<br>
+deep and loud, for one last time I wonder<br>
+"the difference, you make to the world,<br>
+is who you are", my Master answered,<br>
+"Life's fragrance is in service,<br>
+it grows and unfurls, far and wide,<br>
+long after you are lifeless and dead"<br>
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/arbit-blab.html" class="u-url">arbit blab</a></h1>
+        <span class="post-date">26 Nov 2008</span>
     </header>
     <div class="e-content entry-content">
     <p>
-Looks like PyCon India 2010 is going to be great fun!  With 80
-talk submissions, quite a few interesting ones, this time's PyCon
-should be much better than last year's.  Also, David Goodger of
-docutils and ReST fame will be the keynote speaker!
+Well, just another post to make it clear that
 </p>
-
 <ul class="org-ul">
-<li>Dates: <span class="timestamp-wrapper"><span class="timestamp">[2010-09-25 Sat]–[2010-09-26 Sun]</span></span>
+<li>I'm still alive
 </li>
-<li>Venue: MSRIT, Bangalore
+<li>I haven't forgotten that I have a blog
 </li>
-<li>RSVP here!
+<li>I haven't forgotten my blog's password
+</li>
+<li>I haven't lost the ability to write arbit crap.
+</li>
+<li>I'm not busy with anything interesting
+</li>
+<li>My Keyboard works fine
 </li>
 </ul>
 
 
-<div class="figure">
-<p><img src="http://in.pycon.org/2010/static/images/badges/supporter-small.png" alt="supporter-small.png">
+<p>
+Arbit stuff going on around me off-late.
 </p>
+
+<ul class="org-ul">
+<li>We've had our official farewell; So we've officially bid goodbye
+to B.I.T.S - Goa. People tried their best to make the occasion
+appear "senti" but it seemed more like "psenti" for me.
+</li>
+<li>I wonder why our VC calls BITS as B.I.T.S; is it something
+similar to people choosing to call SAP as S.A.P?
+</li>
+<li>Most of the advice given was of a copy-book style. But I liked
+one of them, though it wasn't expressed well enough for me -
+Learning from Books still remains an important way of learning,
+even if work teaches you a LOT.
+</li>
+<li>College now has its own Debian Repository hosted on a server
+running Hardy. Hats off to bad\<sub>sector</sub> for showing the enthu to
+get things done. The LUG here's got a great bunch of people
+right now and its growing in leaps and bounds. I'm excited.
+</li>
+<li>A couple of my friends picked up Debian recently and apparently
+both of them are loving it thoroughly. Linux, as addictive as
+ever.
+</li>
+<li>It's been a while since I've been on the winning side in
+carroms. Its so boring to be on the losing side for so long.
+</li>
+<li>Word is not a document exchange format<sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/arbit-blab.html#fn.1">1</a></sup> ; Use
+html, plain text, pdf or the open document format.(if you are
+not averse to openness) [I mention this <i>now</i> because I faced a
+lot of trouble recently trying to handle some .doc files which
+replaced the html pages that were being used on the PS site.]
+</li>
+<li>So often, little things get blown out of proportion, so
+quickly. Or its just that not everybody sees them as 'little'
+things.
+</li>
+<li>On slow connections, the download 'handler' of firefox does
+really poorly. It's next to impossible to download anything over
+half an MB.
+</li>
+<li>This from the preface of SICP<sup><a id="fnr.2" name="fnr.2" class="footref" href="/posts/arbit-blab.html#fn.2">2</a></sup> ,a text book for an
+introductory course on Computer Programming at MIT
+<blockquote>
+<p>
+Our design of this introductory computer-science subject
+reflects two major concerns. First, we want to establish the
+idea that a computer language is not just a way of getting a
+computer to perform operations but rather that it is a novel
+formal medium for expressing ideas about methodology. Thus,
+programs must be written for people to read, and only
+incidentally for machines to execute. Second, we believe that
+the essential material to be addressed by a subject at this
+level is not the syntax of particular programming-language
+constructs, nor clever algorithms for computing particular
+functions efficiently, nor even the mathematical analysis of
+algorithms and the foundations of computing, but rather the
+techniques used to control the intellectual complexity of
+large software systems.
+</p>
+</blockquote>
+<p>
+I would like to see a few courses developed on similar lines here.
+</p>
+</li>
+<li>Gmail themes are good. I only tried the "Terminal" theme,
+though. I loved it!
+</li>
+<li>For the very first time, I upgraded a distro. I successfully
+moved to Intrepid from Hardy. (and that too with the campus
+net!) This was before the repositories had been set-up. Now, it
+should be a much simpler job to achieve the same
+</li>
+<li>Just got the news of more Violence in Mumbai; What the hell do
+these people want? I end this post here.
+</li>
+</ul>
+
+<hr>
+
+<p>
+Here's an xkcd strip I liked.
+<img src="http://imgs.xkcd.com/comics/real_programmers.png" alt="real_programmers.png">
+</p>
+
+<hr>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef">
+<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/arbit-blab.html#fnr.1">1</a></sup> <p class="footpara">
+Word is not a document exchange format
+</p>
+</div>
+
+<div class="footdef">
+<sup><a id="fn.2" name="fn.2" class="footnum" href="/posts/arbit-blab.html#fnr.2">2</a></sup> <p class="footpara">
+Structure and Interpretation of Computer Programs
+</p>
+</div>
+
+
+</div>
 </div>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/tu-marathi-aheska.html" class="u-url">tu marathi aheska?</a></h1>
-        <span class="post-date">15 Aug 2010</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/21.html" class="u-url">21</a></h1>
+        <span class="post-date">15 Oct 2008</span>
     </header>
     <div class="e-content entry-content">
     <p>
-It's just a co-incidence that this post is coming on
-Independence day.
+Yes, I've turned 21 today. I'd like to write a post today, but
+this song (by Adam Sandler?) more or less conveys, how I feel.
 </p>
 
 <p>
-Last night I was in an auto with a couple of friends, and the
-auto couldn't get up a slope and stopped near the edge of the
-slope which was leading onto a main road. We had to get down
-from the auto, and after a lot of fight, the auto got on top.
-As the driver was trying hard to get the auto moving, a guy
-comes over and starts talking to him in Marathi. I'm not sure
-if he was a traffic police. He was dressed in white, but
-didn't really look like one.
+I'd just like to thank everyone, who prays for me to grow up and
+not just old.
 </p>
 
-<p>
-After asking a few questions, but not getting any replies, the
-guy asks him in Hindi, if he understands Marathi, and on
-getting a negative reply, starts shouting on him!
-</p>
-
-<p>
-The guy harasses the driver, asking him to handover his
-license and threatens him of horrible consequences, if he
-doesn't do so. We tried to intervene saying, we want to leave
-early and stuff, but the auto refused to start. The driver
-asked us to leave and said he'll take care of the matter.
-</p>
-
-<p>
-And then, today I hear people talking of national integration
-and stuff. I hear stuff about changing the country, getting
-rid of corrupt politicians and all the high ideals crap. I
-keep hearing all sorts of patriotic songs that I hear only
-twice a year. Not once more than that.
-</p>
-
-<p>
-Why is it that we talk of all this only on these two days of
-National importance? Why are these songs played only twice a
-year? Don't we get that feeling of patriotism on other days?
-Isn't patriotism a "true" feeling?
-</p>
-
-<p>
-I think, India will only take a leap in it's progress, when
-that happens.
+<p class="verse">
+<b>The Happy Birthday Song</b><br>
+<br>
+Once a year we celebrate<br>
+With stupid hats and plastic plates<br>
+The fact that you were able to make<br>
+Another trip around the sun<br>
+<br>
+And the whole clan gathers round<br>
+And gifts and laughter do abound<br>
+And we let out a joyful sound<br>
+And sing that stupid song<br>
+<br>
+Happy birthday!<br>
+Now you're one year older!<br>
+Happy birthday!<br>
+Your life still isn't over!<br>
+Happy birthday!<br>
+You did not accomplish much<br>
+But you didn't die this year<br>
+I guess that's good enough<br>
+<br>
+So let's drink to your fading health<br>
+And hope you don't remind yourself<br>
+The chance of finding fame and wealth<br>
+Decrease with every year<br>
+<br>
+Does it feel like you're doing laps<br>
+And eating food and taking naps<br>
+And hoping that someday perhaps<br>
+Your life will hold some cheer<br>
+<br>
+Happy birthday!<br>
+What have you done that matters?<br>
+Happy birthday!<br>
+You're starting to get fatter<br>
+Happy birthday!<br>
+It's downhill from now on<br>
+Try not to remind yourself<br>
+Your best years are all gone<br>
+<br>
+If cryogenics were all free<br>
+Then you could live like Walt Disney<br>
+And live for all eternity<br>
+Inside a block of ice<br>
+<br>
+But instead your time is set<br>
+This is the only life you get<br>
+And though it hasn't ended yet<br>
+Sometimes you wish it might<br>
+<br>
+Happy birthday!<br>
+You wish you had more money<br>
+Happy birthday!<br>
+Your life's so sad it's funny<br>
+Happy birthday!<br>
+How much more can you take?<br>
+But your friends are hungry<br>
+So just cut the stupid cake<br>
+<br>
+Happy birthday!<br>
+Happy birthday!<br>
+Happy birthday, dear…<br>
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/restoring-grub-with-grub2.html" class="u-url">Restoring GRUB with Grub2</a></h1>
-        <span class="post-date">10 Aug 2010</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/the-academic-internet.html" class="u-url">The 'Academic' Internet</a></h1>
+        <span class="post-date">10 Oct 2008</span>
     </header>
     <div class="e-content entry-content">
-    <p>
-It's a one liner with grub2.
-</p>
-
-<pre class="example">
-$ sudo grub-install --root-directory=/mount/point/of/root/ /dev/sdX
-</pre>
-
+    <blockquote>
 <p>
-where <code>sdX</code> is <code>sda,sdb,..</code> depending on which hard-drive it is
-on.
+<b>Notice for the Internet Usage</b>
 </p>
 
 <p>
-This is the first instance when I found grub2 to be better
-than grub.
+Internet Facility is provided to students for academic activities
+and e-mails. It is observed that few students are misusing the
+Internet facility by using excessive internet bandwidth for
+non-academic purposes. The students who are running the hubs are
+strictly informed to close their hubs. Computer Center will be
+starting official hub for the sharing of academic information and
+open source softwares.
+</p>
+
+<p>
+If a student is found while doing so the network facility will be
+blocked by Computer Center for a semester. Further, a student will
+be called by a disciplinary committee and a severe disciplinary
+action will be taken.
+</p>
+</blockquote>
+
+<p>
+This Notice from the Computer Center is creating waves all
+around. This isn't the first time, though, that the people
+in-charge of the Network have "acted".
+</p>
+
+<p>
+Academic activities; wonder what it's definition is, in their
+dictionaries. It surely includes the following.
+</p>
+
+<ul class="org-ul">
+<li>Using Internet for 'academic activities' or emails, during
+class-room hours makes no sense.
+</li>
+<li>Anything 'academic' cannot have a size greater than 5 MB.
+</li>
+<li>Accessing version control systems ( svn, cvs et al ) cannot be
+classified 'academic'
+</li>
+<li>IRC cannot teach you anything. Don't ever dream of thinking it
+as 'academic' to hang out on \#python or \#emacs
+</li>
+<li>All 'academic' stuff is limited to the http(s) ports. You
+wouldn't need to use any other ports, ever.
+</li>
+<li>Any 'academic' activity fits within a span of 2 hours or can be
+done in blocks of 2 hours each, with gaps of 2 hours in between.
+</li>
+<li>'Academic' stuff doesn't definitely contain key-words chosen by
+the "all-knowing" admins.
+</li>
+</ul>
+
+<p>
+Moreover, the people in-charge who refused to allow the use of a
+computer in the CC as a server for on-campus repositories of
+GNU/Linux packages, now wish to host a 'hub' for sharing
+open-source softwares! There's already an official ftp server
+which hosts the academic info and a few useful softwares. I don't
+see how a hub would be different.
+</p>
+
+<p>
+We don't have any disciplinary committees for people smoking in
+hostel rooms, causing a lot of trouble for others around them, but
+we are going to have them for hosting hubs. ( Well, a new law
+banning smoking in public places in India has been passed just a
+few days ago. Hopefully it'll work better than the older one,
+since now there's some pressure on the people in-charge of the
+public place. )
+</p>
+
+<p>
+Also, it could be argued that college isn't meant only for
+'academic' learning and a lots of other learning takes place here
+(and the hubs were definitely helping quite a bit) but I'll leave
+that for another day, probably. Also, I don't think 18+ year olds,
+people who are about to step into various big roles, leading the
+country need to be told how to make use of the
+facilities/resources available to them; A degree of freedom is
+indispensable, I believe.
+</p>
+
+<p>
+I appreciate the efforts being made to improve the network
+situation here and also help the students get the most (
+'academically' ) out of their college experience, but I feel the
+situation deserves more careful handling.
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/pair-blogging.html" class="u-url">Pair Blogging</a></h1>
-        <span class="post-date">08 Aug 2010</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/software-freedom-day.html" class="u-url">Software Freedom Day</a></h1>
+        <span class="post-date">21 Sep 2008</span>
     </header>
     <div class="e-content entry-content">
     <p>
-I like the idea of pair blogging. Cate and Sacha, seem to be doing
-it (intentionally or not). One person blogs on a topic he/she's
-presently thinking about and the other person posts his/her views
-on the same issue.  Well, comments are meant for that, but a blog
-post seems to give you greater freedom.
+Three Cheers to 'Free Software'!
 </p>
 
 <p>
-PS: I called it pair-blogging. I don't know if it already has a
-name or if pair-blogging means something else.
+A toast for GNU on its 25th Birthday!<sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/software-freedom-day.html#fn.1">1</a></sup>
 </p>
+
+<p>
+If you intend to ask, what I did on this day, I have nothing to show. I haven't done anything that's tangible but yes, I have re-dedicated myself to the idea of Free Software.
+This post intends to shed some light on a few things (if not for the benefit of others, just as a reminder for myself)
+</p>
+
+<ul class="org-ul">
+<li>Free Software is a matter of liberty, not price. I've often been
+in a position that required me to correct people. 'Free
+Software' is software that's free as in free speech and not free
+beer. For the lack of a better word in english, the word 'free'
+which also means gratis has been used. Using the term 'Libre'
+sometimes helps and if you are in this part of the world, "mukt"
+is the best word to use.
+</li>
+<li>Free Software<sup><a id="fnr.2" name="fnr.2" class="footref" href="/posts/software-freedom-day.html#fn.2">2</a></sup> comes along with four fundamental freedoms. To put
+it simply, the freedom to use, study, share and modify any
+software.
+</li>
+<li>Free Software may have the advantage of being 'technically
+sounder', but the philosophy is what matters the most to me.
+</li>
+<li>I will do whatever is possible within my capacity to spread the
+philosophy and the associated freedom
+</li>
+</ul>
+
+<p>
+Be Free, My Friend!
+</p>
+
+<p>
+Here is an extract from one of Stallman's <sup><a id="fnr.3" name="fnr.3" class="footref" href="/posts/software-freedom-day.html#fn.3">3</a></sup> essays:
+</p>
+
+<blockquote>
+<p>
+We must talk about Freedom
+</p>
+
+<p>
+Estimates today are that there are ten million users of
+GNU/Linux systems such as Debian GNU/Linux and Red Hat
+Linux. Free software has developed such practical advantages
+that users are flocking to it for purely practical reasons.
+</p>
+
+<p>
+The good consequences of this are evident: more interest in
+developing free software, more customers for free software
+businesses, and more ability to encourage companies to develop
+commercial free software instead of proprietary software
+products.
+</p>
+
+<p>
+But interest in the software is growing faster than awareness
+of the philosophy it is based on, and this leads to
+trouble. Our ability to meet the challenges and threats
+described above depends on the will to stand firm for
+freedom. To make sure our community has this will, we need to
+spread the idea to the new users as they come into the
+community.
+</p>
+
+<p>
+But we are failing to do so: the efforts to attract new users
+into our community are far outstripping the efforts to teach
+them the civics of our community. We need to do both, and we
+need to keep the two efforts in balance.
+</p>
+</blockquote>
+<hr>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef">
+<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/software-freedom-day.html#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://www.gnu.org/fry/">http://www.gnu.org/fry/</a>
+</p>
+</div>
+
+<div class="footdef">
+<sup><a id="fn.2" name="fn.2" class="footnum" href="/posts/software-freedom-day.html#fnr.2">2</a></sup> <p class="footpara">
+The Free Software Definition
+</p>
+</div>
+
+<div class="footdef">
+<sup><a id="fn.3" name="fn.3" class="footnum" href="/posts/software-freedom-day.html#fnr.3">3</a></sup> <p class="footpara">
+The GNU Project by Richard Stallman 
+</p>
+</div>
+
+
+</div>
+</div>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/drafting.html" class="u-url">Drafting</a></h1>
-        <span class="post-date">07 Aug 2010</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/the-third-round.html" class="u-url">The Third Round.</a></h1>
+        <span class="post-date">13 Sep 2008</span>
     </header>
     <div class="e-content entry-content">
     <p>
-Drafting behind trucks (when cycling) could be a great energy
-saver.  I came across this idea when reading up a blog post by a
-cyclist.
+This post is just to keep up a promise that I made to a friend of
+mine (well, actually myself).  Presently, its the placement heat
+in our campus and people are busy writing tests, waiting, giving
+interviews and partying. This post doesn't have much to with all
+that though.  In one of the interviews, I was called back and
+asked about my Cleft Lip and Palate<sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/the-third-round.html#fn.1">1</a></sup>. The interview panel had
+concerns if I faced any serious medical problems due to this. I
+explained to them everything that I knew about it and they were
+convinced.
 </p>
 
 <p>
-The idea is similar to birds flying in a V-shape to get a greater
-lift.  While drafting, the goal is to reduce the drag force.
+Later, I realized, I never explicitly did any reading on this
+issue or asked my parents/others about this. I somehow knew about
+it always. I probably learnt at all those visits to the dentist or
+may be sub-consciously, when I was a baby. It isn't, though,
+surprising to me that those guys had some reservations about
+it. It's not everyday that you see a guy with a Cleft, though
+statistics say there's prevalence of 1 in 500 births
+world-wide. As a matter of fact, I myself haven't seen another guy
+all my life (except for the pictures at my dentists') (also, they
+weren't too wrong in suspecting other problems, though they had
+absolutely no clue about this medical condition)
 </p>
 
 <p>
-Pacelines in cycling races are formed precisely for this reason.
-This page has a short summary of what drafting is all about.
-</p>
-
-<p>
-Should be trying this out, the next time around.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/advice-programming-in-elisp.html" class="u-url">Advice - Programming in Elisp</a></h1>
-        <span class="post-date">06 Aug 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Below is a mail sent by Eric Schulte to the org-mode mailing list
-answering a query on how to write elisp for org-mode. I am
-reproducing it here, since it is useful advice for me. The actual
-thread is here.
+If you are wondering what the point of this post is, it's
+nothing. It's just a pointer to those interested in reading
+further on Cleft Lip and Palate.
 </p>
 
 <hr>
-<p>
-The way that I learned how to program in emacs lisp was mainly
-using two commands `elisp-index-search' bound to `C-h e' on my
-system, and most importantly `describe-function' bound to `C-h f'.
-With `describe-function' you can look at the source code of
-functions whose behavior you are familiar with, you can then copy
-portions of the code to your <b>scratch</b> buffer where they can be
-edited and evaluated with `eval-defun' bound to `C-M-x'.  Now with
-Babel, instead of doing this in the scratch buffer you could do
-this in emacs-lisp code blocks in an org file, enabling notes and
-hierarchical organization – it can be nice to have your noodling
-all collected in one file for later reference.
-</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
 
-<p>
-If you are going to do any serious work with lisp, I would
-emphatically recommend using paredit-mode, and becoming friends
-with the Sexp movement functions
+<div class="footdef">
+<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/the-third-round.html#fnr.1">1</a></sup> <p class="footpara">
+Cleft Lip and Palate – Wikipedia
 </p>
+</div>
 
-<p>
-C-M-f        runs the command paredit-forward
-C-M-b        runs the command paredit-backward
-C-M-u        runs the command backward-up-list
-C-M-k        runs the command kill-sexp
-C-y        runs the command yank
-</p>
 
-<p>
-They allow you to manipulate lisp code on the level of logical
-expressions, the utility of which can not be over stated.
-</p>
-
-<p>
-As for working with Org-mode in particular, I'd recommend looking
-at the documentation and source-code of Org-mode functions with
-`describe-function', and then looking for how these functions are
-actually used in the Org-mode code base with `rgrep'.
-</p>
-
-<p>
-For a more structured learning experience, I've heard very good
-things about <a href="http://www.gnu.org/software/emacs/emacs-lisp-intro/">http://www.gnu.org/software/emacs/emacs-lisp-intro/</a>,
-although I haven't used it myself.
-</p>
-
-<p>
-Hope this helps.  Happy Hacking – Eric
-</p>
-<hr>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/lesson-with-rss-feeds-wordpress.html" class="u-url">Lesson with RSS feeds &amp; Wordpress</a></h1>
-        <span class="post-date">04 Aug 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-In a world of (RSS &amp; Atom) feeds, deleting your posts is not the
-way to do it.
-</p>
-
-<p>
-First re-post using no content and give the post some time for it
-to be caught by the feed aggregators. Then, delete your post.
-</p>
-
-<p>
-<b>Update</b>:
- This
- post also has similar advice.
-</p>
+</div>
+</div>
     </div>
     </article>
 </div>
         <div class="pagination">
             <span class="pagination-item newer">
-                <a href="/posts/index-9.html" rel="next">Older posts</a>
+                <a href="/posts/index-11.html" rel="next">Older posts</a>
             </span>
             <span class="pagination-item older">
-                <a href="/posts/index-11.html" rel="prev">Newer posts</a>
+                <a href="/posts/index-9.html" rel="prev">Newer posts</a>
             </span>
         </div>
 

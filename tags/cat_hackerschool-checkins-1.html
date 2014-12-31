@@ -98,341 +98,175 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-22.html" class="u-url">Hacker School, 2014-06-22</a></h1>
-        <span class="post-date">22 Jun 2014</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-08-13.html" class="u-url">Hacker School, 2014-08-13</a></h1>
+        <span class="post-date">14 Aug 2014</span>
     </header>
     <div class="e-content entry-content">
     <ul class="org-ul">
-<li>I finished parts of the phonebook task today.  The code looks ugly,
-and very un-haskelly.  I asked for feedback on it, but I guess its
-just too ugly for anyone to take the time out to comment on it, and
-help me improve it.
+<li>I feel like I didn't get much done yesterday.
 </li>
-<li>I also tried to read up about Monads, and worked through exercises
-from a few different places.  I haven't yet finished the exercises
-in Chapter 12 of the UPenn course.  I just looked at them today, and
-they seem like a complete bouncer at first glance.
+<li>I mostly worked on the API differ, but didn't get much done.  I have a few
+tests, and some code for diffing two functions, but I'm not very happy with
+it.
 </li>
-<li>I went on a really long walk with Naren, and food-hopped with him
-while he was telling me stories about the various places he worked
-at and the kinds of things he has been working on, and things he
-liked and disliked about them.  It has been a good weekend to spend
-with Naren!
+<li>I helped Giorgio and Carlos with using my client only <code>hs_oauth</code>
+  script/library, for their Zulip bot.
 </li>
-<li>Also, the long walk and talking to Chaitu cleared my head a bit, and
-I decided to pause the Haskell tutorials and learning for the next
-couple of weeks.  I don't really have a project that needs me to
-learn Haskell, right now.  I should stick to project and need based
-learning, which I enjoy the most.
+<li>The white boarding group worked on some binary related problems, and it was
+fun.
 </li>
-<li>Right now, I feel like working on an key stroke acoustic emanation
-based key-logger.  Just before applying to Hacker School, I came
-across the idea of side-channel attacks, and it sounded pretty
-exciting.  I don't intend to snoop onto anybody, but the project
-seems to be challenging enough, and I will have quite a bit to learn
-about. It will involve signal processing, and learning – both areas
-that I have seemed interesting to me for long, but I haven't really
-done anything in them.  I plan to work on the idea for a couple of
-weeks, and review my progress and chart my future course. The
-problem appears to have 2 parts to it.
-<ul class="org-ul">
-<li>Processing audio, and extracting key-strokes from it.
+<li>I looked at how the HS OAuth backend works on blaggregator and thought about
+how to go about fixing the issue of broken images on the site.  The problem
+happens because the image URLs are returned from the HS API calls, that are
+made whenever a user logs in(?), and the URLs are cached.  Since, HS uses
+cloudfront for its assets, the URLs expire after a period of time, and the
+cached urls in blag's database need to be updated.  There could be two ways
+of doing it -
+<ol class="org-ol">
+<li>Check if the URL 404s, every time a URL is requested, on the server side.
 </li>
-<li>Identifying the text, based on a sequence of key-strokes. Though,
-in reality each press of a key may not sound the same, for a start
-assuming we are able to accurately get a sequence of key-strokes,
-the problem would reduce to solving a simple substitution cipher.
-I plan to start with this, tomorrow.
+<li>Do it on the client side, with some javascript magic.
 </li>
-</ul>
-</li>
-<li>Also, I plan to hang out a lot more with Hacker Schoolers, and let
-myself be distracted a lot more by random discussions and
-activities, than I have allowed myself to be, in the past few weeks.
-I should be writing as much code as I can, while I'm here.  But, I
-should also be rubbing elbows with the awesome folks, which I will
-only be able to virtually, once I'm out of here.
-</li>
-<li>Thanks to Amber, I also came across this interesting looking book
-called <a href="http://chimera.labs.oreilly.com/books/1234000001813">Apprenticeship patterns</a>.  I plan to read it over the next
-week or two.
-</li>
-<li>I haven't been playing almost any Ultimate here. I atleast need to
-work out a conditioning and throwing practice schedule and start
-working on it, early next week.  Tomorrow won't work since it's 5am
-and I'm still awake!
-</li>
-<li>I also probably need to get enough sleep!
-</li>
-<li>Looking forward to the next couple of weeks!
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-20.html" class="u-url">Hacker School, 2014-06-20</a></h1>
-        <span class="post-date">20 Jun 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>Fridays are optional in Hacker School, and people are given help
-with preparation for job interviews.
-</li>
-<li>This week's exercise was a "know-your-language" type exercise and I
-decided to do it with Haskell, and confirmed the fact that I didn't
-know it too well. :)
-</li>
-<li>I spent the afternoon writing the blog-post on <a href="/posts/oauth2-demystified.html">OAuth2</a>, and adding
-support for converting ditaa code blocks to png using Pygments.  It
-may not have been the best use of time, but anyway…
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-19.html" class="u-url">Hacker School, 2014-06-19</a></h1>
-        <span class="post-date">19 Jun 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>Yesterday was a bit more wandering than usual.  I still have to
-finish (actually, start) the last chapter in the UPenn course
-(Monads).  I hope to finish it during the weekend.
-</li>
-
-<li>I started with reading <a href="http://www.haskell.org/haskellwiki/Typeclassopedia">Typeclassopedia</a>, in the hope of getting
-comfortable with Functors and Applicatives and to get introduced to
-Monads.  But, I got distracted before I got to the end of the part
-on Functors.
-</li>
-
-<li>During the check-ins, Laura and Denise mentioned that they are both
-facing problems with OAuth, and would like to pair on it.  I decided
-to join them, since I've had reasonable luck with OAuth, though I
-knew I didn't understand it very well.  While they were working on
-getting it to work on OSX, I was trying to write a simple Python
-example to do it, and was getting a weird error about the
-<code>response_type</code> being not supported.  I was using <a href="https://github.com/litl/rauth">rauth</a> in a way
-very similar to what I had done for <a href="https://github.com/punchagan/statiki/blob/master/statiki.py#L49">statiki</a> but the Hacker School
-API server wasn't letting me through.  I could debug it only a
-little before lunch, and a little bit after lunch.  And realized
-that the <code>response_type</code> had to be one of <code>code</code> or <code>token</code> and not
-<code>json</code> or <code>empty</code>.  But this is a required parameter, and I expected
-<code>rauth</code> to do the right thing!  I got back to it at the end of the
-day, and went through the RFC for OAuth2 and wrote up a simple
-Python script to implement the whole thing, without using any 3rd
-party oauth libraries.  I think I understand the whole thing much
-better now, and will soon write up a blog post on it.
-</li>
-
-<li>I spent about an hour or so on reviewing Nava's code (along with
-Tom, Amber and Patricia), that generated and solved mazes. We tried
-to make small incremental changes to her code, and improve it,
-hopefully giving her a sense of how to make the code more
-intentional.
-</li>
-
-<li>Thursday evening presentations! People here have been working on
-such cool stuff!  Maze solvers and percolation probability
-calculators, phone gap based mobile applications, a cool Midi based
-music generator, an <a href="https://github.com/mveytsman/emm-ess-pee">emulator</a> for MSP430 in Clojure, an event logger
-in ObjectiveC that can log to a web server and can be used by
-multiple clients to debug communication related issues, a HTTP
-server written from Scratch, a web server in Swift, a pattern
-matching based library in js, a heuristics based puzzle solver, and
-a web editor for jekyll!  Holy cow!  These presentations are
-extremely inspiring and will probably be the thing I look forward to
-the most, for the next 10 weeks.
-</li>
-
-<li>I can't believe it's already end of week 2. 10 more to go!
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-18.html" class="u-url">Hacker School, 2014-06-18</a></h1>
-        <span class="post-date">18 Jun 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>Amber <a href="http://www.subsymbol.org/2014/06/hacker-school-tuesday-june-17th-2014.html">talked about</a> "exploring only until the current task is done"
-and moving on, which is could really be a lost opportunity to learn
-something new and gain a better understanding of the system I am
-working with.
-</li>
-<li>Having something (anything not directly related to the current
-project I'm working on) scheduled for later in the day, doesn't seem
-to do me much good. I feel distracted for quite a long period before
-the scheduled time.
-</li>
-<li>Abstractions and layers were talked about in the second exercise on
-Applicatives… Layering, FTW!
-</li>
-<li>I spent about an hour or so in the afternoon reading the paper, <a href="https://www.cs.purdue.edu/homes/gkrichar/papers/onward2013-wuerthinger-truffle.pdf">One
-VM to rule them all</a>.  It talked about Truffle: an API to implement
-an AST parser for any language and Graal: a JIT compiler for the
-ASTs.  Later in the day, I also went to the <a href="http://www.meetup.com/papers-we-love/events/178049922/">Papers we love</a> meetup.
-The presentation and the talks were quite interesting!
-</li>
-<li>I also started looking at <a href="http://elm-lang.org">Elm</a> and playing with it.
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-17.html" class="u-url">Hacker School, 2014-06-17</a></h1>
-        <span class="post-date">17 Jun 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I've been bookmarking the interesting links that people post on
-Zulip and have a lot of reading to do.   It would be nice if I had
-an easy way to send stuff on to my kindle. (pdfs, html, etc.).
-Instapaper works, but doesn't work as well as I would like it to.  I
-just want a simple script that takes a list of urls and does the
-right thing.  May be I will write something that uses Calibre, or
-even better someone already has.
-</li>
-<li>I worked through exercises 08 and 10 of the haskell course,
-yesterday.
-</li>
-<li>Chapter 8 was about how IO works in haskell.  The exercise didn't
-involve too much, except I wasted a lot of time on tracking a
-stupidity of mine.
-</li>
-<li>The next part of the course was an introduction to Functors,
-Applicative and Alternative.  I'm not sure I totally understand and
-am comfortable with them, but I have been able to get through the
-exercises.
-</li>
-<li>I think it's time for me to start working on some Elm tutorials,
-along with the Haskell exercises.
-</li>
-<li>Also, I had questions about when to use <code>type</code>, <code>newtype</code> and <code>data</code>
-and incidentally found <a href="http://learnyouahaskell.com/functors-applicative-functors-and-monoids#the-newtype-keyword">this section</a> that ended with the following
-summary: "If you just want your type signatures to look cleaner and
-be more descriptive, you probably want <code>type</code> synonyms. If you want
-to take an existing type and wrap it in a new type in order to make
-it an instance of a type class, chances are you're looking for a
-<code>newtype</code>.  And if you want to make something completely new, odds
-are good that you're looking for the <code>data</code> keyword."
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-16.html" class="u-url">Hacker School, 2014-06-16</a></h1>
-        <span class="post-date">16 Jun 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>Didn't do anything during the weekend.  Hopefully, this won't be the
-case all of the weekends.  I had fun with my cousins, though.
-</li>
-<li>Denise is already working on a twitter app that sounds similar to
-the idea I had.
-</li>
-<li>I accidentally discovered that evince supports vim-like keybindings,
-which is cool.
-</li>
-<li>When writing patterns for a function it helps to write the most
-general case first, and then write the edge cases.
-</li>
-<li>I was feeling a little unproductive in the afternoon and I ended up
-attending Zach's talk on <a href="https://github.com/hackerschool/community">Community</a>.  I got a brief overview of the
-whole architecture, and got to know a little bit about reactjs and
-om. I don't think I'll get around to contributing to the project,
-since most of the stack is totally new to me, and I'm not
-particularly inclined to learn those things now.
-</li>
-<li>I was working on Monoids for most part of the day and got through
-exercise 7.  I started doing the I/O exercise around the end of the
-day.
-</li>
-<li>The day ended with a talk on jobs related stuff by Nick and Sonali.
-It seems super unlikely for me to get a job (in the US), from what I
-understood from them.  So, I needn't worry too much about that and
-focus on getting better at Haskel and as a programmer in general.
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-12.html" class="u-url">Hacker School, 2014-06-12</a></h1>
-        <span class="post-date">12 Jun 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>Came to know about the project that Tom is working on for being able
-to auth integration of GitHub and Hacker School.  This will be useful
-for me, when I get to working on the GitHub dashboard.
-</li>
-<li>I spent an hour or so to clean up by blog workflow and help scripts
-to insert tags in Nikola posts, etc.  I also have a <a href="https://github.com/punchagan/home-bin/blob/master/hs-post">script</a> to make a
-post for each day, automatically.
-</li>
-<li>lolcommit is an interesting project, and Max is using it for logging
-his work at Hacker School.
-</li>
-<li>Learned about laziness and the consequences of it. You cannot have
-side-effects, in a lazy language, if you want to keep the sanity of
-the developers using your language.
-</li>
-<li>Pattern matching forces evaluation.
-</li>
-<li>Also, briefly read about <code>seq</code>, halting problem and <code>bottom</code> from
-the Haskell wiki.
-</li>
-<li>The week ended with presentations by Hacker Schoolers from this
-batch.  It was also Alum day, so we had some Alumni visiting.  I
-missed half of the presentations because I had to leave early for
-Suguna's graduation.
-</li>
-</ul>
+</ol>
+<p>
+Intuitively, I feel like 2. would be better, but Madhu suggested
+that 1. wouldn't be that bad either.  We could try both out, and see which
+works better I suppose.
+</p>
 
 <p>
-I hope to continue to do some work on the tutorials during the
-weekend, and get back to it and finish them next week.
+I'd be interested to try this out, sometime.
 </p>
+</li>
+</ul>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-11.html" class="u-url">Hacker School, 2014-06-11</a></h1>
-        <span class="post-date">11 Jun 2014</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-08-12.html" class="u-url">Hacker School, 2014-08-12</a></h1>
+        <span class="post-date">13 Aug 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>An issue I was seeing with <code>pip</code> and a package installed in
+<code>system-site-packages</code> turned out to be non-reproducible.  It was probably
+PEBKAC.
+</li>
+<li>I was wondering around in the morning trying to find something to work on.
+</li>
+<li>I decided to work on Pankaj's idea to write a tool that gives you API
+differences between two versions of a library.  It would be useful to have
+the list of public API changes in a library you use, to estimate the cost of
+updating to the newer version, without having to manually go through all the
+changes.
+</li>
+<li>I spent some time talking to Sophia, and looking at her FTP server's
+refactored code.
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-08-11.html" class="u-url">Hacker School, 2014-08-11</a></h1>
+        <span class="post-date">11 Aug 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>I spent about an hour in the morning testing out the staging blaggregator
+instance, and things seemed to work as expected.  Side note, I got added as a
+collaborator on the blaggregator repo!
+</li>
+<li>We worked through the first chapter on getting video working, but we mostly
+ended up just copying code rather than actually understanding/carefully
+studying it.  I'm not sure how I feel about it, but we got to display fancy
+stuff.
+</li>
+<li>I wasn't feeling like working on any of my 'old'/'ongoing' projects, and
+since Mondays don't feel very productive, I worked on writing a couple of
+simple scripts to create twitter lists of HSers, batch wise.
+
+<p>
+For the HS API, I just reused some old code I had lying around from my
+experiments with the OAuth2 API, though I had to tweak it a little bit to be
+able to actually login, using requests. Something about CSRF tokens seems to
+have changed.
+</p>
+
+<p>
+In the process, I found that twitter's API isn't very pleasant to use.  Or
+may be it's the fact that I was using python twitter client without getting
+my own client id/key, but the whole experience of dealing with the twitter
+API wasn't a pleasant one at all!
+</p>
+</li>
+<li>Amber, Daria and I also spent about an hour white-boarding some problems from
+the Cracking the Code Interview book.
+</li>
+<li>I ended up fixing some minor issues with blaggregator and am hoping that the
+long pending PR will be merged today.
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-08-08.html" class="u-url">Hacker School, 2014-08-08</a></h1>
+        <span class="post-date">09 Aug 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>I spent the morning doing some white-boarding interview practice with a Jorge
+and Brian.
+</li>
+<li>I spent the rest of the day, playing with PyPy and working through <a href="http://morepypy.blogspot.in/2011/04/tutorial-writing-interpreter-with-pypy.html">a tutorial</a>
+  that teaches us to write a BF interpreter.
+</li>
+<li>I spent the Saturday revamping my Emacs config.  The main issue with my
+config was having a "package" list, of all the packages that the
+configuration uses, in case we are trying to duplicate it elsewhere.  I
+noticed that this gets out of sync, because I install packages by hand and
+never update this list.  I wrote up <a href="https://github.com/punchagan/dot-emacs/blob/master/user-lisp/setup-defuns.el">some code</a>, that keeps this list in sync
+with all the packages I have installed.  I configured el-get to play well
+with my config, and am pretty happy with my setup, though I still have to add
+some matching/searching features with helm/ido/whatever else.
+</li>
+<li>I spent the Sunday writing a patch to <a href="https://github.com/punchagan/xtab/tree/kill-by-memory">xtab</a> to be able to limit the number of
+tabs in Chromium by the memory it uses.
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-08-07.html" class="u-url">Hacker School, 2014-08-07</a></h1>
+        <span class="post-date">08 Aug 2014</span>
     </header>
     <div class="e-content entry-content">
     <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Plan</h2>
+<h2 id="sec-1">C stuff</h2>
 <div class="outline-text-2" id="text-1">
-<p>
-Continue with the Haskell tutorials, with additional reading from
-Real World Haskell.
-</p>
+<ul class="org-ul">
+<li>In the morning I cleaned up the code to open torrent files, and parse them.
+</li>
+<li>I worked on a function to do encode text properly, and Sophia helped me
+find out that I had to use unsigned chars in it.
+</li>
+<li>I looked at Sophia's threaded ftp server in C, and gave some suggestions on
+how the code could be refactored.
+</li>
+</ul>
 </div>
 </div>
 
 <div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Actual</h2>
+<h2 id="sec-2">Baking Pi</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li>Finished exercises 4 and 5.
-<ul class="org-ul">
-<li>Learnt about Type classes in Haskell and how to create them and
-make data types instances of them.
+<li>We still didn't get to the video stuff, yesterday.  We finished the first 5
+chapters, though, and have a SOS pattern display.
 </li>
-<li>Also came across a new algorithm of sieving called the <a href="http://en.wikipedia.org/wiki/Sieve_of_Sundaram">Sieve of
-Sundaram</a>, which was discovered by a student.  Surprisingly, I
-never heard of it before!
-</li>
-</ul>
+<li>I'm really looking forward to doing the cool video stuff.
 </li>
 </ul>
 </div>
@@ -442,13 +276,8 @@ never heard of it before!
 <h2 id="sec-3">Miscellaneous</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
-<li>A few of us had an interesting discussion about various places
-people grew up in and visited, and the cultures, etc.
-</li>
-<li>Idea: implement a GitHub dashboard for organizations (say, HS
-batches) that give you different statistics, and interesting
-graphs. (Use elm?) [Update: Tom is working on HS and GitHub
-integration. So, that's perfect!]
+<li>William Skeith, gave a talk on <a href="https://github.com/wes1138/webauth-via-ssh">using SSH keys for web-authentication</a>, which
+was pretty interesting.
 </li>
 </ul>
 </div>
@@ -457,120 +286,155 @@ integration. So, that's perfect!]
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-10.html" class="u-url">Hacker School, 2014-06-10</a></h1>
-        <span class="post-date">11 Jun 2014</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-08-06.html" class="u-url">Hacker School, 2014-08-06</a></h1>
+        <span class="post-date">07 Aug 2014</span>
     </header>
     <div class="e-content entry-content">
-    <p>
-I came super early to try and get some work done in the quiet before
-the daily checkins time.  Continued with the Haskell tutorial and
-reading the Real World Haskell.
-</p>
-
-<p>
-Finished a couple of exercises from the UPenn course, that were pretty
-straight forward.
-</p>
-
-<p>
-Also, finished a few exercises from chapter 3 of real world haskell,
-and partially finished implementing Graham scan for generating a
-convex hull for a set of points.
-</p>
-
-<p>
-The exercises from both the places involved mainly learning about
-Algebraic Data Types.
-</p>
-
-<p>
-Mary pinged me to ask how the first couple of days were, and it was
-good to talk to get a ping from her though I never talked to her.
-</p>
-
-<p>
-I'm going to continue working on the Haskell exercises today.
-</p>
-
-<p>
-I also got a couple of ideas for small projects:
-</p>
-
-<ul class="org-ul">
-<li>Since, yelp is blocked from here, nobody can use yelp's API and work
-on any projects.  It may be helpful to have an API proxy server that
-runs on a different server and forwards any requests coming to it.
+    <ul class="org-ul">
+<li>Finished working through the first 5 chapters of the baking pi course, and am
+excited to start working on the video stuff, today!
 </li>
-<li>A simple script to create a twitter list for each batch of
-Hacker School.
+<li>Spent some time pairing with Sindhu on her url checker, and later in the
+night helped her out with a small bug in her GitHub activity leaderboard
+script.
+</li>
+<li>I spent some time adding dict parsing support to the bencode parser.
+</li>
+<li>And also cleaned up the tests.
+</li>
+<li>The electronics hobbyists were doing some cool stuff, and I joined them for a
+bit. We tried some cheap motion sensors, but they didn't work very well, and
+probably need to be calibrated.
 </li>
 </ul>
-
-<p>
-Doing them in Python would be pretty straight forward. I will try to
-work on these things in Haskell, once I'm reasonably comfortable with
-Haskell.
-</p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-09.html" class="u-url">Hacker School, 2014-06-09</a></h1>
-        <span class="post-date">10 Jun 2014</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-08-05.html" class="u-url">Hacker School, 2014-08-05</a></h1>
+        <span class="post-date">05 Aug 2014</span>
     </header>
     <div class="e-content entry-content">
-    <p>
-Finally, I'm at Hacker School.  The day began with introductions,
-breakfast and welcomes to HackerSchool.
-</p>
-
-<p>
-The four rules of Hacker School were reiterated to all of us:
-</p>
-
-<ul class="org-ul">
-<li>No (Feigning) surprise
+    <ul class="org-ul">
+<li>Spent a couple of hours in the morning, trying to revive a html template for
+blaggregator, that I missed out on committing previously, and wiped out due
+to negligence in using `git clean`.
 </li>
-<li>No Well-actuallys
+<li>Spent time post lunch working through the first two chapters of the baking pi
+course, by myself, reading up different references, and finally getting how
+I/O is mapped to the memory in ARM.
 </li>
-<li>No Backseat driving
+<li>Actually, almost.  A variant of the example that I thought should work,
+doesn't.  So, I need to think/talk about it today.
 </li>
-<li>No Subtle-isms
+<li>I sent a patch to Nikola for the lastdeploy timestamp being UTC.  I was
+hoping to work around an <a href="https://github.com/sursh/blaggregator/issues/56">issue</a> with Blaggregator, by somehow fixing it on the
+client side, but that's probably not the right way to go about it.
 </li>
 </ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-08-04.html" class="u-url">Hacker School, 2014-08-04</a></h1>
+        <span class="post-date">04 Aug 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>A bunch of worked on getting LEDs to blink, by writing some assembly code.
+</li>
 
-<p>
-It was made clear that each of us should watch ourselves not to break
-these rules, and being called on breaking these rules is totally cool,
-and we should stop about it and think for a moment and move-on.
-Breaking the rules doesn't make us bad hacker schoolers.  We are all
-here to learn!
-</p>
+<li>I goofed off post-lunch, and cleaned up the code for the Google Translate
+based TTS client.
+</li>
 
-<p>
-I liked the idea of all of us being asked to list out the things that
-we are nervous about, and excited about.  I was happy to find that a
-lot of the people were nervous about the similar kinds of things I was
-nervous about.  I'm not alone!
-</p>
+<li>I tried to continue working on the bencode parser, to add support for
+dictionaries, but I couldn't get much work done before it was time for the
+Monday talk.
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-08-03.html" class="u-url">Hacker School, 2014-08-03</a></h1>
+        <span class="post-date">04 Aug 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Friday</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>On Friday, I didn't do the exercises that everyone else doing job prep were
+doing.  I wanted to continue writing C code, and continued to work on the
+<code>bencode</code> parser in C.  I barely was able to finish adding support for lists.
+</li>
+<li>I got comfortable using Valgrind, in the process of debugging a stupidity of
+not using <code>realloc</code> correctly.
+</li>
+<li>What I was able to write with Python in an hour or so, I have been writing
+for about a day, in C, and haven't yet finished it!  It definitely doesn't
+help that my C is very rusty…
+</li>
+</ul>
+</div>
+</div>
 
-<p>
-After the check-ins, I started off with the Introduction to <a href="http://www.seas.upenn.edu/~cis194/">Haskell course</a> by
-<a href="http://www.cis.upenn.edu/~byorgey/">Brent Yorgey</a>.  What I did was mostly a recap of what I learned from the first
-few chapters of <a href="http://learnyouahaskell.com">Learn you a Haskell</a>.  I learnt about how credit card numbers
-are validated, apart from learning a little bit about lazy evaluation and
-thunks.
-</p>
-
-<p>
-The day ended with burritos and game night Mafia!
-</p>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Saturday &amp; Sunday</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>I didn't work much, and went around New York with Madhu.  We went to quite
+a few places around here, the highlight being, the view of Manhattan's
+skyline from the Staten Island Ferry.
+</li>
+<li>NYC's library also had an interesting exhibhition on the history of
+America, just before and during WW-I.
+</li>
+<li>On Sunday, I tried out Mary TTS on the raspberry pi, and it is simply
+unusable.
+</li>
+<li>I then, started writing a simple wrapper around Google's tts that is used
+by Google translate.
+</li>
+<li>The TTS part is more or less working right now, the next step would be to
+deploy it on the RaspberryPi and start using it as a radio, to see what my
+needs are like. Hooking it up to <a href="https://github.com/jasperproject/jasper-client">Jasper client</a> seems like a good idea,
+right now… though I'm not sure if it would work very well, with the pi's
+audio output drowning out the voice commands.
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-07-31.html" class="u-url">Hacker School, 2014-07-31</a></h1>
+        <span class="post-date">01 Aug 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>I continued with doing the initial parts of the book, and didn't pair with
+Stephanie today.
+</li>
+<li>I gave a super-short presentation, introducing people to <code>pdb</code>, IPython's
+<code>tracer</code>.
+</li>
+<li>I just started writing a Bencoding parser in C, but I'm having trouble
+thinking about all the memory allocations and stuff.  It feels so
+nostalgic! :P
+</li>
+</ul>
     </div>
     </article>
 </div>
         <div class="pagination">
+            <span class="pagination-item newer">
+                <a href="/tags/cat_hackerschool-checkins-2.html" rel="next">Older posts</a>
+            </span>
             <span class="pagination-item older">
-                <a href="/tags/cat_hackerschool-checkins-2.html" rel="prev">Newer posts</a>
+                <a href="/tags/cat_hackerschool-checkins.html" rel="prev">Newer posts</a>
             </span>
         </div>
 
