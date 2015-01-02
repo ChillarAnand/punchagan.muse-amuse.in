@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" vocab="http://ogp.me/ns" lang="en">
+
+
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="punchagan">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+            <link href="/assets/css/all.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+
+
+  
+
+  <title>
+      How I learnt to use Emacs' profiler · Noetic Nought
+  </title>
+
+</head>
+  <body class="sidebar-overlay layout-reverse">
+
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Noetic Nought — For an idle mind is the devil's workshop. </p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <!-- The code below dynamically generates a sidebar nav of pages with -->
+    <!-- `layout: page` in the front-matter. See readme for usage. -->
+
+      <a class="sidebar-nav-item" href="/index.html">Home</a>
+      <a class="sidebar-nav-item" href="/posts/index.html">Blog</a>
+      <a class="sidebar-nav-item" href="/archive.html">Archives</a>
+      <a class="sidebar-nav-item" href="/tags/index.html">Tags</a>
+      <a class="sidebar-nav-item" href="/tags/cat_hackerschool-checkins.html">HackerSchool</a>
+      <a class="sidebar-nav-item" href="/tags/cat_bookmarks.html">Bookmarks</a>
+      <a class="sidebar-nav-item" href="/tags/cat_quotes.html">Quotes</a>
+      <a class="sidebar-nav-item" href="/rss.xml">RSS</a>
+      <a class="sidebar-nav-item" href="https://github.com/punchagan"><i class="fa fa-github fa-lg"></i></a>
+      <a class="sidebar-nav-item" href="https://twitter.com/punchagan"><i class="fa fa-twitter on fa-lg"></i></a>
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      
+<span class="navbar-form pull-left">
+<input type="text" id="tipue_search_input" placeholder="Search this site">
+</span>
+</p>
+<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+
+    
+    <p>
+      © 2015
+<a href="mailto:punchagan%5B@T%5Dmuse-amuse.in">punchagan</a> -
+<a href="http://getnikola.com">Nikola</a> powered -
+
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+Creative Commons Attribution 3.0 Unported License</a>
+ -
+<a href="http://themes.getnikola.com/#lanyon">lanyon</a> theme
+    </p>
+  </div>
+</div>
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Noetic Nought</a>
+            <small>For an idle mind is the devil's workshop.</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+<article class="post post-text h-entry hentry postpage" itemscope="itemscope">
+            <header>
+                <h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/how-i-learnt-to-use-emacs-profiler.html" class="u-url">How I learnt to use Emacs' profiler</a></h1>
+
+            <span class="post-date">03 Jan 2015</span>
+        </header>
+
+    <div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+I learnt to use Emacs' profiler yesterday, after many hours of yak-shaving,
+trying to get <a href="https://github.com/novoid/Memacs">Memacs</a> working.  Memacs is a <a href="http://en.wikipedia.org/wiki/Memex">memory extension</a> system for Emacs
+written by Karl Voit, that I have been meaning to try out for a long time now.
+Seeing lots of review posts at the turn of the year and watching Karl's recent
+<a href="http://emacslife.com/emacs-chats/chat-karl-voit.html">Emacs Chat with Sacha Chua</a> pushed me to try and finally set it up.
+</p>
+
+<p>
+I started writing a <a href="https://github.com/punchagan/Memacs/blob/chrome/memacs/chromium.py">module</a> to create a Memacs file – an org archive file –
+from my browser history.  It was pretty easy to write, and I had it spitting
+out a huge file with 22k entries after about a couple of hours of work.  Then I
+excitedly pulled up my agenda, and turned on the option to view archived
+entries, only to be super-disappointed.  It turned out to be extremely slow!
+Actually, the agenda never came up with the 22k entries file that I had. At
+least not in 5 or so minutes, before I got impatient.  The performance was
+unacceptable even when I reduced it to 5k entries.
+</p>
+
+<p>
+I was pretty sure it wasn't that slow for Karl in his <a href="https://www.youtube.com/watch?v=SaKPr4J0K2I#t=999">demo</a> and <a href="https://twitter.com/punchagan/status/550723377871065088">tweeted</a> to him,
+asking for a workaround. Meanwhile, I looked at his dot-emacs, but wasn't able
+to dig out what was needed to speed up things. He confirmed that his
+performance was way better than what I was getting.
+</p>
+
+<p>
+First, I ruled out the possibility of it being because of the SSD, since
+clearly my CPU usage was peaking, and the task was CPU bound and not I/O.
+Next, I tried using the same file on a different machine (with a different
+version of Emacs and org-mode), and it worked blazingly fast.  So, it was
+either the version of Emacs or org-mode that I was using.
+</p>
+
+<p>
+I should have stopped, thought clearly, and started experimenting with org
+version, but hindsight is 20-20.  I tried Ubuntu's pre-built Emacs and agendas
+were fast!  I suspected my Emacs build, since I recently started building Emacs
+from git.  I built two or three other versions of Emacs, and wasted a lot of
+time, before realizing that I wasn't using the org-mode source bundled inside
+Emacs for the tests, and there were two "independent" variables.
+</p>
+
+<p>
+Finally, I began bisecting org-mode's source and found that all hell broke
+loose with an <a href="http://orgmode.org/w/?p=org-mode.git;a=commitdiff;h=b88c5464db2cb0d90d4f30e43b5e08d2b1c1fcea;hp=8cc4e09950594b2abec2502e9218318570595ac5">inconspicuous change</a> around release 8.2.6.  It turns out that
+org-overview was broken before this, and collapsing all the trees in a newly
+opened org-buffer (default option) wasn't working. Once this bug was fixed,
+opening huge org files would slow down by a great deal, in turn causing agenda
+generation to be unbearably slow.
+</p>
+
+<p>
+All I had to do was add a <code>#+STARTUP: showeverything</code> to the top of the file.
+This speeded up things by about 50 times!  It turns out, I later found out,
+that all of this is documented on <a href="http://orgmode.org/worg/agenda-optimization.html">Worg</a>. I did try a few search engine queries,
+but sadly none of them brought this up.  Adding the following to my config,
+speeded up agenda generation by about 150-200 times!
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="k">setq</span> <span class="nv">org-agenda-inhibit-startup</span> <span class="no">t</span><span class="p">)</span> <span class="c1">;; ~50x speedup</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">org-agenda-use-tag-inheritance</span> <span class="no">nil</span><span class="p">)</span> <span class="c1">;; 3-4x speedup</span>
+</pre></div>
+
+<p>
+In the course of all this debugging, I learnt how to use Emacs' profiler.  The
+profile reports along with git bisect, eventually helped me figure out what the
+problem was.
+</p>
+
+<p>
+To profile the CPU usage, all you have to do is add a call like
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nv">profiler-start</span> <span class="ss">'cpu</span><span class="p">)</span>  <span class="c1">;; or M-x profiler-start</span>
+</pre></div>
+
+<p>
+at the place where you wish to start it.  Emacs will then start collecting
+information about where time is being spent, by sampling every
+<code>sampling-interval</code> seconds (default 10<sup>6</sup> nanoseconds = 1 milli second).
+</p>
+
+<p>
+You can view the information being collected, at any point of time using
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nv">profiler-report</span><span class="p">)</span> <span class="c1">;; or M-x profiler-report</span>
+</pre></div>
+
+<p>
+The report is a nice, interactive tree with the percentage of time spent in
+each call. You can stop profiling by calling <code>(profiler-stop)</code>.  If you have
+more than one report, you can compare them by hitting <code>=</code> in one of the report
+buffers.  I'm definitely going to use this for other things! (like speeding up
+my startup?)
+</p>
+
+<p>
+Now that I have Memacs working with reasonably fast agenda views, I'm looking
+forward to collecting as much personal information as I can!  Thanks Karl for
+writing Memacs.  I am going to be a pretty heavy user, I think!  There seem to
+be a few rough edges, though, and I hope to help smoothen them out a little
+bit, over the next few weeks.
+</p>
+    </div>
+    <aside class="postpromonav">
+    <nav>
+            <div class="pagination">
+            <span class="pagination-item older">
+                <a href="/posts/jabber-message-queue.html" rel="prev" title="Jabber message queue">Previous post</a>
+            </span>
+        </div>
+
+    </nav>
+    </aside>
+        <section class="comments">
+        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="rusticreverie",
+            disqus_url="http://punchagan.muse-amuse.in/posts/how-i-learnt-to-use-emacs-profiler.html",
+        disqus_title="How I learnt to use Emacs' profiler",
+        disqus_identifier="cache/posts/how-i-learnt-to-use-emacs-profiler.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+    
+</article>
+               <script>var disqus_shortname="rusticreverie";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21111013-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fuse.js/1.0.0/fuse.min.js"></script>
+<script type="text/javascript" src="/assets/js/tipuesearch_set.js"></script>
+<script type="text/javascript" src="/assets/js/tipuesearch.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        'mode': 'json',
+        'contentLocation': '/assets/js/tipuesearch_content.json',
+        'showUrl': false
+    });
+});
+</script>
+
+    
+  </body>
+</html>

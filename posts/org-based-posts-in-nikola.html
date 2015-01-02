@@ -71,7 +71,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
     
     <p>
-      © 2014
+      © 2015
 <a href="mailto:punchagan%5B@T%5Dmuse-amuse.in">punchagan</a> -
 <a href="http://getnikola.com">Nikola</a> powered -
 
@@ -156,13 +156,13 @@ deploy</code>.
 <span class="c"># And then do a backup, or ping pingomatic.</span>
 <span class="c"># To do manual deployment, set it to []</span>
 <span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
-
     <span class="s">'default'</span><span class="p">:</span> <span class="p">[</span>
-	<span class="s">'nikola deploy assert-fork'</span><span class="p">,</span>
 	<span class="s">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
 	<span class="s">'git checkout master'</span><span class="p">,</span>
 	<span class="s">'nikola build'</span><span class="p">,</span>
 	<span class="s">'./commit-changes || true'</span><span class="p">,</span>
+	<span class="s">'nikola github_deploy'</span><span class="p">,</span>
+	<span class="s">'git push origin master'</span><span class="p">,</span>
 </pre></div>
 
 <p>

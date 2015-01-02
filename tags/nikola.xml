@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (nikola)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/nikola.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 01 Jan 2015 02:54:14 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-05</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-05.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (nikola)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/nikola.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 01 Jan 2015 04:32:40 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-08-05</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-05.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;Spent a couple of hours in the morning, trying to revive a html template for
 blaggregator, that I missed out on committing previously, and wiped out due
 to negligence in using `git clean`.
@@ -68,13 +68,13 @@ deploy&lt;/code&gt;.
 &lt;span class="c"&gt;# And then do a backup, or ping pingomatic.&lt;/span&gt;
 &lt;span class="c"&gt;# To do manual deployment, set it to []&lt;/span&gt;
 &lt;span class="n"&gt;DEPLOY_COMMANDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-
     &lt;span class="s"&gt;'default'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
-	&lt;span class="s"&gt;'nikola deploy assert-fork'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'nikola orphans|xargs rm || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'git checkout master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'nikola build'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'./commit-changes || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="s"&gt;'nikola github_deploy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="s"&gt;'git push origin master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;

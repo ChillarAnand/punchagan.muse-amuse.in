@@ -1,5 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (orgmode)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/orgmode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 01 Jan 2015 02:54:14 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>More input sources for org-drill</title><link>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (orgmode)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/orgmode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 03 Jan 2015 03:49:41 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How I learnt to use Emacs' profiler</title><link>http://punchagan.muse-amuse.in/posts/how-i-learnt-to-use-emacs-profiler.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I learnt to use Emacs' profiler yesterday, after many hours of yak-shaving,
+trying to get &lt;a href="https://github.com/novoid/Memacs"&gt;Memacs&lt;/a&gt; working.  Memacs is a &lt;a href="http://en.wikipedia.org/wiki/Memex"&gt;memory extension&lt;/a&gt; system for Emacs
+written by Karl Voit, that I have been meaning to try out for a long time now.
+Seeing lots of review posts at the turn of the year and watching Karl's recent
+&lt;a href="http://emacslife.com/emacs-chats/chat-karl-voit.html"&gt;Emacs Chat with Sacha Chua&lt;/a&gt; pushed me to try and finally set it up.
+&lt;/p&gt;
+
+&lt;p&gt;
+I started writing a &lt;a href="https://github.com/punchagan/Memacs/blob/chrome/memacs/chromium.py"&gt;module&lt;/a&gt; to create a Memacs file – an org archive file –
+from my browser history.  It was pretty easy to write, and I had it spitting
+out a huge file with 22k entries after about a couple of hours of work.  Then I
+excitedly pulled up my agenda, and turned on the option to view archived
+entries, only to be super-disappointed.  It turned out to be extremely slow!
+Actually, the agenda never came up with the 22k entries file that I had. At
+least not in 5 or so minutes, before I got impatient.  The performance was
+unacceptable even when I reduced it to 5k entries.
+&lt;/p&gt;
+
+&lt;p&gt;
+I was pretty sure it wasn't that slow for Karl in his &lt;a href="https://www.youtube.com/watch?v=SaKPr4J0K2I#t=999"&gt;demo&lt;/a&gt; and &lt;a href="https://twitter.com/punchagan/status/550723377871065088"&gt;tweeted&lt;/a&gt; to him,
+asking for a workaround. Meanwhile, I looked at his dot-emacs, but wasn't able
+to dig out what was needed to speed up things. He confirmed that his
+performance was way better than what I was getting.
+&lt;/p&gt;
+
+&lt;p&gt;
+First, I ruled out the possibility of it being because of the SSD, since
+clearly my CPU usage was peaking, and the task was CPU bound and not I/O.
+Next, I tried using the same file on a different machine (with a different
+version of Emacs and org-mode), and it worked blazingly fast.  So, it was
+either the version of Emacs or org-mode that I was using.
+&lt;/p&gt;
+
+&lt;p&gt;
+I should have stopped, thought clearly, and started experimenting with org
+version, but hindsight is 20-20.  I tried Ubuntu's pre-built Emacs and agendas
+were fast!  I suspected my Emacs build, since I recently started building Emacs
+from git.  I built two or three other versions of Emacs, and wasted a lot of
+time, before realizing that I wasn't using the org-mode source bundled inside
+Emacs for the tests, and there were two "independent" variables.
+&lt;/p&gt;
+
+&lt;p&gt;
+Finally, I began bisecting org-mode's source and found that all hell broke
+loose with an &lt;a href="http://orgmode.org/w/?p=org-mode.git;a=commitdiff;h=b88c5464db2cb0d90d4f30e43b5e08d2b1c1fcea;hp=8cc4e09950594b2abec2502e9218318570595ac5"&gt;inconspicuous change&lt;/a&gt; around release 8.2.6.  It turns out that
+org-overview was broken before this, and collapsing all the trees in a newly
+opened org-buffer (default option) wasn't working. Once this bug was fixed,
+opening huge org files would slow down by a great deal, in turn causing agenda
+generation to be unbearably slow.
+&lt;/p&gt;
+
+&lt;p&gt;
+All I had to do was add a &lt;code&gt;#+STARTUP: showeverything&lt;/code&gt; to the top of the file.
+This speeded up things by about 50 times!  It turns out, I later found out,
+that all of this is documented on &lt;a href="http://orgmode.org/worg/agenda-optimization.html"&gt;Worg&lt;/a&gt;. I did try a few search engine queries,
+but sadly none of them brought this up.  Adding the following to my config,
+speeded up agenda generation by about 150-200 times!
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;org-agenda-inhibit-startup&lt;/span&gt; &lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;; ~50x speedup&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;org-agenda-use-tag-inheritance&lt;/span&gt; &lt;span class="no"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;; 3-4x speedup&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+In the course of all this debugging, I learnt how to use Emacs' profiler.  The
+profile reports along with git bisect, eventually helped me figure out what the
+problem was.
+&lt;/p&gt;
+
+&lt;p&gt;
+To profile the CPU usage, all you have to do is add a call like
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;profiler-start&lt;/span&gt; &lt;span class="ss"&gt;'cpu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;;; or M-x profiler-start&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+at the place where you wish to start it.  Emacs will then start collecting
+information about where time is being spent, by sampling every
+&lt;code&gt;sampling-interval&lt;/code&gt; seconds (default 10&lt;sup&gt;6&lt;/sup&gt; nanoseconds = 1 milli second).
+&lt;/p&gt;
+
+&lt;p&gt;
+You can view the information being collected, at any point of time using
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;profiler-report&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;; or M-x profiler-report&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The report is a nice, interactive tree with the percentage of time spent in
+each call. You can stop profiling by calling &lt;code&gt;(profiler-stop)&lt;/code&gt;.  If you have
+more than one report, you can compare them by hitting &lt;code&gt;=&lt;/code&gt; in one of the report
+buffers.  I'm definitely going to use this for other things! (like speeding up
+my startup?)
+&lt;/p&gt;
+
+&lt;p&gt;
+Now that I have Memacs working with reasonably fast agenda views, I'm looking
+forward to collecting as much personal information as I can!  Thanks Karl for
+writing Memacs.  I am going to be a pretty heavy user, I think!  There seem to
+be a few rough edges, though, and I hope to help smoothen them out a little
+bit, over the next few weeks.
+&lt;/p&gt;</description><category>emacs</category><category>orgmode</category><category>programming</category><guid>http://punchagan.muse-amuse.in/posts/how-i-learnt-to-use-emacs-profiler.html</guid><pubDate>Fri, 02 Jan 2015 20:31:17 GMT</pubDate></item><item><title>More input sources for org-drill</title><link>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I've been trying to use &lt;code&gt;org-drill&lt;/code&gt; regularly for the last few weeks.  I don't
 know how well it's been going but I have been sticking to the routine
 religiously.  I haven't yet really tried out incremental reading, but in an
@@ -258,13 +362,13 @@ deploy&lt;/code&gt;.
 &lt;span class="c"&gt;# And then do a backup, or ping pingomatic.&lt;/span&gt;
 &lt;span class="c"&gt;# To do manual deployment, set it to []&lt;/span&gt;
 &lt;span class="n"&gt;DEPLOY_COMMANDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-
     &lt;span class="s"&gt;'default'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
-	&lt;span class="s"&gt;'nikola deploy assert-fork'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'nikola orphans|xargs rm || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'git checkout master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'nikola build'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'./commit-changes || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="s"&gt;'nikola github_deploy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="s"&gt;'git push origin master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -375,21 +479,4 @@ been accepted.  :)
 &lt;p&gt;
 If not anything more, I hope, at least a couple of curious people
 will explore org-mode and find it useful.
-&lt;/p&gt;</description><category>code</category><category>contribute</category><category>emacs</category><category>foss</category><category>git</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/git-powered-wikis-improved-my-bit.html</guid><pubDate>Fri, 04 Feb 2011 12:25:00 GMT</pubDate></item><item><title>CHAGANTI 635888 Emacs</title><link>http://punchagan.muse-amuse.in/posts/chaganti-635888-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;blockquote&gt;
-&lt;p&gt;
-Puneeth Chaganti, hereby agrees as follows:
-&lt;/p&gt;
-
-&lt;p&gt;
-Developer hereby agrees to assign and does hereby assign to FSF
-Developer's copyright in changes and/or enhancements to the suite
-of programs known as GNU EMACS, including any accompanying
-documentation files and supporting files as well as the actual
-program code.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-Yay! I can now write code, that can go into Org-mode and Emacs!
-I'm looking forward to this!
-&lt;/p&gt;</description><category>contribute</category><category>emacs</category><category>fsf</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/chaganti-635888-emacs.html</guid><pubDate>Wed, 02 Feb 2011 22:16:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>code</category><category>contribute</category><category>emacs</category><category>foss</category><category>git</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/git-powered-wikis-improved-my-bit.html</guid><pubDate>Fri, 04 Feb 2011 12:25:00 GMT</pubDate></item></channel></rss>
