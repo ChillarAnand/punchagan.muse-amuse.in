@@ -98,6 +98,48 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/unread-8762.html" class="u-url">Unread (8,762)</a></h1>
+        <span class="post-date">03 Jun 2013</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I am unread.  Unlike you, who classify yourselves as well-read or
+not, I am classified as unread or not.  Well, you could call me
+not well-read too, I guess.  I was looked at once, my innards
+glanced through, and was hurriedly marked as unread, starred and
+tagged.  Given my length, the care with which I was composed, and
+the flurry with which I was stowed away, I probably contain
+something important, to be read at the opportune moment, something
+to be cherished and to be replied to with diligence and care.  I
+felt a sense of pride.
+</p>
+
+<p>
+I got composed and sent weeks ago, and have been lying here
+untouched, since.  I get buried deeper and deeper every day, with
+a daily flood of newer stuff piling up onto me.  While my
+composer, eagerly awaits a reply, (less and less eagerly each day,
+though) I have lost all hope of being read and replied to.  I
+curse myself for carrying something so important.  A thousand
+other replies have been sent, and a few thousand others composed
+here, but my turn hasn't come, yet.
+</p>
+
+<p>
+How I wish, it'd be my turn today.  How I wish, I could push my
+way up through to the top of the stack.  How I wish, I could see
+the eager wait come to an end!  How I wish, I'm given the
+attention I deserved, today!  Reply, ASAP!
+</p>
+
+<p>
+PS: Apologies for all those emails that are still starred and
+unread, in my Inbox…
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/surat-ultimate-open.html" class="u-url">Surat Ultimate Open</a></h1>
         <span class="post-date">26 Mar 2013</span>
     </header>
@@ -797,80 +839,6 @@ I didn't time myself, but I roughly covered about 25 kms in say
 about ~2 hours.  Hoping to start riding more frequently and going
 on longer rides.
 </p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/a-git-diff-tip.html" class="u-url">A git-diff tip</a></h1>
-        <span class="post-date">22 Aug 2012</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-One of the things with git that you can mess-up, if you are not
-used to, is git diff.  A friend of mine was trying to add a couple
-of new files, and changes to existing files.  But, he was on the
-wrong branch, and wanted to change to a different branch, before
-committing.  Being new to git, he wanted to take a patch.  Reset
-the changes, apply the patch back.
-</p>
-
-<p>
-This is what he did
-</p>
-
-<div class="highlight"><pre>git add new_file.txt
-git add old_file1.txt old_file2.txt <span class="c"># don't add old_file3.txt</span>
-</pre></div>
-
-<p>
-Oh, damn, I want to change the branch.
-</p>
-
-<div class="highlight"><pre>git diff &gt; a.patch
-git reset --hard
-git checkout other-branch
-</pre></div>
-
-<p>
-Let me commit my changes…
-</p>
-
-<div class="highlight"><pre>git apply a.patch
-git commit -m
-git show
-</pre></div>
-
-<p>
-Oh crap!  Where are my new files?  They aren't commited!  Lemme
-add them.
-</p>
-
-<div class="highlight"><pre>ls new_file.txt
-ls: cannot access new_file.txt: No such file or directory
-</pre></div>
-
-<p>
-Dammit!  Where are my changes gone?
-</p>
-
-<p>
-The problem was with <code>git diff</code>.  It gives only the only the
-un-staged changes.  <code>--cached</code> option has to specified, to get the
-staged changes in the diff output.  <code>git diff HEAD</code> shows diff
-output with both staged and un-staged changes.
-</p>
-
-<p>
-But the whole workflow above is a beginners workflow.  A user
-comfortable with git would've committed and then moved the commit
-around using cherry-pick or the like.
-</p>
-
-<div class="highlight"><pre>git add &lt;all-files&gt;
-git commit -m <span class="s2">"My awesome changes."</span>  <span class="c">#committed on branch1</span>
-git checkout other-branch
-git cherry-pick branch1
-</pre></div>
     </div>
     </article>
 </div>

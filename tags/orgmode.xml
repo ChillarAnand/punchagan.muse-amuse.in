@@ -1,5 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (orgmode)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/orgmode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 17 Jan 2015 03:32:40 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How I learnt to use Emacs' profiler</title><link>http://punchagan.muse-amuse.in/posts/how-i-learnt-to-use-emacs-profiler.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (orgmode)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/orgmode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 17 Jan 2015 03:53:58 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>org-drill for making it stick!</title><link>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Those who read the &lt;a href="file:///posts/learning-to-use-org-drill.html"&gt;last&lt;/a&gt; &lt;a href="file:///posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html"&gt;few&lt;/a&gt; &lt;a href="file:///posts/more-input-sources-for-org-drill.html"&gt;posts&lt;/a&gt; here, would know that I have been
+experimenting with &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;org-drill&lt;/a&gt; (a spaced repetition extension to &lt;a href="http://orgmode.org/"&gt;Org mode&lt;/a&gt;).  I
+have been using the system (almost) religiously for the past 2 months, and I do
+find that it has helped a great deal! (in some respects).  I have also spent a
+considerable amount of time trying to reduce the friction to put new stuff into
+the system, and am constantly on the look out for further improvements.
+&lt;/p&gt;
+
+&lt;p&gt;
+Using this system has definitely helped with retention, and I find that I can
+recall quite a few things I have read a few weeks ago, that I would normally
+have been unable to. Though, I can recall a lot of information, I have been
+having a feeling of "fragmentation": the feeling of just retaining individual
+bits/fragments of information, while losing out on actually internalizing the
+knowledge; not seeing the big picture, etc.
+&lt;/p&gt;
+
+&lt;p&gt;
+Wozniak (the author of super-memo) &lt;a href="http://www.supermemo.com/articles/20rules.htm"&gt;warns against&lt;/a&gt; learning without
+understanding, and memorizing before actually learning stuff.  I haven't
+consciously added stuff into the system that I didn't understand (when I added
+it), but, later it does feel like I have lost some connections or the
+understanding, and am only holding onto the fragments of information.
+&lt;/p&gt;
+
+&lt;p&gt;
+The problems as explained in (read: as interpreted by me from) &lt;a href="http://www.amazon.com/Make-Stick-Science-Successful-Learning/dp/0674729013/ref=sr_1_1/188-6768042-2821103?ie=UTF8&amp;amp;qid=1421439099&amp;amp;sr=8-1&amp;amp;keywords=make+it+stick&amp;amp;pebp=1421439103302&amp;amp;peasin=674729013"&gt;Make it Stick&lt;/a&gt;
+appear to be:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;The understanding (if any) at the time of adding stuff into the
+spaced-repetition system is untested.  It may just be familiarity
+masquerading as understanding.
+&lt;/li&gt;
+
+&lt;li&gt;The lack of any spaced repetitions for the overall concept/understanding and
+actual repetitions only for individual bits doesn't help retention of the
+understanding (even if there was any, in the first place).
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+To work around this, I'm going to try adding questions that test understanding,
+to the system.  The Super-memo team strongly recommends keeping the drill items
+small and easy to answer.  This may be helpful in keeping each drill session
+short, but I would really like to add conceptual questions to the system, and
+see how it goes. I hacked &lt;code&gt;org-drill&lt;/code&gt; to allow me to type out answers, before
+looking at the "correct" ones.  This is an adaptation of a system that a fellow
+Hacker Schooler uses, and shared.  Also, hopefully forcing myself to type out
+the answer will help me get around the problem of sometimes saying "yeah I know
+that", then looking at the answer only to reaffirm the feeling of familiarity,
+rather than actually testing myself.  I'm still going to continue adding quick
+and short questions that test "bits of information", though. But, hopefully the
+additional conceptual questions are going to tie things together and help fill
+in the gaps.  Lets see how this goes!
+&lt;/p&gt;
+
+&lt;p&gt;
+For those interested, my hacks to &lt;code&gt;org-drill&lt;/code&gt; below.  The code is really a
+hack, and welcome any suggestions on cleaning up the code.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;advice-add&lt;/span&gt; &lt;span class="ss"&gt;'org-drill-presentation-prompt&lt;/span&gt; &lt;span class="ss"&gt;:around&lt;/span&gt; &lt;span class="ss"&gt;'pc/org-drill-presentation-prompt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/org-drill-presentation-prompt&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;old-fun&lt;/span&gt; &lt;span class="k"&gt;&amp;amp;rest&lt;/span&gt; &lt;span class="nv"&gt;fmt-and-args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="s"&gt;"A presentation prompt that allows capturing answers."&lt;/span&gt;
+
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;cb&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;current-buffer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;heading&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;nth&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-heading-components&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;entry-id&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-entry-get&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"ID"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;input&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class="s"&gt;"*org-capture-drill-answer*"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;insert&lt;/span&gt; &lt;span class="s"&gt;"# Hit C-c C-c once you are done answering!\n"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-insert-heading-respect-content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;insert&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"Answer: %s"&lt;/span&gt; &lt;span class="nv"&gt;heading&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-entry-put&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"QUESTION_ID"&lt;/span&gt; &lt;span class="nv"&gt;entry-id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;goto-char&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;point-max&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;insert&lt;/span&gt; &lt;span class="s"&gt;"  "&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-time-stamp-inactive&lt;/span&gt; &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;insert&lt;/span&gt; &lt;span class="s"&gt;"\n\n  "&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;not&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;input&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;equal&lt;/span&gt; &lt;span class="nv"&gt;input&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;ignore-errors&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;execute-kbd-macro&lt;/span&gt; &lt;span class="nv"&gt;input&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;input&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;read-key-sequence&lt;/span&gt; &lt;span class="no"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class="nv"&gt;cb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;apply&lt;/span&gt; &lt;span class="nv"&gt;old-fun&lt;/span&gt; &lt;span class="nv"&gt;fmt-and-args&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;advice-add&lt;/span&gt; &lt;span class="ss"&gt;'org-drill-reschedule&lt;/span&gt; &lt;span class="ss"&gt;:around&lt;/span&gt; &lt;span class="ss"&gt;'pc/org-drill-reschedule&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/org-drill-reschedule&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;old-fun&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="s"&gt;"Calls the original reschedule, but also archives the answer"&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;prog1&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;funcall&lt;/span&gt; &lt;span class="nv"&gt;old-fun&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;cb&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;current-buffer&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class="s"&gt;"*org-capture-drill-answer*"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;pc/org-refile-to-datetree&lt;/span&gt; &lt;span class="s"&gt;"drill.org_archive"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;message&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;buffer-name&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class="nv"&gt;cb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;kill-buffer&lt;/span&gt; &lt;span class="s"&gt;"*org-capture-drill-answer*"&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="ss"&gt;'org-datetree&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/org-refile-to-datetree&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;journal&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="s"&gt;"Refile an entry to journal file's date-tree"&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;interactive&lt;/span&gt; &lt;span class="s"&gt;"fRefile to: "&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let*&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;journal&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;expand-file-name&lt;/span&gt; &lt;span class="nv"&gt;journal&lt;/span&gt; &lt;span class="nv"&gt;org-directory&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+	 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;date-string&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;or&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-entry-get&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"TIMESTAMP_IA"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+			  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-entry-get&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"TIMESTAMP"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+	 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dct&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;decode-time&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;or&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;date-string&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-time-string-to-time&lt;/span&gt; &lt;span class="nv"&gt;date-string&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+			       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;current-time&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+	 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;date&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;nth&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="nv"&gt;dct&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;nth&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="nv"&gt;dct&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;nth&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="nv"&gt;dct&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-cut-subtree&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;with-current-buffer&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;or&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;find-buffer-visiting&lt;/span&gt; &lt;span class="nv"&gt;journal&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+			     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;find-file-noselect&lt;/span&gt; &lt;span class="nv"&gt;journal&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;save-excursion&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-datetree-file-entry-under&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;current-kill&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;date&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;bookmark-set&lt;/span&gt; &lt;span class="s"&gt;"org-refile-last-stored"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;message&lt;/span&gt; &lt;span class="s"&gt;"Refiled to %s"&lt;/span&gt; &lt;span class="nv"&gt;journal&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>emacs</category><category>hack</category><category>hackerschool</category><category>learning</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</guid><pubDate>Fri, 16 Jan 2015 19:36:54 GMT</pubDate></item><item><title>How I learnt to use Emacs' profiler</title><link>http://punchagan.muse-amuse.in/posts/how-i-learnt-to-use-emacs-profiler.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I learnt to use Emacs' profiler yesterday, after many hours of yak-shaving,
 trying to get &lt;a href="https://github.com/novoid/Memacs"&gt;Memacs&lt;/a&gt; working.  Memacs is a &lt;a href="http://en.wikipedia.org/wiki/Memex"&gt;memory extension&lt;/a&gt; system for Emacs
 written by Karl Voit, that I have been meaning to try out for a long time now.
@@ -446,37 +566,4 @@ one of the participants, gets hooked to Org-mode.
 
 &lt;p&gt;
 The talk outline is here.
-&lt;/p&gt;</description><category>emacs</category><category>hyderabad</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-mode-workshop.html</guid><pubDate>Wed, 22 Jun 2011 15:34:00 GMT</pubDate></item><item><title>Git powered wikis improved: My bit</title><link>http://punchagan.muse-amuse.in/posts/git-powered-wikis-improved-my-bit.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I accidentally came across the blog-post Git-powered wikis
-improved - GitHub. And this particular paragraph caught my
-eye:
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-The new editor has the capability to support every markup
-language that GitHub Wikis support. If you're a fan of Markdown,
-Textile, pod or RDoc, the function bar buttons (e.g. bold,
-italic, underline, etc.) will now work. We've even written brand
-new inline help for many of GitHub Wiki's supported markup
-languages.
-&lt;/p&gt;
-
-&lt;p&gt;
-The language definitions the editor uses are JSON-based and easy
-to edit. If you'd like us to support a markup language that we
-don't currently support, Gollum, GitHub's wiki software, is
-entirely open source – fork our code and send us a pull request
-with changes that support your choice language.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-I sent a quick patch for org-mode in the function bar, and it has
-been accepted.  :)
-&lt;/p&gt;
-
-&lt;p&gt;
-If not anything more, I hope, at least a couple of curious people
-will explore org-mode and find it useful.
-&lt;/p&gt;</description><category>code</category><category>contribute</category><category>emacs</category><category>foss</category><category>git</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/git-powered-wikis-improved-my-bit.html</guid><pubDate>Fri, 04 Feb 2011 12:25:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>emacs</category><category>hyderabad</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-mode-workshop.html</guid><pubDate>Wed, 22 Jun 2011 15:34:00 GMT</pubDate></item></channel></rss>

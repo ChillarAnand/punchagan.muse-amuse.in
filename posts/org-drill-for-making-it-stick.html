@@ -104,7 +104,7 @@ Creative Commons Attribution 3.0 Unported License</a>
 
     <div class="e-content entry-content" itemprop="articleBody text">
     <p>
-Those who read the last few posts here, would know that I have been
+Those who read the <a href="file:///posts/learning-to-use-org-drill.html">last</a> <a href="file:///posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html">few</a> <a href="file:///posts/more-input-sources-for-org-drill.html">posts</a> here, would know that I have been
 experimenting with <a href="http://orgmode.org/worg/org-contrib/org-drill.html">org-drill</a> (a spaced repetition extension to <a href="http://orgmode.org/">Org mode</a>).  I
 have been using the system (almost) religiously for the past 2 months, and I do
 find that it has helped a great deal! (in some respects).  I have also spent a
@@ -113,7 +113,7 @@ the system, and am constantly on the look out for further improvements.
 </p>
 
 <p>
-Using this system, has definitely helped with retention, and I find that I can
+Using this system has definitely helped with retention, and I find that I can
 recall quite a few things I have read a few weeks ago, that I would normally
 have been unable to. Though, I can recall a lot of information, I have been
 having a feeling of "fragmentation": the feeling of just retaining individual
@@ -164,8 +164,7 @@ in the gaps.  Lets see how this goes!
 
 <p>
 For those interested, my hacks to <code>org-drill</code> below.  The code is really a
-hack, and welcome any suggestions on cleaning up the code.  <code>org-drill</code> doesn't
-really have any hooks that I could hook into.
+hack, and welcome any suggestions on cleaning up the code.
 </p>
 
 <div class="highlight"><pre><span class="p">(</span><span class="nv">advice-add</span> <span class="ss">'org-drill-presentation-prompt</span> <span class="ss">:around</span> <span class="ss">'pc/org-drill-presentation-prompt</span><span class="p">)</span>
@@ -228,7 +227,12 @@ really have any hooks that I could hook into.
     </div>
     <aside class="postpromonav">
     <nav>
-    
+            <div class="pagination">
+            <span class="pagination-item older">
+                <a href="/posts/how-i-learnt-to-use-emacs-profiler.html" rel="prev" title="How I learnt to use Emacs' profiler">Previous post</a>
+            </span>
+        </div>
+
     </nav>
     </aside>
         <section class="comments">
