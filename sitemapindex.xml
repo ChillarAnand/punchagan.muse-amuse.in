@@ -6,11 +6,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/rss.xml</loc>
-  <lastmod>2015-01-17</lastmod>
+  <lastmod>2015-01-18</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/sitemap.xml</loc>
-  <lastmod>2015-01-17</lastmod>
+  <lastmod>2015-01-18</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/advice.xml</loc>
@@ -134,7 +134,7 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/emacs.xml</loc>
-  <lastmod>2015-01-17</lastmod>
+  <lastmod>2015-01-18</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/email.xml</loc>
@@ -206,11 +206,11 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/hack.xml</loc>
-  <lastmod>2015-01-17</lastmod>
+  <lastmod>2015-01-18</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/hackerschool.xml</loc>
-  <lastmod>2015-01-17</lastmod>
+  <lastmod>2015-01-18</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/haskell.xml</loc>
@@ -306,7 +306,7 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/learning.xml</loc>
-  <lastmod>2015-01-17</lastmod>
+  <lastmod>2015-01-18</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/letter.xml</loc>
@@ -406,7 +406,7 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/orgmode.xml</loc>
-  <lastmod>2015-01-17</lastmod>
+  <lastmod>2015-01-18</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/pairing.xml</loc>
