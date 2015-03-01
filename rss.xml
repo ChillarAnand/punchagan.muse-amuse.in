@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 17 Jan 2015 19:47:40 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>org-drill for making it stick!</title><link>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 01 Mar 2015 03:03:22 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Quotes [2015-02-28]</title><link>http://punchagan.muse-amuse.in/posts/quotes-2015-02-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;“Do anything, but let it produce joy.” — Walt Whitman
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;"Learn to value yourself, which means: fight for your happiness" - &lt;i&gt;Ayn Rand&lt;/i&gt;.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;“If you don't stand for something you will fall for anything”. - &lt;i&gt;Malcolm X&lt;/i&gt;.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Do you want to know who you are? Don't ask. Act! Action will delineate and
+define you – &lt;i&gt;Thomas Jefferson&lt;/i&gt;
+&lt;/li&gt;
+
+&lt;li&gt;"We will be held accountable for all the permitted pleasures we failed to
+enjoy." – &lt;i&gt;Talmud Yerwshalmi&lt;/i&gt;
+&lt;/li&gt;
+
+&lt;li&gt;"It’s so easy to hate. It takes strength to be gentle and kind." ― &lt;i&gt;The
+Smiths&lt;/i&gt;
+&lt;/li&gt;
+
+&lt;li&gt;"To be trusted is a greater compliment than being loved" - George MacDonald.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;"I am more convinced than ever. Conceptual integrity is central to product
+quality." – &lt;i&gt;Fred Brooks&lt;/i&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>quotes</category><guid>http://punchagan.muse-amuse.in/posts/quotes-2015-02-28.html</guid><pubDate>Sun, 01 Mar 2015 03:03:12 GMT</pubDate></item><item><title>org-drill for making it stick!</title><link>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Those who read the &lt;a href="http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html"&gt;last&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html"&gt;few&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html"&gt;posts&lt;/a&gt; here, would know that I have been
 experimenting with &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;org-drill&lt;/a&gt; (a spaced repetition extension to &lt;a href="http://orgmode.org/"&gt;Org mode&lt;/a&gt;).  I
 have been using the system (almost) religiously for the past 2 months, and I do
@@ -381,7 +421,95 @@ an interesting problem to try to solve.
 Also, it might be easier(?) if I probably tried to have a DE level keybinding, and
 some code to get selection and file name of the currently active
 window/application.
-&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item><item><title>Bookmarks [2014-11-01]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-11-01.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="http://thoughtcatalog.com/brianna-wiest/2013/04/50-ways-to-love-someone/"&gt;50 Ways To Love Someone | Thought Catalog&lt;/a&gt;
+
+&lt;p&gt;
+Go for walks together as much as you’re able.
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://research.microsoft.com/en-US/people/kannan/book-no-solutions-aug-21-2014.pdf"&gt;Foundations of Data Science&lt;/a&gt;
+
+&lt;p&gt;
+These notes are a first draft of a book being written by Hopcroft and Kannan
+and in many places are incomplete. However, the notes are in good enough
+shape to prepare lectures for a modern theoretical course in computer
+science. Please do not put solutions to exercises online as it is important
+for students to work out solutions for themselves rather than copy them from
+the internet.
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="http://asyncio.org/"&gt;Asyncio&lt;/a&gt;
+
+&lt;p&gt;
+Curated content from around the net to get started with asyncio
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://github.com/s16h/py-must-watch"&gt;s16h/py-must-watch · GitHub&lt;/a&gt;
+
+&lt;p&gt;
+Must-watch videos about Python.
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://github.com/josephmisiti/awesome-machine-learning#python"&gt;josephmisiti/awesome-machine-learning · GitHub&lt;/a&gt;
+
+&lt;p&gt;
+A curated list of awesome machine learning frameworks, libraries and software
+(by language).
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="http://www.masteringemacs.org/about"&gt;About - Mastering Emacs&lt;/a&gt;
+
+&lt;p&gt;
+The blog will cover all facets of Emacs and will be suitable for beginners
+and – I hope – experts alike.
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-11-01.html</guid><pubDate>Fri, 31 Oct 2014 20:16:45 GMT</pubDate></item><item><title>Quotes [2014-11-01]</title><link>http://punchagan.muse-amuse.in/posts/quotes-2014-11-01.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;I wanted to change the world. But I have found that the only thing
+one can be sure of changing is oneself. ~ Aldous Huxley
+&lt;/li&gt;
+
+&lt;li&gt;The true voyage of discovery consists not of going to new places,
+but of having a new pair of eyes. — Marcel Proust (1871–1922)
+&lt;/li&gt;
+
+&lt;li&gt;All that is necessary for evil to triumph is for good men to do nothing. — Edmund Burke
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;"I think that it's extraordinarily important that we in computer science keep
+  fun in computing. When it started out, it was an awful lot of fun. Of course,
+the paying customers got shafted every now and then, and after a while we
+began to take their complaints seriously. We began to feel as if we really
+were responsible for the successful, error-free perfect use of these
+machines. I don't think we are. I think we're responsible for stretching
+them, setting them off in new directions, and keeping fun in the house. I
+hope the field of computer science never loses its sense of fun. Above all, I
+hope we don't become missionaries. Don't feel as if you're Bible
+salesmen. The world has too many of those already. What you know about
+computing other people will learn. Don't feel as if the key to successful
+computing is only in your hands. What's in your hands, I think and hope, is
+intelligence: the ability to see the machine as more than when you were first
+led up to it, that you can make it more." – &lt;i&gt;Alan J. Perlis (April 1,
+1922-February 7, 1990)&lt;/i&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Forgetting is like radiation: you cannot smell it, you cannot taste it, and
+  when you finally notice the damage, it is already irreversible – &lt;i&gt;Piotr
+Wozniack&lt;/i&gt;
+&lt;/li&gt;
+
+&lt;li&gt;"Computer Science is no more about computers than astronomy is about telescopes" – &lt;i&gt;Edsger Dijkstra&lt;/i&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>quotes</category><guid>http://punchagan.muse-amuse.in/posts/quotes-2014-11-01.html</guid><pubDate>Fri, 31 Oct 2014 20:16:45 GMT</pubDate></item><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I stumbled on a &lt;a href="http://rubyrogues.com/178-rr-book-club-refactoring-ruby-with-martin-fowler/"&gt;Ruby Rogues podcast&lt;/a&gt; yesterday, which had &lt;a href="http://martinfowlwer.com"&gt;Martin Fowler&lt;/a&gt; as the
 guest.  I really enjoyed the discussion on Refactoring (the noun, the verb and
 the book!)
@@ -414,268 +542,4 @@ Or, at least we should strive to make it so!
 &lt;p&gt;
 The discussion, as always on this podcast, was very lively, pleasant and
 enjoyable! Enjoy!
-&lt;/p&gt;</description><category>advice</category><category>code</category><category>programming</category><guid>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</guid><pubDate>Sat, 25 Oct 2014 14:23:25 GMT</pubDate></item><item><title>Learning about Spaced Repetition, SuperMemo, Org-drill, et al.</title><link>http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I have been reading a bunch of articles on the SuperMemo site (including the
-&lt;a href="http://www.supermemo.com/english/ol.htm"&gt;original thesis&lt;/a&gt; of P. A. Wozniack, the creator of SuperMemo).  I initially
-started off trying to understand the algorithms SM2,5 and 8 which org-drill
-implements, but reading the articles has given me a lot of general background
-and theory on how memory works, and why SuperMemo is as effective as it is (for
-those who stick with it).  This blog post is an attempt to summarize and
-capture what I have read in all those &lt;a href="http://www.supermemo.com/english/contents.htm"&gt;articles&lt;/a&gt;, and not get lost in them.  I
-would recommend reading the thesis and the suggested reading there, yourself,
-but if you really don't want to – this blog post + the summary in &lt;a href="http://www.supermemo.com/articles/20rules.htm#Prioritize"&gt;here&lt;/a&gt;, and
-&lt;a href="http://www.supermemo.com/articles/decalog.htm#decalog"&gt;here&lt;/a&gt; would be a good alternative.
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;Memory works by repetition.  Each time you recall a fact, the time it takes
-for the memory to fade increases.  Spaced repetition is the idea of repeating
-items, just when you are about to forget them – trying to optimize the time
-spent on learning, as well as the retention of learned material.
-&lt;/li&gt;
-
-&lt;li&gt;Prioritization of the items we need to learn is key to being able to stick to
-Spaced repetition.  Beginners tend to be over-enthusiastic about the
-technique and fill up their system with stuff that they don't really care
-about.  Applicability of the knowledge you are trying to gain, is a good test
-for whether or not it goes into your system.
-&lt;/li&gt;
-
-&lt;li&gt;Each version of SuperMemo comes with a slightly modified (on most occassions,
-improved!) algorithm.  SM2, SM5, … refer to these algorithms. Org-drill
-currently supports only sm2,5 and 8.  It may be worth looking at sm15/16 and
-seeing if it can be implemented and is worth doing.  In any case, using any
-of these is &lt;b&gt;way&lt;/b&gt; better than not using Spaced repetition at all.
-&lt;/li&gt;
-
-&lt;li&gt;Understanding what we are trying to learn goes a long way in helping
-memory. It is, therefore, good to start with basic material. People have been
-surprised by how easily the advanced stuff fell into place, once they had the
-basics covered.
-&lt;/li&gt;
-
-&lt;li&gt;Keep items in the system simple.  Stick to the minimum information
-principle.  Keeping it simple, doesn't mean you leave out on learning the
-complex stuff; instead break it into simpler components.  Simpler items has
-the following advantages:
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;Simple is easier to remember.
-&lt;/li&gt;
-&lt;li&gt;Simpler items are easier to schedule.  You get more resolution to figure
-out what the problem areas are.
-&lt;/li&gt;
-&lt;li&gt;Simple makes brings in redundancy automatically.  And &lt;a href="http://en.wikipedia.org/wiki/Wikipedia:Redundancy_is_good"&gt;redundancy is good&lt;/a&gt;
-    for memory, just like it is for managing hardware failure.
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Keep learning fun!  Don't make review sessions a chore.  Think about the
-material you are reviewing. Edit/delete/improve items based on your reviews,
-then and there. Stay active.
-&lt;/li&gt;
-
-&lt;li&gt;It is useful to add a link to the source of the items added to your system,
-considering that you wish to use the system over a long period of time
-(ideally, the rest of your life!)
-&lt;/li&gt;
-
-&lt;li&gt;Prioritize, add examples, appeal to your emotional state, link to existing
-knowledge, use images. Anything else that works for you!  Use all of these
-techniques, that work well and you probably already use in everyday life, in
-the items you add to your system, to make them easier to recall.
-&lt;/li&gt;
-
-&lt;li&gt;Being physically fit and healthy is important for being so
-mentally. Exercise, sleep, eat well, avoid caffeine.
-&lt;/li&gt;
-
-&lt;li&gt;Try &lt;a href="http://www.supermemo.com/help/read.htm"&gt;incremental&lt;/a&gt; &lt;a href="http://www.supermemo.com/articles/devour.htm"&gt;reading&lt;/a&gt;, as an input source of items into your memory system.
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>learning</category><category>life</category><category>memory</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</guid><pubDate>Fri, 24 Oct 2014 13:37:07 GMT</pubDate></item><item><title>Simple org-clock and gnome/pidgin integration</title><link>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-&lt;b&gt;See update &lt;a href="http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html#sec-1"&gt;below&lt;/a&gt;&lt;/b&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-I have been trying to get back to using org-mode and its clocking
-functionality, more often than not.  I used to use it a lot, a few years ago,
-and haven't been using it, since I had been in my last job.
-&lt;/p&gt;
-
-&lt;p&gt;
-To help with it, I decided to integrate clocking in and out with changing
-status on Pidgin, and turning notifications on and off in Gnome.  Here's a few
-lines of code that does this for me.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;select&lt;/span&gt; &lt;span class="nv"&gt;start-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-  &lt;span class="s"&gt;"Turn gnome notifications off."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
-   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=unavailable"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;switch-to-state&lt;/span&gt; &lt;span class="nv"&gt;fail-quietly&lt;/span&gt; &lt;span class="nv"&gt;at-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-  &lt;span class="s"&gt;"Turn gnome notifications back on."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
-   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=available"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;Update &lt;span class="timestamp-wrapper"&gt;&lt;span class="timestamp"&gt;&amp;lt;2014-11-01 Sat&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;p&gt;
-&lt;a href="http://baali.muse-amuse.in"&gt;@baali&lt;/a&gt; tried to use my code, and it turns out it didn't work for him, because I
-forgot to mention that &lt;code&gt;(ad-activate 'org-clock-in)&lt;/code&gt; needs to be run, after the
-&lt;code&gt;defadvice&lt;/code&gt; code.  I have no idea how it worked for me, without doing that.
-May be because I have &lt;code&gt;defadvice&lt;/code&gt; for other functions?
-&lt;/p&gt;
-
-&lt;p&gt;
-Also, while debugging this, I found that &lt;code&gt;defadvice&lt;/code&gt; is a deprecated way of
-doing this, and &lt;code&gt;add-function&lt;/code&gt; is the way to go now.  But, instead of advising
-the function, I decided to make use of &lt;code&gt;org-clock-in-hook&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;
-Here is the new code.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/turn-off-notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
-  &lt;span class="s"&gt;"Turn gnome notifications off."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
-   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=unavailable"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/turn-on-notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
-  &lt;span class="s"&gt;"Turn gnome notifications back on."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
-   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=available"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'org-clock-in-hook&lt;/span&gt; &lt;span class="ss"&gt;'pc/turn-off-notifications&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'org-clock-out-hook&lt;/span&gt; &lt;span class="ss"&gt;'pc/turn-on-notifications&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>code</category><category>emacs</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item><item><title>Making PyCon India better (for myself)</title><link>http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I've &lt;a href="http://punchagan.muse-amuse.in/posts/notes-from-pycon.html"&gt;ranted before&lt;/a&gt; about PyCon not meeting my expectations, and I even skipped
-going to the last PyCon.  Somehow, I hoped that it would be better this year,
-but no such thing happened.
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;I should strictly not attend any talks, at the next conference I am at.  Even
-if the topic seems interesting, I should refrain from attending any talks,
-unless I know that a speaker is entertaining.
-&lt;/li&gt;
-
-&lt;li&gt;I should be going there to meet old friends, meet a few new people, and
-mostly hacking on my stuff.  May be aim to show something at the lightning
-talks at the end of second day, based on what I did during the rest of the
-event.
-&lt;/li&gt;
-
-&lt;li&gt;Participate more actively in open spaces, and may be initiate or suggest some
-myself.  Sprints for bug fixing, adding new features to a project may be a
-good way to get new developers to start contributing to FOSS projects.  It
-would be even better to be in touch with folks before the event, and use this
-opportunity to iron out kinks.
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;
-I think the talks could be improved drastically. A lot&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt; has been said,
-already.  Here's a summary of how I see it.
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;Beginner/Novice talks doesn't mean bad talks.  A talk with a good narrative,
-that drives home a point, that may be familiar to most of the audience, would
-still make a good talk.  I don't mind reading a good blog post/book on a
-topic I already know, because there is joy in reading/listening to "good"
-stuff.
-&lt;/li&gt;
-
-&lt;li&gt;Talks cannot be judged by titles or an abstract.  Taking inspiration from
-PyCon US, we could
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;Ask for a video recording of a previous talk or a short home-made
-recording of the speaker presenting some topic.
-&lt;/li&gt;
-
-&lt;li&gt;Ask for a granular outline &lt;sup&gt;&lt;a id="fnr.3" name="fnr.3" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.3"&gt;3&lt;/a&gt;&lt;/sup&gt; along with rough timing information, instead of
-just an abstract.
-&lt;/li&gt;
-
-&lt;li&gt;Have a bunch of resources &lt;sup&gt;&lt;a id="fnr.4" name="fnr.4" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.4"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.5" name="fnr.5" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.5"&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.6" name="fnr.6" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.6"&gt;6&lt;/a&gt;&lt;/sup&gt; available for speakers to improve on their
-proposals/accepted talks.
-&lt;/li&gt;
-
-&lt;li&gt;Have a bunch of 20 or 30 minute talks, and very few longer (45 min) talk
-slots.
-&lt;/li&gt;
-
-&lt;li&gt;Encourage speakers to try connecting their laptops and iron out
-"presentation" kinks on the day before their talks/lunch/other allotted
-times. Technical issues like fonts being too small, mics not working,
-adjusting the volume/other settings for the speaker, etc. can and should be
-fixed before hand.
-&lt;/li&gt;
-
-&lt;li&gt;The talk review committee could also take notes from attending some of the
-talks, and compare it against their notes when they accepted the talk, to
-improve the talk selection process.  Some of it could be valuable feedback
-for the speakers too.
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id="footnotes"&gt;
-&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
-&lt;div id="text-footnotes"&gt;
-
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
-&lt;a href="https://plus.google.com/+sankarshanmukhopadhyay/posts/8QY4o3hiyLT"&gt;https://plus.google.com/+sankarshanmukhopadhyay/posts/8QY4o3hiyLT&lt;/a&gt;
-&lt;/p&gt;&lt;/div&gt;
-
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
-&lt;a href="https://mail.python.org/pipermail/inpycon/2014-October/009189.html"&gt;https://mail.python.org/pipermail/inpycon/2014-October/009189.html&lt;/a&gt;
-&lt;/p&gt;&lt;/div&gt;
-
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.3" name="fn.3" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.3"&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
-&lt;a href="https://us.pycon.org/2015/speaking/proposal_advice/samples/SpacePug/"&gt;https://us.pycon.org/2015/speaking/proposal_advice/samples/SpacePug/&lt;/a&gt;
-&lt;/p&gt;&lt;/div&gt;
-
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.4" name="fn.4" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.4"&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
-&lt;a href="https://us.pycon.org/2015/speaking/proposal-resources/"&gt;https://us.pycon.org/2015/speaking/proposal-resources/&lt;/a&gt;
-&lt;/p&gt;&lt;/div&gt;
-
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.5" name="fn.5" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.5"&gt;5&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
-&lt;a href="http://doughellmann.com/2011/10/18/how-i-review-a-pycon-talk-proposal.html"&gt;http://doughellmann.com/2011/10/18/how-i-review-a-pycon-talk-proposal.html&lt;/a&gt;
-&lt;/p&gt;&lt;/div&gt;
-
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.6" name="fn.6" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.6"&gt;6&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
-&lt;a href="http://www.craigkerstiens.com/2012/06/19/pro-tips-for-conference-talks/"&gt;http://www.craigkerstiens.com/2012/06/19/pro-tips-for-conference-talks/&lt;/a&gt;
-&lt;/p&gt;&lt;/div&gt;
-
-
-&lt;/div&gt;
-&lt;/div&gt;</description><category>event</category><category>pycon</category><guid>http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html</guid><pubDate>Tue, 14 Oct 2014 11:53:47 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>advice</category><category>code</category><category>programming</category><guid>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</guid><pubDate>Sat, 25 Oct 2014 14:23:25 GMT</pubDate></item></channel></rss>

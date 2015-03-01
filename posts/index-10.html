@@ -98,745 +98,617 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/a-confession.html" class="u-url">A Confession</a></h1>
-        <span class="post-date">13 Sep 2009</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-12-05.html" class="u-url">Bookmarks [2013-12-05]</a></h1>
+        <span class="post-date">05 Dec 2013</span>
     </header>
     <div class="e-content entry-content">
-    <p>
-Lost in thought, in the maddening crowd waiting for the next train
-on a Sunday evening, I was staring blankly, looking at nothing in
-particular. I had come to see-off UC, Sunil and 9.
-</p>
+    <ul class="org-ul">
+<li>
+<a href="http://raspberry-python.blogspot.in/2013/10/ieee-754854-when-it-is-needed.html">Raspberry Pi Python Adventures: IEEE 754/854, when it is needed</a>
 
 <p>
-A man carrying a stretcher on his head, suddenly comes into my
-focus and I have an impulse to look down. But, I manage to look at
-people who are closer to the guy, and see looks of pity, shock and
-disgust. Most of them looked down, sooner than later. It was not
-long before the man, was right next to me and I could see an
-injured man lying on the stretcher with a stream of blood oozing
-out of his head. All I could manage was another expression of
-pity, shock and disgust. I didn't want to act as if I had seen
-nothing. I didn't want to stay as if I could do nothing about
-it. I didn't want to look down. But, that's all I ended up
-doing. The man carrying the stretcher was not exactly struggling,
-but I'm sure he would've more than liked some help. Not one
-amongst us moved.
+If you want IEEE 754/854 decimal behaviour, what you want to use is
+the decimal module
 </p>
+</li>
+
+<li>
+<a href="http://alecmunro.blogspot.in/2013/10/rethinking-my-excuses-about-hiring-for.html">Experiments in public: Rethinking my excuses about hiring for Test Automation</a>
 
 <p>
-Around half a minute later, I see a constable walking calmly
-(maybe with a shade of concern in his stride) in that
-direction. The next train was there in less than a minute and 9
-got into it. I was feeling absolute disgust at my reaction. In the
-hope of making some amends, I walked in the direction that the
-stretcher guy took. Soon I found them. I didn't have to
-search. There was an audience of onlookers, watching the stretcher
-carrying guy inspect the other guy. He was waiting near the
-entrance of the station and I'm guessing he had called for some
-medical help and was waiting for it to arrive. The policeman and a
-couple of others were standing next to him, while he was
-inspecting the injuries. Everybody else was watching — from the
-stairs, from the over bridge, the platform, the
-tracks. Everywhere. Being a part of that crowd was the last thing
-I wanted to do. I walked away.
+Be an Automator, spend your days debugging everyone else's software,
+drive the art forward, and enjoy (in the long run) incredible job
+security!
 </p>
+</li>
+
+<li>
+<a href="http://nedbatchelder.com/blog/201310/range_overlap_in_two_compares.html">Ned Batchelder: Range overlap in two compares</a>
 
 <p>
-PS: I (infact, we - uc, sunil, 9 and me) have had my own tryst
-with the Mumbai local. Keep your head on your shoulders, while you
-are anywhere near them. They are not the trains in your local
-fair.
+His code used eight comparisons to check whether the endpoint of one of the ranges was contained within the other range. In Python it would look like this:
 </p>
+
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">overlap</span><span class="p">(</span><span class="n">start1</span><span class="p">,</span> <span class="n">end1</span><span class="p">,</span> <span class="n">start2</span><span class="p">,</span> <span class="n">end2</span><span class="p">):</span>
+    <span class="sd">"""Does the range (start1, end1) overlap with (start2, end2)?"""</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+	<span class="n">start1</span> <span class="o">&lt;=</span> <span class="n">start2</span> <span class="o">&lt;=</span> <span class="n">end1</span> <span class="ow">or</span>
+	<span class="n">start1</span> <span class="o">&lt;=</span> <span class="n">end2</span> <span class="o">&lt;=</span> <span class="n">end1</span> <span class="ow">or</span>
+	<span class="n">start2</span> <span class="o">&lt;=</span> <span class="n">start1</span> <span class="o">&lt;=</span> <span class="n">end2</span> <span class="ow">or</span>
+	<span class="n">start2</span> <span class="o">&lt;=</span> <span class="n">end1</span> <span class="o">&lt;=</span> <span class="n">end2</span>
+    <span class="p">)</span>
+</pre></div>
+
+<p>
+I said you could do it in two comparisons rather than eight, but
+could never remember the trick.
+</p>
+</li>
+
+<li>
+<a href="http://cbarker.net/blog/projects/applications/cubr">Cubr | Keep on Coding</a>
+
+<p>
+Cubr is a project I completed in three weeks at the end of my
+introductory computer science class at CMU. The idea is simple: you
+mix up a Rubik’s cube. You show the cube to your computer’s
+webcam. Some magic happens, and your cube appears onscreen. Then,
+the cube begins to solve itself, and all you have to do is follow
+along and you will have solved your cube!
+</p>
+</li>
+
+<li>
+<a href="http://coreygoldberg.blogspot.in/2013/10/deadsnakes-using-old-versions-of-python.html">Corey Goldberg: deadsnakes - Using Old Versions of Python on Ubuntu</a>
+
+<p>
+The Python packages in the official Ubuntu archives generally don't
+go back all that far, but people might still need to develop and
+test against these old Python interpreters. Felix Krull maintains a
+PPA (package archive) of older Python versions that are easy to
+install on Ubuntu.
+</p>
+</li>
+</ul>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/good-bad-or-human.html" class="u-url">Good, Bad or Human?</a></h1>
-        <span class="post-date">22 Aug 2009</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-12-04.html" class="u-url">Bookmarks [2013-12-04]</a></h1>
+        <span class="post-date">04 Dec 2013</span>
     </header>
     <div class="e-content entry-content">
-    <p>
-Well, this could be called a post after ages, considering that
-most of previous posts have just been 'news reports'. I have been
-wanting to make a post since long, but I probably lost it. I
-really am unable to write anything that I find worth posting [It
-does raise questions about the existence of this blog. I'm writing
-this, to answer that question to myself.]
-</p>
+    <ul class="org-ul">
+<li>
+<a href="http://www.vonwong.com/blog/bringing-a-dream-to-life/">Bringing a dream to life - The Von Wong</a>
 
 <p>
-This post is provoked by an act of sharing, an act of kindness, an
-act of goodness, that surprised me. This post isn't about the act
-itself, but it's about me being surprised. Why on earth should I
-(or anybody) be surprised, when someone is just being human?
-Aren't human beings meant to be and feel human?
+And though these images that she ended up loving, were created to
+bring Nicole’s dreams to life, I’ve never felt more alive… because
+doing something that matters makes all the difference.
 </p>
+</li>
+
+<li>
+<a href="http://lists.freebsd.org/pipermail/freebsd-current/2010-August/019310.html">why GNU grep is fast</a>
 
 <p>
-I wonder why people say, "this is a bad, bad world." I find a lot
-of goodness and humanness around me. Unless I strain my memory
-really hard, I can only recall people who try to be as good and
-nice as they can be; People trying to be as human as
-possible. Either there's something utterly wrong with my judgment
-of people or there's something wrong with the general feeling that
-the world is a bad, bad place.
+The key to making programs fast is to make them do practically
+nothing. ;-)
 </p>
+</li>
+
+<li>
+<a href="http://www.technologyreview.com/view/522111/how-to-burst-the-filter-bubble-that-protects-us-from-opposing-views/">How to Burst the "Filter Bubble" that Protects Us from Opposing Views | MIT Technology Review</a>
 
 <p>
-There's one other possibility that just strikes me - I am so nice
-to people that, everyone else tries to be nice with me. I don't
-think I am such a big deviation from the average. I'm just another
-goat, in the great herd.
+Computer scientists have discovered a way to number-crunch an
+individual’s own preferences to recommend content from others with
+opposing views. The goal? To burst the “filter bubble” that
+surrounds us with people we like and content that we agree with.
 </p>
+</li>
+
+<li>
+<a href="http://thoughtcatalog.com/scott-percelay/2013/10/10-reasons-why-traveling-makes-you-a-better-person/">10 Reasons Why Traveling Makes You A Better Person | Thought Catalog</a>
 
 <p>
-And another one, I'm in a really special place, presently. I have
-been only to the special places. I have visited only the places
-that are at an extreme, far away from the 'average' place in the
-world. But, given I'm just another goat in the great herd, this is
-very unlikely. I am probably grazing at a random spot on the great
-grasslands.
+If you have the opportunity to pack your bags and go, do it. Go
+alone if you have to.
 </p>
+</li>
+
+<li>
+<a href="http://www.ibm.com/developerworks/rational/library/11-proven-practices-for-peer-review/">11 proven practices for more effective, efficient peer code review</a>
 
 <p>
-Since these are ruled out, it boils down to either a wrong
-judgment or a wrong general feeling.
+Summary:  These 11 proven practices for efficient, lightweight peer
+code review are based on a study at Cisco Systems using SmartBear
+CodeCollaborator. They can help you ensure that your reviews both
+improve your code and make the most of your developers' time.
 </p>
-
-<p>
-Coming to my judgment, I wouldn't call myself an Oracle or the
-wise one, but I'm no dumb ass either. Well, taking the statistical
-route, the number of times I've had any real "nasty" surprises in
-dealing with people has been much lesser than the number of times
-things turned out nearly as expected. My judgment could,
-therefore, possibly given some credibility.
-</p>
-
-<p>
-So, that leaves me with just one possibility. The idea that the
-world is a bad, bad place is not entirely true, if not completely
-absurd and outright wrong. The world is really a nice place, with
-"human" beings inhabiting it. The nasty surprises that you get,
-really are the surprises and not the general rule.
-</p>
+</li>
+</ul>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/postfix-mailman-for-multiple-domains.html" class="u-url">Postfix + Mailman for Multiple Domains.</a></h1>
-        <span class="post-date">05 Aug 2009</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-11-29.html" class="u-url">Bookmarks [2013-11-29]</a></h1>
+        <span class="post-date">29 Nov 2013</span>
     </header>
     <div class="e-content entry-content">
-    <p>
-Well, there are a hazaar tutorials on setting up Postfix and
-Mailman for Debian for a single domain. There were a few for doing
-that for multiple domains also, but nothing comprehensive, if I
-could say so. This link is pretty comprehensive and details all
-the steps for setting up Postfix for a single domain.  Here is all
-you'll want to know about setting up Virtual domains in Postfix.
+    <ul class="org-ul">
+<li>
+<a href="http://nautil.us/blog/for-billions-of-people-wasting-time-makes-little-sense">For Billions of People, “Wasting Time” Makes Little Sense - Facts So Romantic - Nautilus</a>
+
+<p>
+Event time is very different. Time is not so tangible, and certainly
+not equivalent to money. Attending to relationships is more
+important than attending to the clock.
+</p>
+</li>
+
+<li>
+<a href="http://nautil.us/blog/education-is-a-waste-of-effortbut-it-doesnt-have-to-be?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication">Education Is a Waste of Effort—But It Doesn’t Have to Be - Facts So Romantic - Nautilus</a>
+
+<p>
+College students are hardworking, intelligent, and educated adults. 
+In my capacity as an associate professor at the Institute of
+Cognitive Science at Carleton University, I have developed several
+ways that they can contribute to science and to their peers in the
+process of doing their classwork.
+</p>
+</li>
+
+<li>
+<a href="http://etienned.github.io/posts/extract-text-from-word-docx-simply/">Extract text from Word files (docx) simply | Etienne’s blog</a>
+
+<p>
+I created a simple function to extract text from .docx files that do
+not require dependencies, using only the standard library.
+</p>
+</li>
+
+<li>
+<a href="http://lucumr.pocoo.org/2013/11/28/emotional-programming/">Emotional Programming in Open Source | Armin Ronacher's Thoughts and Writings</a>
+
+<p>
+With all that in mind I am currently trying to get things sorted out
+to everybody's satisfaction. It's unacceptable that issues hang
+around unprocessed this long.
 </p>
 
 <p>
-You only need to make a few changes for adding a second (or more)
-domain. You just need to add the <code>virtual_alias_domains</code> and add
-<code>virtual_alias_maps</code>. Here is a glimpse of how my <code>main.cf</code> looks:
+Open Source can be hard sometimes.
 </p>
+</li>
 
-<pre class="example">
-myhostname = mail.abc.in
-mydomain = abc.in
-mydestination = $myhostname, $mydomain, localhost.$mydomain
-myorigin = /etc/mailname
-virtual_alias_maps =
-                hash:/etc/postfix/virtual-xyz,
-                hash:/etc/postfix/virtual-abc,
-                hash:/var/lib/mailman/data/virtual-mailman
-virtual_alias_domains = xyz.in, mail.xyz.in
-</pre>
+<li>
+<a href="http://nedbatchelder.com/blog/201310/whats_in_which_python_3.html">Ned Batchelder: What's in which Python 3?</a>
 
 <p>
-<code>virtual-xyz</code> and <code>virtual-abc</code> contain the virtual aliases for
-each domain. Note that Postfix expects hash files and hence you
-need to run <code>postmap /etc/postfix/virtual-abc</code> each
-time the file is changed, to keep the hash file in sync with the
-text file that you edit. Also, you need to run <code>postfix reload</code>,
-each time you make changes to <code>main.cf</code> or <code>master.cf</code>
+Two years ago I wrote a post called What's in which Python? which
+summarized the changes in the Python 2.x releases. Today when I
+showed it to someone, they asked, "Do you have one for 3.x?"
 </p>
+</li>
+
+<li>
+<a href="http://nedbatchelder.com/blog/201109/whats_in_which_python.html">Ned Batchelder: What's in which Python?</a>
 
 <p>
-Fairly straight forward, right? But it took me quite sometime to
-get it all right, since this was the first time I was doing
-anything with Mail Transfer Agents or the like.
+I made this list of the high points, what's in each version of
+Python 2.x. Items with a star were introduced with a <span class="underline"><span class="underline">future</span></span>
+import.
 </p>
-
-<p>
-Now, onto Mailman. Well the Installation Manual of Mailman,
-literally has it all. Here is a look at how my
-<code>mm_cfg.py</code> looks:
-</p>
-
-<pre class="example">
-DEFAULT_EMAIL_HOST = 'abc.in'
-DEFAULT_URL_HOST   = 'mail.abc.in'
-add_virtualhost(DEFAULT_URL_HOST, DEFAULT_EMAIL_HOST)
-POSTFIX_STYLE_VIRTUAL_DOMAINS=['xyz.in']
-add_virtualhost('mail.xyz.in', 'xyz.in')
-MTA='Postfix'
-</pre>
-
-<p>
-The only trouble was to get mailing lists with same names on both
-the domains (which I couldn't get working). I experimented with
-multiple mailman instances but that won't work because the MTA
-can't differentiate between the two instances of mailman. The
-alternative is probably to have two instances of postfix running
-too. But that I felt was like going too far, and gave up. [What if
-we wanted to add another domain to the list?!]
-</p>
-
-<p>
-Also, I had to make a few alterations to the Apache file to allow
-access to the mailman pages without breaking the Zope redirection
-that was already set-up.
-</p>
-
-<p>
-[Thanks to Shantanu and Vattam (and all the hazaar people using
-Postfix and Mailman and cared to document things for the sake of
-others, and of course Google)]
-</p>
+</li>
+</ul>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/foss-talks-at-cdeep.html" class="u-url">FOSS talks at CDEEP</a></h1>
-        <span class="post-date">10 Jul 2009</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-11-25.html" class="u-url">Bookmarks [2013-11-25]</a></h1>
+        <span class="post-date">25 Nov 2013</span>
     </header>
     <div class="e-content entry-content">
-    <p>
-I had the opportunity to attend a FOSS talk session organized by
-Center for Distance Education Engineering Programme (CDEEP) as a
-part of the National Mission on Education through ICT. The
-National Mission on Education through ICT has some lofty goals,
-which when reached will take the country ahead by leaps and
-bounds.
-</p>
+    <ul class="org-ul">
+<li>
+<a href="http://nautil.us/blog/the-math-trick-behind-mp3s-jpegs-and-homer-simpsons-face">The Math Trick Behind MP3s, JPEGs, and Homer Simpson’s Face - Facts So Romantic - Nautilus</a>
 
 <p>
-The Mission has a budget of $1billion in the 11th Five year plan,
-40% of which will be spent on content generation (all of which
-will be free/open source) and the rest will be spent on making
-available a minimum bandwidth of 1Gbps to the 30,000 odd colleges
-spread over India (out of which around 3000 are Engineering
-colleges). The mission has various projects planned and they are
-picking up steam rapidly. The project I will be working on, for
-the Adoption of Open Source in Engineering and Science Education
-in India, is also a part of this Mission. Prof. Kannan had kick
-started the session with an introduction to the National Mission
-on Education through ICT. The talks were all being webcast to
-various EduSAT centers and on the web.
+The Fourier transform has even been used to identify a counterfeit
+Jackson Pollock painting by deciphering the chemicals in the paint.
 </p>
-
-<p>
-Then, Prof. Pathak talked on, why open source is important. He
-said, (not exactly quoting him) " It is theoritically possible for
-any person to learn and discover things from scratch, but there's
-been only one Ekalavya in the entire history of India." Education
-is a social activity and hence open access to content is
-absolutely vital. He mentioned various things like how IIT-B has
-been working on Creative Commons licensing and other things going
-on here. He ended the talk with a hope that soon India will move
-from being a net taker of Open source to a net giver to open
-source.
-</p>
-
-<p>
-This was followed by three talks, delivered by developers from
-RedHat meant for programmers who wish to contribute to FLOSS.
-</p>
-
-<p>
-The first talk was by Ramakrishna Reddy, titled 10 things a FLOSS
-developer should know. It was a pretty nice and balanced talk,
-covering a wide range of things. I would like to point out a few
-things, that I liked the most.
-</p>
-
-<ul class="org-ul">
-<li>He clarified the term hacker as soon as he used it.
 </li>
-<li>He emphasized a lot on groking code; reading code for fun,
-looking at the code of others, reading as much code as
-possible…
+
+<li>
+<a href="http://nautil.us/blog/sleep-when-brain-cells-shrink--neuro-trash-is-flushed-away">Sleep: When Brain Cells Shrink &amp; Neuro Trash Is Flushed Away - Facts So Romantic - Nautilus</a>
+
+<p>
+Maybe the fresh, new feeling we have when we awake really is a kind
+of cleanliness, as the byproducts of the previous day’s cogitations
+have been washed away.
+</p>
 </li>
-<li>He talked of muscle memory of emacsen. I liked the way he talked
-of people being so quick with their editors and how learning to
-use your tools effectively is a big plus
+
+<li>
+<a href="http://www.itsnicethat.com/articles/bookshelf-jason-silva">It's Nice That : Bookshelf: Jason Silva</a>
+
+<p>
+As we prepare body and soul for the gluttony and giving nearly upon
+us, Jason Silva presents us with an intellectual antidote; an
+incredible and excitable selection of books that thinks a little
+bigger than exactly how many brussels sprouts we will be expected to
+eat in the coming weeks. Web-wide courted themes of The Singualrity,
+group consciousness and technology’s expectation of us, the
+synthesis of the human condition and (why not?) immortality – all
+are to be found in the permanent pages of this wonderfully
+accessible selection of books on Silva’s Bookshelf.
+</p>
 </li>
-<li>Release often, Release early. Everybody talks of it, but he said
-a few words, which I liked. Some developers don't usually
-release their code as early for the fear of being ridiculed. But
-don't bother, "we are just small people, in the whole galaxy."
+
+<li>
+<a href="http://alumni.berkeley.edu/california-magazine/just-in/2013-11-21/cal-lecturers-email-students-goes-viral-why-i-am-not">Cal lecturer's email to students goes viral: "Why I am not canceling class tomorrow" | CAA</a>
+
+<p>
+you will think something in response along the lines of `I know all
+that, but these things are for someone else to figure out, not me.’
+</p>
+
+<p>
+That is a mistake.
+</p>
+</li>
+
+<li>
+<a href="http://www.businessinsider.in/The-Most-Surprising-Things-About-America-According-To-An-Indian-International-Student/articleshow/22154725.cms">The Most Surprising Things About America, According To An Indian International Student | Business Insider India</a>
+
+<p>
+The most surprising things about America
+</p>
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/quotes-2013-11-24.html" class="u-url">Quotes [2013-11-24]</a></h1>
+        <span class="post-date">24 Nov 2013</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>Life is a tragedy when seen in close-up, but a comedy in a
+long-shot. – <i>Charlie Chaplin</i>
+</li>
+
+<li>Another flaw in the human character is that everyone wants to build
+and nobody wants to do maintenance. – <i>Kurt Vonnegut</i>
+</li>
+
+<li>In three words I can sum up everything I’ve learned about life: it
+goes on. – <i>Robert Frost</i>
+</li>
+
+<li>Nothing of me is original. I am the combined efforts of everyone
+I’ve every known. – <i>Chuck Palahniuk</i>
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-11-24.html" class="u-url">Bookmarks [2013-11-24]</a></h1>
+        <span class="post-date">24 Nov 2013</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://www.kickstarter.com/projects/electroninks/circuit-scribe-draw-circuits-instantly">Circuit Scribe: Draw Circuits Instantly by Electroninks Incorporated — Kickstarter</a>
+
+<p>
+Circuit Scribe draws smooth lines with conductive silver ink and
+allows you to create functioning circuits instantly.
+</p>
+</li>
+
+<li>
+<a href="http://thoughtcatalog.com/brandon-gorrell/2013/11/41-eye-opening-quotes-that-will-make-you-notice-what-you-always-ignored/">41 Eye-Opening Quotes That Will Make You Notice What You Always Ignored | Thought Catalog</a>
+
+<p>
+The bigger the mountain, the better the view. Unknown
+</p>
+</li>
+
+<li>
+<a href="https://www.hackerschool.com/blog/27-fundamental-qualities-of-good-programmers">Fundamental qualities of good programmers - Blog - Hacker School</a>
+
+<p>
+First, a quick note: This is just one way to think about becoming a
+better programmer. It's almost certainly not the only way to think
+about it and you may find some other way more useful to you.
+</p>
+</li>
+
+<li>
+<a href="http://www.youtube.com/watch?v=QTkvs1LNu5A">▶ I Am 20 - YouTube</a>
+
+<p>
+Those born on Independence Day in 1947 were selected from different
+parts of India and interviewed to know their hopes and
+desires,ambitions, hobbies, fears and frustrations and the result is
+this unique film.
+</p>
+</li>
+
+<li>
+<a href="http://sugru.com/story">Our story - the future needs fixing - sugru</a>
+
+<p>
+TIME Magazine listed sugru alongside the iPad as one of the top 50
+inventions of 2010.
+</p>
+
+<p>
+The iPad was number 34, sugru was number 22.
+</p>
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/quotes-2013-11-21.html" class="u-url">Quotes [2013-11-21]</a></h1>
+        <span class="post-date">21 Nov 2013</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>Scientists study the world as it is; engineers create the world that
+has never been. – <i>Theodore von Karman</i>
+</li>
+
+<li>If you can love someone with your whole heart, even one person, then
+  there’s salvation in life. Even if you can’t get together with that
+person. – <i>Haruki Murakami</i>
+</li>
+
+<li>The truth is rarely pure and never simple – <i>Oscar Wilde</i>
 </li>
 </ul>
 
-<p>
-The next talk was by Prasad Pandit on How to use Infrastructure
-for FOSS projects. Prasad talked of Website, Version Control,
-Mailing list, IRC, Bugzilla, Wiki and RSS feeds. He gave quite a
-few examples on how each thing is important, most of the examples
-being his personal experiences.
-</p>
-
-<p>
-The last talk was by Rahul Sundaram and was on Communication in a
-FOSS project. For a change he didn't have slides and the reason
-for that, he said, is that communication in a FOSS project is
-casual and not having slides and walking in with a t-shirt and
-jeans represents that casualness which is a culture of FOSS
-projects' communication.
-</p>
 
 <ul class="org-ul">
-<li>Be polite, but don't be Formal.
+<li>Memories warm you up from the inside. But they also tear you apart.
+― <i>Haruki Murakami</i>
 </li>
-<li>Be precise, but do provide a context to what you are saying.
-</li>
-<li>Don't fear that you'll say something foolish, which, will be
-archived for eternity. Mistakes are there to learn from. Not
-just you, but others too.
+
+<li>We are what we repeatedly do. Excellence, then, is not an act, but a
+habit. – <i>Aristotle</i>
 </li>
 </ul>
-
-<p>
-He talked of quite a lot of things, but these were the things
-which struck me as particularly interesting/important.
-</p>
-
-<p>
-At the end, all the participants walked out with Fedora 11 DVDs
-from the RedHat/Fedora guys. :D
-</p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/to-do-or-not-to-do.html" class="u-url">To do or not to do</a></h1>
-        <span class="post-date">22 Apr 2009</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-11-20.html" class="u-url">Bookmarks [2013-11-20]</a></h1>
+        <span class="post-date">20 Nov 2013</span>
     </header>
     <div class="e-content entry-content">
-    <p class="verse">
-Achieve something, I'm often reminded,<br>
-achieve something, something that's worthwhile.<br>
-Don't just kill time, they say,<br>
-for, brutally, it shall kill you someday.<br>
-<br>
-Make the best use of time, I tell myself,<br>
-for I realize, how I spend my days<br>
-is how I'm spending my life and<br>
-I'm going to get just one of it!<br>
-<br>
-But, what is worthwhile, I wonder<br>
-everything seems so good one moment<br>
-and all meaning vanishes the very next.<br>
-I'm utterly confused, somebody help!<br>
-<br>
-Pick one from, spoke my brother,<br>
-the 'everything' that seems good<br>
-and do it right, just, do it right!<br>
-Life, as you live through it, shall<br>
-teach you to do things that are right<br>
-and at the end of it all, you'll<br>
-never regret what you've done<br>
-but, only what you couldn't!<br>
-</p>
+    <ul class="org-ul">
+<li>
+<a href="http://amitbanerjee.net/complacency/">When Success Comes To You Easily | Amitbanerjee.net</a>
 
 <p>
--—
+The biggest trap that you can fall into is if you can be successful
+without giving your 100 percent in whatever you are doing.
 </p>
+</li>
+
+<li>
+<a href="http://www.huffingtonpost.com/wait-but-why/generation-y-unhappy_b_3930620.html">Why Generation Y Yuppies Are Unhappy | Wait But Why</a>
 
 <p>
-Inspired by
+Here's my advice for Lucy:
 </p>
+
 <ol class="org-ol">
-<li>a late-night conversation with a friend
+<li>Stay wildly ambitious. The current world is bubbling with
+opportunity for an ambitious person to find flowery, fulfilling
+success. The specific direction may be unclear, but it'll work
+itself out – just dive in somewhere.
 </li>
-<li>Annie Dillard, "How we spend our days is, of course, how we
-spend our lives"
+
+<li>Stop thinking that you're special. The fact is, right now, you're
+not special. You're another completely inexperienced young person
+who doesn't have all that much to offer yet. You can become
+special by working really hard for a long time.
+</li>
+
+<li>Ignore everyone else. Other people's grass seeming greener is no
+new concept, but in today's image crafting world, other people's
+grass looks like a glorious meadow. The truth is that everyone
+else is just as indecisive, self-doubting, and frustrated as you
+are, and if you just do your thing, you'll never have any reason
+to envy others.
 </li>
 </ol>
+</li>
+
+<li>
+<a href="https://hynek.me/articles/sharing-your-labor-of-love-pypi-quick-and-dirty/">Sharing Your Labor of Love: PyPI Quick And Dirty — Hynek Schlawack</a>
+
+<p>
+A com­pletely in­com­plete guide to pack­ag­ing a Python mod­ule and
+shar­ing it with the world on PyPI.
+</p>
+</li>
+
+<li>
+<a href="http://pythonsweetness.tumblr.com/post/67394619015/use-of-logging-package-from-within-a-library">python sweetness — Use of logging package from within a library</a>
+
+<p>
+Python’s standard logging package is a really wonderful thing, but
+unfortunately some of its key ideas aren’t clearly documented in a
+large enough point font.
+</p>
+</li>
+
+<li>
+<a href="http://alexgaynor.net/2013/sep/26/effective-code-review/">Alex Gaynor – Effective Code Review</a>
+
+<p>
+Code review is an important part of a healthy engineering culture
+and workflow. Hopefully, this post has given you an idea of either
+how to implement it for your team, or how to improve your existing
+workflow.
+</p>
+</li>
+</ul>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/webloggerel-configured.html" class="u-url">Weblogger.el configured!</a></h1>
-        <span class="post-date">19 Mar 2009</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-11-17.html" class="u-url">Bookmarks [2013-11-17]</a></h1>
+        <span class="post-date">17 Nov 2013</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://www.chrisaitchison.com/2011/05/03/you-are-not-a-software-engineer/">You are NOT a Software Engineer!   Chris Aitchison</a>
+
+<p>
+The engineering metaphor has had its time in the sun, and maybe it
+even used to be accurate, but now it really only serves to help
+non-technical people have unrealistic expectations about how
+software gets built.
+</p>
+
+<p>
+I am a Software Gardener.
+</p>
+
+<p>
+So are you.
+</p>
+</li>
+
+<li>
+<a href="http://news.slashdot.org/story/13/11/01/1919205/bill-gates-internet-will-not-save-the-world?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">Bill Gates: Internet Will Not Save the World   Slashdot</a>
+
+<p>
+The internet is not going to save the world, says the Microsoft
+co-founder, whatever Mark Zuckerberg and Silicon Valley's tech
+billionaires believe. But eradicating disease just might.
+</p>
+</li>
+
+<li>
+<a href="http://nodeknockout.com/teams/keming-labs">Node.js Knockout | Nov 9 11th, 2013</a>
+
+<p>
+ClearCommit, semantic diff tool for codebases.
+</p>
+</li>
+
+<li>
+<a href="http://boingboing.net/2013/11/15/sleeping-on-strangers-on-the-s.html">'Sleeping On Strangers On The Subway,' a video experiment   Boing Boing</a>
+
+<p>
+"Inspired by a picture that went viral, we decided to see how many
+people would let a random person sleep on them on the subway. Here
+are the results, and the valuable lesson we learned."
+</p>
+</li>
+
+<li>
+<a href="http://jacksgap.com/meet-first-heartless-man/">Meet Craig, the First Man in the World to Live Without a Heart   JacksGap</a>
+
+<p>
+When Craig Lewis aged 55 had been diagnosed with a heart disease so
+intricate not even a pacemaker could save him, Texan doctors had to
+think outside of the box.
+</p>
+
+<p>
+Outstandingly, they developed a revolutionary concept where by they
+install a device that keeps his blood in continuous flow…without a
+pulse.
+</p>
+
+<p>
+Within a day of surgery Craig was up and speaking to doctors and now
+lives fully functioning without a heart. Who said science was
+boring?
+</p>
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/cold.html" class="u-url">Cold</a></h1>
+        <span class="post-date">13 Nov 2013</span>
     </header>
     <div class="e-content entry-content">
     <p>
-If you see this post, it means weblogger has been successfully
-configured in emacs.  Emacs Rocks. \m/
+It was a pleasant Saturday evening in the middle of the winter. Christmas was
+just round the corner and love in the air. The sun was just setting and
+everything outside his window was given a fresh coat of snow, tickled by the
+red, quickly fading light. Not that he noticed. He stared blankly out of the
+window, looking at nothing in particular. He had just woken up from his
+afternoon nap; but he'd buy it if you told him he'd been sleeping for a year…
 </p>
 
 <p>
-<b>UPDATE <span class="timestamp-wrapper"><span class="timestamp">[2010-09-02]</span></span></b>: I now use org2blog, a small extension to
- emacs orgmode to post to my blog.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/who-am-i.html" class="u-url">who am I?</a></h1>
-        <span class="post-date">02 Dec 2008</span>
-    </header>
-    <div class="e-content entry-content">
-    <p class="verse">
-dead and lifeless, in a box I lie<br>
-just my size, to be buried deep somewhere,<br>
-arranged with flowers, bright and fragrant<br>
-more alive than dead, are they<br>
-the final goodbye I have said,<br>
-gone am I, never to return–but<br>
-who am I, who am I, who am I?<br>
-<br>
-am I –<br>
-the knowledge I arduously gained,<br>
-from all the books I read and re-read.<br>
-the wealth and riches I made,<br>
-at the cost of sweat, often also blood.<br>
-the skill with utmost care I groomed,<br>
-for that, today, has me world-renowned.<br>
-the numerous battles I braved,<br>
-where win or loss never, only a fight mattered.<br>
-all those dreams I dared to dream,<br>
-and the goals I never, or have, reached.<br>
-<br>
-None of it, I realised, am I,<br>
-but, who am I, who am I, who am I<br>
-deep and loud, for one last time I wonder<br>
-"the difference, you make to the world,<br>
-is who you are", my Master answered,<br>
-"Life's fragrance is in service,<br>
-it grows and unfurls, far and wide,<br>
-long after you are lifeless and dead"<br>
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/arbit-blab.html" class="u-url">arbit blab</a></h1>
-        <span class="post-date">26 Nov 2008</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Well, just another post to make it clear that
-</p>
-<ul class="org-ul">
-<li>I'm still alive
-</li>
-<li>I haven't forgotten that I have a blog
-</li>
-<li>I haven't forgotten my blog's password
-</li>
-<li>I haven't lost the ability to write arbit crap.
-</li>
-<li>I'm not busy with anything interesting
-</li>
-<li>My Keyboard works fine
-</li>
-</ul>
-
-
-<p>
-Arbit stuff going on around me off-late.
-</p>
-
-<ul class="org-ul">
-<li>We've had our official farewell; So we've officially bid goodbye
-to B.I.T.S - Goa. People tried their best to make the occasion
-appear "senti" but it seemed more like "psenti" for me.
-</li>
-<li>I wonder why our VC calls BITS as B.I.T.S; is it something
-similar to people choosing to call SAP as S.A.P?
-</li>
-<li>Most of the advice given was of a copy-book style. But I liked
-one of them, though it wasn't expressed well enough for me -
-Learning from Books still remains an important way of learning,
-even if work teaches you a LOT.
-</li>
-<li>College now has its own Debian Repository hosted on a server
-running Hardy. Hats off to bad\<sub>sector</sub> for showing the enthu to
-get things done. The LUG here's got a great bunch of people
-right now and its growing in leaps and bounds. I'm excited.
-</li>
-<li>A couple of my friends picked up Debian recently and apparently
-both of them are loving it thoroughly. Linux, as addictive as
-ever.
-</li>
-<li>It's been a while since I've been on the winning side in
-carroms. Its so boring to be on the losing side for so long.
-</li>
-<li>Word is not a document exchange format<sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/arbit-blab.html#fn.1">1</a></sup> ; Use
-html, plain text, pdf or the open document format.(if you are
-not averse to openness) [I mention this <i>now</i> because I faced a
-lot of trouble recently trying to handle some .doc files which
-replaced the html pages that were being used on the PS site.]
-</li>
-<li>So often, little things get blown out of proportion, so
-quickly. Or its just that not everybody sees them as 'little'
-things.
-</li>
-<li>On slow connections, the download 'handler' of firefox does
-really poorly. It's next to impossible to download anything over
-half an MB.
-</li>
-<li>This from the preface of SICP<sup><a id="fnr.2" name="fnr.2" class="footref" href="/posts/arbit-blab.html#fn.2">2</a></sup> ,a text book for an
-introductory course on Computer Programming at MIT
-<blockquote>
-<p>
-Our design of this introductory computer-science subject
-reflects two major concerns. First, we want to establish the
-idea that a computer language is not just a way of getting a
-computer to perform operations but rather that it is a novel
-formal medium for expressing ideas about methodology. Thus,
-programs must be written for people to read, and only
-incidentally for machines to execute. Second, we believe that
-the essential material to be addressed by a subject at this
-level is not the syntax of particular programming-language
-constructs, nor clever algorithms for computing particular
-functions efficiently, nor even the mathematical analysis of
-algorithms and the foundations of computing, but rather the
-techniques used to control the intellectual complexity of
-large software systems.
-</p>
-</blockquote>
-<p>
-I would like to see a few courses developed on similar lines here.
-</p>
-</li>
-<li>Gmail themes are good. I only tried the "Terminal" theme,
-though. I loved it!
-</li>
-<li>For the very first time, I upgraded a distro. I successfully
-moved to Intrepid from Hardy. (and that too with the campus
-net!) This was before the repositories had been set-up. Now, it
-should be a much simpler job to achieve the same
-</li>
-<li>Just got the news of more Violence in Mumbai; What the hell do
-these people want? I end this post here.
-</li>
-</ul>
-
-<hr>
-
-<p>
-Here's an xkcd strip I liked.
-<img src="http://imgs.xkcd.com/comics/real_programmers.png" alt="real_programmers.png">
-</p>
-
-<hr>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef">
-<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/arbit-blab.html#fnr.1">1</a></sup> <p class="footpara">
-Word is not a document exchange format
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.2" name="fn.2" class="footnum" href="/posts/arbit-blab.html#fnr.2">2</a></sup> <p class="footpara">
-Structure and Interpretation of Computer Programs
-</p>
-</div>
-
-
-</div>
-</div>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/21.html" class="u-url">21</a></h1>
-        <span class="post-date">15 Oct 2008</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Yes, I've turned 21 today. I'd like to write a post today, but
-this song (by Adam Sandler?) more or less conveys, how I feel.
+You could see the icy river crawling ahead, from his window.  People walking
+over the bridge, a few camera flashes going off, people stopping over and
+looking far ahead into the horizon – collecting their thoughts, couples
+walking hand-in-hand enjoying each others' company; You could see it all, from
+up there! But, as they say, you only see what you look for. And he, couldn't
+see any of this. His looked out of his window and saw none of this.
 </p>
 
 <p>
-I'd just like to thank everyone, who prays for me to grow up and
-not just old.
-</p>
-
-<p class="verse">
-<b>The Happy Birthday Song</b><br>
-<br>
-Once a year we celebrate<br>
-With stupid hats and plastic plates<br>
-The fact that you were able to make<br>
-Another trip around the sun<br>
-<br>
-And the whole clan gathers round<br>
-And gifts and laughter do abound<br>
-And we let out a joyful sound<br>
-And sing that stupid song<br>
-<br>
-Happy birthday!<br>
-Now you're one year older!<br>
-Happy birthday!<br>
-Your life still isn't over!<br>
-Happy birthday!<br>
-You did not accomplish much<br>
-But you didn't die this year<br>
-I guess that's good enough<br>
-<br>
-So let's drink to your fading health<br>
-And hope you don't remind yourself<br>
-The chance of finding fame and wealth<br>
-Decrease with every year<br>
-<br>
-Does it feel like you're doing laps<br>
-And eating food and taking naps<br>
-And hoping that someday perhaps<br>
-Your life will hold some cheer<br>
-<br>
-Happy birthday!<br>
-What have you done that matters?<br>
-Happy birthday!<br>
-You're starting to get fatter<br>
-Happy birthday!<br>
-It's downhill from now on<br>
-Try not to remind yourself<br>
-Your best years are all gone<br>
-<br>
-If cryogenics were all free<br>
-Then you could live like Walt Disney<br>
-And live for all eternity<br>
-Inside a block of ice<br>
-<br>
-But instead your time is set<br>
-This is the only life you get<br>
-And though it hasn't ended yet<br>
-Sometimes you wish it might<br>
-<br>
-Happy birthday!<br>
-You wish you had more money<br>
-Happy birthday!<br>
-Your life's so sad it's funny<br>
-Happy birthday!<br>
-How much more can you take?<br>
-But your friends are hungry<br>
-So just cut the stupid cake<br>
-<br>
-Happy birthday!<br>
-Happy birthday!<br>
-Happy birthday, dear…<br>
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/the-academic-internet.html" class="u-url">The 'Academic' Internet</a></h1>
-        <span class="post-date">10 Oct 2008</span>
-    </header>
-    <div class="e-content entry-content">
-    <blockquote>
-<p>
-<b>Notice for the Internet Usage</b>
+He is walking down the same bridge. He didn't know where he was going; his head
+at least. His legs did; as always. He was walking down in his regular yellow
+shirt and black jeans, that you could mistake for a uniform, if you followed
+him for a few days. Extremely under-dressed for the chilly night, one would
+say. He kept walking down the main street, lined with shops brightly lit up for
+the festive season. The pavement bustled with with people walking with a spring
+in their step – the spring that the festive season and all the love in the air
+brought to you. Not that he noticed it, or had any of it in his step.
 </p>
 
 <p>
-Internet Facility is provided to students for academic activities
-and e-mails. It is observed that few students are misusing the
-Internet facility by using excessive internet bandwidth for
-non-academic purposes. The students who are running the hubs are
-strictly informed to close their hubs. Computer Center will be
-starting official hub for the sharing of academic information and
-open source softwares.
+Soon, he's walking through the park. The park that was built to celebrate time,
+ticking away furiously. Or to celebrate the time everyone in the world had, to
+enjoy themselves. He walked past the skating rink, with lots of people having
+the time of their life, ice skating; and a lot more, awaiting their turn. The
+first timers, old and young, making up for their inexperience, with their
+excitement; holding onto whatever they can, to finish each round, to start the
+next! The veterans, taking the center-stage and showing off their moves!  He
+was barely aware of their presence and just walked on, past all the action.
 </p>
 
 <p>
-If a student is found while doing so the network facility will be
-blocked by Computer Center for a semester. Further, a student will
-be called by a disciplinary committee and a severe disciplinary
-action will be taken.
-</p>
-</blockquote>
-
-<p>
-This Notice from the Computer Center is creating waves all
-around. This isn't the first time, though, that the people
-in-charge of the Network have "acted".
+The music festival; he walked past it too, like the crowd didn't exist, the
+noise didn't, the music didn't; like there was nothing happening! The fountain
+"felt" no different. The cold breeze, did sprinkle the water to quite a
+distance and everybody kept a safe distance to avoid the chilling shower,
+except for the kids, who found it amusing to run into the shower for a split
+second and run back madly. How could he walk just by it, and not feel a thing!
 </p>
 
 <p>
-Academic activities; wonder what it's definition is, in their
-dictionaries. It surely includes the following.
-</p>
-
-<ul class="org-ul">
-<li>Using Internet for 'academic activities' or emails, during
-class-room hours makes no sense.
-</li>
-<li>Anything 'academic' cannot have a size greater than 5 MB.
-</li>
-<li>Accessing version control systems ( svn, cvs et al ) cannot be
-classified 'academic'
-</li>
-<li>IRC cannot teach you anything. Don't ever dream of thinking it
-as 'academic' to hang out on \#python or \#emacs
-</li>
-<li>All 'academic' stuff is limited to the http(s) ports. You
-wouldn't need to use any other ports, ever.
-</li>
-<li>Any 'academic' activity fits within a span of 2 hours or can be
-done in blocks of 2 hours each, with gaps of 2 hours in between.
-</li>
-<li>'Academic' stuff doesn't definitely contain key-words chosen by
-the "all-knowing" admins.
-</li>
-</ul>
-
-<p>
-Moreover, the people in-charge who refused to allow the use of a
-computer in the CC as a server for on-campus repositories of
-GNU/Linux packages, now wish to host a 'hub' for sharing
-open-source softwares! There's already an official ftp server
-which hosts the academic info and a few useful softwares. I don't
-see how a hub would be different.
-</p>
-
-<p>
-We don't have any disciplinary committees for people smoking in
-hostel rooms, causing a lot of trouble for others around them, but
-we are going to have them for hosting hubs. ( Well, a new law
-banning smoking in public places in India has been passed just a
-few days ago. Hopefully it'll work better than the older one,
-since now there's some pressure on the people in-charge of the
-public place. )
-</p>
-
-<p>
-Also, it could be argued that college isn't meant only for
-'academic' learning and a lots of other learning takes place here
-(and the hubs were definitely helping quite a bit) but I'll leave
-that for another day, probably. Also, I don't think 18+ year olds,
-people who are about to step into various big roles, leading the
-country need to be told how to make use of the
-facilities/resources available to them; A degree of freedom is
-indispensable, I believe.
-</p>
-
-<p>
-I appreciate the efforts being made to improve the network
-situation here and also help the students get the most (
-'academically' ) out of their college experience, but I feel the
-situation deserves more careful handling.
+The lakefront. That is where his legs always brought him in the end. The
+brilliantly lit skyline was a delight to watch, but I don't believe he saw any
+of it. He just stared into it, blankly. He kept staring, as the night got
+chillier and the surroundings kept getting more and more deserted. Seconds
+ticked away, minutes and hours passed by! He stayed on, staring ahead. It
+didn't matter how much below zero the mercury had gone. This wasn't the first
+night he was spending staring into the nothingness. It turned out to be the
+coldest night, in a decade. But that didn't matter to him. Nothing did. Nothing
+has, for a while now; Ever since he turned cold.
 </p>
     </div>
     </article>

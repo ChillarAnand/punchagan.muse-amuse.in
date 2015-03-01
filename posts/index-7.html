@@ -98,336 +98,505 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/tu-marathi-aheska.html" class="u-url">tu marathi aheska?</a></h1>
-        <span class="post-date">15 Aug 2010</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-18.html" class="u-url">Hacker School, 2014-06-18</a></h1>
+        <span class="post-date">18 Jun 2014</span>
     </header>
     <div class="e-content entry-content">
-    <p>
-It's just a co-incidence that this post is coming on
-Independence day.
-</p>
-
-<p>
-Last night I was in an auto with a couple of friends, and the
-auto couldn't get up a slope and stopped near the edge of the
-slope which was leading onto a main road. We had to get down
-from the auto, and after a lot of fight, the auto got on top.
-As the driver was trying hard to get the auto moving, a guy
-comes over and starts talking to him in Marathi. I'm not sure
-if he was a traffic police. He was dressed in white, but
-didn't really look like one.
-</p>
-
-<p>
-After asking a few questions, but not getting any replies, the
-guy asks him in Hindi, if he understands Marathi, and on
-getting a negative reply, starts shouting on him!
-</p>
-
-<p>
-The guy harasses the driver, asking him to handover his
-license and threatens him of horrible consequences, if he
-doesn't do so. We tried to intervene saying, we want to leave
-early and stuff, but the auto refused to start. The driver
-asked us to leave and said he'll take care of the matter.
-</p>
-
-<p>
-And then, today I hear people talking of national integration
-and stuff. I hear stuff about changing the country, getting
-rid of corrupt politicians and all the high ideals crap. I
-keep hearing all sorts of patriotic songs that I hear only
-twice a year. Not once more than that.
-</p>
-
-<p>
-Why is it that we talk of all this only on these two days of
-National importance? Why are these songs played only twice a
-year? Don't we get that feeling of patriotism on other days?
-Isn't patriotism a "true" feeling?
-</p>
-
-<p>
-I think, India will only take a leap in it's progress, when
-that happens.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/restoring-grub-with-grub2.html" class="u-url">Restoring GRUB with Grub2</a></h1>
-        <span class="post-date">10 Aug 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-It's a one liner with grub2.
-</p>
-
-<pre class="example">
-$ sudo grub-install --root-directory=/mount/point/of/root/ /dev/sdX
-</pre>
-
-<p>
-where <code>sdX</code> is <code>sda,sdb,..</code> depending on which hard-drive it is
-on.
-</p>
-
-<p>
-This is the first instance when I found grub2 to be better
-than grub.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/pair-blogging.html" class="u-url">Pair Blogging</a></h1>
-        <span class="post-date">08 Aug 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-I like the idea of pair blogging. Cate and Sacha, seem to be doing
-it (intentionally or not). One person blogs on a topic he/she's
-presently thinking about and the other person posts his/her views
-on the same issue.  Well, comments are meant for that, but a blog
-post seems to give you greater freedom.
-</p>
-
-<p>
-PS: I called it pair-blogging. I don't know if it already has a
-name or if pair-blogging means something else.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/drafting.html" class="u-url">Drafting</a></h1>
-        <span class="post-date">07 Aug 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Drafting behind trucks (when cycling) could be a great energy
-saver.  I came across this idea when reading up a blog post by a
-cyclist.
-</p>
-
-<p>
-The idea is similar to birds flying in a V-shape to get a greater
-lift.  While drafting, the goal is to reduce the drag force.
-</p>
-
-<p>
-Pacelines in cycling races are formed precisely for this reason.
-This page has a short summary of what drafting is all about.
-</p>
-
-<p>
-Should be trying this out, the next time around.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/advice-programming-in-elisp.html" class="u-url">Advice - Programming in Elisp</a></h1>
-        <span class="post-date">06 Aug 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Below is a mail sent by Eric Schulte to the org-mode mailing list
-answering a query on how to write elisp for org-mode. I am
-reproducing it here, since it is useful advice for me. The actual
-thread is here.
-</p>
-
-<hr>
-<p>
-The way that I learned how to program in emacs lisp was mainly
-using two commands `elisp-index-search' bound to `C-h e' on my
-system, and most importantly `describe-function' bound to `C-h f'.
-With `describe-function' you can look at the source code of
-functions whose behavior you are familiar with, you can then copy
-portions of the code to your <b>scratch</b> buffer where they can be
-edited and evaluated with `eval-defun' bound to `C-M-x'.  Now with
-Babel, instead of doing this in the scratch buffer you could do
-this in emacs-lisp code blocks in an org file, enabling notes and
-hierarchical organization – it can be nice to have your noodling
-all collected in one file for later reference.
-</p>
-
-<p>
-If you are going to do any serious work with lisp, I would
-emphatically recommend using paredit-mode, and becoming friends
-with the Sexp movement functions
-</p>
-
-<p>
-C-M-f        runs the command paredit-forward
-C-M-b        runs the command paredit-backward
-C-M-u        runs the command backward-up-list
-C-M-k        runs the command kill-sexp
-C-y        runs the command yank
-</p>
-
-<p>
-They allow you to manipulate lisp code on the level of logical
-expressions, the utility of which can not be over stated.
-</p>
-
-<p>
-As for working with Org-mode in particular, I'd recommend looking
-at the documentation and source-code of Org-mode functions with
-`describe-function', and then looking for how these functions are
-actually used in the Org-mode code base with `rgrep'.
-</p>
-
-<p>
-For a more structured learning experience, I've heard very good
-things about <a href="http://www.gnu.org/software/emacs/emacs-lisp-intro/">http://www.gnu.org/software/emacs/emacs-lisp-intro/</a>,
-although I haven't used it myself.
-</p>
-
-<p>
-Hope this helps.  Happy Hacking – Eric
-</p>
-<hr>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/lesson-with-rss-feeds-wordpress.html" class="u-url">Lesson with RSS feeds &amp; Wordpress</a></h1>
-        <span class="post-date">04 Aug 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-In a world of (RSS &amp; Atom) feeds, deleting your posts is not the
-way to do it.
-</p>
-
-<p>
-First re-post using no content and give the post some time for it
-to be caught by the feed aggregators. Then, delete your post.
-</p>
-
-<p>
-<b>Update</b>:
- This
- post also has similar advice.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/org2blog-annoyance.html" class="u-url">org2blog annoyance</a></h1>
-        <span class="post-date">03 Aug 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-I hate it when I'm trying out things with org2blog - fixing bugs
-or adding features - and my testing buffer gets posted. Why do I
-keep passing the prefix argument with C-u? I should probably
-work with a local instance of WordPress.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/aluva-to-mumbai.html" class="u-url">Aluva to Mumbai</a></h1>
-        <span class="post-date">03 Aug 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Heavy down-pour and landslides caused our train to be delayed by
-over 12 hours. But the journey was on the whole enjoyable.
-</p>
-
-<p>
-The novelty of the journey was that we had a bus ride from Adavali
-to Ratnagiri, arranged by the Indian Railways, owing to bad tracks
-near Ratnagiri.  It was very well planned and neatly executed.
-Kudos Indian Railways!  The Konkan Rail route was at it's usual
-best.
-</p>
-
-<p>
-<span class="timestamp-wrapper"><span class="timestamp">[2010-08-15 Sun]</span></span>
-<b>UPDATE:</b> A post by Nishanth is here.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/git-vs-mercurial.html" class="u-url">git vs. mercurial</a></h1>
-        <span class="post-date">01 Aug 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-At work, we use hg and to be frank, I haven't really got the
-hang of using it well. I've recently started using git for my own
-work and I'm loving it.
-</p>
-
-<p>
-I chose git because
-</p>
-<ul class="org-ul">
-<li>github seems to be a nice place to hang around, as compared to
-bit-bucket.
+    <ul class="org-ul">
+<li>Amber <a href="http://www.subsymbol.org/2014/06/hacker-school-tuesday-june-17th-2014.html">talked about</a> "exploring only until the current task is done"
+and moving on, which is could really be a lost opportunity to learn
+something new and gain a better understanding of the system I am
+working with.
 </li>
-<li>org-mode uses git and I need to learn to use git, if I intend
+<li>Having something (anything not directly related to the current
+project I'm working on) scheduled for later in the day, doesn't seem
+to do me much good. I feel distracted for quite a long period before
+the scheduled time.
+</li>
+<li>Abstractions and layers were talked about in the second exercise on
+Applicatives… Layering, FTW!
+</li>
+<li>I spent about an hour or so in the afternoon reading the paper, <a href="https://www.cs.purdue.edu/homes/gkrichar/papers/onward2013-wuerthinger-truffle.pdf">One
+VM to rule them all</a>.  It talked about Truffle: an API to implement
+an AST parser for any language and Graal: a JIT compiler for the
+ASTs.  Later in the day, I also went to the <a href="http://www.meetup.com/papers-we-love/events/178049922/">Papers we love</a> meetup.
+The presentation and the talks were quite interesting!
+</li>
+<li>I also started looking at <a href="http://elm-lang.org">Elm</a> and playing with it.
 </li>
 </ul>
-<p>
-contribute anything to org-mode.
-</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-17.html" class="u-url">Hacker School, 2014-06-17</a></h1>
+        <span class="post-date">17 Jun 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>I've been bookmarking the interesting links that people post on
+Zulip and have a lot of reading to do.   It would be nice if I had
+an easy way to send stuff on to my kindle. (pdfs, html, etc.).
+Instapaper works, but doesn't work as well as I would like it to.  I
+just want a simple script that takes a list of urls and does the
+right thing.  May be I will write something that uses Calibre, or
+even better someone already has.
+</li>
+<li>I worked through exercises 08 and 10 of the haskell course,
+yesterday.
+</li>
+<li>Chapter 8 was about how IO works in haskell.  The exercise didn't
+involve too much, except I wasted a lot of time on tracking a
+stupidity of mine.
+</li>
+<li>The next part of the course was an introduction to Functors,
+Applicative and Alternative.  I'm not sure I totally understand and
+am comfortable with them, but I have been able to get through the
+exercises.
+</li>
+<li>I think it's time for me to start working on some Elm tutorials,
+along with the Haskell exercises.
+</li>
+<li>Also, I had questions about when to use <code>type</code>, <code>newtype</code> and <code>data</code>
+and incidentally found <a href="http://learnyouahaskell.com/functors-applicative-functors-and-monoids#the-newtype-keyword">this section</a> that ended with the following
+summary: "If you just want your type signatures to look cleaner and
+be more descriptive, you probably want <code>type</code> synonyms. If you want
+to take an existing type and wrap it in a new type in order to make
+it an instance of a type class, chances are you're looking for a
+<code>newtype</code>.  And if you want to make something completely new, odds
+are good that you're looking for the <code>data</code> keyword."
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-16.html" class="u-url">Hacker School, 2014-06-16</a></h1>
+        <span class="post-date">16 Jun 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>Didn't do anything during the weekend.  Hopefully, this won't be the
+case all of the weekends.  I had fun with my cousins, though.
+</li>
+<li>Denise is already working on a twitter app that sounds similar to
+the idea I had.
+</li>
+<li>I accidentally discovered that evince supports vim-like keybindings,
+which is cool.
+</li>
+<li>When writing patterns for a function it helps to write the most
+general case first, and then write the edge cases.
+</li>
+<li>I was feeling a little unproductive in the afternoon and I ended up
+attending Zach's talk on <a href="https://github.com/hackerschool/community">Community</a>.  I got a brief overview of the
+whole architecture, and got to know a little bit about reactjs and
+om. I don't think I'll get around to contributing to the project,
+since most of the stack is totally new to me, and I'm not
+particularly inclined to learn those things now.
+</li>
+<li>I was working on Monoids for most part of the day and got through
+exercise 7.  I started doing the I/O exercise around the end of the
+day.
+</li>
+<li>The day ended with a talk on jobs related stuff by Nick and Sonali.
+It seems super unlikely for me to get a job (in the US), from what I
+understood from them.  So, I needn't worry too much about that and
+focus on getting better at Haskel and as a programmer in general.
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-12.html" class="u-url">Hacker School, 2014-06-12</a></h1>
+        <span class="post-date">12 Jun 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>Came to know about the project that Tom is working on for being able
+to auth integration of GitHub and Hacker School.  This will be useful
+for me, when I get to working on the GitHub dashboard.
+</li>
+<li>I spent an hour or so to clean up by blog workflow and help scripts
+to insert tags in Nikola posts, etc.  I also have a <a href="https://github.com/punchagan/home-bin/blob/master/hs-post">script</a> to make a
+post for each day, automatically.
+</li>
+<li>lolcommit is an interesting project, and Max is using it for logging
+his work at Hacker School.
+</li>
+<li>Learned about laziness and the consequences of it. You cannot have
+side-effects, in a lazy language, if you want to keep the sanity of
+the developers using your language.
+</li>
+<li>Pattern matching forces evaluation.
+</li>
+<li>Also, briefly read about <code>seq</code>, halting problem and <code>bottom</code> from
+the Haskell wiki.
+</li>
+<li>The week ended with presentations by Hacker Schoolers from this
+batch.  It was also Alum day, so we had some Alumni visiting.  I
+missed half of the presentations because I had to leave early for
+Suguna's graduation.
+</li>
+</ul>
 
 <p>
-But after using git for a month or so, I'm totally loving using
-git. The way it handles merges is awesome. People go gaga over
-it's speed.
-</p>
-
-<p>
-But for me, it's the way it handles branches. I can have any
-number of branches on my machine, while pushing only changes in
-the master branch, upstream. I can easily merge changes from one
-branch to another. After putting up a lot of fight, I couldn't
-make hg do this. Not as well as git does it!
-</p>
-
-<p>
-I've now decided to convert my personal repositories to git.
-</p>
-
-<p>
-This blog post shows how to.
+I hope to continue to do some work on the tutorials during the
+weekend, and get back to it and finish them next week.
 </p>
     </div>
     </article>
     <article class="h-entry post-text">
     <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/thanks-sacha.html" class="u-url">Thanks Sacha</a></h1>
-        <span class="post-date">30 Jul 2010</span>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-11.html" class="u-url">Hacker School, 2014-06-11</a></h1>
+        <span class="post-date">11 Jun 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Plan</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Continue with the Haskell tutorials, with additional reading from
+Real World Haskell.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Actual</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Finished exercises 4 and 5.
+<ul class="org-ul">
+<li>Learnt about Type classes in Haskell and how to create them and
+make data types instances of them.
+</li>
+<li>Also came across a new algorithm of sieving called the <a href="http://en.wikipedia.org/wiki/Sieve_of_Sundaram">Sieve of
+Sundaram</a>, which was discovered by a student.  Surprisingly, I
+never heard of it before!
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Miscellaneous</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>A few of us had an interesting discussion about various places
+people grew up in and visited, and the cultures, etc.
+</li>
+<li>Idea: implement a GitHub dashboard for organizations (say, HS
+batches) that give you different statistics, and interesting
+graphs. (Use elm?) [Update: Tom is working on HS and GitHub
+integration. So, that's perfect!]
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-10.html" class="u-url">Hacker School, 2014-06-10</a></h1>
+        <span class="post-date">11 Jun 2014</span>
     </header>
     <div class="e-content entry-content">
     <p>
-I just wanted to thank Sacha Chua for bearing with my newbie elisp
-code and trying out org2blog.
+I came super early to try and get some work done in the quiet before
+the daily checkins time.  Continued with the Haskell tutorial and
+reading the Real World Haskell.
 </p>
 
 <p>
-Also, thanks for the two patches she sent.
+Finished a couple of exercises from the UPenn course, that were pretty
+straight forward.
 </p>
-<ol class="org-ol">
-<li>Feature addition - Posting sub-trees instead of whole buffers.
-I had this feature in mind, and had started working on it after
-her request, but she was too quick for me! ;)
-</li>
-<li>Cleaning up of the code that uploads images.
-</li>
-</ol>
 
 <p>
-I'm loving it!
+Also, finished a few exercises from chapter 3 of real world haskell,
+and partially finished implementing Graham scan for generating a
+convex hull for a set of points.
 </p>
+
+<p>
+The exercises from both the places involved mainly learning about
+Algebraic Data Types.
+</p>
+
+<p>
+Mary pinged me to ask how the first couple of days were, and it was
+good to talk to get a ping from her though I never talked to her.
+</p>
+
+<p>
+I'm going to continue working on the Haskell exercises today.
+</p>
+
+<p>
+I also got a couple of ideas for small projects:
+</p>
+
+<ul class="org-ul">
+<li>Since, yelp is blocked from here, nobody can use yelp's API and work
+on any projects.  It may be helpful to have an API proxy server that
+runs on a different server and forwards any requests coming to it.
+</li>
+<li>A simple script to create a twitter list for each batch of
+Hacker School.
+</li>
+</ul>
+
+<p>
+Doing them in Python would be pretty straight forward. I will try to
+work on these things in Haskell, once I'm reasonably comfortable with
+Haskell.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/hacker-school-2014-06-09.html" class="u-url">Hacker School, 2014-06-09</a></h1>
+        <span class="post-date">10 Jun 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+Finally, I'm at Hacker School.  The day began with introductions,
+breakfast and welcomes to HackerSchool.
+</p>
+
+<p>
+The four rules of Hacker School were reiterated to all of us:
+</p>
+
+<ul class="org-ul">
+<li>No (Feigning) surprise
+</li>
+<li>No Well-actuallys
+</li>
+<li>No Backseat driving
+</li>
+<li>No Subtle-isms
+</li>
+</ul>
+
+<p>
+It was made clear that each of us should watch ourselves not to break
+these rules, and being called on breaking these rules is totally cool,
+and we should stop about it and think for a moment and move-on.
+Breaking the rules doesn't make us bad hacker schoolers.  We are all
+here to learn!
+</p>
+
+<p>
+I liked the idea of all of us being asked to list out the things that
+we are nervous about, and excited about.  I was happy to find that a
+lot of the people were nervous about the similar kinds of things I was
+nervous about.  I'm not alone!
+</p>
+
+<p>
+After the check-ins, I started off with the Introduction to <a href="http://www.seas.upenn.edu/~cis194/">Haskell course</a> by
+<a href="http://www.cis.upenn.edu/~byorgey/">Brent Yorgey</a>.  What I did was mostly a recap of what I learned from the first
+few chapters of <a href="http://learnyouahaskell.com">Learn you a Haskell</a>.  I learnt about how credit card numbers
+are validated, apart from learning a little bit about lazy evaluation and
+thunks.
+</p>
+
+<p>
+The day ended with burritos and game night Mafia!
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2014-06-10.html" class="u-url">Bookmarks [2014-06-10]</a></h1>
+        <span class="post-date">10 Jun 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://marss86.org/~marss86/index.php/Home">Marss86</a>
+
+<p>
+MARSSx86 (MARSS for short) is a tool for cycle accurate full system
+simulation of the x86-64 architecture, specifically multicore
+implementations. Our goal is to create a simple yet efficient full
+system architectural simulation environment based on existing tools.
+</p>
+</li>
+
+<li>
+<a href="https://medium.com/p/b9b1b173f4eb">What 50 pounds of clay can teach you about design — Medium</a>
+
+<p>
+while the “quantity” group was busily churning out piles of work”and
+learning from their mistakes”the “quality” group had sat theorizing
+about perfection, and in the end had little more to show for their
+efforts than grandiose theories and a pile of dead clay.
+</p>
+</li>
+
+<li>
+<a href="http://blog.metaobject.com/2014/05/why-i-don-mock.html">metablog: Why I don't mock</a>
+
+<p>
+So don't mock. Because it's impolite to not listen to what your code
+is trying to tell you.
+</p>
+</li>
+
+<li>
+<a href="http://opensource.com/life/14/5/true-value-of-open-source">Where's the value in open source? | Opensource.com</a>
+
+<p>
+Open source is about the people involved. Code can be replaced,
+re-written, even removed completely, and the project will continue
+to move forward. The open source community is made up of people who
+have dedicated their time and their life to see its success.
+</p>
+</li>
+
+<li>
+<a href="http://www.vex.net/~trebla/haskell/learn-sources.xhtml">I Recommend These for Learning Haskell</a>
+
+<p>
+A friend of mine recommends reading 3 calculus books to learn
+calculus. I generalize it to reading from 3 sources to learn
+anything. I also postulate a law: the 3rd source you read is the
+best.
+</p>
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2014-05-19.html" class="u-url">Bookmarks [2014-05-19]</a></h1>
+        <span class="post-date">19 May 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://sivers.org/ml">The Meaning of Life | Derek Sivers</a>
+
+<p>
+Socrates said the unexamined life is not worth living. What about
+the forgotten life?
+</p>
+</li>
+
+<li>
+<a href="http://blog.samaltman.com/advice-for-ambitious-19-year-olds">Advice for ambitious 19 year olds - Sam Altman</a>
+
+<p>
+The best people always seem to be building stuff and hanging around
+smart people, so if you have to decide between several options, this
+may be a good filter.
+</p>
+</li>
+
+<li>
+<a href="https://canadianultimate.com/index.php/about-uc/1/16">Resources</a>
+
+<p>
+There are many coaching resources available for coaches and players
+to help develop Ultimate programs and improve skills.
+</p>
+</li>
+
+<li>
+<a href="http://www.discnw.org/youth/coaches.html">Coaches</a>
+  Here is a list of resources for coaches and, of course, team
+captains, players, PE teachers, or anyone else who wants to teach
+skills, find a team to coach, or learn drills, plays, and
+strategy.
+</li>
+
+<li>
+<a href="http://thoughtcatalog.com/lance-pauker/2014/05/15-people-on-the-one-book-you-should-read-this-summer/">17 People On The One Book You Should Definitely Read This Summer | Thought Catalog</a>
+  I figured I’d ask some young #tastemakers to share their suggestions
+with the world.
+
+<p>
+The list below is rather diverse in style — from comedy, to
+business, to self-help, to fantasy, to classic literature-y books
+that you could smartly reference at “functions,” there might just be
+something for everyone.
+</p>
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2014-05-04.html" class="u-url">Bookmarks [2014-05-04]</a></h1>
+        <span class="post-date">04 May 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://mauveweb.co.uk/posts/2014/04/learning-rust.html">Learning Rust | Mauveweb</a>
+
+<p>
+I also spent some time working out how to call Rust code from
+Python, which would allow me to use both languages to their strength
+in the same project.
+</p>
+</li>
+
+<li>
+<a href="http://yaledailynews.com/crosscampus/2012/05/27/keegan-the-opposite-of-loneliness/">KEEGAN: The Opposite of Loneliness | Cross Campus</a>
+
+<p>
+The notion that it’s too late to do anything is comical. It’s
+hilarious. We’re graduating college. We’re so young. We can’t, we
+MUST not lose this sense of possibility because in the end, it’s all
+we have.
+</p>
+
+<p>
+We don’t have a word for the opposite of loneliness, but if we did,
+I’d say that’s how I feel at Yale. How I feel right now. Here. With
+all of you. In love, impressed, humbled, scared. And we don’t have
+to lose that.
+</p>
+
+<p>
+We’re in this together, 2012. Let’s make something happen to this
+world.
+</p>
+</li>
+
+<li>
+<a href="http://skydmagazine.com/2012/01/raise-your-game-day-1/">Raise Your Game: Day 1 - Skyd Magazine</a>
+
+<p>
+This article is Part 1 in a 5 part series from Ben Wiggins on
+succeeding in the sport of Ultimate.
+</p>
+</li>
+
+<li>
+<a href="http://qnrq.se/why-i-wont-work-for-google/">Why I won’t work for Google | qnrq</a>
+
+<p>
+“Gentlemen do not read each other’s mail.” – Henry L. Stimson
+</p>
+</li>
+
+<li>
+<a href="http://www.umbrelr.com/young-mother-giving-kids-dont-blame-her/">This Young Mother Is Giving Up On Her Kids And I Don't Blame Her.</a>
+
+<p>
+My kids are not the center of my world because I love them enough
+not to allow them to be.
+</p>
+</li>
+</ul>
     </div>
     </article>
 </div>
