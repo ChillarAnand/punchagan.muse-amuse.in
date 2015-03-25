@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (git)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/git.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 01 Mar 2015 03:01:22 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-06-23</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-23.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (git)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/git.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 25 Mar 2015 18:48:02 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-06-23</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-06-23.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;The Apprenticeship patterns book is very interesting!  I shall
 continue to read it and start create daily/weekly rituals from the
 actions prescribed in the book!
@@ -55,7 +55,7 @@ algorithms today.
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>conference</category><category>git</category><category>hackerschool</category><category>principle</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-06-23.html</guid><pubDate>Mon, 23 Jun 2014 08:38:29 GMT</pubDate></item><item><title>A git-diff tip</title><link>http://punchagan.muse-amuse.in/posts/a-git-diff-tip.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/ul&gt;</description><category>conference</category><category>git</category><category>principle</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-06-23.html</guid><pubDate>Mon, 23 Jun 2014 08:38:29 GMT</pubDate></item><item><title>A git-diff tip</title><link>http://punchagan.muse-amuse.in/posts/a-git-diff-tip.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 One of the things with git that you can mess-up, if you are not
 used to, is git diff.  A friend of mine was trying to add a couple
 of new files, and changes to existing files.  But, he was on the

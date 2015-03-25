@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (emacs)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 01 Mar 2015 20:12:32 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>org-drill for making it stick!</title><link>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (emacs)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 25 Mar 2015 18:48:02 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>org-drill for making it stick!</title><link>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Those who read the &lt;a href="http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html"&gt;last&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html"&gt;few&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html"&gt;posts&lt;/a&gt; here, would know that I have been
 experimenting with &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;org-drill&lt;/a&gt; (a spaced repetition extension to &lt;a href="http://orgmode.org/"&gt;Org mode&lt;/a&gt;).  I
 have been using the system (almost) religiously for the past 2 months, and I do
@@ -434,7 +434,7 @@ Cram mode and incremental reading are also things I want to try, as I go along.
 
 &lt;p&gt;
 Happy Learning!
-&lt;/p&gt;</description><category>emacs</category><category>learning</category><category>orgmode</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</guid><pubDate>Tue, 14 Oct 2014 04:07:04 GMT</pubDate></item><item><title>Hacker School, 2014-08-08</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-08.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/p&gt;</description><category>emacs</category><category>learning</category><category>orgmode</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</guid><pubDate>Tue, 14 Oct 2014 04:07:04 GMT</pubDate></item><item><title>Recurse Center, 2014-08-08</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-08.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I spent the morning doing some white-boarding interview practice with a Jorge
 and Brian.
 &lt;/li&gt;
@@ -453,7 +453,7 @@ some matching/searching features with helm/ido/whatever else.
 &lt;li&gt;I spent the Sunday writing a patch to &lt;a href="https://github.com/punchagan/xtab/tree/kill-by-memory"&gt;xtab&lt;/a&gt; to be able to limit the number of
 tabs in Chromium by the memory it uses.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>chrome</category><category>emacs</category><category>hackerschool</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-08-08.html</guid><pubDate>Sun, 10 Aug 2014 00:56:22 GMT</pubDate></item><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/ul&gt;</description><category>chrome</category><category>emacs</category><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-08.html</guid><pubDate>Sun, 10 Aug 2014 00:56:22 GMT</pubDate></item><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://binchen.org/"&gt;Chen Bin&lt;/a&gt; asked me to share my Nikola+Org work-flow, and share an
 example post.
 &lt;/p&gt;

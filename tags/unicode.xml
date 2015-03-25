@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (unicode)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/unicode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 01 Mar 2015 03:01:23 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacker School, 2014-07-09</title><link>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-09.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (unicode)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/unicode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 25 Mar 2015 18:48:03 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-07-09</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-09.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;Unicode issues: it turned out that (atleast) one of the files had a character
 that wasn't UTF-8 encoded. I got around it by trying 'utf-8', if not falling
 back to 'iso-8859-1'.  Now that I think about it, I should fallback to
@@ -24,4 +24,4 @@ unknown cursor kinds.
 &lt;/li&gt;
 &lt;li&gt;I may present my project in today's presentations!
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>hackerschool</category><category>python</category><category>unicode</category><guid>http://punchagan.muse-amuse.in/posts/hacker-school-2014-07-09.html</guid><pubDate>Thu, 10 Jul 2014 14:21:45 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><category>unicode</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-09.html</guid><pubDate>Thu, 10 Jul 2014 14:21:45 GMT</pubDate></item></channel></rss>
