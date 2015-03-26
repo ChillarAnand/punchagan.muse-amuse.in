@@ -1,8 +1,14 @@
 {
   "pages": [
     {
+      "text": "Do anything, but let it produce joy. \u2013 Walt Whitman\n\n\nLearn to value yourself, which means: fight for your happiness \u2013 Ayn Rand\n\n\nIf you don't stand for something you will fall for anything \u2013 Malcolm X\n\n\nDo you want to know who you are? Don't ask. Act! Action will delineate and\ndefine you \u2013 Thomas Jefferson\n\n\nWe will be held accountable for all the permitted pleasures we failed to\nenjoy. \u2013 Talmud Yerwshalmi\n\n\nIt's so easy to hate. It takes strength to be gentle and kind. \u2013 The\nSmiths\n\n\nTo be trusted is a greater compliment than being loved \u2013 George MacDonald\n\n\nI am more convinced than ever. Conceptual integrity is central to product\nquality. \u2013 Fred Brooks", 
+      "tags": "quotes", 
+      "loc": "/posts/quotes-2015-02-28.html", 
+      "title": "Quotes [2015-02-28]"
+    }, 
+    {
       "text": "Those who read the last few posts here, would know that I have been\nexperimenting with org-drill (a spaced repetition extension to Org mode).  I\nhave been using the system (almost) religiously for the past 2 months, and I do\nfind that it has helped a great deal! (in some respects).  I have also spent a\nconsiderable amount of time trying to reduce the friction to put new stuff into\nthe system, and am constantly on the look out for further improvements.\n\n\n\nUsing this system has definitely helped with retention, and I find that I can\nrecall quite a few things I have read a few weeks ago, that I would normally\nhave been unable to. Though, I can recall a lot of information, I have been\nhaving a feeling of \"fragmentation\": the feeling of just retaining individual\nbits/fragments of information, while losing out on actually internalizing the\nknowledge; not seeing the big picture, etc.\n\n\n\nWozniak (the author of super-memo) warns against learning without\nunderstanding, and memorizing before actually learning stuff.  I haven't\nconsciously added stuff into the system that I didn't understand (when I added\nit), but, later it does feel like I have lost some connections or the\nunderstanding, and am only holding onto the fragments of information.\n\n\n\nThe problems as explained in (read: as interpreted by me from) Make it Stick\nappear to be:\n\n\n\nThe understanding (if any) at the time of adding stuff into the\nspaced-repetition system is untested.  It may just be familiarity\nmasquerading as understanding.\n\n\nThe lack of any spaced repetitions for the overall concept/understanding and\nactual repetitions only for individual bits doesn't help retention of the\nunderstanding (even if there was any, in the first place).\n\n\n\n\nTo work around this, I'm going to try adding questions that test understanding,\nto the system.  The Super-memo team strongly recommends keeping the drill items\nsmall and easy to answer.  This may be helpful in keeping each drill session\nshort, but I would really like to add conceptual questions to the system, and\nsee how it goes. I hacked org-drill to allow me to type out answers, before\nlooking at the \"correct\" ones.  This is an adaptation of a system that a fellow\nHacker Schooler uses, and shared.  Also, hopefully forcing myself to type out\nthe answer will help me get around the problem of sometimes saying \"yeah I know\nthat\", then looking at the answer only to reaffirm the feeling of familiarity,\nrather than actually testing myself.  I'm still going to continue adding quick\nand short questions that test \"bits of information\", though. But, hopefully the\nadditional conceptual questions are going to tie things together and help fill\nin the gaps.  Lets see how this goes!\n\n\n\nFor those interested, my hacks to org-drill below.  The code is really a\nhack, and welcome any suggestions on cleaning up the code.\n\n\n(advice-add 'org-drill-presentation-prompt :around 'pc/org-drill-presentation-prompt)\n\n(defun pc/org-drill-presentation-prompt (old-fun &rest fmt-and-args)\n  \"A presentation prompt that allows capturing answers.\"\n\n  (let ((cb (current-buffer))\n\t(heading (nth 4 (org-heading-components)))\n\t(entry-id (org-entry-get (point) \"ID\"))\n\t(input \"\"))\n    (switch-to-buffer-other-window \"*org-capture-drill-answer*\")\n    (org-mode)\n    (insert \"# Hit C-c C-c once you are done answering!\\n\")\n    (org-insert-heading-respect-content)\n    (insert (format \"Answer: %s\" heading))\n    (org-entry-put (point) \"QUESTION_ID\" entry-id)\n    (goto-char (point-max))\n    (insert \"  \")\n    (org-time-stamp-inactive '(16))\n    (insert \"\\n\\n  \")\n    (while (not (and input (equal input \"\")))\n      (ignore-errors\n\t(execute-kbd-macro input))\n      (setq input (read-key-sequence nil)))\n    (switch-to-buffer-other-window cb)\n    (apply old-fun fmt-and-args)))\n\n(advice-add 'org-drill-reschedule :around 'pc/org-drill-reschedule)\n\n(defun pc/org-drill-reschedule (old-fun)\n  \"Calls the original reschedule, but also archives the answer\"\n  (prog1 (funcall old-fun)\n    (let ((cb (current-buffer)))\n      (switch-to-buffer-other-window \"*org-capture-drill-answer*\")\n      (pc/org-refile-to-datetree \"drill.org_archive\")\n      (message (buffer-name))\n      (switch-to-buffer-other-window cb)\n      (kill-buffer \"*org-capture-drill-answer*\"))))\n\n(require 'org-datetree)\n(defun pc/org-refile-to-datetree (journal)\n  \"Refile an entry to journal file's date-tree\"\n  (interactive \"fRefile to: \")\n  (let* ((journal (expand-file-name journal org-directory))\n\t (date-string (or (org-entry-get (point) \"TIMESTAMP_IA\")\n\t\t\t  (org-entry-get (point) \"TIMESTAMP\")))\n\t (dct (decode-time (or (and date-string (org-time-string-to-time date-string))\n\t\t\t       (current-time))))\n\t (date (list (nth 4 dct) (nth 3 dct) (nth 5 dct))))\n    (org-cut-subtree)\n    (with-current-buffer (or (find-buffer-visiting journal)\n\t\t\t     (find-file-noselect journal))\n      (org-mode)\n      (save-excursion\n\t(org-datetree-file-entry-under (current-kill 0) date)\n\t(bookmark-set \"org-refile-last-stored\")))\n    (message \"Refiled to %s\" journal)))", 
-      "tags": "emacs,hack,hackerschool,learning,orgmode", 
+      "tags": "blag,emacs,hack,hackerschool,learning,orgmode", 
       "loc": "/posts/org-drill-for-making-it-stick.html", 
       "title": "org-drill for making it stick!"
     }, 
@@ -85,64 +91,70 @@
       "title": "Bookmarks [2014-10-10]"
     }, 
     {
-      "text": "Noetic Nought is punchagan's home on the web. He records his experiences and\nfeelings through his journey of life here. He loves creating things by making\ncomputers flip bits, chasing flying Frisbees and long walks or bike rides. He's\nalso interested in learning to learn better, and express his ideas better.\n\n\n\npunchagan collects his favorite quotes here, and look here to find the kind of\nstuff he reads and likes.  He went to Hacker School, in the Summer of 2014 and\nloved it.\n\n\n\nHe occasionally tweets here, and you can find his code here. You can email him\nat punchagan at this domain.", 
+      "text": "Noetic Nought is punchagan's home on the web. He records his experiences and\nfeelings through his journey of life here. He loves creating things by making\ncomputers flip bits, chasing flying Frisbees and long walks or bike rides. He's\nalso interested in learning to learn better, and express his ideas better.\n\n\n\npunchagan collects his favorite quotes here, and look here to find the kind of\nstuff he reads and likes.  He went to the Recurse Center (previously known as\nHacker School) in the Summer of 2014 and loved it.\n\n\n\nHe occasionally tweets here, and you can find his code here. You can email him\nat punchagan at this domain.", 
       "tags": "", 
       "loc": "/index.html", 
       "title": "About"
     }, 
     {
       "text": "All good things must come to an end, and so did our batch!  We got our Hacker\nSchool t-shirts, and had a super fun picnic at Prospect Park.", 
-      "tags": "hackerschool", 
-      "loc": "/posts/hacker-school-2014-08-28.html", 
-      "title": "Hacker School, 2014-08-28"
+      "tags": "recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-28.html", 
+      "title": "Recurse Center, 2014-08-28"
     }, 
     {
       "text": "I spent the whole of yesterday just working on the LED-bot.\n\nSpent some time cleaning up meta-stuff about the project, making it a real\npackage, adding a setup.py, added LICENSE & AUTHOR files, etc.\n\nI found it really frustrating that there's no good/standard way to remove\nduplication of information between pip's requirements.txt and\ninstall_requires\n\nWe got the bot running on the Beagle Bone, but it turned out to be too slow.\nAfter some playing around with trying to get rid of Python for-loops, I was\nable to use PIL's image.tobytes and some image cropping to get the data to\nbe sent to the LEDs, and it sped up the display quite a bit.", 
-      "tags": "PIL,hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-08-27.html", 
-      "title": "Hacker School, 2014-08-27"
+      "tags": "PIL,python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-27.html", 
+      "title": "Recurse Center, 2014-08-27"
     }, 
     {
       "text": "I spent most of the day refactoring the code for the LED Bot, and am happy\nwith the way it looks right now.\n\nMy talk at Hack and Tell went OK.  I was distracted by livereveal not\ndisplaying properly on the smaller resolution, and not being able to mirror\nscreens!\n\nThere were a bunch of interesting talks presented by the\nothers. http://comparea.org, Taxis and Rainbows were the most interesting\nones for me.", 
-      "tags": "hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-08-26.html", 
-      "title": "Hacker School, 2014-08-26"
+      "tags": "python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-26.html", 
+      "title": "Recurse Center, 2014-08-26"
+    }, 
+    {
+      "text": "I spent some time cleaning up my gitqus code.  I plan to try it out on a\n\"real site\" today, and do a little polish of the UI.\n\n\nI worked with Dana and Marcus fixing a bunch of issues with the HS LED\nScreen. I might work on it for a little bit today, doing a little more\nclean-up of the architecture.\n\n\nThe Monday talk was Mary live coding a space invaders game.  It was a fun\ntalk, that was very well planned.\n\n\nDuring the walk to the talk, Bert, Maia and I were talking about the idea of\na School where projects were the atom of the curriculum, instead of courses.\n\n\nI'll spend some time preparing my talk for tonight's hack-and-tell.", 
+      "tags": "recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-25.html", 
+      "title": "Recurse Center, 2014-08-25"
     }, 
     {
       "text": "Friday\n\n\nI started playing around with React.js to see how I could build the GitHub\norganization dashboard, that I plan to.\n\n\n\n\n\n\nSaturday\n\n\nGot a horrendous idea of implementing a disqus-like commenting system using\nGitHub's issue comments, and ran with it.  It seems technically feasible\nbased on some initial implementation.  I need to clean-up/rewrite the\nprototype code on Monday.\n\n\n\n\n\n\nSunday\n\n\nSpent the day with cousins at Central Park Zoo, Upper East Side River\nfront.", 
-      "tags": "hackerschool,javascript", 
-      "loc": "/posts/hacker-school-2014-08-24.html", 
-      "title": "Hacker School, 2014-08-24"
+      "tags": "javascript,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-24.html", 
+      "title": "Recurse Center, 2014-08-24"
     }, 
     {
       "text": "I finished going through the third of Dave Beazley's tutorials on Generators\nand Co-routines.\n\nAlso refactored api-diff to use astroid, instead of the ast module.  Kinda\nhappy with what I have, for now. May be more, later\u2026", 
-      "tags": "hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-08-20.html", 
-      "title": "Hacker School, 2014-08-20"
+      "tags": "python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-20.html", 
+      "title": "Recurse Center, 2014-08-20"
     }, 
     {
       "text": "I added an additional view to xtab, to see all the pages that were killed,\nand reopen them, if you so choose.\n\nAlso, cleaned up the api-diff project and renamed it to what-changed.\n\nStarted thinking about building the GitHub organization dashboard, that I\nthought would be interesting to have, since the 1st or 2nd week of Hacker\nSchool.\n\nA bunch of awesome thursday presentations, and job fair and awesome food by\nChef Warren!", 
-      "tags": "hackerschool,jobs,python", 
-      "loc": "/posts/hacker-school-2014-08-21.html", 
-      "title": "Hacker School, 2014-08-21"
+      "tags": "jobs,python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-21.html", 
+      "title": "Recurse Center, 2014-08-21"
     }, 
     {
       "text": "I spent most of the day working through David Beazly's tutorials on\ngenerators and coroutines, and it was mind bending.\n\nI learnt about send and throw methods on generators!  I hadn't heard of\nthem before, and was totally surprised to come across them.\n\nI spent a little time late in the day getting class diffs working, and\nrefactoring the api-diff tool to remove duplication of code between classes\nand modules. But, not very happy with the way I did it.", 
-      "tags": "hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-08-19.html", 
-      "title": "Hacker School, 2014-08-19"
+      "tags": "python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-19.html", 
+      "title": "Recurse Center, 2014-08-19"
     }, 
     {
       "text": "I refactored the API-diff code, and am pretty happy with what I have right\nnow, and need to add support for diffing Classes. I'm considering using\nAtstroid instead of Python's ast module, since some of the work that I want\nto do, has already been done for me.\n\nWith the white-boarding group, we worked on a set of simple exercises for\nstrings and arrays.\n\nJos\u00e9 Valim's presentation on Elixir was interesting and got me reading up a\nstuff about concurrency, and related stuff.  Thanks!", 
-      "tags": "elixir,hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-08-18.html", 
-      "title": "Hacker School, 2014-08-18"
+      "tags": "elixir,python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-18.html", 
+      "title": "Recurse Center, 2014-08-18"
     }, 
     {
       "text": "Friday\n\n\nUpdated my HS profile page with projects that I worked on, and a short bio.\n\nJoined the group discussing algorithmic complexity\n\nSubmitted a pull request to blaggregator to fix issues with broken profile\nimages.\n\n\n\n\n\n\nSaturday & Sunday\n\n\nI almost didn't write any code during the weekend.", 
-      "tags": "hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-08-17.html", 
-      "title": "Hacker School, 2014-08-17"
+      "tags": "python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-17.html", 
+      "title": "Recurse Center, 2014-08-17"
     }, 
     {
       "text": "Code is not literature\n\n\nThe ideal presentation should be aimed at an audience of gentleman\nand lady programmers\u2014smart, and generally capable but without,\nnecessarily, any specific knowledge of the domain from which the\ncode comes. Presentations should provide enough context for the\naudience to to understand what the code is and should explain any\ndetails of the implementation language that may be obscure to the\naverage programmer.\n\n\n\nSummary Report: Git Repository Disruption Incident of Nov 10th | Jenkins CI\n\n\nAs reported in various places, there was an incident in early\nNovember where commits in our Git repositories have become misplaced\ntemporarily by accident. By the mid next week we were able to\nresurrect all the commits and things are back to normal now.\n\n\n\nAs there are many confusions and misunderstandings in people\u2019s\ncommentary, we wrote this post to clarify what exactly happened and\nwhat we are doing to prevent this.\n\n\n\na/esr-sharing\n\n\nI used to worry about what would happen if Linus got hit by a truck.\nWith all respect, I still worry about what will happen if the\ncomplexity of the kernel exceeds the scope of your astonishing\nnative talent before you grow up.\n\n\n\nOverview | Adafruit's Raspberry Pi Lesson 5. Using a Console Cable | Adafruit Learning System\n\n\nIn this lesson you will learn how to remote control your Raspberry Pi with a\nconsole cable.\n\n\n\nA German Guy Wants to Give You a Bunch of Money for Nothing | VICE United States\n\n\nAfter he stopped working earlier this year to live off the $1,300 he makes\nfrom his startup each month, Bohmeyer says his life has radically changed. So\nhe started \u201cMy Basic Income\u201d, a new initiative looking to raise enough money\nto pay someone $1,300 a month for a year, no strings attached.", 
@@ -152,255 +164,255 @@
     }, 
     {
       "text": "I spent the morning cleaning up the \"repr\" functions of the diff classes, so\nthat the diff of functions between two modules can be printed out in a\nsomewhat meaningful way.\n\n\nI spent most of the afternoon, preparing to make a small presentation on how\nsys.path works in Python.  I thought I didn't do as good a job of it, as I\nwould've liked, but Tom thought it was not too bad\u2026\n\n\nLooks like another of those days, where I didn't get much done\u2026  I spent\nthe evening finishing off Homeland. It's a brilliant book, and everyone who\ncares about the Government and policies and technology MUST read it!  Thanks\nCory.", 
-      "tags": "hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-08-14.html", 
-      "title": "Hacker School, 2014-08-14"
+      "tags": "python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-14.html", 
+      "title": "Recurse Center, 2014-08-14"
     }, 
     {
       "text": "I feel like I didn't get much done yesterday.\n\nI mostly worked on the API differ, but didn't get much done.  I have a few\ntests, and some code for diffing two functions, but I'm not very happy with\nit.\n\nI helped Giorgio and Carlos with using my client only hs_oauth\n  script/library, for their Zulip bot.\n\nThe white boarding group worked on some binary related problems, and it was\nfun.\n\nI looked at how the HS OAuth backend works on blaggregator and thought about\nhow to go about fixing the issue of broken images on the site.  The problem\nhappens because the image URLs are returned from the HS API calls, that are\nmade whenever a user logs in(?), and the URLs are cached.  Since, HS uses\ncloudfront for its assets, the URLs expire after a period of time, and the\ncached urls in blag's database need to be updated.  There could be two ways\nof doing it -\n\nCheck if the URL 404s, every time a URL is requested, on the server side.\n\nDo it on the client side, with some javascript magic.\n\n\n\nIntuitively, I feel like 2. would be better, but Madhu suggested\nthat 1. wouldn't be that bad either.  We could try both out, and see which\nworks better I suppose.\n\n\n\nI'd be interested to try this out, sometime.", 
-      "tags": "hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-08-13.html", 
-      "title": "Hacker School, 2014-08-13"
+      "tags": "python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-13.html", 
+      "title": "Recurse Center, 2014-08-13"
     }, 
     {
       "text": "An issue I was seeing with pip and a package installed in\nsystem-site-packages turned out to be non-reproducible.  It was probably\nPEBKAC.\n\nI was wondering around in the morning trying to find something to work on.\n\nI decided to work on Pankaj's idea to write a tool that gives you API\ndifferences between two versions of a library.  It would be useful to have\nthe list of public API changes in a library you use, to estimate the cost of\nupdating to the newer version, without having to manually go through all the\nchanges.\n\nI spent some time talking to Sophia, and looking at her FTP server's\nrefactored code.", 
-      "tags": "hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-08-12.html", 
-      "title": "Hacker School, 2014-08-12"
+      "tags": "python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-12.html", 
+      "title": "Recurse Center, 2014-08-12"
     }, 
     {
       "text": "I spent about an hour in the morning testing out the staging blaggregator\ninstance, and things seemed to work as expected.  Side note, I got added as a\ncollaborator on the blaggregator repo!\n\nWe worked through the first chapter on getting video working, but we mostly\nended up just copying code rather than actually understanding/carefully\nstudying it.  I'm not sure how I feel about it, but we got to display fancy\nstuff.\n\nI wasn't feeling like working on any of my 'old'/'ongoing' projects, and\nsince Mondays don't feel very productive, I worked on writing a couple of\nsimple scripts to create twitter lists of HSers, batch wise.\n\n\nFor the HS API, I just reused some old code I had lying around from my\nexperiments with the OAuth2 API, though I had to tweak it a little bit to be\nable to actually login, using requests. Something about CSRF tokens seems to\nhave changed.\n\n\n\nIn the process, I found that twitter's API isn't very pleasant to use.  Or\nmay be it's the fact that I was using python twitter client without getting\nmy own client id/key, but the whole experience of dealing with the twitter\nAPI wasn't a pleasant one at all!\n\n\nAmber, Daria and I also spent about an hour white-boarding some problems from\nthe Cracking the Code Interview book.\n\nI ended up fixing some minor issues with blaggregator and am hoping that the\nlong pending PR will be merged today.", 
-      "tags": "django,hackerschool,python,twitter", 
-      "loc": "/posts/hacker-school-2014-08-11.html", 
-      "title": "Hacker School, 2014-08-11"
+      "tags": "django,python,recursecenter,twitter", 
+      "loc": "/posts/recurse-center-2014-08-11.html", 
+      "title": "Recurse Center, 2014-08-11"
     }, 
     {
       "text": "I spent the morning doing some white-boarding interview practice with a Jorge\nand Brian.\n\nI spent the rest of the day, playing with PyPy and working through a tutorial\n  that teaches us to write a BF interpreter.\n\nI spent the Saturday revamping my Emacs config.  The main issue with my\nconfig was having a \"package\" list, of all the packages that the\nconfiguration uses, in case we are trying to duplicate it elsewhere.  I\nnoticed that this gets out of sync, because I install packages by hand and\nnever update this list.  I wrote up some code, that keeps this list in sync\nwith all the packages I have installed.  I configured el-get to play well\nwith my config, and am pretty happy with my setup, though I still have to add\nsome matching/searching features with helm/ido/whatever else.\n\nI spent the Sunday writing a patch to xtab to be able to limit the number of\ntabs in Chromium by the memory it uses.", 
-      "tags": "chrome,emacs,hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-08-08.html", 
-      "title": "Hacker School, 2014-08-08"
+      "tags": "chrome,emacs,python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-08.html", 
+      "title": "Recurse Center, 2014-08-08"
     }, 
     {
       "text": "C stuff\n\n\nIn the morning I cleaned up the code to open torrent files, and parse them.\n\nI worked on a function to do encode text properly, and Sophia helped me\nfind out that I had to use unsigned chars in it.\n\nI looked at Sophia's threaded ftp server in C, and gave some suggestions on\nhow the code could be refactored.\n\n\n\n\n\n\nBaking Pi\n\n\nWe still didn't get to the video stuff, yesterday.  We finished the first 5\nchapters, though, and have a SOS pattern display.\n\nI'm really looking forward to doing the cool video stuff.\n\n\n\n\n\n\nMiscellaneous\n\n\nWilliam Skeith, gave a talk on using SSH keys for web-authentication, which\nwas pretty interesting.", 
-      "tags": "hackerschool,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-08-07.html", 
-      "title": "Hacker School, 2014-08-07"
+      "tags": "raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-07.html", 
+      "title": "Recurse Center, 2014-08-07"
     }, 
     {
       "text": "Finished working through the first 5 chapters of the baking pi course, and am\nexcited to start working on the video stuff, today!\n\nSpent some time pairing with Sindhu on her url checker, and later in the\nnight helped her out with a small bug in her GitHub activity leaderboard\nscript.\n\nI spent some time adding dict parsing support to the bencode parser.\n\nAnd also cleaned up the tests.\n\nThe electronics hobbyists were doing some cool stuff, and I joined them for a\nbit. We tried some cheap motion sensors, but they didn't work very well, and\nprobably need to be calibrated.", 
-      "tags": "hackerschool,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-08-06.html", 
-      "title": "Hacker School, 2014-08-06"
+      "tags": "raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-06.html", 
+      "title": "Recurse Center, 2014-08-06"
     }, 
     {
       "text": "Spent a couple of hours in the morning, trying to revive a html template for\nblaggregator, that I missed out on committing previously, and wiped out due\nto negligence in using `git clean`.\n\nSpent time post lunch working through the first two chapters of the baking pi\ncourse, by myself, reading up different references, and finally getting how\nI/O is mapped to the memory in ARM.\n\nActually, almost.  A variant of the example that I thought should work,\ndoesn't.  So, I need to think/talk about it today.\n\nI sent a patch to Nikola for the lastdeploy timestamp being UTC.  I was\nhoping to work around an issue with Blaggregator, by somehow fixing it on the\nclient side, but that's probably not the right way to go about it.", 
-      "tags": "hackerschool,nikola,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-08-05.html", 
-      "title": "Hacker School, 2014-08-05"
+      "tags": "nikola,raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-05.html", 
+      "title": "Recurse Center, 2014-08-05"
     }, 
     {
       "text": "A bunch of worked on getting LEDs to blink, by writing some assembly code.\n\n\nI goofed off post-lunch, and cleaned up the code for the Google Translate\nbased TTS client.\n\n\nI tried to continue working on the bencode parser, to add support for\ndictionaries, but I couldn't get much work done before it was time for the\nMonday talk.", 
-      "tags": "hackerschool,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-08-04.html", 
-      "title": "Hacker School, 2014-08-04"
+      "tags": "raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-04.html", 
+      "title": "Recurse Center, 2014-08-04"
     }, 
     {
       "text": "Friday\n\n\nOn Friday, I didn't do the exercises that everyone else doing job prep were\ndoing.  I wanted to continue writing C code, and continued to work on the\nbencode parser in C.  I barely was able to finish adding support for lists.\n\nI got comfortable using Valgrind, in the process of debugging a stupidity of\nnot using realloc correctly.\n\nWhat I was able to write with Python in an hour or so, I have been writing\nfor about a day, in C, and haven't yet finished it!  It definitely doesn't\nhelp that my C is very rusty\u2026\n\n\n\n\n\n\nSaturday & Sunday\n\n\nI didn't work much, and went around New York with Madhu.  We went to quite\na few places around here, the highlight being, the view of Manhattan's\nskyline from the Staten Island Ferry.\n\nNYC's library also had an interesting exhibhition on the history of\nAmerica, just before and during WW-I.\n\nOn Sunday, I tried out Mary TTS on the raspberry pi, and it is simply\nunusable.\n\nI then, started writing a simple wrapper around Google's tts that is used\nby Google translate.\n\nThe TTS part is more or less working right now, the next step would be to\ndeploy it on the RaspberryPi and start using it as a radio, to see what my\nneeds are like. Hooking it up to Jasper client seems like a good idea,\nright now\u2026 though I'm not sure if it would work very well, with the pi's\naudio output drowning out the voice commands.", 
-      "tags": "C,hackerschool,python,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-08-03.html", 
-      "title": "Hacker School, 2014-08-03"
+      "tags": "C,python,raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-08-03.html", 
+      "title": "Recurse Center, 2014-08-03"
     }, 
     {
       "text": "I continued with doing the initial parts of the book, and didn't pair with\nStephanie today.\n\nI gave a super-short presentation, introducing people to pdb, IPython's\ntracer.\n\nI just started writing a Bencoding parser in C, but I'm having trouble\nthinking about all the memory allocations and stuff.  It feels so\nnostalgic! :P", 
-      "tags": "C,hackerschool", 
-      "loc": "/posts/hacker-school-2014-07-31.html", 
-      "title": "Hacker School, 2014-07-31"
+      "tags": "C,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-31.html", 
+      "title": "Recurse Center, 2014-07-31"
     }, 
     {
       "text": "(Re) Learning C\n\n\nStephanie and I worked through the Networking chapter of the book.\n\n\nWe faced some issues with writing 0 bytes to memory, since most of the code\nwas dealing with strings. I still haven't figured out how to do this,\ncorrectly.", 
-      "tags": "C,hackerschool,networking", 
-      "loc": "/posts/hacker-school-2014-07-30.html", 
-      "title": "Hacker School, 2014-07-30"
+      "tags": "C,networking,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-30.html", 
+      "title": "Recurse Center, 2014-07-30"
     }, 
     {
       "text": "Hacking: learning by breaking stuff\n\n\nPost lunch, I started pairing with Stephanie on the exercises in the Hacking\n  book, and that turned out to be super fun!\n\nWe got through the chapter on exploitation, which focussed on stack\noverflows, heap overflows, overflows in function pointers, and string\nformatting exploits.  It acted as more than a gentle refresher for C, and was\nsuper fun!\n\nRunning the examples on a 64bit system, added an additional amount of\nthinking required, and was good, IMO.\n\nI hadn't worked along with Stephanie on the material in the first two\nchapters.  So, I went back home and tried to catch up, but couldn't get all\nof it done.\n\n\n\n\n\n\nMiscellaneous\n\n\nI spent part of the morning wrapping up the install script for the raspberry\nproject, and cleaning up the repository.  It looks reasonable now, and I\nthink I'm done with it until the end of HackerSchool.\n\nI also tried to look for \"easy\" python issues that would involve me writing\nsome C code, but didn't really find anything other than documentation\u2026 I\nguess, I should pick a module and look for bugs in it, instead.\n\nAlso, while chatting with a friend, I had to explain that I don't mention the\nlast names of people or link to them, for privacy reasons.  Hacker School is\nparticularly careful about not divulging information about who are at Hacker\nSchool each batch, and I want to keep that tradition.", 
-      "tags": "C,hack,hackerschool,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-07-29.html", 
-      "title": "Hacker School, 2014-07-29"
+      "tags": "C,hack,raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-29.html", 
+      "title": "Recurse Center, 2014-07-29"
     }, 
     {
       "text": "There seemed to be excitement in the space to have Jessica around.  We had\ncoffee with her, and I chatted with her briefly. She encouraged me to try and\nsend a patch to CPython, that involved debugging and fixing some C issues.\n\nI spent some time with Tom, while he tried to get cinspect working for him,\nand it seemed like having the developer next to you, helped.  As always.  We\ndidn't make any fixes to the code, but it worked.\n\nI spent the afternoon, adding tests for a simple issue, to see how patches are sent.\n\nLater, I paired with Sophia for an hour to refactor the vcs code. It's\nbeginning to look much better than what it used to, and I like that.\n\nJessica's talk on buffer overflows was enlightening and entertaining. It was\nvery similar to a talk that Max gave on one of the thursdays, but it was\nexciting nevertheless.\n\nAfter the talk, I am inspired to try and work through the Hacking: Art of\nexploitation, at some point. I'm beginning to feel like time at HackerSchool\nrunning out!", 
-      "tags": "C,hackerschool,python,version_control", 
-      "loc": "/posts/hacker-school-2014-07-28.html", 
-      "title": "Hacker School, 2014-07-28"
+      "tags": "C,python,recursecenter,version_control", 
+      "loc": "/posts/recurse-center-2014-07-28.html", 
+      "title": "Recurse Center, 2014-07-28"
     }, 
     {
       "text": "We worked on writing our own (toy) version control system on Friday, as a\npart of job prep.  I paired with Sophia, and we got upto the point where we\nhad diffs working, when we decided to refactor the code with some tests and\nstuff.\n\nThe party was brilliant with a lot of activity.  All the project\ninstallations looked so cool, and it was so much fun!\n\nI spent some time during the weekend watching the \"Anatomy of Matplotlib\"\nlectures.\n\nI started some work with poking around Matplotlib's template backend, and\ntrying to start writing and ascii backend.\n\nAlso, I was trying to help UC setup GrooveBasin on his raspberry pi, and\nhelped him configure jasper on it.", 
-      "tags": "hackerschool,python,vcs", 
-      "loc": "/posts/hacker-school-2014-07-25.html", 
-      "title": "Hacker School, 2014-07-25"
+      "tags": "python,recursecenter,vcs", 
+      "loc": "/posts/recurse-center-2014-07-25.html", 
+      "title": "Recurse Center, 2014-07-25"
     }, 
     {
       "text": "Glowing LEDs and me\n\n\nIt turned out that the SPI driver exposed a faster way to write bits, writing\nto all the LEDs at once, instead of one at a time, and this was sufficient to\nget things working!\n\n\nKyle and I started to have enough, of the glowing LEDs and decided to wrap up\nthe project, but, Nick had different ideas for us! We had talked about having\nthe music stream via airplay, but Nick got his DJing tools, and it would be\ntoo bad to not use it for the party, but doing that meant Airplay's delay\nwouldn't help the DJ. So, we connected a line-in, and thought we'd be done if\nwe just read the input and used that data. But, it turns out that's not so\nsimple because sending data over the wire, added noise to it, and in a whole\nrange of frequencies! I tried removing all the fourier coefficients which\nwere lower than a threshold, but I felt like it didn't work very well, until\nNick reduced the gain of this output on the amp to the very minimum. Finally,\nKyle and I decided that this was good enough for the party!\n\n\nI also hacked up a quick script to read a font file, and use the grey values\nto get ascii characters to show up on the LED strip.\n\n\n\n\n\n\nMiscellaneous\n\n\nWhile trying to find the RPi on the network, I learnt that sudo nmap -sP\n  10.0.1.* gives us the hostname as well, instead of just IPs.  sudo being\nthe key, here.\n\n\nKyle and I went and grabbed dinner in a restaurant in west village. It was\ngood to sit down and talk about various things, and eat. The glowing LEDs\nwere totally out of my mind for that period, and the break was good!\n\n\nThere were a bunch of HSers doing mock-interviews and it was fun to watch, so\nI stayed on until quite late, when all of us headed out together.\n\n\n\n\n\n\nToday\n\n\nI'm excited about trying to build a small version control system from\nscratch today!\n\n\nThough I have had quite a bit of glowing LEDs in my face for the past week,\nI may suck up to it, and figure out how to do scrolling text on the\ndisplay.\n\n\nAlso, excited to see how all the cool projects will come together in the\nparty tonight!", 
-      "tags": "hackerschool,python,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-07-24.html", 
-      "title": "Hacker School, 2014-07-24"
+      "tags": "python,raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-24.html", 
+      "title": "Recurse Center, 2014-07-24"
     }, 
     {
       "text": "Shairplay and WS2801\n\n\nKyle mounted the LEDs onto a cardboard, and packaged it to look cool.\n\n\nWe thought we were done with the project, until we found out we weren't!  The\nLEDs all lighted up correctly, when we played the audio from a file on disk,\nbut streaming messed something up!  Only the first few columns lighted up,\nwhen we were listening on the stream.\n\n\nWe spent the whole evening trying to debug the issue, and eliminated quite a\nfew hypothesis, but weren't able to fix it, yet.\n\n\n\n\n\n\nMiscellaneous\n\n\nrntz live coded a parser for us yesterday, and I learnt a few things about\nparsers.  I'm glad I went to the discussion/talk.\n\n\nI started working through the videos of Anatomy of Matplotlib, and hope to\nget new insights into how it works.\n\n\n\n\n\n\nToday\n\n\nToday will be spent mostly trying to get streaming audio working.\n\n\nI feel like debugging this, will take my understanding of the\nhardware-software interface to a new level.", 
-      "tags": "hackerschool,python,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-07-23.html", 
-      "title": "Hacker School, 2014-07-23"
+      "tags": "python,raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-23.html", 
+      "title": "Recurse Center, 2014-07-23"
     }, 
     {
       "text": "Mel's talks\n\n\nMel's talk in the morning was brilliant!  I wonder why it's not a part of\nrecommended reading for Hacker Schoolers, or referred to, in the manual.\n\nLogically, it makes sense that Mel came now, so that she didn't have to come\ntwice to talk to the firsts and seconds, but it would have been great to have\nhad this talk in the first week of Hacker School!\n\nMel gave us a lot of new information and insights into education and learning\nstyles. I also like the fact that she gave us all a good vocabulary to think\nabout and discuss stuff related to learning. I will try to think, and apply\nas much of this as I can, for the rest of my time here.\n\nShe talked about test driven learning which seemed very interesting. Instead\nof just saying, \"wow that would be an interesting thing to do\", stop for a\nmoment, think about what you are trying to learn, and how you will assess if\nyou have learnt what you wanted to, and then dive into the project.\n\nThe learning styles workshop was pretty good too, though I feel like I don't\nknow myself well enough, and I unable to properly \"bucket\" myself.  Later, I\ntook a quiz, and ended up fairly close to the middle, in all the dimensions.\n\nMel introduced us to the idea of cognitive apprenticeship, and encouraged us\nto try out the different modes when pairing. I really liked the idea of Zone\nof proximal development and I will try to take the advice of spending most of\nthe rest of my time here in this zone.\n\nDo I (really) care?  Motivation and mindset, \u2026\n\nBe courageous!\n\n\n\n\n\n\nAirplay and Raspberry Pi\n\n\nI was trying to wrap libshairport and use it on the RPi to be able to listen\nto songs being streamed on Airplay, and use that data to drive the LEDs.\n\nShairport, a tool written in C seemed to work.  My attempts to wrap\nlibshairport, which is a fork of shairport converting it into a library,\nfailed miserably.\n\nThe trouble was essentially getting Airplay to discover my service.  I tried\na bunch of things with pybonjour and avahi, but wasn't able to get it\nright.\n\nFinally, I tried just announcing the service with shairport, and actually\nrunning a python script that wraps libshairport to listen to the data.\nBut, this didn't work and iTunes complained that this Airplay device is not\ncompatible. Before going much further with this, I found shairplay which is\na tool similar to shairport, but came with a library, and also Python\nbindings!  I happily used this to get stuff working!\n\nI'm interested to see today, what exactly I was missing yesterday!\n\n\n\n\n\n\nEmacs club\n\n\nI demoed org-mode to a bunch of people for about half an hour, and it was\ngood to see people being blown away by what it can do, exactly the way I\nwas, when I first came across it.\n\n\n\n\n\n\nToday\n\n\nWork on RPi to clean up a few things for the party.\n\nCompare libshairplay and libshairport to see what I was doing wrong,\nyesterday.\n\nMay be write up the whole thing, and make the code available.\n\nLearn a little bit about Parsers from rntz.", 
-      "tags": "hackerschool,learning,python,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-07-22.html", 
-      "title": "Hacker School, 2014-07-22"
+      "tags": "learning,python,raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-22.html", 
+      "title": "Recurse Center, 2014-07-22"
     }, 
     {
       "text": "Yesterday\n\n\nIt was exciting to have so many new Hacker Schoolers in the space.  But, the\nexcitement was kinda distracting too.\n\n\nI spent most of the day looking at shairport, and libshairport and trying to\nwrap it, so I can use it to get data for the spectrum analyzer via the\nAir-play protocol.  I was able to call it using ctypes, but it doesn't seem\ndiscoverable.\n\n\nI also briefly looked at Julia and dwm, to try and port dwm to Julia.  It\ndoesn't seem like too much work, but is going to take me a while given how\ncomfortable I'm with both Julia and C.\n\n\nYaron Minsky's talk on distributed systems was a great introduction to\nDistributed systems.\n\n\nAfter the talk, I spent a little time updating my notes from an old org-mode\nworkshop to present it at the emacs user group meet up today.\n\n\n\n\n\n\nToday\n\n\nI hope to get the spectrum analyzer to use libshairport and be able to play\nmusic sent through Air play.\n\n\nSpend some time talking to the emacs user group about org-mode.\n\n\nIf I have any time, after getting this to work, I may play around with the\ndwm port.", 
-      "tags": "hackerschool,julia,orgmode,python,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-07-21.html", 
-      "title": "Hacker School, 2014-07-21"
+      "tags": "julia,orgmode,python,raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-21.html", 
+      "title": "Recurse Center, 2014-07-21"
     }, 
     {
       "text": "Saturday & Sunday\n\n\nDuring the weekend, I had this idea of building a personalized \"radio\" for\nmyself using a Raspberry pi.  The idea is to have a service where all my\nbookmarks, and feeds are accumulated to, instead of eating up valuable\nbrowser tab real estate.  And then, I could use a Raspberry pi to randomly\nplay content off of it, based on a theme.\n\n\nI worked on getting things together for it, during the weekend.  The project\nis more like a \"thing that needs to be done\", rather than something that puts\nme out of my comfort zone, atleast as far as I can see. So, I'm just going to\nwork on it as a background thing, between other projects, etc.\n\n\nFestival seemed OK initially, while I was trying things out, but when I\nactually used it to read me a blog post, it was really terrible!  I tried\ndemos of a few commercial tools, and they seem much better than what festival\nhad to offer.  I wonder what it would take to get Festival, up there.  I\ntried using Google's translate service's tts (unofficial API) and it seemed\nso good!  But, it limits each request to 100 bytes, and the audio will have\nto be downloaded via the Network.\n\n\nMadhu pointed me to MaryTTS, which seemed to be an active project and it\nseemed to be much better than Festival, though not as good as Google's tts.\nI'm going to try getting it to run on a Pi, next.\n\n\n\n\n\n\nMonday\n\n\nI don't really know what I'm doing to work on, today.  I have been playing\naround with the Pi, for the past week-ish, and it has been fun!  Kyle and I\nwill probably work more on tweaking it, to get it to work the way we want\nit, for the party!\n\n\nI also did a little bit of Julia with Sean, and it was fun.  I may try\nplaying around with it, a little bit, but not sure what to work on.  May be\ncontinue working through the think-complexity book using Julia?\n\n\nOr jump into something I totally don't know about, inspired by listening to\nJulia Evans' podcast for Ruby Rogues.  I just got this idea of trying to\nwrite a window manager to understand how X works, and what wayland is\u2026  I\ncould try porting dwm or i3wm to Julia.\n\n\nThere's a whole new bunch of excited Hacker Schoolers in the space, and its\nvery exciting!", 
-      "tags": "hackerschool,python,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-07-20.html", 
-      "title": "Hacker School, 2014-07-20"
+      "tags": "python,raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-20.html", 
+      "title": "Recurse Center, 2014-07-20"
     }, 
     {
       "text": "We worked on a couple of simple Google code jam problems\n\nAnd then implemented an LRU\n\nAll of this in Julia, and it was fun.\n\nI headed home early-ish, to catch up on some sleep.", 
-      "tags": "hackerschool", 
-      "loc": "/posts/hacker-school-2014-07-18.html", 
-      "title": "Hacker School, 2014-07-18"
+      "tags": "recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-18.html", 
+      "title": "Recurse Center, 2014-07-18"
     }, 
     {
       "text": "Kyle and I did a demo of our spectrum analyzer/visualizer during the\npresenations.  It was fun to work on, though we mostly just followed a\ntutorial on the web, and made use of a bunch of libraries.\n\nI spent the night in HackerSchool.\n\nI was cleaning up the code in the tutorial we were trying to follow.\n\nAlso, cleaned up the install.sh used by lightshowpi project to not do all the\nugly sudo setups, and use a Python virtualenv and install into that.\n\nRefactored the ugly looking music part of the tutorial into a smaller script\nwith only the functionality that we were going to use.\n\nWe hit an interesting bug that would light up all the LEDs on the strip, once\nin a while.  I didn't notice it during the night, because I had a \"decay\"\nfactor (the max factor by which the height of the columns should get reduced\nbetween successive updates) was 0.9, but when the decay factor was reduced to\na lower value, it would happen quite often.  Also, we didn't see this\nhappening before.  So, we thought the bug was in the code I had written, when\nI should have been sleeping. After reading and debugging my code for a bit,\nwith Kyle and Sean, I thought it was something hardware related that we were\ndoing wrong.  But, it turns out that a library we were using lit-up the whole\nstrip, when start and end values were both zero, instead of not lighting up\nanything!\n\nAlso, we hit another off-by one error, just before the demo. I didn't do the\nmath for splitting the strip into columns too carefully, and we hadn't\nnoticed the off-by one error until we taped up the strip into different\ncolumns on a pillar for demo.\n\nThere were some cool presentations by others.  I'll update the list on\nMonday, since I currently don't remember them all!  Looking at the list of\nnames on the registration sheet would help!\n\nThe cleaned up code is here", 
-      "tags": "hackerschool,python,raspberry-pi", 
-      "loc": "/posts/hacker-school-2014-07-17.html", 
-      "title": "Hacker School, 2014-07-17"
+      "tags": "python,raspberry-pi,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-17.html", 
+      "title": "Recurse Center, 2014-07-17"
     }, 
     {
       "text": "Started pairing with Kyle on his idea of building a spectrum analyzer on the\nRaspberryPi using a LED Strip.  Both of us were fairly new to the RPi, and we\nspent the morning, setting it up, and stepping through steps in this tutorial.\n\nThe tutorial, I felt, wasn't very well written, and definitely not suitable\nfor absolute beginners to start with.\n\nThe code didn't seem to work for us, too.  The project put together a bunch\nof libraries, in a way that someone who knew their way could follow along.\n\nDana helped us and explained many things, about differences between SPI/GPIO,\nand the precautions to take, helped us hook up stuff, etc.  It was great to\nhave her stepping in an helping every now and then!\n\nWhile Kyle was pairing on an Alum, I worked through the Graph Theory chapter\nin the Think Complexity book, and read about the abrupt changes of\ncharacteristics in random graphs, that were very similar and related to the\nphenomenon in percolation theory that Nava explained.\n\nLater in the day, I played around with the python-googlevoice API, that\nsomeone laboriously wrote after lot of careful html/xml parsing.\n\nI spent the night, refactoring the code to display random data on the\nLEDStrip as a display of columns.  And then also ended up cleaning up the\nsetup scripts, and the way things need to be installed.", 
-      "tags": "hackerschool", 
-      "loc": "/posts/hacker-school-2014-07-16.html", 
-      "title": "Hacker School, 2014-07-16"
+      "tags": "recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-16.html", 
+      "title": "Recurse Center, 2014-07-16"
     }, 
     {
       "text": "Micheal demo-ed paredit mode in the emacs-club meetup, and I learnt a bunch\nof things I didn't know about it.\n\nI added simpler tests (just one test, really) for cinspect using a dummy\nmodule, and Tom started reviewing the code.  I wrapped up the code (for now),\nuntil there is further interest in the project (in the form of issues/feature\nrequests).  I haven't yet announced it anywhere, but I probably should.\n\nI helped Teja (a friend of mine, not in HS) with a simple function to use\nbisection to solve an equation.  He's just starting off with Python, and am\nlooking forward to see where he goes with it!\n\nI learned a few things about the V8 code base, thanks to sitting next to\nMarcus, who is poking around with it.\n\nI started looking for other things to do, and went through a little bit of\nthe Audio programming book, but didn't do it for too long, until I stumbled\non Think Complexity and started reading it.  I read the introduction, and got\nthrough a few of the exercises on Graphs.\n\nI also played around Flask-Sockets to help figure out answers to some\nquestions on Zulip, and was able to get a Hello World working.\n\nIn the process, I discovered the awesomeness of the gist-mode in emacs.  I\nhad always wanted gist plugins to let me list and update my previous gists,\nbut most of the plugins didn't seem to have it, or the feature wasn't very\ndiscoverable.  I had tried writing something like that for Canopy, one or two\nyears ago.  Discovering that gist mode has this feature, was awesome!", 
-      "tags": "hackerschool", 
-      "loc": "/posts/hacker-school-2014-07-15.html", 
-      "title": "Hacker School, 2014-07-15"
+      "tags": "recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-15.html", 
+      "title": "Recurse Center, 2014-07-15"
     }, 
     {
       "text": "Monday morning checkins for our group had only two people. That was strange!\nVery strange!\n\n\n\n\nWork on cinspect\n\n\nI wrote up a README since David (an alum at Hacker School) showed interest in\nthe project.  But, he probably isn't that interested anymore since the code\nbase is Python2.x only.\n\nI got rid of assumptions that method names would start with the module name\nor the type name, and actually look up references to the names in the\ndefinitions of types or objects.\n\nI also improved the test-suite to actually download sources of CPython and\nindex them.  They take very very long!!\n\nI tried to get it working with Numpy, but getting all the headers to include\nwasn't as easy as I assumed it would be!", 
-      "tags": "hackerschool,numpy,python", 
-      "loc": "/posts/hacker-school-2014-07-14.html", 
-      "title": "Hacker School, 2014-07-14"
+      "tags": "numpy,python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-14.html", 
+      "title": "Recurse Center, 2014-07-14"
     }, 
     {
       "text": "I didn't spend much time at Hacker School on Friday.  I reached a bit late\nfor the start of \"Recursion day\", and did a few problems.  The problems were\nsimple, but interesting.  After lunch, I headed home to start to Philly.\n\nLater in the day, I did some refactoring of the code to have the index reader\nand writer split out.\n\nI also added a setup.py to be able to install the package using the standard\ntools instead of PYTHONPATH hacks and stuff.\n\nDuring the refactoring, I again hit this bug.  I found out from Pankaj that\nhe has from __future__ import print_function, absolute_imports at the start\nof his files these days.  I think I'm going to do it, too.\n\n\n\n\nSaturday & Sunday\n\n\nI didn't do much during the weekend. I ended up adding a TXT record for SPF\nfor this domain, to work around Gmail marking bulk mails for the\nchildrens-park newsletter as spam. I was able to send one newsletter, but not\nsure if only the SPF is enough or I'll have to setup DKIM, and other stuff.\n(I don't understand most of these acronyms!)\n\n\nSomeone mentioned http://github.com/kennethreitz/autoenv on Zulip, and I\nreally liked the idea.  I have started using it for a couple of projects and\nalso got rid of a couple of my bashrc aliases, and created a new project\ncommand with completions of the directories in my project directory.  I like\nthis setup, as of now.", 
-      "tags": "hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-07-11.html", 
-      "title": "Hacker School, 2014-07-11"
+      "tags": "python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-11.html", 
+      "title": "Recurse Center, 2014-07-11"
     }, 
     {
       "text": "I was just refactoring bits of the code, and clubbed all the different\nvisitors into a single visitor to speed up the code.\n\nWe also had a birthday celebration of one of the facilitators.\n\nI also gave my first presentation at Hacker School.  I thought it was cool.\nNot sure if everyone thought it was.", 
-      "tags": "hackerschool", 
-      "loc": "/posts/hacker-school-2014-07-10.html", 
-      "title": "Hacker School, 2014-07-10"
+      "tags": "recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-10.html", 
+      "title": "Recurse Center, 2014-07-10"
     }, 
     {
       "text": "Unicode issues: it turned out that (atleast) one of the files had a character\nthat wasn't UTF-8 encoded. I got around it by trying 'utf-8', if not falling\nback to 'iso-8859-1'.  Now that I think about it, I should fallback to\n'utf-8' with replace, if that doesn't work either.\n\nI did a little clean up on the way the indexes were stored, to be able to\nhave a getfile, to mimic inspect's API.\n\nI also \"improved\" the IPython startup script to monkey-patch the source code\nformatter/colorizer to not break with C modules.\n\nThe one-on-one with Allison was pretty useful, and I feel a little more\nrelaxed now.\n\nI paired with Kyle to get streaming audio working for his OSX app.  It\ndoesn't work yet, but we made progress! Hope to get it working today.\n\nI spent the late evening trying to refactor some of the code and clean it up.\n\nAlso, updating the py-clang code to the latest version fixed the issue of\nunknown cursor kinds.\n\nI may present my project in today's presentations!", 
-      "tags": "hackerschool,python,unicode", 
-      "loc": "/posts/hacker-school-2014-07-09.html", 
-      "title": "Hacker School, 2014-07-09"
+      "tags": "python,recursecenter,unicode", 
+      "loc": "/posts/recurse-center-2014-07-09.html", 
+      "title": "Recurse Center, 2014-07-09"
     }, 
     {
       "text": "I had gone to the emacs weekly meetup, and Samer demonstrated some of the\nthings he liked, and discovered recently.\n\nStopped worrying too much about what the best way to index the data was, and\njust went about getting the tests running one by one.  There is still a small\nhack, but I got all the tests running except the source for modules.\n\nAt the end of the day, I thought I had the code to get all the tests passing,\nbut I hit some unicode issues with json serializing, and don't have all the\ntests passing, yet.\n\nI paired with Kyle to work through a simple example to generate a note of a\nspecified frequency.\n\nI spent some time reviewing my first month here, and wrote up some notes in\npreparation for the one-on-one today with Allison.", 
-      "tags": "hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-07-08.html", 
-      "title": "Hacker School, 2014-07-08"
+      "tags": "python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-08.html", 
+      "title": "Recurse Center, 2014-07-08"
     }, 
     {
       "text": "As preparation for a one-on-one this week with one of the facilitators, I was\nwondering if I was really getting better as a programmer, by doing what I am\ndoing.\n\nI have heard at numerous places that reading and reflection are keys to\ngetting better. I feel like I haven't been giving these things much attention\nin the past couple of weeks. I don't catch up on reading all the awesome\nreading material shared on Zulip and I switched from writing this blog post\nfirst thing in the morning, to any-time-after-lunch. I don't think this\nworked out very well. Writing the post worked as a way to reflect on what I\nhad done yesterday, and what I should be doing today. So, I am back to\nwriting the blog post, first thing in the morning!\n\nYesterday, I worked on indexing the Python sources in a way that the\ninspection code can look up, later.  During this process, I found that my\ncode to use libclang's AST wasn't generic enough, and I had to clean it up to\nbe able to extract useful information from any file in the cpython sources.\n\nWe also got to attend a super-awesome talk by Steve Labnik! He talked about\nhis progression from being an application developer, to writing libraries, to\nworking on languages (as a professional developer). He made a lot of\ninteresting and inspiring points during his talk.  Some of those that stuck\nwith me are:\n\nNone of these is particularly harder than any of the other. Depending on\neach person's personality, or the way their brain works, they are good at\ndoing one or the other.\n\nGetting good at programming is a matter of showing up, more than about the\n\"genes\".  He repeated quite a few times that he disliked the idea of \"baby\nhacker\", and left out the story of his childhood and college programming\ndays! I'm totally stealing his idea of meeting every saturday at 1pm, with\na bunch of friends and working until it was 10pm or so, when they could get\ncheap beer and food!  And he did this all through his college!  It is\ninteresting that this idea is so similar to Hacker School!\n\n\n\nIt was a very enjoyable and inspiring talk on the whole.\n\n\nThe plan for today is to actually have the parsed information dumped into\nsome persistent format, and modify the inspect code to actually use it.\n\nI will also be pairing with Kyle for a few hours on working through some of\nhttp://mitpress.mit.edu/books/audio-programming-book", 
-      "tags": "hackerschool,programming,python,thought,writing", 
-      "loc": "/posts/hacker-school-2014-07-07.html", 
-      "title": "Hacker School, 2014-07-07"
+      "tags": "programming,python,recursecenter,thought,writing", 
+      "loc": "/posts/recurse-center-2014-07-07.html", 
+      "title": "Recurse Center, 2014-07-07"
     }, 
     {
       "text": "I took it easy during the weekend, and went on a nice camp with my a cousin's\nfamily to TobyHanna State Park for a day or so, and spent the remaining (long)\nweekend at their place in PA.  It was a pretty nice break!\n\n\n\nYesterday evening, I talked to Madhu about how ugly my code looked while I was\ntrying to use libclang, and he told me that he found a lot of wrapped C++/C\nlibraries end up being that way, and I also realized that using the Python AST\nlibrary seemed much cleaner, because it just contained Python objects, but\nrepresenting C/C++ objects in an AST and interacting with them in Python, isn't\nthat clean.\n\n\n\nI cleaned up my code, and removed all the ugly regexes to use libclang to do\nthe parsing of the libs, and get the source code.  I basically got all the\ntests passing, but they were taking an order of magnitude longer to run.  So, I\nguess the next step is to cache things somehow.\n\n\n\nI also added support for viewing the sources of built-in types.  It was pretty\nsimple, once I had everything working with libclang.", 
-      "tags": "code,hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-07-06.html", 
-      "title": "Hacker School, 2014-07-06"
+      "tags": "code,python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-06.html", 
+      "title": "Recurse Center, 2014-07-06"
     }, 
     {
       "text": "I pushed the code onto github to let Allison and Tom review it, and Tom was\nquite excited by the idea of having it.\n\nI added a startup script in IPython, to monkey-patch it to use my code for\nintrospection.\n\nHaving never written a C-extension, I read up the Python docs on writing C\nextensions, and played around a little with pycparser, but it didn't seem to\nwork too well with the Python's sources.\n\nI later went to the New York Public Library to see a copy of the Declaration\nof Independence in Thomas Jefferson\u2019s hand.", 
-      "tags": "hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-07-02.html", 
-      "title": "Hacker School, 2014-07-02"
+      "tags": "python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-02.html", 
+      "title": "Recurse Center, 2014-07-02"
     }, 
     {
       "text": "I got distracted trying to add a hack to Hacker School's blaggregator, to\nenable posting to different channels on zulip.\n\nI learnt a few things about Django.  Commented out references to views that\ndon't exists breaks templating.  Formsets didn't seem very convenient to use,\nfor editing data showing the user only partial forms.\n\nI played around with Clang for a bit, to try and use libclang to parse the C\ncode for inspection, instead of writing one myself.  It sometimes feels like\nan overkill, but it feels like it'll make the whole code more robust.  I'm\nnot sure.  I'll need to play around for a bit more to decide.\n\nI also finally got around to fix the resolution of my tty shells.  I was in a\nbus, and wanted my laptop's battery to last longer, and decided to use a tty\nshell with just emacs running. But, the resolution sucked.  So, I\nfixed. Essentially it involved removing a blacklist file that an old version\nof Nvidia drivers left behind in\n/usr/share/grub-gfxpayload-lists/blacklist/ and setting\nGRUB_GFXMODE=1920x1080 in /etc/default/grub.\n\nLater in the evening I also bought the domain octo.cat, given there were a\nbunch of people buying cat domains, and talking about it on Zulip!\n\n\n\n\nUpdate [7/7/14]: I forgot to write about the presentations.  There were\ninteresting presentations!\n\n\nProtagonist\n\nmesh networking\n\nThe Execution Context\n\ntoolmaker\n\nBuilding a better doorbot\n\nFredis", 
-      "tags": "django,hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-07-03.html", 
-      "title": "Hacker School, 2014-07-03"
+      "tags": "django,python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-03.html", 
+      "title": "Recurse Center, 2014-07-03"
     }, 
     {
       "text": "I happily let myself get distracted from all the math!  I had seen a tweet by\nTom during the weekend, asking if there was any package that let users\ninspect C sources of builtin modules like ruby's pry-doc\n\nI spent the morning playing around with pry-doc, reading its code, etc.\n\nThe latter part of the day was spent pairing with Tom, and figuring out what\nneeds to be done to write a first cut version of something like this.  Ugly\nregexes, FTW! I have something that works for most of the stuff, it seems!\n\nI also attended an interesting talk about Bit-torrent clients by an alum.", 
-      "tags": "cpython,hackerschool,python", 
-      "loc": "/posts/hacker-school-2014-07-01.html", 
-      "title": "Hacker School, 2014-07-01"
+      "tags": "cpython,python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-07-01.html", 
+      "title": "Recurse Center, 2014-07-01"
     }, 
     {
       "text": "During the weekend, I read up a lot about HMMs and related stuff.\n\nDuring the day, I tried to start writing code for different parts of the\npipeline, and ended up reading about Mel frequency cepstrum related stuff,\nand wrote a little bit of code.\n\nLater, in the afternoon I paired with some of his iOS code, and helped him\nclean up some of it.  I'm not sure how useful it was for him to pair with me,\nbut \u2026\n\nThe day ended with a talk by Jesse at EBay, titled Write an Excellent\nProgramming Blog.  I had already read up his blog post, when the talk was\nannounced, and so, most of the content was known, but the Q&A session had\nsome interesting suggestions on how to improve your actual writing.", 
-      "tags": "hackerschool,ios,pairing", 
-      "loc": "/posts/hacker-school-2014-06-30.html", 
-      "title": "Hacker School, 2014-06-30"
+      "tags": "ios,pairing,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-30.html", 
+      "title": "Recurse Center, 2014-06-30"
     }, 
     {
       "text": "This Friday we worked on building our own URL shorteners.  It was a fun\nexercise, and I built one that is not persistent, in the two hours.  I worked\non a not so important problem of having sorted query parameters, instead of\nthe more important problem of having a persistent server.  Anyway, I should\nbe building something that works, first, before trying to solve the more\ninteresting problems.  At least on Fridays.\n\nI watched this old but interesting talk by Brandon Rhodes, titled The Mighty\nDictionary, and played around with his _dictinfo module after-wards.\n\nI spent the rest of the evening reading up about Markov chains and Hidden\nMarkov Models. I'm happy to finally understand what these terms mean, after\nseeing them being thrown around for so many years!", 
-      "tags": "hackerschool,hmm,python", 
-      "loc": "/posts/hacker-school-2014-06-27.html", 
-      "title": "Hacker School, 2014-06-27"
+      "tags": "hmm,python,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-27.html", 
+      "title": "Recurse Center, 2014-06-27"
     }, 
     {
       "text": "I played around a little bit with my emacs configuration and got jedi\n  working, with virtualenvs, thanks to virtualenvwrapper.el\n\nContinue to work on the singal processing stuff and built a DTMF decoder\nusing FFTs.  It's able to decode audacity generated audio, but not recorded\nones. I'm not sure what I'm doing wrong, yet.\n\nAs with every Thursday, there were a bunch of interesting presentations:\n\nA rice cooker hooked up to an arduino in an afternoon!\n\nA presentation on how scopes act as monoids\n\nAn implementation of Eularian Video Magnification\n\nA regex engine visualizer using NetworkX.\n\nA tag system to organize your files\n\nA web-socket based chat client\n\nA Go Parser written in Go\n\n\u2026", 
-      "tags": "dtmf,fft,hackerschool", 
-      "loc": "/posts/hacker-school-2014-06-26.html", 
-      "title": "Hacker School, 2014-06-26"
+      "tags": "dtmf,fft,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-26.html", 
+      "title": "Recurse Center, 2014-06-26"
     }, 
     {
       "text": "I like how some of the people here are taking check-ins so seriously.  A\nbunch of people posted messages on Zulip, informing that they would not be\nable to make it to check-ins, and seemed quite sorry about it.\n\nCheck-ins are indeed useful.  At the end of every day, I review my work\nwondering what I did, and sometimes end up pushing myself harder, to have\nsomething reasonable to talk about during the check-ins!\n\nYesterday, I read up about FFTs and ended up playing around with fft in\nscipy, and played around with audacity, etc.  Nothing concrete, really.\n\nThere was a \"goals\" workshop by Stacey, where she talked about how to get the\nmost out of this batch of Hacker School, and then we split into groups of 3,\nand presented our goal-statements to each other, and gave our impressions of\neach others' goals.\n\nI didn't really have a goal, but the exercise seemed to help, anyway.\n\nAlso, I think it is making me nervous to treat Hacker School as\nsuper-important.  It is important to make the best use of every hour, every\nminute here, but at the same time, I shouldn't be constantly worrying about\nwhether or not, whatever I'm doing is the best use of my time here.\n\nI think I would like to form some good habits, and make a few good friends,\nmore than finish projects and build something uber-cool.  Of course, it would\nbe great to build awesome stuff (and may be the only reasonable way to form\nhabits, and make friends) but I shouldn't worry too much about time running\nout. Never Graduate!", 
-      "tags": "fft,goals,hackerschool,life", 
-      "loc": "/posts/hacker-school-2014-06-25.html", 
-      "title": "Hacker School, 2014-06-25"
+      "tags": "fft,goals,life,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-25.html", 
+      "title": "Recurse Center, 2014-06-25"
     }, 
     {
       "text": "I worked for the whole day on implementing an algorithm to analyze a\ncipher text, and guess the substitution cipher used.  The algorithm\nwas pretty straight forward, and I had it \"mostly\" working, in a\ncouple of hours.\n\nI then began to refactor it, and found that there was what looked\nlike a bug, and I \"fixed\" it mindlessly.  I was essentially trying\nto swap 2 rows, and columns of a pandas data frame.  I had a\ndata-frame D and its copy D_.  I was trying to swap 2 rows and\ncolumns of D_.  I found that the code was initially using the data\nfrom D to do the swap.  To fix it, I checked if tuple unpacking\ndid the right thing.  It looked like it did.  So, I used something\nlike _D['a'], D_['b'] = D_['b'], D_['a'].  Essentially, changed D\non the right hand side to D_.  I thought I had tested this on the\nterminal, but after hours of debugging (along with fixing another\nminor issue), I later found out that the tuple unpacking doesn't\nwork and the swapped rows and columns actually become equal!  I had\nsuspected this initially, and had \"tested\" this manually, I\nthought.  These are the kinds of things that should have tests for,\nI think.  It wouldn't have taken me too long to write a test, and I\ncould have been totally sure that it works!  (I was manually reading\noff values in the array, and probably messed up somewhere)\n\n\nFWIW, the code now reads _D['a'], D_['b'] = D_['b'].copy(),\n  D_['a'].copy()\n\n\nThe algo seems to need about 1000 characters to get past the 90%\naccuracy mark.  I could probably tweak it a little to perform\nbetter, but I'm going to leave it here, for now, and move on to the\nsignal processing parts.  I'm not totally sure how the signal\nprocessing would work, and whether we could actually map back the\nkeystrokes to a substitution cipher enciphered text.\n\nIf required, the tweaks could be -\n\nUse trigrams instead of bigrams\n\nAdd a degree of dictionary look-ups: May be something like,\nlook-up all the deciphered words, and try not swapping the\ncharacters that appear in most of the words that are in the\ndictionary.\n\n\n\nThis paper is 20 years old, and there would surely be work by others\nbuilding on top of this, or doing it totally differently.", 
-      "tags": "crypto,hackerschool,pandas", 
-      "loc": "/posts/hacker-school-2014-06-24.html", 
-      "title": "Hacker School, 2014-06-24"
+      "tags": "crypto,pandas,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-24.html", 
+      "title": "Recurse Center, 2014-06-24"
     }, 
     {
       "text": "The Apprenticeship patterns book is very interesting!  I shall\ncontinue to read it and start create daily/weekly rituals from the\nactions prescribed in the book!\n\nI was reading this post on git gc, reflog, etc. and wanted to\nsee what the default values were for some of the configurable\nvariables.  But, the git config command didn't help.  Developer/code\ndefaults are also a part of the \"config\" system, and any tools to\ninspect config variables should display them, if no other values\nhave been set explicitly!\n\n\"If experience is built upon failure as much as success, then you\nneed a more or less private space where you can seek out failure.\"\n\u2013 Apprenticeship Patterns.\n\nOur check-in groups changed, but 3 of us from our last check-in\ngroup are together again!\n\nMost of the day was spent with Git.  In the morning, I learned that\nsetting push.default to nothing will prevent pushing any\nbranches without specifying explicitly which branch I want to push.\n\nAlso, later in the day, Alan gave a presentation mapping the\ninternals of git to the commands, trying to give everyone a better\nmental model of Git.\n\nI spent some time trying to get jedi integration for emacs. It\nshould've worked out of the box, but I'm not sure the ELPA\nrepositories have proper dependency/version management.  Seems to be\nthe problem, everywhere!  Dependencies of a package get updated, and\nthe package starts acting up\u2026\n\nChaitu sent me a link about solving mazes using Finite Automata, and\nI spent some time trying to write a simple solver, and compare it\nwith Nava's breadth first search.  But, it looks like we broke her\ncode during the refactor.  I may get back to this, at some point.\n\nI also spent a few minutes talking to Kyle, while he was trying to\nimplement a simple version of the NTP protocol.  The algorithm it\nturns out, is pretty simple.\n\nI started reading a little bit on crypt-analysis for Simple\nSubstitution ciphers, and I'll try implementing one of the\nalgorithms today.\n\nThe day ended with yummy pizza and video watching!  We watched \u2013\n\nBret Victor, Inventing on Principle (54 min)\n\nGary Bernhardt, WAT (4 min)\n\nGuy Steele, Growing a Language (53 min)", 
-      "tags": "conference,git,hackerschool,principle", 
-      "loc": "/posts/hacker-school-2014-06-23.html", 
-      "title": "Hacker School, 2014-06-23"
+      "tags": "conference,git,principle,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-23.html", 
+      "title": "Recurse Center, 2014-06-23"
     }, 
     {
       "text": "I spent most of Saturday, thinking about what I should be doing for\nthe next few weeks, and what I really want to get out of Hacker\nSchool.\n\nI had a good discussion with Naren about things that he works on,\nand the kind of things that he sees as hard, what kind of things\ninterest me, and what I want to do post Hacker School.  I always\nknew, I didn't really have an area of expertise or an area that I'm\nsuper interested in, where I want to work.  This discussion only was\na verbalizing of those thoughts.\n\nI am not sure, I am very happy with the way I have been learning\nHaskell.  The UPenn course has been reasonably good with the\nexercises provided, and I have been learning through \"pseudo\"\nprojects.  But, I'm wondering if I should pick up a more concrete\nproject.\n\nI played around a little bit with Elm and started something to try\nand write Layout using Elm.\n\nI tried cleaning up the phonebook problem from Friday. It works, but\ncan definitely be improved with some help from a more experienced\nHaskeller.", 
-      "tags": "hackerschool", 
-      "loc": "/posts/hacker-school-2014-06-21.html", 
-      "title": "Hacker School, 2014-06-21"
+      "tags": "recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-21.html", 
+      "title": "Recurse Center, 2014-06-21"
     }, 
     {
       "text": "I finished parts of the phonebook task today.  The code looks ugly,\nand very un-haskelly.  I asked for feedback on it, but I guess its\njust too ugly for anyone to take the time out to comment on it, and\nhelp me improve it.\n\nI also tried to read up about Monads, and worked through exercises\nfrom a few different places.  I haven't yet finished the exercises\nin Chapter 12 of the UPenn course.  I just looked at them today, and\nthey seem like a complete bouncer at first glance.\n\nI went on a really long walk with Naren, and food-hopped with him\nwhile he was telling me stories about the various places he worked\nat and the kinds of things he has been working on, and things he\nliked and disliked about them.  It has been a good weekend to spend\nwith Naren!\n\nAlso, the long walk and talking to Chaitu cleared my head a bit, and\nI decided to pause the Haskell tutorials and learning for the next\ncouple of weeks.  I don't really have a project that needs me to\nlearn Haskell, right now.  I should stick to project and need based\nlearning, which I enjoy the most.\n\nRight now, I feel like working on an key stroke acoustic emanation\nbased key-logger.  Just before applying to Hacker School, I came\nacross the idea of side-channel attacks, and it sounded pretty\nexciting.  I don't intend to snoop onto anybody, but the project\nseems to be challenging enough, and I will have quite a bit to learn\nabout. It will involve signal processing, and learning \u2013 both areas\nthat I have seemed interesting to me for long, but I haven't really\ndone anything in them.  I plan to work on the idea for a couple of\nweeks, and review my progress and chart my future course. The\nproblem appears to have 2 parts to it.\n\nProcessing audio, and extracting key-strokes from it.\n\nIdentifying the text, based on a sequence of key-strokes. Though,\nin reality each press of a key may not sound the same, for a start\nassuming we are able to accurately get a sequence of key-strokes,\nthe problem would reduce to solving a simple substitution cipher.\nI plan to start with this, tomorrow.\n\n\n\nAlso, I plan to hang out a lot more with Hacker Schoolers, and let\nmyself be distracted a lot more by random discussions and\nactivities, than I have allowed myself to be, in the past few weeks.\nI should be writing as much code as I can, while I'm here.  But, I\nshould also be rubbing elbows with the awesome folks, which I will\nonly be able to virtually, once I'm out of here.\n\nThanks to Amber, I also came across this interesting looking book\ncalled Apprenticeship patterns.  I plan to read it over the next\nweek or two.\n\nI haven't been playing almost any Ultimate here. I atleast need to\nwork out a conditioning and throwing practice schedule and start\nworking on it, early next week.  Tomorrow won't work since it's 5am\nand I'm still awake!\n\nI also probably need to get enough sleep!\n\nLooking forward to the next couple of weeks!", 
-      "tags": "audio,hackerschool,haskell,projects", 
-      "loc": "/posts/hacker-school-2014-06-22.html", 
-      "title": "Hacker School, 2014-06-22"
+      "tags": "audio,haskell,projects,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-22.html", 
+      "title": "Recurse Center, 2014-06-22"
     }, 
     {
       "text": "Motivation\n\n\nI was trying to pair on writing a simple app that uses Hacker\nSchool's OAuth2 API, and hit a roadblock on the first step of\nrequesting an authorization from the user.  Once the user authorized\nmy app, I would see an error that said, \"The authorization server\ndoes not support this response type\".  I was using a client library\nthat I had used before, and the server was using a what seemed like\na popular implementation for ruby on rails.  Getting weird errors is\nnot done!\n\n\n\nI have used OAuth2 based authentication before, but the thought of\nusing it always makes me a little nervous, just because\n\n\n\nI don't understand it very well.\n\nLike almost everything else, there seem to be so many libraries\nfor doing this in Python, and I'm never sure which one to use, or\nwhich one I used the last time around.  Not understanding the\nprotocol also doesn't let me debug anything that comes up.\n\n\n\n\nTo fix this, I set about to read and understand the OAuth2 protocol.\nThis blog post is an attempt to record it for future reference, and\npossibly act as a reference for others.\n\n\n\n\n\nWhy OAuth\n\n\nOAuth is simply a way for an end-user to allow third parties to use\nprotected data, without sharing the user's credentials with the\nthird-party.\n\n\n\nFor example, an end-user (Jane) can grant a printing service\n(Printo) access to her protected photos stored at a photo-sharing\nservice (Picasa), without sharing her username and password with the\nprinting service.  Instead, she authenticates directly with a server\ntrusted by the photo-sharing service, which issues the printing\nservice delegation-specific credentials. (example from the OAuth 2.0\nspec)\n\n\n\n\n\nProtocol Flow\n\n\n\n\n\nThe flow occurs through a sequence of user actions, client requests\nand user-agent (browser) redirects.\n\n\n\n(A) Printo asks Jane to allow using Picasa Data. The request can\nbe sent directly to Jane, but is usually routed via\nPicasa/Google.\n\n\n(B) Printo gets back an authorization grant, which is a\ncredential representing Jane's authorization or approval.  The\ntype of the actual grant credential depends on the type of\nrequest that Printo used.\n\n\n(C, D) Printo gets back to Google with the credentials it obtained\nin the previous step and obtains a token that it can use to talk\nwith Picasa.\n\n\n(E, F) Printo asks for the desired photo with the token it\nobtained previously, and Picasa gives back the photo to print.\nJane gets her framed photo!\n\n\n\n\nBut before any of this happens, the client needs to register with\nthe authorization server and obtain a client_id and\nclient_secret, that will be used to identify the client making\nthe requests.\n\n\n\n\n\nPythonized \"authorization code\" work-flow.\n\n\nThe OAuth2 spec allows the authorization request/grant to be of 4\ndifferent types.  It also allows some flexibility in the token\ntype.\n\n\n\nIn my experience, the most common work-flow seems to be using an\nauthorization code as an authorization grant, and using a Bearer\ntype token.  This work-flow is explained in the diagram below (taken\nfrom the spec document).  This diagram zooms in, onto the steps A-D\nin the diagram above.\n\n\n\n\n\nThis python code snippet is a simple implementation of this\nworkflow, using the Hacker School API.\n\n\n\n\n\n\n\nConclusion\n\n\nI think, I understand the OAuth2 spec a lot better now, and hope\nthat this will help others understand it, too.  And more\nimportantly, I won't get nervous when I have to add it to my\nprojects.\n\n\n\nAlso, oauthlib for Python seems to be a pretty thorough\nimplementation of the spec, and requests-oauthlib seems to wrap it\nfor use with requests.  I think I'm going to use this in my future\nprojects.", 
@@ -410,57 +422,57 @@
     }, 
     {
       "text": "Fridays are optional in Hacker School, and people are given help\nwith preparation for job interviews.\n\nThis week's exercise was a \"know-your-language\" type exercise and I\ndecided to do it with Haskell, and confirmed the fact that I didn't\nknow it too well. :)\n\nI spent the afternoon writing the blog-post on OAuth2, and adding\nsupport for converting ditaa code blocks to png using Pygments.  It\nmay not have been the best use of time, but anyway\u2026", 
-      "tags": "hackerschool,haskell,jobs,oauth", 
-      "loc": "/posts/hacker-school-2014-06-20.html", 
-      "title": "Hacker School, 2014-06-20"
+      "tags": "haskell,jobs,oauth,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-20.html", 
+      "title": "Recurse Center, 2014-06-20"
     }, 
     {
       "text": "Yesterday was a bit more wandering than usual.  I still have to\nfinish (actually, start) the last chapter in the UPenn course\n(Monads).  I hope to finish it during the weekend.\n\n\nI started with reading Typeclassopedia, in the hope of getting\ncomfortable with Functors and Applicatives and to get introduced to\nMonads.  But, I got distracted before I got to the end of the part\non Functors.\n\n\nDuring the check-ins, Laura and Denise mentioned that they are both\nfacing problems with OAuth, and would like to pair on it.  I decided\nto join them, since I've had reasonable luck with OAuth, though I\nknew I didn't understand it very well.  While they were working on\ngetting it to work on OSX, I was trying to write a simple Python\nexample to do it, and was getting a weird error about the\nresponse_type being not supported.  I was using rauth in a way\nvery similar to what I had done for statiki but the Hacker School\nAPI server wasn't letting me through.  I could debug it only a\nlittle before lunch, and a little bit after lunch.  And realized\nthat the response_type had to be one of code or token and not\njson or empty.  But this is a required parameter, and I expected\nrauth to do the right thing!  I got back to it at the end of the\nday, and went through the RFC for OAuth2 and wrote up a simple\nPython script to implement the whole thing, without using any 3rd\nparty oauth libraries.  I think I understand the whole thing much\nbetter now, and will soon write up a blog post on it.\n\n\nI spent about an hour or so on reviewing Nava's code (along with\nTom, Amber and Patricia), that generated and solved mazes. We tried\nto make small incremental changes to her code, and improve it,\nhopefully giving her a sense of how to make the code more\nintentional.\n\n\nThursday evening presentations! People here have been working on\nsuch cool stuff!  Maze solvers and percolation probability\ncalculators, phone gap based mobile applications, a cool Midi based\nmusic generator, an emulator for MSP430 in Clojure, an event logger\nin ObjectiveC that can log to a web server and can be used by\nmultiple clients to debug communication related issues, a HTTP\nserver written from Scratch, a web server in Swift, a pattern\nmatching based library in js, a heuristics based puzzle solver, and\na web editor for jekyll!  Holy cow!  These presentations are\nextremely inspiring and will probably be the thing I look forward to\nthe most, for the next 10 weeks.\n\n\nI can't believe it's already end of week 2. 10 more to go!", 
-      "tags": "hackerschool", 
-      "loc": "/posts/hacker-school-2014-06-19.html", 
-      "title": "Hacker School, 2014-06-19"
+      "tags": "recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-19.html", 
+      "title": "Recurse Center, 2014-06-19"
     }, 
     {
       "text": "Amber talked about \"exploring only until the current task is done\"\nand moving on, which is could really be a lost opportunity to learn\nsomething new and gain a better understanding of the system I am\nworking with.\n\nHaving something (anything not directly related to the current\nproject I'm working on) scheduled for later in the day, doesn't seem\nto do me much good. I feel distracted for quite a long period before\nthe scheduled time.\n\nAbstractions and layers were talked about in the second exercise on\nApplicatives\u2026 Layering, FTW!\n\nI spent about an hour or so in the afternoon reading the paper, One\nVM to rule them all.  It talked about Truffle: an API to implement\nan AST parser for any language and Graal: a JIT compiler for the\nASTs.  Later in the day, I also went to the Papers we love meetup.\nThe presentation and the talks were quite interesting!\n\nI also started looking at Elm and playing with it.", 
-      "tags": "elm,hackerschool,haskell,vm", 
-      "loc": "/posts/hacker-school-2014-06-18.html", 
-      "title": "Hacker School, 2014-06-18"
+      "tags": "elm,haskell,recursecenter,vm", 
+      "loc": "/posts/recurse-center-2014-06-18.html", 
+      "title": "Recurse Center, 2014-06-18"
     }, 
     {
       "text": "I've been bookmarking the interesting links that people post on\nZulip and have a lot of reading to do.   It would be nice if I had\nan easy way to send stuff on to my kindle. (pdfs, html, etc.).\nInstapaper works, but doesn't work as well as I would like it to.  I\njust want a simple script that takes a list of urls and does the\nright thing.  May be I will write something that uses Calibre, or\neven better someone already has.\n\nI worked through exercises 08 and 10 of the haskell course,\nyesterday.\n\nChapter 8 was about how IO works in haskell.  The exercise didn't\ninvolve too much, except I wasted a lot of time on tracking a\nstupidity of mine.\n\nThe next part of the course was an introduction to Functors,\nApplicative and Alternative.  I'm not sure I totally understand and\nam comfortable with them, but I have been able to get through the\nexercises.\n\nI think it's time for me to start working on some Elm tutorials,\nalong with the Haskell exercises.\n\nAlso, I had questions about when to use type, newtype and data\nand incidentally found this section that ended with the following\nsummary: \"If you just want your type signatures to look cleaner and\nbe more descriptive, you probably want type synonyms. If you want\nto take an existing type and wrap it in a new type in order to make\nit an instance of a type class, chances are you're looking for a\nnewtype.  And if you want to make something completely new, odds\nare good that you're looking for the data keyword.\"", 
-      "tags": "hackerschool,haskell", 
-      "loc": "/posts/hacker-school-2014-06-17.html", 
-      "title": "Hacker School, 2014-06-17"
+      "tags": "haskell,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-17.html", 
+      "title": "Recurse Center, 2014-06-17"
     }, 
     {
       "text": "Didn't do anything during the weekend.  Hopefully, this won't be the\ncase all of the weekends.  I had fun with my cousins, though.\n\nDenise is already working on a twitter app that sounds similar to\nthe idea I had.\n\nI accidentally discovered that evince supports vim-like keybindings,\nwhich is cool.\n\nWhen writing patterns for a function it helps to write the most\ngeneral case first, and then write the edge cases.\n\nI was feeling a little unproductive in the afternoon and I ended up\nattending Zach's talk on Community.  I got a brief overview of the\nwhole architecture, and got to know a little bit about reactjs and\nom. I don't think I'll get around to contributing to the project,\nsince most of the stack is totally new to me, and I'm not\nparticularly inclined to learn those things now.\n\nI was working on Monoids for most part of the day and got through\nexercise 7.  I started doing the I/O exercise around the end of the\nday.\n\nThe day ended with a talk on jobs related stuff by Nick and Sonali.\nIt seems super unlikely for me to get a job (in the US), from what I\nunderstood from them.  So, I needn't worry too much about that and\nfocus on getting better at Haskel and as a programmer in general.", 
-      "tags": "hackerschool", 
-      "loc": "/posts/hacker-school-2014-06-16.html", 
-      "title": "Hacker School, 2014-06-16"
+      "tags": "recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-16.html", 
+      "title": "Recurse Center, 2014-06-16"
     }, 
     {
       "text": "Came to know about the project that Tom is working on for being able\nto auth integration of GitHub and Hacker School.  This will be useful\nfor me, when I get to working on the GitHub dashboard.\n\nI spent an hour or so to clean up by blog workflow and help scripts\nto insert tags in Nikola posts, etc.  I also have a script to make a\npost for each day, automatically.\n\nlolcommit is an interesting project, and Max is using it for logging\nhis work at Hacker School.\n\nLearned about laziness and the consequences of it. You cannot have\nside-effects, in a lazy language, if you want to keep the sanity of\nthe developers using your language.\n\nPattern matching forces evaluation.\n\nAlso, briefly read about seq, halting problem and bottom from\nthe Haskell wiki.\n\nThe week ended with presentations by Hacker Schoolers from this\nbatch.  It was also Alum day, so we had some Alumni visiting.  I\nmissed half of the presentations because I had to leave early for\nSuguna's graduation.\n\n\n\n\nI hope to continue to do some work on the tutorials during the\nweekend, and get back to it and finish them next week.", 
-      "tags": "hackerschool", 
-      "loc": "/posts/hacker-school-2014-06-12.html", 
-      "title": "Hacker School, 2014-06-12"
+      "tags": "recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-12.html", 
+      "title": "Recurse Center, 2014-06-12"
     }, 
     {
       "text": "Plan\n\n\nContinue with the Haskell tutorials, with additional reading from\nReal World Haskell.\n\n\n\n\n\nActual\n\n\nFinished exercises 4 and 5.\n\nLearnt about Type classes in Haskell and how to create them and\nmake data types instances of them.\n\nAlso came across a new algorithm of sieving called the Sieve of\nSundaram, which was discovered by a student.  Surprisingly, I\nnever heard of it before!\n\n\n\n\n\n\n\n\nMiscellaneous\n\n\nA few of us had an interesting discussion about various places\npeople grew up in and visited, and the cultures, etc.\n\nIdea: implement a GitHub dashboard for organizations (say, HS\nbatches) that give you different statistics, and interesting\ngraphs. (Use elm?) [Update: Tom is working on HS and GitHub\nintegration. So, that's perfect!]", 
-      "tags": "github,hackerschool,haskell,idea", 
-      "loc": "/posts/hacker-school-2014-06-11.html", 
-      "title": "Hacker School, 2014-06-11"
+      "tags": "github,haskell,idea,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-11.html", 
+      "title": "Recurse Center, 2014-06-11"
     }, 
     {
       "text": "I came super early to try and get some work done in the quiet before\nthe daily checkins time.  Continued with the Haskell tutorial and\nreading the Real World Haskell.\n\n\n\nFinished a couple of exercises from the UPenn course, that were pretty\nstraight forward.\n\n\n\nAlso, finished a few exercises from chapter 3 of real world haskell,\nand partially finished implementing Graham scan for generating a\nconvex hull for a set of points.\n\n\n\nThe exercises from both the places involved mainly learning about\nAlgebraic Data Types.\n\n\n\nMary pinged me to ask how the first couple of days were, and it was\ngood to talk to get a ping from her though I never talked to her.\n\n\n\nI'm going to continue working on the Haskell exercises today.\n\n\n\nI also got a couple of ideas for small projects:\n\n\n\nSince, yelp is blocked from here, nobody can use yelp's API and work\non any projects.  It may be helpful to have an API proxy server that\nruns on a different server and forwards any requests coming to it.\n\nA simple script to create a twitter list for each batch of\nHacker School.\n\n\n\n\nDoing them in Python would be pretty straight forward. I will try to\nwork on these things in Haskell, once I'm reasonably comfortable with\nHaskell.", 
-      "tags": "hackerschool,haskell", 
-      "loc": "/posts/hacker-school-2014-06-10.html", 
-      "title": "Hacker School, 2014-06-10"
+      "tags": "haskell,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-10.html", 
+      "title": "Recurse Center, 2014-06-10"
     }, 
     {
       "text": "Finally, I'm at Hacker School.  The day began with introductions,\nbreakfast and welcomes to HackerSchool.\n\n\n\nThe four rules of Hacker School were reiterated to all of us:\n\n\n\nNo (Feigning) surprise\n\nNo Well-actuallys\n\nNo Backseat driving\n\nNo Subtle-isms\n\n\n\n\nIt was made clear that each of us should watch ourselves not to break\nthese rules, and being called on breaking these rules is totally cool,\nand we should stop about it and think for a moment and move-on.\nBreaking the rules doesn't make us bad hacker schoolers.  We are all\nhere to learn!\n\n\n\nI liked the idea of all of us being asked to list out the things that\nwe are nervous about, and excited about.  I was happy to find that a\nlot of the people were nervous about the similar kinds of things I was\nnervous about.  I'm not alone!\n\n\n\nAfter the check-ins, I started off with the Introduction to Haskell course by\nBrent Yorgey.  What I did was mostly a recap of what I learned from the first\nfew chapters of Learn you a Haskell.  I learnt about how credit card numbers\nare validated, apart from learning a little bit about lazy evaluation and\nthunks.\n\n\n\nThe day ended with burritos and game night Mafia!", 
-      "tags": "hackerschool,haskell,intro", 
-      "loc": "/posts/hacker-school-2014-06-09.html", 
-      "title": "Hacker School, 2014-06-09"
+      "tags": "haskell,intro,recursecenter", 
+      "loc": "/posts/recurse-center-2014-06-09.html", 
+      "title": "Recurse Center, 2014-06-09"
     }, 
     {
       "text": "Marss86\n\n\nMARSSx86 (MARSS for short) is a tool for cycle accurate full system\nsimulation of the x86-64 architecture, specifically multicore\nimplementations. Our goal is to create a simple yet efficient full\nsystem architectural simulation environment based on existing tools.\n\n\n\nWhat 50 pounds of clay can teach you about design \u2014 Medium\n\n\nwhile the \u201cquantity\u201d group was busily churning out piles of work\u201dand\nlearning from their mistakes\u201dthe \u201cquality\u201d group had sat theorizing\nabout perfection, and in the end had little more to show for their\nefforts than grandiose theories and a pile of dead clay.\n\n\n\nmetablog: Why I don't mock\n\n\nSo don't mock. Because it's impolite to not listen to what your code\nis trying to tell you.\n\n\n\nWhere's the value in open source? | Opensource.com\n\n\nOpen source is about the people involved. Code can be replaced,\nre-written, even removed completely, and the project will continue\nto move forward. The open source community is made up of people who\nhave dedicated their time and their life to see its success.\n\n\n\nI Recommend These for Learning Haskell\n\n\nA friend of mine recommends reading 3 calculus books to learn\ncalculus. I generalize it to reading from 3 sources to learn\nanything. I also postulate a law: the 3rd source you read is the\nbest.", 
@@ -1352,7 +1364,7 @@
     }, 
     {
       "text": "This is a conversation from #org-mode, published without\npermission from plovs, BerntH and bremner. If any of you\nwant any of the content removed, I will do so.\n\n\n\n\n<punchagan> hi all\n\n\n\n<BerntH> hi punchagan   [18:36]\n\n\n\n<punchagan> BerntH: ever used/tried blorg or blorgit?  [18:47]\n\n\n\n<punchagan> I like the way org-publish works, but blorg exports one org file as a blog. If blorg were to be re-written on top of org-publish, how should it be done? use one file per post or just one file for the whole blog?  [18:52]\n\n\n\n<bremner> punchagan: another option is to use ikiwiki and use the org-mode plugin to render pages. This is what i do, although only a bit of the site is in org.  [19:44]\n\n\n\n<punchagan> bremner: can I have a look at your site?  [19:45]\n\n\n\n<bremner> sure, it ain't pretty, but: www.cs.unb.ca/~bremner  [19:46]\n\n\n\n<punchagan> thanks. I'll keep this in mind.   [19:47]\n\n\n\n<punchagan> I just loved the way this site looks and behaves \u2013 http://julien.danjou.info/projects.html\n\n\n\n<bremner> well, the side bar at least is possible with ikiwiki. Other than that I suppose it is mainly a matter of css  [19:48]\n\n\n\n<BerntH> punchagan: nope  [19:49]\n\n\n\n<punchagan> ok BerntH  [19:50]\n\n\n\n<plovs> punchagan ikiwiki does have an org-mode plugin  [19:56]\n\n\n\n<punchagan> plovs: yes, bremner told me that and I've seen on Worg too. :)\n\n\n\n<plovs> punchagan ah, yes, sorry\n\n\n\n<punchagan> plovs: it's alright.   [19:59]\n\n\n\n<plovs> punchagan another possibility is org2blog, which uses wordpress\n\n\n\n<punchagan> plovs: I'm the author of it. :D\n\n\n\n<plovs> lol, ik, that punchagan   [20:17]\n\n\n\n<punchagan> lol\n\n\n\n<punchagan> plovs: were you kidding? or serious?  [20:19]\n\n\n\n<plovs> punchagan sorry to say i was serious, but it will not happen again :-)\n\n\n\n<plovs> i really like org2blog, played with it yesterday\n\n\n\n<punchagan> plovs: no. I was just wondering if you were playing around with me. :P\n\n\n\n<punchagan> I'm happy some one thinks it is useful.\n\n\n\n<plovs> lol, no, i just didn't recognized your name, although it is kind of hard to miss  [20:21]\n\n\n\n<punchagan> I hope you don't mind, if I make this anecdote public?", 
-      "tags": "IRC,emacs,note,org2blog,orgmode", 
+      "tags": "emacs,IRC,note,org2blog,orgmode", 
       "loc": "/posts/some-fun-from-org-mode.html", 
       "title": "Some fun from #org-mode"
     }, 
@@ -1742,7 +1754,7 @@
     }, 
     {
       "text": "This post, is a different one in a couple of ways.\n\n\n\nFirstly, I posted this from within emacs! I'm using the w3m\nbrowser within emacs to post this. I've started using (trying to\nuse) emacs again. Hope to keep at it longer this time.\n\n\n\nSecondly, I wish to inform junta about my sabbatical for a couple\nof weeks. I have decided not to use IM/IRC/SocialNetworking sites\nfor the next couple of weeks. [2008-07-06 Sun 00:00]\u2013[2008-07-19\nSat 23:59] I will, of course, be using mail and will also blog if\nand when I feel like. This is an experiment triggered by a few\nideas from Chaitu1 and my own holiday lifestyle analysis. (Also\nChaitu has volunteered to join me.) Hope to make it through and\nalso get some valid, interesting results out of the experiment.\n\n\n\n\n\nUpdate: Firemacs add-on for firfox is very useful. I couldn't\n get a decent browser for emacs that could open gmail, so I'm\n using Firefox with the Firemacs add-on to compose my mail. Its\n absolutely amazing. Believe me! [Jul 6, 2008]\n\n\n\n\nFootnotes: \n\n\n1 \nChaitu - Poetic Paradigm", 
-      "tags": "IRC,blab,emacs,ology", 
+      "tags": "blab,emacs,IRC,ology", 
       "loc": "/posts/a-sabbatical.html", 
       "title": "A sabbatical"
     }, 
