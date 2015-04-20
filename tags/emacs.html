@@ -98,6 +98,101 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/playing-music-using-mpsyt-from-emacs.html" class="u-url">Playing music using mpsyt from Emacs</a></h1>
+        <span class="post-date">20 Apr 2015</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I've started using the wonderful <a href="https://github.com/np1/mps-youtube/">mpsyt</a> to play any music from youtube, since
+I'm not really interested in the video.  But, since I use emacs for chat/IRC, I
+end up getting youtube links into emacs and opening them opens them up in my
+browser. I ended up writing some <code>elisp</code> to play the songs from within an
+instance of <code>mpsyt</code> running inside an emacs buffer.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/short-url-at-point</span> <span class="p">()</span>
+  <span class="s">"Gets the short url at point.</span>
+
+<span class="s">This function is required only because</span>
+<span class="s">`thing-at-point-url-at-point' ignores urls (without a scheme)</span>
+<span class="s">that don't start with www."</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">bounds</span> <span class="p">(</span><span class="nv">thing-at-point-bounds-of-url-at-point</span> <span class="no">t</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="nv">bounds</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">bounds</span><span class="p">)))</span>
+      <span class="p">(</span><span class="nv">buffer-substring-no-properties</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">bounds</span><span class="p">)))))</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/mpsyt-url</span> <span class="p">(</span><span class="nv">url</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">buffer</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))</span>
+	<span class="p">(</span><span class="nv">mpsyt-proc-name</span> <span class="s">"*mpsyt*"</span><span class="p">))</span>
+
+    <span class="c1">;; Start a new term with *mpsyt* if there isn't one</span>
+    <span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
+      <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
+	<span class="p">(</span><span class="nv">kill-buffer</span> <span class="p">(</span><span class="nv">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
+      <span class="p">(</span><span class="nv">ansi-term</span> <span class="s">"mpsyt"</span> <span class="s">"mpsyt"</span><span class="p">))</span>
+
+    <span class="c1">;; Play given url in mpsyt</span>
+    <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">mpsyt-proc</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
+      <span class="c1">;; If something is already playing, stop it and play this...</span>
+      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\n\n\n"</span><span class="p">)</span>
+      <span class="c1">;; We wait for a bit, since looking for the prompt seems to fail, sometimes?</span>
+      <span class="p">(</span><span class="nv">sleep-for</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\n"</span><span class="p">)</span>
+
+      <span class="c1">;; Actually send the command to playurl</span>
+      <span class="p">(</span><span class="nv">term-simple-send</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
+			<span class="p">(</span><span class="nb">format</span> <span class="s">"playurl %s"</span> <span class="nv">url</span><span class="p">)))))</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/mpsyt-url-at-point</span> <span class="p">()</span>
+  <span class="s">"Play the URL at point using mpsyt."</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">url</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">url-get-url-at-point</span><span class="p">)</span> <span class="p">(</span><span class="nv">pc/short-url-at-point</span><span class="p">))))</span>
+    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">not</span> <span class="nv">url</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">message</span> <span class="s">"No URL found"</span><span class="p">)</span>
+	<span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"Playing %s with mpsyt"</span> <span class="nv">url</span><span class="p">))</span>
+      <span class="p">(</span><span class="nv">pc/mpsyt-url</span> <span class="nv">url</span><span class="p">))))</span>
+</pre></div>
+
+<p>
+The current version of mpsyt crashes when run from inside emacs due to a bug in
+the code to get the terminal size, which should be fixed once this <a href="https://github.com/np1/mps-youtube/pull/247">patch</a> is
+merged.
+</p>
+
+<p>
+I would've expected <code>thing-at-point-url-at-point</code> to be able to find urls even
+when they don't have a schema, but it tries to guess the schema from urls and
+fails to work when the url starts with <code>youtube.com</code> instead of
+<code>www.youtube.com</code>.
+</p>
+
+<p>
+I started off using the command-line interface of <code>mpsyt</code> by running it using
+<code>shell-command</code> or <code>start-process</code>.  But, it seemed useful to have a buffer of
+<code>mpsyt</code> to switch to – easier to search for new music, repeating songs, etc.
+Not all tasks/actions are achievable through <code>mpsyt</code>'s command line args.
+</p>
+
+<p>
+I ended up writing more code than I thought I would have to<sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/playing-music-using-mpsyt-from-emacs.html#fn.1">1</a></sup>.  But, I'm
+pretty happy with how this all works, right now.
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef">
+<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/playing-music-using-mpsyt-from-emacs.html#fnr.1">1</a></sup> <p class="footpara">
+- Isn't it true, more often than not?
+</p>
+</div>
+
+
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/org-drill-for-making-it-stick.html" class="u-url">org-drill for making it stick!</a></h1>
         <span class="post-date">17 Jan 2015</span>
     </header>
@@ -695,47 +790,6 @@ deploy</code>.
 I also have a plugin, that posts captured bookmarks and quotes onto
 the blog, with a single command. I should probably make the sources of
 my blog open, and push it onto GitHub.
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/org-mode-workshop.html" class="u-url">Org-mode Workshop</a></h1>
-        <span class="post-date">22 Jun 2011</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Well, I'm not sure if it's worth writing about.  I conducted my
-first org-mode workshop along with Prof. Venkatesh Choppella at
-IIIT-Hyderabad.  It was a 3 hour demo+talk kind of a thing, with a
-small audience of about 20 people, most of whom were new to
-Emacs.
-</p>
-
-<p>
-We covered almost all the aspects of Org-mode after giving a brief
-introduction to Emacs.  Outlining and note-taking part was simple
-and easy to understand, but the audience couldn't really
-appreciate the part of keeping TODO lists and agendas and other
-stuff.  I'm hoping, the reason was not me taking over from
-Venkatesh.
-</p>
-
-<p>
-I think the workshop should've been more hands-on and we should've
-asked people to try out stuff on the spot, instead of showing off
-the things possible with Emacs.  They probably would've
-appreciated a few things better, that way.
-</p>
-
-<p>
-Hopefully, we will be doing more workshops on Org-mode and there
-are surely somethings to take away from this one.  I hope at least
-one of the participants, gets hooked to Org-mode.
-</p>
-
-<p>
-The talk outline is here.
 </p>
     </div>
     </article>

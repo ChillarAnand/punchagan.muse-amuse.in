@@ -98,6 +98,44 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/whats-up-with-org2blog.html" class="u-url">What's up with org2blog?</a></h1>
+        <span class="post-date">15 Jan 2011</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+Another post on <code>org2blog</code>.  Yes, the project is still alive. ;)
+Well, frankly quite a few people seem to be using it, and I
+regularly get bug-reports and feature requests.  I'm happy. :)
+</p>
+
+<p>
+Actually, this post is to announce a change in the namespace of
+<b>my</b> org2blog.  It turns out that there is another package that is
+called org2blog, but it posts to blogger.  Tehom, the author of
+the other package got in touch with me, and we tried to clean up a
+few things.  In this process, we decided to use two different
+namespaces, to avoid conflicts if a particular user has both the
+packages loaded.  I am going to use <code>org2blog/wp</code> as my namespace
+prefix, instead of the older <code>org2blog</code>.  So, if you are posting a
+sub-tree, you'll need to use the <code>org2blog/wp-post-subtree</code>
+function, instead of <code>org2blog-post-subtree</code>.
+</p>
+
+<p>
+We, Tehom and I, did discuss the possibility of merging the two
+packages into a single huge package, but we think the amount of
+work is far greater than the payoffs.  So, the packages continue
+to be called <code>org2blog</code> but we reference each others packages, to
+reduce the confusion, amongst users.
+</p>
+
+<p>
+<code>org2blog/wp</code> version 0.4 comes with the new namespace.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2011-01-12.html" class="u-url">Bookmarks [2011/01/12]</a></h1>
         <span class="post-date">12 Jan 2011</span>
     </header>
@@ -565,43 +603,6 @@ tags: analysis
 </p>
 </li>
 </ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/mtu-and-file-transfers.html" class="u-url">MTU and file transfers</a></h1>
-        <span class="post-date">06 Dec 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-A note to self, but may benefit someone facing a similar problem.
-</p>
-
-<dl class="org-dl">
-<dt> <b>Problem</b> </dt>
-<dd>SSH-ing to our server was working well.  But, file
-transfers like <code>scp</code>, <code>git push</code> were failing.
-</dd>
-
-<dt> <b>Diagnosis</b> </dt>
-<dd>I had been thinking it was a problem with our
-campus network on the first night and was too
-sleepy to try and fix it.  But things didn't
-improve even after one full day.  Then I asked a
-friend of mine, and he confirmed that he has been
-facing the same problem for a couple of days.  I
-then tried file transfers to another server and
-it was working fine.  Then I tried file transfers
-between the two servers and even that worked fine!
-</dd>
-
-<dt> <b>Solution</b> </dt>
-<dd>After some googling, I figured that the problem
-was with a machine between me and the server.
-Changing the <code>mtu</code> to 1492 from 1500 on the
-server, fixed the problem. :)
-</dd>
-</dl>
     </div>
     </article>
 </div>

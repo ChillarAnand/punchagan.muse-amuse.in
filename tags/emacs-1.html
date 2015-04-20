@@ -98,6 +98,47 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/org-mode-workshop.html" class="u-url">Org-mode Workshop</a></h1>
+        <span class="post-date">22 Jun 2011</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+Well, I'm not sure if it's worth writing about.  I conducted my
+first org-mode workshop along with Prof. Venkatesh Choppella at
+IIIT-Hyderabad.  It was a 3 hour demo+talk kind of a thing, with a
+small audience of about 20 people, most of whom were new to
+Emacs.
+</p>
+
+<p>
+We covered almost all the aspects of Org-mode after giving a brief
+introduction to Emacs.  Outlining and note-taking part was simple
+and easy to understand, but the audience couldn't really
+appreciate the part of keeping TODO lists and agendas and other
+stuff.  I'm hoping, the reason was not me taking over from
+Venkatesh.
+</p>
+
+<p>
+I think the workshop should've been more hands-on and we should've
+asked people to try out stuff on the spot, instead of showing off
+the things possible with Emacs.  They probably would've
+appreciated a few things better, that way.
+</p>
+
+<p>
+Hopefully, we will be doing more workshops on Org-mode and there
+are surely somethings to take away from this one.  I hope at least
+one of the participants, gets hooked to Org-mode.
+</p>
+
+<p>
+The talk outline is here.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/git-powered-wikis-improved-my-bit.html" class="u-url">Git powered wikis improved: My bit</a></h1>
         <span class="post-date">04 Feb 2011</span>
     </header>
@@ -507,63 +548,6 @@ her request, but she was too quick for me! ;)
 
 <p>
 I'm loving it!
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/refile-to-date-tree.html" class="u-url">Refile to date-tree</a></h1>
-        <span class="post-date">30 Jul 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-Useful to refile notes to the journal file, which is a
-date-tree. <code>org-refile</code> isn't convenient to refile stuff to a
-date-tree.
-</p>
-
-<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">my/org-refile-to-journal</span> <span class="p">()</span>
-  <span class="s">"Refile an entry to journal file's date-tree"</span>
-  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">require</span> <span class="ss">'org-datetree</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">journal</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">"journal.org"</span> <span class="nv">org-directory</span><span class="p">))</span>
-	<span class="nv">post-date</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">org-entry-get</span> <span class="p">(</span><span class="nv">point</span><span class="p">)</span> <span class="s">"TIMESTAMP_IA"</span><span class="p">)</span>
-			<span class="p">(</span><span class="nv">org-entry-get</span> <span class="p">(</span><span class="nv">point</span><span class="p">)</span> <span class="s">"TIMESTAMP"</span><span class="p">)))</span>
-    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="nb">nthcdr</span> <span class="mi">3</span> <span class="p">(</span><span class="nv">parse-time-string</span> <span class="nv">post-date</span><span class="p">)))</span>
-    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">post-date</span><span class="p">)</span>
-			  <span class="p">(</span><span class="nb">car</span> <span class="nv">post-date</span><span class="p">)</span>
-			  <span class="p">(</span><span class="nb">caddr</span> <span class="nv">post-date</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nv">org-cut-subtree</span><span class="p">)</span>
-    <span class="p">(</span><span class="nv">with-current-buffer</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">find-buffer-visiting</span> <span class="nv">journal</span><span class="p">)</span>
-			     <span class="p">(</span><span class="nv">find-file-noselect</span> <span class="nv">journal</span><span class="p">))</span>
-      <span class="p">(</span><span class="nv">save-excursion</span>
-	<span class="p">(</span><span class="nv">org-datetree-file-entry-under</span> <span class="p">(</span><span class="nv">current-kill</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">post-date</span><span class="p">)</span>
-	<span class="p">(</span><span class="nv">bookmark-set</span> <span class="s">"org-refile-last-stored"</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nv">message</span> <span class="s">"Refiled to %s"</span> <span class="nv">journal</span><span class="p">)))</span>
-
-<span class="p">(</span><span class="nb">defun</span> <span class="nv">my/org-agenda-refile-to-journal</span> <span class="p">()</span>
-  <span class="s">"Refile the item at point to journal."</span>
-  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">marker</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">org-get-at-bol</span> <span class="ss">'org-hd-marker</span><span class="p">)</span>
-		     <span class="p">(</span><span class="nv">org-agenda-error</span><span class="p">)))</span>
-	 <span class="p">(</span><span class="nv">buffer</span> <span class="p">(</span><span class="nv">marker-buffer</span> <span class="nv">marker</span><span class="p">))</span>
-	 <span class="p">(</span><span class="nv">pos</span> <span class="p">(</span><span class="nv">marker-position</span> <span class="nv">marker</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nv">with-current-buffer</span> <span class="nv">buffer</span>
-      <span class="p">(</span><span class="nv">save-excursion</span>
-	<span class="p">(</span><span class="nv">save-restriction</span>
-	  <span class="p">(</span><span class="nv">widen</span><span class="p">)</span>
-	  <span class="p">(</span><span class="nv">goto-char</span> <span class="nv">marker</span><span class="p">)</span>
-	  <span class="p">(</span><span class="nv">org-remove-subtree-entries-from-agenda</span><span class="p">)</span>
-	  <span class="p">(</span><span class="nv">my/org-refile-to-journal</span><span class="p">)))))</span>
-  <span class="p">(</span><span class="nv">org-agenda-redo</span><span class="p">))</span>
-
-<span class="p">(</span><span class="nv">org-defkey</span> <span class="nv">org-agenda-mode-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-c C-S-w"</span><span class="p">)</span> <span class="ss">'my/org-agenda-refile-to-journal</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">org-defkey</span> <span class="nv">org-mode-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-c C-S-w"</span><span class="p">)</span> <span class="ss">'my/org-refile-to-journal</span><span class="p">)</span>
-</pre></div>
-
-<p>
-Enjoy!
 </p>
     </div>
     </article>

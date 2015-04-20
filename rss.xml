@@ -1,5 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 20 Apr 2015 18:33:40 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Quotes [2015-02-28]</title><link>http://punchagan.muse-amuse.in/posts/quotes-2015-02-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 20 Apr 2015 19:07:48 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Playing music using mpsyt from Emacs</title><link>http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I've started using the wonderful &lt;a href="https://github.com/np1/mps-youtube/"&gt;mpsyt&lt;/a&gt; to play any music from youtube, since
+I'm not really interested in the video.  But, since I use emacs for chat/IRC, I
+end up getting youtube links into emacs and opening them opens them up in my
+browser. I ended up writing some &lt;code&gt;elisp&lt;/code&gt; to play the songs from within an
+instance of &lt;code&gt;mpsyt&lt;/code&gt; running inside an emacs buffer.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/short-url-at-point&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="s"&gt;"Gets the short url at point.&lt;/span&gt;
+
+&lt;span class="s"&gt;This function is required only because&lt;/span&gt;
+&lt;span class="s"&gt;`thing-at-point-url-at-point' ignores urls (without a scheme)&lt;/span&gt;
+&lt;span class="s"&gt;that don't start with www."&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;bounds&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;thing-at-point-bounds-of-url-at-point&lt;/span&gt; &lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;when&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;bounds&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;lt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt; &lt;span class="nv"&gt;bounds&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cdr&lt;/span&gt; &lt;span class="nv"&gt;bounds&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;buffer-substring-no-properties&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt; &lt;span class="nv"&gt;bounds&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cdr&lt;/span&gt; &lt;span class="nv"&gt;bounds&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/mpsyt-url&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;buffer&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;current-buffer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt; &lt;span class="s"&gt;"*mpsyt*"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="c1"&gt;;; Start a new term with *mpsyt* if there isn't one&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;unless&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get-process&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;when&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get-buffer&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;kill-buffer&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get-buffer&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;ansi-term&lt;/span&gt; &lt;span class="s"&gt;"mpsyt"&lt;/span&gt; &lt;span class="s"&gt;"mpsyt"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="c1"&gt;;; Play given url in mpsyt&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;mpsyt-proc&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get-process&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+      &lt;span class="c1"&gt;;; If something is already playing, stop it and play this...&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;term-send-string&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc&lt;/span&gt; &lt;span class="s"&gt;"\n\n\n"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="c1"&gt;;; We wait for a bit, since looking for the prompt seems to fail, sometimes?&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sleep-for&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;term-send-string&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc&lt;/span&gt; &lt;span class="s"&gt;"\n"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+      &lt;span class="c1"&gt;;; Actually send the command to playurl&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;term-simple-send&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get-process&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+			&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"playurl %s"&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/mpsyt-url-at-point&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="s"&gt;"Play the URL at point using mpsyt."&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;interactive&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;url&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;or&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;url-get-url-at-point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;pc/short-url-at-point&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;not&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;message&lt;/span&gt; &lt;span class="s"&gt;"No URL found"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;message&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"Playing %s with mpsyt"&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;pc/mpsyt-url&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The current version of mpsyt crashes when run from inside emacs due to a bug in
+the code to get the terminal size, which should be fixed once this &lt;a href="https://github.com/np1/mps-youtube/pull/247"&gt;patch&lt;/a&gt; is
+merged.
+&lt;/p&gt;
+
+&lt;p&gt;
+I would've expected &lt;code&gt;thing-at-point-url-at-point&lt;/code&gt; to be able to find urls even
+when they don't have a schema, but it tries to guess the schema from urls and
+fails to work when the url starts with &lt;code&gt;youtube.com&lt;/code&gt; instead of
+&lt;code&gt;www.youtube.com&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+I started off using the command-line interface of &lt;code&gt;mpsyt&lt;/code&gt; by running it using
+&lt;code&gt;shell-command&lt;/code&gt; or &lt;code&gt;start-process&lt;/code&gt;.  But, it seemed useful to have a buffer of
+&lt;code&gt;mpsyt&lt;/code&gt; to switch to – easier to search for new music, repeating songs, etc.
+Not all tasks/actions are achievable through &lt;code&gt;mpsyt&lt;/code&gt;'s command line args.
+&lt;/p&gt;
+
+&lt;p&gt;
+I ended up writing more code than I thought I would have to&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;.  But, I'm
+pretty happy with how this all works, right now.
+&lt;/p&gt;
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+- Isn't it true, more often than not?
+&lt;/p&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>mpsyt</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</guid><pubDate>Mon, 20 Apr 2015 18:17:18 GMT</pubDate></item><item><title>Quotes [2015-02-28]</title><link>http://punchagan.muse-amuse.in/posts/quotes-2015-02-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;Do anything, but let it produce joy. – &lt;i&gt;Walt Whitman&lt;/i&gt;
 &lt;/li&gt;
 
@@ -497,37 +581,4 @@ Wozniack&lt;/i&gt;
 
 &lt;li&gt;"Computer Science is no more about computers than astronomy is about telescopes" – &lt;i&gt;Edsger Dijkstra&lt;/i&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>quotes</category><guid>http://punchagan.muse-amuse.in/posts/quotes-2014-11-01.html</guid><pubDate>Fri, 31 Oct 2014 20:16:45 GMT</pubDate></item><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I stumbled on a &lt;a href="http://rubyrogues.com/178-rr-book-club-refactoring-ruby-with-martin-fowler/"&gt;Ruby Rogues podcast&lt;/a&gt; yesterday, which had &lt;a href="http://martinfowlwer.com"&gt;Martin Fowler&lt;/a&gt; as the
-guest.  I really enjoyed the discussion on Refactoring (the noun, the verb and
-the book!)
-&lt;/p&gt;
-
-&lt;p&gt;
-Martin clarified in the podcast that refactoring (the verb/process) is a
-sequence of very small refactorings, while you keep making sure that you can
-run the test suite always.  A refactoring (noun) is a change where you change
-the structure of the code without any externally observable changes, with the
-intent of making it easier to understand and cheaper to change in future.
-&lt;/p&gt;
-
-&lt;p&gt;
-I also really liked the metaphor of a 'healthy code base'.  Refactoring is,
-then, the process of keeping healthy – exercise, speaking metaphorically.  You
-can stack up all the exercise you need to do, until you get really unfit.
-Refactoring, similarly, needs to be done regularly, to keep the code base
-healthy.  This lets you go faster, in the future.
-&lt;/p&gt;
-
-&lt;p&gt;
-I also really liked the advise about trying to push back the mental contexts
-you build, while trying to debug/understand some code that is not very clear,
-by refactoring the code to make it clearer.  Code needn't be one big chunk of
-cryptographic text.  Code is writing.  It should be clear and understandable.
-Or, at least we should strive to make it so!
-&lt;/p&gt;
-
-&lt;p&gt;
-The discussion, as always on this podcast, was very lively, pleasant and
-enjoyable! Enjoy!
-&lt;/p&gt;</description><category>advice</category><category>code</category><category>programming</category><guid>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</guid><pubDate>Sat, 25 Oct 2014 14:23:25 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>quotes</category><guid>http://punchagan.muse-amuse.in/posts/quotes-2014-11-01.html</guid><pubDate>Fri, 31 Oct 2014 20:16:45 GMT</pubDate></item></channel></rss>

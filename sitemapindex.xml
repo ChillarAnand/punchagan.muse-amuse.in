@@ -42,7 +42,7 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/blag.xml</loc>
-  <lastmod>2015-03-26</lastmod>
+  <lastmod>2015-04-21</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/blog.xml</loc>
@@ -138,7 +138,7 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/emacs.xml</loc>
-  <lastmod>2015-03-26</lastmod>
+  <lastmod>2015-04-21</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/email.xml</loc>
@@ -361,6 +361,10 @@
   <lastmod>2015-03-26</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://punchagan.muse-amuse.in/tags/mpsyt.xml</loc>
+  <lastmod>2015-04-21</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/mumbai.xml</loc>
   <lastmod>2015-03-26</lastmod>
  </sitemap>
@@ -474,7 +478,7 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/python.xml</loc>
-  <lastmod>2015-03-26</lastmod>
+  <lastmod>2015-04-21</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/quark.xml</loc>
