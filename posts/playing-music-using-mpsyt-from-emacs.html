@@ -141,7 +141,9 @@ instance of <code>mpsyt</code> running inside an emacs buffer.
 
       <span class="c1">;; Actually send the command to playurl</span>
       <span class="p">(</span><span class="nv">term-simple-send</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
-			<span class="p">(</span><span class="nb">format</span> <span class="s">"playurl %s"</span> <span class="nv">url</span><span class="p">)))))</span>
+			<span class="p">(</span><span class="nb">format</span> <span class="s">"playurl %s"</span> <span class="nv">url</span><span class="p">)))</span>
+
+    <span class="p">(</span><span class="nv">switch-to-buffer</span> <span class="nv">buffer</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/mpsyt-url-at-point</span> <span class="p">()</span>
   <span class="s">"Play the URL at point using mpsyt."</span>

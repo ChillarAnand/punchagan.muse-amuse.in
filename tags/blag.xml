@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (blag)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/blag.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 20 Apr 2015 19:07:48 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Playing music using mpsyt from Emacs</title><link>http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (blag)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/blag.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 21 Apr 2015 09:14:49 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Playing music using mpsyt from Emacs</title><link>http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I've started using the wonderful &lt;a href="https://github.com/np1/mps-youtube/"&gt;mpsyt&lt;/a&gt; to play any music from youtube, since
 I'm not really interested in the video.  But, since I use emacs for chat/IRC, I
 end up getting youtube links into emacs and opening them opens them up in my
@@ -37,7 +37,9 @@ instance of &lt;code&gt;mpsyt&lt;/code&gt; running inside an emacs buffer.
 
       &lt;span class="c1"&gt;;; Actually send the command to playurl&lt;/span&gt;
       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;term-simple-send&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get-process&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-			&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"playurl %s"&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
+			&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"playurl %s"&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;switch-to-buffer&lt;/span&gt; &lt;span class="nv"&gt;buffer&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/mpsyt-url-at-point&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
   &lt;span class="s"&gt;"Play the URL at point using mpsyt."&lt;/span&gt;
