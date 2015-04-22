@@ -1,5 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (howto)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/howto.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 01 Mar 2015 03:01:22 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>I love FOSS.  How do I start contributing (code)?</title><link>http://punchagan.muse-amuse.in/posts/i-love-foss-how-do-i-start-contributing-code.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (howto)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/howto.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 22 Apr 2015 09:58:45 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>WiFi Channels &amp; my router's random invisibility</title><link>http://punchagan.muse-amuse.in/posts/wifi-channels-my-routers-random-invisibility.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+To update some data plan changes, I had to restart my router today.  I did so
+from the (web) admin interface, from my dad's laptop. Guess what!  The router
+goes invisible (to the laptop), after the restart!  Other devices were still
+happily connected.
+&lt;/p&gt;
+
+&lt;p&gt;
+There were a few occasions in the past when this laptop had failed to find our
+home router.  The solution that worked for my dad before was to restart the
+router; once, or may be a couple of times.  But, this time it didn't work.
+&lt;/p&gt;
+
+&lt;p&gt;
+I had a feeling this was something to do with "Channels", but I had no idea
+what was going on.
+&lt;/p&gt;
+
+&lt;p&gt;
+I logged onto the router and started looking at the Wireless settings in the
+hope of finding some clue, and there it was! &lt;code&gt;Wireless Channel: Auto Scan&lt;/code&gt;
+&lt;/p&gt;
+
+
+&lt;div class="figure"&gt;
+&lt;p&gt;&lt;img src="http://punchagan.muse-amuse.in/images/auto-scan.jpg" alt="auto-scan.jpg"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+It was anybody's guess that some channels that the router uses weren't
+supported by my dad's laptop.  The restarts &lt;b&gt;sometimes&lt;/b&gt; helped because the
+router would scan for channels that it thinks would work well, and end-up using
+something that the laptop's wifi card supported.
+&lt;/p&gt;
+
+&lt;p&gt;
+The router only had options of channels from 1 to 13.  To see what channels a
+wifi card supports, you can run the &lt;code&gt;iwlist freq&lt;/code&gt; command.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;iwlist freq
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;eth1      26 channels in total; available frequencies :
+	  Channel 01 : 2.412 GHz
+	  Channel 02 : 2.417 GHz
+	  Channel 03 : 2.422 GHz
+	  Channel 04 : 2.427 GHz
+	  Channel 05 : 2.432 GHz
+	  Channel 06 : 2.437 GHz
+	  Channel 07 : 2.442 GHz
+	  Channel 08 : 2.447 GHz
+	  Channel 09 : 2.452 GHz
+	  Channel 10 : 2.457 GHz
+	  Channel 11 : 2.462 GHz
+	  Channel 12 : 2.467 GHz
+	  Channel 13 : 2.472 GHz
+	  Channel 14 : 2.484 GHz
+	  Channel 36 : 5.18 GHz
+	  Channel 38 : 5.19 GHz
+	  Channel 40 : 5.2 GHz
+	  Channel 42 : 5.21 GHz
+	  Channel 44 : 5.22 GHz
+	  Channel 46 : 5.23 GHz
+	  Channel 48 : 5.24 GHz
+	  Channel 149 : 5.745 GHz
+	  Channel 153 : 5.765 GHz
+	  Channel 157 : 5.785 GHz
+	  Channel 161 : 5.805 GHz
+	  Channel 165 : 5.825 GHz
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+So, the laptop's wifi card support all the channels that the router could use.
+&lt;code&gt;iwlist freq&lt;/code&gt; also gives the current Channel if the device is already connected
+to a router.  I ran this on my laptop and found that the router was using
+&lt;code&gt;Channel 13&lt;/code&gt;.  Why the hell wouldn't this work?!  I don't know!
+&lt;/p&gt;
+
+&lt;p&gt;
+I decided to set a channel manually, but how do I pick a channel?  The idea of
+"Auto Scan" is to find a channel that has relatively low interference.  How do
+we do this manually?  &lt;code&gt;sudo iwlist scan&lt;/code&gt; scans for all the WiFi access points
+nearby and gives detailed information about them, which includes the Channel.
+&lt;/p&gt;
+
+&lt;p&gt;
+It looked like most of the routers nearby used channels 1 and 6, with a few 3s
+and 4s.  Assuming, most of the other routers aren't doing this "Auto Scan"
+business, I set my router to always use Channel 9, and the laptop seems to be
+happily connected, now!
+&lt;/p&gt;</description><category>blag</category><category>debugging</category><category>hardware</category><category>howto</category><guid>http://punchagan.muse-amuse.in/posts/wifi-channels-my-routers-random-invisibility.html</guid><pubDate>Wed, 22 Apr 2015 06:18:50 GMT</pubDate></item><item><title>I love FOSS.  How do I start contributing (code)?</title><link>http://punchagan.muse-amuse.in/posts/i-love-foss-how-do-i-start-contributing-code.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
 &lt;h2 id="sec-1"&gt;Why this article?&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;

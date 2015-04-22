@@ -6,11 +6,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/rss.xml</loc>
-  <lastmod>2015-04-21</lastmod>
+  <lastmod>2015-04-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/sitemap.xml</loc>
-  <lastmod>2015-04-21</lastmod>
+  <lastmod>2015-04-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/advice.xml</loc>
@@ -42,7 +42,7 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/blag.xml</loc>
-  <lastmod>2015-04-21</lastmod>
+  <lastmod>2015-04-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/blog.xml</loc>
@@ -119,6 +119,10 @@
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/death.xml</loc>
   <lastmod>2015-03-26</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://punchagan.muse-amuse.in/tags/debugging.xml</loc>
+  <lastmod>2015-04-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/django.xml</loc>
@@ -217,6 +221,10 @@
   <lastmod>2015-03-26</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://punchagan.muse-amuse.in/tags/hardware.xml</loc>
+  <lastmod>2015-04-22</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/haskell.xml</loc>
   <lastmod>2015-03-26</lastmod>
  </sitemap>
@@ -230,7 +238,7 @@
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/howto.xml</loc>
-  <lastmod>2015-03-26</lastmod>
+  <lastmod>2015-04-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://punchagan.muse-amuse.in/tags/human.xml</loc>

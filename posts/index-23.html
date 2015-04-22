@@ -98,6 +98,41 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/a-couple-of-counting-functions.html" class="u-url">A couple of counting functions</a></h1>
+        <span class="post-date">17 Sep 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+I had a strict character limit of 180 chars for something I was
+writing. I just wrote a simple function to count characters in a
+region or a buffer. Another function to count the words.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">count-chars</span> <span class="p">()</span>
+  <span class="s">"Count the number of chars in a buffer or region."</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-beginning</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-min</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-end</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-max</span><span class="p">))))</span>
+	 <span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nv">number-to-string</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">end</span> <span class="nv">beg</span><span class="p">)))))</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">count-words</span> <span class="p">()</span>
+  <span class="s">"Count the number of words in a buffer or region."</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-beginning</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-min</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-end</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-max</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nb">count</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">save-excursion</span>
+      <span class="p">(</span><span class="nv">goto-char</span> <span class="nv">beg</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">while</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="p">(</span><span class="nv">point</span><span class="p">)</span> <span class="nv">end</span><span class="p">)</span>
+	<span class="p">(</span><span class="nv">forward-word</span><span class="p">)</span>
+	<span class="p">(</span><span class="k">setq</span> <span class="nb">count</span> <span class="p">(</span><span class="nb">1+</span> <span class="nb">count</span><span class="p">))))</span>
+    <span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nv">int-to-string</span> <span class="nb">count</span><span class="p">))))</span>
+</pre></div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/asking-vs-figuring-out.html" class="u-url">Asking vs. Figuring out</a></h1>
         <span class="post-date">15 Sep 2010</span>
     </header>
@@ -582,27 +617,6 @@ Thanks to everybody who took the time to comment here.
 Special thanks to niku, Rini, and ntveem for inspiring me with their
 blogs. [All three of them have moved on to better things than
 blogging.]
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/another-win-for-them.html" class="u-url">Another win for them!</a></h1>
-        <span class="post-date">16 Aug 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-South Central Railways(SCR) has banned photography in stations, as
-a measure to prevent Terrorism. Terrorism by definition is "the
-act of terrorizing; a mode of government by terror or
-intimidation." Doesn't this decision by SCR define a victory for
-the people they are trying to stop?
-</p>
-
-<p>
-Anyway, if you are carrying a camera and are tempted to shoot in
-the railway station, go get a permission letter from the Chief
-PRO. :-/
 </p>
     </div>
     </article>

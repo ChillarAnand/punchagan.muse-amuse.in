@@ -13,7 +13,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
       <meta charset="utf-8">
-    <meta name="description" content="For an idle mind is the devil's workshop.">
+    <meta name="description" content="None">
     <meta name="author" content="punchagan">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -21,13 +21,13 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
-            <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS for tag debugging (en)" href="/tags/debugging.xml">
 
 
   
 
   <title>
-      Posts for year 2015 · Noetic Nought
+      Posts about debugging · Noetic Nought
   </title>
 
 </head>
@@ -95,28 +95,111 @@ Creative Commons Attribution 3.0 Unported License</a>
       </div>
 
       <div class="container content">
-<article class="listpage">
+<div class="postindex">
+    <article class="h-entry post-text">
     <header>
-        <h1>Posts for year 2015</h1>
+        <h1 class="post-title p-name entry-title"><a href="/posts/wifi-channels-my-routers-random-invisibility.html" class="u-url">WiFi Channels &amp; my router's random invisibility</a></h1>
+        <span class="post-date">22 Apr 2015</span>
     </header>
-    <ul class="postlist">
-        <li>
-<a href="/posts/wifi-channels-my-routers-random-invisibility.html" class="listtitle">WiFi Channels &amp; my router's random invisibility</a> <time class="listdate" datetime="2015-04-22T11:48:50+05:30" title="22 Apr 2015">22 Apr 2015</time>
-</li>
-        <li>
-<a href="/posts/playing-music-using-mpsyt-from-emacs.html" class="listtitle">Playing music using mpsyt from Emacs</a> <time class="listdate" datetime="2015-04-20T23:47:18+05:30" title="20 Apr 2015">20 Apr 2015</time>
-</li>
-        <li>
-<a href="/posts/quotes-2015-02-28.html" class="listtitle">Quotes [2015-02-28]</a> <time class="listdate" datetime="2015-03-01T08:33:12+05:30" title="01 Mar 2015">01 Mar 2015</time>
-</li>
-        <li>
-<a href="/posts/org-drill-for-making-it-stick.html" class="listtitle">org-drill for making it stick!</a> <time class="listdate" datetime="2015-01-17T01:06:54+05:30" title="17 Jan 2015">17 Jan 2015</time>
-</li>
-        <li>
-<a href="/posts/how-i-learnt-to-use-emacs-profiler.html" class="listtitle">How I learnt to use Emacs' profiler</a> <time class="listdate" datetime="2015-01-03T02:01:17+05:30" title="03 Jan 2015">03 Jan 2015</time>
-</li>
-    </ul>
-</article>
+    <div class="e-content entry-content">
+    <p>
+To update some data plan changes, I had to restart my router today.  I did so
+from the (web) admin interface, from my dad's laptop. Guess what!  The router
+goes invisible (to the laptop), after the restart!  Other devices were still
+happily connected.
+</p>
+
+<p>
+There were a few occasions in the past when this laptop had failed to find our
+home router.  The solution that worked for my dad before was to restart the
+router; once, or may be a couple of times.  But, this time it didn't work.
+</p>
+
+<p>
+I had a feeling this was something to do with "Channels", but I had no idea
+what was going on.
+</p>
+
+<p>
+I logged onto the router and started looking at the Wireless settings in the
+hope of finding some clue, and there it was! <code>Wireless Channel: Auto Scan</code>
+</p>
+
+
+<div class="figure">
+<p><img src="/images/auto-scan.jpg" alt="auto-scan.jpg">
+</p>
+</div>
+
+<p>
+It was anybody's guess that some channels that the router uses weren't
+supported by my dad's laptop.  The restarts <b>sometimes</b> helped because the
+router would scan for channels that it thinks would work well, and end-up using
+something that the laptop's wifi card supported.
+</p>
+
+<p>
+The router only had options of channels from 1 to 13.  To see what channels a
+wifi card supports, you can run the <code>iwlist freq</code> command.
+</p>
+
+<div class="highlight"><pre>iwlist freq
+</pre></div>
+
+<div class="highlight"><pre>eth1      26 channels in total; available frequencies :
+	  Channel 01 : 2.412 GHz
+	  Channel 02 : 2.417 GHz
+	  Channel 03 : 2.422 GHz
+	  Channel 04 : 2.427 GHz
+	  Channel 05 : 2.432 GHz
+	  Channel 06 : 2.437 GHz
+	  Channel 07 : 2.442 GHz
+	  Channel 08 : 2.447 GHz
+	  Channel 09 : 2.452 GHz
+	  Channel 10 : 2.457 GHz
+	  Channel 11 : 2.462 GHz
+	  Channel 12 : 2.467 GHz
+	  Channel 13 : 2.472 GHz
+	  Channel 14 : 2.484 GHz
+	  Channel 36 : 5.18 GHz
+	  Channel 38 : 5.19 GHz
+	  Channel 40 : 5.2 GHz
+	  Channel 42 : 5.21 GHz
+	  Channel 44 : 5.22 GHz
+	  Channel 46 : 5.23 GHz
+	  Channel 48 : 5.24 GHz
+	  Channel 149 : 5.745 GHz
+	  Channel 153 : 5.765 GHz
+	  Channel 157 : 5.785 GHz
+	  Channel 161 : 5.805 GHz
+	  Channel 165 : 5.825 GHz
+</pre></div>
+
+<p>
+So, the laptop's wifi card support all the channels that the router could use.
+<code>iwlist freq</code> also gives the current Channel if the device is already connected
+to a router.  I ran this on my laptop and found that the router was using
+<code>Channel 13</code>.  Why the hell wouldn't this work?!  I don't know!
+</p>
+
+<p>
+I decided to set a channel manually, but how do I pick a channel?  The idea of
+"Auto Scan" is to find a channel that has relatively low interference.  How do
+we do this manually?  <code>sudo iwlist scan</code> scans for all the WiFi access points
+nearby and gives detailed information about them, which includes the Channel.
+</p>
+
+<p>
+It looked like most of the routers nearby used channels 1 and 6, with a few 3s
+and 4s.  Assuming, most of the other routers aren't doing this "Auto Scan"
+business, I set my router to always use Channel 9, and the laptop seems to be
+happily connected, now!
+</p>
+    </div>
+    </article>
+</div>
+
+
       </div>
     </div>
 

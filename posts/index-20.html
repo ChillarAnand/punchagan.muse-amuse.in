@@ -98,6 +98,75 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-12-06.html" class="u-url">Bookmarks [2010/12/06]</a></h1>
+        <span class="post-date">06 Dec 2010</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="https://git.wiki.kernel.org/index.php/Interfaces,_frontends,_and_tools#Darcs">Interfaces, frontends, and tools - Git SCM Wiki</a>
+
+<p>
+tags: git
+</p>
+</li>
+</ul>
+
+
+
+
+<ul class="org-ul">
+<li>
+<a href="http://theologytoday.ptsem.edu/apr1977/v34-1-bookreview3.htm">Theology Today - Vol 34, No. 1 - April 1977 - BOOK REVIEW - Evening Land ('Aftonland')</a>
+
+<p>
+tags: poem, awesome, reading, writing
+</p>
+</li>
+</ul>
+
+
+
+
+<ul class="org-ul">
+<li>
+<a href="http://cam.ly/blog/2010/12/code-fearlessly/">Code Fearlessly | Wireless Security Cameras - Blog</a>
+
+<p>
+tags: advice, programming
+</p>
+</li>
+</ul>
+
+
+
+
+<ul class="org-ul">
+<li>
+<a href="http://news.ycombinator.com/item?id=1971163">Hacker News | If you could give a book to your younger self, what would it be?</a>
+
+<p>
+tags: life, book, list, reading
+</p>
+</li>
+</ul>
+
+
+
+
+<ul class="org-ul">
+<li>
+<a href="http://www.stephenhobley.com/blog/2010/12/04/what-the-kinect-sensor-actually-does/">What the Kinect sensor actually does…</a>
+
+<p>
+tags: analysis
+</p>
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/mtu-and-file-transfers.html" class="u-url">MTU and file transfers</a></h1>
         <span class="post-date">06 Dec 2010</span>
     </header>
@@ -651,152 +720,6 @@ tags: software
 </p>
 </li>
 </ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/do-our-eyes-suck-at-blue.html" class="u-url">Do our eyes suck at blue?</a></h1>
-        <span class="post-date">13 Nov 2010</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-This is some fun I had, trying to replicate what was written in
-this post. I had been trying to understand what was happening
-here, and found this post on Hacker News very helpful.
-</p>
-
-<p>
-It is a known fact that our eyes have more cones for green and
-red as compared to blue.  The Bayer filter used for digital camera
-lenses is based upon this principle.  This post tries to
-illustrate that using the following two arguments.
-</p>
-<ul class="org-ul">
-<li>Looking at only the blue channel of an image looks very dark.
-</li>
-<li>Tripling the pixel size of blue channel doesn't cause much
-distortion in the final image.
-</li>
-</ul>
-<p>
-Hence, our eyes suck at blue.
-</p>
-
-<p>
-Their argument is flawed, but we could try and improve a few
-things.
-</p>
-
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Looking at the blue channel.</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-This is definitely flawed, since the intensity of blue in the
-image they have taken may be less and hence giving us a false
-positive.
-</p>
-
-<p>
-We could instead gray-scale the image and use these pixel values
-in the 3 channels and look at the images.
-</p>
-
-<p>
-This also eliminates the problem of the image being captured
-through a Bayer filter.
-</p>
-
-<p>
-Here's some <code>python</code> code to do the same. (uses <code>matplotlib</code>)
-</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">show_channels</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
-	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span>
-	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">show_grey_channels</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
-    <span class="n">K</span> <span class="o">=</span> <span class="n">average</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
-	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">K</span>
-	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
-	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Pixelating the blue channel</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-Again, there was this argument of use of Bayer filter affecting
-the image and the like.
-</p>
-
-<p>
-What I did was to swap the channels, and then look at the
-images. However I swapped the channels, the image where the
-green channel was pixelated always looked the worst.  The
-difference between blue and red was less noticeable, I feel.
-</p>
-
-<p>
-Here's the code.
-</p>
-
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">zoom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
-    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
-    <span class="n">row_stride</span><span class="p">,</span> <span class="n">col_stride</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">strides</span>
-    <span class="n">view</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">stride_tricks</span><span class="o">.</span><span class="n">as_strided</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>
-			<span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">factor</span><span class="p">),</span>
-			<span class="p">(</span><span class="n">row_stride</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">col_stride</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">view</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">rows</span><span class="o">*</span><span class="n">factor</span><span class="p">,</span> <span class="n">cols</span><span class="o">*</span><span class="n">factor</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">subsample</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-	<span class="n">J</span> <span class="o">=</span> <span class="n">I</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoom</span><span class="p">(</span><span class="n">I</span><span class="p">[::</span><span class="mi">4</span><span class="p">,</span> <span class="p">::</span><span class="mi">4</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
-	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-	<span class="n">title</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> channel subsampled"</span> <span class="o">%</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">swap_subsample</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
-	<span class="k">print</span> <span class="s">"</span><span class="si">%s</span><span class="s"> &lt;-- </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">colors</span><span class="p">[(</span><span class="n">c</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">])</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
-	<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-	    <span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">]</span>
-	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoom</span><span class="p">(</span><span class="n">I</span><span class="p">[::</span><span class="mi">4</span><span class="p">,</span> <span class="p">::</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
-	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
-	<span class="n">title</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> channel subsampled"</span> <span class="o">%</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Images</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-Here are a few images.  (View them in their original size)
-</p>
-
-
-<div class="figure">
-<p><img src="/images/channels.png" alt="channels.png">
-</p>
-</div>
-
-
-<div class="figure">
-<p><img src="/images/subsample.png" alt="subsample.png">
-</p>
-</div>
-</div>
-</div>
     </div>
     </article>
 </div>

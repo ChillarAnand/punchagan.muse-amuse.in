@@ -1,5 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 22 Apr 2015 07:00:05 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Playing music using mpsyt from Emacs</title><link>http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 22 Apr 2015 09:58:45 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>WiFi Channels &amp; my router's random invisibility</title><link>http://punchagan.muse-amuse.in/posts/wifi-channels-my-routers-random-invisibility.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+To update some data plan changes, I had to restart my router today.  I did so
+from the (web) admin interface, from my dad's laptop. Guess what!  The router
+goes invisible (to the laptop), after the restart!  Other devices were still
+happily connected.
+&lt;/p&gt;
+
+&lt;p&gt;
+There were a few occasions in the past when this laptop had failed to find our
+home router.  The solution that worked for my dad before was to restart the
+router; once, or may be a couple of times.  But, this time it didn't work.
+&lt;/p&gt;
+
+&lt;p&gt;
+I had a feeling this was something to do with "Channels", but I had no idea
+what was going on.
+&lt;/p&gt;
+
+&lt;p&gt;
+I logged onto the router and started looking at the Wireless settings in the
+hope of finding some clue, and there it was! &lt;code&gt;Wireless Channel: Auto Scan&lt;/code&gt;
+&lt;/p&gt;
+
+
+&lt;div class="figure"&gt;
+&lt;p&gt;&lt;img src="http://punchagan.muse-amuse.in/images/auto-scan.jpg" alt="auto-scan.jpg"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+It was anybody's guess that some channels that the router uses weren't
+supported by my dad's laptop.  The restarts &lt;b&gt;sometimes&lt;/b&gt; helped because the
+router would scan for channels that it thinks would work well, and end-up using
+something that the laptop's wifi card supported.
+&lt;/p&gt;
+
+&lt;p&gt;
+The router only had options of channels from 1 to 13.  To see what channels a
+wifi card supports, you can run the &lt;code&gt;iwlist freq&lt;/code&gt; command.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;iwlist freq
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;eth1      26 channels in total; available frequencies :
+	  Channel 01 : 2.412 GHz
+	  Channel 02 : 2.417 GHz
+	  Channel 03 : 2.422 GHz
+	  Channel 04 : 2.427 GHz
+	  Channel 05 : 2.432 GHz
+	  Channel 06 : 2.437 GHz
+	  Channel 07 : 2.442 GHz
+	  Channel 08 : 2.447 GHz
+	  Channel 09 : 2.452 GHz
+	  Channel 10 : 2.457 GHz
+	  Channel 11 : 2.462 GHz
+	  Channel 12 : 2.467 GHz
+	  Channel 13 : 2.472 GHz
+	  Channel 14 : 2.484 GHz
+	  Channel 36 : 5.18 GHz
+	  Channel 38 : 5.19 GHz
+	  Channel 40 : 5.2 GHz
+	  Channel 42 : 5.21 GHz
+	  Channel 44 : 5.22 GHz
+	  Channel 46 : 5.23 GHz
+	  Channel 48 : 5.24 GHz
+	  Channel 149 : 5.745 GHz
+	  Channel 153 : 5.765 GHz
+	  Channel 157 : 5.785 GHz
+	  Channel 161 : 5.805 GHz
+	  Channel 165 : 5.825 GHz
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+So, the laptop's wifi card support all the channels that the router could use.
+&lt;code&gt;iwlist freq&lt;/code&gt; also gives the current Channel if the device is already connected
+to a router.  I ran this on my laptop and found that the router was using
+&lt;code&gt;Channel 13&lt;/code&gt;.  Why the hell wouldn't this work?!  I don't know!
+&lt;/p&gt;
+
+&lt;p&gt;
+I decided to set a channel manually, but how do I pick a channel?  The idea of
+"Auto Scan" is to find a channel that has relatively low interference.  How do
+we do this manually?  &lt;code&gt;sudo iwlist scan&lt;/code&gt; scans for all the WiFi access points
+nearby and gives detailed information about them, which includes the Channel.
+&lt;/p&gt;
+
+&lt;p&gt;
+It looked like most of the routers nearby used channels 1 and 6, with a few 3s
+and 4s.  Assuming, most of the other routers aren't doing this "Auto Scan"
+business, I set my router to always use Channel 9, and the laptop seems to be
+happily connected, now!
+&lt;/p&gt;</description><category>blag</category><category>debugging</category><category>hardware</category><category>howto</category><guid>http://punchagan.muse-amuse.in/posts/wifi-channels-my-routers-random-invisibility.html</guid><pubDate>Wed, 22 Apr 2015 06:18:50 GMT</pubDate></item><item><title>Playing music using mpsyt from Emacs</title><link>http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I've started using the wonderful &lt;a href="https://github.com/np1/mps-youtube/"&gt;mpsyt&lt;/a&gt; to play any music from youtube, since
 I'm not really interested in the video.  But, since I use emacs for chat/IRC, I
 end up getting youtube links into emacs and opening them opens them up in my
@@ -544,43 +636,4 @@ The blog will cover all facets of Emacs and will be suitable for beginners
 and – I hope – experts alike.
 &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-11-01.html</guid><pubDate>Fri, 31 Oct 2014 20:16:45 GMT</pubDate></item><item><title>Quotes [2014-11-01]</title><link>http://punchagan.muse-amuse.in/posts/quotes-2014-11-01.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
-&lt;li&gt;I wanted to change the world. But I have found that the only thing
-one can be sure of changing is oneself. ~ Aldous Huxley
-&lt;/li&gt;
-
-&lt;li&gt;The true voyage of discovery consists not of going to new places,
-but of having a new pair of eyes. — Marcel Proust (1871–1922)
-&lt;/li&gt;
-
-&lt;li&gt;All that is necessary for evil to triumph is for good men to do nothing. — Edmund Burke
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;"I think that it's extraordinarily important that we in computer science keep
-  fun in computing. When it started out, it was an awful lot of fun. Of course,
-the paying customers got shafted every now and then, and after a while we
-began to take their complaints seriously. We began to feel as if we really
-were responsible for the successful, error-free perfect use of these
-machines. I don't think we are. I think we're responsible for stretching
-them, setting them off in new directions, and keeping fun in the house. I
-hope the field of computer science never loses its sense of fun. Above all, I
-hope we don't become missionaries. Don't feel as if you're Bible
-salesmen. The world has too many of those already. What you know about
-computing other people will learn. Don't feel as if the key to successful
-computing is only in your hands. What's in your hands, I think and hope, is
-intelligence: the ability to see the machine as more than when you were first
-led up to it, that you can make it more." – &lt;i&gt;Alan J. Perlis (April 1,
-1922-February 7, 1990)&lt;/i&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Forgetting is like radiation: you cannot smell it, you cannot taste it, and
-  when you finally notice the damage, it is already irreversible – &lt;i&gt;Piotr
-Wozniack&lt;/i&gt;
-&lt;/li&gt;
-
-&lt;li&gt;"Computer Science is no more about computers than astronomy is about telescopes" – &lt;i&gt;Edsger Dijkstra&lt;/i&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>quotes</category><guid>http://punchagan.muse-amuse.in/posts/quotes-2014-11-01.html</guid><pubDate>Fri, 31 Oct 2014 20:16:45 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-11-01.html</guid><pubDate>Fri, 31 Oct 2014 20:16:45 GMT</pubDate></item></channel></rss>
