@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (orgmode)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/orgmode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 25 Mar 2015 18:48:02 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>org-drill for making it stick!</title><link>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (orgmode)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/orgmode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 13 May 2015 07:50:07 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>org-drill for making it stick!</title><link>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Those who read the &lt;a href="http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html"&gt;last&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html"&gt;few&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html"&gt;posts&lt;/a&gt; here, would know that I have been
 experimenting with &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;org-drill&lt;/a&gt; (a spaced repetition extension to &lt;a href="http://orgmode.org/"&gt;Org mode&lt;/a&gt;).  I
 have been using the system (almost) religiously for the past 2 months, and I do
@@ -473,15 +473,7 @@ Once, I'm happy with it, I commit the post and deploy it using &lt;code&gt;nikol
 deploy&lt;/code&gt;.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'gh-pages'&lt;/span&gt;
-&lt;span class="n"&gt;GITHUB_REMOTE_NAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'origin'&lt;/span&gt;
-
-&lt;span class="c"&gt;# Commands to execute to deploy. Can be anything, for example,&lt;/span&gt;
-&lt;span class="c"&gt;# you may use rsync:&lt;/span&gt;
-&lt;span class="c"&gt;# "rsync -rav output/* joe@my.site:/srv/www/site"&lt;/span&gt;
-&lt;span class="c"&gt;# And then do a backup, or ping pingomatic.&lt;/span&gt;
-&lt;span class="c"&gt;# To do manual deployment, set it to []&lt;/span&gt;
-&lt;span class="n"&gt;DEPLOY_COMMANDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;DEPLOY_COMMANDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="s"&gt;'default'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
 	&lt;span class="s"&gt;'nikola orphans|xargs rm || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'git checkout master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -489,13 +481,32 @@ deploy&lt;/code&gt;.
 	&lt;span class="s"&gt;'./commit-changes || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'nikola github_deploy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'git push origin master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;],&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
 I also have a plugin, that posts captured bookmarks and quotes onto
 the blog, with a single command. I should probably make the sources of
 my blog open, and push it onto GitHub.
-&lt;/p&gt;</description><category>blog</category><category>emacs</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</guid><pubDate>Sun, 20 Apr 2014 12:05:10 GMT</pubDate></item><item><title>Bookmarks and Quotes plugin</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;Update &lt;span class="timestamp-wrapper"&gt;&lt;span class="timestamp"&gt;[2015-05-13 Wed]&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;I use my own &lt;a href="https://plugins.getnikola.com/#orgmode"&gt;plugin&lt;/a&gt; for Nikola which lets me write posts in org-mode.  There
+is a similar &lt;a href="https://github.com/redguardtoo/org2nikola"&gt;plugin&lt;/a&gt; by Chen Bin, that exports posts to intermediate html,
+that is then used by Nikola.
+&lt;/li&gt;
+
+&lt;li&gt;The source for my blog is now on &lt;a href="https://github.com/punchagan/punchagan.muse-amuse.in"&gt;GitHub&lt;/a&gt;
+&lt;/li&gt;
+
+&lt;li&gt;I also have
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>blog</category><category>emacs</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</guid><pubDate>Sun, 20 Apr 2014 12:05:10 GMT</pubDate></item><item><title>Bookmarks and Quotes plugin</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I used to have a separate page for bookmarks and quotes on the old
 blog.  They will now be shared as regular posts with 5 or more
 bookmarks/quotes.  I use a bookmarklet in my browser to capture links

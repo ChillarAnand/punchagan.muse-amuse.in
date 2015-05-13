@@ -631,15 +631,7 @@ Once, I'm happy with it, I commit the post and deploy it using <code>nikola
 deploy</code>.
 </p>
 
-<div class="highlight"><pre><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s">'gh-pages'</span>
-<span class="n">GITHUB_REMOTE_NAME</span> <span class="o">=</span> <span class="s">'origin'</span>
-
-<span class="c"># Commands to execute to deploy. Can be anything, for example,</span>
-<span class="c"># you may use rsync:</span>
-<span class="c"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
-<span class="c"># And then do a backup, or ping pingomatic.</span>
-<span class="c"># To do manual deployment, set it to []</span>
-<span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">'default'</span><span class="p">:</span> <span class="p">[</span>
 	<span class="s">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
 	<span class="s">'git checkout master'</span><span class="p">,</span>
@@ -647,6 +639,8 @@ deploy</code>.
 	<span class="s">'./commit-changes || true'</span><span class="p">,</span>
 	<span class="s">'nikola github_deploy'</span><span class="p">,</span>
 	<span class="s">'git push origin master'</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">}</span>
 </pre></div>
 
 <p>
@@ -654,6 +648,23 @@ I also have a plugin, that posts captured bookmarks and quotes onto
 the blog, with a single command. I should probably make the sources of
 my blog open, and push it onto GitHub.
 </p>
+
+<p>
+<b>Update <span class="timestamp-wrapper"><span class="timestamp">[2015-05-13 Wed]</span></span></b>
+</p>
+
+<ul class="org-ul">
+<li>I use my own <a href="https://plugins.getnikola.com/#orgmode">plugin</a> for Nikola which lets me write posts in org-mode.  There
+is a similar <a href="https://github.com/redguardtoo/org2nikola">plugin</a> by Chen Bin, that exports posts to intermediate html,
+that is then used by Nikola.
+</li>
+
+<li>The source for my blog is now on <a href="https://github.com/punchagan/punchagan.muse-amuse.in">GitHub</a>
+</li>
+
+<li>I also have
+</li>
+</ul>
     </div>
     </article>
     <article class="h-entry post-text">
