@@ -98,6 +98,59 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/say-howdy-with-emacs.html" class="u-url">Say Howdy with Emacs!</a></h1>
+        <span class="post-date">28 May 2015</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+Staying in touch with people is something I'm not very good at.  Since I am not
+on popular (among my friends/family) networks – FB and Whatsapp – I don't
+even see random updates from people, to get some sense of being in touch.
+</p>
+
+<p>
+I recently read some old posts by Sacha Chua and was inspired by how much code
+she had for <a href="http://sachachua.com/blog/category/geek/emacs/bbdb/">contact management</a> in her old blog posts.  I was inspired by <a href="http://sachachua.com/blog/2005/05/keeping-in-touch/">this
+post</a> in particular to try and be more meticulous about how I stay in touch with
+people. Michael Fogleman <a href="https://mwfogleman.github.io/posts/08-01-2015-emacs-can-keep-in-touch.html">blogged</a> about his contact management work-flow using
+<code>keepintouch</code>. It seemed to do most of what I wanted, but I wanted this to be
+integrated with my <code>org-contacts-db</code> and I felt having native elisp code would
+make it easier to hook up email, chat, etc. to this.
+</p>
+
+<p>
+I ended up writing a small utility called <a href="https://github.com/punchagan/howdy/">howdy</a> to help me keep in touch with
+people. It currently has only a couple of features:
+</p>
+
+<ul class="org-ul">
+<li>
+<code>M-x howdy</code> lets me update the last contacted timestamp for a contact.
+</li>
+<li>Shows me contacts that I'm out of touch in the agenda, once I add the
+following snippet to an agenda file.
+<div class="highlight"><pre>* Howdy
+  %%(howdy-howdy)
+</pre></div>
+</li>
+</ul>
+
+<p>
+I also have a few hooks to hook up jabber messages and email to update the
+db.  I've added them to <code>howdy-hooks</code> in case anybody else wants to use them.
+They can also be used as examples to write other hooks. Feel free to contribute
+other hooks or suggest improvements.  The library also ships with a modest test
+suite, that will hopefully make it easier for others to contribute.
+</p>
+
+<p>
+I'm looking forward to experimenting with this over the next few weeks and
+improving it. Hopefully, it'll help me keep in touch, better than I do now.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/wifi-channels-my-routers-random-invisibility.html" class="u-url">WiFi Channels &amp; my router's random invisibility</a></h1>
         <span class="post-date">22 Apr 2015</span>
     </header>
@@ -767,70 +820,6 @@ Also, it might be easier(?) if I probably tried to have a DE level keybinding, a
 some code to get selection and file name of the currently active
 window/application.
 </p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2014-11-01.html" class="u-url">Bookmarks [2014-11-01]</a></h1>
-        <span class="post-date">01 Nov 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://thoughtcatalog.com/brianna-wiest/2013/04/50-ways-to-love-someone/">50 Ways To Love Someone | Thought Catalog</a>
-
-<p>
-Go for walks together as much as you’re able.
-</p>
-</li>
-
-<li>
-<a href="https://research.microsoft.com/en-US/people/kannan/book-no-solutions-aug-21-2014.pdf">Foundations of Data Science</a>
-
-<p>
-These notes are a first draft of a book being written by Hopcroft and Kannan
-and in many places are incomplete. However, the notes are in good enough
-shape to prepare lectures for a modern theoretical course in computer
-science. Please do not put solutions to exercises online as it is important
-for students to work out solutions for themselves rather than copy them from
-the internet.
-</p>
-</li>
-
-<li>
-<a href="http://asyncio.org/">Asyncio</a>
-
-<p>
-Curated content from around the net to get started with asyncio
-</p>
-</li>
-
-<li>
-<a href="https://github.com/s16h/py-must-watch">s16h/py-must-watch · GitHub</a>
-
-<p>
-Must-watch videos about Python.
-</p>
-</li>
-
-<li>
-<a href="https://github.com/josephmisiti/awesome-machine-learning#python">josephmisiti/awesome-machine-learning · GitHub</a>
-
-<p>
-A curated list of awesome machine learning frameworks, libraries and software
-(by language).
-</p>
-</li>
-
-<li>
-<a href="http://www.masteringemacs.org/about">About - Mastering Emacs</a>
-
-<p>
-The blog will cover all facets of Emacs and will be suitable for beginners
-and – I hope – experts alike.
-</p>
-</li>
-</ul>
     </div>
     </article>
 </div>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (howdy)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/howdy.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 28 May 2015 13:23:09 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Say Howdy with Emacs!</title><link>http://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Staying in touch with people is something I'm not very good at.  Since I am not
+on popular (among my friends/family) networks – FB and Whatsapp – I don't
+even see random updates from people, to get some sense of being in touch.
+&lt;/p&gt;
+
+&lt;p&gt;
+I recently read some old posts by Sacha Chua and was inspired by how much code
+she had for &lt;a href="http://sachachua.com/blog/category/geek/emacs/bbdb/"&gt;contact management&lt;/a&gt; in her old blog posts.  I was inspired by &lt;a href="http://sachachua.com/blog/2005/05/keeping-in-touch/"&gt;this
+post&lt;/a&gt; in particular to try and be more meticulous about how I stay in touch with
+people. Michael Fogleman &lt;a href="https://mwfogleman.github.io/posts/08-01-2015-emacs-can-keep-in-touch.html"&gt;blogged&lt;/a&gt; about his contact management work-flow using
+&lt;code&gt;keepintouch&lt;/code&gt;. It seemed to do most of what I wanted, but I wanted this to be
+integrated with my &lt;code&gt;org-contacts-db&lt;/code&gt; and I felt having native elisp code would
+make it easier to hook up email, chat, etc. to this.
+&lt;/p&gt;
+
+&lt;p&gt;
+I ended up writing a small utility called &lt;a href="https://github.com/punchagan/howdy/"&gt;howdy&lt;/a&gt; to help me keep in touch with
+people. It currently has only a couple of features:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;code&gt;M-x howdy&lt;/code&gt; lets me update the last contacted timestamp for a contact.
+&lt;/li&gt;
+&lt;li&gt;Shows me contacts that I'm out of touch in the agenda, once I add the
+following snippet to an agenda file.
+&lt;div class="highlight"&gt;&lt;pre&gt;* Howdy
+  %%(howdy-howdy)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+I also have a few hooks to hook up jabber messages and email to update the
+db.  I've added them to &lt;code&gt;howdy-hooks&lt;/code&gt; in case anybody else wants to use them.
+They can also be used as examples to write other hooks. Feel free to contribute
+other hooks or suggest improvements.  The library also ships with a modest test
+suite, that will hopefully make it easier for others to contribute.
+&lt;/p&gt;
+
+&lt;p&gt;
+I'm looking forward to experimenting with this over the next few weeks and
+improving it. Hopefully, it'll help me keep in touch, better than I do now.
+&lt;/p&gt;</description><category>blag</category><category>code</category><category>emacs</category><category>hack</category><category>howdy</category><guid>http://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</guid><pubDate>Thu, 28 May 2015 13:09:24 GMT</pubDate></item></channel></rss>

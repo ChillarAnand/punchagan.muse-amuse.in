@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 14 May 2015 05:25:12 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>WiFi Channels &amp; my router's random invisibility</title><link>http://punchagan.muse-amuse.in/posts/wifi-channels-my-routers-random-invisibility.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 28 May 2015 13:23:10 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Say Howdy with Emacs!</title><link>http://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Staying in touch with people is something I'm not very good at.  Since I am not
+on popular (among my friends/family) networks – FB and Whatsapp – I don't
+even see random updates from people, to get some sense of being in touch.
+&lt;/p&gt;
+
+&lt;p&gt;
+I recently read some old posts by Sacha Chua and was inspired by how much code
+she had for &lt;a href="http://sachachua.com/blog/category/geek/emacs/bbdb/"&gt;contact management&lt;/a&gt; in her old blog posts.  I was inspired by &lt;a href="http://sachachua.com/blog/2005/05/keeping-in-touch/"&gt;this
+post&lt;/a&gt; in particular to try and be more meticulous about how I stay in touch with
+people. Michael Fogleman &lt;a href="https://mwfogleman.github.io/posts/08-01-2015-emacs-can-keep-in-touch.html"&gt;blogged&lt;/a&gt; about his contact management work-flow using
+&lt;code&gt;keepintouch&lt;/code&gt;. It seemed to do most of what I wanted, but I wanted this to be
+integrated with my &lt;code&gt;org-contacts-db&lt;/code&gt; and I felt having native elisp code would
+make it easier to hook up email, chat, etc. to this.
+&lt;/p&gt;
+
+&lt;p&gt;
+I ended up writing a small utility called &lt;a href="https://github.com/punchagan/howdy/"&gt;howdy&lt;/a&gt; to help me keep in touch with
+people. It currently has only a couple of features:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;code&gt;M-x howdy&lt;/code&gt; lets me update the last contacted timestamp for a contact.
+&lt;/li&gt;
+&lt;li&gt;Shows me contacts that I'm out of touch in the agenda, once I add the
+following snippet to an agenda file.
+&lt;div class="highlight"&gt;&lt;pre&gt;* Howdy
+  %%(howdy-howdy)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+I also have a few hooks to hook up jabber messages and email to update the
+db.  I've added them to &lt;code&gt;howdy-hooks&lt;/code&gt; in case anybody else wants to use them.
+They can also be used as examples to write other hooks. Feel free to contribute
+other hooks or suggest improvements.  The library also ships with a modest test
+suite, that will hopefully make it easier for others to contribute.
+&lt;/p&gt;
+
+&lt;p&gt;
+I'm looking forward to experimenting with this over the next few weeks and
+improving it. Hopefully, it'll help me keep in touch, better than I do now.
+&lt;/p&gt;</description><category>blag</category><category>code</category><category>emacs</category><category>hack</category><category>howdy</category><guid>http://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</guid><pubDate>Thu, 28 May 2015 13:09:24 GMT</pubDate></item><item><title>WiFi Channels &amp; my router's random invisibility</title><link>http://punchagan.muse-amuse.in/posts/wifi-channels-my-routers-random-invisibility.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 To update some data plan changes, I had to restart my router today.  I did so
 from the (web) admin interface, from my dad's laptop. Guess what!  The router
 goes invisible (to the laptop), after the restart!  Other devices were still
@@ -587,53 +630,4 @@ an interesting problem to try to solve.
 Also, it might be easier(?) if I probably tried to have a DE level keybinding, and
 some code to get selection and file name of the currently active
 window/application.
-&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item><item><title>Bookmarks [2014-11-01]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-11-01.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="http://thoughtcatalog.com/brianna-wiest/2013/04/50-ways-to-love-someone/"&gt;50 Ways To Love Someone | Thought Catalog&lt;/a&gt;
-
-&lt;p&gt;
-Go for walks together as much as you’re able.
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="https://research.microsoft.com/en-US/people/kannan/book-no-solutions-aug-21-2014.pdf"&gt;Foundations of Data Science&lt;/a&gt;
-
-&lt;p&gt;
-These notes are a first draft of a book being written by Hopcroft and Kannan
-and in many places are incomplete. However, the notes are in good enough
-shape to prepare lectures for a modern theoretical course in computer
-science. Please do not put solutions to exercises online as it is important
-for students to work out solutions for themselves rather than copy them from
-the internet.
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="http://asyncio.org/"&gt;Asyncio&lt;/a&gt;
-
-&lt;p&gt;
-Curated content from around the net to get started with asyncio
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="https://github.com/s16h/py-must-watch"&gt;s16h/py-must-watch · GitHub&lt;/a&gt;
-
-&lt;p&gt;
-Must-watch videos about Python.
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="https://github.com/josephmisiti/awesome-machine-learning#python"&gt;josephmisiti/awesome-machine-learning · GitHub&lt;/a&gt;
-
-&lt;p&gt;
-A curated list of awesome machine learning frameworks, libraries and software
-(by language).
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a href="http://www.masteringemacs.org/about"&gt;About - Mastering Emacs&lt;/a&gt;
-
-&lt;p&gt;
-The blog will cover all facets of Emacs and will be suitable for beginners
-and – I hope – experts alike.
-&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-11-01.html</guid><pubDate>Fri, 31 Oct 2014 20:16:45 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item></channel></rss>

@@ -98,6 +98,59 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/say-howdy-with-emacs.html" class="u-url">Say Howdy with Emacs!</a></h1>
+        <span class="post-date">28 May 2015</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+Staying in touch with people is something I'm not very good at.  Since I am not
+on popular (among my friends/family) networks – FB and Whatsapp – I don't
+even see random updates from people, to get some sense of being in touch.
+</p>
+
+<p>
+I recently read some old posts by Sacha Chua and was inspired by how much code
+she had for <a href="http://sachachua.com/blog/category/geek/emacs/bbdb/">contact management</a> in her old blog posts.  I was inspired by <a href="http://sachachua.com/blog/2005/05/keeping-in-touch/">this
+post</a> in particular to try and be more meticulous about how I stay in touch with
+people. Michael Fogleman <a href="https://mwfogleman.github.io/posts/08-01-2015-emacs-can-keep-in-touch.html">blogged</a> about his contact management work-flow using
+<code>keepintouch</code>. It seemed to do most of what I wanted, but I wanted this to be
+integrated with my <code>org-contacts-db</code> and I felt having native elisp code would
+make it easier to hook up email, chat, etc. to this.
+</p>
+
+<p>
+I ended up writing a small utility called <a href="https://github.com/punchagan/howdy/">howdy</a> to help me keep in touch with
+people. It currently has only a couple of features:
+</p>
+
+<ul class="org-ul">
+<li>
+<code>M-x howdy</code> lets me update the last contacted timestamp for a contact.
+</li>
+<li>Shows me contacts that I'm out of touch in the agenda, once I add the
+following snippet to an agenda file.
+<div class="highlight"><pre>* Howdy
+  %%(howdy-howdy)
+</pre></div>
+</li>
+</ul>
+
+<p>
+I also have a few hooks to hook up jabber messages and email to update the
+db.  I've added them to <code>howdy-hooks</code> in case anybody else wants to use them.
+They can also be used as examples to write other hooks. Feel free to contribute
+other hooks or suggest improvements.  The library also ships with a modest test
+suite, that will hopefully make it easier for others to contribute.
+</p>
+
+<p>
+I'm looking forward to experimenting with this over the next few weeks and
+improving it. Hopefully, it'll help me keep in touch, better than I do now.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/org-drill-for-making-it-stick.html" class="u-url">org-drill for making it stick!</a></h1>
         <span class="post-date">17 Jan 2015</span>
     </header>
@@ -497,62 +550,6 @@ Python</a>, I was able to move everything over to use Nikola.
 
 <p>
 Hopefully, I'll keep my blog more updated, from here on!
-</p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/github-cue-recommendations-for-github-repos.html" class="u-url">GitHub Cue: Recommendations for GitHub Repos</a></h1>
-        <span class="post-date">05 Aug 2011</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-If you aren't already aware of it, I'm one of those people who
-goes around saying, "GitHub is my Facebook".  I spend quite a lot
-of time on GitHub, browsing the work of various people, looking at
-loads of interesting stuff that people built.  I keep jumping
-between people pages and projects using the Watchers/Watching &amp;
-Followers/Following pages.  This way, I do come across interesting
-people and projects, but the SNR is too low.  I wanted a better
-way to be able to see stuff, that I find interesting.  That's how
-the idea for this Chromium app – GitHub Cue – was born.
-</p>
-
-<p>
-@baali and I hacked on this, during the last few days and got it
-working.  It works as follows, (from the README) —
-</p>
-
-<ol class="org-ol">
-<li>Scrapes all the descriptions of the repositories being watched
-by the user.
-</li>
-<li>Key terms are extracted from this description text using the
-Yahoo Term Extractor.
-</li>
-<li>A list of languages is obtained, based on the languages of the
-repositories, the user if watching.
-</li>
-<li>GitHub searches are performed for a combination of 3 randomly
-chosen languages and 5 random key terms.
-</li>
-<li>10 random repositories out of all these, are shown.
-</li>
-</ol>
-
-
-<p>
-This is a very simplistic algorithm, but works decently for my
-purposes.  Ideally, I would've liked to use a Collaborative
-Filtering algorithm, but I found the data to be too sparse, and
-the amount of computation to be too much to be done on the fly.  I
-wasn't really interested in pre-computing stuff and putting it
-onto my server.  I settled down to the next best thing I could
-think of.
-</p>
-
-<p>
-I would appreciate any further ideas and suggestions.  Thanks!
 </p>
     </div>
     </article>

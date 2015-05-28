@@ -98,6 +98,59 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/say-howdy-with-emacs.html" class="u-url">Say Howdy with Emacs!</a></h1>
+        <span class="post-date">28 May 2015</span>
+    </header>
+    <div class="e-content entry-content">
+    <p>
+Staying in touch with people is something I'm not very good at.  Since I am not
+on popular (among my friends/family) networks – FB and Whatsapp – I don't
+even see random updates from people, to get some sense of being in touch.
+</p>
+
+<p>
+I recently read some old posts by Sacha Chua and was inspired by how much code
+she had for <a href="http://sachachua.com/blog/category/geek/emacs/bbdb/">contact management</a> in her old blog posts.  I was inspired by <a href="http://sachachua.com/blog/2005/05/keeping-in-touch/">this
+post</a> in particular to try and be more meticulous about how I stay in touch with
+people. Michael Fogleman <a href="https://mwfogleman.github.io/posts/08-01-2015-emacs-can-keep-in-touch.html">blogged</a> about his contact management work-flow using
+<code>keepintouch</code>. It seemed to do most of what I wanted, but I wanted this to be
+integrated with my <code>org-contacts-db</code> and I felt having native elisp code would
+make it easier to hook up email, chat, etc. to this.
+</p>
+
+<p>
+I ended up writing a small utility called <a href="https://github.com/punchagan/howdy/">howdy</a> to help me keep in touch with
+people. It currently has only a couple of features:
+</p>
+
+<ul class="org-ul">
+<li>
+<code>M-x howdy</code> lets me update the last contacted timestamp for a contact.
+</li>
+<li>Shows me contacts that I'm out of touch in the agenda, once I add the
+following snippet to an agenda file.
+<div class="highlight"><pre>* Howdy
+  %%(howdy-howdy)
+</pre></div>
+</li>
+</ul>
+
+<p>
+I also have a few hooks to hook up jabber messages and email to update the
+db.  I've added them to <code>howdy-hooks</code> in case anybody else wants to use them.
+They can also be used as examples to write other hooks. Feel free to contribute
+other hooks or suggest improvements.  The library also ships with a modest test
+suite, that will hopefully make it easier for others to contribute.
+</p>
+
+<p>
+I'm looking forward to experimenting with this over the next few weeks and
+improving it. Hopefully, it'll help me keep in touch, better than I do now.
+</p>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/playing-music-using-mpsyt-from-emacs.html" class="u-url">Playing music using mpsyt from Emacs</a></h1>
         <span class="post-date">20 Apr 2015</span>
     </header>
@@ -716,93 +769,6 @@ some matching/searching features with helm/ido/whatever else.
 </li>
 <li>I spent the Sunday writing a patch to <a href="https://github.com/punchagan/xtab/tree/kill-by-memory">xtab</a> to be able to limit the number of
 tabs in Chromium by the memory it uses.
-</li>
-</ul>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/org-based-posts-in-nikola.html" class="u-url">Org based posts in Nikola</a></h1>
-        <span class="post-date">20 Apr 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <p>
-<a href="http://binchen.org/">Chen Bin</a> asked me to share my Nikola+Org work-flow, and share an
-example post.
-</p>
-
-<p>
-The org source for any post can be found by changing the URL of a post
-from <code>.html</code> to <code>.org</code>.
-</p>
-
-<p>
-I don't have much of a work-flow, because I don't post too often, but
-here is what I typically do, to make a new post.
-</p>
-
-<p>
-I start off by creating a new post using
-</p>
-
-<div class="highlight"><pre><span class="nv">$ </span>nikola new_post
-</pre></div>
-
-<p>
-and then give the post a title and start editing the post in Emacs.
-</p>
-
-<p>
-I have a simple snippet that lets me insert tags, based on existing
-tags.
-</p>
-
-<script src="https://gist.github.com/6629020.js"></script>
-
-<p>
-Once I'm happy with the content of a post, I run <code>nikola auto</code> to
-build the source and serve it locally, and see if the post "looks"
-reasonable, after being rendered.
-</p>
-
-<p>
-Once, I'm happy with it, I commit the post and deploy it using <code>nikola
-deploy</code>.
-</p>
-
-<div class="highlight"><pre><span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'default'</span><span class="p">:</span> <span class="p">[</span>
-	<span class="s">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
-	<span class="s">'git checkout master'</span><span class="p">,</span>
-	<span class="s">'nikola build'</span><span class="p">,</span>
-	<span class="s">'./commit-changes || true'</span><span class="p">,</span>
-	<span class="s">'nikola github_deploy'</span><span class="p">,</span>
-	<span class="s">'git push origin master'</span><span class="p">,</span>
-    <span class="p">],</span>
-<span class="p">}</span>
-</pre></div>
-
-<p>
-I also have a plugin, that posts captured bookmarks and quotes onto
-the blog, with a single command. I should probably make the sources of
-my blog open, and push it onto GitHub.
-</p>
-
-<p>
-<b>Update <span class="timestamp-wrapper"><span class="timestamp">[2015-05-13 Wed]</span></span></b>
-</p>
-
-<ul class="org-ul">
-<li>I use my own <a href="https://plugins.getnikola.com/#orgmode">plugin</a> for Nikola which lets me write posts in org-mode.  There
-is a similar <a href="https://github.com/redguardtoo/org2nikola">plugin</a> by Chen Bin, that exports posts to intermediate html,
-that is then used by Nikola.
-</li>
-
-<li>The source for my blog is now on <a href="https://github.com/punchagan/punchagan.muse-amuse.in">GitHub</a>
-</li>
-
-<li>I also have <a href="https://github.com/punchagan/dot-emacs/blob/master/punchagan.org#nikola-stuff">custom elisp</a> to be able to make a new post, and deploy the site
-from within Emacs.
 </li>
 </ul>
     </div>

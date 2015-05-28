@@ -98,6 +98,53 @@ Creative Commons Attribution 3.0 Unported License</a>
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-17.html" class="u-url">Recurse Center, 2014-07-17</a></h1>
+        <span class="post-date">19 Jul 2014</span>
+    </header>
+    <div class="e-content entry-content">
+    <ul class="org-ul">
+<li>Kyle and I did a demo of our spectrum analyzer/visualizer during the
+presenations.  It was fun to work on, though we mostly just followed a
+tutorial on the web, and made use of a bunch of libraries.
+</li>
+<li>I spent the night in HackerSchool.
+</li>
+<li>I was cleaning up the code in the tutorial we were trying to follow.
+</li>
+<li>Also, cleaned up the install.sh used by <a href="https://bitbucket.org/togiles/lightshowpi/src">lightshowpi</a> project to not do all the
+ugly sudo setups, and use a Python virtualenv and install into that.
+</li>
+<li>Refactored the ugly looking music part of the tutorial into a smaller script
+with only the functionality that we were going to use.
+</li>
+<li>We hit an interesting bug that would light up all the LEDs on the strip, once
+in a while.  I didn't notice it during the night, because I had a "decay"
+factor (the max factor by which the height of the columns should get reduced
+between successive updates) was 0.9, but when the decay factor was reduced to
+a lower value, it would happen quite often.  Also, we didn't see this
+happening before.  So, we thought the bug was in the code I had written, when
+I should have been sleeping. After reading and debugging my code for a bit,
+with Kyle and Sean, I thought it was something hardware related that we were
+doing wrong.  But, it turns out that a library we were using lit-up the whole
+strip, when start and end values were both zero, instead of not lighting up
+anything!
+</li>
+<li>Also, we hit another off-by one error, just before the demo. I didn't do the
+math for splitting the strip into columns too carefully, and we hadn't
+noticed the off-by one error until we taped up the strip into different
+columns on a pillar for demo.
+</li>
+<li>There were some cool presentations by others.  I'll update the list on
+Monday, since I currently don't remember them all!  Looking at the list of
+names on the registration sheet would help!
+</li>
+<li>The cleaned up code is <a href="https://gist.github.com/punchagan/90a238fedabcd88ba512">here</a>
+</li>
+</ul>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-16.html" class="u-url">Recurse Center, 2014-07-16</a></h1>
         <span class="post-date">17 Jul 2014</span>
     </header>
@@ -419,29 +466,6 @@ guess the next step is to cache things somehow.
 I also added support for viewing the sources of built-in types.  It was pretty
 simple, once I had everything working with libclang.
 </p>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-02.html" class="u-url">Recurse Center, 2014-07-02</a></h1>
-        <span class="post-date">05 Jul 2014</span>
-    </header>
-    <div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I pushed the code onto <a href="https://github.com/punchagan/cinspect">github</a> to let Allison and Tom review it, and Tom was
-quite excited by the idea of having it.
-</li>
-<li>I added a startup script in IPython, to monkey-patch it to use my code for
-introspection.
-</li>
-<li>Having never written a C-extension, I read up the Python docs on <a href="https://docs.python.org/2/extending/extending.html">writing C
-extensions</a>, and played around a little with <a href="https://github.com/eliben/pycparser/">pycparser</a>, but it didn't seem to
-work too well with the Python's sources.
-</li>
-<li>I later went to the New York Public Library to see <a href="http://www.nypl.org/press/press-release/2013/06/26/new-york-public-library-display-historic-copies-declaration-independe">a copy of the Declaration
-of Independence in Thomas Jefferson’s hand.</a>
-</li>
-</ul>
     </div>
     </article>
 </div>
