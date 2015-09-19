@@ -4,7 +4,6 @@
 #+BEGIN_COMMENT
 .. title: Reading List
 .. slug: reading-list
-.. date: 2015-09-19 13:02:18 UTC+05:30
 .. tags:
 .. category:
 .. link:
@@ -28,22 +27,16 @@ read. I hope that making it public will lead to --
 :SUGGESTED_BY: Michelle on RC's Fiction Books topic
 :END:
 
-
-
 * Archive
 Every book that has caught my eye, since I started keeping this list.
-
-** TOREAD Deep learning                             :nonfiction:deeplearning:
+** TOREAD [[http://www-labs.iro.umontreal.ca/~bengioy/dlbook/][Deep learning]]                             :nonfiction:deeplearning:
 :PROPERTIES:
-:URL:      http://www-labs.iro.umontreal.ca/~bengioy/dlbook/
+:URL: http://www-labs.iro.umontreal.ca/~bengioy/dlbook/
 :END:
-
-** SOMEDAY Slack: Getting Past Burnout, Busywork, and the Myth of Total Efficiency :nonfiction:
+** SOMEDAY [[http://www.amazon.com/gp/product/0767907698/][Slack: Getting Past Burnout, Busywork, and the Myth of Total Efficiency]] :nonfiction:
 :PROPERTIES:
 :SUGGESTED_BY: DS
 :URL: http://www.amazon.com/gp/product/0767907698/
 :END:
-
-
 * COMMENT Maintaining this list
 - A how-to: http://danshipper.com/how-to-read-a-lot-of-books
