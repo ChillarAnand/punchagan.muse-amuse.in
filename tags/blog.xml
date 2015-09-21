@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (blog)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/blog.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 13 Sep 2015 04:05:40 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (blog)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link href="http://punchagan.muse-amuse.in/tags/blog.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 20 Sep 2015 16:51:19 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://binchen.org/"&gt;Chen Bin&lt;/a&gt; asked me to share my Nikola+Org work-flow, and share an
 example post.
 &lt;/p&gt;
@@ -43,7 +43,8 @@ Once, I'm happy with it, I commit the post and deploy it using &lt;code&gt;nikol
 deploy&lt;/code&gt;.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;DEPLOY_COMMANDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# To do manual deployment, set it to []&lt;/span&gt;
+&lt;span class="n"&gt;DEPLOY_COMMANDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="s"&gt;'default'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
 	&lt;span class="s"&gt;'nikola orphans|xargs rm || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'git checkout master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -52,7 +53,6 @@ deploy&lt;/code&gt;.
 	&lt;span class="s"&gt;'nikola github_deploy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s"&gt;'git push origin master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="p"&gt;],&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;

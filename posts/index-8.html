@@ -416,7 +416,8 @@ Once, I'm happy with it, I commit the post and deploy it using <code>nikola
 deploy</code>.
 </p>
 
-<div class="highlight"><pre><span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><span class="c"># To do manual deployment, set it to []</span>
+<span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">'default'</span><span class="p">:</span> <span class="p">[</span>
 	<span class="s">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
 	<span class="s">'git checkout master'</span><span class="p">,</span>
@@ -425,7 +426,6 @@ deploy</code>.
 	<span class="s">'nikola github_deploy'</span><span class="p">,</span>
 	<span class="s">'git push origin master'</span><span class="p">,</span>
     <span class="p">],</span>
-<span class="p">}</span>
 </pre></div>
 
 <p>
