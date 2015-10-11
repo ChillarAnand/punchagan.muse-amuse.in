@@ -110,7 +110,16 @@ I'm looking forward to this!
             </span>
         </div>
 
-    </nav></aside><section class="comments"><h2>Comments</h2>
+    </nav></aside><div style="margin: auto; text-decoration: none; text-align: center;">
+            <a rel="show-comments" onclick="toggleComments(this)" title="Show comments">Show comments</a>
+        </div>
+        <script>
+         function toggleComments(target) {
+             target.remove();
+             var comments = document.querySelector('.comments');
+             comments.style.display = 'block';
+         };
+        </script><section class="comments" style="display: none;"><h2>Comments</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="rusticreverie",
@@ -136,23 +145,7 @@ I'm looking forward to this!
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if(!checkbox.checked ||
-             sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
-
-          checkbox.checked = false;
-        }, false);
-      })(document);
-    </script><script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script><script type="text/javascript">
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script><script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-21111013-1']);
