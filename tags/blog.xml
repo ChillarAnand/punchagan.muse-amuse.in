@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (blog)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://punchagan.muse-amuse.in/tags/blog.xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:07:32 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (blog)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="http://punchagan.muse-amuse.in/tags/blog.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:17:04 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://binchen.org/"&gt;Chen Bin&lt;/a&gt; asked me to share my Nikola+Org work-flow, and share an
 example post.
 &lt;/p&gt;
@@ -94,10 +94,23 @@ if anybody is interested, I can publish the code somewhere public.
 &lt;/p&gt;
 
 &lt;p&gt;
-If you are interested to get these links and bookmarks into your feed
-reader, you can subscribe to their feed: &lt;a href="http://punchagan.muse-amuse.in/tags/cat_quotes.xml"&gt;quotes&lt;/a&gt;, &lt;a href="http://punchagan.muse-amuse.in/tags/cat_bookmarks.xml"&gt;bookmarks&lt;/a&gt;.  These
-posts will also make it to the main feed, though.
-&lt;/p&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sat, 19 Oct 2013 14:56:13 GMT</pubDate></item><item><title>Blogging with Nikola and Org-mode</title><link>http://punchagan.muse-amuse.in/posts/blogging-with-nikola-and-org-mode.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+If you are interested to get these links and bookmarks into your feed reader,
+you can subscribe to their feed: [quotes], &lt;a href="http://punchagan.muse-amuse.in/tags/cat_bookmarks.xml"&gt;bookmarks&lt;/a&gt;.  These posts will also
+make it to the main feed, though.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;UPDATE &lt;span class="timestamp-wrapper"&gt;&lt;span class="timestamp"&gt;[2015-11-15 Sun 20:45]&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;
+&lt;/p&gt;
+
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;The quotes feed no longer exists!
+&lt;/li&gt;
+&lt;li&gt;The bookmarks feed doesn't really get too many updates. I use pinboard for my
+bookmarks, now.
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sat, 19 Oct 2013 14:56:13 GMT</pubDate></item><item><title>Blogging with Nikola and Org-mode</title><link>http://punchagan.muse-amuse.in/posts/blogging-with-nikola-and-org-mode.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Sigh! I made yet another change to the way this blog gets published.
 But, I have a feeling this mechanism, is here to stay!
 &lt;/p&gt;
