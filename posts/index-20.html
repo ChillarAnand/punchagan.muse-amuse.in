@@ -79,61 +79,326 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-12-12.html" class="u-url">Bookmarks [2010/12/12]</a></h1>
-        <span class="post-date">12 Dec 2010</span>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/do-our-eyes-suck-at-blue.html" class="u-url">Do our eyes suck at blue?</a></h1>
+        <span class="post-date">13 Nov 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+This is some fun I had, trying to replicate what was written in
+this post. I had been trying to understand what was happening
+here, and found this post on Hacker News very helpful.
+</p>
+
+<p>
+It is a known fact that our eyes have more cones for green and
+red as compared to blue.  The Bayer filter used for digital camera
+lenses is based upon this principle.  This post tries to
+illustrate that using the following two arguments.
+</p>
+<ul class="org-ul">
+<li>Looking at only the blue channel of an image looks very dark.
+</li>
+<li>Tripling the pixel size of blue channel doesn't cause much
+distortion in the final image.
+</li>
+</ul>
+<p>
+Hence, our eyes suck at blue.
+</p>
+
+<p>
+Their argument is flawed, but we could try and improve a few
+things.
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Looking at the blue channel.</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This is definitely flawed, since the intensity of blue in the
+image they have taken may be less and hence giving us a false
+positive.
+</p>
+
+<p>
+We could instead gray-scale the image and use these pixel values
+in the 3 channels and look at the images.
+</p>
+
+<p>
+This also eliminates the problem of the image being captured
+through a Bayer filter.
+</p>
+
+<p>
+Here's some <code>python</code> code to do the same. (uses <code>matplotlib</code>)
+</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">show_channels</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span>
+	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">show_grey_channels</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="n">average</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">K</span>
+	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
+	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Pixelating the blue channel</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Again, there was this argument of use of Bayer filter affecting
+the image and the like.
+</p>
+
+<p>
+What I did was to swap the channels, and then look at the
+images. However I swapped the channels, the image where the
+green channel was pixelated always looked the worst.  The
+difference between blue and red was less noticeable, I feel.
+</p>
+
+<p>
+Here's the code.
+</p>
+
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">zoom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">row_stride</span><span class="p">,</span> <span class="n">col_stride</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">strides</span>
+    <span class="n">view</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">stride_tricks</span><span class="o">.</span><span class="n">as_strided</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>
+			<span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">factor</span><span class="p">),</span>
+			<span class="p">(</span><span class="n">row_stride</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">col_stride</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">view</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">rows</span><span class="o">*</span><span class="n">factor</span><span class="p">,</span> <span class="n">cols</span><span class="o">*</span><span class="n">factor</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">subsample</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	<span class="n">J</span> <span class="o">=</span> <span class="n">I</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoom</span><span class="p">(</span><span class="n">I</span><span class="p">[::</span><span class="mi">4</span><span class="p">,</span> <span class="p">::</span><span class="mi">4</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
+	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+	<span class="n">title</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> channel subsampled"</span> <span class="o">%</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">swap_subsample</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+	<span class="k">print</span> <span class="s">"</span><span class="si">%s</span><span class="s"> &lt;-- </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">colors</span><span class="p">[(</span><span class="n">c</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	<span class="n">J</span> <span class="o">=</span> <span class="n">zeros_like</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	    <span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">]</span>
+	<span class="n">J</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoom</span><span class="p">(</span><span class="n">I</span><span class="p">[::</span><span class="mi">4</span><span class="p">,</span> <span class="p">::</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
+	<span class="n">figure</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
+	<span class="n">title</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> channel subsampled"</span> <span class="o">%</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="n">imshow</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Images</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Here are a few images.  (View them in their original size)
+</p>
+
+
+<div class="figure">
+<p><img src="/images/channels.png" alt="channels.png"></p>
+</div>
+
+
+<div class="figure">
+<p><img src="/images/subsample.png" alt="subsample.png"></p>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-12.html" class="u-url">Bookmarks [2010/11/12]</a></h1>
+        <span class="post-date">12 Nov 2010</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
 <li>
-<a href="http://stackoverflow.com/questions/194812/list-of-freely-available-programming-books">List of freely available programming books - Stack Overflow</a>
+<a href="http://www.bothsidesofthetable.com/2010/11/10/conference-organizers-suck-at-name-tags/">Conference Organizers Suck at Name Tags | Both Sides of the Table</a>
 
 <p>
-tags: list, books, programming, learn
+tags: conference, advice
 </p>
 </li>
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://news.ycombinator.com/item?id=1973516">Hacker News | Ask HN: Best book you read in 2010 and briefly why</a>
+<a href="http://joshholat.com/blog/my-first-open-source-project-and-a-two-week-chrome-extension/">» My First Open Source Project: A Two Week Chrome Extension at Life as a Geek - My projects, experiences, and lessons learned</a>
 
 <p>
-tags: books, list, reading
+tags: project, lessons, programming, first
 </p>
 </li>
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://www.youtube.com/watch?v=dk60sYrU2RU&amp;feature=related">YouTube - Sugata Mitra's new experiments in self-teaching</a>
+<a href="http://www.martynemko.com/articles/case-against-worklife-balance_id1426">The Case Against Work/Life Balance</a>
 
 <p>
-tags: experiments, learning
+tags: society, advice, work, stress, writing
 </p>
 </li>
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://edition.cnn.com/2010/OPINION/12/05/fried.office.work/index.html?iref=NS1">Why the office is the worst place to work - CNN.com</a>
+<a href="http://unethicalblogger.com/posts/2010/11/gnuparallel_changed_my_life">GNU/Parallel changed my life | unethical blogger</a>
 
 <p>
-tags: thought, work, video
+tags: advice, programming, software
 </p>
 </li>
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://www.indianexpress.com/news/Rural-coordinates/723535">Rural coordinates</a>
+<a href="http://cdixon.org/2010/11/10/the-interoperability-of-social-networks/">cdixon.org – chris dixon's blog / The interoperability of social networks</a>
 
 <p>
-tags: awesome
+tags: advice, math
 </p>
 </li>
 </ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-12-06.html" class="u-url">Bookmarks [2010/12/06]</a></h1>
-        <span class="post-date">06 Dec 2010</span>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-11.html" class="u-url">Bookmarks [2010/11/11]</a></h1>
+        <span class="post-date">11 Nov 2010</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
 <li>
-<a href="https://git.wiki.kernel.org/index.php/Interfaces,_frontends,_and_tools#Darcs">Interfaces, frontends, and tools - Git SCM Wiki</a>
+<a href="http://www.youtube.com/watch?v=9e4iFx2Gm0A">YouTube - "Don't lecture me" (with Twitter track) - Donald Clark at ALT-C 2010</a>
+
+<p>
+tags: awesome, education
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://www.gabrielweinberg.com/blog/2010/11/help-me-start-a-foss-tithing-movement.html">Help me start a FOSS Tithing movement - Gabriel Weinberg's Blog</a>
+
+<p>
+tags: money, foss
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://sahillavingia.com/blog/2010/11/10/the-nil-nil-philosophy/">Sahil Lavingia - The nil-nil philosophy.</a>
+
+<p>
+tags: life, philosophy, advice
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://sivers.org/berklee">6 things I wish I knew the day I started Berklee | Derek Sivers</a>
+
+<p>
+tags: advice, awesome, life, learn
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://mynorthwest.com/category/news_chick_blog/20101110/Seeking-rejection-for-30-days/">Seeking rejection for 30 days - MyNorthwest.com</a>
+
+<p>
+tags: life, ideas, awesome
+</p>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-10.html" class="u-url">Bookmarks [2010/11/10]</a></h1>
+        <span class="post-date">10 Nov 2010</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://colemak.com/Learn">Learn - Colemak</a>
+
+<p>
+tags: howto, learn
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://blog.healthfinch.com/how-to-sort-through-job-applicants-make-them">How to sort through job applicants - make them write. -</a>
+
+<p>
+tags: life, startup, advice
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://redgirlsays.com/blog/2010/11/the-life-of-a-telecommuter/">The life of a telecommuter</a>
+
+<p>
+tags: work, writing
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://www.ideasonideas.com/2010/11/your-bank-balance-is-at-zero/">ideasonideas - Eric Karjaluoto discusses design, brands and experience » Blog Archive » Your Bank Balance is at Zero</a>
+
+<p>
+tags: money, life, tips, awesome
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://ma.tt/2010/11/one-point-oh/">1.0 Is the Loneliest Number — Matt Mullenweg</a>
+
+<p>
+tags: advice, prototype, startup, ideas, awesome
+</p>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-09.html" class="u-url">Bookmarks [2010/11/09]</a></h1>
+        <span class="post-date">09 Nov 2010</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://symbo1ics.com/blog/?p=275">Lisp has too many parentheses… : Symbo1ics Blog</a>
+
+<p>
+tags: lisp, awesome
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://jeffbail.com/first-impressions-of-python-from-a-java-devel">First Impressions of Python (from a Java developer) - Jeff Bail</a>
+
+<p>
+tags: python
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://lukeplant.me.uk/blog/posts/why-learning-haskell-python-makes-you-a-worse-programmer/">Why learning Haskell/Python makes you a worse programmer « All Unkept</a>
+
+<p>
+tags: python, advice, haskell, tips
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="https://github.com/github/gitignore">github's gitignore at master - GitHub</a>
 
 <p>
 tags: git
@@ -142,396 +407,282 @@ tags: git
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://theologytoday.ptsem.edu/apr1977/v34-1-bookreview3.htm">Theology Today - Vol 34, No. 1 - April 1977 - BOOK REVIEW - Evening Land ('Aftonland')</a>
+<a href="http://1week1project.com/post/925649367/prologue">1 week. 1 project. • Prologue</a>
 
 <p>
-tags: poem, awesome, reading, writing
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://cam.ly/blog/2010/12/code-fearlessly/">Code Fearlessly | Wireless Security Cameras - Blog</a>
-
-<p>
-tags: advice, programming
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://news.ycombinator.com/item?id=1971163">Hacker News | If you could give a book to your younger self, what would it be?</a>
-
-<p>
-tags: life, book, list, reading
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.stephenhobley.com/blog/2010/12/04/what-the-kinect-sensor-actually-does/">What the Kinect sensor actually does…</a>
-
-<p>
-tags: analysis
+tags: project, life, ideas, awesome, tips
 </p>
 </li>
 </ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/mtu-and-file-transfers.html" class="u-url">MTU and file transfers</a></h1>
-        <span class="post-date">06 Dec 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-A note to self, but may benefit someone facing a similar problem.
-</p>
-
-<dl class="org-dl">
-<dt> <b>Problem</b> </dt>
-<dd>SSH-ing to our server was working well.  But, file
-transfers like <code>scp</code>, <code>git push</code> were failing.
-</dd>
-
-<dt> <b>Diagnosis</b> </dt>
-<dd>I had been thinking it was a problem with our
-campus network on the first night and was too
-sleepy to try and fix it.  But things didn't
-improve even after one full day.  Then I asked a
-friend of mine, and he confirmed that he has been
-facing the same problem for a couple of days.  I
-then tried file transfers to another server and
-it was working fine.  Then I tried file transfers
-between the two servers and even that worked fine!
-</dd>
-
-<dt> <b>Solution</b> </dt>
-<dd>After some googling, I figured that the problem
-was with a machine between me and the server.
-Changing the <code>mtu</code> to 1492 from 1500 on the
-server, fixed the problem. :)
-</dd>
-</dl>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/pandoc-can-now-do-org.html" class="u-url">Pandoc can now do Org</a></h1>
-        <span class="post-date">06 Dec 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-Pandoc is a haskell library and a command line tool, that can
-convert markup from one to another and it does it pretty well.
-Until now it supported quite a few markups, but not orgmode.  But
-now, Orgmode support has been added! Yay!
-</p>
-
-<p>
-But, it can only read from other formats and write to org-mode
-format.  The other way around, is not possible, but you can do
-that straight from org-mode, right?
-</p>
-
-<p>
-I've often felt the need for an org-importer and hence decided to
-do something about it.  I stumbled upon Pandoc, when I was moving
-my blog, and found it pretty neat.  After, yet another request for
-an importer, on the org-mode mailing list, I decided to look at
-Pandoc.  I was somehow under the impression that it was written in
-Python.  But it turned out, I had to learn Haskell!  A good excuse
-to learn a new language, eh?  I brushed through a tutorial for a
-couple of days (and was blown off by the paradigm of the language)
-and was able to port the RST writer in Pandoc, to an Org
-writer.  :)
-</p>
-
-<p>
-You can get the latest version from here
-</p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-12-02.html" class="u-url">Bookmarks [2010/12/02]</a></h1>
-        <span class="post-date">02 Dec 2010</span>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-08.html" class="u-url">Bookmarks [2010/11/08]</a></h1>
+        <span class="post-date">08 Nov 2010</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
 <li>
-<a href="http://www.ribbonfarm.com/2010/11/29/what-does-it-mean-to-work-hard/">What Does it Mean to Work Hard?</a>
+<a href="http://sivers.org/complainers">Complainers | Derek Sivers</a>
 
 <p>
-tags: life, work, writing
+tags: writing
 </p>
 </li>
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://steve-yegge.blogspot.com/2010/12/haskell-researchers-announce-discovery.html">Stevey's Blog Rants: Haskell Researchers Announce Discovery of Industry Programmer Who Gives a Shit</a>
+<a href="http://devour.com/video/foley-artist/">Foley Artist on Devour.com</a>
 
 <p>
-tags: haskell, programming, writing
+tags: movie, awesome, art
 </p>
 </li>
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://www.saveaswwf.com/en/home.html">Save as WWF, Save a Tree : Home  :</a>
+<a href="http://pitchandpixel.com/2010/11/how-to-apply-for-a-job-and-ace-the-interview/">How to apply for a job and ace the interview | Pitch and Pixel</a>
 
 <p>
-tags: 
+tags: advice, howto, job, tips
+</p>
+</li>
+</ul>
+<dl class="org-dl">
+<dt> [[<a href="http://the99percent.com/articles/6947/what-happened-to-downtime-the-extinction-of-deep-thinking-sacred-space%5D%5BWhat">http://the99percent.com/articles/6947/what-happened-to-downtime-the-extinction-of-deep-thinking-sacred-space][What</a> Happened to Downtime? The Extinction of Deep Thinking &amp; Sacred Space :: Articles </dt>
+<dd>The 99 Percent]]
+
+<p>
+tags: creativity, writing
+</p>
+</dd>
+</dl>
+<ul class="org-ul">
+<li>
+<a href="http://cdixon.org/2010/11/07/timing-your-startup/">cdixon.org – chris dixon's blog / Timing your startup</a>
+
+<p>
+tags: advice, startup, tips, time
+</p>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-07.html" class="u-url">Bookmarks [2010/11/07]</a></h1>
+        <span class="post-date">07 Nov 2010</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://blog.garlicsim.org/post/1495459004/technology-principle-the-toy-will-win">GarlicSim blog - Technology principle: The toy will win</a>
+
+<p>
+tags: life, technology, tips
 </p>
 </li>
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://www.bootstrappingindependence.com/startup-challenges/product-launch-planning-and-my-pre-launch-checklist/">Planning product launch and my pre-launch checklist | Bootstrapping Independence</a>
+<a href="http://heyhamza.com/32636134">What a High School Student Learned from Paul Graham - hey hamza</a>
 
 <p>
-tags: startup, advice, howto, tips, idea
+tags: learning, advice, life, awesome
 </p>
 </li>
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://jackcheng.tumblr.com/post/200367929/coveting-possessions-is-unhealthy-heres-how-i">Notes to Self: Coveting possessions is unhealthy. Here’s how I…</a>
+<a href="http://note.sonots.com/SciSoftware/haartraining.html">Tutorial: OpenCV haartraining (Rapid Object Detection With A Cascade of Boosted Classifiers Based on Haar-like Features) - Naotoshi Seo</a>
+
+<p>
+tags: opencv, tutorial, reference
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://cgi.cse.unsw.edu.au/~cs4411/wiki/index.php?title=OpenCV_Guide#Haar_Classifier">OpenCV Guide - Experimental Robotics</a>
+
+<p>
+tags: opencv, reference
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://learnyouahaskell.com/chapters">Learn You a Haskell for Great Good! - Chapters</a>
+
+<p>
+tags: haskell, tutorial, reference
+</p>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-06.html" class="u-url">Bookmarks [2010/11/06]</a></h1>
+        <span class="post-date">06 Nov 2010</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://www.erasmatazz.com/Personal/page70/page453/Sixty.html">Sixty</a>
+
+<p>
+tags: life, death, writing
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://blettr.com/3jgy3amnzfvm2b5swdd4fg82rytjmsvqc">Goodbye, Chrome!</a>
+
+<p>
+tags: computers, technology
+</p>
+
+<p>
+Chrome bombarding all the pages whose tabs are open. Hacker News
+blocks the user!
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://sivers.org/kimo">There's no speed limit. (The lessons that changed my life.) | Derek Sivers</a>
 
 <p>
 tags: life, awesome, writing
 </p>
 </li>
 </ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-12-01.html" class="u-url">Bookmarks [2010/12/01]</a></h1>
-        <span class="post-date">01 Dec 2010</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
+<ul class="org-ul">
 <li>
-<a href="http://lemire.me/blog/archives/2010/11/22/why-you-may-not-like-your-job-even-though-everyone-envies-you/?refer=hn">Why you may not like your job, even though everyone envies you</a>
+<a href="http://www.tawheedkader.com/2010/11/what-not-to-do-in-life/">What not to do in life | TK's weblog</a>
 
 <p>
-tags: society, life, DIY, hack, job, writing
+tags: advice, life, awesome
 </p>
 </li>
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://stackoverflow.com/questions/1673583/the-practical-haskell-tutorial-for-a-programmer-coming-from-the-imperative-univer">The practical Haskell tutorial for a programmer coming from the imperative universe - Stack Overflow</a>
+<a href="http://www.azarask.in/blog/post/how-to-prototype-and-influence-people/">How To Prototype And Influence People « Aza on Design</a>
 
 <p>
-tags: haskell, programming, book, reference
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.joelonsoftware.com/articles/StrategyLetterV.html">Strategy Letter V - Joel on Software</a>
-
-<p>
-tags: software, startup, ideas, writing
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://blog.makezine.com/archive/2010/11/minority_report-style_web_surfing_w.html?">Minority Report-style web surfing with Kinect @Makezine.com blog</a>
-
-<p>
-tags: awesome, idea
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://blog.penelopetrunk.com/2010/11/30/5-reasons-to-stop-trying-to-be-happy/">5 Reasons to stop trying to be happy | Penelope Trunk's Brazen Careerist</a>
-
-<p>
-tags: life, writing
+tags: awesome, prototype, startup, advice, hack
 </p>
 </li>
 </ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-24.html" class="u-url">Bookmarks [2010/11/24]</a></h1>
-        <span class="post-date">24 Nov 2010</span>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/raise-windows-on-current-desktop-xdotool-bash.html" class="u-url">Raise windows (on current desktop) xdotool &amp; bash</a></h1>
+        <span class="post-date">06 Nov 2010</span>
     </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://sivers.org/obvious">Obvious to you. Amazing to others. | Derek Sivers</a>
+    <p>
+I posted a snippet <sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.1">1</a></sup> of python code that used xdotool to
+raise windows.  I got one patch from dusual <sup><a id="fnr.2" name="fnr.2" class="footref" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.2">2</a></sup> that
+enabled raising of windows in the current workspace only.
+</p>
 
 <p>
-tags: thought, ideas, writing
+More importantly, Jordan gave a one-liner <sup><a id="fnr.3" name="fnr.3" class="footref" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.3">3</a></sup> in bash,
+that could do the same thing as my long and elaborate python
+snippet.  I had a feeling that this would be much shorter in bash,
+but I don't feel comfortable writing bash scripts. :P
 </p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.npr.org/2010/11/12/131268511/diy-hackers-tinker-everyday-things-into-treasure">DIY 'Hackers' Tinker Everyday Things Into Treasure : NPR</a>
 
 <p>
-tags: hack, idea, writing
+Below is a bash snippet that tries to incorporates both the
+changes. :)
 </p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html">L-99: Ninety-Nine Lisp Problems</a>
+
+<div class="highlight"><pre><span class="nv">found</span><span class="o">=</span>0
+
+<span class="k">for</span> win in <span class="sb">`</span>xdotool search --class <span class="nv">$1</span><span class="sb">`</span><span class="p">;</span>
+<span class="k">do</span>
+<span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>xdotool get_desktop_for_window <span class="nv">$win</span><span class="sb">`</span> -eq <span class="sb">`</span>xdotool get_desktop<span class="sb">`</span> <span class="o">]</span><span class="p">;</span>
+<span class="k">then</span> <span class="nv">found</span><span class="o">=</span>1<span class="p">;</span> <span class="nb">break</span><span class="p">;</span>
+<span class="k">fi</span><span class="p">;</span>
+<span class="k">done</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$found</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> xdotool windowactivate <span class="nv">$win</span><span class="p">;</span> <span class="k">else</span> <span class="nv">$1</span><span class="p">;</span> <span class="k">fi</span>
+</pre></div>
 
 <p>
-tags: lisp, programming, problem, list
+<b>Note</b>: When you've visual effects enabled (the default option on
+Ubuntu), getting the current desktop/workspace doesn't work,
+probably because Root Window properties are being messed around by
+it.
 </p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://vivekhaldar.tumblr.com/post/1243047026/coding-blind">Vivek Haldar : Coding blind</a>
 
 <p>
-tags: hacking, technique, programming, writing
+<b>Note2</b>: <code>search</code> takes an option <code>--screen</code>. It'd be nice if it
+ also had an option <code>--desktop</code>.  This task could then be done in
+ a one-liner.
 </p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.cdecl.org/">cdecl: C gibberish ↔ English</a>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
 
-<p>
-tags: lafoot, programming, idea, hack
+<div class="footdef">
+<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.1">1</a></sup><p class="footpara">
+My python snippet
 </p>
-</li>
-</ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-21.html" class="u-url">Bookmarks [2010/11/21]</a></h1>
-        <span class="post-date">21 Nov 2010</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://ericholscher.com/blog/2010/nov/17/required-reading/">Required Reading | Surfing in Kansas</a>
 
-<p>
-tags: python, reading, software
+<div class="footdef">
+<sup><a id="fn.2" name="fn.2" class="footnum" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.2">2</a></sup><p class="footpara">
+dusual on twitter
 </p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://code.google.com/p/javamorph/">javamorph - Project Hosting on Google Code</a>
-
-<p>
-tags: image<sub>processing</sub>, idea, software
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://gaurabc.com/visualizing_microwaves_in_a_microwave_oven">gaurabc.com</a>
-
-<p>
-tags: fun, demo, experiments, science
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://hanno-rein.de/archives/349">LaTeX Coffee Stains | hanno-rein.de</a>
-
-<p>
-tags: fun, hack
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://sahillavingia.com/blog/2010/11/19/faking-it/">Faking it. - Sahil Lavingia</a>
-
-<p>
-tags: advice, startup, tips, idea
-</p>
-</li>
-</ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-19.html" class="u-url">Bookmarks [2010/11/19]</a></h1>
-        <span class="post-date">19 Nov 2010</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://publishmydata.com/">Publish My Data | A Linked Data Publishing Platform</a>
 
-<p>
-tags: data, programming, idea, web
+<div class="footdef">
+<sup><a id="fn.3" name="fn.3" class="footnum" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.3">3</a></sup><p class="footpara">
+Jordan's one liner
 </p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://news.ycombinator.com/item?id=1916801">Hacker News | Ask HN: How do you come up with new project ideas?</a>
-
-<p>
-tags: startup, advice, howto
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.chicagoreader.com/chicago/yung-tae-kim-tony-hawk-shred-game-physics/Content?oid=2699227">The Way of Dr. Tae | Feature | Chicago Reader</a>
-
-<p>
-tags: education, physics
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.technologyreview.com/blog/arxiv/25952/">The Evolutionary Origin Of Laughter - Technology Review</a>
-
-<p>
-tags: brain, science
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://lifehacker.com/5691647/how-to-make-a-functioning-trackpad-out-of-paper">How to Make a Functioning Trackpad Out of Paper</a>
-
-<p>
-tags: hardware, DIY
-</p>
-</li>
-</ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-15.html" class="u-url">Bookmarks [2010/11/15]</a></h1>
-        <span class="post-date">15 Nov 2010</span>
+
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-05.html" class="u-url">Bookmarks [2010/11/05]</a></h1>
+        <span class="post-date">05 Nov 2010</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
 <li>
-<a href="https://github.com/blog/744-today-s-outage">Today's Outage - GitHub</a>
+<a href="http://datasyndrome.com/post/1474842339/exercise-more-to-hack-better">Data Syndrome: Exercise More to Hack Better</a>
 
 <p>
-tags: writing, letter, software
+tags: tips, life, hack
 </p>
 </li>
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://www.adafruit.com/blog/2010/11/14/hacked-kinect-is-now-a-3d-video-capture-tool/">Hacked Kinect is now a 3D video capture tool « adafruit industries blog</a>
+<a href="http://www.sellsbrothers.com/Posts/Details/12395">If Richard Feynman applied for a job at Microsoft - sellsbrothers.com</a>
 
 <p>
-tags: awesome, video, augmented<sub>reality</sub></p>
-</li>
-</ul>
-<dl class="org-dl">
-<dt> [[<a href="http://mako.cc/copyrighteous/20101114-00%5D%5BBetween">http://mako.cc/copyrighteous/20101114-00][Between</a> the Bars </dt>
-<dd>Copyrighteous]]
-
-<p>
-tags: startup, idea
-</p>
-</dd>
-</dl>
-<ul class="org-ul">
-<li>
-<a href="http://devcheatsheet.com/">Cheat Sheets &amp; Quick Reference Cards for Developers | DevCheatSheet.com</a>
-
-<p>
-tags: writing, reference, software
+tags: interview, awesome, humour
 </p>
 </li>
 </ul>
 <ul class="org-ul">
 <li>
-<a href="http://blog.programmableweb.com/2010/11/10/twitter-goes-json-only-with-one-api-more-to-come/">Twitter Goes JSON-Only With One API, More to Come?</a>
+<a href="http://scientopia.org/blogs/goodmath/2010/11/02/fractals-without-a-computer/">Fractals without a Computer! | Good Math, Bad Math</a>
 
 <p>
-tags: note, software
+tags: fractals, computer, video, awesome, hack
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://www.youtube.com/user/IanOzsvald#p/a/u/1/bTrInlHAcLQ">YouTube - IanOzsvald's Channel</a>
+
+<p>
+tags: opencv, video, demo
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="https://github.com/arunchaganty/newsline">arunchaganty's newsline at master - GitHub</a>
+
+<p>
+tags: project, awesome, hack
 </p>
 </li>
 </ul>

@@ -79,1245 +79,486 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-05.html" class="u-url">Bookmarks [2010/11/05]</a></h1>
-        <span class="post-date">05 Nov 2010</span>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/a-couple-of-counting-functions.html" class="u-url">A couple of counting functions</a></h1>
+        <span class="post-date">17 Sep 2010</span>
     </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://datasyndrome.com/post/1474842339/exercise-more-to-hack-better">Data Syndrome: Exercise More to Hack Better</a>
+    <p>
+I had a strict character limit of 180 chars for something I was
+writing. I just wrote a simple function to count characters in a
+region or a buffer. Another function to count the words.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">count-chars</span> <span class="p">()</span>
+  <span class="s">"Count the number of chars in a buffer or region."</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-beginning</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-min</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-end</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-max</span><span class="p">))))</span>
+	 <span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nv">number-to-string</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">end</span> <span class="nv">beg</span><span class="p">)))))</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">count-words</span> <span class="p">()</span>
+  <span class="s">"Count the number of words in a buffer or region."</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-beginning</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-min</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">region-end</span><span class="p">)</span> <span class="p">(</span><span class="nv">point-max</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nb">count</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">save-excursion</span>
+      <span class="p">(</span><span class="nv">goto-char</span> <span class="nv">beg</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">while</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="p">(</span><span class="nv">point</span><span class="p">)</span> <span class="nv">end</span><span class="p">)</span>
+	<span class="p">(</span><span class="nv">forward-word</span><span class="p">)</span>
+	<span class="p">(</span><span class="k">setq</span> <span class="nb">count</span> <span class="p">(</span><span class="nb">1+</span> <span class="nb">count</span><span class="p">))))</span>
+    <span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nv">int-to-string</span> <span class="nb">count</span><span class="p">))))</span>
+</pre></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/asking-vs-figuring-out.html" class="u-url">Asking vs. Figuring out</a></h1>
+        <span class="post-date">15 Sep 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+Should one take the easy route of asking someone who knows, if she
+is sitting right next to you? Or should we try and find out first,
+before asking her? Should one value his time more than others' or
+others' time more than his own?
+</p>
 
 <p>
-tags: tips, life, hack
+Would we learn more if we tried to find out ourselves? Does
+learning more, make sense? Is it worth spending the extra time?
 </p>
-</li>
-</ul>
+
+<p>
+I'm just talking of simple things that you could figure out by
+spending a couple of minutes of searching the web or 5 minutes of
+thinking or 10 minutes of reading a book.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/a-gnu-and-a-friend.html" class="u-url">A GNU and a friend</a></h1>
+        <span class="post-date">07 Sep 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+I now have a GNU! I bought it (a GNU soft toy) in memory of my friend
+swathanthran from #emacs-in.  RIP swathanthran
+</p>
+
+<p>
+As a bonus, I got the chance to have a photograph with just RMS and
+me. Also, hoping the monetary contribution will be of some use to
+FSF-India.
+</p>
+
+<p>
+The thrill of getting the GNU (and the GNU itself) and shaking hands,
+getting photographed with RMS is dedicated to all the lafoots and
+specially to Voodoo, who taught me the meaning of the word "hacker".
+</p>
+
+<p>
+Happy Hacking!
+</p>
+
+<p>
+ps: I just hope and pray nobody else does anything as stupid and
+shocking as what swathanthran did.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/happy-teachers-day.html" class="u-url">Happy Teachers' Day!</a></h1>
+        <span class="post-date">05 Sep 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+Well, it turned out to be not so Happy. I came to know of this
+sad news. A prof published his students' work as his own, with
+no mention of their names! This guy is such a shame to his
+profession! Shame!
+</p>
+
+<p>
+I wonder how this guy has even been able to sleep every night.
+Isn't there something called a conscience?
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/richard-stallman-in-iit-bombay.html" class="u-url">Richard Stallman in IIT-Bombay</a></h1>
+        <span class="post-date">01 Sep 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+RMS will be in IIT-Bombay on the 6th of this month. He will "speak
+about the goals and philosophy of the Free Software Movement, and
+the status and history of the GNU operating system, which in
+combination with the kernel Linux is now used by tens of millions
+of users world-wide. "
+</p>
+
 <ul class="org-ul">
 <li>
-<a href="http://www.sellsbrothers.com/Posts/Details/12395">If Richard Feynman applied for a job at Microsoft - sellsbrothers.com</a>
-
-<p>
-tags: interview, awesome, humour
-</p>
+<b>Date:</b> 6th September, 2010
 </li>
-</ul>
-<ul class="org-ul">
 <li>
-<a href="http://scientopia.org/blogs/goodmath/2010/11/02/fractals-without-a-computer/">Fractals without a Computer! | Good Math, Bad Math</a>
-
-<p>
-tags: fractals, computer, video, awesome, hack
-</p>
+<b>Time:</b> 8:30 P.M
 </li>
-</ul>
-<ul class="org-ul">
 <li>
-<a href="http://www.youtube.com/user/IanOzsvald#p/a/u/1/bTrInlHAcLQ">YouTube - IanOzsvald's Channel</a>
-
-<p>
-tags: opencv, video, demo
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="https://github.com/arunchaganty/newsline">arunchaganty's newsline at master - GitHub</a>
-
-<p>
-tags: project, awesome, hack
-</p>
+<b>Venue:</b> PC Saxena Auditorium, IIT Bombay
 </li>
 </ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/jp-19th-century-politics-21st-century-economics.html" class="u-url">JP - 19th Century Politics &amp; 21st Century Economics</a></h1>
-        <span class="post-date">05 Nov 2010</span>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/org2blog-on-the-web.html" class="u-url">org2blog on the web</a></h1>
+        <span class="post-date">29 Aug 2010</span>
     </header><div class="e-content entry-content">
-    <object type="application/x-shockwave-flash" style="width:640px;
-                                                    height:385px;" data="http://www.youtube.com/v/5zxPJs6R2z8">
-  <param name="movie" value="http://www.youtube.com/v/5zxPJs6R2z8"></object>
-
-<p>
-Can they co-exist?
+    <p>
+Well, it's been a week of lull on my blog.  Not that I'm very
+busy.  But, just didn't have anything to post.  I was feeling jobless
+today and searched the web for org2blog users.  Here is what I found.
 </p>
 
 <ul class="org-ul">
-<li>Economics and Politics cannot be de-linked.
+<li>This is a test post from org2blog
 </li>
-<li>In the 20th century, Human kind has discovered what works best
-in Politics.
+
+<li>Posting from emacs and org-mode
+</li>
+
+<li>Vim vs Emacs, or why it really doesn’t matter
+</li>
+
+<li>Posting subtree from org-mode buffer (take 2)
+</li>
+
+<li>Here’s a test post to wordpress for Org2blog – an Emacs plugin
+</li>
+
+<li>Primeiro post usando org2blog
+</li>
+
+<li>Emacs中绘图－ ditaa篇
+</li>
+
+<li>org2blog on identi.ca
+</li>
+
+<li>Marcel van der Boom – StatusNet
 </li>
 </ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/first-100.html" class="u-url">First 100!</a></h1>
+        <span class="post-date">22 Aug 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+We, Ritesh and I, finished our first 100+km ride – approximately
+110km. Yo!
+</p>
+
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Role of State?</h2>
+<h2 id="sec-1">The Route map</h2>
 <div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li>Public Order, Justice, Rule of Law
-</li>
-<li>Accident of the womb doesn't determine the fate of a child.
-<ul class="org-ul">
-<li>Education
-</li>
-<li>Health care
-</li>
-</ul>
-</li>
-<li>Infrastructure
-<ul class="org-ul">
-<li>Transportation etc.
-</li>
-</ul>
-</li>
-<li>Natural Resource Development
-</li>
-<li>Social security
-</li>
-</ul>
+<p>
+IIT-Bombay to Karnala Bird Sanctuary, and back.
+</p>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">Up</h3>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">Down</h3>
 </div>
 </div>
 
 <div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">India</h2>
+<h2 id="sec-2">The Story</h2>
 <div class="outline-text-2" id="text-2">
-<ul class="org-ul">
-<li>2% of global economy
-</li>
-</ul>
-</div>
-
-<div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1">Politics</h3>
-<div class="outline-text-3" id="text-2-1">
-</div>
-<div id="outline-container-sec-2-1-1" class="outline-4">
-<h4 id="sec-2-1-1">Success Story</h4>
-<div class="outline-text-4" id="text-2-1-1">
-<ul class="org-ul">
-<li>Universal Adult Franchise on Day-1
-<ul class="org-ul">
-<li>a great adventure
-</li>
-<li>an enormous expression of faith
-</li>
-<li>US, Britain took ages
-</li>
-</ul>
-</li>
-<li>Retianed political freedoms
-</li>
-<li>intense electoral competition
-</li>
-<li>winners do not punish losers
-</li>
-<li>elected governement is truly in authority
-</li>
-<li>Maturity of federalism
-</li>
-</ul>
 <p>
-India is a truly vibrant functioning democracy. Moderate
-growth of economy, and influencing the global economy
+We started at around 0720 and were hoping to reach Karnala Bird
+Sanctuary by around 1130.  We — actually, soot covered clones of
+us —  reached by about 1215 or so.  That's pretty decent,
+considering we were directed to Karnala sports complex, when we were
+looking for bird sanctuary and there was quite a bit of traffic near
+Panvel.
 </p>
-</div>
-</div>
 
-<div id="outline-container-sec-2-1-2" class="outline-4">
-<h4 id="sec-2-1-2">Dark Corners</h4>
-<div class="outline-text-4" id="text-2-1-2">
-</div>
-<ul class="org-ul">
-<li>
-<a id="sec-2-1-2-1" name="sec-2-1-2-1"></a>Vote buying<br><ul class="org-ul">
-<li>
-<a id="sec-2-1-2-1-1" name="sec-2-1-2-1-1"></a>Poverty, Illiteracy<br>
-</li>
-
-<li>
-<a id="sec-2-1-2-1-2" name="sec-2-1-2-1-2"></a>Power struggle without reference to Ideologies/outcomes<br>
-</li>
-
-<li>
-<a id="sec-2-1-2-1-3" name="sec-2-1-2-1-3"></a>Only change in players, no change of outcomes<br>
-</li>
-</ul>
-</li>
-
-<li>
-<a id="sec-2-1-2-2" name="sec-2-1-2-2"></a>Freebies after election<br>
-</li>
-
-<li>
-<a id="sec-2-1-2-3" name="sec-2-1-2-3"></a>Dividing based on primordial loyalties<br><ul class="org-ul"><li>
-<a id="sec-2-1-2-3-1" name="sec-2-1-2-3-1"></a>No sense that any party would make any difference<br><ul class="org-ul"><li>
-<a id="sec-2-1-2-3-1-1" name="sec-2-1-2-3-1-1"></a>Emotional Purchase is only available<br>
-</li></ul>
-</li></ul>
-</li>
-</ul>
-</div>
-
-<div id="outline-container-sec-2-1-3" class="outline-4">
-<h4 id="sec-2-1-3">Argument</h4>
-<div class="outline-text-4" id="text-2-1-3">
 <p>
-19th Century Politics, Medieval Politics and Modern
-Economics cannot co-exist.  One of them will have to give
-way.
+While we were getting tickets to get into the sanctuary, a man was
+amused by Ritesh's polka (dirt) dotted shirt and asks us whether we
+rode down from JNPT.  We got all excited and told him, that we rode
+down from Powai!  He just said, "Gone Mad!" and walked away, as if
+madness was contagious.  Both of us, felt great!  We were high!  It
+felt like the best compliment to get after a long, tiring,
+(blackening) ride.  We got in and rushed to a tap and almost had a
+bath under it.  The first touch of cold water was heaven!  Just a
+while later, we got a shock.  We couldn't get any food near/inside
+the sanctuary.  We will have to go back 3 km for that.  We spent
+about an hour and a half, getting some oxygen, looking for a few
+birds, giving up and settling with spiders and clicking some
+pictures.  We got went back 3km to the hotel and spent about an hour
+there (not all of it eating ;). We started back at around 1515.
 </p>
-</div>
 
-<ul class="org-ul">
-<li>
-<a id="sec-2-1-3-1" name="sec-2-1-3-1"></a>Comparison with China<br><ul class="org-ul"><li>
-<a id="sec-2-1-3-1-1" name="sec-2-1-3-1-1"></a>Argument against Democracy is detrimental to economies<br><ul class="org-ul">
-<li>
-<a id="sec-2-1-3-1-1-1" name="sec-2-1-3-1-1-1"></a>Autocracy - everything bad that happened<br>
-</li>
+<p>
+The ride back was eventful.  We took a slightly different route,
+tempted by a free Highway(NH4), waiting to be rode on.  The road
+looked awesome, with a hill on the left, and no vehicles in sight.
+But, as fate would have it, Ritesh's rear tyre gave way.  After some
+search we found a guy fixing tyres of vehicles on the highway.  But
+he refused to fix our bicycle.  He refused even to fill air in it,
+so we could reach the nearest cycle repair shop.  After more search,
+we found who agreed to fill air in the tyre. (It needs a special
+valve pin.  The previous guy, probably didn't have it. But we
+could've hacked up something.)
+</p>
 
-<li>
-<a id="sec-2-1-3-1-1-2" name="sec-2-1-3-1-1-2"></a>Democratization - everything good that happened<br><ul class="org-ul">
-<li>
-<a id="sec-2-1-3-1-1-2-1" name="sec-2-1-3-1-1-2-1"></a>it's more than just voting<br>
-</li>
+<p>
+We rushed to Kalamboli and got the tyre fixed.  Then we headed back
+in the route that we had come on.  It'd been raining on and off
+through out the morning.  But first rain on the return only started
+near Nerul.  It was a great relief.  My cycle started moving more
+smoothly…  I loved it.  We got lost a bit near Ghatkopar.  Also,
+the traffic was quite bad there. (Why do drivers get so bad, once it
+starts raining?  It's not unique to Mumbai, but quite visible here.
+We were back in Campus by around 2040.
+</p>
 
-<li>
-<a id="sec-2-1-3-1-1-2-2" name="sec-2-1-3-1-1-2-2"></a>in some respects China is perhaps more democratic than India<br>
-</li>
-</ul>
-</li>
-</ul>
-</li></ul>
-</li>
+<p>
+Ritesh was energized after the puncture was fixed.  He rode like
+crazy, after that.  The sole of my feet started hurting —
+something like a cramp.  I don't know what exactly happened.  Also,
+my groin was hurting quite a bit.  My only motivation at that point
+was seeing Ritesh ride like crazy.  He was at his best, then!  I'm
+still wondering where he got all that energy from.  It was a great
+ride, for both of us!  Motivating each other to keep going. :)
+</p>
 
-<li>
-<a id="sec-2-1-3-2" name="sec-2-1-3-2"></a>What India needs<br><ul class="org-ul">
-<li>
-<a id="sec-2-1-3-2-1" name="sec-2-1-3-2-1"></a>Art of democratization of our society<br><ul class="org-ul">
-<li>
-<a id="sec-2-1-3-2-1-1" name="sec-2-1-3-2-1-1"></a>even after we have 7700 words in the constitution on this issue<br>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-1-2" name="sec-2-1-3-2-1-2"></a>We created over structured under powered local governments.<br>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-1-3" name="sec-2-1-3-2-1-3"></a>recognize the merit of de-centralization<br><ul class="org-ul">
-<li>
-<a id="sec-2-1-3-2-1-3-1" name="sec-2-1-3-2-1-3-1"></a>link between authority and accountability<br>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-1-3-2" name="sec-2-1-3-2-1-3-2"></a>understanding of link between vote and public good<br>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-1-3-3" name="sec-2-1-3-2-1-3-3"></a>link between taxes and services rendered<br><div class="outline-text-8" id="text-2-1-3-2-1-3-3">
-<ul class="org-ul">
-<li>tax avoidance is a national sport!
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-2" name="sec-2-1-3-2-2"></a>Rule of Law<br><ul class="org-ul">
-<li>
-<a id="sec-2-1-3-2-2-1" name="sec-2-1-3-2-2-1"></a>impeccable system of law normative-ly<br>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-2-2" name="sec-2-1-3-2-2-2"></a>weak, in practice<br>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-2-3" name="sec-2-1-3-2-2-3"></a>simple elegant answers exist.<br><ul class="org-ul"><li>
-<a id="sec-2-1-3-2-2-3-1" name="sec-2-1-3-2-2-3-1"></a>administrative forms comission<br>
-</li></ul>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-2-4" name="sec-2-1-3-2-2-4"></a>Culture of VIPs, cronyism, …<br>
-</li>
-</ul>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-3" name="sec-2-1-3-2-3"></a>Fight Corruption<br><ul class="org-ul">
-<li>
-<a id="sec-2-1-3-2-3-1" name="sec-2-1-3-2-3-1"></a>corruption in India is Ubiquitous!<br>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-3-2" name="sec-2-1-3-2-3-2"></a>answers are self-evident<br><ul class="org-ul"><li>
-<a id="sec-2-1-3-2-3-2-1" name="sec-2-1-3-2-3-2-1"></a>institutional mechanisms<br>
-</li></ul>
-</li>
-</ul>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-4" name="sec-2-1-3-2-4"></a>Electoral System<br><ul class="org-ul">
-<li>
-<a id="sec-2-1-3-2-4-1" name="sec-2-1-3-2-4-1"></a>Proportional Representation<br>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-4-2" name="sec-2-1-3-2-4-2"></a>Presidential system<br>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-4-3" name="sec-2-1-3-2-4-3"></a>Old fashioned - first past the post system needs to go<br><ul class="org-ul">
-<li>
-<a id="sec-2-1-3-2-4-3-1" name="sec-2-1-3-2-4-3-1"></a>One vote can change things<br>
-</li>
-
-<li>
-<a id="sec-2-1-3-2-4-3-2" name="sec-2-1-3-2-4-3-2"></a>Vote buying will continue<br>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-
-<div id="outline-container-sec-2-1-4" class="outline-4">
-<h4 id="sec-2-1-4">Challenge</h4>
-<div class="outline-text-4" id="text-2-1-4">
-<ul class="org-ul">
-<li>We need to set the house in order today
-</li>
-<li>What happens to one-sixth the humanity cannot but impact
-the rest of the world!
-</li>
-</ul>
-</div>
-</div>
+<p>
+Ritesh, where to next?
+</p>
 </div>
 </div>
 
 <div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Questions</h2>
+<h2 id="sec-3">Some lessons for future</h2>
 <div class="outline-text-2" id="text-3">
-</div>
-<div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1">Answer-ability of administrators</h3>
-</div>
-
-<div id="outline-container-sec-3-2" class="outline-3">
-<h3 id="sec-3-2">Vicious cycle of politicians (get purchase) trying to change the system</h3>
-<div class="outline-text-3" id="text-3-2">
-</div>
-<div id="outline-container-sec-3-2-1" class="outline-4">
-<h4 id="sec-3-2-1">bad politics drives away good politics</h4>
-</div>
-
-<div id="outline-container-sec-3-2-2" class="outline-4">
-<h4 id="sec-3-2-2">young people recognizing the centrality of politics</h4>
-</div>
-
-<div id="outline-container-sec-3-2-3" class="outline-4">
-<h4 id="sec-3-2-3">deep engagement of middle class</h4>
-</div>
-
-<div id="outline-container-sec-3-2-4" class="outline-4">
-<h4 id="sec-3-2-4">pursuit of personal goals along with pursuit of public good</h4>
-</div>
-
-<div id="outline-container-sec-3-2-5" class="outline-4">
-<h4 id="sec-3-2-5">politics - improved only by better and more politics, not revulsion</h4>
-</div>
-</div>
-
-<div id="outline-container-sec-3-3" class="outline-3">
-<h3 id="sec-3-3">Telangana issue</h3>
-<div class="outline-text-3" id="text-3-3">
-</div>
-<div id="outline-container-sec-3-3-1" class="outline-4">
-<h4 id="sec-3-3-1">Our federalism has matured remarkably</h4>
-</div>
-
-<div id="outline-container-sec-3-3-2" class="outline-4">
-<h4 id="sec-3-3-2">neither a cure nor a catastrophe</h4>
-</div>
-
-<div id="outline-container-sec-3-3-3" class="outline-4">
-<h4 id="sec-3-3-3">it's a practical solution some people are seeking</h4>
-</div>
-
-<div id="outline-container-sec-3-3-4" class="outline-4">
-<h4 id="sec-3-3-4">if language is not a marker, what's the new marker?</h4>
-<div class="outline-text-4" id="text-3-3-4">
-</div>
 <ul class="org-ul">
-<li>
-<a id="sec-3-3-4-1" name="sec-3-3-4-1"></a>there's nothing wrong with having markers<br>
+<li>The Cycle needs to be as close to perfect, as it possibly can be.
 </li>
-
-<li>
-<a id="sec-3-3-4-2" name="sec-3-3-4-2"></a>some uniform principle<br>
+<li>Carry your route map along. Enquiring the route a colossal waste
+of time and sometimes unreliable, too.
+</li>
+<li>A pollution mask is a <b>must</b> for Mumbai (or any other city.)
+</li>
+<li>Carry enough water and food. (We drank about 7L of water between us)
+</li>
+<li>Need to learn how to fix punctures.  Need a tool kit.
+</li>
+<li>A helmet, shorts with padding would be good.
+</li>
+<li>An odometer would be useful too.
+</li>
+<li>Learn to use the hand-pump or carry along a normal pump.
+</li>
+<li>I should probably ride along with some Cycling group for the
+experience of it. I'll get to learn a lot of things.
 </li>
 </ul>
-</div>
-
-<div id="outline-container-sec-3-3-5" class="outline-4">
-<h4 id="sec-3-3-5">big city is seeking a separate state-hood</h4>
-<div class="outline-text-4" id="text-3-3-5">
-</div>
-<ul class="org-ul">
-<li>
-<a id="sec-3-3-5-1" name="sec-3-3-5-1"></a>could happen with another state<br>
-</li>
-
-<li>
-<a id="sec-3-3-5-2" name="sec-3-3-5-2"></a>how do we resolve it?<br>
-</li>
-</ul>
-</div>
-
-<div id="outline-container-sec-3-3-6" class="outline-4">
-<h4 id="sec-3-3-6">Once these things are resolved, it doesn't matter what happens.</h4>
-<div class="outline-text-4" id="text-3-3-6">
-</div>
-<ul class="org-ul"><li>
-<a id="sec-3-3-6-1" name="sec-3-3-6-1"></a>the real answer lies in de-centralization<br>
-</li></ul>
-</div>
-</div>
-
-<div id="outline-container-sec-3-4" class="outline-3">
-<h3 id="sec-3-4">Rule of Law and Democracy</h3>
-<div class="outline-text-3" id="text-3-4">
-</div>
-<div id="outline-container-sec-3-4-1" class="outline-4">
-<h4 id="sec-3-4-1">over-centralization has been our bane</h4>
-</div>
-
-<div id="outline-container-sec-3-4-2" class="outline-4">
-<h4 id="sec-3-4-2">decentralization is a tool of democracy</h4>
-</div>
-
-<div id="outline-container-sec-3-4-3" class="outline-4">
-<h4 id="sec-3-4-3">delivery of rule of law is weak</h4>
-<div class="outline-text-4" id="text-3-4-3">
-</div>
-<ul class="org-ul"><li>
-<a id="sec-3-4-3-1" name="sec-3-4-3-1"></a>we have to set that right<br>
-</li></ul>
-</div>
-
-<div id="outline-container-sec-3-4-4" class="outline-4">
-<h4 id="sec-3-4-4">freedom and economic growth are compatible - show this to the world!</h4>
-</div>
-</div>
-
-<div id="outline-container-sec-3-5" class="outline-3">
-<h3 id="sec-3-5">Maoist insurgency</h3>
-<div class="outline-text-3" id="text-3-5">
-</div>
-<div id="outline-container-sec-3-5-1" class="outline-4">
-<h4 id="sec-3-5-1">the only form of dissent is within the bounds of the constitution</h4>
-</div>
-
-<div id="outline-container-sec-3-5-2" class="outline-4">
-<h4 id="sec-3-5-2">state and the people have every right and duty to control it</h4>
-</div>
-
-<div id="outline-container-sec-3-5-3" class="outline-4">
-<h4 id="sec-3-5-3">hierarchy of principles - preserving of constitutional order</h4>
-</div>
-</div>
-
-<div id="outline-container-sec-3-6" class="outline-3">
-<h3 id="sec-3-6">Positive experiences during your term as legislator</h3>
-<div class="outline-text-3" id="text-3-6">
-</div>
-<div id="outline-container-sec-3-6-1" class="outline-4">
-<h4 id="sec-3-6-1">politicians are just another set of human beings. period.</h4>
-<div class="outline-text-4" id="text-3-6-1">
-</div>
-<ul class="org-ul">
-<li>
-<a id="sec-3-6-1-1" name="sec-3-6-1-1"></a>do whatever it takes to stay in power<br>
-</li>
-
-<li>
-<a id="sec-3-6-1-2" name="sec-3-6-1-2"></a>they are not villians<br><ul class="org-ul"><li>
-<a id="sec-3-6-1-2-1" name="sec-3-6-1-2-1"></a>political framework<br>
-</li></ul>
-</li>
-</ul>
-</div>
 </div>
 </div>
 
 <div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">Conclusion</h2>
+<h2 id="sec-4">Photos</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-We have the technology. The world is truly flat.  We have the
-resources, to be able to fulfil all the basic needs of all the
-people and the potential of the country.
-</p>
-
-<p>
-We lack are institutions, right kind of politics. They take a
-lot of nurturing.  Let us be engaged. It is our future that's on
-the line. Economic growth is spurring changes in the
-country. Communications revolution is helping bring change.  The
-question is, What direction of change?  I ask of you, to make a
-difference to the way the Indian political trajectory takes
-shape.
+Photos will come soon, hopefully.
 </p>
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-04.html" class="u-url">Bookmarks [2010/11/04]</a></h1>
-        <span class="post-date">04 Nov 2010</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://www.nytimes.com/2010/11/03/opinion/03friedman.html?_r=1">Do Believe the Hype - NYTimes.com</a>
-
-<p>
-tags: india
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://ycombinator.com/lib.html">Y Combinator: Startup Library</a>
-
-<p>
-tags: tips, work, startup, awesome
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.plenz.com/tunnel-everything">Julius Plenz - Tunnel everything through SSH</a>
-
-<p>
-tags: awesome, ssh
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://blog.jozilla.net/2008/06/27/fun-with-python-opencv-and-face-detection/">In Traction » Blog Archive » Fun with Python, OpenCV and face detection</a>
-
-<p>
-tags: python, opencv, fun
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="https://help.ubuntu.com/community/LiveCDCustomization">LiveCDCustomization - Community Ubuntu Documentation</a>
-
-<p>
-tags: ubuntu
-</p>
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-03.html" class="u-url">Bookmarks [2010/11/03]</a></h1>
-        <span class="post-date">03 Nov 2010</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://labs.codecomputerlove.com/FlashVsHtml5/">Flash Vs HTML5</a>
-
-<p>
-tags: web, computers, hack
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.scottporad.com/2010/11/01/cheezburger-network-doesnt-show-its-new-employees-the-bathroom-until-theyve-checked-in-code/">Cheezburger Network Doesn’t Show Its New Employees the Bathroom Until They’ve Checked In Code at Scott Porad</a>
-
-<p>
-tags: tips, work
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://kottke.org/10/11/living-in-a-photoshop-world">Living in a Photoshop world</a>
-
-<p>
-tags: computers, video, humour
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://alexgaynor.net/2010/nov/02/continuous-integration-i-want/%20A">Alex Gaynor – The continuous integration I want</a>
-
-<p>
-tags: python, code, software
-    swarm to run tests for Django Apps for example.  For a Django:ideas:software:solutions:
-  application that wants to work on Django 1.1, 1.2, and all of those
-  interpreters, databases, and operating systems you've got over 100
-  configurations.
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://dreamerofyourdreams.com/wp-content/uploads/2010/09/The-Holstee-Manifesto2.png">The-Holstee-Manifesto2.png (JPEG Image, 710x950 pixels) - Scaled (70%)</a>
-
-<p>
-tags: life, love, tips, awesome
-</p>
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/raising-windows-using-python.html" class="u-url">Raising Windows using Python</a></h1>
-        <span class="post-date">03 Nov 2010</span>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/orgelisp-sorting-list-of-org-links-on-description.html" class="u-url">org/elisp - sorting list of org-links on description</a></h1>
+        <span class="post-date">20 Aug 2010</span>
     </header><div class="e-content entry-content">
     <p>
-Posting a small snippet of code, that I've been using for months
-now, on the request of a friend <sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/raising-windows-using-python.html#fn.1">1</a></sup>.
+A small utility function that I used to sort the names of people
+who commented on my blog.
 </p>
 
-<p>
-It basically checks for open windows of a program and brings them
-to the foreground or starts the program. I use it for my 3 most
-commonly used programs — Emacs(Mod4+E), Firefox(Mod4+F) and the
-Terminal(Mod4+T). I'm using a neat tool called xdotool <sup><a id="fnr.2" name="fnr.2" class="footref" href="/posts/raising-windows-using-python.html#fn.2">2</a></sup> to
-search for windows using titles.
-</p>
-
-<ul class="org-ul">
-<li>
-<code>Mod4+E</code> is mapped to <code>~/bin/raise.py emacs</code>
-</li>
-</ul>
-<p>
-Similarly, for firefox and terminal.
-</p>
-
-<div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">"Usage </span><span class="si">%s</span><span class="s"> window-name"</span> <span class="o">%</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">program</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="c"># Having different variables helps, in case of some programs.</span>
-<span class="n">window</span> <span class="o">=</span> <span class="n">program</span>
-
-<span class="c"># search for windows titled "window"</span>
-<span class="n">search</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s">"xdotool search --class </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span><span class="p">(</span><span class="n">window</span><span class="p">),</span>
-			  <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="s">"FALSE"</span><span class="p">)</span>
-<span class="n">search_output</span> <span class="o">=</span> <span class="n">search</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<span class="n">search</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="k">print</span> <span class="n">search_output</span>
-
-<span class="n">search_output</span> <span class="o">=</span> <span class="p">[</span><span class="n">each</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">search_output</span><span class="p">]</span>
-
-<span class="c"># Raise the first window or start the program</span>
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">search_output</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s">"xdotool windowactivate </span><span class="si">%s</span><span class="s">"</span>
-		     <span class="o">%</span><span class="p">(</span><span class="n">search_output</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">shell</span><span class="o">=</span><span class="s">"FALSE"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="s">"FALSE"</span><span class="p">)</span>
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">org-get-link-desc-from-list</span> <span class="p">()</span>
+  <span class="s">""" Get link description of a list item containing just links """</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">item-beg</span> <span class="p">(</span><span class="nv">point</span><span class="p">))</span>
+       <span class="p">(</span><span class="nv">item-end</span> <span class="p">(</span><span class="nv">org-end-of-item</span><span class="p">))</span>
+       <span class="p">(</span><span class="nv">cur-item</span> <span class="p">(</span><span class="nv">buffer-substring-no-properties</span>
+		  <span class="nv">item-beg</span> <span class="nv">item-end</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nv">goto-char</span> <span class="nv">item-beg</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">org-columns-compact-links</span> <span class="nv">cur-item</span><span class="p">)))</span>
 </pre></div>
 
 <p>
-Feel free to use it as you like. :)
+<code>sort-lines</code> wasn't good enough for me, since it was sorting
+alphabetically and it ended up being the sorted order of the urls
+and not the names. This function, when used with
+<code>org-sort-entries-or-items</code> gave me what I wanted.
 </p>
 
 <p>
-Any improvements and suggestions are welcome.
+Thanks to benny (on #org-mode), I also learnt the difference
+between <code>let</code> and <code>let*</code>.
 </p>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef">
-<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/raising-windows-using-python.html#fnr.1">1</a></sup><p class="footpara">
-dusual on twitter
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.2" name="fn.2" class="footnum" href="/posts/raising-windows-using-python.html#fnr.2">2</a></sup><p class="footpara">
-xdotool - Homepage
-</p>
-</div>
-
-
-</div>
-</div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/wp-to-org-mode-hyde-disqus.html" class="u-url">WP to org-mode + hyde + disqus</a></h1>
-        <span class="post-date">22 Oct 2010</span>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/contributing-to-foss.html" class="u-url">Contributing to FOSS</a></h1>
+        <span class="post-date">19 Aug 2010</span>
     </header><div class="e-content entry-content">
     <p>
-Hello World!
+gora asked for some good links (on ##linux-india) to redirect
+newbies, enthusiastic about contributing to FOSS.
 </p>
 
 <p>
-My first post at my new home.  Obviously, it was going to be about the
-move.  You knew it, didn't you? ;)
+I dug up a few links from the web - some that I read, when I
+was starting off with using GNU/Linux and FOSS, others are
+newer links.
 </p>
 
 <p>
-Well, I got some space on the web, along with a few friends.  Thanks to
-my org-mode fanboyism, I now use it to maintain my homepage.  I've
-successfully completed import of my Wordpress posts and comments. :)
-</p>
-
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">I now use</h2>
-<div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li>Emacs and Org-mode <sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/wp-to-org-mode-hyde-disqus.html#fn.1">1</a></sup> to write my posts.
-</li>
-<li>
-<code>org-hyde.el</code> <sup><a id="fnr.2" name="fnr.2" class="footref" href="/posts/wp-to-org-mode-hyde-disqus.html#fn.2">2</a></sup> to publish <code>html</code> in a <code>hyde</code>
-    parse-able format.
-</li>
-<li>
-<code>hyde</code> <sup><a id="fnr.3" name="fnr.3" class="footref" href="/posts/wp-to-org-mode-hyde-disqus.html#fn.3">3</a></sup> to convert the <code>html</code> pages into a blog.
-</li>
-<li>
-<code>org-publish</code> to publish other pages in my home page.
-</li>
-<li>
-<code>git</code> <sup><a id="fnr.4" name="fnr.4" class="footref" href="/posts/wp-to-org-mode-hyde-disqus.html#fn.4">4</a></sup> and a <code>bash</code> script for publishing.
-</li>
-<li>Disqus <sup><a id="fnr.5" name="fnr.5" class="footref" href="/posts/wp-to-org-mode-hyde-disqus.html#fn.5">5</a></sup> for the comment system.
-</li>
-</ul>
-<p>
-Yes, I know it sounds rather complicated. :) But, now that I
-have it set up, it's not all that difficult to make a post.
-It's just a matter of one <code>git commit</code> and <code>push</code>.  I need to
-fine-tune the shell script a bit, though.
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">How I moved</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-The move definitely wasn't trivial.  I guess, I could've started
-afresh but, what fun would that have been? ;)
-</p>
-
-<p>
-This roughly how I did things – in the order that I did them.
-</p>
-</div>
-
-<div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1">Choosing <code>hyde</code>
-</h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
-I looked at a handful of options to maintain a blog, using
-org-mode — <code>blorg</code>, <code>org-jekyll</code>, <code>blorgit</code>, <code>ikiwiki</code>.
-After some assessment, I decided upon <code>org-jekyll</code> and
-<code>jekyll</code>.  But then, I accidentally stumbled upon <code>hyde</code>.
-</p>
-
-<p>
-I decided to go with <code>hyde</code> instead of <code>jekyll</code> <sup><a id="fnr.6" name="fnr.6" class="footref" href="/posts/wp-to-org-mode-hyde-disqus.html#fn.6">6</a></sup>
-since
-</p>
-
-<ol class="org-ol">
-<li>It's in Python.  I didn't want to start figuring out Ruby,
-now.
-</li>
-<li>It uses Django templates <sup><a id="fnr.7" name="fnr.7" class="footref" href="/posts/wp-to-org-mode-hyde-disqus.html#fn.7">7</a></sup>.  And Django is
-something, I wish to learn.  I've started with that. :)
-</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-sec-2-2" class="outline-3">
-<h3 id="sec-2-2">Clean up <code>org-jekyll</code> to work with <code>hyde</code>.</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-I then "ported" <code>org-jekyll.el</code> into <code>org-hyde.el</code>.
+Just making a note of them here; hoping someone would find it
+useful.
 </p>
 
 <ul class="org-ul">
-<li>removed stuff like categories and languages, that I was not
-going to use.
+<li>How to Become a Hacker - A definitive how-to on becoming a
+hacker. Answers all the right questions. :)
 </li>
-<li>Added some code w.r.t timestamps, from org2blog, to it, so
-that my older <code>org2blog</code> posts could be easily ported.
+
+<li>Philosophy of the GNU Project - This is the page, where I
+started. Thanks to Voodoo for giving me the link to this page. I
+distinctly remember that day. :) I'm going to pass on this link
+to any newbie who comes my way, no matter how much bashing I get
+from other FOSS evangelists.
+</li>
+
+<li>6 Easy Ways To Get Started Programming Open Source - A neat list
+giving steps to get started with programming for open source. I
+like #4. Understanding the social dynamics of the project is an
+important thing which is often overlooked by newbies.
+</li>
+
+<li>OpenHatch - A community site to help newbies get started with
+contributing to FOSS. A cool site. Also, here is a story about
+OpenHatch.
+</li>
+
+<li>Look at the Numbers! - an interesting paper giving quantitative
+data in support of using FOSS.
+</li>
+
+<li>Ubuntu - Code of Conduct - A nice description of general conduct
+expected in any of the FOSS communities, not just Ubuntu.
 </li>
 </ul>
-</div>
-</div>
-
-<div id="outline-container-sec-2-3" class="outline-3">
-<h3 id="sec-2-3">Clean up older org2blog posts</h3>
-<div class="outline-text-3" id="text-2-3">
 <p>
-<code>org2blog</code> can post either buffers or subtrees.  I had posts in
-both formats.  I converted all of them into subtrees of one
-tree, using some Python.
+I'd be happy to add any other links that any of you share. Thanks!
 </p>
-</div>
-</div>
-
-<div id="outline-container-sec-2-4" class="outline-3">
-<h3 id="sec-2-4">Import older posts</h3>
-<div class="outline-text-3" id="text-2-4">
-<p>
-This was the most painful posts.  Importing all the old posts
-from Wordpress.  <code>org-mode</code> really needs a XHTML/XML importer!
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/one-hundred.html" class="u-url">One Hundred</a></h1>
+        <span class="post-date">17 Aug 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+The previous post, was the <b>One Hundredth</b> post on this blog. As 9
+suggested, I just want to say Yay! and thank my readers!
 </p>
 
 <p>
-I did all sorts of crazy stuff to get this done.
+I'd like to thank all the people who gave me those small nudges to
+write something down here and hope at least one person has found
+something useful here.
 </p>
 
+<p>
+Thanks to all the people dropping in here, regularly; Bearing with
+whatever sort of stuff I put up here. :)
+</p>
+
+<p>
+Thanks to everybody who took the time to comment here.
+</p>
 <ul class="org-ul">
-<li>used pandoc to convert html to <code>markdown</code>
+<li>9
 </li>
-<li>wrote some throw away regex code to convert <code>markdown</code> to
-<code>org-mode</code>.
+<li>Abhijeet
 </li>
-<li>wrote more regex code to convert <code>html</code> to <code>org-mode</code>.
+<li>Aditya Sengupta
 </li>
-<li>hacked up a lot of stuff and finally got all the posts into
-<code>org</code> format! :)
+<li>Akash
+</li>
+<li>AlexM
+</li>
+<li>[Amit Sethi]
+</li>
+<li>Anagha
+</li>
+<li>arunchaganty
+</li>
+<li>[arunvudem]
+</li>
+<li>avinashsonee
+</li>
+<li>chaitu
+</li>
+<li>Cuckoo
+</li>
+<li>damodar
+</li>
+<li>fangzhzh
+</li>
+<li>[Illipi]
+</li>
+<li>leezii
+</li>
+<li>Madhusudan.C.S
+</li>
+<li>neha
+</li>
+<li>niku
+</li>
+<li>[Phillip Hagge]
+</li>
+<li>[priya]
+</li>
+<li>rahul
+</li>
+<li>ringO
+</li>
+<li>Rini
+</li>
+<li>Ritesh
+</li>
+<li>rohitj
+</li>
+<li>Sacha Chua
+</li>
+<li>Sandeep
+</li>
+<li>[Shantanu]
+</li>
+<li>[Srinivas Chaganti]
+</li>
+<li>[srujan]
+</li>
+<li>Stefan
+</li>
+<li>Sumanth
+</li>
+<li>Surya
+</li>
+<li>सु
+</li>
+<li>Swapnil
+</li>
+<li>Syam
+</li>
+<li>uc
+</li>
+<li>Vandith
+</li>
+<li>vinaywarrier
 </li>
 </ul>
-</div>
-</div>
-
-
-<div id="outline-container-sec-2-5" class="outline-3">
-<h3 id="sec-2-5">A workflow for publishing</h3>
-<div class="outline-text-3" id="text-2-5">
 <p>
-Set up <code>git</code> along with some <code>bash</code> code, to have a mechanism
-to minimize the effort in making a blog post.  All this is
-still a lot of work, compared to the ease with which I used to
-use <code>org2blog</code>.  That's partly due to <code>ssh</code> restrictions in my
-hostel.
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-2-6" class="outline-3">
-<h3 id="sec-2-6">CSS clean-up</h3>
-<div class="outline-text-3" id="text-2-6">
-<p>
-I'm using the same CSS for <code>org-mode</code> published files and
-<code>hyde</code> published files. I had to clean up my <code>hyde</code> templates
-and the CSS to make both of them look similar.
-</p>
-
-<p>
-My first tryst with CSS hasn't been all that bad. :)
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-2-7" class="outline-3">
-<h3 id="sec-2-7">Installing disqus and importing comments</h3>
-<div class="outline-text-3" id="text-2-7">
-<p>
-Using disqus was one thing, I wasn't sure I wanted to do.  I
-would've loved it if comments could be managed with org-mode
-too. ;) <sup><a id="fnr.8" name="fnr.8" class="footref" href="/posts/wp-to-org-mode-hyde-disqus.html#fn.8">8</a></sup></p>
-
-<p>
-Anyway, I finally decided to go with it, and I'm quite happy
-with it. :)
-</p>
-
-<p>
-I loved the ease with which comments could be imported.
-</p>
-
-<ol class="org-ol">
-<li>Import Wordpress comments using the export <code>xml</code> file.
-</li>
-<li>Generate a CSV file containing the URL map – mapping the
-newer urls to the older ones.
-</li>
-<li>Upload the CSV file and tada!
-</li>
-</ol>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Conclusion</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-I got to learn quite a few things, during all of this.  I also
-have some bits of code, that I can share with you, in case you
-are interested.  Leave a comment, if you wish. :)
-</p>
-
-<p>
-I'm just hoping to reduce the additional steps required in
-publishing to ensure it doesn't add to my already erratic
-blogging habits.
-</p>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef">
-<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/wp-to-org-mode-hyde-disqus.html#fnr.1">1</a></sup><p class="footpara">
-Org-mode - Homepage
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.2" name="fn.2" class="footnum" href="/posts/wp-to-org-mode-hyde-disqus.html#fnr.2">2</a></sup><p class="footpara">
-Org-hyde is a <i>port</i> of org-jekyll.el
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.3" name="fn.3" class="footnum" href="/posts/wp-to-org-mode-hyde-disqus.html#fnr.3">3</a></sup><p class="footpara">
-Hyde - Github
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.4" name="fn.4" class="footnum" href="/posts/wp-to-org-mode-hyde-disqus.html#fnr.4">4</a></sup><p class="footpara">
-Git - Homepage
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.5" name="fn.5" class="footnum" href="/posts/wp-to-org-mode-hyde-disqus.html#fnr.5">5</a></sup><p class="footpara">
-Disqus - Homepage
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.6" name="fn.6" class="footnum" href="/posts/wp-to-org-mode-hyde-disqus.html#fnr.6">6</a></sup><p class="footpara">
-Github - Jekyll
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.7" name="fn.7" class="footnum" href="/posts/wp-to-org-mode-hyde-disqus.html#fnr.7">7</a></sup><p class="footpara">
-Documentation - Django Templates
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.8" name="fn.8" class="footnum" href="/posts/wp-to-org-mode-hyde-disqus.html#fnr.8">8</a></sup><p class="footpara">
-I feel it is capable of doing that.  It's just my
-incapability that prevented me from trying it out.
-</p>
-</div>
-
-
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/augmented-assignment-in-python.html" class="u-url">Augmented assignment in Python</a></h1>
-        <span class="post-date">04 Oct 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-If you are new to <code>Python</code>, you should probably stop reading here.
-But, if you have used <code>Python</code> and <code>numpy</code>, then read on. Before, that
-try these bits of code.
-</p>
-
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mf">0.5j</span>
-<span class="k">print</span> <span class="n">a</span>
-</pre></div>
-
-<p>
-The "same thing", in a slightly different way.
-</p>
-
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
-<span class="k">print</span> <span class="n">a</span>
-</pre></div>
-
-<p>
-Both the code blocks, look really the same, until you look carefully.
-Under normal circumstances <code>a = a + b</code> and <code>a += b</code> behave exactly
-similarly, and we really don't need to bother about the differences
-between them.
-</p>
-
-<p>
-But, <code>+=</code>, which is an augmented assignment operator, actually tries
-to perform the operation in-place, unlike the other statement where
-<code>+</code> actually returns a new object which is again being referenced by
-the name <code>a</code>.
-</p>
-
-<p>
-But, when dealing with <code>numpy</code> arrays, this will lead to trouble.
-When assigning to an array, it's <code>dtype</code> is not changed and hence the
-trouble.
-</p>
-
-<p>
-The right way to use the augmented assignment operator, would be:
-</p>
-
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
-<span class="k">print</span> <span class="n">a</span>
-</pre></div>
-
-<p>
-The same thing is explained in this thread.  Also, Thanks to
-Bhanukiran for asking me this.
-</p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/who-i-am.html" class="u-url">Who I am</a></h1>
-        <span class="post-date">04 Oct 2010</span>
-    </header><div class="e-content entry-content">
-    <p class="verse">
-I'm not the body that dies<br>
-on missing a beat or one breath.<br>
-I'm not the mind, so fickle,<br>
-I'm in heaven one moment, and next in hell.<br><br>
-I'm the moments I live,<br>
-not the ones, in which I just exist.<br>
-I'm the dreams I dream,<br>
-those fulfilled, and not just yet.<br><br>
-I am the occasions I grace<br>
-and those, missed, where I am.<br>
-I am the words I spoke,<br>
-those I wrote, and those I will.<br><br>
-I am all that I create,<br>
-and the stuff that I catalyse.<br>
-I am the love I receive,<br>
-and all of it that I spread.<br><br>
-Don't cry, when I die,<br>
-for I never really will.<br></p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/some-fun-from-org-mode.html" class="u-url">Some fun from #org-mode</a></h1>
-        <span class="post-date">02 Oct 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-This is a conversation from #org-mode, published without
-permission from <code>plovs</code>, <code>BerntH</code> and <code>bremner</code>. If any of you
-want any of the content removed, I will do so.
-</p>
-
-<blockquote>
-<p>
-&lt;punchagan&gt; hi all
-</p>
-
-<p>
-&lt;BerntH&gt; hi punchagan   [18:36]
-</p>
-
-<p>
-&lt;punchagan&gt; BerntH: ever used/tried blorg or blorgit?  [18:47]
-</p>
-
-<p>
-&lt;punchagan&gt; I like the way org-publish works, but blorg exports one org file as a blog. If blorg were to be re-written on top of org-publish, how should it be done? use one file per post or just one file for the whole blog?  [18:52]
-</p>
-
-<p>
-&lt;bremner&gt; punchagan: another option is to use ikiwiki and use the org-mode plugin to render pages. This is what i do, although only a bit of the site is in org.  [19:44]
-</p>
-
-<p>
-&lt;punchagan&gt; bremner: can I have a look at your site?  [19:45]
-</p>
-
-<p>
-&lt;bremner&gt; sure, it ain't pretty, but: www.cs.unb.ca/~bremner  [19:46]
-</p>
-
-<p>
-&lt;punchagan&gt; thanks. I'll keep this in mind.   [19:47]
-</p>
-
-<p>
-&lt;punchagan&gt; I just loved the way this site looks and behaves – <a href="http://julien.danjou.info/projects.html">http://julien.danjou.info/projects.html</a>
-</p>
-
-<p>
-&lt;bremner&gt; well, the side bar at least is possible with ikiwiki. Other than that I suppose it is mainly a matter of css  [19:48]
-</p>
-
-<p>
-&lt;BerntH&gt; punchagan: nope  [19:49]
-</p>
-
-<p>
-&lt;punchagan&gt; ok BerntH  [19:50]
-</p>
-
-<p>
-&lt;plovs&gt; punchagan ikiwiki does have an org-mode plugin  [19:56]
-</p>
-
-<p>
-&lt;punchagan&gt; plovs: yes, bremner told me that and I've seen on Worg too. :)
-</p>
-
-<p>
-&lt;plovs&gt; punchagan ah, yes, sorry
-</p>
-
-<p>
-&lt;punchagan&gt; plovs: it's alright.   [19:59]
-</p>
-
-<p>
-&lt;plovs&gt; punchagan another possibility is org2blog, which uses wordpress
-</p>
-
-<p>
-&lt;punchagan&gt; plovs: I'm the author of it. :D
-</p>
-
-<p>
-&lt;plovs&gt; lol, ik, <b>that</b> punchagan   [20:17]
-</p>
-
-<p>
-&lt;punchagan&gt; lol
-</p>
-
-<p>
-&lt;punchagan&gt; plovs: were you kidding? or serious?  [20:19]
-</p>
-
-<p>
-&lt;plovs&gt; punchagan sorry to say i was serious, but it will not happen again :-)
-</p>
-
-<p>
-&lt;plovs&gt; i really like org2blog, played with it yesterday
-</p>
-
-<p>
-&lt;punchagan&gt; plovs: no. I was just wondering if you were playing around with me. :P
-</p>
-
-<p>
-&lt;punchagan&gt; I'm happy some one thinks it is useful.
-</p>
-
-<p>
-&lt;plovs&gt; lol, no, i just didn't recognized your name, although it is kind of hard to miss  [20:21]
-</p>
-
-<p>
-&lt;punchagan&gt; I hope you don't mind, if I make this anecdote public?
-</p>
-</blockquote>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bloggerstock-do-over.html" class="u-url">Bloggerstock: Do-over</a></h1>
-        <span class="post-date">30 Sep 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-This post is by Dominick Mills, coming to us, thanks to
-Bloggerstock.  Dominick aka Lije blogs at Lije's Mindstate.  My post
-on this month's Bloggerstock topic will appear at That Ain't Kosher.
-</p>
-
-<p>
-And here is Dominick's post for you
-</p>
-<hr>
-<p>
-Hello world..today I'll be talking about a period in time I would like
-to do-over, however I couldn't think of anything so I went in another
-direction….I'd like to thank Bloggerstock and punchagan for
-the opportunity leak my thoughts on this page….
-</p>
-
-<p>
-I hope the readers understand that my views does not reflect those of
-the host's page..before I get started though Let me take the time out
-to explain what Bloggerstock is all about.  Bloggerstock is the
-brainchild of a small group of bloggers who connected on 20SB. The
-idea comes from the concept of a blog-swap in that maybe we could
-create our own kind of event where we all wrote posts to be posted on
-the next person’s blog. Essentially forming a blog-ring.
-</p>
-
-<p>
-There's a lot of things in life everyone would like to relive and do
-differently..I've been giving it some thought and it's been racking my
-brain for the whole month now…I came to the conclusion that I have
-nothing I'd like to really do-over…
-</p>
-
-<p>
-My reason for this is that I wouldn't be this person I am…and I
-wouldn't alter it in anyway…I love what I've become…if it weren't
-for all the good and bad that occurred during my life time..I wouldn't
-even be here writing this….or I wouldn't even have the same goals
-and all my aspirations would be small…I know this all sounds weird
-but giving the fact that I am a weird person, those who know me, this
-is expected…I believe in things happening for a reason and without
-these occurrences we'd be something totally different, and
-</p>
-
-<p>
-maybe not becoming what we're suppose to be in life…sometimes we
-look at situations and think, " Just maybe if I had done this… or
-maybe if I hadn't…" even if my decisions had made into a bum on the
-streets I think I would feel the same way…truth is we all have
-regrets..learning to live with them is the hardest thing to do..we
-tend to get caught up in the moment and want to relive those
-things..either for the good or the bad…but we fail to realize that
-it is those things that build character not for today but for our
-tomorrows.
-</p>
-
-<p>
-Whether it's falling for the wrong person, being back stabbed from a
-friend, getting hoodwinked from a stranger, or missing out on an
-opportunity….all of these are just life's lessons being taught..with
-that being said you should never sulk over a decision we've made…in
-the end we're our own cause of grief or happiness so don't whine about
-it stuff that's happened….accept what has happened and move
-forward…don't hold on to them, but don't forget them either…these
-are turning points in our lives so appreciate them..
-</p>
-
-<p>
-Well that's all I have to conjure up on the matter..though it kind of
-went against the topic a bit but hey am stubborn lol.. once again I'd
-like to thank punchagan for allowing me to feature on Rustic
-Reverie and also Bloggerstock for providing me with the opportunity to
-express myself on a fellow blogger's page.. here's a link to my page
-to view my featured blog post
+Special thanks to niku, Rini, and ntveem for inspiring me with their
+blogs. [All three of them have moved on to better things than
+blogging.]
 </p>
     </div>
     </article>

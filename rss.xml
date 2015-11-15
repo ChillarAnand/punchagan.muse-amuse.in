@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="http://punchagan.muse-amuse.in/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 23 Oct 2015 13:58:35 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Say Howdy with Emacs!</title><link>http://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought</title><link>http://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link rel="self" type="application/rss+xml" href="http://punchagan.muse-amuse.in/rss.xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:07:30 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Say Howdy with Emacs!</title><link>http://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Staying in touch with people is something I'm not very good at.  Since I am not
 on popular (among my friends/family) networks – FB and Whatsapp – I don't
 even see random updates from people, to get some sense of being in touch.
@@ -220,35 +220,7 @@ pretty happy with how this all works, right now.
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>mpsyt</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</guid><pubDate>Mon, 20 Apr 2015 18:17:18 GMT</pubDate></item><item><title>Quotes [2015-02-28]</title><link>http://punchagan.muse-amuse.in/posts/quotes-2015-02-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
-&lt;li&gt;Do anything, but let it produce joy. – &lt;i&gt;Walt Whitman&lt;/i&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Learn to value yourself, which means: fight for your happiness – &lt;i&gt;Ayn Rand&lt;/i&gt;
-&lt;/li&gt;
-
-&lt;li&gt;If you don't stand for something you will fall for anything – &lt;i&gt;Malcolm X&lt;/i&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Do you want to know who you are? Don't ask. Act! Action will delineate and
-define you – &lt;i&gt;Thomas Jefferson&lt;/i&gt;
-&lt;/li&gt;
-
-&lt;li&gt;We will be held accountable for all the permitted pleasures we failed to
-enjoy. – &lt;i&gt;Talmud Yerwshalmi&lt;/i&gt;
-&lt;/li&gt;
-
-&lt;li&gt;It's so easy to hate. It takes strength to be gentle and kind. – &lt;i&gt;The
-Smiths&lt;/i&gt;
-&lt;/li&gt;
-
-&lt;li&gt;To be trusted is a greater compliment than being loved – &lt;i&gt;George MacDonald&lt;/i&gt;
-&lt;/li&gt;
-
-&lt;li&gt;I am more convinced than ever. Conceptual integrity is central to product
-quality. – &lt;i&gt;Fred Brooks&lt;/i&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>quotes</category><guid>http://punchagan.muse-amuse.in/posts/quotes-2015-02-28.html</guid><pubDate>Sun, 01 Mar 2015 03:03:12 GMT</pubDate></item><item><title>org-drill for making it stick!</title><link>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>mpsyt</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</guid><pubDate>Mon, 20 Apr 2015 18:17:18 GMT</pubDate></item><item><title>org-drill for making it stick!</title><link>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Those who read the &lt;a href="http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html"&gt;last&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html"&gt;few&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html"&gt;posts&lt;/a&gt; here, would know that I have been
 experimenting with &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;org-drill&lt;/a&gt; (a spaced repetition extension to &lt;a href="http://orgmode.org/"&gt;Org mode&lt;/a&gt;).  I
 have been using the system (almost) religiously for the past 2 months, and I do
@@ -630,4 +602,53 @@ an interesting problem to try to solve.
 Also, it might be easier(?) if I probably tried to have a DE level keybinding, and
 some code to get selection and file name of the currently active
 window/application.
-&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item><item><title>Bookmarks [2014-11-01]</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-2014-11-01.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="http://thoughtcatalog.com/brianna-wiest/2013/04/50-ways-to-love-someone/"&gt;50 Ways To Love Someone | Thought Catalog&lt;/a&gt;
+
+&lt;p&gt;
+Go for walks together as much as you’re able.
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://research.microsoft.com/en-US/people/kannan/book-no-solutions-aug-21-2014.pdf"&gt;Foundations of Data Science&lt;/a&gt;
+
+&lt;p&gt;
+These notes are a first draft of a book being written by Hopcroft and Kannan
+and in many places are incomplete. However, the notes are in good enough
+shape to prepare lectures for a modern theoretical course in computer
+science. Please do not put solutions to exercises online as it is important
+for students to work out solutions for themselves rather than copy them from
+the internet.
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="http://asyncio.org/"&gt;Asyncio&lt;/a&gt;
+
+&lt;p&gt;
+Curated content from around the net to get started with asyncio
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://github.com/s16h/py-must-watch"&gt;s16h/py-must-watch · GitHub&lt;/a&gt;
+
+&lt;p&gt;
+Must-watch videos about Python.
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://github.com/josephmisiti/awesome-machine-learning#python"&gt;josephmisiti/awesome-machine-learning · GitHub&lt;/a&gt;
+
+&lt;p&gt;
+A curated list of awesome machine learning frameworks, libraries and software
+(by language).
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="http://www.masteringemacs.org/about"&gt;About - Mastering Emacs&lt;/a&gt;
+
+&lt;p&gt;
+The blog will cover all facets of Emacs and will be suitable for beginners
+and – I hope – experts alike.
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>bookmarks</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-2014-11-01.html</guid><pubDate>Fri, 31 Oct 2014 20:16:45 GMT</pubDate></item></channel></rss>
