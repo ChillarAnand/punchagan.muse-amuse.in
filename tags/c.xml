@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (C)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://punchagan.muse-amuse.in/tags/c.xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:07:31 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-08-03</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-03.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (C)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/c.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:28 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-08-03</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-03.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
 &lt;h2 id="sec-1"&gt;Friday&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;ul class="org-ul"&gt;
@@ -43,7 +43,7 @@ audio output drowning out the voice commands.
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>C</category><category>python</category><category>raspberry-pi</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-03.html</guid><pubDate>Mon, 04 Aug 2014 20:10:41 GMT</pubDate></item><item><title>Recurse Center, 2014-07-31</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-31.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/div&gt;</description><category>C</category><category>python</category><category>raspberry-pi</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-03.html</guid><pubDate>Mon, 04 Aug 2014 20:10:41 GMT</pubDate></item><item><title>Recurse Center, 2014-07-31</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-31.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I continued with doing the initial parts of the book, and didn't pair with
 Stephanie today.
 &lt;/li&gt;
@@ -54,7 +54,7 @@ Stephanie today.
 thinking about all the memory allocations and stuff.  It feels so
 nostalgic! :P
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>C</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-31.html</guid><pubDate>Fri, 01 Aug 2014 14:38:57 GMT</pubDate></item><item><title>Recurse Center, 2014-07-30</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-30.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;/ul&gt;</description><category>C</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-31.html</guid><pubDate>Fri, 01 Aug 2014 14:38:57 GMT</pubDate></item><item><title>Recurse Center, 2014-07-30</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-30.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
 &lt;h2 id="sec-1"&gt;(Re) Learning C&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;ul class="org-ul"&gt;
@@ -67,7 +67,7 @@ correctly.
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>C</category><category>networking</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-30.html</guid><pubDate>Thu, 31 Jul 2014 12:40:16 GMT</pubDate></item><item><title>Recurse Center, 2014-07-29</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-29.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;/div&gt;</description><category>C</category><category>networking</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-30.html</guid><pubDate>Thu, 31 Jul 2014 12:40:16 GMT</pubDate></item><item><title>Recurse Center, 2014-07-29</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-29.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
 &lt;h2 id="sec-1"&gt;Hacking: learning by breaking stuff&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;ul class="org-ul"&gt;
@@ -109,7 +109,7 @@ School each batch, and I want to keep that tradition.
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>C</category><category>hack</category><category>raspberry-pi</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-29.html</guid><pubDate>Tue, 29 Jul 2014 15:20:24 GMT</pubDate></item><item><title>Recurse Center, 2014-07-28</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/div&gt;</description><category>C</category><category>hack</category><category>raspberry-pi</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-29.html</guid><pubDate>Tue, 29 Jul 2014 15:20:24 GMT</pubDate></item><item><title>Recurse Center, 2014-07-28</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-28.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;There seemed to be excitement in the space to have Jessica around.  We had
 coffee with her, and I chatted with her briefly. She encouraged me to try and
 send a patch to CPython, that involved debugging and fixing some C issues.
@@ -131,4 +131,4 @@ exciting nevertheless.
 exploitation, at some point. I'm beginning to feel like time at HackerSchool
 running out!
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>C</category><category>python</category><category>recursecenter</category><category>version_control</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-28.html</guid><pubDate>Tue, 29 Jul 2014 02:23:39 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>C</category><category>python</category><category>recursecenter</category><category>version_control</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-28.html</guid><pubDate>Tue, 29 Jul 2014 02:23:39 GMT</pubDate></item></channel></rss>

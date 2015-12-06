@@ -1,2 +1,2 @@
-Sitemap: http://punchagan.muse-amuse.in/sitemapindex.xml
+Sitemap: https://punchagan.muse-amuse.in/sitemapindex.xml
 

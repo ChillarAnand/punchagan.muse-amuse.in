@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (jobs)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://punchagan.muse-amuse.in/tags/jobs.xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:07:31 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-08-21</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-21.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (jobs)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/jobs.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:26 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-08-21</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-21.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I added an additional view to xtab, to see all the pages that were killed,
 and reopen them, if you so choose.
 &lt;/li&gt;
@@ -12,7 +12,7 @@ School.
 &lt;li&gt;A bunch of awesome thursday presentations, and job fair and awesome food by
 Chef Warren!
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>jobs</category><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-21.html</guid><pubDate>Fri, 22 Aug 2014 14:33:34 GMT</pubDate></item><item><title>Recurse Center, 2014-06-20</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-06-20.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/ul&gt;</description><category>jobs</category><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-21.html</guid><pubDate>Fri, 22 Aug 2014 14:33:34 GMT</pubDate></item><item><title>Recurse Center, 2014-06-20</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-06-20.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;Fridays are optional in Hacker School, and people are given help
 with preparation for job interviews.
 &lt;/li&gt;
@@ -20,8 +20,8 @@ with preparation for job interviews.
 decided to do it with Haskell, and confirmed the fact that I didn't
 know it too well. :)
 &lt;/li&gt;
-&lt;li&gt;I spent the afternoon writing the blog-post on &lt;a href="http://punchagan.muse-amuse.in/posts/oauth2-demystified.html"&gt;OAuth2&lt;/a&gt;, and adding
+&lt;li&gt;I spent the afternoon writing the blog-post on &lt;a href="https://punchagan.muse-amuse.in/posts/oauth2-demystified.html"&gt;OAuth2&lt;/a&gt;, and adding
 support for converting ditaa code blocks to png using Pygments.  It
 may not have been the best use of time, but anyway…
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>haskell</category><category>jobs</category><category>oauth</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-06-20.html</guid><pubDate>Fri, 20 Jun 2014 12:58:40 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>haskell</category><category>jobs</category><category>oauth</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-06-20.html</guid><pubDate>Fri, 20 Jun 2014 12:58:40 GMT</pubDate></item></channel></rss>

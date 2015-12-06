@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (chrome)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://punchagan.muse-amuse.in/tags/chrome.xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:07:31 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-08-08</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-08.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (chrome)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/chrome.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:28 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-08-08</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-08.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I spent the morning doing some white-boarding interview practice with a Jorge
 and Brian.
 &lt;/li&gt;
@@ -18,7 +18,7 @@ some matching/searching features with helm/ido/whatever else.
 &lt;li&gt;I spent the Sunday writing a patch to &lt;a href="https://github.com/punchagan/xtab/tree/kill-by-memory"&gt;xtab&lt;/a&gt; to be able to limit the number of
 tabs in Chromium by the memory it uses.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>chrome</category><category>emacs</category><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-08.html</guid><pubDate>Sun, 10 Aug 2014 00:56:22 GMT</pubDate></item><item><title>GitHub Cue: Recommendations for GitHub Repos</title><link>http://punchagan.muse-amuse.in/posts/github-cue-recommendations-for-github-repos.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/ul&gt;</description><category>chrome</category><category>emacs</category><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-08.html</guid><pubDate>Sun, 10 Aug 2014 00:56:22 GMT</pubDate></item><item><title>GitHub Cue: Recommendations for GitHub Repos</title><link>https://punchagan.muse-amuse.in/posts/github-cue-recommendations-for-github-repos.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 If you aren't already aware of it, I'm one of those people who
 goes around saying, "GitHub is my Facebook".  I spend quite a lot
 of time on GitHub, browsing the work of various people, looking at
@@ -65,7 +65,7 @@ think of.
 
 &lt;p&gt;
 I would appreciate any further ideas and suggestions.  Thanks!
-&lt;/p&gt;</description><category>app</category><category>chrome</category><category>code</category><category>github</category><category>hack</category><guid>http://punchagan.muse-amuse.in/posts/github-cue-recommendations-for-github-repos.html</guid><pubDate>Fri, 05 Aug 2011 13:21:00 GMT</pubDate></item><item><title>GetHub: Chrome Notifications for Github updates</title><link>http://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>app</category><category>chrome</category><category>code</category><category>github</category><category>hack</category><guid>https://punchagan.muse-amuse.in/posts/github-cue-recommendations-for-github-repos.html</guid><pubDate>Fri, 05 Aug 2011 13:21:00 GMT</pubDate></item><item><title>GetHub: Chrome Notifications for Github updates</title><link>https://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Over the last two days, I hacked up my first Chrome extension.
 I've been using Chrome only for the past couple of weeks or so and
 I begin to like it, though some of the extensions aren't as mature
@@ -127,4 +127,4 @@ one-time verification fee that Google asks for.
 Happy GitHubbing!
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>chrome</category><category>code</category><category>first</category><category>git</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</guid><pubDate>Tue, 01 Mar 2011 19:04:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>chrome</category><category>code</category><category>first</category><category>git</category><category>software</category><guid>https://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</guid><pubDate>Tue, 01 Mar 2011 19:04:00 GMT</pubDate></item></channel></rss>

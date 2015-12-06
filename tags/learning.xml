@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (learning)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://punchagan.muse-amuse.in/tags/learning.xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:07:33 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>org-drill for making it stick!</title><link>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (learning)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/learning.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:26 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>org-drill for making it stick!</title><link>https://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Those who read the &lt;a href="http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html"&gt;last&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html"&gt;few&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html"&gt;posts&lt;/a&gt; here, would know that I have been
 experimenting with &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;org-drill&lt;/a&gt; (a spaced repetition extension to &lt;a href="http://orgmode.org/"&gt;Org mode&lt;/a&gt;).  I
 have been using the system (almost) religiously for the past 2 months, and I do
@@ -119,7 +119,7 @@ hack, and welcome any suggestions on cleaning up the code.
 	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-datetree-file-entry-under&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;current-kill&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;date&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;bookmark-set&lt;/span&gt; &lt;span class="s"&gt;"org-refile-last-stored"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;message&lt;/span&gt; &lt;span class="s"&gt;"Refiled to %s"&lt;/span&gt; &lt;span class="nv"&gt;journal&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>hack</category><category>hackerschool</category><category>learning</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</guid><pubDate>Fri, 16 Jan 2015 19:36:54 GMT</pubDate></item><item><title>More input sources for org-drill</title><link>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>hack</category><category>hackerschool</category><category>learning</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</guid><pubDate>Fri, 16 Jan 2015 19:36:54 GMT</pubDate></item><item><title>More input sources for org-drill</title><link>https://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I've been trying to use &lt;code&gt;org-drill&lt;/code&gt; regularly for the last few weeks.  I don't
 know how well it's been going but I have been sticking to the routine
 religiously.  I haven't yet really tried out incremental reading, but in an
@@ -158,7 +158,7 @@ an interesting problem to try to solve.
 Also, it might be easier(?) if I probably tried to have a DE level keybinding, and
 some code to get selection and file name of the currently active
 window/application.
-&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item><item><title>Learning about Spaced Repetition, SuperMemo, Org-drill, et al.</title><link>http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item><item><title>Learning about Spaced Repetition, SuperMemo, Org-drill, et al.</title><link>https://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I have been reading a bunch of articles on the SuperMemo site (including the
 &lt;a href="http://www.supermemo.com/english/ol.htm"&gt;original thesis&lt;/a&gt; of P. A. Wozniack, the creator of SuperMemo).  I initially
 started off trying to understand the algorithms SM2,5 and 8 which org-drill
@@ -237,7 +237,7 @@ mentally. Exercise, sleep, eat well, avoid caffeine.
 
 &lt;li&gt;Try &lt;a href="http://www.supermemo.com/help/read.htm"&gt;incremental&lt;/a&gt; &lt;a href="http://www.supermemo.com/articles/devour.htm"&gt;reading&lt;/a&gt;, as an input source of items into your memory system.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>learning</category><category>life</category><category>memory</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</guid><pubDate>Fri, 24 Oct 2014 13:37:07 GMT</pubDate></item><item><title>Learning to use Org-drill</title><link>http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/ul&gt;</description><category>learning</category><category>life</category><category>memory</category><category>software</category><guid>https://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html</guid><pubDate>Fri, 24 Oct 2014 13:37:07 GMT</pubDate></item><item><title>Learning to use Org-drill</title><link>https://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Org-drill is an Org-mode extension that provides spaced-repetition and
 flash-card functionality.  It has a &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;wonderful documentation on Worg&lt;/a&gt;, but
 somehow I couldn't get myself to read the whole document, and setup org-drill,
@@ -277,7 +277,7 @@ Cram mode and incremental reading are also things I want to try, as I go along.
 
 &lt;p&gt;
 Happy Learning!
-&lt;/p&gt;</description><category>emacs</category><category>learning</category><category>orgmode</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</guid><pubDate>Tue, 14 Oct 2014 04:07:04 GMT</pubDate></item><item><title>Recurse Center, 2014-07-22</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-22.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;/p&gt;</description><category>emacs</category><category>learning</category><category>orgmode</category><category>software</category><guid>https://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</guid><pubDate>Tue, 14 Oct 2014 04:07:04 GMT</pubDate></item><item><title>Recurse Center, 2014-07-22</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-22.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
 &lt;h2 id="sec-1"&gt;Mel's talks&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;ul class="org-ul"&gt;
@@ -370,7 +370,7 @@ yesterday.
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>learning</category><category>python</category><category>raspberry-pi</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-22.html</guid><pubDate>Tue, 22 Jul 2014 14:46:36 GMT</pubDate></item><item><title>Teach Yourself Programming in Ten Years!!</title><link>http://punchagan.muse-amuse.in/posts/teach-yourself-programming-in-ten-years.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>learning</category><category>python</category><category>raspberry-pi</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-22.html</guid><pubDate>Tue, 22 Jul 2014 14:46:36 GMT</pubDate></item><item><title>Teach Yourself Programming in Ten Years!!</title><link>https://punchagan.muse-amuse.in/posts/teach-yourself-programming-in-ten-years.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Here's an interesting article by Peter Norvig, Director of
 Research Google I have just copied the whole essay here… also
 here's a link to the Original one…
@@ -378,4 +378,4 @@ here's a link to the Original one…
 
 &lt;p&gt;
 &lt;b&gt;Update:&lt;/b&gt; - &lt;span class="timestamp-wrapper"&gt;&lt;span class="timestamp"&gt;[2010-10-11 Mon]&lt;/span&gt;&lt;/span&gt; - Removed the copied content
-&lt;/p&gt;</description><category>lafootgiri</category><category>learning</category><category>life</category><category>ology</category><guid>http://punchagan.muse-amuse.in/posts/teach-yourself-programming-in-ten-years.html</guid><pubDate>Fri, 02 Feb 2007 03:35:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>lafootgiri</category><category>learning</category><category>life</category><category>ology</category><guid>https://punchagan.muse-amuse.in/posts/teach-yourself-programming-in-ten-years.html</guid><pubDate>Fri, 02 Feb 2007 03:35:00 GMT</pubDate></item></channel></rss>

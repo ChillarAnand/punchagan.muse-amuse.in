@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (nikola)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="http://punchagan.muse-amuse.in/tags/nikola.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:17:04 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-08-05</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-05.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (nikola)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/nikola.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:26 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-08-05</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-05.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;Spent a couple of hours in the morning, trying to revive a html template for
 blaggregator, that I missed out on committing previously, and wiped out due
 to negligence in using `git clean`.
@@ -15,7 +15,7 @@ doesn't.  So, I need to think/talk about it today.
 hoping to work around an &lt;a href="https://github.com/sursh/blaggregator/issues/56"&gt;issue&lt;/a&gt; with Blaggregator, by somehow fixing it on the
 client side, but that's probably not the right way to go about it.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>nikola</category><category>raspberry-pi</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-05.html</guid><pubDate>Wed, 06 Aug 2014 03:44:33 GMT</pubDate></item><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/ul&gt;</description><category>nikola</category><category>raspberry-pi</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-05.html</guid><pubDate>Wed, 06 Aug 2014 03:44:33 GMT</pubDate></item><item><title>Org based posts in Nikola</title><link>https://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://binchen.org/"&gt;Chen Bin&lt;/a&gt; asked me to share my Nikola+Org work-flow, and share an
 example post.
 &lt;/p&gt;
@@ -93,7 +93,7 @@ that is then used by Nikola.
 &lt;li&gt;I also have &lt;a href="https://github.com/punchagan/dot-emacs/blob/master/punchagan.org#nikola-stuff"&gt;custom elisp&lt;/a&gt; to be able to make a new post, and deploy the site
 from within Emacs.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>blog</category><category>emacs</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</guid><pubDate>Sun, 20 Apr 2014 12:05:10 GMT</pubDate></item><item><title>Bookmarks and Quotes plugin</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/ul&gt;</description><category>blog</category><category>emacs</category><category>nikola</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</guid><pubDate>Sun, 20 Apr 2014 12:05:10 GMT</pubDate></item><item><title>Bookmarks and Quotes plugin</title><link>https://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I used to have a separate page for bookmarks and quotes on the old
 blog.  They will now be shared as regular posts with 5 or more
 bookmarks/quotes.  I use a bookmarklet in my browser to capture links
@@ -126,4 +126,4 @@ make it to the main feed, though.
 &lt;li&gt;The bookmarks feed doesn't really get too many updates. I use pinboard for my
 bookmarks, now.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sat, 19 Oct 2013 14:56:13 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sat, 19 Oct 2013 14:56:13 GMT</pubDate></item></channel></rss>

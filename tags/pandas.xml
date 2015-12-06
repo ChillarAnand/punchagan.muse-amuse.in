@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (pandas)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://punchagan.muse-amuse.in/tags/pandas.xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:07:30 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-06-24</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-06-24.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (pandas)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/pandas.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:26 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-06-24</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-06-24.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I worked for the whole day on implementing &lt;i&gt;an algorithm&lt;/i&gt; to analyze a
 cipher text, and guess the substitution cipher used.  The algorithm
 was pretty straight forward, and I had it "mostly" working, in a
@@ -49,4 +49,4 @@ dictionary.
 &lt;li&gt;This paper is 20 years old, and there would surely be work by others
 building on top of this, or doing it totally differently.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>crypto</category><category>pandas</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-06-24.html</guid><pubDate>Tue, 24 Jun 2014 13:44:34 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>crypto</category><category>pandas</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-06-24.html</guid><pubDate>Tue, 24 Jun 2014 13:44:34 GMT</pubDate></item></channel></rss>

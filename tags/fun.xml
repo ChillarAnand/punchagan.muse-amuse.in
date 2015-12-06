@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (fun)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://punchagan.muse-amuse.in/tags/fun.xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:07:31 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Surat Ultimate Open</title><link>http://punchagan.muse-amuse.in/posts/surat-ultimate-open.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (fun)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/fun.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:26 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Surat Ultimate Open</title><link>https://punchagan.muse-amuse.in/posts/surat-ultimate-open.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 About 20 of us, gathered at Andheri Station, to leave for Surat.
 I was the only one playing in his/her first tournament, and it was
 exciting to be a part of a squad, going to a tournament.  A first
@@ -157,7 +157,7 @@ to watch, cheer and capture!
 Even if, our team won just one out of the 6 games we played, it
 was an Ultimate tourney.  Literally!  Looking forward to future
 tournaments.
-&lt;/p&gt;</description><category>awesome</category><category>first</category><category>fun</category><category>sport</category><category>surat</category><category>ultimate</category><guid>http://punchagan.muse-amuse.in/posts/surat-ultimate-open.html</guid><pubDate>Tue, 26 Mar 2013 05:41:00 GMT</pubDate></item><item><title>Browsing the streets with Firefox</title><link>http://punchagan.muse-amuse.in/posts/browsing-the-streets-with-firefox.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>awesome</category><category>first</category><category>fun</category><category>sport</category><category>surat</category><category>ultimate</category><guid>https://punchagan.muse-amuse.in/posts/surat-ultimate-open.html</guid><pubDate>Tue, 26 Mar 2013 05:41:00 GMT</pubDate></item><item><title>Browsing the streets with Firefox</title><link>https://punchagan.muse-amuse.in/posts/browsing-the-streets-with-firefox.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I bought a new bike, about a month ago, and today was the first
 longish ride on it.  Well, longish compared to my ~1.5km rides to
 the office.
@@ -179,7 +179,7 @@ whole.
 I didn't time myself, but I roughly covered about 25 kms in say
 about ~2 hours.  Hoping to start riding more frequently and going
 on longer rides.
-&lt;/p&gt;</description><category>bicycling</category><category>fun</category><guid>http://punchagan.muse-amuse.in/posts/browsing-the-streets-with-firefox.html</guid><pubDate>Sun, 02 Sep 2012 17:25:00 GMT</pubDate></item><item><title>Do our eyes suck at blue?</title><link>http://punchagan.muse-amuse.in/posts/do-our-eyes-suck-at-blue.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>bicycling</category><category>fun</category><guid>https://punchagan.muse-amuse.in/posts/browsing-the-streets-with-firefox.html</guid><pubDate>Sun, 02 Sep 2012 17:25:00 GMT</pubDate></item><item><title>Do our eyes suck at blue?</title><link>https://punchagan.muse-amuse.in/posts/do-our-eyes-suck-at-blue.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 This is some fun I had, trying to replicate what was written in
 this post. I had been trying to understand what was happening
 here, and found this post on Hacker News very helpful.
@@ -306,14 +306,14 @@ Here are a few images.  (View them in their original size)
 
 
 &lt;div class="figure"&gt;
-&lt;p&gt;&lt;img src="http://punchagan.muse-amuse.in/images/channels.png" alt="channels.png"&gt;
+&lt;p&gt;&lt;img src="https://punchagan.muse-amuse.in/images/channels.png" alt="channels.png"&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 
 
 &lt;div class="figure"&gt;
-&lt;p&gt;&lt;img src="http://punchagan.muse-amuse.in/images/subsample.png" alt="subsample.png"&gt;
+&lt;p&gt;&lt;img src="https://punchagan.muse-amuse.in/images/subsample.png" alt="subsample.png"&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>fun</category><category>hack</category><category>image_processing</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/do-our-eyes-suck-at-blue.html</guid><pubDate>Sat, 13 Nov 2010 07:56:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>fun</category><category>hack</category><category>image_processing</category><category>python</category><guid>https://punchagan.muse-amuse.in/posts/do-our-eyes-suck-at-blue.html</guid><pubDate>Sat, 13 Nov 2010 07:56:00 GMT</pubDate></item></channel></rss>

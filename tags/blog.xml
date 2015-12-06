@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (blog)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="http://punchagan.muse-amuse.in/tags/blog.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:17:04 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org based posts in Nikola</title><link>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (blog)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/blog.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:25 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Org based posts in Nikola</title><link>https://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://binchen.org/"&gt;Chen Bin&lt;/a&gt; asked me to share my Nikola+Org work-flow, and share an
 example post.
 &lt;/p&gt;
@@ -77,7 +77,7 @@ that is then used by Nikola.
 &lt;li&gt;I also have &lt;a href="https://github.com/punchagan/dot-emacs/blob/master/punchagan.org#nikola-stuff"&gt;custom elisp&lt;/a&gt; to be able to make a new post, and deploy the site
 from within Emacs.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>blog</category><category>emacs</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</guid><pubDate>Sun, 20 Apr 2014 12:05:10 GMT</pubDate></item><item><title>Bookmarks and Quotes plugin</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/ul&gt;</description><category>blog</category><category>emacs</category><category>nikola</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/org-based-posts-in-nikola.html</guid><pubDate>Sun, 20 Apr 2014 12:05:10 GMT</pubDate></item><item><title>Bookmarks and Quotes plugin</title><link>https://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I used to have a separate page for bookmarks and quotes on the old
 blog.  They will now be shared as regular posts with 5 or more
 bookmarks/quotes.  I use a bookmarklet in my browser to capture links
@@ -110,7 +110,7 @@ make it to the main feed, though.
 &lt;li&gt;The bookmarks feed doesn't really get too many updates. I use pinboard for my
 bookmarks, now.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sat, 19 Oct 2013 14:56:13 GMT</pubDate></item><item><title>Blogging with Nikola and Org-mode</title><link>http://punchagan.muse-amuse.in/posts/blogging-with-nikola-and-org-mode.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/ul&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sat, 19 Oct 2013 14:56:13 GMT</pubDate></item><item><title>Blogging with Nikola and Org-mode</title><link>https://punchagan.muse-amuse.in/posts/blogging-with-nikola-and-org-mode.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Sigh! I made yet another change to the way this blog gets published.
 But, I have a feeling this mechanism, is here to stay!
 &lt;/p&gt;
@@ -129,7 +129,7 @@ Python&lt;/a&gt;, I was able to move everything over to use Nikola.
 
 &lt;p&gt;
 Hopefully, I'll keep my blog more updated, from here on!
-&lt;/p&gt;</description><category>blog</category><category>hack</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/blogging-with-nikola-and-org-mode.html</guid><pubDate>Wed, 16 Oct 2013 17:10:47 GMT</pubDate></item><item><title>Changes to Blog</title><link>http://punchagan.muse-amuse.in/posts/changes-to-blog.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>blog</category><category>hack</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/blogging-with-nikola-and-org-mode.html</guid><pubDate>Wed, 16 Oct 2013 17:10:47 GMT</pubDate></item><item><title>Changes to Blog</title><link>https://punchagan.muse-amuse.in/posts/changes-to-blog.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Well, as you can see, I've changed my blog a bit.  I had been
 trying to make it gel well with org-mode and looking for ways to
 allow me to share arbit stuff with separate feeds for tags,
@@ -162,7 +162,7 @@ in case you've something to say to me.
 
 &lt;p&gt;
 Adios.
-&lt;/p&gt;</description><category>blog</category><category>orgmode</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/changes-to-blog.html</guid><pubDate>Wed, 02 Feb 2011 18:11:00 GMT</pubDate></item><item><title>Windows©, Doors or Homes!??!</title><link>http://punchagan.muse-amuse.in/posts/windowsc-doors-or-homes.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>blog</category><category>orgmode</category><category>python</category><guid>https://punchagan.muse-amuse.in/posts/changes-to-blog.html</guid><pubDate>Wed, 02 Feb 2011 18:11:00 GMT</pubDate></item><item><title>Windows©, Doors or Homes!??!</title><link>https://punchagan.muse-amuse.in/posts/windowsc-doors-or-homes.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 A couple of days back.. one guy called green&lt;sub&gt;mamba&lt;/sub&gt; asked me.. "Why
 do you use Linux (GNU/Linux) and not Windows? What is it that
 makes LinuxGNU/Linux] so special for you?" I avoided that
@@ -294,4 +294,4 @@ system, for free".  –Linus Torvalds
 &lt;p&gt;
 "The box said that I needed to have Windows 98 or better… so I
 installed Linux."  – LinuxNewbie.org
-&lt;/p&gt;</description><category>blog</category><category>ology</category><category>rms</category><category>song</category><guid>http://punchagan.muse-amuse.in/posts/windowsc-doors-or-homes.html</guid><pubDate>Sun, 01 Apr 2007 13:44:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>blog</category><category>ology</category><category>rms</category><category>song</category><guid>https://punchagan.muse-amuse.in/posts/windowsc-doors-or-homes.html</guid><pubDate>Sun, 01 Apr 2007 13:44:00 GMT</pubDate></item></channel></rss>

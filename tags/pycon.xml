@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (pycon)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://punchagan.muse-amuse.in/tags/pycon.xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:07:30 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making PyCon India better (for myself)</title><link>http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I've &lt;a href="http://punchagan.muse-amuse.in/posts/notes-from-pycon.html"&gt;ranted before&lt;/a&gt; about PyCon not meeting my expectations, and I even skipped
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (pycon)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/pycon.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:27 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making PyCon India better (for myself)</title><link>https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I've &lt;a href="https://punchagan.muse-amuse.in/posts/notes-from-pycon.html"&gt;ranted before&lt;/a&gt; about PyCon not meeting my expectations, and I even skipped
 going to the last PyCon.  Somehow, I hoped that it would be better this year,
 but no such thing happened.
 &lt;/p&gt;
@@ -26,7 +26,7 @@ opportunity to iron out kinks.
 &lt;/ul&gt;
 
 &lt;p&gt;
-I think the talks could be improved drastically. A lot&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt; has been said,
+I think the talks could be improved drastically. A lot&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt; has been said,
 already.  Here's a summary of how I see it.
 &lt;/p&gt;
 
@@ -46,11 +46,11 @@ PyCon US, we could
 recording of the speaker presenting some topic.
 &lt;/li&gt;
 
-&lt;li&gt;Ask for a granular outline &lt;sup&gt;&lt;a id="fnr.3" name="fnr.3" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.3"&gt;3&lt;/a&gt;&lt;/sup&gt; along with rough timing information, instead of
+&lt;li&gt;Ask for a granular outline &lt;sup&gt;&lt;a id="fnr.3" name="fnr.3" class="footref" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.3"&gt;3&lt;/a&gt;&lt;/sup&gt; along with rough timing information, instead of
 just an abstract.
 &lt;/li&gt;
 
-&lt;li&gt;Have a bunch of resources &lt;sup&gt;&lt;a id="fnr.4" name="fnr.4" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.4"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.5" name="fnr.5" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.5"&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.6" name="fnr.6" class="footref" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.6"&gt;6&lt;/a&gt;&lt;/sup&gt; available for speakers to improve on their
+&lt;li&gt;Have a bunch of resources &lt;sup&gt;&lt;a id="fnr.4" name="fnr.4" class="footref" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.4"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.5" name="fnr.5" class="footref" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.5"&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id="fnr.6" name="fnr.6" class="footref" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fn.6"&gt;6&lt;/a&gt;&lt;/sup&gt; available for speakers to improve on their
 proposals/accepted talks.
 &lt;/li&gt;
 
@@ -77,30 +77,30 @@ for the speakers too.
 &lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
 &lt;div id="text-footnotes"&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="https://plus.google.com/+sankarshanmukhopadhyay/posts/8QY4o3hiyLT"&gt;https://plus.google.com/+sankarshanmukhopadhyay/posts/8QY4o3hiyLT&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="https://mail.python.org/pipermail/inpycon/2014-October/009189.html"&gt;https://mail.python.org/pipermail/inpycon/2014-October/009189.html&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.3" name="fn.3" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.3"&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.3" name="fn.3" class="footnum" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.3"&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="https://us.pycon.org/2015/speaking/proposal_advice/samples/SpacePug/"&gt;https://us.pycon.org/2015/speaking/proposal_advice/samples/SpacePug/&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.4" name="fn.4" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.4"&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.4" name="fn.4" class="footnum" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.4"&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="https://us.pycon.org/2015/speaking/proposal-resources/"&gt;https://us.pycon.org/2015/speaking/proposal-resources/&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.5" name="fn.5" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.5"&gt;5&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.5" name="fn.5" class="footnum" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.5"&gt;5&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="http://doughellmann.com/2011/10/18/how-i-review-a-pycon-talk-proposal.html"&gt;http://doughellmann.com/2011/10/18/how-i-review-a-pycon-talk-proposal.html&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.6" name="fn.6" class="footnum" href="http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.6"&gt;6&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.6" name="fn.6" class="footnum" href="https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html#fnr.6"&gt;6&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="http://www.craigkerstiens.com/2012/06/19/pro-tips-for-conference-talks/"&gt;http://www.craigkerstiens.com/2012/06/19/pro-tips-for-conference-talks/&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>event</category><category>pycon</category><guid>http://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html</guid><pubDate>Tue, 14 Oct 2014 11:53:47 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>event</category><category>pycon</category><guid>https://punchagan.muse-amuse.in/posts/making-pycon-india-better-for-myself.html</guid><pubDate>Tue, 14 Oct 2014 11:53:47 GMT</pubDate></item></channel></rss>

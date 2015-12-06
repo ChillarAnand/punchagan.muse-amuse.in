@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (code)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="http://punchagan.muse-amuse.in/tags/code.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:17:04 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Say Howdy with Emacs!</title><link>http://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (code)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/code.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:28 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Say Howdy with Emacs!</title><link>https://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Staying in touch with people is something I'm not very good at.  Since I am not
 on popular (among my friends/family) networks – FB and Whatsapp – I don't
 even see random updates from people, to get some sense of being in touch.
@@ -42,7 +42,7 @@ suite, that will hopefully make it easier for others to contribute.
 &lt;p&gt;
 I'm looking forward to experimenting with this over the next few weeks and
 improving it. Hopefully, it'll help me keep in touch, better than I do now.
-&lt;/p&gt;</description><category>blag</category><category>code</category><category>emacs</category><category>hack</category><category>howdy</category><guid>http://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</guid><pubDate>Thu, 28 May 2015 13:09:24 GMT</pubDate></item><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>blag</category><category>code</category><category>emacs</category><category>hack</category><category>howdy</category><guid>https://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</guid><pubDate>Thu, 28 May 2015 13:09:24 GMT</pubDate></item><item><title>Martin Fowler on Refactoring @ RubyRogues</title><link>https://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I stumbled on a &lt;a href="http://rubyrogues.com/178-rr-book-club-refactoring-ruby-with-martin-fowler/"&gt;Ruby Rogues podcast&lt;/a&gt; yesterday, which had &lt;a href="http://martinfowlwer.com"&gt;Martin Fowler&lt;/a&gt; as the
 guest.  I really enjoyed the discussion on Refactoring (the noun, the verb and
 the book!)
@@ -75,8 +75,8 @@ Or, at least we should strive to make it so!
 &lt;p&gt;
 The discussion, as always on this podcast, was very lively, pleasant and
 enjoyable! Enjoy!
-&lt;/p&gt;</description><category>advice</category><category>code</category><category>programming</category><guid>http://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</guid><pubDate>Sat, 25 Oct 2014 14:23:25 GMT</pubDate></item><item><title>Simple org-clock and gnome/pidgin integration</title><link>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-&lt;b&gt;See update &lt;a href="http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html#sec-1"&gt;below&lt;/a&gt;&lt;/b&gt;
+&lt;/p&gt;</description><category>advice</category><category>code</category><category>programming</category><guid>https://punchagan.muse-amuse.in/posts/martin-fowler-on-refactoring-rubyrogues.html</guid><pubDate>Sat, 25 Oct 2014 14:23:25 GMT</pubDate></item><item><title>Simple org-clock and gnome/pidgin integration</title><link>https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;b&gt;See update &lt;a href="https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html#sec-1"&gt;below&lt;/a&gt;&lt;/b&gt;
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -156,7 +156,7 @@ Here is the new code.
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'org-clock-out-hook&lt;/span&gt; &lt;span class="ss"&gt;'pc/turn-on-notifications&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>code</category><category>emacs</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item><item><title>Recurse Center, 2014-07-06</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-06.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>code</category><category>emacs</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item><item><title>Recurse Center, 2014-07-06</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-06.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I took it easy during the weekend, and went on a nice camp with my a cousin's
 family to TobyHanna State Park for a day or so, and spent the remaining (long)
 weekend at their place in PA.  It was a pretty nice break!
@@ -181,7 +181,7 @@ guess the next step is to cache things somehow.
 &lt;p&gt;
 I also added support for viewing the sources of built-in types.  It was pretty
 simple, once I had everything working with libclang.
-&lt;/p&gt;</description><category>code</category><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-07-06.html</guid><pubDate>Tue, 08 Jul 2014 03:28:39 GMT</pubDate></item><item><title>A smarter 404 page.</title><link>http://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>code</category><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-06.html</guid><pubDate>Tue, 08 Jul 2014 03:28:39 GMT</pubDate></item><item><title>A smarter 404 page.</title><link>https://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 &lt;a href="http://twitter.com/avudem"&gt;Voodoo&lt;/a&gt; found a broken link referring to a one of my posts, on Quora.
 Given that I have changed my site generator a bunch of times now, it
 is quite possible that there are other broken links at various other
@@ -192,7 +192,7 @@ file.  My glue code essentially, just figures out the search term from
 the URL, performs a Fuse search on the json data created by Nikola's
 search plugin, and returns a list of top 5 results.  It just took me
 about an hour to write, but is pretty useful, I think.
-&lt;/p&gt;</description><category>code</category><category>fuzzy-search</category><category>hack</category><category>js</category><guid>http://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</guid><pubDate>Mon, 11 Nov 2013 07:06:53 GMT</pubDate></item><item><title>Bookmarks and Quotes plugin</title><link>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>code</category><category>fuzzy-search</category><category>hack</category><category>js</category><guid>https://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</guid><pubDate>Mon, 11 Nov 2013 07:06:53 GMT</pubDate></item><item><title>Bookmarks and Quotes plugin</title><link>https://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I used to have a separate page for bookmarks and quotes on the old
 blog.  They will now be shared as regular posts with 5 or more
 bookmarks/quotes.  I use a bookmarklet in my browser to capture links
@@ -225,7 +225,7 @@ make it to the main feed, though.
 &lt;li&gt;The bookmarks feed doesn't really get too many updates. I use pinboard for my
 bookmarks, now.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sat, 19 Oct 2013 14:56:13 GMT</pubDate></item><item><title>GitHub Cue: Recommendations for GitHub Repos</title><link>http://punchagan.muse-amuse.in/posts/github-cue-recommendations-for-github-repos.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/ul&gt;</description><category>blog</category><category>code</category><category>nikola</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/bookmarks-and-quotes-plugin.html</guid><pubDate>Sat, 19 Oct 2013 14:56:13 GMT</pubDate></item><item><title>GitHub Cue: Recommendations for GitHub Repos</title><link>https://punchagan.muse-amuse.in/posts/github-cue-recommendations-for-github-repos.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 If you aren't already aware of it, I'm one of those people who
 goes around saying, "GitHub is my Facebook".  I spend quite a lot
 of time on GitHub, browsing the work of various people, looking at
@@ -272,7 +272,7 @@ think of.
 
 &lt;p&gt;
 I would appreciate any further ideas and suggestions.  Thanks!
-&lt;/p&gt;</description><category>app</category><category>chrome</category><category>code</category><category>github</category><category>hack</category><guid>http://punchagan.muse-amuse.in/posts/github-cue-recommendations-for-github-repos.html</guid><pubDate>Fri, 05 Aug 2011 13:21:00 GMT</pubDate></item><item><title>GetHub: Chrome Notifications for Github updates</title><link>http://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>app</category><category>chrome</category><category>code</category><category>github</category><category>hack</category><guid>https://punchagan.muse-amuse.in/posts/github-cue-recommendations-for-github-repos.html</guid><pubDate>Fri, 05 Aug 2011 13:21:00 GMT</pubDate></item><item><title>GetHub: Chrome Notifications for Github updates</title><link>https://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Over the last two days, I hacked up my first Chrome extension.
 I've been using Chrome only for the past couple of weeks or so and
 I begin to like it, though some of the extensions aren't as mature
@@ -334,7 +334,7 @@ one-time verification fee that Google asks for.
 Happy GitHubbing!
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>chrome</category><category>code</category><category>first</category><category>git</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</guid><pubDate>Tue, 01 Mar 2011 19:04:00 GMT</pubDate></item><item><title>Git powered wikis improved: My bit</title><link>http://punchagan.muse-amuse.in/posts/git-powered-wikis-improved-my-bit.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>chrome</category><category>code</category><category>first</category><category>git</category><category>software</category><guid>https://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</guid><pubDate>Tue, 01 Mar 2011 19:04:00 GMT</pubDate></item><item><title>Git powered wikis improved: My bit</title><link>https://punchagan.muse-amuse.in/posts/git-powered-wikis-improved-my-bit.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I accidentally came across the blog-post Git-powered wikis
 improved - GitHub. And this particular paragraph caught my
 eye:
@@ -367,14 +367,14 @@ been accepted.  :)
 &lt;p&gt;
 If not anything more, I hope, at least a couple of curious people
 will explore org-mode and find it useful.
-&lt;/p&gt;</description><category>code</category><category>contribute</category><category>emacs</category><category>foss</category><category>git</category><category>orgmode</category><guid>http://punchagan.muse-amuse.in/posts/git-powered-wikis-improved-my-bit.html</guid><pubDate>Fri, 04 Feb 2011 12:25:00 GMT</pubDate></item><item><title>Raise windows (on current desktop) xdotool &amp; bash</title><link>http://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I posted a snippet &lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="http://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; of python code that used xdotool to
-raise windows.  I got one patch from dusual &lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="http://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt; that
+&lt;/p&gt;</description><category>code</category><category>contribute</category><category>emacs</category><category>foss</category><category>git</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/git-powered-wikis-improved-my-bit.html</guid><pubDate>Fri, 04 Feb 2011 12:25:00 GMT</pubDate></item><item><title>Raise windows (on current desktop) xdotool &amp; bash</title><link>https://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I posted a snippet &lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; of python code that used xdotool to
+raise windows.  I got one patch from dusual &lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt; that
 enabled raising of windows in the current workspace only.
 &lt;/p&gt;
 
 &lt;p&gt;
-More importantly, Jordan gave a one-liner &lt;sup&gt;&lt;a id="fnr.3" name="fnr.3" class="footref" href="http://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.3"&gt;3&lt;/a&gt;&lt;/sup&gt; in bash,
+More importantly, Jordan gave a one-liner &lt;sup&gt;&lt;a id="fnr.3" name="fnr.3" class="footref" href="https://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.3"&gt;3&lt;/a&gt;&lt;/sup&gt; in bash,
 that could do the same thing as my long and elaborate python
 snippet.  I had a feeling that this would be much shorter in bash,
 but I don't feel comfortable writing bash scripts. :P
@@ -413,18 +413,18 @@ it.
 &lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
 &lt;div id="text-footnotes"&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="http://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 My python snippet
 &lt;/p&gt;&lt;/div&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="http://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="https://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 dusual on twitter
 &lt;/p&gt;&lt;/div&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.3" name="fn.3" class="footnum" href="http://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.3"&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.3" name="fn.3" class="footnum" href="https://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.3"&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 Jordan's one liner
 &lt;/p&gt;&lt;/div&gt;
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>code</category><category>hack</category><guid>http://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html</guid><pubDate>Sat, 06 Nov 2010 09:00:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>code</category><category>hack</category><guid>https://punchagan.muse-amuse.in/posts/raise-windows-on-current-desktop-xdotool-bash.html</guid><pubDate>Sat, 06 Nov 2010 09:00:00 GMT</pubDate></item></channel></rss>

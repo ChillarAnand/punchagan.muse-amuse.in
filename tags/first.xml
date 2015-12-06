@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (first)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://punchagan.muse-amuse.in/tags/first.xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:07:33 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Surat Ultimate Open</title><link>http://punchagan.muse-amuse.in/posts/surat-ultimate-open.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (first)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/first.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:26 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Surat Ultimate Open</title><link>https://punchagan.muse-amuse.in/posts/surat-ultimate-open.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 About 20 of us, gathered at Andheri Station, to leave for Surat.
 I was the only one playing in his/her first tournament, and it was
 exciting to be a part of a squad, going to a tournament.  A first
@@ -157,7 +157,7 @@ to watch, cheer and capture!
 Even if, our team won just one out of the 6 games we played, it
 was an Ultimate tourney.  Literally!  Looking forward to future
 tournaments.
-&lt;/p&gt;</description><category>awesome</category><category>first</category><category>fun</category><category>sport</category><category>surat</category><category>ultimate</category><guid>http://punchagan.muse-amuse.in/posts/surat-ultimate-open.html</guid><pubDate>Tue, 26 Mar 2013 05:41:00 GMT</pubDate></item><item><title>GetHub: Chrome Notifications for Github updates</title><link>http://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>awesome</category><category>first</category><category>fun</category><category>sport</category><category>surat</category><category>ultimate</category><guid>https://punchagan.muse-amuse.in/posts/surat-ultimate-open.html</guid><pubDate>Tue, 26 Mar 2013 05:41:00 GMT</pubDate></item><item><title>GetHub: Chrome Notifications for Github updates</title><link>https://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Over the last two days, I hacked up my first Chrome extension.
 I've been using Chrome only for the past couple of weeks or so and
 I begin to like it, though some of the extensions aren't as mature
@@ -219,7 +219,7 @@ one-time verification fee that Google asks for.
 Happy GitHubbing!
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>chrome</category><category>code</category><category>first</category><category>git</category><category>software</category><guid>http://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</guid><pubDate>Tue, 01 Mar 2011 19:04:00 GMT</pubDate></item><item><title>I'm back</title><link>http://punchagan.muse-amuse.in/posts/im-back.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>chrome</category><category>code</category><category>first</category><category>git</category><category>software</category><guid>https://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</guid><pubDate>Tue, 01 Mar 2011 19:04:00 GMT</pubDate></item><item><title>I'm back</title><link>https://punchagan.muse-amuse.in/posts/im-back.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 After a short break, I'm back to blogging!
 A few things have changed meanwhile. A lot haven't.
 &lt;/p&gt;
@@ -261,4 +261,4 @@ by having their resumes and letters of recommendations and other
 client that I hacked up. Emacs and Org-mode all the way! This is the
 first post by me (and probably anybody) from org2blog!
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>blab</category><category>first</category><category>org2blog</category><category>web</category><guid>http://punchagan.muse-amuse.in/posts/im-back.html</guid><pubDate>Sat, 17 Jul 2010 12:30:00 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>blab</category><category>first</category><category>org2blog</category><category>web</category><guid>https://punchagan.muse-amuse.in/posts/im-back.html</guid><pubDate>Sat, 17 Jul 2010 12:30:00 GMT</pubDate></item></channel></rss>

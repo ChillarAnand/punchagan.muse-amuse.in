@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (python)</title><link>http://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://punchagan.muse-amuse.in/tags/python.xml"></atom:link><language>en</language><lastBuildDate>Sun, 15 Nov 2015 15:07:30 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Playing music using mpsyt from Emacs</title><link>http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (python)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/python.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:10:28 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Playing music using mpsyt from Emacs</title><link>https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I've started using the wonderful &lt;a href="https://github.com/np1/mps-youtube/"&gt;mpsyt&lt;/a&gt; to play any music from youtube, since
 I'm not really interested in the video.  But, since I use emacs for chat/IRC, I
 end up getting youtube links into emacs and opening them opens them up in my
@@ -72,20 +72,20 @@ Not all tasks/actions are achievable through &lt;code&gt;mpsyt&lt;/code&gt;'s co
 &lt;/p&gt;
 
 &lt;p&gt;
-I ended up writing more code than I thought I would have to&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;.  But, I'm
+I ended up writing more code than I thought I would have to&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;.  But, I'm
 pretty happy with how this all works, right now.
 &lt;/p&gt;
 &lt;div id="footnotes"&gt;
 &lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
 &lt;div id="text-footnotes"&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 - Isn't it true, more often than not?
 &lt;/p&gt;&lt;/div&gt;
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>mpsyt</category><category>python</category><guid>http://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</guid><pubDate>Mon, 20 Apr 2015 18:17:18 GMT</pubDate></item><item><title>Recurse Center, 2014-08-27</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-27.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>mpsyt</category><category>python</category><guid>https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</guid><pubDate>Mon, 20 Apr 2015 18:17:18 GMT</pubDate></item><item><title>Recurse Center, 2014-08-27</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-27.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I spent the whole of yesterday just working on the LED-bot.
 &lt;/li&gt;
 &lt;li&gt;Spent some time cleaning up meta-stuff about the project, making it a real
@@ -100,7 +100,7 @@ After some playing around with trying to get rid of Python for-loops, I was
 able to use PIL's &lt;code&gt;image.tobytes&lt;/code&gt; and some image cropping to get the data to
 be sent to the LEDs, and it sped up the display quite a bit.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>PIL</category><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-27.html</guid><pubDate>Thu, 28 Aug 2014 13:51:30 GMT</pubDate></item><item><title>Recurse Center, 2014-08-26</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-26.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/ul&gt;</description><category>PIL</category><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-27.html</guid><pubDate>Thu, 28 Aug 2014 13:51:30 GMT</pubDate></item><item><title>Recurse Center, 2014-08-26</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-26.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I spent most of the day refactoring the code for the LED Bot, and am happy
 with the way it looks right now.
 &lt;/li&gt;
@@ -112,14 +112,14 @@ screens!
 others. &lt;a href="http://comparea.org"&gt;http://comparea.org&lt;/a&gt;, &lt;a href="https://medium.com/@vijayp/of-taxis-and-rainbows-f6bc289679a1"&gt;Taxis and Rainbows&lt;/a&gt; were the most interesting
 ones for me.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-26.html</guid><pubDate>Wed, 27 Aug 2014 14:23:27 GMT</pubDate></item><item><title>Recurse Center, 2014-08-20</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-20.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-26.html</guid><pubDate>Wed, 27 Aug 2014 14:23:27 GMT</pubDate></item><item><title>Recurse Center, 2014-08-20</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-20.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I finished going through the third of Dave Beazley's tutorials on Generators
 and Co-routines.
 &lt;/li&gt;
 &lt;li&gt;Also refactored api-diff to use astroid, instead of the ast module.  Kinda
 happy with what I have, for now. May be more, later…
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-20.html</guid><pubDate>Sat, 23 Aug 2014 02:43:04 GMT</pubDate></item><item><title>Recurse Center, 2014-08-21</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-21.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-20.html</guid><pubDate>Sat, 23 Aug 2014 02:43:04 GMT</pubDate></item><item><title>Recurse Center, 2014-08-21</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-21.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I added an additional view to xtab, to see all the pages that were killed,
 and reopen them, if you so choose.
 &lt;/li&gt;
@@ -132,7 +132,7 @@ School.
 &lt;li&gt;A bunch of awesome thursday presentations, and job fair and awesome food by
 Chef Warren!
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>jobs</category><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-21.html</guid><pubDate>Fri, 22 Aug 2014 14:33:34 GMT</pubDate></item><item><title>Recurse Center, 2014-08-19</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-19.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/ul&gt;</description><category>jobs</category><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-21.html</guid><pubDate>Fri, 22 Aug 2014 14:33:34 GMT</pubDate></item><item><title>Recurse Center, 2014-08-19</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-19.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I spent most of the day working through David Beazly's tutorials on
 generators and coroutines, and it was mind bending.
 &lt;/li&gt;
@@ -143,7 +143,7 @@ them before, and was totally surprised to come across them.
 refactoring the api-diff tool to remove duplication of code between classes
 and modules. But, not very happy with the way I did it.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-19.html</guid><pubDate>Wed, 20 Aug 2014 22:06:53 GMT</pubDate></item><item><title>Recurse Center, 2014-08-18</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-18.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-19.html</guid><pubDate>Wed, 20 Aug 2014 22:06:53 GMT</pubDate></item><item><title>Recurse Center, 2014-08-18</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-18.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I refactored the API-diff code, and am pretty happy with what I have right
 now, and need to add support for diffing Classes. I'm considering using
 &lt;a href="http://www.astroid.org"&gt;Atstroid&lt;/a&gt; instead of Python's &lt;code&gt;ast&lt;/code&gt; module, since some of the work that I want
@@ -155,7 +155,7 @@ strings and arrays.
 &lt;li&gt;José Valim's presentation on Elixir was interesting and got me reading up a
 stuff about concurrency, and related stuff.  Thanks!
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>elixir</category><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-18.html</guid><pubDate>Tue, 19 Aug 2014 17:11:49 GMT</pubDate></item><item><title>Recurse Center, 2014-08-17</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-17.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;/ul&gt;</description><category>elixir</category><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-18.html</guid><pubDate>Tue, 19 Aug 2014 17:11:49 GMT</pubDate></item><item><title>Recurse Center, 2014-08-17</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-17.html</link><dc:creator>punchagan</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
 &lt;h2 id="sec-1"&gt;Friday&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;ul class="org-ul"&gt;
@@ -177,7 +177,7 @@ images.
 I almost didn't write any code during the weekend.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-17.html</guid><pubDate>Tue, 19 Aug 2014 01:59:07 GMT</pubDate></item><item><title>Recurse Center, 2014-08-14</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-14.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/div&gt;</description><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-17.html</guid><pubDate>Tue, 19 Aug 2014 01:59:07 GMT</pubDate></item><item><title>Recurse Center, 2014-08-14</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-14.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I spent the morning cleaning up the "repr" functions of the diff classes, so
 that the diff of functions between two modules can be printed out in a
 somewhat meaningful way.
@@ -193,7 +193,7 @@ the evening finishing off &lt;a href="http://craphound.com/homeland/"&gt;Homelan
 cares about the Government and policies and technology MUST read it!  Thanks
 Cory.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-14.html</guid><pubDate>Fri, 15 Aug 2014 22:09:59 GMT</pubDate></item><item><title>Recurse Center, 2014-08-13</title><link>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-13.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-14.html</guid><pubDate>Fri, 15 Aug 2014 22:09:59 GMT</pubDate></item><item><title>Recurse Center, 2014-08-13</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-13.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;I feel like I didn't get much done yesterday.
 &lt;/li&gt;
 &lt;li&gt;I mostly worked on the API differ, but didn't get much done.  I have a few
@@ -229,4 +229,4 @@ works better I suppose.
 I'd be interested to try this out, sometime.
 &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>http://punchagan.muse-amuse.in/posts/recurse-center-2014-08-13.html</guid><pubDate>Thu, 14 Aug 2014 15:11:59 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-13.html</guid><pubDate>Thu, 14 Aug 2014 15:11:59 GMT</pubDate></item></channel></rss>
