@@ -83,24 +83,22 @@ Creative Commons Attribution 3.0 Unported License</a>
             <span class="post-date">19 Dec 2015</span>
         </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>
-I have started to use <a href="http://pinboard.in">Pinboard</a> for keeping track of the stuff I want to read,
-apart from keeping track of bookmarks.
-</p>
-
-<p>
-It has a bookmarklet that works pretty well for adding stuff into my "to-read"
-list.  I then catch up on this list using <code>elfeed</code> and subscribing to the unread
-items' RSS feed.  The work-flow is pretty nice until here, but when it comes to
-the actual reading part, the entries in the feed don't have th content I want
-to read, and I end up opening the links in a browser.
+I have started to use <a href="http://pinboard.in">Pinboard</a>'s <code>unread</code> tag as my to-read list.  It has a
+bookmark-let that works pretty well for adding stuff into my "to-read" list.  I
+then catch up on this list using <code>elfeed</code> and subscribing to the unread items'
+RSS feed.  The work-flow is pretty nice for adding stuff into the list, and
+finding items on the list. But, when it comes to the actual reading part, the
+entries in the feed don't have the actual content I want to read, and I end up
+opening the links in a browser.
 </p>
 
 <p>
 Inspired by a comment <a href="https://github.com/sursh/blaggregator/pull/80#issuecomment-165849126">here</a>, I realized it should be pretty easy to setup a hook
 that fetches the actual content to make my reading work-flow smoother. I wrote
-a <a href="https://github.com/punchagan/dot-files/blob/master/bin/get_article.py">small script</a> that uses <a href="https://github.com/buriy/python-readability">python-readability</a> to fetch the content of a given
-url, and then hooked that onto <code>elfeed-new-entry-hook</code>.  All my the old entries
-also get fixed up, just by calling <code>elfeed-apply-hooks-now</code>.
+a <a href="https://github.com/punchagan/dot-files/blob/master/bin/get_article.py">small script</a>, using <a href="https://github.com/buriy/python-readability">python-readability</a>, to fetch the page content, given a
+URL. This script is then hooked onto <code>elfeed-new-entry-hook</code>, to fetch content
+of for new entries as they are fetched.  All the old entries can be easily
+fixed with a single call to <code>elfeed-apply-hooks-now</code>.
 </p>
 
 <div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/get-url-content</span> <span class="p">(</span><span class="nv">url</span><span class="p">)</span>
