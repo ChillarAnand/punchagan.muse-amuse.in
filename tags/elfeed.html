@@ -8,17 +8,17 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <!-- Enable responsiveness on mobile devices--><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta charset="utf-8">
-<meta name="description" content="">
+<meta name="description" content="None">
 <meta name="author" content="punchagan">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="/assets/css/all.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag elfeed (en)" href="/tags/elfeed.xml">
 <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
 <title>
-      Say Howdy with Emacs! · Noetic Nought
+      Posts about elfeed · Noetic Nought
   </title>
 </head>
 <body class="layout-reverse theme-base-0d">
@@ -78,95 +78,56 @@ Creative Commons Attribution 3.0 Unported License</a>
       </div>
 
       <div class="container content">
-<article class="post post-text h-entry hentry postpage" itemscope="itemscope"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/say-howdy-with-emacs.html" class="u-url">Say Howdy with Emacs!</a></h1>
-
-            <span class="post-date">28 May 2015</span>
-        </header><div class="e-content entry-content" itemprop="articleBody text">
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/elfeed-hook-to-fetch-full-content.html" class="u-url">Elfeed hook to fetch full content</a></h1>
+        <span class="post-date">19 Dec 2015</span>
+    </header><div class="e-content entry-content">
     <p>
-Staying in touch with people is something I'm not very good at.  Since I am not
-on popular (among my friends/family) networks – FB and Whatsapp – I don't
-even see random updates from people, to get some sense of being in touch.
+I have started to use <a href="http://pinboard.in">Pinboard</a>'s <code>unread</code> tag as my to-read list.  It has a
+bookmark-let that works pretty well for adding stuff into my "to-read" list.  I
+then catch up on this list using <code>elfeed</code> and subscribing to the unread items'
+RSS feed.  The work-flow is pretty nice for adding stuff into the list, and
+finding items on the list. But, when it comes to the actual reading part, the
+entries in the feed don't have the actual content I want to read, and I end up
+opening the links in a browser.
 </p>
 
 <p>
-I recently read some old posts by Sacha Chua and was inspired by how much code
-she had for <a href="http://sachachua.com/blog/category/geek/emacs/bbdb/">contact management</a> in her old blog posts.  I was inspired by <a href="http://sachachua.com/blog/2005/05/keeping-in-touch/">this
-post</a> in particular to try and be more meticulous about how I stay in touch with
-people. Michael Fogleman <a href="https://mwfogleman.github.io/posts/08-01-2015-emacs-can-keep-in-touch.html">blogged</a> about his contact management work-flow using
-<code>keepintouch</code>. It seemed to do most of what I wanted, but I wanted this to be
-integrated with my <code>org-contacts-db</code> and I felt having native elisp code would
-make it easier to hook up email, chat, etc. to this.
+Inspired by a <a href="https://github.com/sursh/blaggregator/pull/80#issuecomment-165849126">comment from FiloSottile</a>, I realized it should be pretty easy to
+setup a hook that fetches the actual content to make my reading work-flow
+smoother. I wrote a <a href="https://github.com/punchagan/dot-files/blob/master/bin/get_article.py">small script</a>, using <a href="https://github.com/buriy/python-readability">python-readability</a>, to fetch the page
+content, given a URL. This script is then hooked onto <code>elfeed-new-entry-hook</code>,
+to fetch content of for new entries as they are fetched.  All the old entries
+can be easily fixed with a single call to <code>elfeed-apply-hooks-now</code>.
 </p>
 
-<p>
-I ended up writing a small utility called <a href="https://github.com/punchagan/howdy/">howdy</a> to help me keep in touch with
-people. It currently has only a couple of features:
-</p>
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/get-url-content</span> <span class="p">(</span><span class="nv">url</span><span class="p">)</span>
+  <span class="s">"Fetches the content for a url."</span>
+  <span class="p">(</span><span class="nv">shell-command-to-string</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"~/bin/get_article.py %s"</span> <span class="nv">url</span><span class="p">)))</span>
 
-<ul class="org-ul">
-<li>
-<code>M-x howdy</code> lets me update the last contacted timestamp for a contact.
-</li>
-<li>Shows me contacts that I'm out of touch in the agenda, once I add the
-following snippet to an agenda file.
-<div class="highlight"><pre>* Howdy
-  %%(howdy-howdy)
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/get-entry-content</span> <span class="p">(</span><span class="nv">entry</span><span class="p">)</span>
+  <span class="s">"Fetches content for pinboard entries that are not tweets."</span>
+  <span class="p">(</span><span class="nv">interactive</span>
+   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">entry</span> <span class="nv">elfeed-show-entry</span><span class="p">))</span>
+     <span class="p">(</span><span class="nb">list</span> <span class="nv">entry</span><span class="p">)))</span>
+
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">url</span> <span class="p">(</span><span class="nv">elfeed-entry-link</span> <span class="nv">entry</span><span class="p">))</span>
+	<span class="p">(</span><span class="nv">feed-id</span> <span class="p">(</span><span class="nv">elfeed-deref</span> <span class="p">(</span><span class="nv">elfeed-entry-feed-id</span> <span class="nv">entry</span><span class="p">)))</span>
+	<span class="p">(</span><span class="nv">content</span> <span class="p">(</span><span class="nv">elfeed-deref</span> <span class="p">(</span><span class="nv">elfeed-entry-content</span> <span class="nv">entry</span><span class="p">))))</span>
+    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nv">s-matches?</span> <span class="s">"feeds.pinboard.in/"</span> <span class="nv">feed-id</span><span class="p">)</span>
+	       <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nv">s-matches?</span> <span class="s">"twitter.com/\\|pdf$\\|png$\\|jpg$"</span> <span class="nv">url</span><span class="p">))</span>
+	       <span class="p">(</span><span class="nb">string-equal</span> <span class="s">""</span> <span class="nv">content</span><span class="p">))</span>
+      <span class="p">(</span><span class="k">setq</span> <span class="nv">content</span> <span class="p">(</span><span class="nv">pc/get-url-content</span> <span class="nv">url</span><span class="p">))</span>
+      <span class="p">(</span><span class="nb">setf</span> <span class="p">(</span><span class="nv">elfeed-entry-content</span> <span class="nv">entry</span><span class="p">)</span> <span class="p">(</span><span class="nv">elfeed-ref</span> <span class="nv">content</span><span class="p">)))))</span>
+
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'elfeed-new-entry-hook</span> <span class="nf">#'</span><span class="nv">pc/get-entry-content</span><span class="p">)</span>
 </pre></div>
-</li>
-</ul>
-<p>
-I also have a few hooks to hook up jabber messages and email to update the db.
-I've added them to <code>howdy-hooks.el</code> in case anybody else wants to use them.
-They can also be used as examples to write other hooks. Feel free to contribute
-other hooks or suggest improvements.  The library also ships with a modest test
-suite, that will hopefully make it easier for others to contribute.
-</p>
-
-<p>
-I'm looking forward to experimenting with this over the next few weeks and
-improving it. Hopefully, it'll help me keep in touch, better than I do now.
-</p>
     </div>
-    <aside class="postpromonav"><nav><div class="pagination">
-            <span class="pagination-item older">
-                <a href="/posts/wifi-channels-my-routers-random-invisibility.html" rel="prev" title="WiFi Channels &amp; my router's random invisibility">Previous post</a>
-            </span>
-            <span class="pagination-item newer">
-                <a href="/posts/elfeed-hook-to-fetch-full-content.html" rel="next" title="Elfeed hook to fetch full content">Next post</a>
-            </span>
-        </div>
-
-    </nav></aside><div style="margin: auto; text-decoration: none; text-align: center;">
-            <a rel="show-comments" onclick="toggleComments(this)" title="Show comments">Show comments</a>
-        </div>
-        <script>
-         function toggleComments(target) {
-             target.remove();
-             var comments = document.querySelector('.comments');
-             comments.style.display = 'block';
-         };
-        </script><section class="comments" style="display: none;"><h2>Comments</h2>
-                        <div id="disqus_thread"></div>
-        <script>
-        var disqus_shortname ="rusticreverie",
-            disqus_url="https://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html",
-        disqus_title="Say Howdy with Emacs!",
-        disqus_identifier="cache/posts/say-howdy-with-emacs.html",
-        disqus_config = function () {
-            this.language = "en";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-</noscript>
-    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-        </section></article><script>var disqus_shortname="rusticreverie";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+    </article>
 </div>
+
+
+      </div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

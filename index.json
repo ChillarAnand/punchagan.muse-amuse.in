@@ -1,5 +1,10 @@
 [
   {
+    "date": 1450512749000,
+    "loc": "/posts/elfeed-hook-to-fetch-full-content.html",
+    "title": "Elfeed hook to fetch full content"
+  },
+  {
     "date": 1432818564000,
     "loc": "/posts/say-howdy-with-emacs.html",
     "title": "Say Howdy with Emacs!"
@@ -13,10 +18,5 @@
     "date": 1429553838000,
     "loc": "/posts/playing-music-using-mpsyt-from-emacs.html",
     "title": "Playing music using mpsyt from Emacs"
-  },
-  {
-    "date": 1421437014000,
-    "loc": "/posts/org-drill-for-making-it-stick.html",
-    "title": "org-drill for making it stick!"
   }
 ]

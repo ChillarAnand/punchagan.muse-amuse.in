@@ -79,7 +79,80 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-12-04.html" class="u-url">Bookmarks [2013-12-04]</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-12-05.html" class="u-url">Bookmarks [2013-12-05]</a></h1>
+        <span class="post-date">05 Dec 2013</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://raspberry-python.blogspot.in/2013/10/ieee-754854-when-it-is-needed.html">Raspberry Pi Python Adventures: IEEE 754/854, when it is needed</a>
+
+<p>
+If you want IEEE 754/854 decimal behaviour, what you want to use is
+the decimal module
+</p>
+</li>
+
+<li>
+<a href="http://alecmunro.blogspot.in/2013/10/rethinking-my-excuses-about-hiring-for.html">Experiments in public: Rethinking my excuses about hiring for Test Automation</a>
+
+<p>
+Be an Automator, spend your days debugging everyone else's software,
+drive the art forward, and enjoy (in the long run) incredible job
+security!
+</p>
+</li>
+
+<li>
+<a href="http://nedbatchelder.com/blog/201310/range_overlap_in_two_compares.html">Ned Batchelder: Range overlap in two compares</a>
+
+<p>
+His code used eight comparisons to check whether the endpoint of one of the ranges was contained within the other range. In Python it would look like this:
+</p>
+
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">overlap</span><span class="p">(</span><span class="n">start1</span><span class="p">,</span> <span class="n">end1</span><span class="p">,</span> <span class="n">start2</span><span class="p">,</span> <span class="n">end2</span><span class="p">):</span>
+    <span class="sd">"""Does the range (start1, end1) overlap with (start2, end2)?"""</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+	<span class="n">start1</span> <span class="o">&lt;=</span> <span class="n">start2</span> <span class="o">&lt;=</span> <span class="n">end1</span> <span class="ow">or</span>
+	<span class="n">start1</span> <span class="o">&lt;=</span> <span class="n">end2</span> <span class="o">&lt;=</span> <span class="n">end1</span> <span class="ow">or</span>
+	<span class="n">start2</span> <span class="o">&lt;=</span> <span class="n">start1</span> <span class="o">&lt;=</span> <span class="n">end2</span> <span class="ow">or</span>
+	<span class="n">start2</span> <span class="o">&lt;=</span> <span class="n">end1</span> <span class="o">&lt;=</span> <span class="n">end2</span>
+    <span class="p">)</span>
+</pre></div>
+
+<p>
+I said you could do it in two comparisons rather than eight, but
+could never remember the trick.
+</p>
+</li>
+
+<li>
+<a href="http://cbarker.net/blog/projects/applications/cubr">Cubr | Keep on Coding</a>
+
+<p>
+Cubr is a project I completed in three weeks at the end of my
+introductory computer science class at CMU. The idea is simple: you
+mix up a Rubik’s cube. You show the cube to your computer’s
+webcam. Some magic happens, and your cube appears onscreen. Then,
+the cube begins to solve itself, and all you have to do is follow
+along and you will have solved your cube!
+</p>
+</li>
+
+<li>
+<a href="http://coreygoldberg.blogspot.in/2013/10/deadsnakes-using-old-versions-of-python.html">Corey Goldberg: deadsnakes - Using Old Versions of Python on Ubuntu</a>
+
+<p>
+The Python packages in the official Ubuntu archives generally don't
+go back all that far, but people might still need to develop and
+test against these old Python interpreters. Felix Krull maintains a
+PPA (package archive) of older Python versions that are easy to
+install on Ubuntu.
+</p>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-12-04.html" class="u-url">Bookmarks [2013-12-04]</a></h1>
         <span class="post-date">04 Dec 2013</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -613,17 +686,6 @@ file.  My glue code essentially, just figures out the search term from
 the URL, performs a Fuse search on the json data created by Nikola's
 search plugin, and returns a list of top 5 results.  It just took me
 about an hour to write, but is pretty useful, I think.
-</p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/a-month-with-martin.html" class="u-url">A Month with Martin</a></h1>
-        <span class="post-date">10 Nov 2013</span>
-    </header><div class="e-content entry-content">
-    <p>
-At my <a href="http://enthought.com">$dayjob</a>, for the most part of October, I had the fortune of
-pair programming with <a href="https://plus.google.com/114995175796183910458/posts">Martin</a> and it was an amazing learning
-experience!  To share these lessons with my colleagues, I made a small
-presentation at lunch, to my colleagues.  <a href="https://rawgithub.com/punchagan/340e1350fdfc766c6599/raw/ca1f5fe9bfc1cc503cd8a524e350bd29e8f5f33d/month-with-martin.html">Here are the slides</a> for the
-presentation.
 </p>
     </div>
     </article>

@@ -93,12 +93,12 @@ opening the links in a browser.
 </p>
 
 <p>
-Inspired by a comment <a href="https://github.com/sursh/blaggregator/pull/80#issuecomment-165849126">here</a>, I realized it should be pretty easy to setup a hook
-that fetches the actual content to make my reading work-flow smoother. I wrote
-a <a href="https://github.com/punchagan/dot-files/blob/master/bin/get_article.py">small script</a>, using <a href="https://github.com/buriy/python-readability">python-readability</a>, to fetch the page content, given a
-URL. This script is then hooked onto <code>elfeed-new-entry-hook</code>, to fetch content
-of for new entries as they are fetched.  All the old entries can be easily
-fixed with a single call to <code>elfeed-apply-hooks-now</code>.
+Inspired by a <a href="https://github.com/sursh/blaggregator/pull/80#issuecomment-165849126">comment from FiloSottile</a>, I realized it should be pretty easy to
+setup a hook that fetches the actual content to make my reading work-flow
+smoother. I wrote a <a href="https://github.com/punchagan/dot-files/blob/master/bin/get_article.py">small script</a>, using <a href="https://github.com/buriy/python-readability">python-readability</a>, to fetch the page
+content, given a URL. This script is then hooked onto <code>elfeed-new-entry-hook</code>,
+to fetch content of for new entries as they are fetched.  All the old entries
+can be easily fixed with a single call to <code>elfeed-apply-hooks-now</code>.
 </p>
 
 <div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/get-url-content</span> <span class="p">(</span><span class="nv">url</span><span class="p">)</span>
@@ -123,7 +123,13 @@ fixed with a single call to <code>elfeed-apply-hooks-now</code>.
 <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'elfeed-new-entry-hook</span> <span class="nf">#'</span><span class="nv">pc/get-entry-content</span><span class="p">)</span>
 </pre></div>
     </div>
-    <aside class="postpromonav"><nav></nav></aside><div style="margin: auto; text-decoration: none; text-align: center;">
+    <aside class="postpromonav"><nav><div class="pagination">
+            <span class="pagination-item older">
+                <a href="/posts/say-howdy-with-emacs.html" rel="prev" title="Say Howdy with Emacs!">Previous post</a>
+            </span>
+        </div>
+
+    </nav></aside><div style="margin: auto; text-decoration: none; text-align: center;">
             <a rel="show-comments" onclick="toggleComments(this)" title="Show comments">Show comments</a>
         </div>
         <script>

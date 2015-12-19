@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (elfeed)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://punchagan.muse-amuse.in/tags/elfeed.xml"></atom:link><language>en</language><lastBuildDate>Sat, 19 Dec 2015 08:25:19 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Elfeed hook to fetch full content</title><link>https://punchagan.muse-amuse.in/posts/elfeed-hook-to-fetch-full-content.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I have started to use &lt;a href="http://pinboard.in"&gt;Pinboard&lt;/a&gt;'s &lt;code&gt;unread&lt;/code&gt; tag as my to-read list.  It has a
+bookmark-let that works pretty well for adding stuff into my "to-read" list.  I
+then catch up on this list using &lt;code&gt;elfeed&lt;/code&gt; and subscribing to the unread items'
+RSS feed.  The work-flow is pretty nice for adding stuff into the list, and
+finding items on the list. But, when it comes to the actual reading part, the
+entries in the feed don't have the actual content I want to read, and I end up
+opening the links in a browser.
+&lt;/p&gt;
+
+&lt;p&gt;
+Inspired by a &lt;a href="https://github.com/sursh/blaggregator/pull/80#issuecomment-165849126"&gt;comment from FiloSottile&lt;/a&gt;, I realized it should be pretty easy to
+setup a hook that fetches the actual content to make my reading work-flow
+smoother. I wrote a &lt;a href="https://github.com/punchagan/dot-files/blob/master/bin/get_article.py"&gt;small script&lt;/a&gt;, using &lt;a href="https://github.com/buriy/python-readability"&gt;python-readability&lt;/a&gt;, to fetch the page
+content, given a URL. This script is then hooked onto &lt;code&gt;elfeed-new-entry-hook&lt;/code&gt;,
+to fetch content of for new entries as they are fetched.  All the old entries
+can be easily fixed with a single call to &lt;code&gt;elfeed-apply-hooks-now&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/get-url-content&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="s"&gt;"Fetches the content for a url."&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command-to-string&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"~/bin/get_article.py %s"&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/get-entry-content&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="s"&gt;"Fetches content for pinboard entries that are not tweets."&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;interactive&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;entry&lt;/span&gt; &lt;span class="nv"&gt;elfeed-show-entry&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt; &lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;url&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-entry-link&lt;/span&gt; &lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;feed-id&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-deref&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-entry-feed-id&lt;/span&gt; &lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;content&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-deref&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-entry-content&lt;/span&gt; &lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;when&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;and&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s-matches?&lt;/span&gt; &lt;span class="s"&gt;"feeds.pinboard.in/"&lt;/span&gt; &lt;span class="nv"&gt;feed-id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;not&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s-matches?&lt;/span&gt; &lt;span class="s"&gt;"twitter.com/\\|pdf$\\|png$\\|jpg$"&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+	       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;string-equal&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt; &lt;span class="nv"&gt;content&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;content&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;pc/get-url-content&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-entry-content&lt;/span&gt; &lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-ref&lt;/span&gt; &lt;span class="nv"&gt;content&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'elfeed-new-entry-hook&lt;/span&gt; &lt;span class="nf"&gt;#'&lt;/span&gt;&lt;span class="nv"&gt;pc/get-entry-content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>elfeed</category><category>emacs</category><category>hack</category><category>pinboard</category><guid>https://punchagan.muse-amuse.in/posts/elfeed-hook-to-fetch-full-content.html</guid><pubDate>Sat, 19 Dec 2015 08:12:29 GMT</pubDate></item></channel></rss>
