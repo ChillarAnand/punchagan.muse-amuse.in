@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (emacs)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 20 Dec 2015 05:49:56 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Elfeed hook to fetch full content</title><link>https://punchagan.muse-amuse.in/posts/elfeed-hook-to-fetch-full-content.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (emacs)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 22 Dec 2015 17:01:43 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Clock in and get-shit-done</title><link>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I had &lt;a href="https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html"&gt;setup&lt;/a&gt; a couple of hooks about an year ago that turn off all notifications
+while I'm clocking in. But, I find myself switching to the browser and jumping
+to twitter, out of habit.  I've tried &lt;a href="https://github.com/leftnode/get-shit-done"&gt;get-shit-done&lt;/a&gt; in the past to help myself
+break this habit. But enabling get-shit-done manually is step that quickly
+became a non-habit.
+&lt;/p&gt;
+
+&lt;p&gt;
+So, I hooked up get-shit-done into an &lt;code&gt;org-clock-in-hook&lt;/code&gt;.  The snippet below
+is what I added into a function that is added to this hook.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;with-temp-buffer&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;"/sudo::/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"HOME=/home/punchagan get-shit-done work"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+&lt;code&gt;get-shit-done&lt;/code&gt; needs to be run as &lt;code&gt;root&lt;/code&gt;, since it does things like modifying
+&lt;code&gt;/etc/hosts&lt;/code&gt; and restarting networking.  Just calling &lt;code&gt;get-shit-done&lt;/code&gt; as a
+shell command fails with the error &lt;code&gt;sudo: no tty present and no askpass program
+specified&lt;/code&gt;.  I found a couple of ways to fix this. The snippet above
+piggy-backs on tramp to allow for a way to enter the password for &lt;code&gt;sudo&lt;/code&gt; to
+use. This also means that I don't need to enter the password, as long as the
+tramp connection is alive.
+&lt;/p&gt;
+
+&lt;p&gt;
+For someone worried about having such an easy way of running something as
+&lt;code&gt;root&lt;/code&gt;, using something like &lt;code&gt;gnome-ssh-askpass&lt;/code&gt; as the askpass program might
+work better.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"SUDO_ASKPASS=\"/usr/lib/openssh/gnome-ssh-askpass\" get-shit-done work"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</guid><pubDate>Tue, 22 Dec 2015 14:17:04 GMT</pubDate></item><item><title>Elfeed hook to fetch full content</title><link>https://punchagan.muse-amuse.in/posts/elfeed-hook-to-fetch-full-content.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I have started to use &lt;a href="http://pinboard.in"&gt;Pinboard&lt;/a&gt;'s &lt;code&gt;unread&lt;/code&gt; tag as my to-read list.  It has a
 bookmark-let that works pretty well for adding stuff into my "to-read" list.  I
 then catch up on this list using &lt;code&gt;elfeed&lt;/code&gt; and subscribing to the unread items'
@@ -562,44 +597,4 @@ Here is the new code.
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'org-clock-out-hook&lt;/span&gt; &lt;span class="ss"&gt;'pc/turn-on-notifications&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>code</category><category>emacs</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item><item><title>Learning to use Org-drill</title><link>https://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-Org-drill is an Org-mode extension that provides spaced-repetition and
-flash-card functionality.  It has a &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;wonderful documentation on Worg&lt;/a&gt;, but
-somehow I couldn't get myself to read the whole document, and setup org-drill,
-until now.
-&lt;/p&gt;
-
-&lt;p&gt;
-The setup is quite straight forward, once you have org-mode along with the
-&lt;code&gt;contrib&lt;/code&gt; packages.  Just &lt;code&gt;(require 'org-drill)&lt;/code&gt;, and you are all set!  To add
-a new card, all you need to do is add a &lt;code&gt;:drill:&lt;/code&gt; tag to the items you wish to
-"Org-drill".  You can start a review session with simply &lt;code&gt;M-x org-drill&lt;/code&gt;.  You
-will be shown flash cards, and you can rate how correct and comfortable you
-were, in answering the questions.  Based on your responses, the cards are
-scheduled for review.  Start another review session, whenever you need one!
-&lt;/p&gt;
-
-&lt;p&gt;
-What I could only understand once I got myself to read the whole document was
-that:
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;The default scope of a drill session is the current file.  But, you can start
-sessions with scopes like current tree, current directory, or a specified
-list of files. This is super-useful!
-&lt;/li&gt;
-
-&lt;li&gt;The review sessions are not automatically scheduled, based on when you
-schedule failed flash-cards.  Scheduling the review for a card only sets a
-due-date for them, and effects, what you are asked in your next session.
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;
-Cram mode and incremental reading are also things I want to try, as I go along.
-&lt;/p&gt;
-
-&lt;p&gt;
-Happy Learning!
-&lt;/p&gt;</description><category>emacs</category><category>learning</category><category>orgmode</category><category>software</category><guid>https://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html</guid><pubDate>Tue, 14 Oct 2014 04:07:04 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>code</category><category>emacs</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item></channel></rss>

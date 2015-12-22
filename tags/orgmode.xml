@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (orgmode)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/orgmode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 20 Dec 2015 05:49:56 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>org-drill for making it stick!</title><link>https://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (orgmode)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/orgmode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 22 Dec 2015 17:01:43 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Clock in and get-shit-done</title><link>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I had &lt;a href="https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html"&gt;setup&lt;/a&gt; a couple of hooks about an year ago that turn off all notifications
+while I'm clocking in. But, I find myself switching to the browser and jumping
+to twitter, out of habit.  I've tried &lt;a href="https://github.com/leftnode/get-shit-done"&gt;get-shit-done&lt;/a&gt; in the past to help myself
+break this habit. But enabling get-shit-done manually is step that quickly
+became a non-habit.
+&lt;/p&gt;
+
+&lt;p&gt;
+So, I hooked up get-shit-done into an &lt;code&gt;org-clock-in-hook&lt;/code&gt;.  The snippet below
+is what I added into a function that is added to this hook.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;with-temp-buffer&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;"/sudo::/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"HOME=/home/punchagan get-shit-done work"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+&lt;code&gt;get-shit-done&lt;/code&gt; needs to be run as &lt;code&gt;root&lt;/code&gt;, since it does things like modifying
+&lt;code&gt;/etc/hosts&lt;/code&gt; and restarting networking.  Just calling &lt;code&gt;get-shit-done&lt;/code&gt; as a
+shell command fails with the error &lt;code&gt;sudo: no tty present and no askpass program
+specified&lt;/code&gt;.  I found a couple of ways to fix this. The snippet above
+piggy-backs on tramp to allow for a way to enter the password for &lt;code&gt;sudo&lt;/code&gt; to
+use. This also means that I don't need to enter the password, as long as the
+tramp connection is alive.
+&lt;/p&gt;
+
+&lt;p&gt;
+For someone worried about having such an easy way of running something as
+&lt;code&gt;root&lt;/code&gt;, using something like &lt;code&gt;gnome-ssh-askpass&lt;/code&gt; as the askpass program might
+work better.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"SUDO_ASKPASS=\"/usr/lib/openssh/gnome-ssh-askpass\" get-shit-done work"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</guid><pubDate>Tue, 22 Dec 2015 14:17:04 GMT</pubDate></item><item><title>org-drill for making it stick!</title><link>https://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Those who read the &lt;a href="http://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html"&gt;last&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html"&gt;few&lt;/a&gt; &lt;a href="http://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html"&gt;posts&lt;/a&gt; here, would know that I have been
 experimenting with &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;org-drill&lt;/a&gt; (a spaced repetition extension to &lt;a href="http://orgmode.org/"&gt;Org mode&lt;/a&gt;).  I
 have been using the system (almost) religiously for the past 2 months, and I do
@@ -559,36 +594,4 @@ Python&lt;/a&gt;, I was able to move everything over to use Nikola.
 
 &lt;p&gt;
 Hopefully, I'll keep my blog more updated, from here on!
-&lt;/p&gt;</description><category>blog</category><category>hack</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/blogging-with-nikola-and-org-mode.html</guid><pubDate>Wed, 16 Oct 2013 17:10:47 GMT</pubDate></item><item><title>Org-mode Workshop</title><link>https://punchagan.muse-amuse.in/posts/org-mode-workshop.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-Well, I'm not sure if it's worth writing about.  I conducted my
-first org-mode workshop along with Prof. Venkatesh Choppella at
-IIIT-Hyderabad.  It was a 3 hour demo+talk kind of a thing, with a
-small audience of about 20 people, most of whom were new to
-Emacs.
-&lt;/p&gt;
-
-&lt;p&gt;
-We covered almost all the aspects of Org-mode after giving a brief
-introduction to Emacs.  Outlining and note-taking part was simple
-and easy to understand, but the audience couldn't really
-appreciate the part of keeping TODO lists and agendas and other
-stuff.  I'm hoping, the reason was not me taking over from
-Venkatesh.
-&lt;/p&gt;
-
-&lt;p&gt;
-I think the workshop should've been more hands-on and we should've
-asked people to try out stuff on the spot, instead of showing off
-the things possible with Emacs.  They probably would've
-appreciated a few things better, that way.
-&lt;/p&gt;
-
-&lt;p&gt;
-Hopefully, we will be doing more workshops on Org-mode and there
-are surely somethings to take away from this one.  I hope at least
-one of the participants, gets hooked to Org-mode.
-&lt;/p&gt;
-
-&lt;p&gt;
-The talk outline is here.
-&lt;/p&gt;</description><category>emacs</category><category>hyderabad</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/org-mode-workshop.html</guid><pubDate>Wed, 22 Jun 2011 15:34:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>blog</category><category>hack</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/blogging-with-nikola-and-org-mode.html</guid><pubDate>Wed, 16 Oct 2013 17:10:47 GMT</pubDate></item></channel></rss>

@@ -79,7 +79,78 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-05.html" class="u-url">Bookmarks [2010/11/05]</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/raise-windows-on-current-desktop-xdotool-bash.html" class="u-url">Raise windows (on current desktop) xdotool &amp; bash</a></h1>
+        <span class="post-date">06 Nov 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+I posted a snippet <sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.1">1</a></sup> of python code that used xdotool to
+raise windows.  I got one patch from dusual <sup><a id="fnr.2" name="fnr.2" class="footref" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.2">2</a></sup> that
+enabled raising of windows in the current workspace only.
+</p>
+
+<p>
+More importantly, Jordan gave a one-liner <sup><a id="fnr.3" name="fnr.3" class="footref" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.3">3</a></sup> in bash,
+that could do the same thing as my long and elaborate python
+snippet.  I had a feeling that this would be much shorter in bash,
+but I don't feel comfortable writing bash scripts. :P
+</p>
+
+<p>
+Below is a bash snippet that tries to incorporates both the
+changes. :)
+</p>
+
+<div class="highlight"><pre><span class="nv">found</span><span class="o">=</span>0
+
+<span class="k">for</span> win in <span class="sb">`</span>xdotool search --class <span class="nv">$1</span><span class="sb">`</span><span class="p">;</span>
+<span class="k">do</span>
+<span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>xdotool get_desktop_for_window <span class="nv">$win</span><span class="sb">`</span> -eq <span class="sb">`</span>xdotool get_desktop<span class="sb">`</span> <span class="o">]</span><span class="p">;</span>
+<span class="k">then</span> <span class="nv">found</span><span class="o">=</span>1<span class="p">;</span> <span class="nb">break</span><span class="p">;</span>
+<span class="k">fi</span><span class="p">;</span>
+<span class="k">done</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$found</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> xdotool windowactivate <span class="nv">$win</span><span class="p">;</span> <span class="k">else</span> <span class="nv">$1</span><span class="p">;</span> <span class="k">fi</span>
+</pre></div>
+
+<p>
+<b>Note</b>: When you've visual effects enabled (the default option on
+Ubuntu), getting the current desktop/workspace doesn't work,
+probably because Root Window properties are being messed around by
+it.
+</p>
+
+<p>
+<b>Note2</b>: <code>search</code> takes an option <code>--screen</code>. It'd be nice if it
+ also had an option <code>--desktop</code>.  This task could then be done in
+ a one-liner.
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef">
+<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.1">1</a></sup><p class="footpara">
+My python snippet
+</p>
+</div>
+
+<div class="footdef">
+<sup><a id="fn.2" name="fn.2" class="footnum" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.2">2</a></sup><p class="footpara">
+dusual on twitter
+</p>
+</div>
+
+<div class="footdef">
+<sup><a id="fn.3" name="fn.3" class="footnum" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.3">3</a></sup><p class="footpara">
+Jordan's one liner
+</p>
+</div>
+
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-05.html" class="u-url">Bookmarks [2010/11/05]</a></h1>
         <span class="post-date">05 Nov 2010</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -1239,86 +1310,6 @@ want any of the content removed, I will do so.
 &lt;punchagan&gt; I hope you don't mind, if I make this anecdote public?
 </p>
 </blockquote>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bloggerstock-do-over.html" class="u-url">Bloggerstock: Do-over</a></h1>
-        <span class="post-date">30 Sep 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-This post is by Dominick Mills, coming to us, thanks to
-Bloggerstock.  Dominick aka Lije blogs at Lije's Mindstate.  My post
-on this month's Bloggerstock topic will appear at That Ain't Kosher.
-</p>
-
-<p>
-And here is Dominick's post for you
-</p>
-<hr>
-<p>
-Hello world..today I'll be talking about a period in time I would like
-to do-over, however I couldn't think of anything so I went in another
-direction….I'd like to thank Bloggerstock and punchagan for
-the opportunity leak my thoughts on this page….
-</p>
-
-<p>
-I hope the readers understand that my views does not reflect those of
-the host's page..before I get started though Let me take the time out
-to explain what Bloggerstock is all about.  Bloggerstock is the
-brainchild of a small group of bloggers who connected on 20SB. The
-idea comes from the concept of a blog-swap in that maybe we could
-create our own kind of event where we all wrote posts to be posted on
-the next person’s blog. Essentially forming a blog-ring.
-</p>
-
-<p>
-There's a lot of things in life everyone would like to relive and do
-differently..I've been giving it some thought and it's been racking my
-brain for the whole month now…I came to the conclusion that I have
-nothing I'd like to really do-over…
-</p>
-
-<p>
-My reason for this is that I wouldn't be this person I am…and I
-wouldn't alter it in anyway…I love what I've become…if it weren't
-for all the good and bad that occurred during my life time..I wouldn't
-even be here writing this….or I wouldn't even have the same goals
-and all my aspirations would be small…I know this all sounds weird
-but giving the fact that I am a weird person, those who know me, this
-is expected…I believe in things happening for a reason and without
-these occurrences we'd be something totally different, and
-</p>
-
-<p>
-maybe not becoming what we're suppose to be in life…sometimes we
-look at situations and think, " Just maybe if I had done this… or
-maybe if I hadn't…" even if my decisions had made into a bum on the
-streets I think I would feel the same way…truth is we all have
-regrets..learning to live with them is the hardest thing to do..we
-tend to get caught up in the moment and want to relive those
-things..either for the good or the bad…but we fail to realize that
-it is those things that build character not for today but for our
-tomorrows.
-</p>
-
-<p>
-Whether it's falling for the wrong person, being back stabbed from a
-friend, getting hoodwinked from a stranger, or missing out on an
-opportunity….all of these are just life's lessons being taught..with
-that being said you should never sulk over a decision we've made…in
-the end we're our own cause of grief or happiness so don't whine about
-it stuff that's happened….accept what has happened and move
-forward…don't hold on to them, but don't forget them either…these
-are turning points in our lives so appreciate them..
-</p>
-
-<p>
-Well that's all I have to conjure up on the matter..though it kind of
-went against the topic a bit but hey am stubborn lol.. once again I'd
-like to thank punchagan for allowing me to feature on Rustic
-Reverie and also Bloggerstock for providing me with the opportunity to
-express myself on a fellow blogger's page.. here's a link to my page
-to view my featured blog post
-</p>
     </div>
     </article>
 </div>

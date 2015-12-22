@@ -8,7 +8,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <!-- Enable responsiveness on mobile devices--><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta charset="utf-8">
-<meta name="description" content="For an idle mind is the devil's workshop.">
+<meta name="description" content="">
 <meta name="author" content="punchagan">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
     <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
 <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
 <title>
-      Posts for year 2015 · Noetic Nought
+      Clock in and get-shit-done · Noetic Nought
   </title>
 </head>
 <body class="layout-reverse theme-base-0d">
@@ -78,30 +78,83 @@ Creative Commons Attribution 3.0 Unported License</a>
       </div>
 
       <div class="container content">
-<article class="listpage"><header><h1>Posts for year 2015</h1>
-    </header><ul class="postlist">
-<li>
-<a href="/posts/clock-in-and-get-shit-done.html" class="listtitle">Clock in and get-shit-done</a> <time class="listdate" datetime="2015-12-22T19:47:04+05:30" title="22 Dec 2015">22 Dec 2015</time>
-</li>
-        <li>
-<a href="/posts/elfeed-hook-to-fetch-full-content.html" class="listtitle">Elfeed hook to fetch full content</a> <time class="listdate" datetime="2015-12-19T13:42:29+05:30" title="19 Dec 2015">19 Dec 2015</time>
-</li>
-        <li>
-<a href="/posts/say-howdy-with-emacs.html" class="listtitle">Say Howdy with Emacs!</a> <time class="listdate" datetime="2015-05-28T18:39:24+05:30" title="28 May 2015">28 May 2015</time>
-</li>
-        <li>
-<a href="/posts/wifi-channels-my-routers-random-invisibility.html" class="listtitle">WiFi Channels &amp; my router's random invisibility</a> <time class="listdate" datetime="2015-04-22T11:48:50+05:30" title="22 Apr 2015">22 Apr 2015</time>
-</li>
-        <li>
-<a href="/posts/playing-music-using-mpsyt-from-emacs.html" class="listtitle">Playing music using mpsyt from Emacs</a> <time class="listdate" datetime="2015-04-20T23:47:18+05:30" title="20 Apr 2015">20 Apr 2015</time>
-</li>
-        <li>
-<a href="/posts/org-drill-for-making-it-stick.html" class="listtitle">org-drill for making it stick!</a> <time class="listdate" datetime="2015-01-17T01:06:54+05:30" title="17 Jan 2015">17 Jan 2015</time>
-</li>
-        <li>
-<a href="/posts/how-i-learnt-to-use-emacs-profiler.html" class="listtitle">How I learnt to use Emacs' profiler</a> <time class="listdate" datetime="2015-01-03T02:01:17+05:30" title="03 Jan 2015">03 Jan 2015</time>
-</li>
-    </ul></article>
+<article class="post post-text h-entry hentry postpage" itemscope="itemscope"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/clock-in-and-get-shit-done.html" class="u-url">Clock in and get-shit-done</a></h1>
+
+            <span class="post-date">22 Dec 2015</span>
+        </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+I had <a href="/posts/simple-org-clock-and-gnomepidgin-integration.html">setup</a> a couple of hooks about an year ago that turn off all notifications
+while I'm clocking in. But, I find myself switching to the browser and jumping
+to twitter, out of habit.  I've tried <a href="https://github.com/leftnode/get-shit-done">get-shit-done</a> in the past to help myself
+break this habit. But enabling get-shit-done manually is step that quickly
+became a non-habit.
+</p>
+
+<p>
+So, I hooked up get-shit-done into an <code>org-clock-in-hook</code>.  The snippet below
+is what I added into a function that is added to this hook.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nv">with-temp-buffer</span>
+  <span class="p">(</span><span class="nv">cd</span> <span class="s">"/sudo::/"</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"HOME=/home/punchagan get-shit-done work"</span><span class="p">))</span>
+</pre></div>
+
+<p>
+<code>get-shit-done</code> needs to be run as <code>root</code>, since it does things like modifying
+<code>/etc/hosts</code> and restarting networking.  Just calling <code>get-shit-done</code> as a
+shell command fails with the error <code>sudo: no tty present and no askpass program
+specified</code>.  I found a couple of ways to fix this. The snippet above
+piggy-backs on tramp to allow for a way to enter the password for <code>sudo</code> to
+use. This also means that I don't need to enter the password, as long as the
+tramp connection is alive.
+</p>
+
+<p>
+For someone worried about having such an easy way of running something as
+<code>root</code>, using something like <code>gnome-ssh-askpass</code> as the askpass program might
+work better.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nv">shell-command</span> <span class="s">"SUDO_ASKPASS=\"/usr/lib/openssh/gnome-ssh-askpass\" get-shit-done work"</span><span class="p">)</span>
+</pre></div>
+    </div>
+    <aside class="postpromonav"><nav><div class="pagination">
+            <span class="pagination-item older">
+                <a href="/posts/elfeed-hook-to-fetch-full-content.html" rel="prev" title="Elfeed hook to fetch full content">Previous post</a>
+            </span>
+        </div>
+
+    </nav></aside><div style="margin: auto; text-decoration: none; text-align: center;">
+            <a rel="show-comments" onclick="toggleComments(this)" title="Show comments">Show comments</a>
+        </div>
+        <script>
+         function toggleComments(target) {
+             target.remove();
+             var comments = document.querySelector('.comments');
+             comments.style.display = 'block';
+         };
+        </script><section class="comments" style="display: none;"><h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="rusticreverie",
+            disqus_url="https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html",
+        disqus_title="Clock in and get-shit-done",
+        disqus_identifier="cache/posts/clock-in-and-get-shit-done.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="rusticreverie";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
     </div>
 
