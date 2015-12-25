@@ -1,2 +1,4 @@
 Sitemap: https://punchagan.muse-amuse.in/sitemapindex.xml
 
+User-Agent: *
+Host: punchagan.muse-amuse.in
