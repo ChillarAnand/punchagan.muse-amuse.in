@@ -1,5 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (blag)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/blag.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 25 Dec 2015 16:48:22 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Clock in and get-shit-done</title><link>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (blag)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/blag.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 15 Jan 2016 17:10:32 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Partial postgres db dumps for a Django app</title><link>https://punchagan.muse-amuse.in/posts/partial-postgres-db-dumps-for-a-django-app.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Off late, I have been working with a large &lt;code&gt;postgres&lt;/code&gt; database that is used by
+an app built in &lt;code&gt;Django&lt;/code&gt;.  I wanted a partial dump of the database to try out
+some experimental clean up scripts.  I haven't really used databases before,
+and the last time I had to do this I did it in a pretty ad-hoc fashion.  This
+time around, I tried to do it more methodically and to document it.
+&lt;/p&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;The Django Route&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+I looked around for tools that let you do this, and found &lt;a href="https://github.com/davedash/django-fixture-magic"&gt;django-fixture-magic&lt;/a&gt;.
+I first tried it out on my older partial dump (10% as large as the original db)
+and it turned out to be reasonably fast and worked well, after making a &lt;a href="https://github.com/davedash/django-fixture-magic/pull/35"&gt;few
+changes&lt;/a&gt; to get it working with Python 3.x.  Its &lt;code&gt;kitchensink&lt;/code&gt; flag to the
+&lt;code&gt;dump_object&lt;/code&gt; seemed like a promising option, but &lt;b&gt;didn't&lt;/b&gt; really seem to get all
+the required tables for ManyToManyFields.  I worked around it, by getting a
+dump of all the models which were related using Django's &lt;code&gt;dumpdata&lt;/code&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
+&lt;h3 id="sec-1-1"&gt;Get a dump with objects of interest&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-1"&gt;
+&lt;p&gt;
+The &lt;code&gt;dump_object&lt;/code&gt; command lets you run commands to select the objects that you
+want to have in the dump, and that is quite a useful thing.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;python manage.py dump_object dataset.Product -k --query &lt;span class="s1"&gt;'{"subcategory_id__in": [1886, ...]}'&lt;/span&gt; &amp;gt; products.json
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Also, get a dump of related tables.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Dump of related fields&lt;/span&gt;
+python manage.py dumpdata dataset.Attribute &amp;gt; attributes.json
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-2" class="outline-3"&gt;
+&lt;h3 id="sec-1-2"&gt;Create the new empty db&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;p&gt;
+Next, create a new database where this fixture can be loaded!
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Create the db&lt;/span&gt;
+sudo su - postgres
+createdb mydb
+
+&lt;span class="c"&gt;# Create a user, if required&lt;/span&gt;
+createuser -P
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-2-1" class="outline-4"&gt;
+&lt;h4 id="sec-1-2-1"&gt;Grant access to the user&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-1"&gt;
+&lt;p&gt;
+In the &lt;code&gt;psql&lt;/code&gt; prompt type the following to grant the user permissions for the
+database.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;ALL&lt;/span&gt; &lt;span class="k"&gt;PRIVILEGES&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="k"&gt;DATABASE&lt;/span&gt; &lt;span class="n"&gt;mydb&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="n"&gt;myuser&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-3" class="outline-3"&gt;
+&lt;h3 id="sec-1-3"&gt;Fix settings.py and create tables for the models.&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-3"&gt;
+&lt;p&gt;
+Make changes to &lt;code&gt;settings.py&lt;/code&gt; to use the newly created database, and then
+create the tables used by the app, and then load the data.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;python manage.py syncdb
+python manage.py loaddata products.json
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-4" class="outline-3"&gt;
+&lt;h3 id="sec-1-4"&gt;Too slow!&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-4"&gt;
+&lt;p&gt;
+This method worked and was reasonably fast when I was trying to get 20k rows
+from a table with about 200k rows, with all the dependencies.
+&lt;/p&gt;
+
+&lt;p&gt;
+But, when I tried to get a dump of about 200k rows from a table with 2M rows,
+it was way too slow to be of any use.  There could've been a couple of reasons
+for this, which I didn't have the time to look into, and debug.
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;The web-server where the &lt;code&gt;Django&lt;/code&gt; app was running, and the &lt;code&gt;db&lt;/code&gt; server with
+the &lt;code&gt;postgres&lt;/code&gt; database were on different machines in separate datacenters,
+which could've been adding a significant amount of latency.
+&lt;/li&gt;
+
+&lt;li&gt;Just the size of the database being much larger could be making it slower?
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+These are things I should be looking into and learning about, when I have more
+time at hand.  For now, I needed a quicker way to get a dump.  Even though the
+raw SQL route was more manual, it turned out to be much quicker.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Raw SQL dump route&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
+&lt;h3 id="sec-2-1"&gt;Get a dump of the interesting tables&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;p&gt;
+First, I had to get a dump of all the tables with the data I was interested in,
+one-by-one.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;COPY&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="ss"&gt;"dataset_product"&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;"dataset_product"&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="ss"&gt;"subcategory_id"&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;319557&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;94589&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;332&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;406&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;626&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1886&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="ss"&gt;"dataset_product"&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="ss"&gt;"gender_id"&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'/tmp/products.tsv'&lt;/span&gt;
+
+&lt;span class="k"&gt;COPY&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="ss"&gt;"dataset_photo"&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="ss"&gt;"dataset_photo"&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="ss"&gt;"product_id"&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;U0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="ss"&gt;"id"&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="ss"&gt;"dataset_product"&lt;/span&gt; &lt;span class="n"&gt;U0&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;U0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="ss"&gt;"subcategory_id"&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;319557&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;94589&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;332&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;406&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;626&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1886&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;U0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="ss"&gt;"gender_id"&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'/tmp/photos.tsv'&lt;/span&gt;
+
+&lt;span class="c1"&gt;-- Copy a bunch of other tables!&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-2" class="outline-3"&gt;
+&lt;h3 id="sec-2-2"&gt;Load the data from the dumps&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-2"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;-- syncdb&lt;/span&gt;
+&lt;span class="k"&gt;COPY&lt;/span&gt; &lt;span class="n"&gt;dataset_product&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="s1"&gt;'/tmp/products.tsv'&lt;/span&gt; &lt;span class="k"&gt;ENCODING&lt;/span&gt; &lt;span class="s1"&gt;'UTF8'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;COPY&lt;/span&gt; &lt;span class="n"&gt;dataset_photo&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="s1"&gt;'/tmp/photos.tsv'&lt;/span&gt; &lt;span class="k"&gt;ENCODING&lt;/span&gt; &lt;span class="s1"&gt;'UTF8'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;-- Copy a bunch of other tables!&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-3" class="outline-3"&gt;
+&lt;h3 id="sec-2-3"&gt;Make tables writable&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-3"&gt;
+&lt;p&gt;
+Some of the tables did not let me write anything to them, until I &lt;a href="http://centoshowtos.org/web-services/django-and-postgres-duplicate-key/"&gt;altered the
+sequence&lt;/a&gt; for these tables.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-4" class="outline-3"&gt;
+&lt;h3 id="sec-2-4"&gt;Automating&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-4"&gt;
+&lt;p&gt;
+It would be pretty nice if all of this was automated – allow a user to enter
+exactly the same kind of a query that &lt;code&gt;django-fixture-magic&lt;/code&gt; lets you run, and
+figure out the SQL copies that need to be done to get the requested dump. Its
+something that currently would qualify as yak-shaving, but may be a handy thing
+to have. Someone somewhere possibly already has something that does this.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>blag</category><category>django</category><category>postgres</category><category>sql</category><guid>https://punchagan.muse-amuse.in/posts/partial-postgres-db-dumps-for-a-django-app.html</guid><pubDate>Sun, 10 Jan 2016 00:09:18 GMT</pubDate></item><item><title>Clock in and get-shit-done</title><link>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I had &lt;a href="https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html"&gt;setup&lt;/a&gt; a couple of hooks about an year ago that turn off all notifications
 while I'm clocking in. But, I find myself switching to the browser and jumping
 to twitter, out of habit.  I've tried &lt;a href="https://github.com/leftnode/get-shit-done"&gt;get-shit-done&lt;/a&gt; in the past to help myself

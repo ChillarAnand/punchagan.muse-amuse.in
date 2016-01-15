@@ -79,7 +79,39 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/more-input-sources-for-org-drill.html" class="u-url">More input sources for org-drill</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/erc-notifications-when-emacs-not-in-focus.html" class="u-url">erc-notifications when Emacs not in focus</a></h1>
+        <span class="post-date">06 Nov 2014</span>
+    </header><div class="e-content entry-content">
+    <p>
+I have been trying to get ERC working with notifications. Julien Danjou's
+wonderful <a href="https://julien.danjou.info/blog/2012/erc-notifications">notifications</a> module for ERC is great, but it is annoying to get
+notifications even when Emacs is in focus.
+</p>
+
+<p>
+I had looked at <a href="https://github.com/eqyiel/circe-notifications/blob/master/circe-notifications.el">circe-notifications</a>, which has the feature but uses xdotool and
+xprop to do it.  I was looking for something simpler, though… and it suddenly
+struck me that I have an auto-save hook in Emacs that is run when I focus out
+of it.  I wondered if I could disable and enable notifications on focus, and it
+worked.
+</p>
+
+<p>
+In case it is useful for somebody else -
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'erc-modules</span> <span class="ss">'notifications</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">erc-notifications-mode</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'focus-out-hook</span> <span class="ss">'erc-notifications-enable</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'focus-in-hook</span> <span class="ss">'erc-notifications-disable</span><span class="p">)</span>
+</pre></div>
+
+<p>
+I wonder if there are some corner cases where this doesn't work, and that's why
+the author of circe-notifications chose the tools that he did.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/more-input-sources-for-org-drill.html" class="u-url">More input sources for org-drill</a></h1>
         <span class="post-date">04 Nov 2014</span>
     </header><div class="e-content entry-content">
     <p>
@@ -604,26 +636,6 @@ All good things must come to an end, and so did our batch!  We got our Hacker
 School t-shirts, and had a super fun picnic at Prospect Park.
 </p>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-27.html" class="u-url">Recurse Center, 2014-08-27</a></h1>
-        <span class="post-date">28 Aug 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I spent the whole of yesterday just working on the LED-bot.
-</li>
-<li>Spent some time cleaning up meta-stuff about the project, making it a real
-package, adding a setup.py, added LICENSE &amp; AUTHOR files, etc.
-</li>
-<li>I found it really frustrating that there's no good/standard way to remove
-duplication of information between pip's <code>requirements.txt</code> and
-<code>install_requires</code>
-</li>
-<li>We got the bot running on the Beagle Bone, but it turned out to be too slow.
-After some playing around with trying to get rid of Python for-loops, I was
-able to use PIL's <code>image.tobytes</code> and some image cropping to get the data to
-be sent to the LEDs, and it sped up the display quite a bit.
-</li>
-</ul>
-</div>
     </article>
 </div>
         <div class="pagination">
