@@ -79,7 +79,84 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2012-08-06.html" class="u-url">Bookmarks [2012/08/06]</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/an-import-gotcha-in-python.html" class="u-url">An import gotcha in Python</a></h1>
+        <span class="post-date">20 Aug 2012</span>
+    </header><div class="e-content entry-content">
+    <p>
+Pankaj and I were stuck with this weird bug recently.  We had
+a class <code>A</code> and a subclass <code>B</code> and an instance of B, b, was
+returning False for <code>isinstance(b, A)</code>.
+</p>
+
+<p>
+After some debugging, we found that it was a problem with
+imports, and the same module was being imported twice, using
+two different names – <code>bar</code> and <code>baz.bar</code>.
+</p>
+
+<p>
+Here's a cooked-up example to demonstrate the "bug".  We
+create a package baz, as shown below.
+</p>
+
+
+<pre class="example">
+$ tree baz
+baz
+├── bar.py
+├── foo.py
+└── __init__.py
+</pre>
+
+<p>
+We have our two classes, <code>A</code> and <code>B</code> defined in the <code>bar</code>
+module.
+</p>
+
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+
+<p>
+We run <code>foo.py</code> and scratch our heads for a while, before
+figuring out what's wrong…
+</p>
+
+<div class="highlight"><pre><span class="c"># We add the directory containing out package 'baz' to sys.path to be</span>
+<span class="c"># able to import using the package name.</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">'/tmp'</span><span class="p">)</span>
+
+<span class="c"># We import A from bar module present in the same directory as foo</span>
+<span class="kn">from</span> <span class="nn">bar</span> <span class="kn">import</span> <span class="n">A</span>
+<span class="c"># We import B from bar, but refer to it, as a submodule of baz</span>
+<span class="kn">from</span> <span class="nn">baz.bar</span> <span class="kn">import</span> <span class="n">B</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="s">"isinstance(b, A) --&gt;"</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">cls</span> <span class="ow">in</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">"</span><span class="si">%s</span><span class="s"> --&gt;"</span> <span class="o">%</span><span class="n">cls</span><span class="p">,</span> <span class="n">cls</span>
+
+<span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s">'bar'</span> <span class="ow">in</span> <span class="n">module</span><span class="p">:</span>
+	<span class="k">print</span> <span class="n">module</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">module</span><span class="p">]</span>
+</pre></div>
+
+<pre class="example">
+isinstance(b, A) --&gt; False
+&lt;class 'bar.A'&gt; --&gt; &lt;class 'bar.A'&gt;
+&lt;class 'baz.bar.B'&gt; --&gt; &lt;class 'baz.bar.B'&gt;
+baz.bar &lt;module 'baz.bar' from '/tmp/baz/bar.pyc'&gt;
+bar &lt;module 'bar' from 'bar.pyc'&gt;
+</pre>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2012-08-06.html" class="u-url">Bookmarks [2012/08/06]</a></h1>
         <span class="post-date">06 Aug 2012</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -627,55 +704,6 @@ tags: advice, phd, research
 
 <p>
 tags: howto, git, newbie
-</p>
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2011-09-06.html" class="u-url">Bookmarks [2011/09/06]</a></h1>
-        <span class="post-date">06 Sep 2011</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://zachholman.com/posts/how-github-works-asynchronous/">How GitHub Works: Be Asynchronous</a>
-
-<p>
-tags: work, startup, github
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://gettingreal.37signals.com/ch07_Meetings_Are_Toxic.php">Getting Real: Meetings Are Toxic (by 37signals)</a>
-
-<p>
-tags: advice, work
-</p>
-</li>
-</ul>
-<dl class="org-dl">
-<dt> [[<a href="http://sachachua.com/blog/2010/05/dear-future-sacha/%5D%5BDear">http://sachachua.com/blog/2010/05/dear-future-sacha/][Dear</a> future Sacha, | sacha chua </dt>
-<dd>living an awesome life]]
-
-<p>
-tags: life, advice
-</p>
-</dd>
-</dl>
-<ul class="org-ul">
-<li>
-<a href="http://www.cs.utexas.edu/users/EWD/">E.W.Dijkstra Archive: Home page</a>
-
-<p>
-tags: computer<sub>science</sub>, notes, programming, advice
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://scipy-central.org/">SciPy Central</a>
-
-<p>
-tags: scipy, code, numpy, collection
 </p>
 </li>
 </ul>

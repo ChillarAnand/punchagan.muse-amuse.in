@@ -79,7 +79,69 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/lesson-with-rss-feeds-wordpress.html" class="u-url">Lesson with RSS feeds &amp; Wordpress</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/advice-programming-in-elisp.html" class="u-url">Advice - Programming in Elisp</a></h1>
+        <span class="post-date">06 Aug 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+Below is a mail sent by Eric Schulte to the org-mode mailing list
+answering a query on how to write elisp for org-mode. I am
+reproducing it here, since it is useful advice for me. The actual
+thread is here.
+</p>
+
+<hr>
+<p>
+The way that I learned how to program in emacs lisp was mainly
+using two commands `elisp-index-search' bound to `C-h e' on my
+system, and most importantly `describe-function' bound to `C-h f'.
+With `describe-function' you can look at the source code of
+functions whose behavior you are familiar with, you can then copy
+portions of the code to your <b>scratch</b> buffer where they can be
+edited and evaluated with `eval-defun' bound to `C-M-x'.  Now with
+Babel, instead of doing this in the scratch buffer you could do
+this in emacs-lisp code blocks in an org file, enabling notes and
+hierarchical organization – it can be nice to have your noodling
+all collected in one file for later reference.
+</p>
+
+<p>
+If you are going to do any serious work with lisp, I would
+emphatically recommend using paredit-mode, and becoming friends
+with the Sexp movement functions
+</p>
+
+<p>
+C-M-f        runs the command paredit-forward
+C-M-b        runs the command paredit-backward
+C-M-u        runs the command backward-up-list
+C-M-k        runs the command kill-sexp
+C-y        runs the command yank
+</p>
+
+<p>
+They allow you to manipulate lisp code on the level of logical
+expressions, the utility of which can not be over stated.
+</p>
+
+<p>
+As for working with Org-mode in particular, I'd recommend looking
+at the documentation and source-code of Org-mode functions with
+`describe-function', and then looking for how these functions are
+actually used in the Org-mode code base with `rgrep'.
+</p>
+
+<p>
+For a more structured learning experience, I've heard very good
+things about <a href="http://www.gnu.org/software/emacs/emacs-lisp-intro/">http://www.gnu.org/software/emacs/emacs-lisp-intro/</a>,
+although I haven't used it myself.
+</p>
+
+<p>
+Hope this helps.  Happy Hacking – Eric
+</p>
+<hr>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/lesson-with-rss-feeds-wordpress.html" class="u-url">Lesson with RSS feeds &amp; Wordpress</a></h1>
         <span class="post-date">04 Aug 2010</span>
     </header><div class="e-content entry-content">
     <p>
@@ -338,39 +400,6 @@ Key-bindings are a religious thing, in the world of editors!
 
 </div>
 </div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/looking-through-the-view-finder.html" class="u-url">Looking through the view finder</a></h1>
-        <span class="post-date">26 Jul 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-After a trek, I had an interesting conversation with Ritesh, about
-taking pictures during a trip. He said, he started to realize that
-when he's lost in the cycle of click, see, analyze, click,
-… when he's got a cam in his hand. He didn't have a cam on this
-trek and thoroughly enjoyed it!
-</p>
-
-<p>
-I connect to this phenomenon, as well. I think, like Ritesh says,
-having separate trips for Photography makes sense. On other trips,
-we could be clicking, but just for the sake of memory. Trying to
-get amazing photographs shouldn't be a goal.
-I should refrain from -
-</p>
-<ol class="org-ol">
-<li>looking at the output and adjusting repeatedly until it's
-perfect.
-</li>
-<li>clicking too many pictures in a given length of time.
-</li>
-</ol>
-<p>
-For both of this, a film camera seems to be the solution!
-</p>
-
-<p>
-What say, Ritesh?
-</p>
     </div>
     </article>
 </div>

@@ -79,7 +79,81 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/erc-notifications-when-emacs-not-in-focus.html" class="u-url">erc-notifications when Emacs not in focus</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/using-tmux-to-screen-share.html" class="u-url">Using tmux to "screen share"</a></h1>
+        <span class="post-date">24 Nov 2014</span>
+    </header><div class="e-content entry-content">
+    <p>
+I wanted to pair with a friend of mine, exploring Magit mode in Emacs.  There
+are a couple of projects to make it easy to use tmux(-like) to simplify this.
+</p>
+
+<ul class="org-ul">
+<li>
+<a href="https://github.com/non/pairing">pairing</a> lets you share a screen and pair, on a common server where both the
+users have access to.  But I wanted to use my machine, instead of the
+server.
+</li>
+
+<li>
+<a href="http://tmate.io">tmate</a> gets around the restriction of having a common server where both users
+have access, but needs a custom install of tmux, and the use of a 3rd party
+service.
+</li>
+</ul>
+<p>
+I worked around this, using an ssh reverse tunnels.  Here are the steps, for
+anyone who'd like to reproduce.
+</p>
+
+<ol class="org-ol">
+<li>Add your partner(-in-crime)'s ssh key to authorized keys on a server that
+has a public IP (<code>example.com</code>, let's say).
+</li>
+
+<li>Add your server's key to authorized keys on your local machine.
+</li>
+
+<li>Create a reverse tunnel from your machine to the server.
+
+<div class="highlight"><pre>ssh -fNR 19999:localhost:22 server_user@example.com
+</pre></div>
+
+<p>
+<code>-R 19999</code> essentially forwards port 19999 on <code>example.com</code> to
+localhost's 22.  <code>-fN</code> is to say no terminal, send connection to background.
+</p>
+</li>
+
+<li>Your partner first ssh's to example.com and then ssh's to your laptop.
+
+<p>
+On your partner's machine
+</p>
+
+<div class="highlight"><pre>ssh server_user@example.com
+</pre></div>
+
+<p>
+On the server, your partner does
+</p>
+<div class="highlight"><pre>ssh your_username@localhost -p 19999
+</pre></div>
+
+<p>
+Your partner is on your machine, and can run <code>rm -rf</code>!  But, hopefully
+they'll only run <code>tmux attach</code>.  Obviously, do this only with people you
+trust!
+</p>
+</li>
+
+<li>Start a tmux session locally.
+</li>
+
+<li>Profit!
+</li>
+</ol>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/erc-notifications-when-emacs-not-in-focus.html" class="u-url">erc-notifications when Emacs not in focus</a></h1>
         <span class="post-date">06 Nov 2014</span>
     </header><div class="e-content entry-content">
     <p>
@@ -628,14 +702,6 @@ some of the tactics I've tried to get myself into "working mode."
 </li>
 </ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-28.html" class="u-url">Recurse Center, 2014-08-28</a></h1>
-        <span class="post-date">29 Aug 2014</span>
-    </header><div class="e-content entry-content">
-    <p>
-All good things must come to an end, and so did our batch!  We got our Hacker
-School t-shirts, and had a super fun picnic at Prospect Park.
-</p>
-    </div>
     </article>
 </div>
         <div class="pagination">

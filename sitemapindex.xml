@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/rss.xml</loc>
-  <lastmod>2016-01-15T17:10:00Z</lastmod>
+  <lastmod>2016-01-16T06:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/sitemap.xml</loc>
-  <lastmod>2016-01-15T17:10:00Z</lastmod>
+  <lastmod>2016-01-16T06:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/advice.xml</loc>
@@ -43,15 +43,19 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blag.xml</loc>
-  <lastmod>2016-01-15T17:10:00Z</lastmod>
+  <lastmod>2016-01-16T06:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blog.xml</loc>
   <lastmod>2015-12-25T16:48:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://punchagan.muse-amuse.in/tags/book-review.xml</loc>
+  <lastmod>2016-01-16T06:09:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/book.xml</loc>
-  <lastmod>2015-12-25T16:48:00Z</lastmod>
+  <lastmod>2016-01-16T06:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/bookmarks.xml</loc>
@@ -331,7 +335,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/life.xml</loc>
-  <lastmod>2015-12-25T16:48:00Z</lastmod>
+  <lastmod>2016-01-16T06:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/linux.xml</loc>
@@ -351,7 +355,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/love.xml</loc>
-  <lastmod>2015-12-25T16:48:00Z</lastmod>
+  <lastmod>2016-01-16T06:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/lyrics.xml</loc>

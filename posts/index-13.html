@@ -79,7 +79,33 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/just-one-day.html" class="u-url">Just one day</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/3-tips-for-those-shipping-commercial-apps.html" class="u-url">3 tips for those shipping (commercial) apps</a></h1>
+        <span class="post-date">28 Nov 2012</span>
+    </header><div class="e-content entry-content">
+    <p>
+Here are some very generic (and paraphrased) notes from a short
+talk today, by Deepankar Sharma.
+</p>
+
+<ol class="org-ol">
+<li>Whenever you release a new major version, make sure you keep a
+copy of the whole "ecosystem" to be able to run it whenever you
+want.  At any point in time, you should be able to run any
+version of your software.
+</li>
+<li>When writing benchmarks/tests/etc., try and ensure that you
+cover a broad spectrum of test data, to try and replicate the
+different types of data that users could possibly have.
+</li>
+<li>Don't develop applications with modes.  Be very careful before
+you add a new mode to your application, effectively adding one
+more code path to maintain.
+</li>
+<li>(Bonus) Beware of too much extensibility
+</li>
+</ol>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/just-one-day.html" class="u-url">Just one day</a></h1>
         <span class="post-date">26 Nov 2012</span>
     </header><div class="e-content entry-content">
     <p class="verse">
@@ -530,83 +556,6 @@ tags: reading, programming, analysis
 </li>
 </ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/an-import-gotcha-in-python.html" class="u-url">An import gotcha in Python</a></h1>
-        <span class="post-date">20 Aug 2012</span>
-    </header><div class="e-content entry-content">
-    <p>
-Pankaj and I were stuck with this weird bug recently.  We had
-a class <code>A</code> and a subclass <code>B</code> and an instance of B, b, was
-returning False for <code>isinstance(b, A)</code>.
-</p>
-
-<p>
-After some debugging, we found that it was a problem with
-imports, and the same module was being imported twice, using
-two different names – <code>bar</code> and <code>baz.bar</code>.
-</p>
-
-<p>
-Here's a cooked-up example to demonstrate the "bug".  We
-create a package baz, as shown below.
-</p>
-
-
-<pre class="example">
-$ tree baz
-baz
-├── bar.py
-├── foo.py
-└── __init__.py
-</pre>
-
-<p>
-We have our two classes, <code>A</code> and <code>B</code> defined in the <code>bar</code>
-module.
-</p>
-
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="k">pass</span>
-</pre></div>
-
-<p>
-We run <code>foo.py</code> and scratch our heads for a while, before
-figuring out what's wrong…
-</p>
-
-<div class="highlight"><pre><span class="c"># We add the directory containing out package 'baz' to sys.path to be</span>
-<span class="c"># able to import using the package name.</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">'/tmp'</span><span class="p">)</span>
-
-<span class="c"># We import A from bar module present in the same directory as foo</span>
-<span class="kn">from</span> <span class="nn">bar</span> <span class="kn">import</span> <span class="n">A</span>
-<span class="c"># We import B from bar, but refer to it, as a submodule of baz</span>
-<span class="kn">from</span> <span class="nn">baz.bar</span> <span class="kn">import</span> <span class="n">B</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
-
-<span class="k">print</span> <span class="s">"isinstance(b, A) --&gt;"</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">cls</span> <span class="ow">in</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">"</span><span class="si">%s</span><span class="s"> --&gt;"</span> <span class="o">%</span><span class="n">cls</span><span class="p">,</span> <span class="n">cls</span>
-
-<span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
-    <span class="k">if</span> <span class="s">'bar'</span> <span class="ow">in</span> <span class="n">module</span><span class="p">:</span>
-	<span class="k">print</span> <span class="n">module</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">module</span><span class="p">]</span>
-</pre></div>
-
-<pre class="example">
-isinstance(b, A) --&gt; False
-&lt;class 'bar.A'&gt; --&gt; &lt;class 'bar.A'&gt;
-&lt;class 'baz.bar.B'&gt; --&gt; &lt;class 'baz.bar.B'&gt;
-baz.bar &lt;module 'baz.bar' from '/tmp/baz/bar.pyc'&gt;
-bar &lt;module 'bar' from 'bar.pyc'&gt;
-</pre>
-    </div>
     </article>
 </div>
         <div class="pagination">

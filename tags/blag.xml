@@ -1,5 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (blag)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/blag.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 15 Jan 2016 17:10:32 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Partial postgres db dumps for a Django app</title><link>https://punchagan.muse-amuse.in/posts/partial-postgres-db-dumps-for-a-django-app.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (blag)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/blag.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 16 Jan 2016 06:09:04 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Book Review: 5 Love Languages</title><link>https://punchagan.muse-amuse.in/posts/book-review-5-love-languages.html</link><dc:creator>punchagan</dc:creator><description>&lt;div class="book-figure"&gt;
+
+    &lt;div class="book-figure-media"&gt;
+        &lt;a class="book-figure-image" href="http://www.amazon.com/gp/product/080241270X" target="_blank"&gt;
+            &lt;img height="150px" src="https://farm2.staticflickr.com/1656/24408821265_6f067fe523_o.jpg" alt="5 Love Languages"&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class="book-figure-info"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;span class="book-figure-info-label"&gt;Author &lt;/span&gt;&lt;span&gt;Gary Chapman&lt;/span&gt;&lt;/li&gt;
+	    &lt;li&gt;&lt;span class="book-figure-info-label"&gt;ISBN &lt;/span&gt;&lt;span&gt;080241270X&lt;/span&gt;&lt;/li&gt;
+	    &lt;li&gt;&lt;span class="book-figure-info-label"&gt;Read &lt;/span&gt;&lt;span&gt;2016-01-13&lt;/span&gt;&lt;/li&gt;
+	    &lt;li&gt;&lt;span class="book-figure-info-label"&gt;Rating &lt;/span&gt;&lt;span&gt;5/5&lt;/span&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;
+I first heard of this book in a discussion on relationships amongst friends
+from RC.  The discussion was quite interesting and the book received more than
+a couple of strong recommendations. So, I decided to pick it up.
+&lt;/p&gt;
+
+&lt;p&gt;
+Very simply, the book is codified common sense explaining what Love is. Gary
+Chapman, the author, started with the question "What makes you feel loved" and
+found that the answers could be grouped into the following 5 categories:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Words of affirmation
+&lt;/li&gt;
+&lt;li&gt;Quality time
+&lt;/li&gt;
+&lt;li&gt;Receiving gifts
+&lt;/li&gt;
+&lt;li&gt;Acts of service
+&lt;/li&gt;
+&lt;li&gt;Physical touch
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+He also found that people have a &lt;b&gt;primary&lt;/b&gt; language of love, and a failure to
+speak this language would make the person feel unloved.  The book is filled
+with anecdotes to explain what each of these languages means and how to speak
+them, along with practical advice and exercises to learn to speak each of these
+languages.  Though the book has been written with couples in mind, the
+fundamental ideas in this book can be applied to any relationships. I feel like
+it has been helping me connect a few dots, ever since I've started reading it.
+&lt;/p&gt;
+
+&lt;p&gt;
+It has been totally worth my time to read this book. A highly recommended read!
+&lt;/p&gt;
+
+&lt;p&gt;
+Below are some of my notes. Feel free to suggest improvements (for readability
+and otherwise) on the notes.
+&lt;/p&gt;
+
+
+&lt;div class="figure"&gt;
+&lt;p&gt;&lt;a href="https://farm2.staticflickr.com/1484/23781720643_a8e91c0cf8_o.jpg"&gt;&lt;img src="https://farm2.staticflickr.com/1484/23781720643_a8e91c0cf8_o.jpg" alt="23781720643_a8e91c0cf8_o.jpg"&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;</description><category>blag</category><category>book</category><category>book-review</category><category>life</category><category>love</category><guid>https://punchagan.muse-amuse.in/posts/book-review-5-love-languages.html</guid><pubDate>Tue, 12 Jan 2016 14:02:51 GMT</pubDate></item><item><title>Partial postgres db dumps for a Django app</title><link>https://punchagan.muse-amuse.in/posts/partial-postgres-db-dumps-for-a-django-app.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Off late, I have been working with a large &lt;code&gt;postgres&lt;/code&gt; database that is used by
 an app built in &lt;code&gt;Django&lt;/code&gt;.  I wanted a partial dump of the database to try out
 some experimental clean up scripts.  I haven't really used databases before,

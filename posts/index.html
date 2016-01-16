@@ -79,7 +79,85 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/partial-postgres-db-dumps-for-a-django-app.html" class="u-url">Partial postgres db dumps for a Django app</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/book-review-5-love-languages.html" class="u-url">Book Review: 5 Love Languages</a></h1>
+        <span class="post-date">12 Jan 2016</span>
+    </header><div class="e-content entry-content">
+    <div class="book-figure">
+
+    <div class="book-figure-media">
+        <a class="book-figure-image" href="http://www.amazon.com/gp/product/080241270X" target="_blank">
+            <img height="150px" src="https://farm2.staticflickr.com/1656/24408821265_6f067fe523_o.jpg" alt="5 Love Languages"></a>
+    </div>
+
+    <div class="book-figure-info">
+        <ul>
+<li>
+<span class="book-figure-info-label">Author </span><span>Gary Chapman</span>
+</li>
+	    <li>
+<span class="book-figure-info-label">ISBN </span><span>080241270X</span>
+</li>
+	    <li>
+<span class="book-figure-info-label">Read </span><span>2016-01-13</span>
+</li>
+	    <li>
+<span class="book-figure-info-label">Rating </span><span>5/5</span>
+</li>
+        </ul>
+</div>
+
+</div>
+
+<p>
+I first heard of this book in a discussion on relationships amongst friends
+from RC.  The discussion was quite interesting and the book received more than
+a couple of strong recommendations. So, I decided to pick it up.
+</p>
+
+<p>
+Very simply, the book is codified common sense explaining what Love is. Gary
+Chapman, the author, started with the question "What makes you feel loved" and
+found that the answers could be grouped into the following 5 categories:
+</p>
+
+<ol class="org-ol">
+<li>Words of affirmation
+</li>
+<li>Quality time
+</li>
+<li>Receiving gifts
+</li>
+<li>Acts of service
+</li>
+<li>Physical touch
+</li>
+</ol>
+<p>
+He also found that people have a <b>primary</b> language of love, and a failure to
+speak this language would make the person feel unloved.  The book is filled
+with anecdotes to explain what each of these languages means and how to speak
+them, along with practical advice and exercises to learn to speak each of these
+languages.  Though the book has been written with couples in mind, the
+fundamental ideas in this book can be applied to any relationships. I feel like
+it has been helping me connect a few dots, ever since I've started reading it.
+</p>
+
+<p>
+It has been totally worth my time to read this book. A highly recommended read!
+</p>
+
+<p>
+Below are some of my notes. Feel free to suggest improvements (for readability
+and otherwise) on the notes.
+</p>
+
+
+<div class="figure">
+<p><a href="https://farm2.staticflickr.com/1484/23781720643_a8e91c0cf8_o.jpg"><img src="https://farm2.staticflickr.com/1484/23781720643_a8e91c0cf8_o.jpg" alt="23781720643_a8e91c0cf8_o.jpg"></a>
+</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/partial-postgres-db-dumps-for-a-django-app.html" class="u-url">Partial postgres db dumps for a Django app</a></h1>
         <span class="post-date">10 Jan 2016</span>
     </header><div class="e-content entry-content">
     <p>
@@ -840,80 +918,6 @@ a message queues it up, instead of trying to send it. Smooth!
 The code is in my <a href="https://github.com/punchagan/dot-emacs/blob/master/punchagan.org#jabber">.emacs</a>
 </p>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/using-tmux-to-screen-share.html" class="u-url">Using tmux to "screen share"</a></h1>
-        <span class="post-date">24 Nov 2014</span>
-    </header><div class="e-content entry-content">
-    <p>
-I wanted to pair with a friend of mine, exploring Magit mode in Emacs.  There
-are a couple of projects to make it easy to use tmux(-like) to simplify this.
-</p>
-
-<ul class="org-ul">
-<li>
-<a href="https://github.com/non/pairing">pairing</a> lets you share a screen and pair, on a common server where both the
-users have access to.  But I wanted to use my machine, instead of the
-server.
-</li>
-
-<li>
-<a href="http://tmate.io">tmate</a> gets around the restriction of having a common server where both users
-have access, but needs a custom install of tmux, and the use of a 3rd party
-service.
-</li>
-</ul>
-<p>
-I worked around this, using an ssh reverse tunnels.  Here are the steps, for
-anyone who'd like to reproduce.
-</p>
-
-<ol class="org-ol">
-<li>Add your partner(-in-crime)'s ssh key to authorized keys on a server that
-has a public IP (<code>example.com</code>, let's say).
-</li>
-
-<li>Add your server's key to authorized keys on your local machine.
-</li>
-
-<li>Create a reverse tunnel from your machine to the server.
-
-<div class="highlight"><pre>ssh -fNR 19999:localhost:22 server_user@example.com
-</pre></div>
-
-<p>
-<code>-R 19999</code> essentially forwards port 19999 on <code>example.com</code> to
-localhost's 22.  <code>-fN</code> is to say no terminal, send connection to background.
-</p>
-</li>
-
-<li>Your partner first ssh's to example.com and then ssh's to your laptop.
-
-<p>
-On your partner's machine
-</p>
-
-<div class="highlight"><pre>ssh server_user@example.com
-</pre></div>
-
-<p>
-On the server, your partner does
-</p>
-<div class="highlight"><pre>ssh your_username@localhost -p 19999
-</pre></div>
-
-<p>
-Your partner is on your machine, and can run <code>rm -rf</code>!  But, hopefully
-they'll only run <code>tmux attach</code>.  Obviously, do this only with people you
-trust!
-</p>
-</li>
-
-<li>Start a tmux session locally.
-</li>
-
-<li>Profit!
-</li>
-</ol>
-</div>
     </article>
 </div>
         <div class="pagination">
