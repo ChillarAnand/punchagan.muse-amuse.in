@@ -79,7 +79,30 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-07.html" class="u-url">Recurse Center, 2014-07-07</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-08.html" class="u-url">Recurse Center, 2014-07-08</a></h1>
+        <span class="post-date">09 Jul 2014</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>I had gone to the emacs weekly meetup, and Samer demonstrated some of the
+things he liked, and discovered recently.
+</li>
+<li>Stopped worrying too much about what the best way to index the data was, and
+just went about getting the tests running one by one.  There is still a small
+hack, but I got all the tests running except the source for modules.
+</li>
+<li>At the end of the day, I thought I had the code to get all the tests passing,
+but I hit some unicode issues with json serializing, and don't have all the
+tests passing, yet.
+</li>
+<li>I paired with Kyle to work through a simple example to generate a note of a
+specified frequency.
+</li>
+<li>I spent some time reviewing my first month here, and wrote up some notes in
+preparation for the one-on-one today with Allison.
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-07.html" class="u-url">Recurse Center, 2014-07-07</a></h1>
         <span class="post-date">08 Jul 2014</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -358,61 +381,6 @@ more than finish projects and build something uber-cool.  Of course, it would
 be great to build awesome stuff (and may be the only reasonable way to form
 habits, and make friends) but I shouldn't worry too much about time running
 out. Never Graduate!
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-06-24.html" class="u-url">Recurse Center, 2014-06-24</a></h1>
-        <span class="post-date">24 Jun 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I worked for the whole day on implementing <i>an algorithm</i> to analyze a
-cipher text, and guess the substitution cipher used.  The algorithm
-was pretty straight forward, and I had it "mostly" working, in a
-couple of hours.
-</li>
-<li>I then began to refactor it, and found that there was what looked
-like a bug, and I "fixed" it mindlessly.  I was essentially trying
-to swap 2 rows, and columns of a pandas data frame.  I had a
-data-frame <code>D</code> and its copy <code>D_</code>.  I was trying to swap 2 rows and
-columns of <code>D_</code>.  I found that the code was initially using the data
-from <code>D</code> to do the swap.  To fix it, I checked if tuple unpacking
-did the right thing.  It looked like it did.  So, I used something
-like <code>_D['a'], D_['b'] = D_['b'], D_['a']</code>.  Essentially, changed <code>D</code>
-on the right hand side to <code>D_</code>.  I thought I had tested this on the
-terminal, but after hours of debugging (along with fixing another
-minor issue), I later found out that the tuple unpacking doesn't
-work and the swapped rows and columns actually become equal!  I had
-suspected this initially, and had "tested" this manually, I
-thought.  These are the kinds of things that should have tests for,
-I think.  It wouldn't have taken me too long to write a test, and I
-could have been totally sure that it works!  (I was manually reading
-off values in the array, and probably messed up somewhere)
-
-<p>
-FWIW, the code now reads <code>_D['a'], D_['b'] = D_['b'].copy(),
-  D_['a'].copy()</code>
-</p>
-</li>
-<li>The algo seems to need about 1000 characters to get past the 90%
-accuracy mark.  I could probably tweak it a little to perform
-better, but I'm going to leave it here, for now, and move on to the
-signal processing parts.  I'm not totally sure how the signal
-processing would work, and whether we could actually map back the
-keystrokes to a substitution cipher enciphered text.
-</li>
-<li>If required, the tweaks could be -
-<ul class="org-ul">
-<li>Use trigrams instead of bigrams
-</li>
-<li>Add a degree of dictionary look-ups: May be something like,
-look-up all the deciphered words, and try not swapping the
-characters that appear in most of the words that are in the
-dictionary.
-</li>
-</ul>
-</li>
-<li>This paper is 20 years old, and there would surely be work by others
-building on top of this, or doing it totally differently.
 </li>
 </ul>
 </div>

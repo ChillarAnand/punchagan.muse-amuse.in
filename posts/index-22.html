@@ -79,7 +79,67 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/who-i-am.html" class="u-url">Who I am</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/augmented-assignment-in-python.html" class="u-url">Augmented assignment in Python</a></h1>
+        <span class="post-date">04 Oct 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+If you are new to <code>Python</code>, you should probably stop reading here.
+But, if you have used <code>Python</code> and <code>numpy</code>, then read on. Before, that
+try these bits of code.
+</p>
+
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mf">0.5j</span>
+<span class="k">print</span> <span class="n">a</span>
+</pre></div>
+
+<p>
+The "same thing", in a slightly different way.
+</p>
+
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
+<span class="k">print</span> <span class="n">a</span>
+</pre></div>
+
+<p>
+Both the code blocks, look really the same, until you look carefully.
+Under normal circumstances <code>a = a + b</code> and <code>a += b</code> behave exactly
+similarly, and we really don't need to bother about the differences
+between them.
+</p>
+
+<p>
+But, <code>+=</code>, which is an augmented assignment operator, actually tries
+to perform the operation in-place, unlike the other statement where
+<code>+</code> actually returns a new object which is again being referenced by
+the name <code>a</code>.
+</p>
+
+<p>
+But, when dealing with <code>numpy</code> arrays, this will lead to trouble.
+When assigning to an array, it's <code>dtype</code> is not changed and hence the
+trouble.
+</p>
+
+<p>
+The right way to use the augmented assignment operator, would be:
+</p>
+
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
+<span class="k">print</span> <span class="n">a</span>
+</pre></div>
+
+<p>
+The same thing is explained in this thread.  Also, Thanks to
+Bhanukiran for asking me this.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/who-i-am.html" class="u-url">Who I am</a></h1>
         <span class="post-date">04 Oct 2010</span>
     </header><div class="e-content entry-content">
     <p class="verse">
@@ -456,44 +516,6 @@ of users world-wide. "
 </li>
 <li>
 <b>Venue:</b> PC Saxena Auditorium, IIT Bombay
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/org2blog-on-the-web.html" class="u-url">org2blog on the web</a></h1>
-        <span class="post-date">29 Aug 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-Well, it's been a week of lull on my blog.  Not that I'm very
-busy.  But, just didn't have anything to post.  I was feeling jobless
-today and searched the web for org2blog users.  Here is what I found.
-</p>
-
-<ul class="org-ul">
-<li>This is a test post from org2blog
-</li>
-
-<li>Posting from emacs and org-mode
-</li>
-
-<li>Vim vs Emacs, or why it really doesn’t matter
-</li>
-
-<li>Posting subtree from org-mode buffer (take 2)
-</li>
-
-<li>Here’s a test post to wordpress for Org2blog – an Emacs plugin
-</li>
-
-<li>Primeiro post usando org2blog
-</li>
-
-<li>Emacs中绘图－ ditaa篇
-</li>
-
-<li>org2blog on identi.ca
-</li>
-
-<li>Marcel van der Boom – StatusNet
 </li>
 </ul>
 </div>
