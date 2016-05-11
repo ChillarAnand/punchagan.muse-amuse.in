@@ -336,38 +336,38 @@ date-tree. <code>org-refile</code> isn't convenient to refile stuff to a
 date-tree.
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">my/org-refile-to-journal</span> <span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">my/org-refile-to-journal</span> <span class="p">()</span>
   <span class="s">"Refile an entry to journal file's date-tree"</span>
-  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">require</span> <span class="ss">'org-datetree</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">journal</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">"journal.org"</span> <span class="nv">org-directory</span><span class="p">))</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">journal</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">"journal.org"</span> <span class="nv">org-directory</span><span class="p">))</span>
 	<span class="nv">post-date</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">org-entry-get</span> <span class="p">(</span><span class="nv">point</span><span class="p">)</span> <span class="s">"TIMESTAMP_IA"</span><span class="p">)</span>
-			<span class="p">(</span><span class="nv">org-entry-get</span> <span class="p">(</span><span class="nv">point</span><span class="p">)</span> <span class="s">"TIMESTAMP"</span><span class="p">)))</span>
-    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="nb">nthcdr</span> <span class="mi">3</span> <span class="p">(</span><span class="nv">parse-time-string</span> <span class="nv">post-date</span><span class="p">)))</span>
-    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">post-date</span><span class="p">)</span>
-			  <span class="p">(</span><span class="nb">car</span> <span class="nv">post-date</span><span class="p">)</span>
-			  <span class="p">(</span><span class="nb">caddr</span> <span class="nv">post-date</span><span class="p">)))</span>
+    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nv">org-entry-get</span> <span class="p">(</span><span class="nf">point</span><span class="p">)</span> <span class="s">"TIMESTAMP_IA"</span><span class="p">)</span>
+			<span class="p">(</span><span class="nv">org-entry-get</span> <span class="p">(</span><span class="nf">point</span><span class="p">)</span> <span class="s">"TIMESTAMP"</span><span class="p">)))</span>
+    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="nf">nthcdr</span> <span class="mi">3</span> <span class="p">(</span><span class="nv">parse-time-string</span> <span class="nv">post-date</span><span class="p">)))</span>
+    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="nf">list</span> <span class="p">(</span><span class="nv">cadr</span> <span class="nv">post-date</span><span class="p">)</span>
+			  <span class="p">(</span><span class="nf">car</span> <span class="nv">post-date</span><span class="p">)</span>
+			  <span class="p">(</span><span class="nv">caddr</span> <span class="nv">post-date</span><span class="p">)))</span>
     <span class="p">(</span><span class="nv">org-cut-subtree</span><span class="p">)</span>
-    <span class="p">(</span><span class="nv">with-current-buffer</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">find-buffer-visiting</span> <span class="nv">journal</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">with-current-buffer</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nv">find-buffer-visiting</span> <span class="nv">journal</span><span class="p">)</span>
 			     <span class="p">(</span><span class="nv">find-file-noselect</span> <span class="nv">journal</span><span class="p">))</span>
-      <span class="p">(</span><span class="nv">save-excursion</span>
+      <span class="p">(</span><span class="k">save-excursion</span>
 	<span class="p">(</span><span class="nv">org-datetree-file-entry-under</span> <span class="p">(</span><span class="nv">current-kill</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">post-date</span><span class="p">)</span>
 	<span class="p">(</span><span class="nv">bookmark-set</span> <span class="s">"org-refile-last-stored"</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nv">message</span> <span class="s">"Refiled to %s"</span> <span class="nv">journal</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nf">message</span> <span class="s">"Refiled to %s"</span> <span class="nv">journal</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="nb">defun</span> <span class="nv">my/org-agenda-refile-to-journal</span> <span class="p">()</span>
   <span class="s">"Refile the item at point to journal."</span>
-  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">marker</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">org-get-at-bol</span> <span class="ss">'org-hd-marker</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">marker</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nv">org-get-at-bol</span> <span class="ss">'org-hd-marker</span><span class="p">)</span>
 		     <span class="p">(</span><span class="nv">org-agenda-error</span><span class="p">)))</span>
-	 <span class="p">(</span><span class="nv">buffer</span> <span class="p">(</span><span class="nv">marker-buffer</span> <span class="nv">marker</span><span class="p">))</span>
-	 <span class="p">(</span><span class="nv">pos</span> <span class="p">(</span><span class="nv">marker-position</span> <span class="nv">marker</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nv">with-current-buffer</span> <span class="nv">buffer</span>
-      <span class="p">(</span><span class="nv">save-excursion</span>
-	<span class="p">(</span><span class="nv">save-restriction</span>
-	  <span class="p">(</span><span class="nv">widen</span><span class="p">)</span>
-	  <span class="p">(</span><span class="nv">goto-char</span> <span class="nv">marker</span><span class="p">)</span>
+	 <span class="p">(</span><span class="nv">buffer</span> <span class="p">(</span><span class="nf">marker-buffer</span> <span class="nv">marker</span><span class="p">))</span>
+	 <span class="p">(</span><span class="nv">pos</span> <span class="p">(</span><span class="nf">marker-position</span> <span class="nv">marker</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">with-current-buffer</span> <span class="nv">buffer</span>
+      <span class="p">(</span><span class="k">save-excursion</span>
+	<span class="p">(</span><span class="k">save-restriction</span>
+	  <span class="p">(</span><span class="nf">widen</span><span class="p">)</span>
+	  <span class="p">(</span><span class="nf">goto-char</span> <span class="nv">marker</span><span class="p">)</span>
 	  <span class="p">(</span><span class="nv">org-remove-subtree-entries-from-agenda</span><span class="p">)</span>
 	  <span class="p">(</span><span class="nv">my/org-refile-to-journal</span><span class="p">)))))</span>
   <span class="p">(</span><span class="nv">org-agenda-redo</span><span class="p">))</span>

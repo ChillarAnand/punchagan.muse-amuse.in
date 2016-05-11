@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (fest)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/fest.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 25 Dec 2015 16:48:22 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>mukt.in 2008</title><link>https://punchagan.muse-amuse.in/posts/muktin-2008.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (fest)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://punchagan.muse-amuse.in/tags/fest.xml"></atom:link><language>en</language><lastBuildDate>Thu, 05 May 2016 13:03:50 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>mukt.in 2008</title><link>https://punchagan.muse-amuse.in/posts/muktin-2008.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Mukt.in is a FOSS-fest, being conducted in Hyderabad, India by the
 mukt.in team (a group of FOSS enthusiasts). Spread the word and Be
 there!
@@ -102,7 +102,7 @@ Speech n Freeware is software that if free as in free beer.
 &lt;/li&gt;
 &lt;li&gt;Eagerly awaiting mukt.in v2. Can't wait to get back home!
 &lt;/li&gt;
-&lt;li&gt;Enjoying my time on \#mukt.in and \#linux-india. The new DC
+&lt;li&gt;Enjoying my time on \\#mukt.in and \\#linux-india. The new DC
 hub (GNOME) for FOSS junta is cool too!
 &lt;/li&gt;
 &lt;li&gt;There's an urgent need to start contributing to FOSS. But

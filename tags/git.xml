@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (git)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/git.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 25 Dec 2015 16:48:21 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-06-23</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-06-23.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (git)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://punchagan.muse-amuse.in/tags/git.xml"></atom:link><language>en</language><lastBuildDate>Thu, 05 May 2016 13:03:47 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-06-23</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-06-23.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;The Apprenticeship patterns book is very interesting!  I shall
 continue to read it and start create daily/weekly rituals from the
 actions prescribed in the book!
@@ -68,15 +68,15 @@ the changes, apply the patch back.
 This is what he did
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;git add new_file.txt
-git add old_file1.txt old_file2.txt &lt;span class="c"&gt;# don't add old_file3.txt&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add new_file.txt
+git add old_file1.txt old_file2.txt &lt;span class="c1"&gt;# don't add old_file3.txt&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
 Oh, damn, I want to change the branch.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;git diff &amp;gt; a.patch
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git diff &amp;gt; a.patch
 git reset --hard
 git checkout other-branch
 &lt;/pre&gt;&lt;/div&gt;
@@ -85,7 +85,7 @@ git checkout other-branch
 Let me commit my changes…
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;git apply a.patch
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git apply a.patch
 git commit -m
 git show
 &lt;/pre&gt;&lt;/div&gt;
@@ -95,7 +95,7 @@ Oh crap!  Where are my new files?  They aren't commited!  Lemme
 add them.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;ls new_file.txt
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ls new_file.txt
 ls: cannot access new_file.txt: No such file or directory
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -116,8 +116,8 @@ comfortable with git would've committed and then moved the commit
 around using cherry-pick or the like.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;git add &amp;lt;all-files&amp;gt;
-git commit -m &lt;span class="s2"&gt;"My awesome changes."&lt;/span&gt;  &lt;span class="c"&gt;#committed on branch1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add &amp;lt;all-files&amp;gt;
+git commit -m &lt;span class="s2"&gt;"My awesome changes."&lt;/span&gt;  &lt;span class="c1"&gt;#committed on branch1&lt;/span&gt;
 git checkout other-branch
 git cherry-pick branch1
 &lt;/pre&gt;&lt;/div&gt;</description><category>git</category><category>version_control</category><guid>https://punchagan.muse-amuse.in/posts/a-git-diff-tip.html</guid><pubDate>Wed, 22 Aug 2012 17:36:00 GMT</pubDate></item><item><title>GetHub: Chrome Notifications for Github updates</title><link>https://punchagan.muse-amuse.in/posts/gethub-chrome-notifications-for-github-updates.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;

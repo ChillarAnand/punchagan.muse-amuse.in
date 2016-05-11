@@ -100,12 +100,12 @@ Below is a bash snippet that tries to incorporates both the
 changes. :)
 </p>
 
-<div class="highlight"><pre><span class="nv">found</span><span class="o">=</span>0
+<div class="highlight"><pre><span></span><span class="nv">found</span><span class="o">=</span>0
 
 <span class="k">for</span> win in <span class="sb">`</span>xdotool search --class <span class="nv">$1</span><span class="sb">`</span><span class="p">;</span>
 <span class="k">do</span>
 <span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>xdotool get_desktop_for_window <span class="nv">$win</span><span class="sb">`</span> -eq <span class="sb">`</span>xdotool get_desktop<span class="sb">`</span> <span class="o">]</span><span class="p">;</span>
-<span class="k">then</span> <span class="nv">found</span><span class="o">=</span>1<span class="p">;</span> <span class="nb">break</span><span class="p">;</span>
+<span class="k">then</span> <span class="nv">found</span><span class="o">=</span>1<span class="p">;</span> break<span class="p">;</span>
 <span class="k">fi</span><span class="p">;</span>
 <span class="k">done</span>
 

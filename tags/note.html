@@ -113,7 +113,7 @@ But, if you have used <code>Python</code> and <code>numpy</code>, then read on. 
 try these bits of code.
 </p>
 
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mf">0.5j</span>
 <span class="k">print</span> <span class="n">a</span>
@@ -123,7 +123,7 @@ try these bits of code.
 The "same thing", in a slightly different way.
 </p>
 
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
 <span class="k">print</span> <span class="n">a</span>
@@ -153,7 +153,7 @@ trouble.
 The right way to use the augmented assignment operator, would be:
 </p>
 
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
 <span class="k">print</span> <span class="n">a</span>
@@ -327,13 +327,13 @@ A small utility function that I used to sort the names of people
 who commented on my blog.
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">org-get-link-desc-from-list</span> <span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">org-get-link-desc-from-list</span> <span class="p">()</span>
   <span class="s">""" Get link description of a list item containing just links """</span>
-  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">item-beg</span> <span class="p">(</span><span class="nv">point</span><span class="p">))</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">item-beg</span> <span class="p">(</span><span class="nf">point</span><span class="p">))</span>
        <span class="p">(</span><span class="nv">item-end</span> <span class="p">(</span><span class="nv">org-end-of-item</span><span class="p">))</span>
-       <span class="p">(</span><span class="nv">cur-item</span> <span class="p">(</span><span class="nv">buffer-substring-no-properties</span>
+       <span class="p">(</span><span class="nv">cur-item</span> <span class="p">(</span><span class="nf">buffer-substring-no-properties</span>
 		  <span class="nv">item-beg</span> <span class="nv">item-end</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nv">goto-char</span> <span class="nv">item-beg</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">goto-char</span> <span class="nv">item-beg</span><span class="p">)</span>
     <span class="p">(</span><span class="nv">org-columns-compact-links</span> <span class="nv">cur-item</span><span class="p">)))</span>
 </pre></div>
 
