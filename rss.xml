@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought</title><link>https://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link rel="self" type="application/rss+xml" href="https://punchagan.muse-amuse.in/rss.xml"></atom:link><language>en</language><lastBuildDate>Tue, 17 May 2016 07:39:50 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deoriatal and Chandrashila</title><link>https://punchagan.muse-amuse.in/posts/deoriatal-and-chandrashila.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought</title><link>https://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link rel="self" href="https://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 17 May 2016 07:47:17 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Error messages and new users</title><link>https://punchagan.muse-amuse.in/posts/error-messages-and-new-users.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I was helping a friend of mine setup &lt;a href="http://jajoosam.github.io"&gt;his blog&lt;/a&gt; and we were trying to use &lt;a href="http://hexo.io"&gt;Hexo&lt;/a&gt; –
+a static site generator.  We chose a Javascript based tool since he's trying to
+learn Javascript.  I skimmed through active Javascript projects in &lt;a href="https://staticsitegenerators.net"&gt;this list&lt;/a&gt;
+and finally zeroed down upon Hexo based on its popularity.  I promised to help
+my friend to set this up, but he first tried to do it on his own and got back
+to me after an hour or so, quite frustrated and almost on the verge of giving
+up setting it up.  I didn't expect this from a tool that had so many stars,
+forks, plugins and so much active development.
+&lt;/p&gt;
+
+&lt;p&gt;
+We finally got it working, but we found that the error messages were horrendous
+– even for someone who has been using free and open-source tools for a while
+now.  Printing out errors from compiler or interpreter directly along with the
+stack trace is almost always the worst thing to do for a tool/utility (as
+opposed to an API or library).  The stack trace is definitely useful, for
+developers trying to build upon or improve your tool.  Have a debug or
+development mode where developers can get all the information they need.
+&lt;/p&gt;
+
+&lt;p&gt;
+If you care about your users, especially new users, make sure you spend
+sufficient time on showing human-readable messages. If possible list the
+possible causes for every error along with tips for troubleshooting.
+&lt;/p&gt;</description><category>blab</category><category>programming</category><category>software</category><category>user-experience</category><guid>https://punchagan.muse-amuse.in/posts/error-messages-and-new-users.html</guid><pubDate>Tue, 17 May 2016 07:22:36 GMT</pubDate></item><item><title>Deoriatal and Chandrashila</title><link>https://punchagan.muse-amuse.in/posts/deoriatal-and-chandrashila.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 It was the final day and after about 5 hours of descent through the hills on the
 road, we had stopped for lunch about 100km from Haridwar. Of the 14 people who
 stayed until the last day, 5 of us were in a Sumo and 9 were in a Tempo
@@ -1048,108 +1073,4 @@ hack, and welcome any suggestions on cleaning up the code.
 	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-datetree-file-entry-under&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;current-kill&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;date&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;bookmark-set&lt;/span&gt; &lt;span class="s"&gt;"org-refile-last-stored"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;message&lt;/span&gt; &lt;span class="s"&gt;"Refiled to %s"&lt;/span&gt; &lt;span class="nv"&gt;journal&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>hack</category><category>hackerschool</category><category>learning</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</guid><pubDate>Fri, 16 Jan 2015 19:36:54 GMT</pubDate></item><item><title>How I learnt to use Emacs' profiler</title><link>https://punchagan.muse-amuse.in/posts/how-i-learnt-to-use-emacs-profiler.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I learnt to use Emacs' profiler yesterday, after many hours of yak-shaving,
-trying to get &lt;a href="https://github.com/novoid/Memacs"&gt;Memacs&lt;/a&gt; working.  Memacs is a &lt;a href="http://en.wikipedia.org/wiki/Memex"&gt;memory extension&lt;/a&gt; system for Emacs
-written by Karl Voit, that I have been meaning to try out for a long time now.
-Seeing lots of review posts at the turn of the year and watching Karl's recent
-&lt;a href="http://emacslife.com/emacs-chats/chat-karl-voit.html"&gt;Emacs Chat with Sacha Chua&lt;/a&gt; pushed me to try and finally set it up.
-&lt;/p&gt;
-
-&lt;p&gt;
-I started writing a &lt;a href="https://github.com/punchagan/Memacs/blob/chrome/memacs/chromium.py"&gt;module&lt;/a&gt; to create a Memacs file – an org archive file –
-from my browser history.  It was pretty easy to write, and I had it spitting
-out a huge file with 22k entries after about a couple of hours of work.  Then I
-excitedly pulled up my agenda, and turned on the option to view archived
-entries, only to be super-disappointed.  It turned out to be extremely slow!
-Actually, the agenda never came up with the 22k entries file that I had. At
-least not in 5 or so minutes, before I got impatient.  The performance was
-unacceptable even when I reduced it to 5k entries.
-&lt;/p&gt;
-
-&lt;p&gt;
-I was pretty sure it wasn't that slow for Karl in his &lt;a href="https://www.youtube.com/watch?v=SaKPr4J0K2I#t=999"&gt;demo&lt;/a&gt; and &lt;a href="https://twitter.com/punchagan/status/550723377871065088"&gt;tweeted&lt;/a&gt; to him,
-asking for a workaround. Meanwhile, I looked at his dot-emacs, but wasn't able
-to dig out what was needed to speed up things. He confirmed that his
-performance was way better than what I was getting.
-&lt;/p&gt;
-
-&lt;p&gt;
-First, I ruled out the possibility of it being because of the SSD, since
-clearly my CPU usage was peaking, and the task was CPU bound and not I/O.
-Next, I tried using the same file on a different machine (with a different
-version of Emacs and org-mode), and it worked blazingly fast.  So, it was
-either the version of Emacs or org-mode that I was using.
-&lt;/p&gt;
-
-&lt;p&gt;
-I should have stopped, thought clearly, and started experimenting with org
-version, but hindsight is 20-20.  I tried Ubuntu's pre-built Emacs and agendas
-were fast!  I suspected my Emacs build, since I recently started building Emacs
-from git.  I built two or three other versions of Emacs, and wasted a lot of
-time, before realizing that I wasn't using the org-mode source bundled inside
-Emacs for the tests, and there were two "independent" variables.
-&lt;/p&gt;
-
-&lt;p&gt;
-Finally, I began bisecting org-mode's source and found that all hell broke
-loose with an &lt;a href="http://orgmode.org/w/?p=org-mode.git;a=commitdiff;h=b88c5464db2cb0d90d4f30e43b5e08d2b1c1fcea;hp=8cc4e09950594b2abec2502e9218318570595ac5"&gt;inconspicuous change&lt;/a&gt; around release 8.2.6.  It turns out that
-org-overview was broken before this, and collapsing all the trees in a newly
-opened org-buffer (default option) wasn't working. Once this bug was fixed,
-opening huge org files would slow down by a great deal, in turn causing agenda
-generation to be unbearably slow.
-&lt;/p&gt;
-
-&lt;p&gt;
-All I had to do was add a &lt;code&gt;#+STARTUP: showeverything&lt;/code&gt; to the top of the file.
-This speeded up things by about 50 times!  It turns out, I later found out,
-that all of this is documented on &lt;a href="http://orgmode.org/worg/agenda-optimization.html"&gt;Worg&lt;/a&gt;. I did try a few search engine queries,
-but sadly none of them brought this up.  Adding the following to my config,
-speeded up agenda generation by about 150-200 times!
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;org-agenda-inhibit-startup&lt;/span&gt; &lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;; ~50x speedup&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;org-agenda-use-tag-inheritance&lt;/span&gt; &lt;span class="no"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;; 3-4x speedup&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-In the course of all this debugging, I learnt how to use Emacs' profiler.  The
-profile reports along with git bisect, eventually helped me figure out what the
-problem was.
-&lt;/p&gt;
-
-&lt;p&gt;
-To profile the CPU usage, all you have to do is add a call like
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;profiler-start&lt;/span&gt; &lt;span class="ss"&gt;'cpu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;;; or M-x profiler-start&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-at the place where you wish to start it.  Emacs will then start collecting
-information about where time is being spent, by sampling every
-&lt;code&gt;sampling-interval&lt;/code&gt; seconds (default 10&lt;sup&gt;6&lt;/sup&gt; nanoseconds = 1 milli second).
-&lt;/p&gt;
-
-&lt;p&gt;
-You can view the information being collected, at any point of time using
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;profiler-report&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;; or M-x profiler-report&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-The report is a nice, interactive tree with the percentage of time spent in
-each call. You can stop profiling by calling &lt;code&gt;(profiler-stop)&lt;/code&gt;.  If you have
-more than one report, you can compare them by hitting &lt;code&gt;=&lt;/code&gt; in one of the report
-buffers.  I'm definitely going to use this for other things! (like speeding up
-my startup?)
-&lt;/p&gt;
-
-&lt;p&gt;
-Now that I have Memacs working with reasonably fast agenda views, I'm looking
-forward to collecting as much personal information as I can!  Thanks Karl for
-writing Memacs.  I am going to be a pretty heavy user, I think!  There seem to
-be a few rough edges, though, and I hope to help smoothen them out a little
-bit, over the next few weeks.
-&lt;/p&gt;</description><category>emacs</category><category>orgmode</category><category>programming</category><guid>https://punchagan.muse-amuse.in/posts/how-i-learnt-to-use-emacs-profiler.html</guid><pubDate>Fri, 02 Jan 2015 20:31:17 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>hack</category><category>hackerschool</category><category>learning</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</guid><pubDate>Fri, 16 Jan 2015 19:36:54 GMT</pubDate></item></channel></rss>

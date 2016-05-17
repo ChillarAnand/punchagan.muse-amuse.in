@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/rss.xml</loc>
-  <lastmod>2016-05-11T00:50:00Z</lastmod>
+  <lastmod>2016-05-17T07:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/sitemap.xml</loc>
-  <lastmod>2016-05-11T00:50:00Z</lastmod>
+  <lastmod>2016-05-17T07:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/advice.xml</loc>
@@ -39,7 +39,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blab.xml</loc>
-  <lastmod>2016-05-05T13:03:00Z</lastmod>
+  <lastmod>2016-05-17T07:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blag.xml</loc>
@@ -487,7 +487,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/programming.xml</loc>
-  <lastmod>2016-05-05T13:03:00Z</lastmod>
+  <lastmod>2016-05-17T07:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/project.xml</loc>
@@ -535,7 +535,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/software.xml</loc>
-  <lastmod>2016-05-05T13:03:00Z</lastmod>
+  <lastmod>2016-05-17T07:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/song.xml</loc>
@@ -608,6 +608,10 @@
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/unicode.xml</loc>
   <lastmod>2015-12-25T16:48:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://punchagan.muse-amuse.in/tags/user-experience.xml</loc>
+  <lastmod>2016-05-17T07:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/vcs.xml</loc>

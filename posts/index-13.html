@@ -79,7 +79,72 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/cstringio-and-unicode.html" class="u-url">cStringIO and unicode</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2012-12-12.html" class="u-url">Bookmarks [2012/12/12]</a></h1>
+        <span class="post-date">12 Dec 2012</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://kingsly.net/tmp/qtr-life.txt">Kingsly on Life</a>
+
+<p>
+tags: quote, life, reading
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://physics.stackexchange.com/questions/6157/list-of-freely-available-physics-books">education - List of freely available physics books - Physics</a>
+
+<p>
+tags: books, physics, reading, collection
+</p>
+
+<p>
+a list of physics books with open-source licenses, like Creative Commons, GPL, etc. The books can be about a particular field in physics or about physics in general.
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://www.gaussianprocess.org/gpml/">Gaussian Processes for Machine Learning: Book webpage</a>
+
+<p>
+tags: machine<sub>learning</sub>, book, reading
+</p>
+
+<p>
+The book deals with the supervised-learning problem for both regression and classification, and includes detailed algorithms. A wide variety of covariance (kernel) functions are presented and their properties discussed. Model selection is discussed both from a Bayesian and a classical perspective. Many connections to other well-known techniques from machine learning and statistics are discussed, including support-vector machines, neural networks, splines, regularization networks, relevance vector machines and others. Theoretical issues including learning curves and the PAC-Bayesian framework are treated, and several approximation methods for learning with large datasets are discussed. The book contains illustrative examples and exercises, and code and datasets are available on the Web. Appendixes provide mathematical background and a discussion of Gaussian Markov processes.
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://human.io/">human.io</a>
+
+<p>
+tags: development, phone, android, app, software
+</p>
+
+<p>
+Easily create and instantly deploy tiny bits of interactive code to your army of followers via their mobile devices.
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://www.bicicleting.com/information-on-getting-visas-in-an-overland-trip-from-india-to-europethrough-central-asia/">Information on getting visas in an overland trip from India to Europe(through central asia) « Asia by bike | Un viaje en bicicleta</a>
+
+<p>
+tags: travel, visa, advice, bicycling
+</p>
+
+<p>
+If you are going in an overland trip from Asia to Europe,through central asia , here is my experience with the visas.
+</p>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/cstringio-and-unicode.html" class="u-url">cStringIO and unicode</a></h1>
         <span class="post-date">03 Dec 2012</span>
     </header><div class="e-content entry-content">
     <p>
@@ -462,76 +527,6 @@ This is the GNU Emacs Lisp Reference Manual, corresponding to Emacs version 24.1
 </li>
 </ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/a-git-diff-tip.html" class="u-url">A git-diff tip</a></h1>
-        <span class="post-date">22 Aug 2012</span>
-    </header><div class="e-content entry-content">
-    <p>
-One of the things with git that you can mess-up, if you are not
-used to, is git diff.  A friend of mine was trying to add a couple
-of new files, and changes to existing files.  But, he was on the
-wrong branch, and wanted to change to a different branch, before
-committing.  Being new to git, he wanted to take a patch.  Reset
-the changes, apply the patch back.
-</p>
-
-<p>
-This is what he did
-</p>
-
-<div class="highlight"><pre><span></span>git add new_file.txt
-git add old_file1.txt old_file2.txt <span class="c1"># don't add old_file3.txt</span>
-</pre></div>
-
-<p>
-Oh, damn, I want to change the branch.
-</p>
-
-<div class="highlight"><pre><span></span>git diff &gt; a.patch
-git reset --hard
-git checkout other-branch
-</pre></div>
-
-<p>
-Let me commit my changes…
-</p>
-
-<div class="highlight"><pre><span></span>git apply a.patch
-git commit -m
-git show
-</pre></div>
-
-<p>
-Oh crap!  Where are my new files?  They aren't commited!  Lemme
-add them.
-</p>
-
-<div class="highlight"><pre><span></span>ls new_file.txt
-ls: cannot access new_file.txt: No such file or directory
-</pre></div>
-
-<p>
-Dammit!  Where are my changes gone?
-</p>
-
-<p>
-The problem was with <code>git diff</code>.  It gives only the only the
-un-staged changes.  <code>--cached</code> option has to specified, to get the
-staged changes in the diff output.  <code>git diff HEAD</code> shows diff
-output with both staged and un-staged changes.
-</p>
-
-<p>
-But the whole workflow above is a beginners workflow.  A user
-comfortable with git would've committed and then moved the commit
-around using cherry-pick or the like.
-</p>
-
-<div class="highlight"><pre><span></span>git add &lt;all-files&gt;
-git commit -m <span class="s2">"My awesome changes."</span>  <span class="c1">#committed on branch1</span>
-git checkout other-branch
-git cherry-pick branch1
-</pre></div>
-    </div>
     </article>
 </div>
         <div class="pagination">
