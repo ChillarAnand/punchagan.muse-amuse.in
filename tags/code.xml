@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (code)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://punchagan.muse-amuse.in/tags/code.xml"></atom:link><language>en</language><lastBuildDate>Thu, 05 May 2016 13:03:47 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Say Howdy with Emacs!</title><link>https://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (code)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/code.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 04:18:38 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Say Howdy with Emacs!</title><link>https://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Staying in touch with people is something I'm not very good at.  Since I am not
 on popular (among my friends/family) networks – FB and Whatsapp – I don't
 even see random updates from people, to get some sense of being in touch.
@@ -185,9 +185,9 @@ simple, once I had everything working with libclang.
 &lt;a href="http://twitter.com/avudem"&gt;Voodoo&lt;/a&gt; found a broken link referring to a one of my posts, on Quora.
 Given that I have changed my site generator a bunch of times now, it
 is quite possible that there are other broken links at various other
-places.  So, I implemented a smart &lt;a href="http://punchagan.muse-amuse.in/this-is-a-fun-hack"&gt;404 page&lt;/a&gt; for the site, yesterday.
+places.  So, I implemented a smart &lt;a href="https://punchagan.muse-amuse.in/this-is-a-fun-hack"&gt;404 page&lt;/a&gt; for the site, yesterday.
 It is very similar to something I came across on &lt;a href="http://brettterpstra.com/2013/04/07/fun-with-intelligent-404-pages/"&gt;brettterpstra&lt;/a&gt;'s site.
-I just &lt;a href="http://punchagan.muse-amuse.in/assets/js/suggestions.js"&gt;hooked up&lt;/a&gt; &lt;a href="http://kiro.me/projects/fuse.html"&gt;fuse.js&lt;/a&gt; with Nikola's &lt;a href="http://getnikola.com/handbook.html#local-search"&gt;tipue-search plugin&lt;/a&gt;'s output
+I just &lt;a href="https://punchagan.muse-amuse.in/assets/js/suggestions.js"&gt;hooked up&lt;/a&gt; &lt;a href="http://kiro.me/projects/fuse.html"&gt;fuse.js&lt;/a&gt; with Nikola's &lt;a href="http://getnikola.com/handbook.html#local-search"&gt;tipue-search plugin&lt;/a&gt;'s output
 file.  My glue code essentially, just figures out the search term from
 the URL, performs a Fuse search on the json data created by Nikola's
 search plugin, and returns a list of top 5 results.  It just took me
@@ -210,7 +210,7 @@ if anybody is interested, I can publish the code somewhere public.
 
 &lt;p&gt;
 If you are interested to get these links and bookmarks into your feed reader,
-you can subscribe to their feed: [quotes], &lt;a href="http://punchagan.muse-amuse.in/tags/cat_bookmarks.xml"&gt;bookmarks&lt;/a&gt;.  These posts will also
+you can subscribe to their feed: [quotes], &lt;a href="https://punchagan.muse-amuse.in/tags/cat_bookmarks.xml"&gt;bookmarks&lt;/a&gt;.  These posts will also
 make it to the main feed, though.
 &lt;/p&gt;
 
