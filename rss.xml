@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought</title><link>https://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="https://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 04:18:38 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Error messages and new users</title><link>https://punchagan.muse-amuse.in/posts/error-messages-and-new-users.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought</title><link>https://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link type="application/rss+xml" rel="self" href="https://punchagan.muse-amuse.in/rss.xml"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 11:54:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tedium in work-flows</title><link>https://punchagan.muse-amuse.in/posts/tedium-in-work-flows.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I use &lt;a href="http://getnikola.com"&gt;Nikola&lt;/a&gt; for generating this blog. When creating a new post, it prompts for
+a title, and creates a file for the post.
+&lt;/p&gt;
+
+&lt;p&gt;
+Often I'm starting off with only a vague idea that needs to be fleshed out
+before it can be published (or discarded). It is quite difficult to come up
+with a title at this stage. I just want to start a draft and write things down!
+&lt;/p&gt;
+
+&lt;p&gt;
+I could use a "draft-title" and change it after finishing a post, but this
+feels tedious – requires 3 steps – change the title, post filename and post
+slug.  The last two steps are optional, really, but I feel they are important
+especially when the original title is very different from the new one.
+&lt;/p&gt;
+
+&lt;p&gt;
+Being forced to come up with a title before anything else, feels tedious and,
+adds to the effort required to start off a new post.  I shouldn't really be
+worrying about the effort required to change the title of an unwritten post,
+but it happens subconsciously.
+&lt;/p&gt;
+
+&lt;p&gt;
+To work around this, I now have a "re-title utility" in my editor that takes
+care of all the tedious details.  I can start with a random title, like
+Draft-1, and change it when I'm done with the post.  I feel this is going to
+lead to a lot more drafts, at the very least, if not published posts.
+&lt;/p&gt;
+
+&lt;p&gt;
+Another work-flow related thing I came across recently was @Malabarba's &lt;a href="https://github.com/clojure-emacs/cider/issues/1717#issue-150907043"&gt;issue&lt;/a&gt;
+on CIDER (an IDE for Clojure in Emacs).  The &lt;a href="http://www.braveclojure.com/getting-started/#Using_the_REPL"&gt;REPL&lt;/a&gt; takes a while to startup and
+this caused him to not use CIDER for running tests, if there wasn't an already
+open REPL.
+&lt;/p&gt;
+
+&lt;p&gt;
+The tedium that people feel effects how they use the tool.  Not surprisingly,
+making tedious-feeling tasks a breeze with the tool also effects how and how
+much they use it.  Subtle variations in a work-flow could make or break it.
+How do you discover such potential work-flow make-or-break-ers? I think, these
+things would help:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Use the tool yourself (dog-food)
+&lt;/li&gt;
+&lt;li&gt;Talk to (or watch!) people using your tool
+&lt;/li&gt;
+&lt;li&gt;Look at work-flows in other similar tools
+&lt;/li&gt;
+&lt;li&gt;Thinking explicitly about various scenarios and simplifying or improving
+work-flows
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+I'd love to hear examples of this, and any ideas or thoughts you may have on
+identifying and fixing such things!
+&lt;/p&gt;</description><category>blab</category><category>programming</category><category>user-experience</category><category>workflow</category><guid>https://punchagan.muse-amuse.in/posts/tedium-in-work-flows.html</guid><pubDate>Thu, 19 May 2016 11:13:37 GMT</pubDate></item><item><title>Error messages and new users</title><link>https://punchagan.muse-amuse.in/posts/error-messages-and-new-users.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I was helping a friend of mine setup &lt;a href="http://jajoosam.github.io"&gt;his blog&lt;/a&gt; and we were trying to use &lt;a href="http://hexo.io"&gt;Hexo&lt;/a&gt; –
 a static site generator.  We chose a Javascript based tool since he's trying to
 learn Javascript.  I skimmed through active Javascript projects in &lt;a href="https://staticsitegenerators.net"&gt;this list&lt;/a&gt;
@@ -953,124 +1015,4 @@ pretty happy with how this all works, right now.
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>mpsyt</category><category>python</category><guid>https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</guid><pubDate>Mon, 20 Apr 2015 18:17:18 GMT</pubDate></item><item><title>org-drill for making it stick!</title><link>https://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-Those who read the &lt;a href="https://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html"&gt;last&lt;/a&gt; &lt;a href="https://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html"&gt;few&lt;/a&gt; &lt;a href="https://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html"&gt;posts&lt;/a&gt; here, would know that I have been
-experimenting with &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;org-drill&lt;/a&gt; (a spaced repetition extension to &lt;a href="http://orgmode.org/"&gt;Org mode&lt;/a&gt;).  I
-have been using the system (almost) religiously for the past 2 months, and I do
-find that it has helped a great deal! (in some respects).  I have also spent a
-considerable amount of time trying to reduce the friction to put new stuff into
-the system, and am constantly on the look out for further improvements.
-&lt;/p&gt;
-
-&lt;p&gt;
-Using this system has definitely helped with retention, and I find that I can
-recall quite a few things I have read a few weeks ago, that I would normally
-have been unable to. Though, I can recall a lot of information, I have been
-having a feeling of "fragmentation": the feeling of just retaining individual
-bits/fragments of information, while losing out on actually internalizing the
-knowledge; not seeing the big picture, etc.
-&lt;/p&gt;
-
-&lt;p&gt;
-Wozniak (the author of super-memo) &lt;a href="http://www.supermemo.com/articles/20rules.htm"&gt;warns against&lt;/a&gt; learning without
-understanding, and memorizing before actually learning stuff.  I haven't
-consciously added stuff into the system that I didn't understand (when I added
-it), but, later it does feel like I have lost some connections or the
-understanding, and am only holding onto the fragments of information.
-&lt;/p&gt;
-
-&lt;p&gt;
-The problems as explained in (read: as interpreted by me from) &lt;a href="http://www.amazon.com/Make-Stick-Science-Successful-Learning/dp/0674729013/ref=sr_1_1/188-6768042-2821103?ie=UTF8&amp;amp;qid=1421439099&amp;amp;sr=8-1&amp;amp;keywords=make+it+stick&amp;amp;pebp=1421439103302&amp;amp;peasin=674729013"&gt;Make it Stick&lt;/a&gt;
-appear to be:
-&lt;/p&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;The understanding (if any) at the time of adding stuff into the
-spaced-repetition system is untested.  It may just be familiarity
-masquerading as understanding.
-&lt;/li&gt;
-
-&lt;li&gt;The lack of any spaced repetitions for the overall concept/understanding and
-actual repetitions only for individual bits doesn't help retention of the
-understanding (even if there was any, in the first place).
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;
-To work around this, I'm going to try adding questions that test understanding,
-to the system.  The Super-memo team strongly recommends keeping the drill items
-small and easy to answer.  This may be helpful in keeping each drill session
-short, but I would really like to add conceptual questions to the system, and
-see how it goes. I hacked &lt;code&gt;org-drill&lt;/code&gt; to allow me to type out answers, before
-looking at the "correct" ones.  This is an adaptation of a system that a fellow
-Hacker Schooler uses, and shared.  Also, hopefully forcing myself to type out
-the answer will help me get around the problem of sometimes saying "yeah I know
-that", then looking at the answer only to reaffirm the feeling of familiarity,
-rather than actually testing myself.  I'm still going to continue adding quick
-and short questions that test "bits of information", though. But, hopefully the
-additional conceptual questions are going to tie things together and help fill
-in the gaps.  Lets see how this goes!
-&lt;/p&gt;
-
-&lt;p&gt;
-For those interested, my hacks to &lt;code&gt;org-drill&lt;/code&gt; below.  The code is really a
-hack, and welcome any suggestions on cleaning up the code.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;advice-add&lt;/span&gt; &lt;span class="ss"&gt;'org-drill-presentation-prompt&lt;/span&gt; &lt;span class="nb"&gt;:around&lt;/span&gt; &lt;span class="ss"&gt;'pc/org-drill-presentation-prompt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/org-drill-presentation-prompt&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;old-fun&lt;/span&gt; &lt;span class="kp"&gt;&amp;amp;rest&lt;/span&gt; &lt;span class="nv"&gt;fmt-and-args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="s"&gt;"A presentation prompt that allows capturing answers."&lt;/span&gt;
-
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;cb&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;current-buffer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;heading&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;nth&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-heading-components&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;entry-id&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-entry-get&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"ID"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;input&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class="s"&gt;"*org-capture-drill-answer*"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;insert&lt;/span&gt; &lt;span class="s"&gt;"# Hit C-c C-c once you are done answering!\\n"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-insert-heading-respect-content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;insert&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"Answer: %s"&lt;/span&gt; &lt;span class="nv"&gt;heading&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-entry-put&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"QUESTION_ID"&lt;/span&gt; &lt;span class="nv"&gt;entry-id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;goto-char&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point-max&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;insert&lt;/span&gt; &lt;span class="s"&gt;"  "&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-time-stamp-inactive&lt;/span&gt; &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;insert&lt;/span&gt; &lt;span class="s"&gt;"\\n\\n  "&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;not&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;input&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;equal&lt;/span&gt; &lt;span class="nv"&gt;input&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;ignore-errors&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;execute-kbd-macro&lt;/span&gt; &lt;span class="nv"&gt;input&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;input&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;read-key-sequence&lt;/span&gt; &lt;span class="no"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class="nv"&gt;cb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;apply&lt;/span&gt; &lt;span class="nv"&gt;old-fun&lt;/span&gt; &lt;span class="nv"&gt;fmt-and-args&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;advice-add&lt;/span&gt; &lt;span class="ss"&gt;'org-drill-reschedule&lt;/span&gt; &lt;span class="nb"&gt;:around&lt;/span&gt; &lt;span class="ss"&gt;'pc/org-drill-reschedule&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/org-drill-reschedule&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;old-fun&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="s"&gt;"Calls the original reschedule, but also archives the answer"&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;prog1&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;funcall&lt;/span&gt; &lt;span class="nv"&gt;old-fun&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;cb&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;current-buffer&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class="s"&gt;"*org-capture-drill-answer*"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;pc/org-refile-to-datetree&lt;/span&gt; &lt;span class="s"&gt;"drill.org_archive"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;message&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;buffer-name&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class="nv"&gt;cb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kill-buffer&lt;/span&gt; &lt;span class="s"&gt;"*org-capture-drill-answer*"&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="ss"&gt;'org-datetree&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/org-refile-to-datetree&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;journal&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="s"&gt;"Refile an entry to journal file's date-tree"&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;interactive&lt;/span&gt; &lt;span class="s"&gt;"fRefile to: "&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let*&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;journal&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;expand-file-name&lt;/span&gt; &lt;span class="nv"&gt;journal&lt;/span&gt; &lt;span class="nv"&gt;org-directory&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-	 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;date-string&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-entry-get&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"TIMESTAMP_IA"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-			  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-entry-get&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"TIMESTAMP"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-	 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dct&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;decode-time&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;date-string&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-time-string-to-time&lt;/span&gt; &lt;span class="nv"&gt;date-string&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-			       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;current-time&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-	 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;date&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;list&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;nth&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="nv"&gt;dct&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;nth&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="nv"&gt;dct&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;nth&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="nv"&gt;dct&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-cut-subtree&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;with-current-buffer&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;find-buffer-visiting&lt;/span&gt; &lt;span class="nv"&gt;journal&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-			     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;find-file-noselect&lt;/span&gt; &lt;span class="nv"&gt;journal&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;save-excursion&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-datetree-file-entry-under&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;current-kill&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;date&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;bookmark-set&lt;/span&gt; &lt;span class="s"&gt;"org-refile-last-stored"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;message&lt;/span&gt; &lt;span class="s"&gt;"Refiled to %s"&lt;/span&gt; &lt;span class="nv"&gt;journal&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>hack</category><category>hackerschool</category><category>learning</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</guid><pubDate>Fri, 16 Jan 2015 19:36:54 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>mpsyt</category><category>python</category><guid>https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</guid><pubDate>Mon, 20 Apr 2015 18:17:18 GMT</pubDate></item></channel></rss>

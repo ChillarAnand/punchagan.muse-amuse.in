@@ -79,7 +79,131 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/how-i-learnt-to-use-emacs-profiler.html" class="u-url">How I learnt to use Emacs' profiler</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/org-drill-for-making-it-stick.html" class="u-url">org-drill for making it stick!</a></h1>
+        <span class="post-date">17 Jan 2015</span>
+    </header><div class="e-content entry-content">
+    <p>
+Those who read the <a href="https://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html">last</a> <a href="https://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html">few</a> <a href="https://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html">posts</a> here, would know that I have been
+experimenting with <a href="http://orgmode.org/worg/org-contrib/org-drill.html">org-drill</a> (a spaced repetition extension to <a href="http://orgmode.org/">Org mode</a>).  I
+have been using the system (almost) religiously for the past 2 months, and I do
+find that it has helped a great deal! (in some respects).  I have also spent a
+considerable amount of time trying to reduce the friction to put new stuff into
+the system, and am constantly on the look out for further improvements.
+</p>
+
+<p>
+Using this system has definitely helped with retention, and I find that I can
+recall quite a few things I have read a few weeks ago, that I would normally
+have been unable to. Though, I can recall a lot of information, I have been
+having a feeling of "fragmentation": the feeling of just retaining individual
+bits/fragments of information, while losing out on actually internalizing the
+knowledge; not seeing the big picture, etc.
+</p>
+
+<p>
+Wozniak (the author of super-memo) <a href="http://www.supermemo.com/articles/20rules.htm">warns against</a> learning without
+understanding, and memorizing before actually learning stuff.  I haven't
+consciously added stuff into the system that I didn't understand (when I added
+it), but, later it does feel like I have lost some connections or the
+understanding, and am only holding onto the fragments of information.
+</p>
+
+<p>
+The problems as explained in (read: as interpreted by me from) <a href="http://www.amazon.com/Make-Stick-Science-Successful-Learning/dp/0674729013/ref=sr_1_1/188-6768042-2821103?ie=UTF8&amp;qid=1421439099&amp;sr=8-1&amp;keywords=make+it+stick&amp;pebp=1421439103302&amp;peasin=674729013">Make it Stick</a>
+appear to be:
+</p>
+
+<ol class="org-ol">
+<li>The understanding (if any) at the time of adding stuff into the
+spaced-repetition system is untested.  It may just be familiarity
+masquerading as understanding.
+</li>
+
+<li>The lack of any spaced repetitions for the overall concept/understanding and
+actual repetitions only for individual bits doesn't help retention of the
+understanding (even if there was any, in the first place).
+</li>
+</ol>
+<p>
+To work around this, I'm going to try adding questions that test understanding,
+to the system.  The Super-memo team strongly recommends keeping the drill items
+small and easy to answer.  This may be helpful in keeping each drill session
+short, but I would really like to add conceptual questions to the system, and
+see how it goes. I hacked <code>org-drill</code> to allow me to type out answers, before
+looking at the "correct" ones.  This is an adaptation of a system that a fellow
+Hacker Schooler uses, and shared.  Also, hopefully forcing myself to type out
+the answer will help me get around the problem of sometimes saying "yeah I know
+that", then looking at the answer only to reaffirm the feeling of familiarity,
+rather than actually testing myself.  I'm still going to continue adding quick
+and short questions that test "bits of information", though. But, hopefully the
+additional conceptual questions are going to tie things together and help fill
+in the gaps.  Lets see how this goes!
+</p>
+
+<p>
+For those interested, my hacks to <code>org-drill</code> below.  The code is really a
+hack, and welcome any suggestions on cleaning up the code.
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">advice-add</span> <span class="ss">'org-drill-presentation-prompt</span> <span class="nb">:around</span> <span class="ss">'pc/org-drill-presentation-prompt</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/org-drill-presentation-prompt</span> <span class="p">(</span><span class="nv">old-fun</span> <span class="kp">&amp;rest</span> <span class="nv">fmt-and-args</span><span class="p">)</span>
+  <span class="s">"A presentation prompt that allows capturing answers."</span>
+
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">cb</span> <span class="p">(</span><span class="nf">current-buffer</span><span class="p">))</span>
+	<span class="p">(</span><span class="nv">heading</span> <span class="p">(</span><span class="nf">nth</span> <span class="mi">4</span> <span class="p">(</span><span class="nv">org-heading-components</span><span class="p">)))</span>
+	<span class="p">(</span><span class="nv">entry-id</span> <span class="p">(</span><span class="nv">org-entry-get</span> <span class="p">(</span><span class="nf">point</span><span class="p">)</span> <span class="s">"ID"</span><span class="p">))</span>
+	<span class="p">(</span><span class="nv">input</span> <span class="s">""</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">switch-to-buffer-other-window</span> <span class="s">"*org-capture-drill-answer*"</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">org-mode</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">insert</span> <span class="s">"# Hit C-c C-c once you are done answering!\\n"</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">org-insert-heading-respect-content</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">"Answer: %s"</span> <span class="nv">heading</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">org-entry-put</span> <span class="p">(</span><span class="nf">point</span><span class="p">)</span> <span class="s">"QUESTION_ID"</span> <span class="nv">entry-id</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">point-max</span><span class="p">))</span>
+    <span class="p">(</span><span class="nf">insert</span> <span class="s">"  "</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">org-time-stamp-inactive</span> <span class="o">'</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
+    <span class="p">(</span><span class="nf">insert</span> <span class="s">"\\n\\n  "</span><span class="p">)</span>
+    <span class="p">(</span><span class="k">while</span> <span class="p">(</span><span class="nv">not</span> <span class="p">(</span><span class="k">and</span> <span class="nv">input</span> <span class="p">(</span><span class="nf">equal</span> <span class="nv">input</span> <span class="s">""</span><span class="p">)))</span>
+      <span class="p">(</span><span class="nb">ignore-errors</span>
+	<span class="p">(</span><span class="nf">execute-kbd-macro</span> <span class="nv">input</span><span class="p">))</span>
+      <span class="p">(</span><span class="k">setq</span> <span class="nv">input</span> <span class="p">(</span><span class="nf">read-key-sequence</span> <span class="no">nil</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nv">switch-to-buffer-other-window</span> <span class="nv">cb</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">apply</span> <span class="nv">old-fun</span> <span class="nv">fmt-and-args</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nv">advice-add</span> <span class="ss">'org-drill-reschedule</span> <span class="nb">:around</span> <span class="ss">'pc/org-drill-reschedule</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/org-drill-reschedule</span> <span class="p">(</span><span class="nv">old-fun</span><span class="p">)</span>
+  <span class="s">"Calls the original reschedule, but also archives the answer"</span>
+  <span class="p">(</span><span class="k">prog1</span> <span class="p">(</span><span class="nf">funcall</span> <span class="nv">old-fun</span><span class="p">)</span>
+    <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">cb</span> <span class="p">(</span><span class="nf">current-buffer</span><span class="p">)))</span>
+      <span class="p">(</span><span class="nv">switch-to-buffer-other-window</span> <span class="s">"*org-capture-drill-answer*"</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">pc/org-refile-to-datetree</span> <span class="s">"drill.org_archive"</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">message</span> <span class="p">(</span><span class="nf">buffer-name</span><span class="p">))</span>
+      <span class="p">(</span><span class="nv">switch-to-buffer-other-window</span> <span class="nv">cb</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">kill-buffer</span> <span class="s">"*org-capture-drill-answer*"</span><span class="p">))))</span>
+
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'org-datetree</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/org-refile-to-datetree</span> <span class="p">(</span><span class="nv">journal</span><span class="p">)</span>
+  <span class="s">"Refile an entry to journal file's date-tree"</span>
+  <span class="p">(</span><span class="k">interactive</span> <span class="s">"fRefile to: "</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">journal</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="nv">journal</span> <span class="nv">org-directory</span><span class="p">))</span>
+	 <span class="p">(</span><span class="nv">date-string</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nv">org-entry-get</span> <span class="p">(</span><span class="nf">point</span><span class="p">)</span> <span class="s">"TIMESTAMP_IA"</span><span class="p">)</span>
+			  <span class="p">(</span><span class="nv">org-entry-get</span> <span class="p">(</span><span class="nf">point</span><span class="p">)</span> <span class="s">"TIMESTAMP"</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">dct</span> <span class="p">(</span><span class="nf">decode-time</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="k">and</span> <span class="nv">date-string</span> <span class="p">(</span><span class="nv">org-time-string-to-time</span> <span class="nv">date-string</span><span class="p">))</span>
+			       <span class="p">(</span><span class="nf">current-time</span><span class="p">))))</span>
+	 <span class="p">(</span><span class="nv">date</span> <span class="p">(</span><span class="nf">list</span> <span class="p">(</span><span class="nf">nth</span> <span class="mi">4</span> <span class="nv">dct</span><span class="p">)</span> <span class="p">(</span><span class="nf">nth</span> <span class="mi">3</span> <span class="nv">dct</span><span class="p">)</span> <span class="p">(</span><span class="nf">nth</span> <span class="mi">5</span> <span class="nv">dct</span><span class="p">))))</span>
+    <span class="p">(</span><span class="nv">org-cut-subtree</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">with-current-buffer</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nv">find-buffer-visiting</span> <span class="nv">journal</span><span class="p">)</span>
+			     <span class="p">(</span><span class="nv">find-file-noselect</span> <span class="nv">journal</span><span class="p">))</span>
+      <span class="p">(</span><span class="nv">org-mode</span><span class="p">)</span>
+      <span class="p">(</span><span class="k">save-excursion</span>
+	<span class="p">(</span><span class="nv">org-datetree-file-entry-under</span> <span class="p">(</span><span class="nv">current-kill</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">date</span><span class="p">)</span>
+	<span class="p">(</span><span class="nv">bookmark-set</span> <span class="s">"org-refile-last-stored"</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nf">message</span> <span class="s">"Refiled to %s"</span> <span class="nv">journal</span><span class="p">)))</span>
+</pre></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/how-i-learnt-to-use-emacs-profiler.html" class="u-url">How I learnt to use Emacs' profiler</a></h1>
         <span class="post-date">03 Jan 2015</span>
     </header><div class="e-content entry-content">
     <p>
@@ -633,126 +757,6 @@ Here is the new code.
 <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'org-clock-in-hook</span> <span class="ss">'pc/turn-off-notifications</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'org-clock-out-hook</span> <span class="ss">'pc/turn-on-notifications</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/making-pycon-india-better-for-myself.html" class="u-url">Making PyCon India better (for myself)</a></h1>
-        <span class="post-date">14 Oct 2014</span>
-    </header><div class="e-content entry-content">
-    <p>
-I've <a href="/posts/notes-from-pycon.html">ranted before</a> about PyCon not meeting my expectations, and I even skipped
-going to the last PyCon.  Somehow, I hoped that it would be better this year,
-but no such thing happened.
-</p>
-
-<ul class="org-ul">
-<li>I should strictly not attend any talks, at the next conference I am at.  Even
-if the topic seems interesting, I should refrain from attending any talks,
-unless I know that a speaker is entertaining.
-</li>
-
-<li>I should be going there to meet old friends, meet a few new people, and
-mostly hacking on my stuff.  May be aim to show something at the lightning
-talks at the end of second day, based on what I did during the rest of the
-event.
-</li>
-
-<li>Participate more actively in open spaces, and may be initiate or suggest some
-myself.  Sprints for bug fixing, adding new features to a project may be a
-good way to get new developers to start contributing to FOSS projects.  It
-would be even better to be in touch with folks before the event, and use this
-opportunity to iron out kinks.
-</li>
-</ul>
-<p>
-I think the talks could be improved drastically. A lot<sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/making-pycon-india-better-for-myself.html#fn.1">1</a></sup><sup>, </sup><sup><a id="fnr.2" name="fnr.2" class="footref" href="/posts/making-pycon-india-better-for-myself.html#fn.2">2</a></sup> has been said,
-already.  Here's a summary of how I see it.
-</p>
-
-<ul class="org-ul">
-<li>Beginner/Novice talks doesn't mean bad talks.  A talk with a good narrative,
-that drives home a point, that may be familiar to most of the audience, would
-still make a good talk.  I don't mind reading a good blog post/book on a
-topic I already know, because there is joy in reading/listening to "good"
-stuff.
-</li>
-
-<li>Talks cannot be judged by titles or an abstract.  Taking inspiration from
-PyCon US, we could
-
-<ul class="org-ul">
-<li>Ask for a video recording of a previous talk or a short home-made
-recording of the speaker presenting some topic.
-</li>
-
-<li>Ask for a granular outline <sup><a id="fnr.3" name="fnr.3" class="footref" href="/posts/making-pycon-india-better-for-myself.html#fn.3">3</a></sup> along with rough timing information, instead of
-just an abstract.
-</li>
-
-<li>Have a bunch of resources <sup><a id="fnr.4" name="fnr.4" class="footref" href="/posts/making-pycon-india-better-for-myself.html#fn.4">4</a></sup><sup>, </sup><sup><a id="fnr.5" name="fnr.5" class="footref" href="/posts/making-pycon-india-better-for-myself.html#fn.5">5</a></sup><sup>, </sup><sup><a id="fnr.6" name="fnr.6" class="footref" href="/posts/making-pycon-india-better-for-myself.html#fn.6">6</a></sup> available for speakers to improve on their
-proposals/accepted talks.
-</li>
-
-<li>Have a bunch of 20 or 30 minute talks, and very few longer (45 min) talk
-slots.
-</li>
-
-<li>Encourage speakers to try connecting their laptops and iron out
-"presentation" kinks on the day before their talks/lunch/other allotted
-times. Technical issues like fonts being too small, mics not working,
-adjusting the volume/other settings for the speaker, etc. can and should be
-fixed before hand.
-</li>
-
-<li>The talk review committee could also take notes from attending some of the
-talks, and compare it against their notes when they accepted the talk, to
-improve the talk selection process.  Some of it could be valuable feedback
-for the speakers too.
-</li>
-</ul>
-</li>
-</ul>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef">
-<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/making-pycon-india-better-for-myself.html#fnr.1">1</a></sup><p class="footpara">
-<a href="https://plus.google.com/+sankarshanmukhopadhyay/posts/8QY4o3hiyLT">https://plus.google.com/+sankarshanmukhopadhyay/posts/8QY4o3hiyLT</a>
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.2" name="fn.2" class="footnum" href="/posts/making-pycon-india-better-for-myself.html#fnr.2">2</a></sup><p class="footpara">
-<a href="https://mail.python.org/pipermail/inpycon/2014-October/009189.html">https://mail.python.org/pipermail/inpycon/2014-October/009189.html</a>
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.3" name="fn.3" class="footnum" href="/posts/making-pycon-india-better-for-myself.html#fnr.3">3</a></sup><p class="footpara">
-<a href="https://us.pycon.org/2015/speaking/proposal_advice/samples/SpacePug/">https://us.pycon.org/2015/speaking/proposal_advice/samples/SpacePug/</a>
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.4" name="fn.4" class="footnum" href="/posts/making-pycon-india-better-for-myself.html#fnr.4">4</a></sup><p class="footpara">
-<a href="https://us.pycon.org/2015/speaking/proposal-resources/">https://us.pycon.org/2015/speaking/proposal-resources/</a>
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.5" name="fn.5" class="footnum" href="/posts/making-pycon-india-better-for-myself.html#fnr.5">5</a></sup><p class="footpara">
-<a href="http://doughellmann.com/2011/10/18/how-i-review-a-pycon-talk-proposal.html">http://doughellmann.com/2011/10/18/how-i-review-a-pycon-talk-proposal.html</a>
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.6" name="fn.6" class="footnum" href="/posts/making-pycon-india-better-for-myself.html#fnr.6">6</a></sup><p class="footpara">
-<a href="http://www.craigkerstiens.com/2012/06/19/pro-tips-for-conference-talks/">http://www.craigkerstiens.com/2012/06/19/pro-tips-for-conference-talks/</a>
-</p>
-</div>
-
-
 </div>
 </div>
     </div>

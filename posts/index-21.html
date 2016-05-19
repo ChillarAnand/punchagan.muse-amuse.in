@@ -79,7 +79,56 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-09.html" class="u-url">Bookmarks [2010/11/09]</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-10.html" class="u-url">Bookmarks [2010/11/10]</a></h1>
+        <span class="post-date">10 Nov 2010</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://colemak.com/Learn">Learn - Colemak</a>
+
+<p>
+tags: howto, learn
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://blog.healthfinch.com/how-to-sort-through-job-applicants-make-them">How to sort through job applicants - make them write. -</a>
+
+<p>
+tags: life, startup, advice
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://redgirlsays.com/blog/2010/11/the-life-of-a-telecommuter/">The life of a telecommuter</a>
+
+<p>
+tags: work, writing
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://www.ideasonideas.com/2010/11/your-bank-balance-is-at-zero/">ideasonideas - Eric Karjaluoto discusses design, brands and experience » Blog Archive » Your Bank Balance is at Zero</a>
+
+<p>
+tags: money, life, tips, awesome
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://ma.tt/2010/11/one-point-oh/">1.0 Is the Loneliest Number — Matt Mullenweg</a>
+
+<p>
+tags: advice, prototype, startup, ideas, awesome
+</p>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-09.html" class="u-url">Bookmarks [2010/11/09]</a></h1>
         <span class="post-date">09 Nov 2010</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -951,88 +1000,6 @@ tags: life, love, tips, awesome
 </li>
 </ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/raising-windows-using-python.html" class="u-url">Raising Windows using Python</a></h1>
-        <span class="post-date">03 Nov 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-Posting a small snippet of code, that I've been using for months
-now, on the request of a friend <sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/raising-windows-using-python.html#fn.1">1</a></sup>.
-</p>
-
-<p>
-It basically checks for open windows of a program and brings them
-to the foreground or starts the program. I use it for my 3 most
-commonly used programs — Emacs(Mod4+E), Firefox(Mod4+F) and the
-Terminal(Mod4+T). I'm using a neat tool called xdotool <sup><a id="fnr.2" name="fnr.2" class="footref" href="/posts/raising-windows-using-python.html#fn.2">2</a></sup> to
-search for windows using titles.
-</p>
-
-<ul class="org-ul">
-<li>
-<code>Mod4+E</code> is mapped to <code>~/bin/raise.py emacs</code>
-</li>
-</ul>
-<p>
-Similarly, for firefox and terminal.
-</p>
-
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s2">"Usage </span><span class="si">%s</span><span class="s2"> window-name"</span> <span class="o">%</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">program</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="c1"># Having different variables helps, in case of some programs.</span>
-<span class="n">window</span> <span class="o">=</span> <span class="n">program</span>
-
-<span class="c1"># search for windows titled "window"</span>
-<span class="n">search</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s2">"xdotool search --class </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span><span class="p">(</span><span class="n">window</span><span class="p">),</span>
-			  <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="s2">"FALSE"</span><span class="p">)</span>
-<span class="n">search_output</span> <span class="o">=</span> <span class="n">search</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<span class="n">search</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="k">print</span> <span class="n">search_output</span>
-
-<span class="n">search_output</span> <span class="o">=</span> <span class="p">[</span><span class="n">each</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">search_output</span><span class="p">]</span>
-
-<span class="c1"># Raise the first window or start the program</span>
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">search_output</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s2">"xdotool windowactivate </span><span class="si">%s</span><span class="s2">"</span>
-		     <span class="o">%</span><span class="p">(</span><span class="n">search_output</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">shell</span><span class="o">=</span><span class="s2">"FALSE"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="s2">"FALSE"</span><span class="p">)</span>
-</pre></div>
-
-<p>
-Feel free to use it as you like. :)
-</p>
-
-<p>
-Any improvements and suggestions are welcome.
-</p>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef">
-<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/raising-windows-using-python.html#fnr.1">1</a></sup><p class="footpara">
-dusual on twitter
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.2" name="fn.2" class="footnum" href="/posts/raising-windows-using-python.html#fnr.2">2</a></sup><p class="footpara">
-xdotool - Homepage
-</p>
-</div>
-
-
-</div>
-</div>
-    </div>
     </article>
 </div>
         <div class="pagination">

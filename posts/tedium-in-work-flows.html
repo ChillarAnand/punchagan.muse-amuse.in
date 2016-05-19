@@ -18,7 +18,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
     <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
 <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
 <title>
-      Noetic Nought · For an idle mind is the devil's workshop.
+      Tedium in work-flows · Noetic Nought
   </title>
 </head>
 <body class="layout-reverse theme-base-0d">
@@ -30,7 +30,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
     <p>Noetic Nought — For an idle mind is the devil's workshop. </p>
   </div>
 
-  <nav class="sidebar-nav"><!-- The code below dynamically generates a sidebar nav of pages with --><!-- `layout: page` in the front-matter. See readme for usage. --><a class="sidebar-nav-item active" href="/index.html"><i class="fa fa-home on fa-lg"></i> Home</a>
+  <nav class="sidebar-nav"><!-- The code below dynamically generates a sidebar nav of pages with --><!-- `layout: page` in the front-matter. See readme for usage. --><a class="sidebar-nav-item" href="/index.html"><i class="fa fa-home on fa-lg"></i> Home</a>
       <a class="sidebar-nav-item" href="/posts/index.html"><i class="fa fa-pencil on fa-lg"></i> Blog</a>
       <a class="sidebar-nav-item" href="/archive.html"><i class="fa fa-archive on fa-lg"></i> Archives</a>
       <a class="sidebar-nav-item" href="/tags/index.html"><i class="fa fa-tags on fa-lg"></i> Tags</a>
@@ -78,56 +78,84 @@ Creative Commons Attribution 3.0 Unported License</a>
       </div>
 
       <div class="container content">
-<article class="post post-text h-entry hentry postpage" itemscope="itemscope"><div class="e-content entry-content" itemprop="articleBody text">
+<article class="post post-text h-entry hentry postpage" itemscope="itemscope"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/tedium-in-work-flows.html" class="u-url">Tedium in work-flows</a></h1>
+
+            <span class="post-date">19 May 2016</span>
+        </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>
-Noetic Nought is punchagan's home on the web. He records his experiences and
-feelings through his journey of life <a href="/posts/index.html">here</a>. He loves creating things by making
-computers flip bits, chasing flying Frisbees and long walks or bike rides. He's
-also interested in learning to learn better, and express his ideas better.
+I use <a href="http://getnikola.com">Nikola</a> for generating this blog. When creating a new post, it prompts for
+a title, and creates a file for the post.
 </p>
 
 <p>
-punchagan collects his favorite quotes <a href="/quotes.html">here</a>, and look <a href="/tags/cat_bookmarks.html">here</a> to find the kind of
-stuff he reads and likes.  He went to <a href="http://recurse.com">the Recurse Center</a> (previously known as
-Hacker School) in the Summer of 2014 and <a href="/tags/cat_recursecenter-checkins.html">loved</a> it.
+Often I'm starting off with only a vague idea that needs to be fleshed out
+before it can be published (or discarded). It is quite difficult to come up
+with a title at this stage. I just want to start a draft and write things down!
 </p>
 
 <p>
-He occasionally tweets <a href="https://twitter.com/punchagan">here</a>, and you can find his code <a href="https://github.com/punchagan">here</a>. You can email him
-at punchagan at this domain.
+I could use a "draft-title" and change it after finishing a post, but this
+feels tedious – requires 3 steps – change the title, post filename and post
+slug.  The last two steps are optional, really, but I feel they are important
+especially when the original title is very different from the new one.
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Recent Posts</h2>
-<div class="outline-text-2" id="text-1">
-<div class="post-list">
-    <table class="post-list">
-<tr class="post-list-item">
-<td>19 May 2016</td>
-<td><a href="/posts/tedium-in-work-flows.html">Tedium in work-flows</a></td>
-            </tr>
-<tr class="post-list-item">
-<td>17 May 2016</td>
-<td><a href="/posts/error-messages-and-new-users.html">Error messages and new users</a></td>
-            </tr>
-<tr class="post-list-item">
-<td>18 Apr 2016</td>
-<td><a href="/posts/deoriatal-and-chandrashila.html">Deoriatal and Chandrashila</a></td>
-            </tr>
-<tr class="post-list-item">
-<td>12 Jan 2016</td>
-<td><a href="/posts/book-review-5-love-languages.html">Book Review: 5 Love Languages</a></td>
-            </tr>
-<tr class="post-list-item">
-<td>10 Jan 2016</td>
-<td><a href="/posts/partial-postgres-db-dumps-for-a-django-app.html">Partial postgres db dumps for a Django app</a></td>
-            </tr>
-</table>
-</div>
-</div>
-</div>
+<p>
+Being forced to come up with a title before anything else, feels tedious and,
+adds to the effort required to start off a new post.  I shouldn't really be
+worrying about the effort required to change the title of an unwritten post,
+but it happens subconsciously.
+</p>
+
+<p>
+To work around this, I now have a "re-title utility" in my editor that takes
+care of all the tedious details.  I can start with a random title, like
+Draft-1, and change it when I'm done with the post.  I feel this is going to
+lead to a lot more drafts, at the very least, if not published posts.
+</p>
+
+<p>
+Another work-flow related thing I came across recently was @Malabarba's <a href="https://github.com/clojure-emacs/cider/issues/1717#issue-150907043">issue</a>
+on CIDER (an IDE for Clojure in Emacs).  The <a href="http://www.braveclojure.com/getting-started/#Using_the_REPL">REPL</a> takes a while to startup and
+this caused him to not use CIDER for running tests, if there wasn't an already
+open REPL.
+</p>
+
+<p>
+The tedium that people feel effects how they use the tool.  Not surprisingly,
+making tedious-feeling tasks a breeze with the tool also effects how and how
+much they use it.  Subtle variations in a work-flow could make or break it.
+How do you discover such potential work-flow make-or-break-ers? I think, these
+things would help:
+</p>
+
+<ul class="org-ul">
+<li>Use the tool yourself (dog-food)
+</li>
+<li>Talk to (or watch!) people using your tool
+</li>
+<li>Look at work-flows in other similar tools
+</li>
+<li>Thinking explicitly about various scenarios and simplifying or improving
+work-flows
+</li>
+</ul>
+<p>
+I'd love to hear examples of this, and any ideas or thoughts you may have on
+identifying and fixing such things!
+</p>
     </div>
-    <aside class="postpromonav"><nav></nav></aside></article>
+    <aside class="postpromonav"><nav><div class="pagination">
+            <span class="pagination-item older">
+                <a href="/posts/error-messages-and-new-users.html" rel="prev" title="Error messages and new users">Previous post</a>
+            </span>
+        </div>
+
+    </nav></aside><section class="comments"><p style="text-align: center; font-size: 60%; margin: 10px; background: #F5F5DC; padding: 10px; border-radius: 5px;">
+                If you would like to comment on something I've said here, <a href="mailto:punchagan@muse-amuse.in?subject=Comment%20on%20Tedium%20in%20work-flows">send
+                me an email</a> or get in touch with me on <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Tedium%20in%20work-flows%20is%20interesting,%20/cc:%20@punchagan&amp;url=https://punchagan.muse-amuse.in/posts/tedium-in-work-flows.html">twitter</a>.
+            </p>
+        </section></article>
 </div>
     </div>
 

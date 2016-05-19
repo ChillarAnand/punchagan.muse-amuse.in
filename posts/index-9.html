@@ -79,7 +79,88 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2014-04-11.html" class="u-url">Bookmarks [2014-04-11]</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/org-based-posts-in-nikola.html" class="u-url">Org based posts in Nikola</a></h1>
+        <span class="post-date">20 Apr 2014</span>
+    </header><div class="e-content entry-content">
+    <p>
+<a href="http://binchen.org/">Chen Bin</a> asked me to share my Nikola+Org work-flow, and share an
+example post.
+</p>
+
+<p>
+The org source for any post can be found by changing the URL of a post
+from <code>.html</code> to <code>.org</code>.
+</p>
+
+<p>
+I don't have much of a work-flow, because I don't post too often, but
+here is what I typically do, to make a new post.
+</p>
+
+<p>
+I start off by creating a new post using
+</p>
+
+<div class="highlight"><pre><span></span>$ nikola new_post
+</pre></div>
+
+<p>
+and then give the post a title and start editing the post in Emacs.
+</p>
+
+<p>
+I have a simple snippet that lets me insert tags, based on existing
+tags.
+</p>
+
+<script src="https://gist.github.com/6629020.js"></script><p>
+Once I'm happy with the content of a post, I run <code>nikola auto</code> to
+build the source and serve it locally, and see if the post "looks"
+reasonable, after being rendered.
+</p>
+
+<p>
+Once, I'm happy with it, I commit the post and deploy it using <code>nikola
+deploy</code>.
+</p>
+
+<div class="highlight"><pre><span></span><span class="c1"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
+<span class="c1"># And then do a backup, or ping pingomatic.</span>
+<span class="c1"># To do manual deployment, set it to []</span>
+<span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'default'</span><span class="p">:</span> <span class="p">[</span>
+	<span class="c1"># work around post-list shortcode not forcing recompiling</span>
+	<span class="s1">'rm -f cache/pages/index.html'</span><span class="p">,</span>
+	<span class="s1">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
+	<span class="s1">'git checkout master'</span><span class="p">,</span>
+	<span class="s1">'nikola build'</span><span class="p">,</span>
+</pre></div>
+
+<p>
+I also have a plugin, that posts captured bookmarks and quotes onto
+the blog, with a single command. I should probably make the sources of
+my blog open, and push it onto GitHub.
+</p>
+
+<p>
+<b>Update <span class="timestamp-wrapper"><span class="timestamp">[2015-05-13 Wed]</span></span></b>
+</p>
+
+<ul class="org-ul">
+<li>I use my own <a href="https://plugins.getnikola.com/#orgmode">plugin</a> for Nikola which lets me write posts in org-mode.  There
+is a similar <a href="https://github.com/redguardtoo/org2nikola">plugin</a> by Chen Bin, that exports posts to intermediate html,
+that is then used by Nikola.
+</li>
+
+<li>The source for my blog is now on <a href="https://github.com/punchagan/punchagan.muse-amuse.in">GitHub</a>
+</li>
+
+<li>I also have <a href="https://github.com/punchagan/dot-emacs/blob/master/punchagan.org#nikola-stuff">custom elisp</a> to be able to make a new post, and deploy the site
+from within Emacs.
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2014-04-11.html" class="u-url">Bookmarks [2014-04-11]</a></h1>
         <span class="post-date">11 Apr 2014</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -633,74 +714,6 @@ automatically!
 <p>
 Documentation is the best way to communicate your thoughts to
 yourself.
-</p>
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2014-01-08.html" class="u-url">Bookmarks [2014-01-08]</a></h1>
-        <span class="post-date">08 Jan 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://daddysan.wordpress.com/2013/12/26/keep-him-close/">Keep Him Close | Oculus</a>
-
-<p>
-For what it’s worth, my son’s going to have to put up with random
-kisses, hair ruffles and hugs, whether he likes it or not. I’m gong
-to sneak into his room and cuddle up with him in that tiny bed
-because the world will swallow me in the morning and I’ll miss
-seeing him.
-</p>
-</li>
-
-<li>
-<a href="http://www.taylormali.com/poems-online/totally-like-whatever-you-know/">Totally like whatever, you know? | Taylor Mali</a>
-
-<p>
-I entreat you, I implore you, I exhort you,
-I challenge you: To speak with conviction.
-</p>
-</li>
-
-<li>
-<a href="http://paulgraham.com/startupideas.html">How to Get Startup Ideas</a>
-
-<p>
-The best approach is more indirect: if you have the right sort of
-background, good startup ideas will seem obvious to you. But even
-then, not immediately. It takes time to come across situations where
-you notice something missing. And often these gaps won't seem to be
-ideas for companies, just things that would be interesting to
-build. Which is why it's good to have the time and the inclination
-to build things just because they're interesting.
-</p>
-
-<p>
-Live in the future and build what seems interesting. Strange as it
-sounds, that's the real recipe.
-</p>
-</li>
-
-<li>
-<a href="http://melp.nl/2013/08/flow-charts-in-code-enter-graphviz-and-the-dot-language/">Flow charts in code: enter graphviz and the “dot” language</a>
-
-<p>
-I like typing code. It says what it is. I even considered writing
-graphs such as flow charts or database models in SVG once, but
-that’s a bridge too far. What is pretty helpful though, is graphviz,
-and the “dot” language.
-</p>
-</li>
-
-<li>
-<a href="http://demonsfilm.net/">DEMONS</a>
-
-<p>
-In late 2012, Jody Ruth was stood on the edge of a cliff, looking to
-end his life. Luckily, he came back, but many others don’t. Jody
-found solace in writing, and wrote a hard-hitting blog called
-‘Demons’ about what took him to the edge of the cliff, and what
-happened whilst he was there.
 </p>
 </li>
 </ul>

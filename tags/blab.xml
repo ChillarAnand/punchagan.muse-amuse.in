@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (blab)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/blab.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 04:02:10 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Error messages and new users</title><link>https://punchagan.muse-amuse.in/posts/error-messages-and-new-users.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (blab)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://punchagan.muse-amuse.in/tags/blab.xml"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 11:54:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tedium in work-flows</title><link>https://punchagan.muse-amuse.in/posts/tedium-in-work-flows.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I use &lt;a href="http://getnikola.com"&gt;Nikola&lt;/a&gt; for generating this blog. When creating a new post, it prompts for
+a title, and creates a file for the post.
+&lt;/p&gt;
+
+&lt;p&gt;
+Often I'm starting off with only a vague idea that needs to be fleshed out
+before it can be published (or discarded). It is quite difficult to come up
+with a title at this stage. I just want to start a draft and write things down!
+&lt;/p&gt;
+
+&lt;p&gt;
+I could use a "draft-title" and change it after finishing a post, but this
+feels tedious – requires 3 steps – change the title, post filename and post
+slug.  The last two steps are optional, really, but I feel they are important
+especially when the original title is very different from the new one.
+&lt;/p&gt;
+
+&lt;p&gt;
+Being forced to come up with a title before anything else, feels tedious and,
+adds to the effort required to start off a new post.  I shouldn't really be
+worrying about the effort required to change the title of an unwritten post,
+but it happens subconsciously.
+&lt;/p&gt;
+
+&lt;p&gt;
+To work around this, I now have a "re-title utility" in my editor that takes
+care of all the tedious details.  I can start with a random title, like
+Draft-1, and change it when I'm done with the post.  I feel this is going to
+lead to a lot more drafts, at the very least, if not published posts.
+&lt;/p&gt;
+
+&lt;p&gt;
+Another work-flow related thing I came across recently was @Malabarba's &lt;a href="https://github.com/clojure-emacs/cider/issues/1717#issue-150907043"&gt;issue&lt;/a&gt;
+on CIDER (an IDE for Clojure in Emacs).  The &lt;a href="http://www.braveclojure.com/getting-started/#Using_the_REPL"&gt;REPL&lt;/a&gt; takes a while to startup and
+this caused him to not use CIDER for running tests, if there wasn't an already
+open REPL.
+&lt;/p&gt;
+
+&lt;p&gt;
+The tedium that people feel effects how they use the tool.  Not surprisingly,
+making tedious-feeling tasks a breeze with the tool also effects how and how
+much they use it.  Subtle variations in a work-flow could make or break it.
+How do you discover such potential work-flow make-or-break-ers? I think, these
+things would help:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Use the tool yourself (dog-food)
+&lt;/li&gt;
+&lt;li&gt;Talk to (or watch!) people using your tool
+&lt;/li&gt;
+&lt;li&gt;Look at work-flows in other similar tools
+&lt;/li&gt;
+&lt;li&gt;Thinking explicitly about various scenarios and simplifying or improving
+work-flows
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+I'd love to hear examples of this, and any ideas or thoughts you may have on
+identifying and fixing such things!
+&lt;/p&gt;</description><category>blab</category><category>programming</category><category>user-experience</category><category>workflow</category><guid>https://punchagan.muse-amuse.in/posts/tedium-in-work-flows.html</guid><pubDate>Thu, 19 May 2016 11:13:37 GMT</pubDate></item><item><title>Error messages and new users</title><link>https://punchagan.muse-amuse.in/posts/error-messages-and-new-users.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I was helping a friend of mine setup &lt;a href="http://jajoosam.github.io"&gt;his blog&lt;/a&gt; and we were trying to use &lt;a href="http://hexo.io"&gt;Hexo&lt;/a&gt; –
 a static site generator.  We chose a Javascript based tool since he's trying to
 learn Javascript.  I skimmed through active Javascript projects in &lt;a href="https://staticsitegenerators.net"&gt;this list&lt;/a&gt;
@@ -372,47 +434,4 @@ me. I hope, he does.
 
 &lt;p&gt;
 Bye all.
-&lt;/p&gt;</description><category>blab</category><guid>https://punchagan.muse-amuse.in/posts/hibernation.html</guid><pubDate>Mon, 26 Apr 2010 17:04:00 GMT</pubDate></item><item><title>Blogs, Feeds and Readers</title><link>https://punchagan.muse-amuse.in/posts/blogs-feeds-and-readers.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I want to be a part of the "reader-space" of blogs or web-sites
-rather than a part of the Google-reader ecosystem.
-&lt;/p&gt;
-
-&lt;p&gt;
-As most of my readers know, I'm big on Google Reader (and I have a
-reputation for that!). I'm a part of a wonderful ecosystem and get
-to look-at or read a lot of interesting stuff. I get a lot of
-variety, stuff that I wouldn't normally have come across. It keeps
-me from staying in a tiny well, reading the same kind of stuff,
-over and over again. I also like the fact that it acts as an
-archival system for me. I can go back and read posts, which don't
-exist on the web, anymore.
-&lt;/p&gt;
-
-&lt;p&gt;
-But, I have a problem with this ecosystem. It's killing the the
-communities around the blogs or sites, themselves. The reader
-count may have gone up, but the discussion and activity of the
-community on the blogs is going down; at least on the blogs I look
-at. Blogs are rather dead, these days. But, when one's following
-over 200 blogs, you can't expect much better. It is difficult to
-keep up with all of them; even the ones that one kept up well
-with, before. People stop going back to the comments; stop
-participating in the discussion.
-&lt;/p&gt;
-
-&lt;p&gt;
-Do you agree? Do you think it'll help it feed readers keep track
-of the comments and updates? Or is the only way to cut down on
-feed-reading and getting back to the old exciting way of checking
-out blogs? I recall an old quote I read - If it's not worth
-remembering, it's not worth reading.
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;b&gt;UPDATE:&lt;/b&gt; I wasn't talking of my blog or comments here, in
- particular (if that's not already clear). I was talking of blogs,
- that I read regularly, blogs of people I know well (including
- mine). But then, there are blogs, that have over 1000 comments on
- a single post, too. Should the above quote could be changed to
- read - "If it's not worth reading, it's not worth remembering." ?
-&lt;/p&gt;</description><category>blab</category><guid>https://punchagan.muse-amuse.in/posts/blogs-feeds-and-readers.html</guid><pubDate>Tue, 20 Apr 2010 16:59:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>blab</category><guid>https://punchagan.muse-amuse.in/posts/hibernation.html</guid><pubDate>Mon, 26 Apr 2010 17:04:00 GMT</pubDate></item></channel></rss>
