@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (emacs)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 04:18:39 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Clock in and get-shit-done</title><link>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (emacs)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 21 May 2016 15:38:11 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>blog-admin and Nikola</title><link>https://punchagan.muse-amuse.in/posts/blog-admin-and-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Another post about blogging.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://github.com/CodeFalling/blog-admin"&gt;blog-admin&lt;/a&gt; now supports &lt;a href="http://getnikola.com"&gt;Nikola&lt;/a&gt;, thanks to yours truly. &lt;code&gt;blog-admin&lt;/code&gt; is an Emacs
+package by &lt;a href="https://twitter.com/codefalling"&gt;CodeFalling&lt;/a&gt; that lets you view and manage your (static site
+generated) blog from within inside Emacs.
+&lt;/p&gt;
+
+&lt;p&gt;
+Nikola's command line utility is pretty nifty and does a bunch of useful
+things. I had a few utility functions to do common tasks like create new post
+and deploy blog. This worked well, but moment I came across this &lt;code&gt;blog-admin&lt;/code&gt;'s
+tabular view, I was sold!
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://github.com/punchagan/org2blog"&gt;org2blog&lt;/a&gt; (a blogging tool I used previously) had a tracking file that kept
+track of all the posts I made, and I used it quite a bit for navigation –
+thanks to &lt;code&gt;org-mode&lt;/code&gt;'s search functionality. The tabular view of &lt;code&gt;blog-admin&lt;/code&gt;
+is even better!  I really like the fact that the author has tried to keep the
+package generic enough to support any blog, and adding support for Nikola has
+been quite easy.
+&lt;/p&gt;
+
+&lt;p&gt;
+The filtering functionality is crude, but good enough for a start. One thing I
+want to add is a preview functionality for drafts. Showing some (writing)
+statistics would also be nice – No. posts in the last month, total published
+posts, etc.  No promises, but you may see some of these things, soon. :)
+&lt;/p&gt;</description><category>blab</category><category>blag</category><category>blog</category><category>emacs</category><category>nikola</category><guid>https://punchagan.muse-amuse.in/posts/blog-admin-and-nikola.html</guid><pubDate>Sat, 21 May 2016 14:58:07 GMT</pubDate></item><item><title>Clock in and get-shit-done</title><link>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I had &lt;a href="https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html"&gt;setup&lt;/a&gt; a couple of hooks about an year ago that turn off all notifications
 while I'm clocking in. But, I find myself switching to the browser and jumping
 to twitter, out of habit.  I've tried &lt;a href="https://github.com/leftnode/get-shit-done"&gt;get-shit-done&lt;/a&gt; in the past to help myself
@@ -516,85 +547,4 @@ an interesting problem to try to solve.
 Also, it might be easier(?) if I probably tried to have a DE level keybinding, and
 some code to get selection and file name of the currently active
 window/application.
-&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item><item><title>Simple org-clock and gnome/pidgin integration</title><link>https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-&lt;b&gt;See update &lt;a href="https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html#sec-1"&gt;below&lt;/a&gt;&lt;/b&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-I have been trying to get back to using org-mode and its clocking
-functionality, more often than not.  I used to use it a lot, a few years ago,
-and haven't been using it, since I had been in my last job.
-&lt;/p&gt;
-
-&lt;p&gt;
-To help with it, I decided to integrate clocking in and out with changing
-status on Pidgin, and turning notifications on and off in Gnome.  Here's a few
-lines of code that does this for me.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;select&lt;/span&gt; &lt;span class="nv"&gt;start-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-  &lt;span class="s"&gt;"Turn gnome notifications off."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
-   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=unavailable"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;switch-to-state&lt;/span&gt; &lt;span class="nv"&gt;fail-quietly&lt;/span&gt; &lt;span class="nv"&gt;at-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-  &lt;span class="s"&gt;"Turn gnome notifications back on."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
-   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=available"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;Update &lt;span class="timestamp-wrapper"&gt;&lt;span class="timestamp"&gt;&amp;lt;2014-11-01 Sat&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;p&gt;
-&lt;a href="http://baali.muse-amuse.in"&gt;@baali&lt;/a&gt; tried to use my code, and it turns out it didn't work for him, because I
-forgot to mention that &lt;code&gt;(ad-activate 'org-clock-in)&lt;/code&gt; needs to be run, after the
-&lt;code&gt;defadvice&lt;/code&gt; code.  I have no idea how it worked for me, without doing that.
-May be because I have &lt;code&gt;defadvice&lt;/code&gt; for other functions?
-&lt;/p&gt;
-
-&lt;p&gt;
-Also, while debugging this, I found that &lt;code&gt;defadvice&lt;/code&gt; is a deprecated way of
-doing this, and &lt;code&gt;add-function&lt;/code&gt; is the way to go now.  But, instead of advising
-the function, I decided to make use of &lt;code&gt;org-clock-in-hook&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;
-Here is the new code.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/turn-off-notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
-  &lt;span class="s"&gt;"Turn gnome notifications off."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
-   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=unavailable"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/turn-on-notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
-  &lt;span class="s"&gt;"Turn gnome notifications back on."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
-   &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
-   &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=available"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'org-clock-in-hook&lt;/span&gt; &lt;span class="ss"&gt;'pc/turn-off-notifications&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'org-clock-out-hook&lt;/span&gt; &lt;span class="ss"&gt;'pc/turn-on-notifications&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>code</category><category>emacs</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html</guid><pubDate>Wed, 22 Oct 2014 20:43:35 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>emacs</category><category>hack</category><category>learning</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html</guid><pubDate>Tue, 04 Nov 2014 01:55:04 GMT</pubDate></item></channel></rss>

@@ -79,7 +79,94 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/making-pycon-india-better-for-myself.html" class="u-url">Making PyCon India better (for myself)</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/simple-org-clock-and-gnomepidgin-integration.html" class="u-url">Simple org-clock and gnome/pidgin integration</a></h1>
+        <span class="post-date">22 Oct 2014</span>
+    </header><div class="e-content entry-content">
+    <p>
+<b>See update <a href="/posts/simple-org-clock-and-gnomepidgin-integration.html#sec-1">below</a></b>
+</p>
+
+<p>
+I have been trying to get back to using org-mode and its clocking
+functionality, more often than not.  I used to use it a lot, a few years ago,
+and haven't been using it, since I had been in my last job.
+</p>
+
+<p>
+To help with it, I decided to integrate clocking in and out with changing
+status on Pidgin, and turning notifications on and off in Gnome.  Here's a few
+lines of code that does this for me.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">org-clock-in</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">pc/org-clock-in</span> <span class="p">(</span><span class="k">&amp;optional</span> <span class="nv">select</span> <span class="nv">start-time</span><span class="p">))</span>
+  <span class="s">"Turn gnome notifications off."</span>
+  <span class="p">(</span><span class="nv">dbus-send-signal</span>
+   <span class="ss">:session</span>
+   <span class="s">"org.gnome.SessionManager"</span>
+   <span class="s">"/org/gnome/SessionManager/Presence"</span>
+   <span class="s">"org.gnome.SessionManager.Presence"</span>
+   <span class="s">"SetStatus"</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=unavailable"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">defadvice</span> <span class="nv">org-clock-out</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">pc/org-clock-out</span> <span class="p">(</span><span class="k">&amp;optional</span> <span class="nv">switch-to-state</span> <span class="nv">fail-quietly</span> <span class="nv">at-time</span><span class="p">))</span>
+  <span class="s">"Turn gnome notifications back on."</span>
+  <span class="p">(</span><span class="nv">dbus-send-signal</span>
+   <span class="ss">:session</span>
+   <span class="s">"org.gnome.SessionManager"</span>
+   <span class="s">"/org/gnome/SessionManager/Presence"</span>
+   <span class="s">"org.gnome.SessionManager.Presence"</span>
+   <span class="s">"SetStatus"</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
+</pre></div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Update <span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-01 Sat&gt;</span></span>
+</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="http://baali.muse-amuse.in">@baali</a> tried to use my code, and it turns out it didn't work for him, because I
+forgot to mention that <code>(ad-activate 'org-clock-in)</code> needs to be run, after the
+<code>defadvice</code> code.  I have no idea how it worked for me, without doing that.
+May be because I have <code>defadvice</code> for other functions?
+</p>
+
+<p>
+Also, while debugging this, I found that <code>defadvice</code> is a deprecated way of
+doing this, and <code>add-function</code> is the way to go now.  But, instead of advising
+the function, I decided to make use of <code>org-clock-in-hook</code>.
+</p>
+
+<p>
+Here is the new code.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/turn-off-notifications</span> <span class="p">()</span>
+  <span class="s">"Turn gnome notifications off."</span>
+  <span class="p">(</span><span class="nv">dbus-send-signal</span>
+   <span class="ss">:session</span>
+   <span class="s">"org.gnome.SessionManager"</span>
+   <span class="s">"/org/gnome/SessionManager/Presence"</span>
+   <span class="s">"org.gnome.SessionManager.Presence"</span>
+   <span class="s">"SetStatus"</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=unavailable"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/turn-on-notifications</span> <span class="p">()</span>
+  <span class="s">"Turn gnome notifications back on."</span>
+  <span class="p">(</span><span class="nv">dbus-send-signal</span>
+   <span class="ss">:session</span>
+   <span class="s">"org.gnome.SessionManager"</span>
+   <span class="s">"/org/gnome/SessionManager/Presence"</span>
+   <span class="s">"org.gnome.SessionManager.Presence"</span>
+   <span class="s">"SetStatus"</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'org-clock-in-hook</span> <span class="ss">'pc/turn-off-notifications</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'org-clock-out-hook</span> <span class="ss">'pc/turn-on-notifications</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/making-pycon-india-better-for-myself.html" class="u-url">Making PyCon India better (for myself)</a></h1>
         <span class="post-date">14 Oct 2014</span>
     </header><div class="e-content entry-content">
     <p>
@@ -400,24 +487,6 @@ and Co-routines.
 </li>
 <li>Also refactored api-diff to use astroid, instead of the ast module.  Kinda
 happy with what I have, for now. May be more, later…
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-21.html" class="u-url">Recurse Center, 2014-08-21</a></h1>
-        <span class="post-date">22 Aug 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I added an additional view to xtab, to see all the pages that were killed,
-and reopen them, if you so choose.
-</li>
-<li>Also, cleaned up the <code>api-diff</code> project and renamed it to <a href="https://github.com/punchagan/what-changed">what-changed</a>.
-</li>
-<li>Started thinking about building the GitHub organization dashboard, that I
-thought would be interesting to have, since the 1st or 2nd week of Hacker
-School.
-</li>
-<li>A bunch of awesome thursday presentations, and job fair and awesome food by
-Chef Warren!
 </li>
 </ul>
 </div>

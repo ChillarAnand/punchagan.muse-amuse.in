@@ -79,7 +79,43 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/clock-in-and-get-shit-done.html" class="u-url">Clock in and get-shit-done</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/blog-admin-and-nikola.html" class="u-url">blog-admin and Nikola</a></h1>
+        <span class="post-date">21 May 2016</span>
+    </header><div class="e-content entry-content">
+    <p>
+Another post about blogging.
+</p>
+
+<p>
+<a href="https://github.com/CodeFalling/blog-admin">blog-admin</a> now supports <a href="http://getnikola.com">Nikola</a>, thanks to yours truly. <code>blog-admin</code> is an Emacs
+package by <a href="https://twitter.com/codefalling">CodeFalling</a> that lets you view and manage your (static site
+generated) blog from within inside Emacs.
+</p>
+
+<p>
+Nikola's command line utility is pretty nifty and does a bunch of useful
+things. I had a few utility functions to do common tasks like create new post
+and deploy blog. This worked well, but moment I came across this <code>blog-admin</code>'s
+tabular view, I was sold!
+</p>
+
+<p>
+<a href="https://github.com/punchagan/org2blog">org2blog</a> (a blogging tool I used previously) had a tracking file that kept
+track of all the posts I made, and I used it quite a bit for navigation –
+thanks to <code>org-mode</code>'s search functionality. The tabular view of <code>blog-admin</code>
+is even better!  I really like the fact that the author has tried to keep the
+package generic enough to support any blog, and adding support for Nikola has
+been quite easy.
+</p>
+
+<p>
+The filtering functionality is crude, but good enough for a start. One thing I
+want to add is a preview functionality for drafts. Showing some (writing)
+statistics would also be nice – No. posts in the last month, total published
+posts, etc.  No promises, but you may see some of these things, soon. :)
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/clock-in-and-get-shit-done.html" class="u-url">Clock in and get-shit-done</a></h1>
         <span class="post-date">22 Dec 2015</span>
     </header><div class="e-content entry-content">
     <p>
@@ -641,93 +677,6 @@ Also, it might be easier(?) if I probably tried to have a DE level keybinding, a
 some code to get selection and file name of the currently active
 window/application.
 </p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/simple-org-clock-and-gnomepidgin-integration.html" class="u-url">Simple org-clock and gnome/pidgin integration</a></h1>
-        <span class="post-date">22 Oct 2014</span>
-    </header><div class="e-content entry-content">
-    <p>
-<b>See update <a href="/posts/simple-org-clock-and-gnomepidgin-integration.html#sec-1">below</a></b>
-</p>
-
-<p>
-I have been trying to get back to using org-mode and its clocking
-functionality, more often than not.  I used to use it a lot, a few years ago,
-and haven't been using it, since I had been in my last job.
-</p>
-
-<p>
-To help with it, I decided to integrate clocking in and out with changing
-status on Pidgin, and turning notifications on and off in Gnome.  Here's a few
-lines of code that does this for me.
-</p>
-
-<div class="highlight"><pre><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">org-clock-in</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">pc/org-clock-in</span> <span class="p">(</span><span class="k">&amp;optional</span> <span class="nv">select</span> <span class="nv">start-time</span><span class="p">))</span>
-  <span class="s">"Turn gnome notifications off."</span>
-  <span class="p">(</span><span class="nv">dbus-send-signal</span>
-   <span class="ss">:session</span>
-   <span class="s">"org.gnome.SessionManager"</span>
-   <span class="s">"/org/gnome/SessionManager/Presence"</span>
-   <span class="s">"org.gnome.SessionManager.Presence"</span>
-   <span class="s">"SetStatus"</span> <span class="mi">2</span><span class="p">)</span>
-  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=unavailable"</span><span class="p">))</span>
-
-<span class="p">(</span><span class="nv">defadvice</span> <span class="nv">org-clock-out</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">pc/org-clock-out</span> <span class="p">(</span><span class="k">&amp;optional</span> <span class="nv">switch-to-state</span> <span class="nv">fail-quietly</span> <span class="nv">at-time</span><span class="p">))</span>
-  <span class="s">"Turn gnome notifications back on."</span>
-  <span class="p">(</span><span class="nv">dbus-send-signal</span>
-   <span class="ss">:session</span>
-   <span class="s">"org.gnome.SessionManager"</span>
-   <span class="s">"/org/gnome/SessionManager/Presence"</span>
-   <span class="s">"org.gnome.SessionManager.Presence"</span>
-   <span class="s">"SetStatus"</span> <span class="mi">0</span><span class="p">)</span>
-  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
-</pre></div>
-
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Update <span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-01 Sat&gt;</span></span>
-</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-<a href="http://baali.muse-amuse.in">@baali</a> tried to use my code, and it turns out it didn't work for him, because I
-forgot to mention that <code>(ad-activate 'org-clock-in)</code> needs to be run, after the
-<code>defadvice</code> code.  I have no idea how it worked for me, without doing that.
-May be because I have <code>defadvice</code> for other functions?
-</p>
-
-<p>
-Also, while debugging this, I found that <code>defadvice</code> is a deprecated way of
-doing this, and <code>add-function</code> is the way to go now.  But, instead of advising
-the function, I decided to make use of <code>org-clock-in-hook</code>.
-</p>
-
-<p>
-Here is the new code.
-</p>
-
-<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/turn-off-notifications</span> <span class="p">()</span>
-  <span class="s">"Turn gnome notifications off."</span>
-  <span class="p">(</span><span class="nv">dbus-send-signal</span>
-   <span class="ss">:session</span>
-   <span class="s">"org.gnome.SessionManager"</span>
-   <span class="s">"/org/gnome/SessionManager/Presence"</span>
-   <span class="s">"org.gnome.SessionManager.Presence"</span>
-   <span class="s">"SetStatus"</span> <span class="mi">2</span><span class="p">)</span>
-  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=unavailable"</span><span class="p">))</span>
-
-<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/turn-on-notifications</span> <span class="p">()</span>
-  <span class="s">"Turn gnome notifications back on."</span>
-  <span class="p">(</span><span class="nv">dbus-send-signal</span>
-   <span class="ss">:session</span>
-   <span class="s">"org.gnome.SessionManager"</span>
-   <span class="s">"/org/gnome/SessionManager/Presence"</span>
-   <span class="s">"org.gnome.SessionManager.Presence"</span>
-   <span class="s">"SetStatus"</span> <span class="mi">0</span><span class="p">)</span>
-  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=available"</span><span class="p">))</span>
-
-<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'org-clock-in-hook</span> <span class="ss">'pc/turn-off-notifications</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'org-clock-out-hook</span> <span class="ss">'pc/turn-on-notifications</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
     </div>
     </article>
 </div>

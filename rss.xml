@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought</title><link>https://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link type="application/rss+xml" rel="self" href="https://punchagan.muse-amuse.in/rss.xml"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 11:54:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tedium in work-flows</title><link>https://punchagan.muse-amuse.in/posts/tedium-in-work-flows.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought</title><link>https://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link href="https://punchagan.muse-amuse.in/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 21 May 2016 15:38:11 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>blog-admin and Nikola</title><link>https://punchagan.muse-amuse.in/posts/blog-admin-and-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Another post about blogging.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://github.com/CodeFalling/blog-admin"&gt;blog-admin&lt;/a&gt; now supports &lt;a href="http://getnikola.com"&gt;Nikola&lt;/a&gt;, thanks to yours truly. &lt;code&gt;blog-admin&lt;/code&gt; is an Emacs
+package by &lt;a href="https://twitter.com/codefalling"&gt;CodeFalling&lt;/a&gt; that lets you view and manage your (static site
+generated) blog from within inside Emacs.
+&lt;/p&gt;
+
+&lt;p&gt;
+Nikola's command line utility is pretty nifty and does a bunch of useful
+things. I had a few utility functions to do common tasks like create new post
+and deploy blog. This worked well, but moment I came across this &lt;code&gt;blog-admin&lt;/code&gt;'s
+tabular view, I was sold!
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://github.com/punchagan/org2blog"&gt;org2blog&lt;/a&gt; (a blogging tool I used previously) had a tracking file that kept
+track of all the posts I made, and I used it quite a bit for navigation –
+thanks to &lt;code&gt;org-mode&lt;/code&gt;'s search functionality. The tabular view of &lt;code&gt;blog-admin&lt;/code&gt;
+is even better!  I really like the fact that the author has tried to keep the
+package generic enough to support any blog, and adding support for Nikola has
+been quite easy.
+&lt;/p&gt;
+
+&lt;p&gt;
+The filtering functionality is crude, but good enough for a start. One thing I
+want to add is a preview functionality for drafts. Showing some (writing)
+statistics would also be nice – No. posts in the last month, total published
+posts, etc.  No promises, but you may see some of these things, soon. :)
+&lt;/p&gt;</description><category>blab</category><category>blag</category><category>blog</category><category>emacs</category><category>nikola</category><guid>https://punchagan.muse-amuse.in/posts/blog-admin-and-nikola.html</guid><pubDate>Sat, 21 May 2016 14:58:07 GMT</pubDate></item><item><title>Tedium in work-flows</title><link>https://punchagan.muse-amuse.in/posts/tedium-in-work-flows.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I use &lt;a href="http://getnikola.com"&gt;Nikola&lt;/a&gt; for generating this blog. When creating a new post, it prompts for
 a title, and creates a file for the post.
 &lt;/p&gt;
@@ -929,90 +960,4 @@ It looked like most of the routers nearby used channels 1 and 6, with a few 3s
 and 4s.  Assuming, most of the other routers aren't doing this "Auto Scan"
 business, I set my router to always use Channel 9, and the laptop seems to be
 happily connected, now!
-&lt;/p&gt;</description><category>blag</category><category>debugging</category><category>hardware</category><category>howto</category><guid>https://punchagan.muse-amuse.in/posts/wifi-channels-my-routers-random-invisibility.html</guid><pubDate>Wed, 22 Apr 2015 06:18:50 GMT</pubDate></item><item><title>Playing music using mpsyt from Emacs</title><link>https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I've started using the wonderful &lt;a href="https://github.com/np1/mps-youtube/"&gt;mpsyt&lt;/a&gt; to play any music from youtube, since
-I'm not really interested in the video.  But, since I use emacs for chat/IRC, I
-end up getting youtube links into emacs and opening them opens them up in my
-browser. I ended up writing some &lt;code&gt;elisp&lt;/code&gt; to play the songs from within an
-instance of &lt;code&gt;mpsyt&lt;/code&gt; running inside an emacs buffer.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/short-url-at-point&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
-  &lt;span class="s"&gt;"Gets the short url at point.&lt;/span&gt;
-
-&lt;span class="s"&gt;This function is required only because&lt;/span&gt;
-&lt;span class="s"&gt;`thing-at-point-url-at-point' ignores urls (without a scheme)&lt;/span&gt;
-&lt;span class="s"&gt;that don't start with www."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;bounds&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;thing-at-point-bounds-of-url-at-point&lt;/span&gt; &lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;when&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;bounds&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;lt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt; &lt;span class="nv"&gt;bounds&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cdr&lt;/span&gt; &lt;span class="nv"&gt;bounds&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;buffer-substring-no-properties&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt; &lt;span class="nv"&gt;bounds&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cdr&lt;/span&gt; &lt;span class="nv"&gt;bounds&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/mpsyt-url&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;buffer&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;current-buffer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt; &lt;span class="s"&gt;"*mpsyt*"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-    &lt;span class="c1"&gt;;; Start a new term with *mpsyt* if there isn't one&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;unless&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get-process&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;when&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get-buffer&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;kill-buffer&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get-buffer&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;ansi-term&lt;/span&gt; &lt;span class="s"&gt;"mpsyt"&lt;/span&gt; &lt;span class="s"&gt;"mpsyt"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-    &lt;span class="c1"&gt;;; Play given url in mpsyt&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;mpsyt-proc&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get-process&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-      &lt;span class="c1"&gt;;; If something is already playing, stop it and play this...&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;term-send-string&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc&lt;/span&gt; &lt;span class="s"&gt;"\n\n\n"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="c1"&gt;;; We wait for a bit, since looking for the prompt seems to fail, sometimes?&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sleep-for&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;term-send-string&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc&lt;/span&gt; &lt;span class="s"&gt;"\n"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-      &lt;span class="c1"&gt;;; Actually send the command to playurl&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;term-simple-send&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get-process&lt;/span&gt; &lt;span class="nv"&gt;mpsyt-proc-name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-			&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"playurl %s"&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;switch-to-buffer&lt;/span&gt; &lt;span class="nv"&gt;buffer&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/mpsyt-url-at-point&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
-  &lt;span class="s"&gt;"Play the URL at point using mpsyt."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;interactive&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;url&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;or&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;url-get-url-at-point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;pc/short-url-at-point&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;not&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;message&lt;/span&gt; &lt;span class="s"&gt;"No URL found"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;message&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"Playing %s with mpsyt"&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;pc/mpsyt-url&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-The current version of mpsyt crashes when run from inside emacs due to a bug in
-the code to get the terminal size, which should be fixed once this &lt;a href="https://github.com/np1/mps-youtube/pull/247"&gt;patch&lt;/a&gt; is
-merged.
-&lt;/p&gt;
-
-&lt;p&gt;
-I would've expected &lt;code&gt;thing-at-point-url-at-point&lt;/code&gt; to be able to find urls even
-when they don't have a schema, but it tries to guess the schema from urls and
-fails to work when the url starts with &lt;code&gt;youtube.com&lt;/code&gt; instead of
-&lt;code&gt;www.youtube.com&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;
-I started off using the command-line interface of &lt;code&gt;mpsyt&lt;/code&gt; by running it using
-&lt;code&gt;shell-command&lt;/code&gt; or &lt;code&gt;start-process&lt;/code&gt;.  But, it seemed useful to have a buffer of
-&lt;code&gt;mpsyt&lt;/code&gt; to switch to – easier to search for new music, repeating songs, etc.
-Not all tasks/actions are achievable through &lt;code&gt;mpsyt&lt;/code&gt;'s command line args.
-&lt;/p&gt;
-
-&lt;p&gt;
-I ended up writing more code than I thought I would have to&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;.  But, I'm
-pretty happy with how this all works, right now.
-&lt;/p&gt;
-&lt;div id="footnotes"&gt;
-&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
-&lt;div id="text-footnotes"&gt;
-
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
-- Isn't it true, more often than not?
-&lt;/p&gt;&lt;/div&gt;
-
-
-&lt;/div&gt;
-&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>mpsyt</category><category>python</category><guid>https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</guid><pubDate>Mon, 20 Apr 2015 18:17:18 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>blag</category><category>debugging</category><category>hardware</category><category>howto</category><guid>https://punchagan.muse-amuse.in/posts/wifi-channels-my-routers-random-invisibility.html</guid><pubDate>Wed, 22 Apr 2015 06:18:50 GMT</pubDate></item></channel></rss>

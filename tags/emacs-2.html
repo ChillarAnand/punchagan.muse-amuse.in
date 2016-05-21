@@ -79,7 +79,38 @@ Creative Commons Attribution 3.0 Unported License</a>
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/orgelisp-sorting-list-of-org-links-on-description.html" class="u-url">org/elisp - sorting list of org-links on description</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/a-couple-of-counting-functions.html" class="u-url">A couple of counting functions</a></h1>
+        <span class="post-date">17 Sep 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+I had a strict character limit of 180 chars for something I was
+writing. I just wrote a simple function to count characters in a
+region or a buffer. Another function to count the words.
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">count-chars</span> <span class="p">()</span>
+  <span class="s">"Count the number of chars in a buffer or region."</span>
+  <span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nf">region-beginning</span><span class="p">)</span> <span class="p">(</span><span class="nf">point-min</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nf">region-end</span><span class="p">)</span> <span class="p">(</span><span class="nf">point-max</span><span class="p">))))</span>
+	 <span class="p">(</span><span class="nf">message</span> <span class="p">(</span><span class="nf">number-to-string</span> <span class="p">(</span><span class="nf">-</span> <span class="nv">end</span> <span class="nv">beg</span><span class="p">)))))</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">count-words</span> <span class="p">()</span>
+  <span class="s">"Count the number of words in a buffer or region."</span>
+  <span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">beg</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nf">region-beginning</span><span class="p">)</span> <span class="p">(</span><span class="nf">point-min</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">end</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">region-active-p</span><span class="p">)</span> <span class="p">(</span><span class="nf">region-end</span><span class="p">)</span> <span class="p">(</span><span class="nf">point-max</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">count</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="p">(</span><span class="k">save-excursion</span>
+      <span class="p">(</span><span class="nf">goto-char</span> <span class="nv">beg</span><span class="p">)</span>
+      <span class="p">(</span><span class="k">while</span> <span class="p">(</span><span class="nf">&lt;</span> <span class="p">(</span><span class="nf">point</span><span class="p">)</span> <span class="nv">end</span><span class="p">)</span>
+	<span class="p">(</span><span class="nf">forward-word</span><span class="p">)</span>
+	<span class="p">(</span><span class="k">setq</span> <span class="nv">count</span> <span class="p">(</span><span class="nf">1+</span> <span class="nv">count</span><span class="p">))))</span>
+    <span class="p">(</span><span class="nf">message</span> <span class="p">(</span><span class="nv">int-to-string</span> <span class="nv">count</span><span class="p">))))</span>
+</pre></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/orgelisp-sorting-list-of-org-links-on-description.html" class="u-url">org/elisp - sorting list of org-links on description</a></h1>
         <span class="post-date">20 Aug 2010</span>
     </header><div class="e-content entry-content">
     <p>

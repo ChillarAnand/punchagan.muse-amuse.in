@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (nikola)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/nikola.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 04:18:39 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Recurse Center, 2014-08-05</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-05.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (nikola)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/nikola.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 21 May 2016 15:38:11 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>blog-admin and Nikola</title><link>https://punchagan.muse-amuse.in/posts/blog-admin-and-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Another post about blogging.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://github.com/CodeFalling/blog-admin"&gt;blog-admin&lt;/a&gt; now supports &lt;a href="http://getnikola.com"&gt;Nikola&lt;/a&gt;, thanks to yours truly. &lt;code&gt;blog-admin&lt;/code&gt; is an Emacs
+package by &lt;a href="https://twitter.com/codefalling"&gt;CodeFalling&lt;/a&gt; that lets you view and manage your (static site
+generated) blog from within inside Emacs.
+&lt;/p&gt;
+
+&lt;p&gt;
+Nikola's command line utility is pretty nifty and does a bunch of useful
+things. I had a few utility functions to do common tasks like create new post
+and deploy blog. This worked well, but moment I came across this &lt;code&gt;blog-admin&lt;/code&gt;'s
+tabular view, I was sold!
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://github.com/punchagan/org2blog"&gt;org2blog&lt;/a&gt; (a blogging tool I used previously) had a tracking file that kept
+track of all the posts I made, and I used it quite a bit for navigation –
+thanks to &lt;code&gt;org-mode&lt;/code&gt;'s search functionality. The tabular view of &lt;code&gt;blog-admin&lt;/code&gt;
+is even better!  I really like the fact that the author has tried to keep the
+package generic enough to support any blog, and adding support for Nikola has
+been quite easy.
+&lt;/p&gt;
+
+&lt;p&gt;
+The filtering functionality is crude, but good enough for a start. One thing I
+want to add is a preview functionality for drafts. Showing some (writing)
+statistics would also be nice – No. posts in the last month, total published
+posts, etc.  No promises, but you may see some of these things, soon. :)
+&lt;/p&gt;</description><category>blab</category><category>blag</category><category>blog</category><category>emacs</category><category>nikola</category><guid>https://punchagan.muse-amuse.in/posts/blog-admin-and-nikola.html</guid><pubDate>Sat, 21 May 2016 14:58:07 GMT</pubDate></item><item><title>Recurse Center, 2014-08-05</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-05.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
 &lt;li&gt;Spent a couple of hours in the morning, trying to revive a html template for
 blaggregator, that I missed out on committing previously, and wiped out due
 to negligence in using `git clean`.
