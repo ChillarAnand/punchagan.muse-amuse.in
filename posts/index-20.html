@@ -81,7 +81,40 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/pandoc-can-now-do-org.html" class="u-url">Pandoc can now do Org</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/mtu-and-file-transfers.html" class="u-url">MTU and file transfers</a></h1>
+        <span class="post-date">06 Dec 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+A note to self, but may benefit someone facing a similar problem.
+</p>
+
+<dl class="org-dl">
+<dt> <b>Problem</b> </dt>
+<dd>SSH-ing to our server was working well.  But, file
+transfers like <code>scp</code>, <code>git push</code> were failing.
+</dd>
+
+<dt> <b>Diagnosis</b> </dt>
+<dd>I had been thinking it was a problem with our
+campus network on the first night and was too
+sleepy to try and fix it.  But things didn't
+improve even after one full day.  Then I asked a
+friend of mine, and he confirmed that he has been
+facing the same problem for a couple of days.  I
+then tried file transfers to another server and
+it was working fine.  Then I tried file transfers
+between the two servers and even that worked fine!
+</dd>
+
+<dt> <b>Solution</b> </dt>
+<dd>After some googling, I figured that the problem
+was with a machine between me and the server.
+Changing the <code>mtu</code> to 1492 from 1500 on the
+server, fixed the problem. :)
+</dd>
+</dl>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/pandoc-can-now-do-org.html" class="u-url">Pandoc can now do Org</a></h1>
         <span class="post-date">06 Dec 2010</span>
     </header><div class="e-content entry-content">
     <p>
@@ -596,55 +629,6 @@ Here are a few images.  (View them in their original size)
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-12.html" class="u-url">Bookmarks [2010/11/12]</a></h1>
-        <span class="post-date">12 Nov 2010</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://www.bothsidesofthetable.com/2010/11/10/conference-organizers-suck-at-name-tags/">Conference Organizers Suck at Name Tags | Both Sides of the Table</a>
-
-<p>
-tags: conference, advice
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://joshholat.com/blog/my-first-open-source-project-and-a-two-week-chrome-extension/">» My First Open Source Project: A Two Week Chrome Extension at Life as a Geek - My projects, experiences, and lessons learned</a>
-
-<p>
-tags: project, lessons, programming, first
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.martynemko.com/articles/case-against-worklife-balance_id1426">The Case Against Work/Life Balance</a>
-
-<p>
-tags: society, advice, work, stress, writing
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://unethicalblogger.com/posts/2010/11/gnuparallel_changed_my_life">GNU/Parallel changed my life | unethical blogger</a>
-
-<p>
-tags: advice, programming, software
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://cdixon.org/2010/11/10/the-interoperability-of-social-networks/">cdixon.org – chris dixon's blog / The interoperability of social networks</a>
-
-<p>
-tags: advice, math
-</p>
-</li>
-</ul>
-</div>
     </article>
 </div>
         <div class="pagination">

@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (blab)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/blab.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 21 May 2016 15:38:11 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>blog-admin and Nikola</title><link>https://punchagan.muse-amuse.in/posts/blog-admin-and-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Noetic Nought (blab)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/blab.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 23 May 2016 16:20:42 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Level-up Tools</title><link>https://punchagan.muse-amuse.in/posts/level-up-tools.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Thanks to a &lt;a href="https://twitter.com/baali_"&gt;friend&lt;/a&gt; I got an upgrade to our still-being-setup kitchen.  I now
+have a non-stick pan along with a few more new additions.  I would previously
+use a bowl that people usually use to boil &lt;a href="http://img6a.flixcart.com/image/pot-pan/t/s/8/aluminium-polish-top-jk-vallabhdas-400x400-imae7w9y9ehukjhx.jpeg"&gt;milk&lt;/a&gt; etc. for making whatever I did.
+The non-stick pan feels so great!  It has made it a lot simpler to make some of
+the things I used to, because its non-stick. And it has vastly expanded the
+possibilities of things I can make, by virtue of being flat and wide based.
+The pan is such a great addition to my kitchen paraphernalia, and it adds a new
+dimension to the kind of things I can make.  I'm not here to write a user
+review for it, though.
+&lt;/p&gt;
+
+&lt;p&gt;
+What are such tools in other things that you do, that drastically changed the
+way you did something, or added a new dimension to the kinds of things you
+could do, tools that make you feel like you have a new super-power?  Learning
+to write Python (after starting off with C) seemed to give me so much power
+allowing me to focus on the problem, rather than fussing over the low level
+details. Sasha mentions in &lt;a href="http://sasha.wtf/anki-post-1/"&gt;this post&lt;/a&gt; how using a Spaced Repetition System like
+&lt;a href="https://ankiweb.net/"&gt;Anki&lt;/a&gt; drastically improved her efficiency because she could focus on thinking
+about higher level things rather than trying to recall or search for what
+method or function to use to do something.
+&lt;/p&gt;
+
+&lt;p&gt;
+What are some such level-up tools for you? Is there a systematic approach to
+discovering tools?
+&lt;/p&gt;</description><category>blab</category><category>blag</category><category>learning</category><category>life</category><category>programming</category><guid>https://punchagan.muse-amuse.in/posts/level-up-tools.html</guid><pubDate>Mon, 23 May 2016 16:08:14 GMT</pubDate></item><item><title>blog-admin and Nikola</title><link>https://punchagan.muse-amuse.in/posts/blog-admin-and-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Another post about blogging.
 &lt;/p&gt;
 
@@ -411,46 +438,4 @@ photos were on the Godbander Road.
 &lt;div class="figure"&gt;
 &lt;p&gt;&lt;img src="http://punchagan.files.wordpress.com/2010/07/dsc02898.jpg" alt="dsc02898.jpg"&gt;
 &lt;/p&gt;
-&lt;/div&gt;</description><category>blab</category><category>cycling</category><category>herohawk</category><category>mumbai</category><category>nomadic</category><guid>https://punchagan.muse-amuse.in/posts/another-60.html</guid><pubDate>Sun, 18 Jul 2010 12:30:00 GMT</pubDate></item><item><title>I'm back</title><link>https://punchagan.muse-amuse.in/posts/im-back.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-After a short break, I'm back to blogging!
-A few things have changed meanwhile. A lot haven't.
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;Noetic Nought shall now be called Rustic Reverie.
-&lt;/li&gt;
-
-&lt;li&gt;The Blogs I read page is now manually populated. More pages might be
-coming soon.
-&lt;/li&gt;
-
-&lt;li&gt;My web presence has almost been reduced to just this blog. I hope to
-be blogging more often this time around. I guess I'll have shorter
-and more frequent posts. "Release early, Release often."
-&lt;/li&gt;
-
-&lt;li&gt;I've been inspired by Sacha Chua and her wonderful blog. She puts up
-anything that -
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;she may look up in future.
-&lt;/li&gt;
-&lt;li&gt;could be remotely useful to anybody on this planet.
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-I like her idea of "thinking of writing as sketching". "Keep
-repeating yourself, until the core message floats to the top". It
-feels similar to the idea - "Release early, Release often."
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Also, Thanks to Madhu and Vattam who set an impossibly high standard
-by having their resumes and letters of recommendations and other
-"personal" stuff on version control on public repositories.
-&lt;/li&gt;
-
-&lt;li&gt;All my posts will be made from org2blog - a little org-mode based
-client that I hacked up. Emacs and Org-mode all the way! This is the
-first post by me (and probably anybody) from org2blog!
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>blab</category><category>first</category><category>org2blog</category><category>web</category><guid>https://punchagan.muse-amuse.in/posts/im-back.html</guid><pubDate>Sat, 17 Jul 2010 12:30:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>blab</category><category>cycling</category><category>herohawk</category><category>mumbai</category><category>nomadic</category><guid>https://punchagan.muse-amuse.in/posts/another-60.html</guid><pubDate>Sun, 18 Jul 2010 12:30:00 GMT</pubDate></item></channel></rss>

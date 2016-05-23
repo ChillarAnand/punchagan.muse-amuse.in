@@ -81,7 +81,103 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/playing-music-using-mpsyt-from-emacs.html" class="u-url">Playing music using mpsyt from Emacs</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/wifi-channels-my-routers-random-invisibility.html" class="u-url">WiFi Channels &amp; my router's random invisibility</a></h1>
+        <span class="post-date">22 Apr 2015</span>
+    </header><div class="e-content entry-content">
+    <p>
+To update some data plan changes, I had to restart my router today.  I did so
+from the (web) admin interface, from my dad's laptop. Guess what!  The router
+goes invisible (to the laptop), after the restart!  Other devices were still
+happily connected.
+</p>
+
+<p>
+There were a few occasions in the past when this laptop had failed to find our
+home router.  The solution that worked for my dad before was to restart the
+router; once, or may be a couple of times.  But, this time it didn't work.
+</p>
+
+<p>
+I had a feeling this was something to do with "Channels", but I had no idea
+what was going on.
+</p>
+
+<p>
+I logged onto the router and started looking at the Wireless settings in the
+hope of finding some clue, and there it was! <code>Wireless Channel: Auto Scan</code>
+</p>
+
+
+<div class="figure">
+<p><img src="/images/auto-scan.jpg" alt="auto-scan.jpg"></p>
+</div>
+
+<p>
+It was anybody's guess that some channels that the router uses weren't
+supported by my dad's laptop.  The restarts <b>sometimes</b> helped because the
+router would scan for channels that it thinks would work well, and end-up using
+something that the laptop's wifi card supported.
+</p>
+
+<p>
+The router only had options of channels from 1 to 13.  To see what channels a
+wifi card supports, you can run the <code>iwlist freq</code> command.
+</p>
+
+<div class="highlight"><pre>iwlist freq
+</pre></div>
+
+<div class="highlight"><pre>eth1      26 channels in total; available frequencies :
+	  Channel 01 : 2.412 GHz
+	  Channel 02 : 2.417 GHz
+	  Channel 03 : 2.422 GHz
+	  Channel 04 : 2.427 GHz
+	  Channel 05 : 2.432 GHz
+	  Channel 06 : 2.437 GHz
+	  Channel 07 : 2.442 GHz
+	  Channel 08 : 2.447 GHz
+	  Channel 09 : 2.452 GHz
+	  Channel 10 : 2.457 GHz
+	  Channel 11 : 2.462 GHz
+	  Channel 12 : 2.467 GHz
+	  Channel 13 : 2.472 GHz
+	  Channel 14 : 2.484 GHz
+	  Channel 36 : 5.18 GHz
+	  Channel 38 : 5.19 GHz
+	  Channel 40 : 5.2 GHz
+	  Channel 42 : 5.21 GHz
+	  Channel 44 : 5.22 GHz
+	  Channel 46 : 5.23 GHz
+	  Channel 48 : 5.24 GHz
+	  Channel 149 : 5.745 GHz
+	  Channel 153 : 5.765 GHz
+	  Channel 157 : 5.785 GHz
+	  Channel 161 : 5.805 GHz
+	  Channel 165 : 5.825 GHz
+</pre></div>
+
+<p>
+So, the laptop's wifi card support all the channels that the router could use.
+<code>iwlist freq</code> also gives the current Channel if the device is already connected
+to a router.  I ran this on my laptop and found that the router was using
+<code>Channel 13</code>.  Why the hell wouldn't this work?!  I don't know!
+</p>
+
+<p>
+I decided to set a channel manually, but how do I pick a channel?  The idea of
+"Auto Scan" is to find a channel that has relatively low interference.  How do
+we do this manually?  <code>sudo iwlist scan</code> scans for all the WiFi access points
+nearby and gives detailed information about them, which includes the Channel.
+</p>
+
+<p>
+It looked like most of the routers nearby used channels 1 and 6, with a few 3s
+and 4s.  Assuming, most of the other routers aren't doing this "Auto Scan"
+business, I set my router to always use Channel 9, and the laptop seems to be
+happily connected, now!
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/playing-music-using-mpsyt-from-emacs.html" class="u-url">Playing music using mpsyt from Emacs</a></h1>
         <span class="post-date">20 Apr 2015</span>
     </header><div class="e-content entry-content">
     <p>
@@ -684,90 +780,6 @@ The discussion, as always on this podcast, was very lively, pleasant and
 enjoyable! Enjoy!
 </p>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html" class="u-url">Learning about Spaced Repetition, SuperMemo, Org-drill, et al.</a></h1>
-        <span class="post-date">24 Oct 2014</span>
-    </header><div class="e-content entry-content">
-    <p>
-I have been reading a bunch of articles on the SuperMemo site (including the
-<a href="http://www.supermemo.com/english/ol.htm">original thesis</a> of P. A. Wozniack, the creator of SuperMemo).  I initially
-started off trying to understand the algorithms SM2,5 and 8 which org-drill
-implements, but reading the articles has given me a lot of general background
-and theory on how memory works, and why SuperMemo is as effective as it is (for
-those who stick with it).  This blog post is an attempt to summarize and
-capture what I have read in all those <a href="http://www.supermemo.com/english/contents.htm">articles</a>, and not get lost in them.  I
-would recommend reading the thesis and the suggested reading there, yourself,
-but if you really don't want to – this blog post + the summary in <a href="http://www.supermemo.com/articles/20rules.htm#Prioritize">here</a>, and
-<a href="http://www.supermemo.com/articles/decalog.htm#decalog">here</a> would be a good alternative.
-</p>
-
-<ul class="org-ul">
-<li>Memory works by repetition.  Each time you recall a fact, the time it takes
-for the memory to fade increases.  Spaced repetition is the idea of repeating
-items, just when you are about to forget them – trying to optimize the time
-spent on learning, as well as the retention of learned material.
-</li>
-
-<li>Prioritization of the items we need to learn is key to being able to stick to
-Spaced repetition.  Beginners tend to be over-enthusiastic about the
-technique and fill up their system with stuff that they don't really care
-about.  Applicability of the knowledge you are trying to gain, is a good test
-for whether or not it goes into your system.
-</li>
-
-<li>Each version of SuperMemo comes with a slightly modified (on most occassions,
-improved!) algorithm.  SM2, SM5, … refer to these algorithms. Org-drill
-currently supports only sm2,5 and 8.  It may be worth looking at sm15/16 and
-seeing if it can be implemented and is worth doing.  In any case, using any
-of these is <b>way</b> better than not using Spaced repetition at all.
-</li>
-
-<li>Understanding what we are trying to learn goes a long way in helping
-memory. It is, therefore, good to start with basic material. People have been
-surprised by how easily the advanced stuff fell into place, once they had the
-basics covered.
-</li>
-
-<li>Keep items in the system simple.  Stick to the minimum information
-principle.  Keeping it simple, doesn't mean you leave out on learning the
-complex stuff; instead break it into simpler components.  Simpler items has
-the following advantages:
-
-<ul class="org-ul">
-<li>Simple is easier to remember.
-</li>
-<li>Simpler items are easier to schedule.  You get more resolution to figure
-out what the problem areas are.
-</li>
-<li>Simple makes brings in redundancy automatically.  And <a href="http://en.wikipedia.org/wiki/Wikipedia:Redundancy_is_good">redundancy is good</a>
-    for memory, just like it is for managing hardware failure.
-</li>
-</ul>
-</li>
-
-<li>Keep learning fun!  Don't make review sessions a chore.  Think about the
-material you are reviewing. Edit/delete/improve items based on your reviews,
-then and there. Stay active.
-</li>
-
-<li>It is useful to add a link to the source of the items added to your system,
-considering that you wish to use the system over a long period of time
-(ideally, the rest of your life!)
-</li>
-
-<li>Prioritize, add examples, appeal to your emotional state, link to existing
-knowledge, use images. Anything else that works for you!  Use all of these
-techniques, that work well and you probably already use in everyday life, in
-the items you add to your system, to make them easier to recall.
-</li>
-
-<li>Being physically fit and healthy is important for being so
-mentally. Exercise, sleep, eat well, avoid caffeine.
-</li>
-
-<li>Try <a href="http://www.supermemo.com/help/read.htm">incremental</a> <a href="http://www.supermemo.com/articles/devour.htm">reading</a>, as an input source of items into your memory system.
-</li>
-</ul>
-</div>
     </article>
 </div>
         <div class="pagination">

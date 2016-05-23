@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (learning)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/learning.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 04:18:38 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>org-drill for making it stick!</title><link>https://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Noetic Nought (learning)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/learning.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 23 May 2016 16:20:42 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Level-up Tools</title><link>https://punchagan.muse-amuse.in/posts/level-up-tools.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+Thanks to a &lt;a href="https://twitter.com/baali_"&gt;friend&lt;/a&gt; I got an upgrade to our still-being-setup kitchen.  I now
+have a non-stick pan along with a few more new additions.  I would previously
+use a bowl that people usually use to boil &lt;a href="http://img6a.flixcart.com/image/pot-pan/t/s/8/aluminium-polish-top-jk-vallabhdas-400x400-imae7w9y9ehukjhx.jpeg"&gt;milk&lt;/a&gt; etc. for making whatever I did.
+The non-stick pan feels so great!  It has made it a lot simpler to make some of
+the things I used to, because its non-stick. And it has vastly expanded the
+possibilities of things I can make, by virtue of being flat and wide based.
+The pan is such a great addition to my kitchen paraphernalia, and it adds a new
+dimension to the kind of things I can make.  I'm not here to write a user
+review for it, though.
+&lt;/p&gt;
+
+&lt;p&gt;
+What are such tools in other things that you do, that drastically changed the
+way you did something, or added a new dimension to the kinds of things you
+could do, tools that make you feel like you have a new super-power?  Learning
+to write Python (after starting off with C) seemed to give me so much power
+allowing me to focus on the problem, rather than fussing over the low level
+details. Sasha mentions in &lt;a href="http://sasha.wtf/anki-post-1/"&gt;this post&lt;/a&gt; how using a Spaced Repetition System like
+&lt;a href="https://ankiweb.net/"&gt;Anki&lt;/a&gt; drastically improved her efficiency because she could focus on thinking
+about higher level things rather than trying to recall or search for what
+method or function to use to do something.
+&lt;/p&gt;
+
+&lt;p&gt;
+What are some such level-up tools for you? Is there a systematic approach to
+discovering tools?
+&lt;/p&gt;</description><category>blab</category><category>blag</category><category>learning</category><category>life</category><category>programming</category><guid>https://punchagan.muse-amuse.in/posts/level-up-tools.html</guid><pubDate>Mon, 23 May 2016 16:08:14 GMT</pubDate></item><item><title>org-drill for making it stick!</title><link>https://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Those who read the &lt;a href="https://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html"&gt;last&lt;/a&gt; &lt;a href="https://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html"&gt;few&lt;/a&gt; &lt;a href="https://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html"&gt;posts&lt;/a&gt; here, would know that I have been
 experimenting with &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;org-drill&lt;/a&gt; (a spaced repetition extension to &lt;a href="http://orgmode.org/"&gt;Org mode&lt;/a&gt;).  I
 have been using the system (almost) religiously for the past 2 months, and I do
