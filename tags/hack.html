@@ -103,22 +103,22 @@ to fetch content of for new entries as they are fetched.  All the old entries
 can be easily fixed with a single call to <code>elfeed-apply-hooks-now</code>.
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/get-url-content</span> <span class="p">(</span><span class="nv">url</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/get-url-content</span> <span class="p">(</span><span class="nv">url</span><span class="p">)</span>
   <span class="s">"Fetches the content for a url."</span>
-  <span class="p">(</span><span class="nv">shell-command-to-string</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"~/bin/get_article.py %s"</span> <span class="nv">url</span><span class="p">)))</span>
+  <span class="p">(</span><span class="nv">shell-command-to-string</span> <span class="p">(</span><span class="nf">format</span> <span class="s">"~/bin/get_article.py %s"</span> <span class="nv">url</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/get-entry-content</span> <span class="p">(</span><span class="nv">entry</span><span class="p">)</span>
   <span class="s">"Fetches content for pinboard entries that are not tweets."</span>
-  <span class="p">(</span><span class="nv">interactive</span>
+  <span class="p">(</span><span class="k">interactive</span>
    <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">entry</span> <span class="nv">elfeed-show-entry</span><span class="p">))</span>
-     <span class="p">(</span><span class="nb">list</span> <span class="nv">entry</span><span class="p">)))</span>
+     <span class="p">(</span><span class="nf">list</span> <span class="nv">entry</span><span class="p">)))</span>
 
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">url</span> <span class="p">(</span><span class="nv">elfeed-entry-link</span> <span class="nv">entry</span><span class="p">))</span>
 	<span class="p">(</span><span class="nv">feed-id</span> <span class="p">(</span><span class="nv">elfeed-deref</span> <span class="p">(</span><span class="nv">elfeed-entry-feed-id</span> <span class="nv">entry</span><span class="p">)))</span>
 	<span class="p">(</span><span class="nv">content</span> <span class="p">(</span><span class="nv">elfeed-deref</span> <span class="p">(</span><span class="nv">elfeed-entry-content</span> <span class="nv">entry</span><span class="p">))))</span>
-    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nv">s-matches?</span> <span class="s">"feeds.pinboard.in/"</span> <span class="nv">feed-id</span><span class="p">)</span>
-	       <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nv">s-matches?</span> <span class="s">"twitter.com/\\|pdf$\\|png$\\|jpg$"</span> <span class="nv">url</span><span class="p">))</span>
-	       <span class="p">(</span><span class="nb">string-equal</span> <span class="s">""</span> <span class="nv">content</span><span class="p">))</span>
+    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nv">s-matches?</span> <span class="s">"feeds.pinboard.in/"</span> <span class="nv">feed-id</span><span class="p">)</span>
+	       <span class="p">(</span><span class="nv">not</span> <span class="p">(</span><span class="nv">s-matches?</span> <span class="s">"twitter.com/\\\\|pdf$\\\\|png$\\\\|jpg$"</span> <span class="nv">url</span><span class="p">))</span>
+	       <span class="p">(</span><span class="nf">string-equal</span> <span class="s">""</span> <span class="nv">content</span><span class="p">))</span>
       <span class="p">(</span><span class="k">setq</span> <span class="nv">content</span> <span class="p">(</span><span class="nv">pc/get-url-content</span> <span class="nv">url</span><span class="p">))</span>
       <span class="p">(</span><span class="nb">setf</span> <span class="p">(</span><span class="nv">elfeed-entry-content</span> <span class="nv">entry</span><span class="p">)</span> <span class="p">(</span><span class="nv">elfeed-ref</span> <span class="nv">content</span><span class="p">)))))</span>
 
@@ -155,7 +155,7 @@ people. It currently has only a couple of features:
 </li>
 <li>Shows me contacts that I'm out of touch in the agenda, once I add the
 following snippet to an agenda file.
-<div class="highlight"><pre>* Howdy
+<div class="highlight"><pre><span></span>* Howdy
   %%(howdy-howdy)
 </pre></div>
 </li>
@@ -347,7 +347,7 @@ worked.
 In case it is useful for somebody else -
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'erc-modules</span> <span class="ss">'notifications</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'erc-modules</span> <span class="ss">'notifications</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">erc-notifications-mode</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'focus-out-hook</span> <span class="ss">'erc-notifications-enable</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'focus-in-hook</span> <span class="ss">'erc-notifications-disable</span><span class="p">)</span>

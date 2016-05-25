@@ -97,7 +97,7 @@ So, I hooked up get-shit-done into an <code>org-clock-in-hook</code>.  The snipp
 is what I added into a function that is added to this hook.
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nv">with-temp-buffer</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">with-temp-buffer</span>
   <span class="p">(</span><span class="nv">cd</span> <span class="s">"/sudo::/"</span><span class="p">)</span>
   <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"HOME=/home/punchagan get-shit-done work"</span><span class="p">))</span>
 </pre></div>
@@ -118,7 +118,7 @@ For someone worried about having such an easy way of running something as
 work better.
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nv">shell-command</span> <span class="s">"SUDO_ASKPASS=\"/usr/lib/openssh/gnome-ssh-askpass\" get-shit-done work"</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">shell-command</span> <span class="s">"SUDO_ASKPASS=\\"/usr/lib/openssh/gnome-ssh-askpass\\" get-shit-done work"</span><span class="p">)</span>
 </pre></div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/org-drill-for-making-it-stick.html" class="u-url">org-drill for making it stick!</a></h1>
@@ -308,7 +308,7 @@ but sadly none of them brought this up.  Adding the following to my config,
 speeded up agenda generation by about 150-200 times!
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="k">setq</span> <span class="nv">org-agenda-inhibit-startup</span> <span class="no">t</span><span class="p">)</span> <span class="c1">;; ~50x speedup</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">setq</span> <span class="nv">org-agenda-inhibit-startup</span> <span class="no">t</span><span class="p">)</span> <span class="c1">;; ~50x speedup</span>
 <span class="p">(</span><span class="k">setq</span> <span class="nv">org-agenda-use-tag-inheritance</span> <span class="no">nil</span><span class="p">)</span> <span class="c1">;; 3-4x speedup</span>
 </pre></div>
 
@@ -322,7 +322,7 @@ problem was.
 To profile the CPU usage, all you have to do is add a call like
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nv">profiler-start</span> <span class="ss">'cpu</span><span class="p">)</span>  <span class="c1">;; or M-x profiler-start</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">profiler-start</span> <span class="ss">'cpu</span><span class="p">)</span>  <span class="c1">;; or M-x profiler-start</span>
 </pre></div>
 
 <p>
@@ -335,7 +335,7 @@ information about where time is being spent, by sampling every
 You can view the information being collected, at any point of time using
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nv">profiler-report</span><span class="p">)</span> <span class="c1">;; or M-x profiler-report</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">profiler-report</span><span class="p">)</span> <span class="c1">;; or M-x profiler-report</span>
 </pre></div>
 
 <p>
@@ -417,20 +417,20 @@ status on Pidgin, and turning notifications on and off in Gnome.  Here's a few
 lines of code that does this for me.
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">org-clock-in</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">pc/org-clock-in</span> <span class="p">(</span><span class="k">&amp;optional</span> <span class="nv">select</span> <span class="nv">start-time</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defadvice</span> <span class="nv">org-clock-in</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">pc/org-clock-in</span> <span class="p">(</span><span class="kp">&amp;optional</span> <span class="nv">select</span> <span class="nv">start-time</span><span class="p">))</span>
   <span class="s">"Turn gnome notifications off."</span>
   <span class="p">(</span><span class="nv">dbus-send-signal</span>
-   <span class="ss">:session</span>
+   <span class="nb">:session</span>
    <span class="s">"org.gnome.SessionManager"</span>
    <span class="s">"/org/gnome/SessionManager/Presence"</span>
    <span class="s">"org.gnome.SessionManager.Presence"</span>
    <span class="s">"SetStatus"</span> <span class="mi">2</span><span class="p">)</span>
   <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"purple-remote setstatus?status=unavailable"</span><span class="p">))</span>
 
-<span class="p">(</span><span class="nv">defadvice</span> <span class="nv">org-clock-out</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">pc/org-clock-out</span> <span class="p">(</span><span class="k">&amp;optional</span> <span class="nv">switch-to-state</span> <span class="nv">fail-quietly</span> <span class="nv">at-time</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">defadvice</span> <span class="nv">org-clock-out</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">pc/org-clock-out</span> <span class="p">(</span><span class="kp">&amp;optional</span> <span class="nv">switch-to-state</span> <span class="nv">fail-quietly</span> <span class="nv">at-time</span><span class="p">))</span>
   <span class="s">"Turn gnome notifications back on."</span>
   <span class="p">(</span><span class="nv">dbus-send-signal</span>
-   <span class="ss">:session</span>
+   <span class="nb">:session</span>
    <span class="s">"org.gnome.SessionManager"</span>
    <span class="s">"/org/gnome/SessionManager/Presence"</span>
    <span class="s">"org.gnome.SessionManager.Presence"</span>
@@ -459,10 +459,10 @@ the function, I decided to make use of <code>org-clock-in-hook</code>.
 Here is the new code.
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/turn-off-notifications</span> <span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/turn-off-notifications</span> <span class="p">()</span>
   <span class="s">"Turn gnome notifications off."</span>
   <span class="p">(</span><span class="nv">dbus-send-signal</span>
-   <span class="ss">:session</span>
+   <span class="nb">:session</span>
    <span class="s">"org.gnome.SessionManager"</span>
    <span class="s">"/org/gnome/SessionManager/Presence"</span>
    <span class="s">"org.gnome.SessionManager.Presence"</span>
@@ -472,7 +472,7 @@ Here is the new code.
 <span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/turn-on-notifications</span> <span class="p">()</span>
   <span class="s">"Turn gnome notifications back on."</span>
   <span class="p">(</span><span class="nv">dbus-send-signal</span>
-   <span class="ss">:session</span>
+   <span class="nb">:session</span>
    <span class="s">"org.gnome.SessionManager"</span>
    <span class="s">"/org/gnome/SessionManager/Presence"</span>
    <span class="s">"org.gnome.SessionManager.Presence"</span>
@@ -625,7 +625,8 @@ Once, I'm happy with it, I commit the post and deploy it using <code>nikola
 deploy</code>.
 </p>
 
-<div class="highlight"><pre><span></span><span class="c1"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
+<div class="highlight"><pre><span></span><span class="c1"># you may use rsync:</span>
+<span class="c1"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
 <span class="c1"># And then do a backup, or ping pingomatic.</span>
 <span class="c1"># To do manual deployment, set it to []</span>
 <span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
@@ -634,7 +635,6 @@ deploy</code>.
 	<span class="s1">'rm -f cache/pages/index.html'</span><span class="p">,</span>
 	<span class="s1">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
 	<span class="s1">'git checkout master'</span><span class="p">,</span>
-	<span class="s1">'nikola build'</span><span class="p">,</span>
 </pre></div>
 
 <p>

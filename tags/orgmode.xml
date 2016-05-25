@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (orgmode)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/orgmode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 04:18:38 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Clock in and get-shit-done</title><link>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (orgmode)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/orgmode.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 25 May 2016 11:27:06 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Clock in and get-shit-done</title><link>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I had &lt;a href="https://punchagan.muse-amuse.in/posts/simple-org-clock-and-gnomepidgin-integration.html"&gt;setup&lt;/a&gt; a couple of hooks about an year ago that turn off all notifications
 while I'm clocking in. But, I find myself switching to the browser and jumping
 to twitter, out of habit.  I've tried &lt;a href="https://github.com/leftnode/get-shit-done"&gt;get-shit-done&lt;/a&gt; in the past to help myself
@@ -12,7 +12,7 @@ So, I hooked up get-shit-done into an &lt;code&gt;org-clock-in-hook&lt;/code&gt;
 is what I added into a function that is added to this hook.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;with-temp-buffer&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;with-temp-buffer&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;"/sudo::/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"HOME=/home/punchagan get-shit-done work"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -33,7 +33,7 @@ For someone worried about having such an easy way of running something as
 work better.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"SUDO_ASKPASS=\"/usr/lib/openssh/gnome-ssh-askpass\" get-shit-done work"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"SUDO_ASKPASS=\\"/usr/lib/openssh/gnome-ssh-askpass\\" get-shit-done work"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</guid><pubDate>Tue, 22 Dec 2015 14:17:04 GMT</pubDate></item><item><title>org-drill for making it stick!</title><link>https://punchagan.muse-amuse.in/posts/org-drill-for-making-it-stick.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Those who read the &lt;a href="https://punchagan.muse-amuse.in/posts/learning-to-use-org-drill.html"&gt;last&lt;/a&gt; &lt;a href="https://punchagan.muse-amuse.in/posts/learning-about-spaced-repetition-supermemo-org-drill-et-al.html"&gt;few&lt;/a&gt; &lt;a href="https://punchagan.muse-amuse.in/posts/more-input-sources-for-org-drill.html"&gt;posts&lt;/a&gt; here, would know that I have been
 experimenting with &lt;a href="http://orgmode.org/worg/org-contrib/org-drill.html"&gt;org-drill&lt;/a&gt; (a spaced repetition extension to &lt;a href="http://orgmode.org/"&gt;Org mode&lt;/a&gt;).  I
@@ -214,7 +214,7 @@ but sadly none of them brought this up.  Adding the following to my config,
 speeded up agenda generation by about 150-200 times!
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;org-agenda-inhibit-startup&lt;/span&gt; &lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;; ~50x speedup&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;org-agenda-inhibit-startup&lt;/span&gt; &lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;; ~50x speedup&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;org-agenda-use-tag-inheritance&lt;/span&gt; &lt;span class="no"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;; 3-4x speedup&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -228,7 +228,7 @@ problem was.
 To profile the CPU usage, all you have to do is add a call like
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;profiler-start&lt;/span&gt; &lt;span class="ss"&gt;'cpu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;;; or M-x profiler-start&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;profiler-start&lt;/span&gt; &lt;span class="ss"&gt;'cpu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;;; or M-x profiler-start&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -241,7 +241,7 @@ information about where time is being spent, by sampling every
 You can view the information being collected, at any point of time using
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;profiler-report&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;; or M-x profiler-report&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;profiler-report&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;; or M-x profiler-report&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -313,20 +313,20 @@ status on Pidgin, and turning notifications on and off in Gnome.  Here's a few
 lines of code that does this for me.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;select&lt;/span&gt; &lt;span class="nv"&gt;start-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;select&lt;/span&gt; &lt;span class="nv"&gt;start-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
   &lt;span class="s"&gt;"Turn gnome notifications off."&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
+   &lt;span class="nb"&gt;:session&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
    &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=unavailable"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;switch-to-state&lt;/span&gt; &lt;span class="nv"&gt;fail-quietly&lt;/span&gt; &lt;span class="nv"&gt;at-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;switch-to-state&lt;/span&gt; &lt;span class="nv"&gt;fail-quietly&lt;/span&gt; &lt;span class="nv"&gt;at-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
   &lt;span class="s"&gt;"Turn gnome notifications back on."&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
+   &lt;span class="nb"&gt;:session&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
    &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
@@ -354,10 +354,10 @@ the function, I decided to make use of &lt;code&gt;org-clock-in-hook&lt;/code&gt
 Here is the new code.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/turn-off-notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/turn-off-notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
   &lt;span class="s"&gt;"Turn gnome notifications off."&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
+   &lt;span class="nb"&gt;:session&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
    &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
@@ -367,7 +367,7 @@ Here is the new code.
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/turn-on-notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
   &lt;span class="s"&gt;"Turn gnome notifications back on."&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="ss"&gt;:session&lt;/span&gt;
+   &lt;span class="nb"&gt;:session&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
    &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
@@ -508,7 +508,8 @@ Once, I'm happy with it, I commit the post and deploy it using &lt;code&gt;nikol
 deploy&lt;/code&gt;.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# "rsync -rav output/* joe@my.site:/srv/www/site"&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# you may use rsync:&lt;/span&gt;
+&lt;span class="c1"&gt;# "rsync -rav output/* joe@my.site:/srv/www/site"&lt;/span&gt;
 &lt;span class="c1"&gt;# And then do a backup, or ping pingomatic.&lt;/span&gt;
 &lt;span class="c1"&gt;# To do manual deployment, set it to []&lt;/span&gt;
 &lt;span class="n"&gt;DEPLOY_COMMANDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -517,7 +518,6 @@ deploy&lt;/code&gt;.
 	&lt;span class="s1"&gt;'rm -f cache/pages/index.html'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s1"&gt;'nikola orphans|xargs rm || true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 	&lt;span class="s1"&gt;'git checkout master'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-	&lt;span class="s1"&gt;'nikola build'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;

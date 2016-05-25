@@ -124,10 +124,10 @@ The router only had options of channels from 1 to 13.  To see what channels a
 wifi card supports, you can run the <code>iwlist freq</code> command.
 </p>
 
-<div class="highlight"><pre>iwlist freq
+<div class="highlight"><pre><span></span>iwlist freq
 </pre></div>
 
-<div class="highlight"><pre>eth1      26 channels in total; available frequencies :
+<div class="highlight"><pre><span></span>eth1      26 channels in total; available frequencies :
 	  Channel 01 : 2.412 GHz
 	  Channel 02 : 2.417 GHz
 	  Channel 03 : 2.422 GHz
@@ -188,47 +188,47 @@ browser. I ended up writing some <code>elisp</code> to play the songs from withi
 instance of <code>mpsyt</code> running inside an emacs buffer.
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/short-url-at-point</span> <span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/short-url-at-point</span> <span class="p">()</span>
   <span class="s">"Gets the short url at point.</span>
 
 <span class="s">This function is required only because</span>
-<span class="s">`thing-at-point-url-at-point' ignores urls (without a scheme)</span>
+<span class="ss">`thing-at-point-url-at-point'</span><span class="s"> ignores urls (without a scheme)</span>
 <span class="s">that don't start with www."</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">bounds</span> <span class="p">(</span><span class="nv">thing-at-point-bounds-of-url-at-point</span> <span class="no">t</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="nv">bounds</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">bounds</span><span class="p">)))</span>
-      <span class="p">(</span><span class="nv">buffer-substring-no-properties</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">bounds</span><span class="p">)))))</span>
+    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="k">and</span> <span class="nv">bounds</span> <span class="p">(</span><span class="nf">&lt;</span> <span class="p">(</span><span class="nf">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nf">cdr</span> <span class="nv">bounds</span><span class="p">)))</span>
+      <span class="p">(</span><span class="nf">buffer-substring-no-properties</span> <span class="p">(</span><span class="nf">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nf">cdr</span> <span class="nv">bounds</span><span class="p">)))))</span>
 
 <span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/mpsyt-url</span> <span class="p">(</span><span class="nv">url</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">buffer</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">buffer</span> <span class="p">(</span><span class="nf">current-buffer</span><span class="p">))</span>
 	<span class="p">(</span><span class="nv">mpsyt-proc-name</span> <span class="s">"*mpsyt*"</span><span class="p">))</span>
 
     <span class="c1">;; Start a new term with *mpsyt* if there isn't one</span>
-    <span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
-      <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
-	<span class="p">(</span><span class="nv">kill-buffer</span> <span class="p">(</span><span class="nv">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nf">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
+      <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
+	<span class="p">(</span><span class="nf">kill-buffer</span> <span class="p">(</span><span class="nf">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
       <span class="p">(</span><span class="nv">ansi-term</span> <span class="s">"mpsyt"</span> <span class="s">"mpsyt"</span><span class="p">))</span>
 
     <span class="c1">;; Play given url in mpsyt</span>
-    <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">mpsyt-proc</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
+    <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">mpsyt-proc</span> <span class="p">(</span><span class="nf">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
       <span class="c1">;; If something is already playing, stop it and play this...</span>
-      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\n\n\n"</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\\n\\n\\n"</span><span class="p">)</span>
       <span class="c1">;; We wait for a bit, since looking for the prompt seems to fail, sometimes?</span>
-      <span class="p">(</span><span class="nv">sleep-for</span> <span class="mi">1</span><span class="p">)</span>
-      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\n"</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">sleep-for</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\\n"</span><span class="p">)</span>
 
       <span class="c1">;; Actually send the command to playurl</span>
-      <span class="p">(</span><span class="nv">term-simple-send</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
-			<span class="p">(</span><span class="nb">format</span> <span class="s">"playurl %s"</span> <span class="nv">url</span><span class="p">)))</span>
+      <span class="p">(</span><span class="nv">term-simple-send</span> <span class="p">(</span><span class="nf">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
+			<span class="p">(</span><span class="nf">format</span> <span class="s">"playurl %s"</span> <span class="nv">url</span><span class="p">)))</span>
 
     <span class="p">(</span><span class="nv">switch-to-buffer</span> <span class="nv">buffer</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/mpsyt-url-at-point</span> <span class="p">()</span>
   <span class="s">"Play the URL at point using mpsyt."</span>
-  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">url</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">url-get-url-at-point</span><span class="p">)</span> <span class="p">(</span><span class="nv">pc/short-url-at-point</span><span class="p">))))</span>
-    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">not</span> <span class="nv">url</span><span class="p">)</span>
-      <span class="p">(</span><span class="nv">message</span> <span class="s">"No URL found"</span><span class="p">)</span>
-	<span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"Playing %s with mpsyt"</span> <span class="nv">url</span><span class="p">))</span>
+  <span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">url</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nv">url-get-url-at-point</span><span class="p">)</span> <span class="p">(</span><span class="nv">pc/short-url-at-point</span><span class="p">))))</span>
+    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">not</span> <span class="nv">url</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">message</span> <span class="s">"No URL found"</span><span class="p">)</span>
+	<span class="p">(</span><span class="nf">message</span> <span class="p">(</span><span class="nf">format</span> <span class="s">"Playing %s with mpsyt"</span> <span class="nv">url</span><span class="p">))</span>
       <span class="p">(</span><span class="nv">pc/mpsyt-url</span> <span class="nv">url</span><span class="p">))))</span>
 </pre></div>
 
@@ -457,7 +457,7 @@ but sadly none of them brought this up.  Adding the following to my config,
 speeded up agenda generation by about 150-200 times!
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="k">setq</span> <span class="nv">org-agenda-inhibit-startup</span> <span class="no">t</span><span class="p">)</span> <span class="c1">;; ~50x speedup</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">setq</span> <span class="nv">org-agenda-inhibit-startup</span> <span class="no">t</span><span class="p">)</span> <span class="c1">;; ~50x speedup</span>
 <span class="p">(</span><span class="k">setq</span> <span class="nv">org-agenda-use-tag-inheritance</span> <span class="no">nil</span><span class="p">)</span> <span class="c1">;; 3-4x speedup</span>
 </pre></div>
 
@@ -471,7 +471,7 @@ problem was.
 To profile the CPU usage, all you have to do is add a call like
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nv">profiler-start</span> <span class="ss">'cpu</span><span class="p">)</span>  <span class="c1">;; or M-x profiler-start</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">profiler-start</span> <span class="ss">'cpu</span><span class="p">)</span>  <span class="c1">;; or M-x profiler-start</span>
 </pre></div>
 
 <p>
@@ -484,7 +484,7 @@ information about where time is being spent, by sampling every
 You can view the information being collected, at any point of time using
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nv">profiler-report</span><span class="p">)</span> <span class="c1">;; or M-x profiler-report</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">profiler-report</span><span class="p">)</span> <span class="c1">;; or M-x profiler-report</span>
 </pre></div>
 
 <p>
@@ -568,7 +568,7 @@ has a public IP (<code>example.com</code>, let's say).
 
 <li>Create a reverse tunnel from your machine to the server.
 
-<div class="highlight"><pre>ssh -fNR 19999:localhost:22 server_user@example.com
+<div class="highlight"><pre><span></span>ssh -fNR 19999:localhost:22 server_user@example.com
 </pre></div>
 
 <p>
@@ -583,13 +583,13 @@ localhost's 22.  <code>-fN</code> is to say no terminal, send connection to back
 On your partner's machine
 </p>
 
-<div class="highlight"><pre>ssh server_user@example.com
+<div class="highlight"><pre><span></span>ssh server_user@example.com
 </pre></div>
 
 <p>
 On the server, your partner does
 </p>
-<div class="highlight"><pre>ssh your_username@localhost -p 19999
+<div class="highlight"><pre><span></span>ssh your_username@localhost -p 19999
 </pre></div>
 
 <p>
@@ -627,7 +627,7 @@ worked.
 In case it is useful for somebody else -
 </p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'erc-modules</span> <span class="ss">'notifications</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'erc-modules</span> <span class="ss">'notifications</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">erc-notifications-mode</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'focus-out-hook</span> <span class="ss">'erc-notifications-enable</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'focus-in-hook</span> <span class="ss">'erc-notifications-disable</span><span class="p">)</span>
