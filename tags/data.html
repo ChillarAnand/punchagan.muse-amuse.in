@@ -8,17 +8,17 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <!-- Enable responsiveness on mobile devices--><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta charset="utf-8">
-<meta name="description" content="">
+<meta name="description" content="None">
 <meta name="author" content="punchagan">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="/assets/css/all.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag data (en)" href="/tags/data.xml">
 <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
 <title>
-      Noetic Nought · For an idle mind is the devil's workshop.
+      Posts about data · Noetic Nought
   </title>
 </head>
 <body class="layout-reverse theme-base-0d">
@@ -30,7 +30,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
     <p>Noetic Nought — For an idle mind is the devil's workshop. </p>
   </div>
 
-  <nav class="sidebar-nav"><!-- The code below dynamically generates a sidebar nav of pages with --><!-- `layout: page` in the front-matter. See readme for usage. --><a class="sidebar-nav-item active" href="/index.html"><i class="fa fa-home on fa-lg"></i> Home</a>
+  <nav class="sidebar-nav"><!-- The code below dynamically generates a sidebar nav of pages with --><!-- `layout: page` in the front-matter. See readme for usage. --><a class="sidebar-nav-item" href="/index.html"><i class="fa fa-home on fa-lg"></i> Home</a>
       <a class="sidebar-nav-item" href="/posts/index.html"><i class="fa fa-pencil on fa-lg"></i> Blog</a>
       <a class="sidebar-nav-item" href="/archive.html"><i class="fa fa-archive on fa-lg"></i> Archives</a>
       <a class="sidebar-nav-item" href="/tags/index.html"><i class="fa fa-tags on fa-lg"></i> Tags</a>
@@ -80,46 +80,61 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
       </div>
 
       <div class="container content">
-<article class="post post-text h-entry hentry postpage" itemscope="itemscope"><div class="e-content entry-content" itemprop="articleBody text">
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/thinking-about-data-ethics.html" class="u-url">Thinking about Data Ethics</a></h1>
+        <span class="post-date">25 May 2016</span>
+    </header><div class="e-content entry-content">
     <p>
-Noetic Nought is punchagan's home on the web. He records his experiences and
-feelings through his journey of life <a href="/posts/index.html">here</a>. He loves creating things by making
-computers flip bits, chasing flying Frisbees and long walks or bike rides. He's
-also interested in learning to learn better, and express his ideas better.
+Earlier this month, a researcher made a dataset containing the profiles of about
+70,000 users public. He didn't really see a problem in doing this because he
+felt he was only presenting <a href="https://twitter.com/KirkegaardEmil/status/730449904909324289">already publicly available</a> data in a more usable
+form. was only presenting it in a more usable form.
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Recent Posts</h2>
-<div class="outline-text-2" id="text-1">
-<div class="post-list">
-    <table class="post-list">
-<tr class="post-list-item">
-<td>25 May 2016</td>
-<td><a href="/posts/thinking-about-data-ethics.html">Thinking about Data Ethics</a></td>
-            </tr>
-<tr class="post-list-item">
-<td>23 May 2016</td>
-<td><a href="/posts/level-up-tools.html">Level-up Tools</a></td>
-            </tr>
-<tr class="post-list-item">
-<td>21 May 2016</td>
-<td><a href="/posts/blog-admin-and-nikola.html">blog-admin and Nikola</a></td>
-            </tr>
-<tr class="post-list-item">
-<td>19 May 2016</td>
-<td><a href="/posts/tedium-in-work-flows.html">Tedium in work-flows</a></td>
-            </tr>
-<tr class="post-list-item">
-<td>17 May 2016</td>
-<td><a href="/posts/error-messages-and-new-users.html">Error messages and new users</a></td>
-            </tr>
-</table>
+<p>
+Yesterday, I came across this quote in the very first chapter of <a href="https://twitter.com/allendowney">Allen Downey</a>'s
+book <a href="http://greenteapress.com/thinkstats2/index.html">Think Stats</a> which I liked a lot, and reminded me of this incident.
+</p>
+
+
+<div class="figure">
+<p><img src="https://c2.staticflickr.com/8/7193/26969166130_58e4865f47_b.jpg" alt="26969166130_58e4865f47_b.jpg"></p>
 </div>
-</div>
-</div>
+
+<p>
+I hadn't looked at the OKCupid data release and the discussion around it much,
+but I went back and read <a href="https://points.datasociety.net/okcupid-data-release-fiasco-ba0388348cd#.u8xxlkqsv">this article</a> by a social media researcher who thinks a
+lot about these things. 
+</p>
+
+<p>
+She puts forth a lot of interesting ideas to think about ethics. Some things
+that stood out to me are:
+</p>
+
+<ul class="org-ul">
+<li>Ask yourself how the person whose data you are using feels about the data.
+</li>
+<li>Taking a 'what if' impact approach to thinking about data and ethics.
+</li>
+</ul>
+<p>
+Also, you needn't really call yourself a researcher to be actually doing
+experiments with (or <a href="http://www.npr.org/2016/05/17/478266839/this-is-your-brain-on-uber">analyzing</a>) "big-data" and discovering and putting out facts
+that have an impact – however big or small. You should really go read the
+article, whether or not you are a researcher using data.
+</p>
+
+<p>
+Incidentally, there is a meet-up on <a href="http://www.meetup.com/DataKind-Bangalore/events/231310093/">Data Ethics</a> this weekend in Bangalore. I'm
+excited to learn and think more about this, and talk to others who care.
+</p>
     </div>
-    <aside class="postpromonav"><nav></nav></aside></article>
+    </article>
 </div>
+
+
+      </div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

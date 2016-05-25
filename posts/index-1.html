@@ -81,7 +81,55 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/wifi-channels-my-routers-random-invisibility.html" class="u-url">WiFi Channels &amp; my router's random invisibility</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/say-howdy-with-emacs.html" class="u-url">Say Howdy with Emacs!</a></h1>
+        <span class="post-date">28 May 2015</span>
+    </header><div class="e-content entry-content">
+    <p>
+Staying in touch with people is something I'm not very good at.  Since I am not
+on popular (among my friends/family) networks – FB and Whatsapp – I don't
+even see random updates from people, to get some sense of being in touch.
+</p>
+
+<p>
+I recently read some old posts by Sacha Chua and was inspired by how much code
+she had for <a href="http://sachachua.com/blog/category/geek/emacs/bbdb/">contact management</a> in her old blog posts.  I was inspired by <a href="http://sachachua.com/blog/2005/05/keeping-in-touch/">this
+post</a> in particular to try and be more meticulous about how I stay in touch with
+people. Michael Fogleman <a href="https://mwfogleman.github.io/posts/08-01-2015-emacs-can-keep-in-touch.html">blogged</a> about his contact management work-flow using
+<code>keepintouch</code>. It seemed to do most of what I wanted, but I wanted this to be
+integrated with my <code>org-contacts-db</code> and I felt having native elisp code would
+make it easier to hook up email, chat, etc. to this.
+</p>
+
+<p>
+I ended up writing a small utility called <a href="https://github.com/punchagan/howdy/">howdy</a> to help me keep in touch with
+people. It currently has only a couple of features:
+</p>
+
+<ul class="org-ul">
+<li>
+<code>M-x howdy</code> lets me update the last contacted timestamp for a contact.
+</li>
+<li>Shows me contacts that I'm out of touch in the agenda, once I add the
+following snippet to an agenda file.
+<div class="highlight"><pre><span></span>* Howdy
+  %%(howdy-howdy)
+</pre></div>
+</li>
+</ul>
+<p>
+I also have a few hooks to hook up jabber messages and email to update the db.
+I've added them to <code>howdy-hooks.el</code> in case anybody else wants to use them.
+They can also be used as examples to write other hooks. Feel free to contribute
+other hooks or suggest improvements.  The library also ships with a modest test
+suite, that will hopefully make it easier for others to contribute.
+</p>
+
+<p>
+I'm looking forward to experimenting with this over the next few weeks and
+improving it. Hopefully, it'll help me keep in touch, better than I do now.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/wifi-channels-my-routers-random-invisibility.html" class="u-url">WiFi Channels &amp; my router's random invisibility</a></h1>
         <span class="post-date">22 Apr 2015</span>
     </header><div class="e-content entry-content">
     <p>
@@ -742,44 +790,6 @@ and – I hope – experts alike.
 </li>
 </ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/martin-fowler-on-refactoring-rubyrogues.html" class="u-url">Martin Fowler on Refactoring @ RubyRogues</a></h1>
-        <span class="post-date">25 Oct 2014</span>
-    </header><div class="e-content entry-content">
-    <p>
-I stumbled on a <a href="http://rubyrogues.com/178-rr-book-club-refactoring-ruby-with-martin-fowler/">Ruby Rogues podcast</a> yesterday, which had <a href="http://martinfowlwer.com">Martin Fowler</a> as the
-guest.  I really enjoyed the discussion on Refactoring (the noun, the verb and
-the book!)
-</p>
-
-<p>
-Martin clarified in the podcast that refactoring (the verb/process) is a
-sequence of very small refactorings, while you keep making sure that you can
-run the test suite always.  A refactoring (noun) is a change where you change
-the structure of the code without any externally observable changes, with the
-intent of making it easier to understand and cheaper to change in future.
-</p>
-
-<p>
-I also really liked the metaphor of a 'healthy code base'.  Refactoring is,
-then, the process of keeping healthy – exercise, speaking metaphorically.  You
-can stack up all the exercise you need to do, until you get really unfit.
-Refactoring, similarly, needs to be done regularly, to keep the code base
-healthy.  This lets you go faster, in the future.
-</p>
-
-<p>
-I also really liked the advise about trying to push back the mental contexts
-you build, while trying to debug/understand some code that is not very clear,
-by refactoring the code to make it clearer.  Code needn't be one big chunk of
-cryptographic text.  Code is writing.  It should be clear and understandable.
-Or, at least we should strive to make it so!
-</p>
-
-<p>
-The discussion, as always on this podcast, was very lively, pleasant and
-enjoyable! Enjoy!
-</p>
-    </div>
     </article>
 </div>
         <div class="pagination">

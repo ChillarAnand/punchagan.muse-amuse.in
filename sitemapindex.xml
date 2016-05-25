@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/rss.xml</loc>
-  <lastmod>2016-05-25T11:27:00Z</lastmod>
+  <lastmod>2016-05-25T16:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/sitemap.xml</loc>
-  <lastmod>2016-05-25T11:27:00Z</lastmod>
+  <lastmod>2016-05-25T16:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/advice.xml</loc>
@@ -39,11 +39,11 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blab.xml</loc>
-  <lastmod>2016-05-25T11:27:00Z</lastmod>
+  <lastmod>2016-05-25T16:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blag.xml</loc>
-  <lastmod>2016-05-25T11:27:00Z</lastmod>
+  <lastmod>2016-05-25T16:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blog.xml</loc>
@@ -118,6 +118,10 @@
   <lastmod>2016-05-25T11:27:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://punchagan.muse-amuse.in/tags/data.xml</loc>
+  <lastmod>2016-05-25T16:14:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/death.xml</loc>
   <lastmod>2016-05-25T11:27:00Z</lastmod>
  </sitemap>
@@ -156,6 +160,10 @@
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/enthought.xml</loc>
   <lastmod>2016-05-25T11:27:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://punchagan.muse-amuse.in/tags/ethics.xml</loc>
+  <lastmod>2016-05-25T16:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/event.xml</loc>
@@ -487,7 +495,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/programming.xml</loc>
-  <lastmod>2016-05-25T11:27:00Z</lastmod>
+  <lastmod>2016-05-25T16:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/project.xml</loc>

@@ -81,7 +81,46 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-08.html" class="u-url">Recurse Center, 2014-08-08</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-11.html" class="u-url">Recurse Center, 2014-08-11</a></h1>
+        <span class="post-date">11 Aug 2014</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>I spent about an hour in the morning testing out the staging blaggregator
+instance, and things seemed to work as expected.  Side note, I got added as a
+collaborator on the blaggregator repo!
+</li>
+<li>We worked through the first chapter on getting video working, but we mostly
+ended up just copying code rather than actually understanding/carefully
+studying it.  I'm not sure how I feel about it, but we got to display fancy
+stuff.
+</li>
+<li>I wasn't feeling like working on any of my 'old'/'ongoing' projects, and
+since Mondays don't feel very productive, I worked on writing a couple of
+simple scripts to create twitter lists of HSers, batch wise.
+
+<p>
+For the HS API, I just reused some old code I had lying around from my
+experiments with the OAuth2 API, though I had to tweak it a little bit to be
+able to actually login, using requests. Something about CSRF tokens seems to
+have changed.
+</p>
+
+<p>
+In the process, I found that twitter's API isn't very pleasant to use.  Or
+may be it's the fact that I was using python twitter client without getting
+my own client id/key, but the whole experience of dealing with the twitter
+API wasn't a pleasant one at all!
+</p>
+</li>
+<li>Amber, Daria and I also spent about an hour white-boarding some problems from
+the Cracking the Code Interview book.
+</li>
+<li>I ended up fixing some minor issues with blaggregator and am hoping that the
+long pending PR will be merged today.
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-08.html" class="u-url">Recurse Center, 2014-08-08</a></h1>
         <span class="post-date">09 Aug 2014</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -337,33 +376,6 @@ School each batch, and I want to keep that tradition.
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-28.html" class="u-url">Recurse Center, 2014-07-28</a></h1>
-        <span class="post-date">28 Jul 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>There seemed to be excitement in the space to have Jessica around.  We had
-coffee with her, and I chatted with her briefly. She encouraged me to try and
-send a patch to CPython, that involved debugging and fixing some C issues.
-</li>
-<li>I spent some time with Tom, while he tried to get <code>cinspect</code> working for him,
-and it seemed like having the developer next to you, helped.  As always.  We
-didn't make any fixes to the code, but it worked.
-</li>
-<li>I spent the afternoon, adding tests for a simple issue, to see how patches are sent.
-</li>
-<li>Later, I paired with Sophia for an hour to refactor the vcs code. It's
-beginning to look much better than what it used to, and I like that.
-</li>
-<li>Jessica's talk on buffer overflows was enlightening and entertaining. It was
-very similar to a talk that Max gave on one of the thursdays, but it was
-exciting nevertheless.
-</li>
-<li>After the talk, I am inspired to try and work through the Hacking: Art of
-exploitation, at some point. I'm beginning to feel like time at HackerSchool
-running out!
-</li>
-</ul>
-</div>
     </article>
 </div>
         <div class="pagination">
