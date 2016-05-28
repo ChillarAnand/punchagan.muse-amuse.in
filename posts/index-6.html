@@ -81,7 +81,39 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-15.html" class="u-url">Recurse Center, 2014-07-15</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-16.html" class="u-url">Recurse Center, 2014-07-16</a></h1>
+        <span class="post-date">17 Jul 2014</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>Started pairing with Kyle on his idea of building a spectrum analyzer on the
+RaspberryPi using a LED Strip.  Both of us were fairly new to the RPi, and we
+spent the morning, setting it up, and stepping through steps in <a href="https://learn.adafruit.com/raspberry-pi-spectrum-analyzer-display-on-rgb-led-strip">this tutorial</a>.
+</li>
+<li>The tutorial, I felt, wasn't very well written, and definitely not suitable
+for absolute beginners to start with.
+</li>
+<li>The code didn't seem to work for us, too.  The project put together a bunch
+of libraries, in a way that someone who knew their way could follow along.
+</li>
+<li>Dana helped us and explained many things, about differences between SPI/GPIO,
+and the precautions to take, helped us hook up stuff, etc.  It was great to
+have her stepping in an helping every now and then!
+</li>
+<li>While Kyle was pairing on an Alum, I worked through the Graph Theory chapter
+in the Think Complexity book, and read about the abrupt changes of
+characteristics in random graphs, that were very similar and related to the
+phenomenon in percolation theory that Nava explained.
+</li>
+<li>Later in the day, I played around with the python-googlevoice API, that
+someone laboriously wrote after lot of careful html/xml parsing.
+</li>
+<li>I spent the night, refactoring the code to display random data on the
+LEDStrip as a display of columns.  And then also ended up cleaning up the
+setup scripts, and the way things need to be installed.
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-15.html" class="u-url">Recurse Center, 2014-07-15</a></h1>
         <span class="post-date">16 Jul 2014</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -352,59 +384,6 @@ work too well with the Python's sources.
 </li>
 <li>I later went to the New York Public Library to see <a href="http://www.nypl.org/press/press-release/2013/06/26/new-york-public-library-display-historic-copies-declaration-independe">a copy of the Declaration
 of Independence in Thomas Jefferson’s hand.</a>
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-03.html" class="u-url">Recurse Center, 2014-07-03</a></h1>
-        <span class="post-date">05 Jul 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I got distracted trying to add a hack to Hacker School's <a href="https://github.com/sursh/blaggregator">blaggregator</a>, to
-enable posting to different channels on zulip.
-</li>
-<li>I learnt a few things about Django.  Commented out references to views that
-don't exists breaks templating.  Formsets didn't seem very convenient to use,
-for editing data showing the user only partial forms.
-</li>
-<li>I played around with Clang for a bit, to try and use libclang to parse the C
-code for inspection, instead of writing one myself.  It sometimes feels like
-an overkill, but it feels like it'll make the whole code more robust.  I'm
-not sure.  I'll need to play around for a bit more to decide.
-</li>
-<li>I also finally got around to fix the resolution of my tty shells.  I was in a
-bus, and wanted my laptop's battery to last longer, and decided to use a tty
-shell with just emacs running. But, the resolution sucked.  So, I
-fixed. Essentially it involved removing a blacklist file that an old version
-of Nvidia drivers left behind in
-<code>/usr/share/grub-gfxpayload-lists/blacklist/</code> and setting
-<code>GRUB_GFXMODE=1920x1080</code> in <code>/etc/default/grub</code>.
-</li>
-<li>Later in the evening I also bought the domain <code>octo.cat</code>, given there were a
-bunch of people buying cat domains, and talking about it on Zulip!
-</li>
-</ul>
-<p>
-Update [7/7/14]: I forgot to write about the presentations.  There were
-interesting presentations!
-</p>
-<ul class="org-ul">
-<li>
-<a href="https://github.com/ambimorph/protagonist">Protagonist</a>
-</li>
-<li>
-<a href="https://github.com/pirate/mesh-networking">mesh networking</a>
-</li>
-<li>
-<a href="http://writing.brianruslim.com/2014/06/30/the-execution-context/">The Execution Context</a>
-</li>
-<li>
-<a href="https://github.com/stijlist/toolmaker/">toolmaker</a>
-</li>
-<li>
-<a href="http://blog.ontoillogical.com/blog/2014/07/03/doorbot-overflow/">Building a better doorbot</a>
-</li>
-<li>
-<a href="https://github.com/buybackoff/Fredis">Fredis</a>
 </li>
 </ul>
 </div>

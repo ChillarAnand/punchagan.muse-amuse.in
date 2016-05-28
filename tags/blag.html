@@ -81,7 +81,36 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/thinking-about-data-ethics.html" class="u-url">Thinking about Data Ethics</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/save-the-map-please-respond.html" class="u-url">Save the Map -- Please respond</a></h1>
+        <span class="post-date">28 May 2016</span>
+    </header><div class="e-content entry-content">
+    <p>
+The Ministry of Home Affairs put out a <a href="http://mha.nic.in/sites/upload_files/mha/files/GeospatialBill_05052016_eve.pdf">draft</a> and an RFC for a Geo-spatial bill
+</p>
+
+<blockquote>
+<p>
+To regulate the acquisition, dissemination, publication and distribution of
+geospatial information of India which is likely to affect the security,
+sovereignty and integrity of India.
+</p>
+</blockquote>
+
+<p>
+Even if you put aside questions about how a vetting process, for "dealing with"
+any geospatial information, would help with the said goals, the bill defines
+<i>geospatial information</i> so broadly that even taking a geo-tagged picture at
+the Taj mahal or sharing the location of your house for a meal delivery would
+have you breaking the law.
+</p>
+
+<p>
+A group of volunteers made <a href="http://savethemap.in">Save the map</a> which has more information on this,
+along with a draft response that you can send to the Ministry.  Please respond
+before June 2nd, 2016.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/thinking-about-data-ethics.html" class="u-url">Thinking about Data Ethics</a></h1>
         <span class="post-date">25 May 2016</span>
     </header><div class="e-content entry-content">
     <p>
@@ -686,99 +715,6 @@ and 4s.  Assuming, most of the other routers aren't doing this "Auto Scan"
 business, I set my router to always use Channel 9, and the laptop seems to be
 happily connected, now!
 </p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/playing-music-using-mpsyt-from-emacs.html" class="u-url">Playing music using mpsyt from Emacs</a></h1>
-        <span class="post-date">20 Apr 2015</span>
-    </header><div class="e-content entry-content">
-    <p>
-I've started using the wonderful <a href="https://github.com/np1/mps-youtube/">mpsyt</a> to play any music from youtube, since
-I'm not really interested in the video.  But, since I use emacs for chat/IRC, I
-end up getting youtube links into emacs and opening them opens them up in my
-browser. I ended up writing some <code>elisp</code> to play the songs from within an
-instance of <code>mpsyt</code> running inside an emacs buffer.
-</p>
-
-<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/short-url-at-point</span> <span class="p">()</span>
-  <span class="s">"Gets the short url at point.</span>
-
-<span class="s">This function is required only because</span>
-<span class="s">`thing-at-point-url-at-point' ignores urls (without a scheme)</span>
-<span class="s">that don't start with www."</span>
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">bounds</span> <span class="p">(</span><span class="nv">thing-at-point-bounds-of-url-at-point</span> <span class="no">t</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="nv">bounds</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">bounds</span><span class="p">)))</span>
-      <span class="p">(</span><span class="nv">buffer-substring-no-properties</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">bounds</span><span class="p">)))))</span>
-
-<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/mpsyt-url</span> <span class="p">(</span><span class="nv">url</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">buffer</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))</span>
-	<span class="p">(</span><span class="nv">mpsyt-proc-name</span> <span class="s">"*mpsyt*"</span><span class="p">))</span>
-
-    <span class="c1">;; Start a new term with *mpsyt* if there isn't one</span>
-    <span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
-      <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
-	<span class="p">(</span><span class="nv">kill-buffer</span> <span class="p">(</span><span class="nv">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
-      <span class="p">(</span><span class="nv">ansi-term</span> <span class="s">"mpsyt"</span> <span class="s">"mpsyt"</span><span class="p">))</span>
-
-    <span class="c1">;; Play given url in mpsyt</span>
-    <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">mpsyt-proc</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
-      <span class="c1">;; If something is already playing, stop it and play this...</span>
-      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\n\n\n"</span><span class="p">)</span>
-      <span class="c1">;; We wait for a bit, since looking for the prompt seems to fail, sometimes?</span>
-      <span class="p">(</span><span class="nv">sleep-for</span> <span class="mi">1</span><span class="p">)</span>
-      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\n"</span><span class="p">)</span>
-
-      <span class="c1">;; Actually send the command to playurl</span>
-      <span class="p">(</span><span class="nv">term-simple-send</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
-			<span class="p">(</span><span class="nb">format</span> <span class="s">"playurl %s"</span> <span class="nv">url</span><span class="p">)))</span>
-
-    <span class="p">(</span><span class="nv">switch-to-buffer</span> <span class="nv">buffer</span><span class="p">)))</span>
-
-<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/mpsyt-url-at-point</span> <span class="p">()</span>
-  <span class="s">"Play the URL at point using mpsyt."</span>
-  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">url</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">url-get-url-at-point</span><span class="p">)</span> <span class="p">(</span><span class="nv">pc/short-url-at-point</span><span class="p">))))</span>
-    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">not</span> <span class="nv">url</span><span class="p">)</span>
-      <span class="p">(</span><span class="nv">message</span> <span class="s">"No URL found"</span><span class="p">)</span>
-	<span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"Playing %s with mpsyt"</span> <span class="nv">url</span><span class="p">))</span>
-      <span class="p">(</span><span class="nv">pc/mpsyt-url</span> <span class="nv">url</span><span class="p">))))</span>
-</pre></div>
-
-<p>
-The current version of mpsyt crashes when run from inside emacs due to a bug in
-the code to get the terminal size, which should be fixed once this <a href="https://github.com/np1/mps-youtube/pull/247">patch</a> is
-merged.
-</p>
-
-<p>
-I would've expected <code>thing-at-point-url-at-point</code> to be able to find urls even
-when they don't have a schema, but it tries to guess the schema from urls and
-fails to work when the url starts with <code>youtube.com</code> instead of
-<code>www.youtube.com</code>.
-</p>
-
-<p>
-I started off using the command-line interface of <code>mpsyt</code> by running it using
-<code>shell-command</code> or <code>start-process</code>.  But, it seemed useful to have a buffer of
-<code>mpsyt</code> to switch to – easier to search for new music, repeating songs, etc.
-Not all tasks/actions are achievable through <code>mpsyt</code>'s command line args.
-</p>
-
-<p>
-I ended up writing more code than I thought I would have to<sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/playing-music-using-mpsyt-from-emacs.html#fn.1">1</a></sup>.  But, I'm
-pretty happy with how this all works, right now.
-</p>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef">
-<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/playing-music-using-mpsyt-from-emacs.html#fnr.1">1</a></sup><p class="footpara">
-- Isn't it true, more often than not?
-</p>
-</div>
-
-
-</div>
-</div>
     </div>
     </article>
 </div>

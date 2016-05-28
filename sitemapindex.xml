@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/rss.xml</loc>
-  <lastmod>2016-05-28T15:40:00Z</lastmod>
+  <lastmod>2016-05-28T15:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/sitemap.xml</loc>
-  <lastmod>2016-05-28T15:40:00Z</lastmod>
+  <lastmod>2016-05-28T15:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/advice.xml</loc>
@@ -43,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blag.xml</loc>
-  <lastmod>2016-05-27T07:52:00Z</lastmod>
+  <lastmod>2016-05-28T15:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blog.xml</loc>
@@ -283,7 +283,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/india.xml</loc>
-  <lastmod>2016-05-19T04:02:00Z</lastmod>
+  <lastmod>2016-05-28T15:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/inspiration.xml</loc>
@@ -342,6 +342,10 @@
   <lastmod>2016-05-23T16:20:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://punchagan.muse-amuse.in/tags/legal.xml</loc>
+  <lastmod>2016-05-28T15:50:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/letter.xml</loc>
   <lastmod>2016-05-19T04:02:00Z</lastmod>
  </sitemap>
@@ -372,6 +376,10 @@
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/lyrics.xml</loc>
   <lastmod>2016-05-19T04:02:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://punchagan.muse-amuse.in/tags/maps.xml</loc>
+  <lastmod>2016-05-28T15:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/math.xml</loc>

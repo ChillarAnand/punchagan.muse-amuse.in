@@ -81,7 +81,36 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/thinking-about-data-ethics.html" class="u-url">Thinking about Data Ethics</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/save-the-map-please-respond.html" class="u-url">Save the Map -- Please respond</a></h1>
+        <span class="post-date">28 May 2016</span>
+    </header><div class="e-content entry-content">
+    <p>
+The Ministry of Home Affairs put out a <a href="http://mha.nic.in/sites/upload_files/mha/files/GeospatialBill_05052016_eve.pdf">draft</a> and an RFC for a Geo-spatial bill
+</p>
+
+<blockquote>
+<p>
+To regulate the acquisition, dissemination, publication and distribution of
+geospatial information of India which is likely to affect the security,
+sovereignty and integrity of India.
+</p>
+</blockquote>
+
+<p>
+Even if you put aside questions about how a vetting process, for "dealing with"
+any geospatial information, would help with the said goals, the bill defines
+<i>geospatial information</i> so broadly that even taking a geo-tagged picture at
+the Taj mahal or sharing the location of your house for a meal delivery would
+have you breaking the law.
+</p>
+
+<p>
+A group of volunteers made <a href="http://savethemap.in">Save the map</a> which has more information on this,
+along with a draft response that you can send to the Ministry.  Please respond
+before June 2nd, 2016.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/thinking-about-data-ethics.html" class="u-url">Thinking about Data Ethics</a></h1>
         <span class="post-date">25 May 2016</span>
     </header><div class="e-content entry-content">
     <p>
@@ -966,50 +995,6 @@ work better.
 </p>
 
 <div class="highlight"><pre><span class="p">(</span><span class="nv">shell-command</span> <span class="s">"SUDO_ASKPASS=\"/usr/lib/openssh/gnome-ssh-askpass\" get-shit-done work"</span><span class="p">)</span>
-</pre></div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/elfeed-hook-to-fetch-full-content.html" class="u-url">Elfeed hook to fetch full content</a></h1>
-        <span class="post-date">19 Dec 2015</span>
-    </header><div class="e-content entry-content">
-    <p>
-I have started to use <a href="http://pinboard.in">Pinboard</a>'s <code>unread</code> tag as my to-read list.  It has a
-bookmark-let that works pretty well for adding stuff into my "to-read" list.  I
-then catch up on this list using <code>elfeed</code> and subscribing to the unread items'
-RSS feed.  The work-flow is pretty nice for adding stuff into the list, and
-finding items on the list. But, when it comes to the actual reading part, the
-entries in the feed don't have the actual content I want to read, and I end up
-opening the links in a browser.
-</p>
-
-<p>
-Inspired by a <a href="https://github.com/sursh/blaggregator/pull/80#issuecomment-165849126">comment from FiloSottile</a>, I realized it should be pretty easy to
-setup a hook that fetches the actual content to make my reading work-flow
-smoother. I wrote a <a href="https://github.com/punchagan/dot-files/blob/master/bin/get_article.py">small script</a>, using <a href="https://github.com/buriy/python-readability">python-readability</a>, to fetch the page
-content, given a URL. This script is then hooked onto <code>elfeed-new-entry-hook</code>,
-to fetch content of for new entries as they are fetched.  All the old entries
-can be easily fixed with a single call to <code>elfeed-apply-hooks-now</code>.
-</p>
-
-<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/get-url-content</span> <span class="p">(</span><span class="nv">url</span><span class="p">)</span>
-  <span class="s">"Fetches the content for a url."</span>
-  <span class="p">(</span><span class="nv">shell-command-to-string</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"~/bin/get_article.py %s"</span> <span class="nv">url</span><span class="p">)))</span>
-
-<span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/get-entry-content</span> <span class="p">(</span><span class="nv">entry</span><span class="p">)</span>
-  <span class="s">"Fetches content for pinboard entries that are not tweets."</span>
-  <span class="p">(</span><span class="nv">interactive</span>
-   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">entry</span> <span class="nv">elfeed-show-entry</span><span class="p">))</span>
-     <span class="p">(</span><span class="nb">list</span> <span class="nv">entry</span><span class="p">)))</span>
-
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">url</span> <span class="p">(</span><span class="nv">elfeed-entry-link</span> <span class="nv">entry</span><span class="p">))</span>
-	<span class="p">(</span><span class="nv">feed-id</span> <span class="p">(</span><span class="nv">elfeed-deref</span> <span class="p">(</span><span class="nv">elfeed-entry-feed-id</span> <span class="nv">entry</span><span class="p">)))</span>
-	<span class="p">(</span><span class="nv">content</span> <span class="p">(</span><span class="nv">elfeed-deref</span> <span class="p">(</span><span class="nv">elfeed-entry-content</span> <span class="nv">entry</span><span class="p">))))</span>
-    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nv">s-matches?</span> <span class="s">"feeds.pinboard.in/"</span> <span class="nv">feed-id</span><span class="p">)</span>
-	       <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nv">s-matches?</span> <span class="s">"twitter.com/\\|pdf$\\|png$\\|jpg$"</span> <span class="nv">url</span><span class="p">))</span>
-	       <span class="p">(</span><span class="nb">string-equal</span> <span class="s">""</span> <span class="nv">content</span><span class="p">))</span>
-      <span class="p">(</span><span class="k">setq</span> <span class="nv">content</span> <span class="p">(</span><span class="nv">pc/get-url-content</span> <span class="nv">url</span><span class="p">))</span>
-      <span class="p">(</span><span class="nb">setf</span> <span class="p">(</span><span class="nv">elfeed-entry-content</span> <span class="nv">entry</span><span class="p">)</span> <span class="p">(</span><span class="nv">elfeed-ref</span> <span class="nv">content</span><span class="p">)))))</span>
-
-<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'elfeed-new-entry-hook</span> <span class="nf">#'</span><span class="nv">pc/get-entry-content</span><span class="p">)</span>
 </pre></div>
     </div>
     </article>
