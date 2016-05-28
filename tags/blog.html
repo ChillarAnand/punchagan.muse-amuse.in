@@ -162,8 +162,7 @@ Once, I'm happy with it, I commit the post and deploy it using <code>nikola
 deploy</code>.
 </p>
 
-<div class="highlight"><pre><span></span><span class="c1"># you may use rsync:</span>
-<span class="c1"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
+<div class="highlight"><pre><span></span><span class="c1"># "rsync -rav output/* joe@my.site:/srv/www/site"</span>
 <span class="c1"># And then do a backup, or ping pingomatic.</span>
 <span class="c1"># To do manual deployment, set it to []</span>
 <span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">{</span>
@@ -172,6 +171,7 @@ deploy</code>.
 	<span class="s1">'rm -f cache/pages/index.html'</span><span class="p">,</span>
 	<span class="s1">'nikola orphans|xargs rm || true'</span><span class="p">,</span>
 	<span class="s1">'git checkout master'</span><span class="p">,</span>
+	<span class="s1">'nikola build'</span><span class="p">,</span>
 </pre></div>
 
 <p>

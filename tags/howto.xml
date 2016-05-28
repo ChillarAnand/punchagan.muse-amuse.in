@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Noetic Nought (howto)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/howto.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 26 May 2016 07:27:15 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>WiFi Channels &amp; my router's random invisibility</title><link>https://punchagan.muse-amuse.in/posts/wifi-channels-my-routers-random-invisibility.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (howto)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/howto.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 04:02:13 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>WiFi Channels &amp; my router's random invisibility</title><link>https://punchagan.muse-amuse.in/posts/wifi-channels-my-routers-random-invisibility.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 To update some data plan changes, I had to restart my router today.  I did so
 from the (web) admin interface, from my dad's laptop. Guess what!  The router
 goes invisible (to the laptop), after the restart!  Other devices were still
@@ -40,10 +40,10 @@ The router only had options of channels from 1 to 13.  To see what channels a
 wifi card supports, you can run the &lt;code&gt;iwlist freq&lt;/code&gt; command.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;iwlist freq
+&lt;div class="highlight"&gt;&lt;pre&gt;iwlist freq
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;eth1      26 channels in total; available frequencies :
+&lt;div class="highlight"&gt;&lt;pre&gt;eth1      26 channels in total; available frequencies :
 	  Channel 01 : 2.412 GHz
 	  Channel 02 : 2.417 GHz
 	  Channel 03 : 2.422 GHz

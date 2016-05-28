@@ -92,47 +92,47 @@ browser. I ended up writing some <code>elisp</code> to play the songs from withi
 instance of <code>mpsyt</code> running inside an emacs buffer.
 </p>
 
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/short-url-at-point</span> <span class="p">()</span>
+<div class="highlight"><pre><span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/short-url-at-point</span> <span class="p">()</span>
   <span class="s">"Gets the short url at point.</span>
 
 <span class="s">This function is required only because</span>
-<span class="ss">`thing-at-point-url-at-point'</span><span class="s"> ignores urls (without a scheme)</span>
+<span class="s">`thing-at-point-url-at-point' ignores urls (without a scheme)</span>
 <span class="s">that don't start with www."</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">bounds</span> <span class="p">(</span><span class="nv">thing-at-point-bounds-of-url-at-point</span> <span class="no">t</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="k">and</span> <span class="nv">bounds</span> <span class="p">(</span><span class="nf">&lt;</span> <span class="p">(</span><span class="nf">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nf">cdr</span> <span class="nv">bounds</span><span class="p">)))</span>
-      <span class="p">(</span><span class="nf">buffer-substring-no-properties</span> <span class="p">(</span><span class="nf">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nf">cdr</span> <span class="nv">bounds</span><span class="p">)))))</span>
+    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="nv">bounds</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">bounds</span><span class="p">)))</span>
+      <span class="p">(</span><span class="nv">buffer-substring-no-properties</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">bounds</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">bounds</span><span class="p">)))))</span>
 
 <span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/mpsyt-url</span> <span class="p">(</span><span class="nv">url</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">buffer</span> <span class="p">(</span><span class="nf">current-buffer</span><span class="p">))</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">buffer</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))</span>
 	<span class="p">(</span><span class="nv">mpsyt-proc-name</span> <span class="s">"*mpsyt*"</span><span class="p">))</span>
 
     <span class="c1">;; Start a new term with *mpsyt* if there isn't one</span>
-    <span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nf">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
-      <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
-	<span class="p">(</span><span class="nf">kill-buffer</span> <span class="p">(</span><span class="nf">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
+      <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
+	<span class="p">(</span><span class="nv">kill-buffer</span> <span class="p">(</span><span class="nv">get-buffer</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
       <span class="p">(</span><span class="nv">ansi-term</span> <span class="s">"mpsyt"</span> <span class="s">"mpsyt"</span><span class="p">))</span>
 
     <span class="c1">;; Play given url in mpsyt</span>
-    <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">mpsyt-proc</span> <span class="p">(</span><span class="nf">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
+    <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">mpsyt-proc</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)))</span>
       <span class="c1">;; If something is already playing, stop it and play this...</span>
-      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\\n\\n\\n"</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\n\n\n"</span><span class="p">)</span>
       <span class="c1">;; We wait for a bit, since looking for the prompt seems to fail, sometimes?</span>
-      <span class="p">(</span><span class="nf">sleep-for</span> <span class="mi">1</span><span class="p">)</span>
-      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\\n"</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">sleep-for</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">term-send-string</span> <span class="nv">mpsyt-proc</span> <span class="s">"\n"</span><span class="p">)</span>
 
       <span class="c1">;; Actually send the command to playurl</span>
-      <span class="p">(</span><span class="nv">term-simple-send</span> <span class="p">(</span><span class="nf">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
-			<span class="p">(</span><span class="nf">format</span> <span class="s">"playurl %s"</span> <span class="nv">url</span><span class="p">)))</span>
+      <span class="p">(</span><span class="nv">term-simple-send</span> <span class="p">(</span><span class="nv">get-process</span> <span class="nv">mpsyt-proc-name</span><span class="p">)</span>
+			<span class="p">(</span><span class="nb">format</span> <span class="s">"playurl %s"</span> <span class="nv">url</span><span class="p">)))</span>
 
     <span class="p">(</span><span class="nv">switch-to-buffer</span> <span class="nv">buffer</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="nb">defun</span> <span class="nv">pc/mpsyt-url-at-point</span> <span class="p">()</span>
   <span class="s">"Play the URL at point using mpsyt."</span>
-  <span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">url</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nv">url-get-url-at-point</span><span class="p">)</span> <span class="p">(</span><span class="nv">pc/short-url-at-point</span><span class="p">))))</span>
-    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">not</span> <span class="nv">url</span><span class="p">)</span>
-      <span class="p">(</span><span class="nf">message</span> <span class="s">"No URL found"</span><span class="p">)</span>
-	<span class="p">(</span><span class="nf">message</span> <span class="p">(</span><span class="nf">format</span> <span class="s">"Playing %s with mpsyt"</span> <span class="nv">url</span><span class="p">))</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">url</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">url-get-url-at-point</span><span class="p">)</span> <span class="p">(</span><span class="nv">pc/short-url-at-point</span><span class="p">))))</span>
+    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">not</span> <span class="nv">url</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">message</span> <span class="s">"No URL found"</span><span class="p">)</span>
+	<span class="p">(</span><span class="nv">message</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"Playing %s with mpsyt"</span> <span class="nv">url</span><span class="p">))</span>
       <span class="p">(</span><span class="nv">pc/mpsyt-url</span> <span class="nv">url</span><span class="p">))))</span>
 </pre></div>
 

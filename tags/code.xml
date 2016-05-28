@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Noetic Nought (code)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/code.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 26 May 2016 07:27:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Say Howdy with Emacs!</title><link>https://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (code)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/code.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 19 May 2016 04:18:38 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Say Howdy with Emacs!</title><link>https://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Staying in touch with people is something I'm not very good at.  Since I am not
 on popular (among my friends/family) networks – FB and Whatsapp – I don't
 even see random updates from people, to get some sense of being in touch.
@@ -25,7 +25,7 @@ people. It currently has only a couple of features:
 &lt;/li&gt;
 &lt;li&gt;Shows me contacts that I'm out of touch in the agenda, once I add the
 following snippet to an agenda file.
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;* Howdy
+&lt;div class="highlight"&gt;&lt;pre&gt;* Howdy
   %%(howdy-howdy)
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
@@ -91,20 +91,20 @@ status on Pidgin, and turning notifications on and off in Gnome.  Here's a few
 lines of code that does this for me.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;select&lt;/span&gt; &lt;span class="nv"&gt;start-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;select&lt;/span&gt; &lt;span class="nv"&gt;start-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
   &lt;span class="s"&gt;"Turn gnome notifications off."&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="nb"&gt;:session&lt;/span&gt;
+   &lt;span class="ss"&gt;:session&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
    &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"SetStatus"&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"purple-remote setstatus?status=unavailable"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;switch-to-state&lt;/span&gt; &lt;span class="nv"&gt;fail-quietly&lt;/span&gt; &lt;span class="nv"&gt;at-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt; &lt;span class="nv"&gt;pc/org-clock-out&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;&amp;amp;optional&lt;/span&gt; &lt;span class="nv"&gt;switch-to-state&lt;/span&gt; &lt;span class="nv"&gt;fail-quietly&lt;/span&gt; &lt;span class="nv"&gt;at-time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
   &lt;span class="s"&gt;"Turn gnome notifications back on."&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="nb"&gt;:session&lt;/span&gt;
+   &lt;span class="ss"&gt;:session&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
    &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
@@ -132,10 +132,10 @@ the function, I decided to make use of &lt;code&gt;org-clock-in-hook&lt;/code&gt
 Here is the new code.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/turn-off-notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/turn-off-notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
   &lt;span class="s"&gt;"Turn gnome notifications off."&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="nb"&gt;:session&lt;/span&gt;
+   &lt;span class="ss"&gt;:session&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
    &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;
@@ -145,7 +145,7 @@ Here is the new code.
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/turn-on-notifications&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
   &lt;span class="s"&gt;"Turn gnome notifications back on."&lt;/span&gt;
   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;dbus-send-signal&lt;/span&gt;
-   &lt;span class="nb"&gt;:session&lt;/span&gt;
+   &lt;span class="ss"&gt;:session&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager"&lt;/span&gt;
    &lt;span class="s"&gt;"/org/gnome/SessionManager/Presence"&lt;/span&gt;
    &lt;span class="s"&gt;"org.gnome.SessionManager.Presence"&lt;/span&gt;

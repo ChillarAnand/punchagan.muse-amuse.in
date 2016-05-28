@@ -321,7 +321,7 @@ but sadly none of them brought this up.  Adding the following to my config,
 speeded up agenda generation by about 150-200 times!
 </p>
 
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">setq</span> <span class="nv">org-agenda-inhibit-startup</span> <span class="no">t</span><span class="p">)</span> <span class="c1">;; ~50x speedup</span>
+<div class="highlight"><pre><span class="p">(</span><span class="k">setq</span> <span class="nv">org-agenda-inhibit-startup</span> <span class="no">t</span><span class="p">)</span> <span class="c1">;; ~50x speedup</span>
 <span class="p">(</span><span class="k">setq</span> <span class="nv">org-agenda-use-tag-inheritance</span> <span class="no">nil</span><span class="p">)</span> <span class="c1">;; 3-4x speedup</span>
 </pre></div>
 
@@ -335,7 +335,7 @@ problem was.
 To profile the CPU usage, all you have to do is add a call like
 </p>
 
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">profiler-start</span> <span class="ss">'cpu</span><span class="p">)</span>  <span class="c1">;; or M-x profiler-start</span>
+<div class="highlight"><pre><span class="p">(</span><span class="nv">profiler-start</span> <span class="ss">'cpu</span><span class="p">)</span>  <span class="c1">;; or M-x profiler-start</span>
 </pre></div>
 
 <p>
@@ -348,7 +348,7 @@ information about where time is being spent, by sampling every
 You can view the information being collected, at any point of time using
 </p>
 
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">profiler-report</span><span class="p">)</span> <span class="c1">;; or M-x profiler-report</span>
+<div class="highlight"><pre><span class="p">(</span><span class="nv">profiler-report</span><span class="p">)</span> <span class="c1">;; or M-x profiler-report</span>
 </pre></div>
 
 <p>

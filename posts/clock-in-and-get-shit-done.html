@@ -97,7 +97,7 @@ So, I hooked up get-shit-done into an <code>org-clock-in-hook</code>.  The snipp
 is what I added into a function that is added to this hook.
 </p>
 
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">with-temp-buffer</span>
+<div class="highlight"><pre><span class="p">(</span><span class="nv">with-temp-buffer</span>
   <span class="p">(</span><span class="nv">cd</span> <span class="s">"/sudo::/"</span><span class="p">)</span>
   <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"HOME=/home/punchagan get-shit-done work"</span><span class="p">))</span>
 </pre></div>
@@ -118,7 +118,7 @@ For someone worried about having such an easy way of running something as
 work better.
 </p>
 
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">shell-command</span> <span class="s">"SUDO_ASKPASS=\\"/usr/lib/openssh/gnome-ssh-askpass\\" get-shit-done work"</span><span class="p">)</span>
+<div class="highlight"><pre><span class="p">(</span><span class="nv">shell-command</span> <span class="s">"SUDO_ASKPASS=\"/usr/lib/openssh/gnome-ssh-askpass\" get-shit-done work"</span><span class="p">)</span>
 </pre></div>
     </div>
     <aside class="postpromonav"><nav><div class="pagination">
