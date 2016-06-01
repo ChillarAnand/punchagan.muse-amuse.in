@@ -81,7 +81,55 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-14.html" class="u-url">Bookmarks [2010/11/14]</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-15.html" class="u-url">Bookmarks [2010/11/15]</a></h1>
+        <span class="post-date">15 Nov 2010</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="https://github.com/blog/744-today-s-outage">Today's Outage - GitHub</a>
+
+<p>
+tags: writing, letter, software
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://www.adafruit.com/blog/2010/11/14/hacked-kinect-is-now-a-3d-video-capture-tool/">Hacked Kinect is now a 3D video capture tool « adafruit industries blog</a>
+
+<p>
+tags: awesome, video, augmented<sub>reality</sub></p>
+</li>
+</ul>
+<dl class="org-dl">
+<dt> [[<a href="http://mako.cc/copyrighteous/20101114-00%5D%5BBetween">http://mako.cc/copyrighteous/20101114-00][Between</a> the Bars </dt>
+<dd>Copyrighteous]]
+
+<p>
+tags: startup, idea
+</p>
+</dd>
+</dl>
+<ul class="org-ul">
+<li>
+<a href="http://devcheatsheet.com/">Cheat Sheets &amp; Quick Reference Cards for Developers | DevCheatSheet.com</a>
+
+<p>
+tags: writing, reference, software
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://blog.programmableweb.com/2010/11/10/twitter-goes-json-only-with-one-api-more-to-come/">Twitter Goes JSON-Only With One API, More to Come?</a>
+
+<p>
+tags: note, software
+</p>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-14.html" class="u-url">Bookmarks [2010/11/14]</a></h1>
         <span class="post-date">14 Nov 2010</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -618,77 +666,6 @@ tags: awesome, prototype, startup, advice, hack
 </li>
 </ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/raise-windows-on-current-desktop-xdotool-bash.html" class="u-url">Raise windows (on current desktop) xdotool &amp; bash</a></h1>
-        <span class="post-date">06 Nov 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-I posted a snippet <sup><a id="fnr.1" name="fnr.1" class="footref" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.1">1</a></sup> of python code that used xdotool to
-raise windows.  I got one patch from dusual <sup><a id="fnr.2" name="fnr.2" class="footref" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.2">2</a></sup> that
-enabled raising of windows in the current workspace only.
-</p>
-
-<p>
-More importantly, Jordan gave a one-liner <sup><a id="fnr.3" name="fnr.3" class="footref" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fn.3">3</a></sup> in bash,
-that could do the same thing as my long and elaborate python
-snippet.  I had a feeling that this would be much shorter in bash,
-but I don't feel comfortable writing bash scripts. :P
-</p>
-
-<p>
-Below is a bash snippet that tries to incorporates both the
-changes. :)
-</p>
-
-<div class="highlight"><pre><span></span><span class="nv">found</span><span class="o">=</span>0
-
-<span class="k">for</span> win in <span class="sb">`</span>xdotool search --class <span class="nv">$1</span><span class="sb">`</span><span class="p">;</span>
-<span class="k">do</span>
-<span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>xdotool get_desktop_for_window <span class="nv">$win</span><span class="sb">`</span> -eq <span class="sb">`</span>xdotool get_desktop<span class="sb">`</span> <span class="o">]</span><span class="p">;</span>
-<span class="k">then</span> <span class="nv">found</span><span class="o">=</span>1<span class="p">;</span> break<span class="p">;</span>
-<span class="k">fi</span><span class="p">;</span>
-<span class="k">done</span>
-
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$found</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> xdotool windowactivate <span class="nv">$win</span><span class="p">;</span> <span class="k">else</span> <span class="nv">$1</span><span class="p">;</span> <span class="k">fi</span>
-</pre></div>
-
-<p>
-<b>Note</b>: When you've visual effects enabled (the default option on
-Ubuntu), getting the current desktop/workspace doesn't work,
-probably because Root Window properties are being messed around by
-it.
-</p>
-
-<p>
-<b>Note2</b>: <code>search</code> takes an option <code>--screen</code>. It'd be nice if it
- also had an option <code>--desktop</code>.  This task could then be done in
- a one-liner.
-</p>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef">
-<sup><a id="fn.1" name="fn.1" class="footnum" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.1">1</a></sup><p class="footpara">
-My python snippet
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.2" name="fn.2" class="footnum" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.2">2</a></sup><p class="footpara">
-dusual on twitter
-</p>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.3" name="fn.3" class="footnum" href="/posts/raise-windows-on-current-desktop-xdotool-bash.html#fnr.3">3</a></sup><p class="footpara">
-Jordan's one liner
-</p>
-</div>
-
-
-</div>
-</div>
-    </div>
     </article>
 </div>
         <div class="pagination">

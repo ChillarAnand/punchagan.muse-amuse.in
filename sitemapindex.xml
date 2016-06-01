@@ -7,15 +7,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/rss.xml</loc>
-  <lastmod>2016-05-31T10:11:00Z</lastmod>
+  <lastmod>2016-06-01T06:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/sitemap.xml</loc>
-  <lastmod>2016-05-31T14:33:00Z</lastmod>
+  <lastmod>2016-06-01T06:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/advice.xml</loc>
-  <lastmod>2016-05-19T04:02:00Z</lastmod>
+  <lastmod>2016-06-01T06:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/app.xml</loc>
@@ -39,11 +39,11 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blab.xml</loc>
-  <lastmod>2016-05-30T06:12:00Z</lastmod>
+  <lastmod>2016-06-01T06:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blag.xml</loc>
-  <lastmod>2016-05-28T15:50:00Z</lastmod>
+  <lastmod>2016-06-01T06:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blog.xml</loc>
@@ -95,7 +95,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/conference.xml</loc>
-  <lastmod>2016-05-19T04:02:00Z</lastmod>
+  <lastmod>2016-06-01T06:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/contribute.xml</loc>
@@ -519,7 +519,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/pycon.xml</loc>
-  <lastmod>2016-05-19T04:02:00Z</lastmod>
+  <lastmod>2016-06-01T06:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/python.xml</loc>
@@ -580,6 +580,10 @@
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/surat.xml</loc>
   <lastmod>2016-05-19T04:02:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://punchagan.muse-amuse.in/tags/talks.xml</loc>
+  <lastmod>2016-06-01T06:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/technique.xml</loc>
