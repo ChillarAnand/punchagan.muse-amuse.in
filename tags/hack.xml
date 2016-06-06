@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (hack)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/hack.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 08:01:37 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Elfeed hook to fetch full content</title><link>https://punchagan.muse-amuse.in/posts/elfeed-hook-to-fetch-full-content.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (hack)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/hack.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 15:57:06 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Reading-time based scheduling</title><link>https://punchagan.muse-amuse.in/posts/reading-time-based-scheduling.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I had posted a link to an poem written on Medium on a Slack channel that I use
+with friends.  A friend said that she liked the fact that the Slack article
+preview had the reading time from Medium in it.  She could decide whether or
+not she wanted to read the poem or any other article at that moment.
+&lt;/p&gt;
+
+&lt;p&gt;
+This gave me the idea for a reading time extension for my &lt;a href="https://www.chromium.org/getting-involved/download-chromium"&gt;browser&lt;/a&gt;, or my &lt;a href="https://github.com/skeeto/elfeed"&gt;feed
+reader&lt;/a&gt; or my &lt;a href="https://pinboard.in"&gt;bookmarks&lt;/a&gt; – my reading list.  The first version should be able to
+compute or extract the reading time for an article or a tab in my browser, and
+index them.  I want to be able to specify the amount of time I will be able to
+spend reading, and be presented with something from my reading list.  I think
+this would help with scheduling the reading of longer articles, and also to
+actually help me get through my reading list.
+&lt;/p&gt;
+
+&lt;p&gt;
+Reading time estimates that use heuristics based on word-count may not really
+work, and may do &lt;a href="https://medium.com/@fchimero/this-should-only-take-a-minute-or-four-probably-e38bb7bf2adf#.mvkd09m6m"&gt;more harm than good&lt;/a&gt;.  But, it may still be worth a try to see
+if it helps my reading habits in any way.  A quick search pointed me to &lt;a href="https://chrome.google.com/webstore/detail/readism-article-reading-t/bmiolhceebkeljaikojgcoeefblcihje"&gt;this
+extension&lt;/a&gt;, that can give the reading time for any page but doesn't really do
+what I want.
+&lt;/p&gt;</description><category>blag</category><category>hack</category><category>idea</category><category>programming</category><category>reading</category><guid>https://punchagan.muse-amuse.in/posts/reading-time-based-scheduling.html</guid><pubDate>Mon, 06 Jun 2016 07:43:12 GMT</pubDate></item><item><title>Elfeed hook to fetch full content</title><link>https://punchagan.muse-amuse.in/posts/elfeed-hook-to-fetch-full-content.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I have started to use &lt;a href="http://pinboard.in"&gt;Pinboard&lt;/a&gt;'s &lt;code&gt;unread&lt;/code&gt; tag as my to-read list.  It has a
 bookmark-let that works pretty well for adding stuff into my "to-read" list.  I
 then catch up on this list using &lt;code&gt;elfeed&lt;/code&gt; and subscribing to the unread items'
@@ -374,15 +397,4 @@ quite a bit, but I am not inclined to do anything about it, right
 now.  Since, everything about google groups is ajaxy, this script uses
 selenium and does things on the page, that one would do by hand.  It's
 not something that I am proud of, but it does the job!
-&lt;/p&gt;</description><category>email</category><category>hack</category><category>idea</category><category>mumbai</category><category>ultimate</category><guid>https://punchagan.muse-amuse.in/posts/scraping-google-groups.html</guid><pubDate>Tue, 31 Dec 2013 14:25:58 GMT</pubDate></item><item><title>A smarter 404 page.</title><link>https://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-&lt;a href="http://twitter.com/avudem"&gt;Voodoo&lt;/a&gt; found a broken link referring to a one of my posts, on Quora.
-Given that I have changed my site generator a bunch of times now, it
-is quite possible that there are other broken links at various other
-places.  So, I implemented a smart &lt;a href="https://punchagan.muse-amuse.in/this-is-a-fun-hack"&gt;404 page&lt;/a&gt; for the site, yesterday.
-It is very similar to something I came across on &lt;a href="http://brettterpstra.com/2013/04/07/fun-with-intelligent-404-pages/"&gt;brettterpstra&lt;/a&gt;'s site.
-I just &lt;a href="https://punchagan.muse-amuse.in/assets/js/suggestions.js"&gt;hooked up&lt;/a&gt; &lt;a href="http://kiro.me/projects/fuse.html"&gt;fuse.js&lt;/a&gt; with Nikola's &lt;a href="http://getnikola.com/handbook.html#local-search"&gt;tipue-search plugin&lt;/a&gt;'s output
-file.  My glue code essentially, just figures out the search term from
-the URL, performs a Fuse search on the json data created by Nikola's
-search plugin, and returns a list of top 5 results.  It just took me
-about an hour to write, but is pretty useful, I think.
-&lt;/p&gt;</description><category>code</category><category>fuzzy-search</category><category>hack</category><category>js</category><guid>https://punchagan.muse-amuse.in/posts/a-smarter-404-page.html</guid><pubDate>Mon, 11 Nov 2013 07:06:53 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>email</category><category>hack</category><category>idea</category><category>mumbai</category><category>ultimate</category><guid>https://punchagan.muse-amuse.in/posts/scraping-google-groups.html</guid><pubDate>Tue, 31 Dec 2013 14:25:58 GMT</pubDate></item></channel></rss>

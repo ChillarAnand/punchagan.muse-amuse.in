@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (blag)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link type="application/rss+xml" href="https://punchagan.muse-amuse.in/tags/blag.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 10:27:31 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Stepping AFK</title><link>https://punchagan.muse-amuse.in/posts/stepping-afk.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (blag)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" href="https://punchagan.muse-amuse.in/tags/blag.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 15:57:07 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Reading-time based scheduling</title><link>https://punchagan.muse-amuse.in/posts/reading-time-based-scheduling.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I had posted a link to an poem written on Medium on a Slack channel that I use
+with friends.  A friend said that she liked the fact that the Slack article
+preview had the reading time from Medium in it.  She could decide whether or
+not she wanted to read the poem or any other article at that moment.
+&lt;/p&gt;
+
+&lt;p&gt;
+This gave me the idea for a reading time extension for my &lt;a href="https://www.chromium.org/getting-involved/download-chromium"&gt;browser&lt;/a&gt;, or my &lt;a href="https://github.com/skeeto/elfeed"&gt;feed
+reader&lt;/a&gt; or my &lt;a href="https://pinboard.in"&gt;bookmarks&lt;/a&gt; – my reading list.  The first version should be able to
+compute or extract the reading time for an article or a tab in my browser, and
+index them.  I want to be able to specify the amount of time I will be able to
+spend reading, and be presented with something from my reading list.  I think
+this would help with scheduling the reading of longer articles, and also to
+actually help me get through my reading list.
+&lt;/p&gt;
+
+&lt;p&gt;
+Reading time estimates that use heuristics based on word-count may not really
+work, and may do &lt;a href="https://medium.com/@fchimero/this-should-only-take-a-minute-or-four-probably-e38bb7bf2adf#.mvkd09m6m"&gt;more harm than good&lt;/a&gt;.  But, it may still be worth a try to see
+if it helps my reading habits in any way.  A quick search pointed me to &lt;a href="https://chrome.google.com/webstore/detail/readism-article-reading-t/bmiolhceebkeljaikojgcoeefblcihje"&gt;this
+extension&lt;/a&gt;, that can give the reading time for any page but doesn't really do
+what I want.
+&lt;/p&gt;</description><category>blag</category><category>hack</category><category>idea</category><category>programming</category><category>reading</category><guid>https://punchagan.muse-amuse.in/posts/reading-time-based-scheduling.html</guid><pubDate>Mon, 06 Jun 2016 07:43:12 GMT</pubDate></item><item><title>Stepping AFK</title><link>https://punchagan.muse-amuse.in/posts/stepping-afk.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 In the past few weeks, I noticed three instances where I was forced to take a
 break exactly when I was ready to jump in and write some code to fix a bug or
 add a small feature.  I had to step out of the house and take a walk to meet
@@ -524,43 +547,4 @@ work better.
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command&lt;/span&gt; &lt;span class="s"&gt;"SUDO_ASKPASS=\"/usr/lib/openssh/gnome-ssh-askpass\" get-shit-done work"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</guid><pubDate>Tue, 22 Dec 2015 14:17:04 GMT</pubDate></item><item><title>Elfeed hook to fetch full content</title><link>https://punchagan.muse-amuse.in/posts/elfeed-hook-to-fetch-full-content.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-I have started to use &lt;a href="http://pinboard.in"&gt;Pinboard&lt;/a&gt;'s &lt;code&gt;unread&lt;/code&gt; tag as my to-read list.  It has a
-bookmark-let that works pretty well for adding stuff into my "to-read" list.  I
-then catch up on this list using &lt;code&gt;elfeed&lt;/code&gt; and subscribing to the unread items'
-RSS feed.  The work-flow is pretty nice for adding stuff into the list, and
-finding items on the list. But, when it comes to the actual reading part, the
-entries in the feed don't have the actual content I want to read, and I end up
-opening the links in a browser.
-&lt;/p&gt;
-
-&lt;p&gt;
-Inspired by a &lt;a href="https://github.com/sursh/blaggregator/pull/80#issuecomment-165849126"&gt;comment from FiloSottile&lt;/a&gt;, I realized it should be pretty easy to
-setup a hook that fetches the actual content to make my reading work-flow
-smoother. I wrote a &lt;a href="https://github.com/punchagan/dot-files/blob/master/bin/get_article.py"&gt;small script&lt;/a&gt;, using &lt;a href="https://github.com/buriy/python-readability"&gt;python-readability&lt;/a&gt;, to fetch the page
-content, given a URL. This script is then hooked onto &lt;code&gt;elfeed-new-entry-hook&lt;/code&gt;,
-to fetch content of for new entries as they are fetched.  All the old entries
-can be easily fixed with a single call to &lt;code&gt;elfeed-apply-hooks-now&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/get-url-content&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="s"&gt;"Fetches the content for a url."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;shell-command-to-string&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"~/bin/get_article.py %s"&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pc/get-entry-content&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="s"&gt;"Fetches content for pinboard entries that are not tweets."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;interactive&lt;/span&gt;
-   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;entry&lt;/span&gt; &lt;span class="nv"&gt;elfeed-show-entry&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt; &lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;url&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-entry-link&lt;/span&gt; &lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;feed-id&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-deref&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-entry-feed-id&lt;/span&gt; &lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;content&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-deref&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-entry-content&lt;/span&gt; &lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;when&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;and&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s-matches?&lt;/span&gt; &lt;span class="s"&gt;"feeds.pinboard.in/"&lt;/span&gt; &lt;span class="nv"&gt;feed-id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;not&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s-matches?&lt;/span&gt; &lt;span class="s"&gt;"twitter.com/\\|pdf$\\|png$\\|jpg$"&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-	       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;string-equal&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt; &lt;span class="nv"&gt;content&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;content&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;pc/get-url-content&lt;/span&gt; &lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-entry-content&lt;/span&gt; &lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-ref&lt;/span&gt; &lt;span class="nv"&gt;content&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'elfeed-new-entry-hook&lt;/span&gt; &lt;span class="nf"&gt;#'&lt;/span&gt;&lt;span class="nv"&gt;pc/get-entry-content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>elfeed</category><category>emacs</category><category>hack</category><category>pinboard</category><guid>https://punchagan.muse-amuse.in/posts/elfeed-hook-to-fetch-full-content.html</guid><pubDate>Sat, 19 Dec 2015 08:12:29 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>emacs</category><category>orgmode</category><guid>https://punchagan.muse-amuse.in/posts/clock-in-and-get-shit-done.html</guid><pubDate>Tue, 22 Dec 2015 14:17:04 GMT</pubDate></item></channel></rss>

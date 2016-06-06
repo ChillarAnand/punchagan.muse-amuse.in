@@ -57,7 +57,60 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-06.html" class="u-url">Recurse Center, 2014-07-06</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-07.html" class="u-url">Recurse Center, 2014-07-07</a></h1>
+        <span class="post-date">08 Jul 2014</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>As preparation for a one-on-one this week with one of the facilitators, I was
+wondering if I was really getting better as a programmer, by doing what I am
+doing.
+</li>
+<li>I have heard at numerous places that reading and reflection are keys to
+getting better. I feel like I haven't been giving these things much attention
+in the past couple of weeks. I don't catch up on reading all the awesome
+reading material shared on Zulip and I switched from writing this blog post
+first thing in the morning, to any-time-after-lunch. I don't think this
+worked out very well. Writing the post worked as a way to reflect on what I
+had done yesterday, and what I should be doing today. So, I am back to
+writing the blog post, first thing in the morning!
+</li>
+<li>Yesterday, I worked on indexing the Python sources in a way that the
+inspection code can look up, later.  During this process, I found that my
+code to use libclang's AST wasn't generic enough, and I had to clean it up to
+be able to extract useful information from any file in the <code>cpython</code> sources.
+</li>
+<li>We also got to attend a super-awesome talk by <a href="http://words.steveklabnik.com/">Steve Labnik</a>! He talked about
+his progression from being an application developer, to writing libraries, to
+working on languages (as a professional developer). He made a lot of
+interesting and inspiring points during his talk.  Some of those that stuck
+with me are:
+<ul class="org-ul">
+<li>None of these is particularly harder than any of the other. Depending on
+each person's personality, or the way their brain works, they are good at
+doing one or the other.
+</li>
+<li>Getting good at programming is a matter of showing up, more than about the
+"genes".  He repeated quite a few times that he disliked the idea of "baby
+hacker", and left out the story of his childhood and college programming
+days! I'm totally stealing his idea of meeting every saturday at 1pm, with
+a bunch of friends and working until it was 10pm or so, when they could get
+cheap beer and food!  And he did this all through his college!  It is
+interesting that this idea is so similar to Hacker School!
+</li>
+</ul>
+<p>
+It was a very enjoyable and inspiring talk on the whole.
+</p>
+</li>
+<li>The plan for today is to actually have the parsed information dumped into
+some persistent format, and modify the inspect code to actually use it.
+</li>
+<li>I will also be pairing with Kyle for a few hours on working through some of
+<a href="http://mitpress.mit.edu/books/audio-programming-book">http://mitpress.mit.edu/books/audio-programming-book</a>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-06.html" class="u-url">Recurse Center, 2014-07-06</a></h1>
         <span class="post-date">07 Jul 2014</span>
     </header><div class="e-content entry-content">
     <p>
@@ -338,67 +391,6 @@ dictionary.
 </li>
 <li>This paper is 20 years old, and there would surely be work by others
 building on top of this, or doing it totally differently.
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-06-23.html" class="u-url">Recurse Center, 2014-06-23</a></h1>
-        <span class="post-date">23 Jun 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>The Apprenticeship patterns book is very interesting!  I shall
-continue to read it and start create daily/weekly rituals from the
-actions prescribed in the book!
-</li>
-<li>I was reading <a href="http://blogs.collab.net/git/protect-git-history#.U6fixh-caV4">this post</a> on <code>git gc</code>, <code>reflog</code>, etc. and wanted to
-see what the default values were for some of the configurable
-variables.  But, the git config command didn't help.  Developer/code
-defaults are also a part of the "config" system, and any tools to
-inspect config variables should display them, if no other values
-have been set explicitly!
-</li>
-<li>"If experience is built upon failure as much as success, then you
-need a more or less private space where you can seek out failure."
-– Apprenticeship Patterns.
-</li>
-<li>Our check-in groups changed, but 3 of us from our last check-in
-group are together again!
-</li>
-<li>Most of the day was spent with Git.  In the morning, I learned that
-setting <code>push.default</code> to <code>nothing</code> will prevent pushing any
-branches without specifying explicitly which branch I want to push.
-</li>
-<li>Also, later in the day, Alan gave a presentation mapping the
-internals of git to the commands, trying to give everyone a better
-mental model of Git.
-</li>
-<li>I spent some time trying to get <code>jedi</code> integration for <code>emacs</code>. It
-should've worked out of the box, but I'm not sure the ELPA
-repositories have proper dependency/version management.  Seems to be
-the problem, everywhere!  Dependencies of a package get updated, and
-the package starts acting up…
-</li>
-<li>Chaitu sent me a link about solving mazes using Finite Automata, and
-I spent some time trying to write a simple solver, and compare it
-with Nava's breadth first search.  But, it looks like we broke her
-code during the refactor.  I may get back to this, at some point.
-</li>
-<li>I also spent a few minutes talking to Kyle, while he was trying to
-implement a simple version of the NTP protocol.  The algorithm it
-turns out, is pretty simple.
-</li>
-<li>I started reading a little bit on crypt-analysis for Simple
-Substitution ciphers, and I'll try implementing one of the
-algorithms today.
-</li>
-<li>The day ended with yummy pizza and video watching!  We watched –
-<ul class="org-ul">
-<li>Bret Victor, <a href="http://vimeo.com/36579366">Inventing on Principle</a> (54 min)
-</li>
-<li>Gary Bernhardt, <a href="https://www.destroyallsoftware.com/talks/wat">WAT</a> (4 min)
-</li>
-<li>Guy Steele, <a href="https://www.youtube.com/watch?v=_ahvzDzKdB0">Growing a Language</a> (53 min)
-</li>
-</ul>
 </li>
 </ul>
 </div>

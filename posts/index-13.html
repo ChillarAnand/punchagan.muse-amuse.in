@@ -57,7 +57,31 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-10-16.html" class="u-url">Bookmarks [2013-10-16]</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/blogging-with-nikola-and-org-mode.html" class="u-url">Blogging with Nikola and Org-mode</a></h1>
+        <span class="post-date">16 Oct 2013</span>
+    </header><div class="e-content entry-content">
+    <p>
+Sigh! I made yet another change to the way this blog gets published.
+But, I have a feeling this mechanism, is here to stay!
+</p>
+
+<p>
+We've been using Nikola quite regularly for our <a href="http://ultimatesport.in">Ultimate site</a>, and I
+quite like it.  I've also contributed a bunch of features to Nikola to
+get it to work the way I would like it to.  This weekend I ported my
+blog from <a href="https://github.com/renard/o-blog">o-blog</a> to <a href="http://getnikola.com">Nikola</a>.  The only thing that was stopping me
+from doing it, until now is the fact that all my posts are in
+org markup and porting them over to one of the formats that Nikola
+supports would be a PITA.  So, I wrote a <a href="http://plugins.getnikola.com/#orgmode">pretty simple plugin</a> to
+Nikola to support posting from org files.  And then with a <a href="https://gist.github.com/punchagan/6970578">little
+Python</a>, I was able to move everything over to use Nikola.
+</p>
+
+<p>
+Hopefully, I'll keep my blog more updated, from here on!
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2013-10-16.html" class="u-url">Bookmarks [2013-10-16]</a></h1>
         <span class="post-date">16 Oct 2013</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -831,32 +855,6 @@ strings.
 Or may be it's just time to move up to Python 2.7.3
 </p>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/3-tips-for-those-shipping-commercial-apps.html" class="u-url">3 tips for those shipping (commercial) apps</a></h1>
-        <span class="post-date">28 Nov 2012</span>
-    </header><div class="e-content entry-content">
-    <p>
-Here are some very generic (and paraphrased) notes from a short
-talk today, by Deepankar Sharma.
-</p>
-
-<ol class="org-ol">
-<li>Whenever you release a new major version, make sure you keep a
-copy of the whole "ecosystem" to be able to run it whenever you
-want.  At any point in time, you should be able to run any
-version of your software.
-</li>
-<li>When writing benchmarks/tests/etc., try and ensure that you
-cover a broad spectrum of test data, to try and replicate the
-different types of data that users could possibly have.
-</li>
-<li>Don't develop applications with modes.  Be very careful before
-you add a new mode to your application, effectively adding one
-more code path to maintain.
-</li>
-<li>(Bonus) Beware of too much extensibility
-</li>
-</ol>
-</div>
     </article>
 </div>
         <div class="pagination">

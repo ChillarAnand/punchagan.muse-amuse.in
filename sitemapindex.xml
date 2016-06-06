@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/rss.xml</loc>
-  <lastmod>2016-06-06T10:27:00Z</lastmod>
+  <lastmod>2016-06-06T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/sitemap.xml</loc>
-  <lastmod>2016-06-06T13:55:00Z</lastmod>
+  <lastmod>2016-06-06T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/advice.xml</loc>
@@ -43,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blag.xml</loc>
-  <lastmod>2016-06-06T10:27:00Z</lastmod>
+  <lastmod>2016-06-06T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/blog.xml</loc>
@@ -227,7 +227,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/hack.xml</loc>
-  <lastmod>2016-06-06T08:01:00Z</lastmod>
+  <lastmod>2016-06-06T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/hackerschool.xml</loc>
@@ -275,7 +275,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/idea.xml</loc>
-  <lastmod>2016-06-06T08:01:00Z</lastmod>
+  <lastmod>2016-06-06T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/image_processing.xml</loc>
@@ -503,7 +503,7 @@
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/programming.xml</loc>
-  <lastmod>2016-06-06T10:27:00Z</lastmod>
+  <lastmod>2016-06-06T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/project.xml</loc>
@@ -532,6 +532,10 @@
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/raspberry-pi.xml</loc>
   <lastmod>2016-06-06T08:01:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://punchagan.muse-amuse.in/tags/reading.xml</loc>
+  <lastmod>2016-06-06T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://punchagan.muse-amuse.in/tags/recursecenter.xml</loc>

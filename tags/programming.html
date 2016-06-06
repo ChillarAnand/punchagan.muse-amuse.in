@@ -57,7 +57,35 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/stepping-afk.html" class="u-url">Stepping AFK</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/reading-time-based-scheduling.html" class="u-url">Reading-time based scheduling</a></h1>
+        <span class="post-date">06 Jun 2016</span>
+    </header><div class="e-content entry-content">
+    <p>
+I had posted a link to an poem written on Medium on a Slack channel that I use
+with friends.  A friend said that she liked the fact that the Slack article
+preview had the reading time from Medium in it.  She could decide whether or
+not she wanted to read the poem or any other article at that moment.
+</p>
+
+<p>
+This gave me the idea for a reading time extension for my <a href="https://www.chromium.org/getting-involved/download-chromium">browser</a>, or my <a href="https://github.com/skeeto/elfeed">feed
+reader</a> or my <a href="https://pinboard.in">bookmarks</a> – my reading list.  The first version should be able to
+compute or extract the reading time for an article or a tab in my browser, and
+index them.  I want to be able to specify the amount of time I will be able to
+spend reading, and be presented with something from my reading list.  I think
+this would help with scheduling the reading of longer articles, and also to
+actually help me get through my reading list.
+</p>
+
+<p>
+Reading time estimates that use heuristics based on word-count may not really
+work, and may do <a href="https://medium.com/@fchimero/this-should-only-take-a-minute-or-four-probably-e38bb7bf2adf#.mvkd09m6m">more harm than good</a>.  But, it may still be worth a try to see
+if it helps my reading habits in any way.  A quick search pointed me to <a href="https://chrome.google.com/webstore/detail/readism-article-reading-t/bmiolhceebkeljaikojgcoeefblcihje">this
+extension</a>, that can give the reading time for any page but doesn't really do
+what I want.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/stepping-afk.html" class="u-url">Stepping AFK</a></h1>
         <span class="post-date">03 Jun 2016</span>
     </header><div class="e-content entry-content">
     <p>
@@ -694,32 +722,6 @@ and when tackling particularly tricky problems
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/3-tips-for-those-shipping-commercial-apps.html" class="u-url">3 tips for those shipping (commercial) apps</a></h1>
-        <span class="post-date">28 Nov 2012</span>
-    </header><div class="e-content entry-content">
-    <p>
-Here are some very generic (and paraphrased) notes from a short
-talk today, by Deepankar Sharma.
-</p>
-
-<ol class="org-ol">
-<li>Whenever you release a new major version, make sure you keep a
-copy of the whole "ecosystem" to be able to run it whenever you
-want.  At any point in time, you should be able to run any
-version of your software.
-</li>
-<li>When writing benchmarks/tests/etc., try and ensure that you
-cover a broad spectrum of test data, to try and replicate the
-different types of data that users could possibly have.
-</li>
-<li>Don't develop applications with modes.  Be very careful before
-you add a new mode to your application, effectively adding one
-more code path to maintain.
-</li>
-<li>(Bonus) Beware of too much extensibility
-</li>
-</ol>
-</div>
     </article>
 </div>
         <div class="pagination">

@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought</title><link>https://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link type="application/rss+xml" href="https://punchagan.muse-amuse.in/rss.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 10:27:33 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Stepping AFK</title><link>https://punchagan.muse-amuse.in/posts/stepping-afk.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought</title><link>https://punchagan.muse-amuse.in/</link><description>For an idle mind is the devil's workshop.</description><atom:link rel="self" href="https://punchagan.muse-amuse.in/rss.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 15:57:06 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Reading-time based scheduling</title><link>https://punchagan.muse-amuse.in/posts/reading-time-based-scheduling.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I had posted a link to an poem written on Medium on a Slack channel that I use
+with friends.  A friend said that she liked the fact that the Slack article
+preview had the reading time from Medium in it.  She could decide whether or
+not she wanted to read the poem or any other article at that moment.
+&lt;/p&gt;
+
+&lt;p&gt;
+This gave me the idea for a reading time extension for my &lt;a href="https://www.chromium.org/getting-involved/download-chromium"&gt;browser&lt;/a&gt;, or my &lt;a href="https://github.com/skeeto/elfeed"&gt;feed
+reader&lt;/a&gt; or my &lt;a href="https://pinboard.in"&gt;bookmarks&lt;/a&gt; – my reading list.  The first version should be able to
+compute or extract the reading time for an article or a tab in my browser, and
+index them.  I want to be able to specify the amount of time I will be able to
+spend reading, and be presented with something from my reading list.  I think
+this would help with scheduling the reading of longer articles, and also to
+actually help me get through my reading list.
+&lt;/p&gt;
+
+&lt;p&gt;
+Reading time estimates that use heuristics based on word-count may not really
+work, and may do &lt;a href="https://medium.com/@fchimero/this-should-only-take-a-minute-or-four-probably-e38bb7bf2adf#.mvkd09m6m"&gt;more harm than good&lt;/a&gt;.  But, it may still be worth a try to see
+if it helps my reading habits in any way.  A quick search pointed me to &lt;a href="https://chrome.google.com/webstore/detail/readism-article-reading-t/bmiolhceebkeljaikojgcoeefblcihje"&gt;this
+extension&lt;/a&gt;, that can give the reading time for any page but doesn't really do
+what I want.
+&lt;/p&gt;</description><category>blag</category><category>hack</category><category>idea</category><category>programming</category><category>reading</category><guid>https://punchagan.muse-amuse.in/posts/reading-time-based-scheduling.html</guid><pubDate>Mon, 06 Jun 2016 07:43:12 GMT</pubDate></item><item><title>Stepping AFK</title><link>https://punchagan.muse-amuse.in/posts/stepping-afk.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 In the past few weeks, I noticed three instances where I was forced to take a
 break exactly when I was ready to jump in and write some code to fix a bug or
 add a small feature.  I had to step out of the house and take a walk to meet
@@ -720,76 +743,4 @@ the beauty of the mountains is just too irresistible.
 You can view more pictures of the trek &lt;a href="https://www.flickr.com/gp/punchagan/fXP8fG"&gt;here&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>himalaya</category><category>travel</category><category>trek</category><guid>https://punchagan.muse-amuse.in/posts/deoriatal-and-chandrashila.html</guid><pubDate>Mon, 18 Apr 2016 05:45:25 GMT</pubDate></item><item><title>Book Review: 5 Love Languages</title><link>https://punchagan.muse-amuse.in/posts/book-review-5-love-languages.html</link><dc:creator>punchagan</dc:creator><description>&lt;div class="book-figure"&gt;
-
-    &lt;div class="book-figure-media"&gt;
-        &lt;a class="book-figure-image" href="http://www.amazon.com/gp/product/080241270X" target="_blank"&gt;
-            &lt;img height="150px" src="https://farm2.staticflickr.com/1656/24408821265_6f067fe523_o.jpg" alt="5 Love Languages"&gt;
-        &lt;/a&gt;
-    &lt;/div&gt;
-
-    &lt;div class="book-figure-info"&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;span class="book-figure-info-label"&gt;Author &lt;/span&gt;&lt;span&gt;Gary Chapman&lt;/span&gt;&lt;/li&gt;
-	    &lt;li&gt;&lt;span class="book-figure-info-label"&gt;ISBN &lt;/span&gt;&lt;span&gt;080241270X&lt;/span&gt;&lt;/li&gt;
-	    &lt;li&gt;&lt;span class="book-figure-info-label"&gt;Read &lt;/span&gt;&lt;span&gt;2016-01-13&lt;/span&gt;&lt;/li&gt;
-	    &lt;li&gt;&lt;span class="book-figure-info-label"&gt;Rating &lt;/span&gt;&lt;span&gt;5/5&lt;/span&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;
-I first heard of this book in a discussion on relationships amongst friends
-from RC.  The discussion was quite interesting and the book received more than
-a couple of strong recommendations. So, I decided to pick it up.
-&lt;/p&gt;
-
-&lt;p&gt;
-Very simply, the book is codified common sense explaining what Love is. Gary
-Chapman, the author, started with the question "What makes you feel loved" and
-found that the answers could be grouped into the following 5 categories:
-&lt;/p&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;Words of affirmation
-&lt;/li&gt;
-&lt;li&gt;Quality time
-&lt;/li&gt;
-&lt;li&gt;Receiving gifts
-&lt;/li&gt;
-&lt;li&gt;Acts of service
-&lt;/li&gt;
-&lt;li&gt;Physical touch,
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;
-which he calls the languages of love.  He also proposes that people have a
-&lt;b&gt;primary&lt;/b&gt; language of love, and a failure to speak to a person in their primary
-language would make them feel unloved.
-&lt;/p&gt;
-
-&lt;p&gt;
-The book is filled with anecdotes to explain what each of these languages means
-and how to speak them, along with practical advice and exercises to learn to
-speak each of these languages.  Though the book has been written with couples
-in mind, the fundamental ideas in this book can be applied to any
-relationships. I feel like it has been helping me connect a few dots, ever
-since I've started reading it.
-&lt;/p&gt;
-
-&lt;p&gt;
-It has been totally worth my time to read this book. A highly recommended read!
-&lt;/p&gt;
-
-&lt;p&gt;
-Below are some of my notes. Feel free to suggest improvements (for readability
-and otherwise) on the notes.
-&lt;/p&gt;
-
-
-&lt;div class="figure"&gt;
-&lt;p&gt;&lt;a href="https://farm2.staticflickr.com/1484/23781720643_a8e91c0cf8_o.jpg"&gt;&lt;img src="https://farm2.staticflickr.com/1484/23781720643_a8e91c0cf8_o.jpg" alt="23781720643_a8e91c0cf8_o.jpg"&gt;&lt;/a&gt;
-&lt;/p&gt;
-&lt;/div&gt;</description><category>blag</category><category>book</category><category>book-notes</category><category>life</category><category>love</category><guid>https://punchagan.muse-amuse.in/posts/book-review-5-love-languages.html</guid><pubDate>Tue, 12 Jan 2016 14:02:51 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>himalaya</category><category>travel</category><category>trek</category><guid>https://punchagan.muse-amuse.in/posts/deoriatal-and-chandrashila.html</guid><pubDate>Mon, 18 Apr 2016 05:45:25 GMT</pubDate></item></channel></rss>
