@@ -57,7 +57,37 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/contributing-to-foss.html" class="u-url">Contributing to FOSS</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/orgelisp-sorting-list-of-org-links-on-description.html" class="u-url">org/elisp - sorting list of org-links on description</a></h1>
+        <span class="post-date">20 Aug 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+A small utility function that I used to sort the names of people
+who commented on my blog.
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">org-get-link-desc-from-list</span> <span class="p">()</span>
+  <span class="s">""" Get link description of a list item containing just links """</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">item-beg</span> <span class="p">(</span><span class="nf">point</span><span class="p">))</span>
+       <span class="p">(</span><span class="nv">item-end</span> <span class="p">(</span><span class="nv">org-end-of-item</span><span class="p">))</span>
+       <span class="p">(</span><span class="nv">cur-item</span> <span class="p">(</span><span class="nf">buffer-substring-no-properties</span>
+		  <span class="nv">item-beg</span> <span class="nv">item-end</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nf">goto-char</span> <span class="nv">item-beg</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">org-columns-compact-links</span> <span class="nv">cur-item</span><span class="p">)))</span>
+</pre></div>
+
+<p>
+<code>sort-lines</code> wasn't good enough for me, since it was sorting
+alphabetically and it ended up being the sorted order of the urls
+and not the names. This function, when used with
+<code>org-sort-entries-or-items</code> gave me what I wanted.
+</p>
+
+<p>
+Thanks to benny (on #org-mode), I also learnt the difference
+between <code>let</code> and <code>let*</code>.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/contributing-to-foss.html" class="u-url">Contributing to FOSS</a></h1>
         <span class="post-date">19 Aug 2010</span>
     </header><div class="e-content entry-content">
     <p>
@@ -435,25 +465,6 @@ Hope this helps.  Happy Hacking – Eric
 </p>
 <hr>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/lesson-with-rss-feeds-wordpress.html" class="u-url">Lesson with RSS feeds &amp; Wordpress</a></h1>
-        <span class="post-date">04 Aug 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-In a world of (RSS &amp; Atom) feeds, deleting your posts is not the
-way to do it.
-</p>
-
-<p>
-First re-post using no content and give the post some time for it
-to be caught by the feed aggregators. Then, delete your post.
-</p>
-
-<p>
-<b>Update</b>:
- This
- post also has similar advice.
-</p>
-    </div>
     </article>
 </div>
         <div class="pagination">

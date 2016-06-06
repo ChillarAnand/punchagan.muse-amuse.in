@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (programming)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/programming.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 08:01:37 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Thinking about Data Ethics</title><link>https://punchagan.muse-amuse.in/posts/thinking-about-data-ethics.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (programming)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link type="application/rss+xml" href="https://punchagan.muse-amuse.in/tags/programming.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 10:27:31 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Stepping AFK</title><link>https://punchagan.muse-amuse.in/posts/stepping-afk.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+In the past few weeks, I noticed three instances where I was forced to take a
+break exactly when I was ready to jump in and write some code to fix a bug or
+add a small feature.  I had to step out of the house and take a walk to meet
+someone, etc.
+&lt;/p&gt;
+
+&lt;p&gt;
+I ended up getting ideas during the walks, which significantly changed and
+simplified how I would've implemented things, if not for those breaks.  Even if
+I did end up zeroing down to those solutions, I am pretty sure it would've
+taken a couple of not-so-good attempts and much longer than it did.
+&lt;/p&gt;
+
+&lt;p&gt;
+Context switches are usually considered to be &lt;a href="http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/"&gt;expensive for programmers&lt;/a&gt;, but
+taking a break at the exact time when I had all the required context loaded
+into my head seemed to help. It was also probably helpful that I was taking a
+walk, and there wasn't really any other inputs or outputs competing for the
+space in my head.
+&lt;/p&gt;
+
+&lt;p&gt;
+This got me thinking about doing this more deliberately – I'd love to hear
+about any experiences or any experiments any of you have done with this.  Also,
+I'm reminded of Rich Hickey's &lt;a href="https://www.youtube.com/watch?v=f84n5oFoZBc"&gt;Hammock Driven Development&lt;/a&gt; talk and I wonder if
+this is a smaller/different version of it, and makes me want to try out the
+things he suggests more deliberately.  If any of you has thoughts and
+suggestions, I'd love to hear from you!
+&lt;/p&gt;</description><category>blab</category><category>blag</category><category>programming</category><category>thought</category><guid>https://punchagan.muse-amuse.in/posts/stepping-afk.html</guid><pubDate>Fri, 03 Jun 2016 18:21:30 GMT</pubDate></item><item><title>Thinking about Data Ethics</title><link>https://punchagan.muse-amuse.in/posts/thinking-about-data-ethics.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 Earlier this month, a researcher made a dataset containing the profiles of about
 70,000 users public. He didn't really see a problem in doing this because he
 felt he was only presenting &lt;a href="https://twitter.com/KirkegaardEmil/status/730449904909324289"&gt;already publicly available&lt;/a&gt; data in a more usable
@@ -572,61 +601,4 @@ more code path to maintain.
 &lt;/li&gt;
 &lt;li&gt;(Bonus) Beware of too much extensibility
 &lt;/li&gt;
-&lt;/ol&gt;</description><category>enthought</category><category>programming</category><category>software</category><category>tips</category><guid>https://punchagan.muse-amuse.in/posts/3-tips-for-those-shipping-commercial-apps.html</guid><pubDate>Wed, 28 Nov 2012 15:26:00 GMT</pubDate></item><item><title>Advice - Programming in Elisp</title><link>https://punchagan.muse-amuse.in/posts/advice-programming-in-elisp.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-Below is a mail sent by Eric Schulte to the org-mode mailing list
-answering a query on how to write elisp for org-mode. I am
-reproducing it here, since it is useful advice for me. The actual
-thread is here.
-&lt;/p&gt;
-
-&lt;hr&gt;
-&lt;p&gt;
-The way that I learned how to program in emacs lisp was mainly
-using two commands `elisp-index-search' bound to `C-h e' on my
-system, and most importantly `describe-function' bound to `C-h f'.
-With `describe-function' you can look at the source code of
-functions whose behavior you are familiar with, you can then copy
-portions of the code to your &lt;b&gt;scratch&lt;/b&gt; buffer where they can be
-edited and evaluated with `eval-defun' bound to `C-M-x'.  Now with
-Babel, instead of doing this in the scratch buffer you could do
-this in emacs-lisp code blocks in an org file, enabling notes and
-hierarchical organization – it can be nice to have your noodling
-all collected in one file for later reference.
-&lt;/p&gt;
-
-&lt;p&gt;
-If you are going to do any serious work with lisp, I would
-emphatically recommend using paredit-mode, and becoming friends
-with the Sexp movement functions
-&lt;/p&gt;
-
-&lt;p&gt;
-C-M-f        runs the command paredit-forward
-C-M-b        runs the command paredit-backward
-C-M-u        runs the command backward-up-list
-C-M-k        runs the command kill-sexp
-C-y        runs the command yank
-&lt;/p&gt;
-
-&lt;p&gt;
-They allow you to manipulate lisp code on the level of logical
-expressions, the utility of which can not be over stated.
-&lt;/p&gt;
-
-&lt;p&gt;
-As for working with Org-mode in particular, I'd recommend looking
-at the documentation and source-code of Org-mode functions with
-`describe-function', and then looking for how these functions are
-actually used in the Org-mode code base with `rgrep'.
-&lt;/p&gt;
-
-&lt;p&gt;
-For a more structured learning experience, I've heard very good
-things about &lt;a href="http://www.gnu.org/software/emacs/emacs-lisp-intro/"&gt;http://www.gnu.org/software/emacs/emacs-lisp-intro/&lt;/a&gt;,
-although I haven't used it myself.
-&lt;/p&gt;
-
-&lt;p&gt;
-Hope this helps.  Happy Hacking – Eric
-&lt;/p&gt;
-&lt;hr&gt;</description><category>advice</category><category>emacs</category><category>note</category><category>programming</category><guid>https://punchagan.muse-amuse.in/posts/advice-programming-in-elisp.html</guid><pubDate>Fri, 06 Aug 2010 09:07:00 GMT</pubDate></item></channel></rss>
+&lt;/ol&gt;</description><category>enthought</category><category>programming</category><category>software</category><category>tips</category><guid>https://punchagan.muse-amuse.in/posts/3-tips-for-those-shipping-commercial-apps.html</guid><pubDate>Wed, 28 Nov 2012 15:26:00 GMT</pubDate></item></channel></rss>

@@ -57,7 +57,126 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bloggerstock-do-over.html" class="u-url">Bloggerstock: Do-over</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/some-fun-from-org-mode.html" class="u-url">Some fun from #org-mode</a></h1>
+        <span class="post-date">02 Oct 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+This is a conversation from #org-mode, published without
+permission from <code>plovs</code>, <code>BerntH</code> and <code>bremner</code>. If any of you
+want any of the content removed, I will do so.
+</p>
+
+<blockquote>
+<p>
+&lt;punchagan&gt; hi all
+</p>
+
+<p>
+&lt;BerntH&gt; hi punchagan   [18:36]
+</p>
+
+<p>
+&lt;punchagan&gt; BerntH: ever used/tried blorg or blorgit?  [18:47]
+</p>
+
+<p>
+&lt;punchagan&gt; I like the way org-publish works, but blorg exports one org file as a blog. If blorg were to be re-written on top of org-publish, how should it be done? use one file per post or just one file for the whole blog?  [18:52]
+</p>
+
+<p>
+&lt;bremner&gt; punchagan: another option is to use ikiwiki and use the org-mode plugin to render pages. This is what i do, although only a bit of the site is in org.  [19:44]
+</p>
+
+<p>
+&lt;punchagan&gt; bremner: can I have a look at your site?  [19:45]
+</p>
+
+<p>
+&lt;bremner&gt; sure, it ain't pretty, but: www.cs.unb.ca/~bremner  [19:46]
+</p>
+
+<p>
+&lt;punchagan&gt; thanks. I'll keep this in mind.   [19:47]
+</p>
+
+<p>
+&lt;punchagan&gt; I just loved the way this site looks and behaves – <a href="http://julien.danjou.info/projects.html">http://julien.danjou.info/projects.html</a>
+</p>
+
+<p>
+&lt;bremner&gt; well, the side bar at least is possible with ikiwiki. Other than that I suppose it is mainly a matter of css  [19:48]
+</p>
+
+<p>
+&lt;BerntH&gt; punchagan: nope  [19:49]
+</p>
+
+<p>
+&lt;punchagan&gt; ok BerntH  [19:50]
+</p>
+
+<p>
+&lt;plovs&gt; punchagan ikiwiki does have an org-mode plugin  [19:56]
+</p>
+
+<p>
+&lt;punchagan&gt; plovs: yes, bremner told me that and I've seen on Worg too. :)
+</p>
+
+<p>
+&lt;plovs&gt; punchagan ah, yes, sorry
+</p>
+
+<p>
+&lt;punchagan&gt; plovs: it's alright.   [19:59]
+</p>
+
+<p>
+&lt;plovs&gt; punchagan another possibility is org2blog, which uses wordpress
+</p>
+
+<p>
+&lt;punchagan&gt; plovs: I'm the author of it. :D
+</p>
+
+<p>
+&lt;plovs&gt; lol, ik, <b>that</b> punchagan   [20:17]
+</p>
+
+<p>
+&lt;punchagan&gt; lol
+</p>
+
+<p>
+&lt;punchagan&gt; plovs: were you kidding? or serious?  [20:19]
+</p>
+
+<p>
+&lt;plovs&gt; punchagan sorry to say i was serious, but it will not happen again :-)
+</p>
+
+<p>
+&lt;plovs&gt; i really like org2blog, played with it yesterday
+</p>
+
+<p>
+&lt;punchagan&gt; plovs: no. I was just wondering if you were playing around with me. :P
+</p>
+
+<p>
+&lt;punchagan&gt; I'm happy some one thinks it is useful.
+</p>
+
+<p>
+&lt;plovs&gt; lol, no, i just didn't recognized your name, although it is kind of hard to miss  [20:21]
+</p>
+
+<p>
+&lt;punchagan&gt; I hope you don't mind, if I make this anecdote public?
+</p>
+</blockquote>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bloggerstock-do-over.html" class="u-url">Bloggerstock: Do-over</a></h1>
         <span class="post-date">30 Sep 2010</span>
     </header><div class="e-content entry-content">
     <p>
@@ -463,36 +582,6 @@ Photos will come soon, hopefully.
 </p>
 </div>
 </div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/orgelisp-sorting-list-of-org-links-on-description.html" class="u-url">org/elisp - sorting list of org-links on description</a></h1>
-        <span class="post-date">20 Aug 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-A small utility function that I used to sort the names of people
-who commented on my blog.
-</p>
-
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">org-get-link-desc-from-list</span> <span class="p">()</span>
-  <span class="s">""" Get link description of a list item containing just links """</span>
-  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">item-beg</span> <span class="p">(</span><span class="nf">point</span><span class="p">))</span>
-       <span class="p">(</span><span class="nv">item-end</span> <span class="p">(</span><span class="nv">org-end-of-item</span><span class="p">))</span>
-       <span class="p">(</span><span class="nv">cur-item</span> <span class="p">(</span><span class="nf">buffer-substring-no-properties</span>
-		  <span class="nv">item-beg</span> <span class="nv">item-end</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nf">goto-char</span> <span class="nv">item-beg</span><span class="p">)</span>
-    <span class="p">(</span><span class="nv">org-columns-compact-links</span> <span class="nv">cur-item</span><span class="p">)))</span>
-</pre></div>
-
-<p>
-<code>sort-lines</code> wasn't good enough for me, since it was sorting
-alphabetically and it ended up being the sorted order of the urls
-and not the names. This function, when used with
-<code>org-sort-entries-or-items</code> gave me what I wanted.
-</p>
-
-<p>
-Thanks to benny (on #org-mode), I also learnt the difference
-between <code>let</code> and <code>let*</code>.
-</p>
     </div>
     </article>
 </div>

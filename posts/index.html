@@ -57,7 +57,41 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/pycon-india-2016-propose-a-talk.html" class="u-url">PyCon India 2016 - Propose a talk</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/stepping-afk.html" class="u-url">Stepping AFK</a></h1>
+        <span class="post-date">03 Jun 2016</span>
+    </header><div class="e-content entry-content">
+    <p>
+In the past few weeks, I noticed three instances where I was forced to take a
+break exactly when I was ready to jump in and write some code to fix a bug or
+add a small feature.  I had to step out of the house and take a walk to meet
+someone, etc.
+</p>
+
+<p>
+I ended up getting ideas during the walks, which significantly changed and
+simplified how I would've implemented things, if not for those breaks.  Even if
+I did end up zeroing down to those solutions, I am pretty sure it would've
+taken a couple of not-so-good attempts and much longer than it did.
+</p>
+
+<p>
+Context switches are usually considered to be <a href="http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/">expensive for programmers</a>, but
+taking a break at the exact time when I had all the required context loaded
+into my head seemed to help. It was also probably helpful that I was taking a
+walk, and there wasn't really any other inputs or outputs competing for the
+space in my head.
+</p>
+
+<p>
+This got me thinking about doing this more deliberately – I'd love to hear
+about any experiences or any experiments any of you have done with this.  Also,
+I'm reminded of Rich Hickey's <a href="https://www.youtube.com/watch?v=f84n5oFoZBc">Hammock Driven Development</a> talk and I wonder if
+this is a smaller/different version of it, and makes me want to try out the
+things he suggests more deliberately.  If any of you has thoughts and
+suggestions, I'd love to hear from you!
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/pycon-india-2016-propose-a-talk.html" class="u-url">PyCon India 2016 - Propose a talk</a></h1>
         <span class="post-date">31 May 2016</span>
     </header><div class="e-content entry-content">
     <p>
@@ -846,184 +880,6 @@ and otherwise) on the notes.
 <div class="figure">
 <p><a href="https://farm2.staticflickr.com/1484/23781720643_a8e91c0cf8_o.jpg"><img src="https://farm2.staticflickr.com/1484/23781720643_a8e91c0cf8_o.jpg" alt="23781720643_a8e91c0cf8_o.jpg"></a>
 </p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/partial-postgres-db-dumps-for-a-django-app.html" class="u-url">Partial postgres db dumps for a Django app</a></h1>
-        <span class="post-date">10 Jan 2016</span>
-    </header><div class="e-content entry-content">
-    <p>
-Off late, I have been working with a large <code>postgres</code> database that is used by
-an app built in <code>Django</code>.  I wanted a partial dump of the database to try out
-some experimental clean up scripts.  I haven't really used databases before,
-and the last time I had to do this I did it in a pretty ad-hoc fashion.  This
-time around, I tried to do it more methodically and to document it.
-</p>
-
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">The Django Route</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-I looked around for tools that let you do this, and found <a href="https://github.com/davedash/django-fixture-magic">django-fixture-magic</a>.
-I first tried it out on my older partial dump (10% as large as the original db)
-and it turned out to be reasonably fast and worked well, after making a <a href="https://github.com/davedash/django-fixture-magic/pull/35">few
-changes</a> to get it working with Python 3.x.  Its <code>kitchensink</code> flag to the
-<code>dump_object</code> seemed like a promising option, but <b>didn't</b> really seem to get all
-the required tables for ManyToManyFields.  I worked around it, by getting a
-dump of all the models which were related using Django's <code>dumpdata</code>.
-</p>
-</div>
-
-<div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">Get a dump with objects of interest</h3>
-<div class="outline-text-3" id="text-1-1">
-<p>
-The <code>dump_object</code> command lets you run commands to select the objects that you
-want to have in the dump, and that is quite a useful thing.
-</p>
-
-<div class="highlight"><pre>python manage.py dump_object dataset.Product -k --query <span class="s1">'{"subcategory_id__in": [1886, ...]}'</span> &gt; products.json
-</pre></div>
-
-<p>
-Also, get a dump of related tables.
-</p>
-
-<div class="highlight"><pre><span class="c"># Dump of related fields</span>
-python manage.py dumpdata dataset.Attribute &gt; attributes.json
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2">Create the new empty db</h3>
-<div class="outline-text-3" id="text-1-2">
-<p>
-Next, create a new database where this fixture can be loaded!
-</p>
-
-<div class="highlight"><pre><span class="c"># Create the db</span>
-sudo su - postgres
-createdb mydb
-
-<span class="c"># Create a user, if required</span>
-createuser -P
-</pre></div>
-</div>
-
-<div id="outline-container-sec-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1">Grant access to the user</h4>
-<div class="outline-text-4" id="text-1-2-1">
-<p>
-In the <code>psql</code> prompt type the following to grant the user permissions for the
-database.
-</p>
-
-<div class="highlight"><pre><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="k">DATABASE</span> <span class="n">mydb</span> <span class="k">TO</span> <span class="n">myuser</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3">Fix settings.py and create tables for the models.</h3>
-<div class="outline-text-3" id="text-1-3">
-<p>
-Make changes to <code>settings.py</code> to use the newly created database, and then
-create the tables used by the app, and then load the data.
-</p>
-
-<div class="highlight"><pre>python manage.py syncdb
-python manage.py loaddata products.json
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4">Too slow!</h3>
-<div class="outline-text-3" id="text-1-4">
-<p>
-This method worked and was reasonably fast when I was trying to get 20k rows
-from a table with about 200k rows, with all the dependencies.
-</p>
-
-<p>
-But, when I tried to get a dump of about 200k rows from a table with 2M rows,
-it was way too slow to be of any use.  There could've been a couple of reasons
-for this, which I didn't have the time to look into, and debug.
-</p>
-
-<ul class="org-ul">
-<li>The web-server where the <code>Django</code> app was running, and the <code>db</code> server with
-the <code>postgres</code> database were on different machines in separate datacenters,
-which could've been adding a significant amount of latency.
-</li>
-
-<li>Just the size of the database being much larger could be making it slower?
-</li>
-</ul>
-<p>
-These are things I should be looking into and learning about, when I have more
-time at hand.  For now, I needed a quicker way to get a dump.  Even though the
-raw SQL route was more manual, it turned out to be much quicker.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Raw SQL dump route</h2>
-<div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1">Get a dump of the interesting tables</h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
-First, I had to get a dump of all the tables with the data I was interested in,
-one-by-one.
-</p>
-
-<div class="highlight"><pre><span class="k">COPY</span> <span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="ss">"dataset_product"</span> <span class="k">WHERE</span> <span class="p">(</span><span class="ss">"dataset_product"</span><span class="p">.</span><span class="ss">"subcategory_id"</span> <span class="k">IN</span> <span class="p">(</span><span class="mi">319557</span><span class="p">,</span> <span class="mi">94589</span><span class="p">,</span> <span class="mi">332</span><span class="p">,</span> <span class="mi">406</span><span class="p">,</span> <span class="mi">626</span><span class="p">,</span> <span class="mi">1886</span><span class="p">)</span> <span class="k">AND</span> <span class="ss">"dataset_product"</span><span class="p">.</span><span class="ss">"gender_id"</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span> <span class="k">TO</span> <span class="s1">'/tmp/products.tsv'</span>
-
-<span class="k">COPY</span> <span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="ss">"dataset_photo"</span> <span class="k">WHERE</span> <span class="ss">"dataset_photo"</span><span class="p">.</span><span class="ss">"product_id"</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">U0</span><span class="p">.</span><span class="ss">"id"</span> <span class="k">FROM</span> <span class="ss">"dataset_product"</span> <span class="n">U0</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">U0</span><span class="p">.</span><span class="ss">"subcategory_id"</span> <span class="k">IN</span> <span class="p">(</span><span class="mi">319557</span><span class="p">,</span> <span class="mi">94589</span><span class="p">,</span> <span class="mi">332</span><span class="p">,</span> <span class="mi">406</span><span class="p">,</span> <span class="mi">626</span><span class="p">,</span> <span class="mi">1886</span><span class="p">)</span> <span class="k">AND</span> <span class="n">U0</span><span class="p">.</span><span class="ss">"gender_id"</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)))</span> <span class="k">TO</span> <span class="s1">'/tmp/photos.tsv'</span>
-
-<span class="c1">-- Copy a bunch of other tables!</span>
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-sec-2-2" class="outline-3">
-<h3 id="sec-2-2">Load the data from the dumps</h3>
-<div class="outline-text-3" id="text-2-2">
-<div class="highlight"><pre><span class="c1">-- syncdb</span>
-<span class="k">COPY</span> <span class="n">dataset_product</span> <span class="k">FROM</span> <span class="s1">'/tmp/products.tsv'</span> <span class="k">ENCODING</span> <span class="s1">'UTF8'</span><span class="p">;</span>
-<span class="k">COPY</span> <span class="n">dataset_photo</span> <span class="k">FROM</span> <span class="s1">'/tmp/photos.tsv'</span> <span class="k">ENCODING</span> <span class="s1">'UTF8'</span><span class="p">;</span>
-<span class="c1">-- Copy a bunch of other tables!</span>
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-sec-2-3" class="outline-3">
-<h3 id="sec-2-3">Make tables writable</h3>
-<div class="outline-text-3" id="text-2-3">
-<p>
-Some of the tables did not let me write anything to them, until I <a href="http://centoshowtos.org/web-services/django-and-postgres-duplicate-key/">altered the
-sequence</a> for these tables.
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-2-4" class="outline-3">
-<h3 id="sec-2-4">Automating</h3>
-<div class="outline-text-3" id="text-2-4">
-<p>
-It would be pretty nice if all of this was automated – allow a user to enter
-exactly the same kind of a query that <code>django-fixture-magic</code> lets you run, and
-figure out the SQL copies that need to be done to get the requested dump. Its
-something that currently would qualify as yak-shaving, but may be a handy thing
-to have. Someone somewhere possibly already has something that does this.
-</p>
-</div>
-</div>
 </div>
     </div>
     </article>

@@ -57,7 +57,27 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-26.html" class="u-url">Recurse Center, 2014-08-26</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-27.html" class="u-url">Recurse Center, 2014-08-27</a></h1>
+        <span class="post-date">28 Aug 2014</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>I spent the whole of yesterday just working on the LED-bot.
+</li>
+<li>Spent some time cleaning up meta-stuff about the project, making it a real
+package, adding a setup.py, added LICENSE &amp; AUTHOR files, etc.
+</li>
+<li>I found it really frustrating that there's no good/standard way to remove
+duplication of information between pip's <code>requirements.txt</code> and
+<code>install_requires</code>
+</li>
+<li>We got the bot running on the Beagle Bone, but it turned out to be too slow.
+After some playing around with trying to get rid of Python for-loops, I was
+able to use PIL's <code>image.tobytes</code> and some image cropping to get the data to
+be sent to the LEDs, and it sped up the display quite a bit.
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-26.html" class="u-url">Recurse Center, 2014-08-26</a></h1>
         <span class="post-date">27 Aug 2014</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -291,27 +311,6 @@ from his startup each month, Bohmeyer says his life has radically changed. So
 he started “My Basic Income”, a new initiative looking to raise enough money
 to pay someone $1,300 a month for a year, no strings attached.
 </p>
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-14.html" class="u-url">Recurse Center, 2014-08-14</a></h1>
-        <span class="post-date">15 Aug 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I spent the morning cleaning up the "repr" functions of the diff classes, so
-that the diff of functions between two modules can be printed out in a
-somewhat meaningful way.
-</li>
-
-<li>I spent most of the afternoon, preparing to make a small presentation on how
-<code>sys.path</code> works in Python.  I thought I didn't do as good a job of it, as I
-would've liked, but Tom thought it was not too bad…
-</li>
-
-<li>Looks like another of those days, where I didn't get much done…  I spent
-the evening finishing off <a href="http://craphound.com/homeland/">Homeland</a>. It's a brilliant book, and everyone who
-cares about the Government and policies and technology MUST read it!  Thanks
-Cory.
 </li>
 </ul>
 </div>

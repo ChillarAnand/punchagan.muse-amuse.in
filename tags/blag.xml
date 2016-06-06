@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (blag)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/blag.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 08:01:40 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>PyCon India 2016 - Propose a talk</title><link>https://punchagan.muse-amuse.in/posts/pycon-india-2016-propose-a-talk.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (blag)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link type="application/rss+xml" href="https://punchagan.muse-amuse.in/tags/blag.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 10:27:31 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Stepping AFK</title><link>https://punchagan.muse-amuse.in/posts/stepping-afk.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+In the past few weeks, I noticed three instances where I was forced to take a
+break exactly when I was ready to jump in and write some code to fix a bug or
+add a small feature.  I had to step out of the house and take a walk to meet
+someone, etc.
+&lt;/p&gt;
+
+&lt;p&gt;
+I ended up getting ideas during the walks, which significantly changed and
+simplified how I would've implemented things, if not for those breaks.  Even if
+I did end up zeroing down to those solutions, I am pretty sure it would've
+taken a couple of not-so-good attempts and much longer than it did.
+&lt;/p&gt;
+
+&lt;p&gt;
+Context switches are usually considered to be &lt;a href="http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/"&gt;expensive for programmers&lt;/a&gt;, but
+taking a break at the exact time when I had all the required context loaded
+into my head seemed to help. It was also probably helpful that I was taking a
+walk, and there wasn't really any other inputs or outputs competing for the
+space in my head.
+&lt;/p&gt;
+
+&lt;p&gt;
+This got me thinking about doing this more deliberately – I'd love to hear
+about any experiences or any experiments any of you have done with this.  Also,
+I'm reminded of Rich Hickey's &lt;a href="https://www.youtube.com/watch?v=f84n5oFoZBc"&gt;Hammock Driven Development&lt;/a&gt; talk and I wonder if
+this is a smaller/different version of it, and makes me want to try out the
+things he suggests more deliberately.  If any of you has thoughts and
+suggestions, I'd love to hear from you!
+&lt;/p&gt;</description><category>blab</category><category>blag</category><category>programming</category><category>thought</category><guid>https://punchagan.muse-amuse.in/posts/stepping-afk.html</guid><pubDate>Fri, 03 Jun 2016 18:21:30 GMT</pubDate></item><item><title>PyCon India 2016 - Propose a talk</title><link>https://punchagan.muse-amuse.in/posts/pycon-india-2016-propose-a-talk.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 CFP for PyCon 2016 is &lt;a href="https://in.pycon.org/cfp/2016/proposals/"&gt;open&lt;/a&gt; and you should propose a talk!
 &lt;/p&gt;
 
@@ -534,47 +563,4 @@ can be easily fixed with a single call to &lt;code&gt;elfeed-apply-hooks-now&lt;
       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-entry-content&lt;/span&gt; &lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;elfeed-ref&lt;/span&gt; &lt;span class="nv"&gt;content&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
 
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'elfeed-new-entry-hook&lt;/span&gt; &lt;span class="nf"&gt;#'&lt;/span&gt;&lt;span class="nv"&gt;pc/get-entry-content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>elfeed</category><category>emacs</category><category>hack</category><category>pinboard</category><guid>https://punchagan.muse-amuse.in/posts/elfeed-hook-to-fetch-full-content.html</guid><pubDate>Sat, 19 Dec 2015 08:12:29 GMT</pubDate></item><item><title>Say Howdy with Emacs!</title><link>https://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-Staying in touch with people is something I'm not very good at.  Since I am not
-on popular (among my friends/family) networks – FB and Whatsapp – I don't
-even see random updates from people, to get some sense of being in touch.
-&lt;/p&gt;
-
-&lt;p&gt;
-I recently read some old posts by Sacha Chua and was inspired by how much code
-she had for &lt;a href="http://sachachua.com/blog/category/geek/emacs/bbdb/"&gt;contact management&lt;/a&gt; in her old blog posts.  I was inspired by &lt;a href="http://sachachua.com/blog/2005/05/keeping-in-touch/"&gt;this
-post&lt;/a&gt; in particular to try and be more meticulous about how I stay in touch with
-people. Michael Fogleman &lt;a href="https://mwfogleman.github.io/posts/08-01-2015-emacs-can-keep-in-touch.html"&gt;blogged&lt;/a&gt; about his contact management work-flow using
-&lt;code&gt;keepintouch&lt;/code&gt;. It seemed to do most of what I wanted, but I wanted this to be
-integrated with my &lt;code&gt;org-contacts-db&lt;/code&gt; and I felt having native elisp code would
-make it easier to hook up email, chat, etc. to this.
-&lt;/p&gt;
-
-&lt;p&gt;
-I ended up writing a small utility called &lt;a href="https://github.com/punchagan/howdy/"&gt;howdy&lt;/a&gt; to help me keep in touch with
-people. It currently has only a couple of features:
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;M-x howdy&lt;/code&gt; lets me update the last contacted timestamp for a contact.
-&lt;/li&gt;
-&lt;li&gt;Shows me contacts that I'm out of touch in the agenda, once I add the
-following snippet to an agenda file.
-&lt;div class="highlight"&gt;&lt;pre&gt;* Howdy
-  %%(howdy-howdy)
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;
-I also have a few hooks to hook up jabber messages and email to update the db.
-I've added them to &lt;code&gt;howdy-hooks.el&lt;/code&gt; in case anybody else wants to use them.
-They can also be used as examples to write other hooks. Feel free to contribute
-other hooks or suggest improvements.  The library also ships with a modest test
-suite, that will hopefully make it easier for others to contribute.
-&lt;/p&gt;
-
-&lt;p&gt;
-I'm looking forward to experimenting with this over the next few weeks and
-improving it. Hopefully, it'll help me keep in touch, better than I do now.
-&lt;/p&gt;</description><category>blag</category><category>code</category><category>emacs</category><category>hack</category><category>howdy</category><guid>https://punchagan.muse-amuse.in/posts/say-howdy-with-emacs.html</guid><pubDate>Thu, 28 May 2015 13:09:24 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><category>blag</category><category>elfeed</category><category>emacs</category><category>hack</category><category>pinboard</category><guid>https://punchagan.muse-amuse.in/posts/elfeed-hook-to-fetch-full-content.html</guid><pubDate>Sat, 19 Dec 2015 08:12:29 GMT</pubDate></item></channel></rss>
