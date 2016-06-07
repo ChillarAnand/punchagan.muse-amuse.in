@@ -57,7 +57,32 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/3-tips-for-those-shipping-commercial-apps.html" class="u-url">3 tips for those shipping (commercial) apps</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/cstringio-and-unicode.html" class="u-url">cStringIO and unicode</a></h1>
+        <span class="post-date">03 Dec 2012</span>
+    </header><div class="e-content entry-content">
+    <p>
+StringIO in the cStringIO module in Python 2.7.2 doesn't handle
+unicode strings properly.  This bug has bitten me on a couple of
+occasions, in the recent past.
+</p>
+
+<p>
+Just making a note for myself:
+</p>
+
+<ol class="org-ol">
+<li>Use StringIO if speed doesn't matter so much.
+</li>
+<li>Whenever possible, just convert the input to StringIO to a
+string, if what you are doing doesn't really require unicode
+strings.
+</li>
+</ol>
+<p>
+Or may be it's just time to move up to Python 2.7.3
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/3-tips-for-those-shipping-commercial-apps.html" class="u-url">3 tips for those shipping (commercial) apps</a></h1>
         <span class="post-date">28 Nov 2012</span>
     </header><div class="e-content entry-content">
     <p>
@@ -485,55 +510,6 @@ git checkout other-branch
 git cherry-pick branch1
 </pre></div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2012-08-21.html" class="u-url">Bookmarks [2012/08/21]</a></h1>
-        <span class="post-date">21 Aug 2012</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://peebs.org/we-underestimate-kids">We Consistently Underestimate Kids - PEEBS.ORG</a>
-
-<p>
-tags: awesome, kids, programming
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.saylor.org/majors/computer-science/">Computer Science « The Saylor Foundation</a>
-
-<p>
-tags: computer<sub>science</sub>, courses, programming, learn
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://www.theatlantic.com/national/archive/2012/07/what-my-sons-disabilities-taught-me-about-having-it-all/260479/#">What My Son's Disabilities Taught Me About 'Having It All' - Marie Myung-Ok Lee - The Atlantic</a>
-
-<p>
-tags: lessons, life
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://ureddit.com/archive">University of Reddit : Archive</a>
-
-<p>
-tags: courses, collection, learning
-</p>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://queue.acm.org/detail.cfm?id=2349257&amp;ref=fullrss">A Generation Lost in the Bazaar - ACM Queue</a>
-
-<p>
-tags: reading, programming, analysis
-</p>
-</li>
-</ul>
-</div>
     </article>
 </div>
         <div class="pagination">

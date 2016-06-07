@@ -57,7 +57,36 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/using-tmux-to-screen-share.html" class="u-url">Using tmux to "screen share"</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/jabber-message-queue.html" class="u-url">Jabber message queue</a></h1>
+        <span class="post-date">10 Dec 2014</span>
+    </header><div class="e-content entry-content">
+    <p>
+I've always wanted to be able to queue up messages to send to friends, until I
+go online the next time.  I tried using email instead of chat a few times, or
+just ended up staying online with a busy status.
+</p>
+
+<p>
+Finally, now that I have started using jabber-mode for chatting from within
+Emacs, I took out the time to write a "queuing system" for sending chat
+messages, similar to the mail queue for smtpmail.  Instead of persisting sexps,
+though, I persist the messages in a JSON format and the queue is flushed every
+time I connect to jabber, in a <code>jabber-post-connect-hook</code>.
+</p>
+
+<p>
+To make the interface as similar to the interface available when I am online, I
+hacked completion for the to ID using email addresses in my address book
+(<code>mu4e~contact-list</code>).  I really like the fact that the chat buffer opens up,
+and I can type and send messages like I usually do.  Hitting <code>RET</code> after typing
+a message queues it up, instead of trying to send it. Smooth!
+</p>
+
+<p>
+The code is in my <a href="https://github.com/punchagan/dot-emacs/blob/master/punchagan.org#jabber">.emacs</a>
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/using-tmux-to-screen-share.html" class="u-url">Using tmux to "screen share"</a></h1>
         <span class="post-date">24 Nov 2014</span>
     </header><div class="e-content entry-content">
     <p>
@@ -640,46 +669,6 @@ Cram mode and incremental reading are also things I want to try, as I go along.
 Happy Learning!
 </p>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2014-10-10.html" class="u-url">Bookmarks [2014-10-10]</a></h1>
-        <span class="post-date">10 Oct 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>
-<a href="http://graydon.livejournal.com/186550.html">frog hop - technicalities: "not rocket science" (the story of monotone and bors)</a>
-
-<p>
-The Not Rocket Science Rule Of Software Engineering: automatically maintain a
-repository of code that always passes all the tests
-</p>
-</li>
-
-<li>
-<a href="https://pbs.twimg.com/media/BwIsAVMIUAEReH3.jpg">Intellectual conversations - Image (500×700)</a>
-</li>
-</ul>
-<ul class="org-ul">
-<li>
-<a href="http://firstround.com/article/What-to-Do-at-the-Crossroads-of-Should-and-Must">When You're at the Crossroads of Should and Must</a>
-  This is a story about two roads — Should and Must. It’s a pep talk for anyone
-who’s chosen Should far too long — months, years, maybe a lifetime, and feels
-like it’s about time they give Must a shot.
-</li>
-
-<li>
-<a href="http://rampantgames.com/blog/?p=7745">Black Triangles</a>
-  And when progress seems a little slow because you are doing a bunch of
-hardcore architecture work, just remember it’s a black triangle.
-</li>
-
-<li>
-<a href="http://alyssafrazee.com/unstructured-time.html">motivation and unstructured time: successes and failures - alyssa frazee</a>
-
-<p>
-some of the tactics I've tried to get myself into "working mode."
-</p>
-</li>
-</ul>
-</div>
     </article>
 </div>
         <div class="pagination">

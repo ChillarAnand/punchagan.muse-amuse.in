@@ -57,7 +57,56 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-07.html" class="u-url">Bookmarks [2010/11/07]</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-08.html" class="u-url">Bookmarks [2010/11/08]</a></h1>
+        <span class="post-date">08 Nov 2010</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>
+<a href="http://sivers.org/complainers">Complainers | Derek Sivers</a>
+
+<p>
+tags: writing
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://devour.com/video/foley-artist/">Foley Artist on Devour.com</a>
+
+<p>
+tags: movie, awesome, art
+</p>
+</li>
+</ul>
+<ul class="org-ul">
+<li>
+<a href="http://pitchandpixel.com/2010/11/how-to-apply-for-a-job-and-ace-the-interview/">How to apply for a job and ace the interview | Pitch and Pixel</a>
+
+<p>
+tags: advice, howto, job, tips
+</p>
+</li>
+</ul>
+<dl class="org-dl">
+<dt> [[<a href="http://the99percent.com/articles/6947/what-happened-to-downtime-the-extinction-of-deep-thinking-sacred-space%5D%5BWhat">http://the99percent.com/articles/6947/what-happened-to-downtime-the-extinction-of-deep-thinking-sacred-space][What</a> Happened to Downtime? The Extinction of Deep Thinking &amp; Sacred Space :: Articles </dt>
+<dd>The 99 Percent]]
+
+<p>
+tags: creativity, writing
+</p>
+</dd>
+</dl>
+<ul class="org-ul">
+<li>
+<a href="http://cdixon.org/2010/11/07/timing-your-startup/">cdixon.org – chris dixon's blog / Timing your startup</a>
+
+<p>
+tags: advice, startup, tips, time
+</p>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2010-11-07.html" class="u-url">Bookmarks [2010/11/07]</a></h1>
         <span class="post-date">07 Nov 2010</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -1189,66 +1238,6 @@ incapability that prevented me from trying it out.
 
 </div>
 </div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/augmented-assignment-in-python.html" class="u-url">Augmented assignment in Python</a></h1>
-        <span class="post-date">04 Oct 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-If you are new to <code>Python</code>, you should probably stop reading here.
-But, if you have used <code>Python</code> and <code>numpy</code>, then read on. Before, that
-try these bits of code.
-</p>
-
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mf">0.5j</span>
-<span class="k">print</span> <span class="n">a</span>
-</pre></div>
-
-<p>
-The "same thing", in a slightly different way.
-</p>
-
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
-<span class="k">print</span> <span class="n">a</span>
-</pre></div>
-
-<p>
-Both the code blocks, look really the same, until you look carefully.
-Under normal circumstances <code>a = a + b</code> and <code>a += b</code> behave exactly
-similarly, and we really don't need to bother about the differences
-between them.
-</p>
-
-<p>
-But, <code>+=</code>, which is an augmented assignment operator, actually tries
-to perform the operation in-place, unlike the other statement where
-<code>+</code> actually returns a new object which is again being referenced by
-the name <code>a</code>.
-</p>
-
-<p>
-But, when dealing with <code>numpy</code> arrays, this will lead to trouble.
-When assigning to an array, it's <code>dtype</code> is not changed and hence the
-trouble.
-</p>
-
-<p>
-The right way to use the augmented assignment operator, would be:
-</p>
-
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
-<span class="k">print</span> <span class="n">a</span>
-</pre></div>
-
-<p>
-The same thing is explained in this thread.  Also, Thanks to
-Bhanukiran for asking me this.
-</p>
     </div>
     </article>
 </div>

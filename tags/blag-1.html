@@ -57,7 +57,47 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/elfeed-hook-to-fetch-full-content.html" class="u-url">Elfeed hook to fetch full content</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/clock-in-and-get-shit-done.html" class="u-url">Clock in and get-shit-done</a></h1>
+        <span class="post-date">22 Dec 2015</span>
+    </header><div class="e-content entry-content">
+    <p>
+I had <a href="/posts/simple-org-clock-and-gnomepidgin-integration.html">setup</a> a couple of hooks about an year ago that turn off all notifications
+while I'm clocking in. But, I find myself switching to the browser and jumping
+to twitter, out of habit.  I've tried <a href="https://github.com/leftnode/get-shit-done">get-shit-done</a> in the past to help myself
+break this habit. But enabling get-shit-done manually is step that quickly
+became a non-habit.
+</p>
+
+<p>
+So, I hooked up get-shit-done into an <code>org-clock-in-hook</code>.  The snippet below
+is what I added into a function that is added to this hook.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nv">with-temp-buffer</span>
+  <span class="p">(</span><span class="nv">cd</span> <span class="s">"/sudo::/"</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"HOME=/home/punchagan get-shit-done work"</span><span class="p">))</span>
+</pre></div>
+
+<p>
+<code>get-shit-done</code> needs to be run as <code>root</code>, since it does things like modifying
+<code>/etc/hosts</code> and restarting networking.  Just calling <code>get-shit-done</code> as a
+shell command fails with the error <code>sudo: no tty present and no askpass program
+specified</code>.  I found a couple of ways to fix this. The snippet above
+piggy-backs on tramp to allow for a way to enter the password for <code>sudo</code> to
+use. This also means that I don't need to enter the password, as long as the
+tramp connection is alive.
+</p>
+
+<p>
+For someone worried about having such an easy way of running something as
+<code>root</code>, using something like <code>gnome-ssh-askpass</code> as the askpass program might
+work better.
+</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nv">shell-command</span> <span class="s">"SUDO_ASKPASS=\"/usr/lib/openssh/gnome-ssh-askpass\" get-shit-done work"</span><span class="p">)</span>
+</pre></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/elfeed-hook-to-fetch-full-content.html" class="u-url">Elfeed hook to fetch full content</a></h1>
         <span class="post-date">19 Dec 2015</span>
     </header><div class="e-content entry-content">
     <p>

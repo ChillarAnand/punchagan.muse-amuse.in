@@ -57,7 +57,65 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/reading-time-based-scheduling.html" class="u-url">Reading-time based scheduling</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/better-styling-bookmarklet.html" class="u-url">Better styling bookmarklet</a></h1>
+        <span class="post-date">07 Jun 2016</span>
+    </header><div class="e-content entry-content">
+    <p>
+Some sites that I like a lot for their content, have zero styling on them.
+I find it pretty hard to read when the lines are long and I have to read all
+the way on my screen.
+</p>
+
+<p>
+I had a simple bookmarklet until now that just changed the width of the page.
+</p>
+
+<div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'body'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="s1">'width: 600px'</span><span class="p">)</span>
+</pre></div>
+
+<p>
+<a href="https://twitter.com/kamalx">Kamal</a> shared with me <a href="http://bettermotherfuckingwebsite.com">a recommendation</a> for 7 simple styling rules that will make
+pages easier to read. I liked them, and modified my bookmarklet to use these
+rules now.
+</p>
+
+
+<div class="figure">
+<p><img src="/images/better-websites.gif" alt="better-websites.gif"></p>
+</div>
+
+<p>
+Drag and drop the link below onto your bookmarks bar if you want to use it.
+</p>
+<p><a style="border: 0.05em dashed; padding: 0.5em;" href="javascript:void(function()%7Bstyle%20=%20document.createElement(%22style%22);%20document.head.appendChild(style);%20style.sheet.insertRule(%22body%7B%20margin:40px%20auto;%20max-width:650px;%20line-height:1.6;%20font-size:18px;%20color:#444;%20padding:0%2010px;%20%7D%22);%20style.sheet.insertRule(%22h1,h2,h3%7B%20line-height:1.2%20%7D%22)%7D())">Better website</a></p>
+
+<p>
+The code in a readable format is below.
+</p>
+
+<div class="highlight"><pre><span></span><span class="c1">// Create new stylesheet</span>
+
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Create the &lt;style&gt; tag</span>
+    <span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"style"</span><span class="p">);</span>
+
+    <span class="c1">// Add the &lt;style&gt; element to the page</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">style</span><span class="p">);</span>
+
+    <span class="c1">// Add rules from bettermotherfuckingwebsite.com</span>
+    <span class="kd">var</span> <span class="nx">sheet</span> <span class="o">=</span> <span class="nx">style</span><span class="p">.</span><span class="nx">sheet</span><span class="p">;</span>
+    <span class="nx">sheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">(</span><span class="s2">"body{ margin:40px auto; max-width:650px; line-height:1.6; font-size:18px; color:#444; padding:0 10px; }"</span><span class="p">);</span>
+    <span class="nx">sheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">(</span><span class="s2">"h1,h2,h3{ line-height:1.2 }"</span><span class="p">);</span>
+
+<span class="p">})();</span>
+</pre></div>
+
+
+<p>
+<b>Update <span class="timestamp-wrapper"><span class="timestamp">[2016-06-07]</span></span></b>: <a href="https://twitter.com/baali_">baali</a> pointed me to Firefox's <a href="https://support.mozilla.org/en-US/kb/firefox-reader-view-clutter-free-web-pages">Reader View</a> which works well too.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/reading-time-based-scheduling.html" class="u-url">Reading-time based scheduling</a></h1>
         <span class="post-date">06 Jun 2016</span>
     </header><div class="e-content entry-content">
     <p>
@@ -618,46 +676,6 @@ to have. Someone somewhere possibly already has something that does this.
 </div>
 </div>
 </div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/clock-in-and-get-shit-done.html" class="u-url">Clock in and get-shit-done</a></h1>
-        <span class="post-date">22 Dec 2015</span>
-    </header><div class="e-content entry-content">
-    <p>
-I had <a href="/posts/simple-org-clock-and-gnomepidgin-integration.html">setup</a> a couple of hooks about an year ago that turn off all notifications
-while I'm clocking in. But, I find myself switching to the browser and jumping
-to twitter, out of habit.  I've tried <a href="https://github.com/leftnode/get-shit-done">get-shit-done</a> in the past to help myself
-break this habit. But enabling get-shit-done manually is step that quickly
-became a non-habit.
-</p>
-
-<p>
-So, I hooked up get-shit-done into an <code>org-clock-in-hook</code>.  The snippet below
-is what I added into a function that is added to this hook.
-</p>
-
-<div class="highlight"><pre><span class="p">(</span><span class="nv">with-temp-buffer</span>
-  <span class="p">(</span><span class="nv">cd</span> <span class="s">"/sudo::/"</span><span class="p">)</span>
-  <span class="p">(</span><span class="nv">shell-command</span> <span class="s">"HOME=/home/punchagan get-shit-done work"</span><span class="p">))</span>
-</pre></div>
-
-<p>
-<code>get-shit-done</code> needs to be run as <code>root</code>, since it does things like modifying
-<code>/etc/hosts</code> and restarting networking.  Just calling <code>get-shit-done</code> as a
-shell command fails with the error <code>sudo: no tty present and no askpass program
-specified</code>.  I found a couple of ways to fix this. The snippet above
-piggy-backs on tramp to allow for a way to enter the password for <code>sudo</code> to
-use. This also means that I don't need to enter the password, as long as the
-tramp connection is alive.
-</p>
-
-<p>
-For someone worried about having such an easy way of running something as
-<code>root</code>, using something like <code>gnome-ssh-askpass</code> as the askpass program might
-work better.
-</p>
-
-<div class="highlight"><pre><span class="p">(</span><span class="nv">shell-command</span> <span class="s">"SUDO_ASKPASS=\"/usr/lib/openssh/gnome-ssh-askpass\" get-shit-done work"</span><span class="p">)</span>
-</pre></div>
     </div>
     </article>
 </div>

@@ -57,7 +57,65 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/error-missing-one-hebrew-character.html" class="u-url">Error: Missing one hebrew character</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/better-styling-bookmarklet.html" class="u-url">Better styling bookmarklet</a></h1>
+        <span class="post-date">07 Jun 2016</span>
+    </header><div class="e-content entry-content">
+    <p>
+Some sites that I like a lot for their content, have zero styling on them.
+I find it pretty hard to read when the lines are long and I have to read all
+the way on my screen.
+</p>
+
+<p>
+I had a simple bookmarklet until now that just changed the width of the page.
+</p>
+
+<div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'body'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="s1">'width: 600px'</span><span class="p">)</span>
+</pre></div>
+
+<p>
+<a href="https://twitter.com/kamalx">Kamal</a> shared with me <a href="http://bettermotherfuckingwebsite.com">a recommendation</a> for 7 simple styling rules that will make
+pages easier to read. I liked them, and modified my bookmarklet to use these
+rules now.
+</p>
+
+
+<div class="figure">
+<p><img src="/images/better-websites.gif" alt="better-websites.gif"></p>
+</div>
+
+<p>
+Drag and drop the link below onto your bookmarks bar if you want to use it.
+</p>
+<p><a style="border: 0.05em dashed; padding: 0.5em;" href="javascript:void(function()%7Bstyle%20=%20document.createElement(%22style%22);%20document.head.appendChild(style);%20style.sheet.insertRule(%22body%7B%20margin:40px%20auto;%20max-width:650px;%20line-height:1.6;%20font-size:18px;%20color:#444;%20padding:0%2010px;%20%7D%22);%20style.sheet.insertRule(%22h1,h2,h3%7B%20line-height:1.2%20%7D%22)%7D())">Better website</a></p>
+
+<p>
+The code in a readable format is below.
+</p>
+
+<div class="highlight"><pre><span></span><span class="c1">// Create new stylesheet</span>
+
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Create the &lt;style&gt; tag</span>
+    <span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"style"</span><span class="p">);</span>
+
+    <span class="c1">// Add the &lt;style&gt; element to the page</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">style</span><span class="p">);</span>
+
+    <span class="c1">// Add rules from bettermotherfuckingwebsite.com</span>
+    <span class="kd">var</span> <span class="nx">sheet</span> <span class="o">=</span> <span class="nx">style</span><span class="p">.</span><span class="nx">sheet</span><span class="p">;</span>
+    <span class="nx">sheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">(</span><span class="s2">"body{ margin:40px auto; max-width:650px; line-height:1.6; font-size:18px; color:#444; padding:0 10px; }"</span><span class="p">);</span>
+    <span class="nx">sheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">(</span><span class="s2">"h1,h2,h3{ line-height:1.2 }"</span><span class="p">);</span>
+
+<span class="p">})();</span>
+</pre></div>
+
+
+<p>
+<b>Update <span class="timestamp-wrapper"><span class="timestamp">[2016-06-07]</span></span></b>: <a href="https://twitter.com/baali_">baali</a> pointed me to Firefox's <a href="https://support.mozilla.org/en-US/kb/firefox-reader-view-clutter-free-web-pages">Reader View</a> which works well too.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/error-missing-one-hebrew-character.html" class="u-url">Error: Missing one hebrew character</a></h1>
         <span class="post-date">21 Nov 2012</span>
     </header><div class="e-content entry-content">
     <p>
