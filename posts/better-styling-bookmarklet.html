@@ -18,7 +18,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
     <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
 <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
 <title>
-      Better websites with a click · Noetic Nought
+      Better styling bookmarklet · Noetic Nought
   </title>
 </head>
 <body class="layout-reverse sidebar-overlay theme-base-0d">
@@ -56,51 +56,58 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
       </div>
 
       <div class="container content">
-<article class="post post-text h-entry hentry postpage" itemscope="itemscope"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/better-websites-with-a-click.html" class="u-url">Better websites with a click</a></h1>
+<article class="post post-text h-entry hentry postpage" itemscope="itemscope"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/better-styling-bookmarklet.html" class="u-url">Better styling bookmarklet</a></h1>
 
-            <span class="post-date">06 Jun 2016</span>
+            <span class="post-date">07 Jun 2016</span>
         </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>
-Write your post here.
+Some sites that I like a lot for their content, have zero styling on them.
+I find it pretty hard to read when the lines are long and I have to read all
+the way on my screen.
 </p>
 
-<div class="highlight"><pre><span></span>document.getElementsByTagName('body')[0].setAttribute('style', 'width: 600px')
+<p>
+I had a simple bookmarklet until now that just changed the width of the page.
+</p>
+
+<div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'body'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="s1">'width: 600px'</span><span class="p">)</span>
 </pre></div>
 
-
-<div class="highlight"><pre><span></span><span class="nt">body</span><span class="p">{</span>
-    <span class="nb">margin</span><span class="o">:</span><span class="m">40px</span> <span class="nb">auto</span><span class="p">;</span>
-    <span class="nb">max-width</span><span class="o">:</span><span class="m">650px</span><span class="p">;</span>
-    <span class="nb">line-height</span><span class="o">:</span><span class="m">1</span><span class="o">.</span><span class="m">6</span><span class="p">;</span>
-    <span class="nb">font-size</span><span class="o">:</span><span class="m">18px</span><span class="p">;</span>
-    <span class="nb">color</span><span class="o">:</span><span class="m">#444</span><span class="p">;</span>
-    <span class="nb">padding</span><span class="o">:</span><span class="m">0</span> <span class="m">10px</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">h1</span><span class="o">,</span><span class="nt">h2</span><span class="o">,</span><span class="nt">h3</span><span class="p">{</span>
-    <span class="nb">line-height</span><span class="o">:</span><span class="m">1</span><span class="o">.</span><span class="m">2</span>
-<span class="p">}</span>
-</pre></div>
+<p>
+<a href="https://twitter.com/kamalx">Kamal</a> shared with me <a href="http://bettermotherfuckingwebsite.com">a recommendation</a> for 7 simple styling rules that will make
+pages easier to read. I liked them, and modified my bookmarklet to use these
+rules now.
+</p>
 
 
-<div class="highlight"><pre><span></span>// Create new stylesheet
+<div class="figure">
+<p><img src="/images/better-websites.gif" alt="better-websites.gif"></p>
+</div>
 
-(function() {
-    // Create the &lt;style&gt; tag
-    var style = document.createElement("style");
+<p>
+Drag and drop the link below onto your bookmarks bar if you want to use it.
+</p>
+<p><a style="border: 0.05em dashed; padding: 0.5em;" href="javascript:void(function()%7Bstyle%20=%20document.createElement(%22style%22);%20document.head.appendChild(style);%20style.sheet.insertRule(%22body%7B%20margin:40px%20auto;%20max-width:650px;%20line-height:1.6;%20font-size:18px;%20color:#444;%20padding:0%2010px;%20%7D%22);%20style.sheet.insertRule(%22h1,h2,h3%7B%20line-height:1.2%20%7D%22)%7D())">Better website</a></p>
 
-    // Add the &lt;style&gt; element to the page
-    document.head.appendChild(style);
+<p>
+The code in a readable format is below.
+</p>
 
-    // Add rules from bettermotherfuckingwebsite.com
-    var sheet = style.sheet;
-    sheet.insertRule("body{ margin:40px auto; max-width:650px; line-height:1.6; font-size:18px; color:#444; padding:0 10px; }");
-    sheet.insertRule("h1,h2,h3{ line-height:1.2 }");
+<div class="highlight"><pre><span></span><span class="c1">// Create new stylesheet</span>
 
-})();
-</pre></div>
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Create the &lt;style&gt; tag</span>
+    <span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"style"</span><span class="p">);</span>
 
+    <span class="c1">// Add the &lt;style&gt; element to the page</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">style</span><span class="p">);</span>
 
-<div class="highlight"><pre><span></span>javascript:void(function(){style = document.createElement("style"); document.head.appendChild(style); style.sheet.insertRule("body{ margin:40px auto; max-width:650px; line-height:1.6; font-size:18px; color:#444; padding:0 10px; }"); style.sheet.insertRule("h1,h2,h3{ line-height:1.2 }")}())
+    <span class="c1">// Add rules from bettermotherfuckingwebsite.com</span>
+    <span class="kd">var</span> <span class="nx">sheet</span> <span class="o">=</span> <span class="nx">style</span><span class="p">.</span><span class="nx">sheet</span><span class="p">;</span>
+    <span class="nx">sheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">(</span><span class="s2">"body{ margin:40px auto; max-width:650px; line-height:1.6; font-size:18px; color:#444; padding:0 10px; }"</span><span class="p">);</span>
+    <span class="nx">sheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">(</span><span class="s2">"h1,h2,h3{ line-height:1.2 }"</span><span class="p">);</span>
+
+<span class="p">})();</span>
 </pre></div>
     </div>
     <aside class="postpromonav"><nav></nav></aside></article>
