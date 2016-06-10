@@ -27,20 +27,62 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
      styles, `#sidebar-checkbox` for behavior. -->
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
 
-  <nav class="sidebar-nav"><!-- The code below dynamically generates a sidebar nav of pages with --><!-- `layout: page` in the front-matter. See readme for usage. --><a class="sidebar-nav-item" href="/index.html" title="Home"><i class="fa fa-home on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="/posts/index.html" title="Blog"><i class="fa fa-pencil on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="/archive.html" title="Archives"><i class="fa fa-archive on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="/tags/index.html" title="Tags"><i class="fa fa-tags on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="/projects/" title="Projects"><i class="fa fa-cogs on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="/tags/cat_recursecenter-checkins.html" title="Recurse Center Logs"><i class="fa fa-magic on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="/tags/cat_bookmarks.html" title="Bookmarks"><i class="fa fa-bookmark on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="/quotes.html" title="Quotes"><i class="fa fa-quote-right on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="/reading-list.html" title="Reading List"><i class="fa fa-book on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="/rss.xml" title="RSS"><i class="fa fa-rss on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="https://github.com/punchagan" title="GitHub"><i class="fa fa-github on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="https://twitter.com/punchagan" title="Twitter"><i class="fa fa-twitter on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="mailto:punchagan+blog@muse-amuse.in" title="Email"><i class="fa fa-at on fa-lg"></i></a>
-      <a class="sidebar-nav-item" href="http://creativecommons.org/licenses/by-sa/4.0/" title="CC-BY"><i class="fa fa-creative-commons on fa-lg"></i></a>
+  <nav class="sidebar-nav"><!-- The code below dynamically generates a sidebar nav of pages with --><!-- `layout: page` in the front-matter. See readme for usage. --><a class="sidebar-nav-item" href="/index.html" title="Home">
+          <i class="fa fa-home on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="/index.html">Home</span>
+      <a class="sidebar-nav-item" href="/posts/index.html" title="Blog">
+          <i class="fa fa-pencil on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="/posts/index.html">Blog</span>
+      <a class="sidebar-nav-item" href="/archive.html" title="Archives">
+          <i class="fa fa-archive on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="/archive.html">Archives</span>
+      <a class="sidebar-nav-item" href="/tags/index.html" title="Tags">
+          <i class="fa fa-tags on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="/tags/index.html">Tags</span>
+      <a class="sidebar-nav-item" href="/projects/" title="Projects">
+          <i class="fa fa-cogs on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="/projects/">Projects</span>
+      <a class="sidebar-nav-item" href="/tags/cat_recursecenter-checkins.html" title="Recurse Center Logs">
+          <i class="fa fa-magic on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="/tags/cat_recursecenter-checkins.html">Recurse Center Logs</span>
+      <a class="sidebar-nav-item" href="/tags/cat_bookmarks.html" title="Bookmarks">
+          <i class="fa fa-bookmark on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="/tags/cat_bookmarks.html">Bookmarks</span>
+      <a class="sidebar-nav-item" href="/quotes.html" title="Quotes">
+          <i class="fa fa-quote-right on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="/quotes.html">Quotes</span>
+      <a class="sidebar-nav-item" href="/reading-list.html" title="Reading List">
+          <i class="fa fa-book on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="/reading-list.html">Reading List</span>
+      <a class="sidebar-nav-item" href="/rss.xml" title="RSS">
+          <i class="fa fa-rss on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="/rss.xml">RSS</span>
+      <a class="sidebar-nav-item" href="https://github.com/punchagan" title="GitHub">
+          <i class="fa fa-github on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="https://github.com/punchagan">GitHub</span>
+      <a class="sidebar-nav-item" href="https://twitter.com/punchagan" title="Twitter">
+          <i class="fa fa-twitter on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="https://twitter.com/punchagan">Twitter</span>
+      <a class="sidebar-nav-item" href="mailto:punchagan+blog@muse-amuse.in" title="Email">
+          <i class="fa fa-at on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="mailto:punchagan+blog@muse-amuse.in">Email</span>
+      <a class="sidebar-nav-item" href="http://creativecommons.org/licenses/by-sa/4.0/" title="CC-BY">
+          <i class="fa fa-creative-commons on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY</span>
 
   </nav>
 </div>
@@ -146,19 +188,7 @@ $(document).ready(function() {
     });
 });
 </script><!-- RC Scout --><div class="rc-scout wrap" title="Want to become a better programmer?"></div>
-<script async defer src="https://www.recurse-scout.com/loader.js?t=8b0acf2a60ae4365bee9568bede83f28"></script><section class="related wrap container content"><h2> Related Posts </h2>
-<ul class="related-posts">
-<li><h3><a href="https://punchagan.muse-amuse.in/posts/why-i-like-org-as-a-markup.html">Why I like Org as a markup</a></h3></li>
-
-<li><h3><a href="https://punchagan.muse-amuse.in/posts/pandoc-can-now-do-org.html">Pandoc can now do Org</a></h3></li>
-
-<li><h3><a href="https://punchagan.muse-amuse.in/posts/git-vs-mercurial.html">git vs. mercurial</a></h3></li>
-
-<li><h3><a href="https://punchagan.muse-amuse.in/posts/an-import-gotcha-in-python.html">An import gotcha in Python</a></h3></li>
-
-<li><h3><a href="https://punchagan.muse-amuse.in/posts/i-love-foss-how-do-i-start-contributing-code.html">I love FOSS.  How do I start contributing (code)?</a></h3></li>
-
-</ul></section><section class="wrap container comments"><p style="text-align: center; font-size: 60%; margin: 10px; background: #F5F5DC; padding: 10px; border-radius: 5px;">
+<script async defer src="https://www.recurse-scout.com/loader.js?t=8b0acf2a60ae4365bee9568bede83f28"></script><section class="wrap container comments"><p style="text-align: center; font-size: 60%; margin: 10px; background: #F5F5DC; padding: 10px; border-radius: 5px;">
         If you would like to comment on something I've said here, <a href="mailto:punchagan+blog@muse-amuse.in?subject=Comment%20on%20Git%20powered%20wikis%20improved:%20My%20bit">send
         me an email</a> or get in touch with me on <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Git%20powered%20wikis%20improved:%20My%20bit%20is%20interesting,%20/cc:%20@punchagan&amp;url=https://punchagan.muse-amuse.in/posts/git-powered-wikis-improved-my-bit.html">twitter</a>.
     </p>
