@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Noetic Nought (blab)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link type="application/rss+xml" href="https://punchagan.muse-amuse.in/tags/blab.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 10:27:31 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Stepping AFK</title><link>https://punchagan.muse-amuse.in/posts/stepping-afk.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Noetic Nought (blab)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/blab.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 11 Jun 2016 11:40:27 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Effortful things</title><link>https://punchagan.muse-amuse.in/posts/effortful-things.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+That dense book you want to read but has been lying on your desk while you
+procrastinate on twitter. You know you'll have to tune everything else out,
+and read slowly, word by word, trying to understand and make sense.
+&lt;/p&gt;
+
+&lt;p&gt;
+That vague blog post idea swirling in your head while you look at cat pictures,
+one after another. Distilling your thoughts and putting them down for general
+consumption is a lot of thinking and effort away.
+&lt;/p&gt;
+
+&lt;p&gt;
+That &lt;code&gt;${cool_programming_thing}&lt;/code&gt; that a talk got you excited about so long ago.
+But, watching talks and intending to start using it is all you do about it. You
+know its going to take a fair amount of reading, thinking and time, before you
+can really use it well.
+&lt;/p&gt;
+
+&lt;p&gt;
+Like all those squats and lifts you dread, these things are building your
+muscle. The thing about building muscle – it needs effort and feels like so
+much hard work.
+&lt;/p&gt;
+
+&lt;p&gt;
+You can't build muscles effortlessly. Go do those effortful things! Only if you
+care about those muscles, anyway.
+&lt;/p&gt;</description><category>blab</category><category>blag</category><category>learning</category><category>life</category><guid>https://punchagan.muse-amuse.in/posts/effortful-things.html</guid><pubDate>Sat, 11 Jun 2016 10:13:19 GMT</pubDate></item><item><title>Stepping AFK</title><link>https://punchagan.muse-amuse.in/posts/stepping-afk.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 In the past few weeks, I noticed three instances where I was forced to take a
 break exactly when I was ready to jump in and write some code to fix a bug or
 add a small feature.  I had to step out of the house and take a walk to meet
@@ -399,27 +427,4 @@ attention I deserved, today!  Reply, ASAP!
 &lt;p&gt;
 PS: Apologies for all those emails that are still starred and
 unread, in my Inbox…
-&lt;/p&gt;</description><category>blab</category><category>fiction</category><category>wait</category><guid>https://punchagan.muse-amuse.in/posts/unread-8762.html</guid><pubDate>Mon, 03 Jun 2013 15:16:00 GMT</pubDate></item><item><title>Who I am</title><link>https://punchagan.muse-amuse.in/posts/who-i-am.html</link><dc:creator>punchagan</dc:creator><description>&lt;p class="verse"&gt;
-I'm not the body that dies&lt;br&gt;
-on missing a beat or one breath.&lt;br&gt;
-I'm not the mind, so fickle,&lt;br&gt;
-I'm in heaven one moment, and next in hell.&lt;br&gt;
-&lt;br&gt;
-I'm the moments I live,&lt;br&gt;
-not the ones, in which I just exist.&lt;br&gt;
-I'm the dreams I dream,&lt;br&gt;
-those fulfilled, and not just yet.&lt;br&gt;
-&lt;br&gt;
-I am the occasions I grace&lt;br&gt;
-and those, missed, where I am.&lt;br&gt;
-I am the words I spoke,&lt;br&gt;
-those I wrote, and those I will.&lt;br&gt;
-&lt;br&gt;
-I am all that I create,&lt;br&gt;
-and the stuff that I catalyse.&lt;br&gt;
-I am the love I receive,&lt;br&gt;
-and all of it that I spread.&lt;br&gt;
-&lt;br&gt;
-Don't cry, when I die,&lt;br&gt;
-for I never really will.&lt;br&gt;
-&lt;/p&gt;</description><category>blab</category><category>life</category><category>poem</category><guid>https://punchagan.muse-amuse.in/posts/who-i-am.html</guid><pubDate>Mon, 04 Oct 2010 14:01:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>blab</category><category>fiction</category><category>wait</category><guid>https://punchagan.muse-amuse.in/posts/unread-8762.html</guid><pubDate>Mon, 03 Jun 2013 15:16:00 GMT</pubDate></item></channel></rss>

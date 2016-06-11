@@ -99,7 +99,51 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2014-10-10.html" class="u-url">Bookmarks [2014-10-10]</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/learning-to-use-org-drill.html" class="u-url">Learning to use Org-drill</a></h1>
+        <span class="post-date">14 Oct 2014</span>
+    </header><div class="e-content entry-content">
+    <p>
+Org-drill is an Org-mode extension that provides spaced-repetition and
+flash-card functionality.  It has a <a href="http://orgmode.org/worg/org-contrib/org-drill.html">wonderful documentation on Worg</a>, but
+somehow I couldn't get myself to read the whole document, and setup org-drill,
+until now.
+</p>
+
+<p>
+The setup is quite straight forward, once you have org-mode along with the
+<code>contrib</code> packages.  Just <code>(require 'org-drill)</code>, and you are all set!  To add
+a new card, all you need to do is add a <code>:drill:</code> tag to the items you wish to
+"Org-drill".  You can start a review session with simply <code>M-x org-drill</code>.  You
+will be shown flash cards, and you can rate how correct and comfortable you
+were, in answering the questions.  Based on your responses, the cards are
+scheduled for review.  Start another review session, whenever you need one!
+</p>
+
+<p>
+What I could only understand once I got myself to read the whole document was
+that:
+</p>
+
+<ul class="org-ul">
+<li>The default scope of a drill session is the current file.  But, you can start
+sessions with scopes like current tree, current directory, or a specified
+list of files. This is super-useful!
+</li>
+
+<li>The review sessions are not automatically scheduled, based on when you
+schedule failed flash-cards.  Scheduling the review for a card only sets a
+due-date for them, and effects, what you are asked in your next session.
+</li>
+</ul>
+<p>
+Cram mode and incremental reading are also things I want to try, as I go along.
+</p>
+
+<p>
+Happy Learning!
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/bookmarks-2014-10-10.html" class="u-url">Bookmarks [2014-10-10]</a></h1>
         <span class="post-date">10 Oct 2014</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -290,23 +334,6 @@ them before, and was totally surprised to come across them.
 <li>I spent a little time late in the day getting class diffs working, and
 refactoring the api-diff tool to remove duplication of code between classes
 and modules. But, not very happy with the way I did it.
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-18.html" class="u-url">Recurse Center, 2014-08-18</a></h1>
-        <span class="post-date">19 Aug 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I refactored the API-diff code, and am pretty happy with what I have right
-now, and need to add support for diffing Classes. I'm considering using
-<a href="http://www.astroid.org">Atstroid</a> instead of Python's <code>ast</code> module, since some of the work that I want
-to do, has already been done for me.
-</li>
-<li>With the white-boarding group, we worked on a set of simple exercises for
-strings and arrays.
-</li>
-<li>José Valim's presentation on Elixir was interesting and got me reading up a
-stuff about concurrency, and related stuff.  Thanks!
 </li>
 </ul>
 </div>

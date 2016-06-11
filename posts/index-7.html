@@ -99,7 +99,37 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-08.html" class="u-url">Recurse Center, 2014-07-08</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-09.html" class="u-url">Recurse Center, 2014-07-09</a></h1>
+        <span class="post-date">10 Jul 2014</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>Unicode issues: it turned out that (atleast) one of the files had a character
+that wasn't UTF-8 encoded. I got around it by trying 'utf-8', if not falling
+back to 'iso-8859-1'.  Now that I think about it, I should fallback to
+'utf-8' with replace, if that doesn't work either.
+</li>
+<li>I did a little clean up on the way the indexes were stored, to be able to
+have a <code>getfile</code>, to mimic <code>inspect</code>'s API.
+</li>
+<li>I also "improved" the IPython startup script to monkey-patch the source code
+formatter/colorizer to not break with C modules.
+</li>
+<li>The one-on-one with Allison was pretty useful, and I feel a little more
+relaxed now.
+</li>
+<li>I paired with Kyle to get streaming audio working for his OSX app.  It
+doesn't work yet, but we made progress! Hope to get it working today.
+</li>
+<li>I spent the late evening trying to refactor some of the code and clean it up.
+</li>
+<li>Also, updating the py-clang code to the latest version fixed the issue of
+unknown cursor kinds.
+</li>
+<li>I may present my project in today's presentations!
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-08.html" class="u-url">Recurse Center, 2014-07-08</a></h1>
         <span class="post-date">09 Jul 2014</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -366,41 +396,6 @@ ones. I'm not sure what I'm doing wrong, yet.
 <li>…
 </li>
 </ul>
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-06-25.html" class="u-url">Recurse Center, 2014-06-25</a></h1>
-        <span class="post-date">25 Jun 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I like how some of the people here are taking check-ins so seriously.  A
-bunch of people posted messages on Zulip, informing that they would not be
-able to make it to check-ins, and seemed quite sorry about it.
-</li>
-<li>Check-ins are indeed useful.  At the end of every day, I review my work
-wondering what I did, and sometimes end up pushing myself harder, to have
-something reasonable to talk about during the check-ins!
-</li>
-<li>Yesterday, I read up about FFTs and ended up playing around with <code>fft</code> in
-<code>scipy</code>, and played around with audacity, etc.  Nothing concrete, really.
-</li>
-<li>There was a "goals" workshop by Stacey, where she talked about how to get the
-most out of this batch of Hacker School, and then we split into groups of 3,
-and presented our goal-statements to each other, and gave our impressions of
-each others' goals.
-</li>
-<li>I didn't really have a goal, but the exercise seemed to help, anyway.
-</li>
-<li>Also, I think it is making me nervous to treat Hacker School as
-super-important.  It is important to make the best use of every hour, every
-minute here, but at the same time, I shouldn't be constantly worrying about
-whether or not, whatever I'm doing is the best use of my time here.
-</li>
-<li>I think I would like to form some good habits, and make a few good friends,
-more than finish projects and build something uber-cool.  Of course, it would
-be great to build awesome stuff (and may be the only reasonable way to form
-habits, and make friends) but I shouldn't worry too much about time running
-out. Never Graduate!
 </li>
 </ul>
 </div>

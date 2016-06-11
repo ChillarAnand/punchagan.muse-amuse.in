@@ -99,7 +99,60 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/vimperator-and-firemacs.html" class="u-url">Vimperator and Firemacs!</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/refile-to-date-tree.html" class="u-url">Refile to date-tree</a></h1>
+        <span class="post-date">30 Jul 2010</span>
+    </header><div class="e-content entry-content">
+    <p>
+Useful to refile notes to the journal file, which is a
+date-tree. <code>org-refile</code> isn't convenient to refile stuff to a
+date-tree.
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">my/org-refile-to-journal</span> <span class="p">()</span>
+  <span class="s">"Refile an entry to journal file's date-tree"</span>
+  <span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">require</span> <span class="ss">'org-datetree</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">journal</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">"journal.org"</span> <span class="nv">org-directory</span><span class="p">))</span>
+	<span class="nv">post-date</span><span class="p">)</span>
+    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nv">org-entry-get</span> <span class="p">(</span><span class="nf">point</span><span class="p">)</span> <span class="s">"TIMESTAMP_IA"</span><span class="p">)</span>
+			<span class="p">(</span><span class="nv">org-entry-get</span> <span class="p">(</span><span class="nf">point</span><span class="p">)</span> <span class="s">"TIMESTAMP"</span><span class="p">)))</span>
+    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="nf">nthcdr</span> <span class="mi">3</span> <span class="p">(</span><span class="nv">parse-time-string</span> <span class="nv">post-date</span><span class="p">)))</span>
+    <span class="p">(</span><span class="k">setq</span> <span class="nv">post-date</span> <span class="p">(</span><span class="nf">list</span> <span class="p">(</span><span class="nv">cadr</span> <span class="nv">post-date</span><span class="p">)</span>
+			  <span class="p">(</span><span class="nf">car</span> <span class="nv">post-date</span><span class="p">)</span>
+			  <span class="p">(</span><span class="nv">caddr</span> <span class="nv">post-date</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nv">org-cut-subtree</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">with-current-buffer</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nv">find-buffer-visiting</span> <span class="nv">journal</span><span class="p">)</span>
+			     <span class="p">(</span><span class="nv">find-file-noselect</span> <span class="nv">journal</span><span class="p">))</span>
+      <span class="p">(</span><span class="k">save-excursion</span>
+	<span class="p">(</span><span class="nv">org-datetree-file-entry-under</span> <span class="p">(</span><span class="nv">current-kill</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">post-date</span><span class="p">)</span>
+	<span class="p">(</span><span class="nv">bookmark-set</span> <span class="s">"org-refile-last-stored"</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nf">message</span> <span class="s">"Refiled to %s"</span> <span class="nv">journal</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">my/org-agenda-refile-to-journal</span> <span class="p">()</span>
+  <span class="s">"Refile the item at point to journal."</span>
+  <span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">marker</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nv">org-get-at-bol</span> <span class="ss">'org-hd-marker</span><span class="p">)</span>
+		     <span class="p">(</span><span class="nv">org-agenda-error</span><span class="p">)))</span>
+	 <span class="p">(</span><span class="nv">buffer</span> <span class="p">(</span><span class="nf">marker-buffer</span> <span class="nv">marker</span><span class="p">))</span>
+	 <span class="p">(</span><span class="nv">pos</span> <span class="p">(</span><span class="nf">marker-position</span> <span class="nv">marker</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">with-current-buffer</span> <span class="nv">buffer</span>
+      <span class="p">(</span><span class="k">save-excursion</span>
+	<span class="p">(</span><span class="k">save-restriction</span>
+	  <span class="p">(</span><span class="nf">widen</span><span class="p">)</span>
+	  <span class="p">(</span><span class="nf">goto-char</span> <span class="nv">marker</span><span class="p">)</span>
+	  <span class="p">(</span><span class="nv">org-remove-subtree-entries-from-agenda</span><span class="p">)</span>
+	  <span class="p">(</span><span class="nv">my/org-refile-to-journal</span><span class="p">)))))</span>
+  <span class="p">(</span><span class="nv">org-agenda-redo</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">org-defkey</span> <span class="nv">org-agenda-mode-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-c C-S-w"</span><span class="p">)</span> <span class="ss">'my/org-agenda-refile-to-journal</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">org-defkey</span> <span class="nv">org-mode-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-c C-S-w"</span><span class="p">)</span> <span class="ss">'my/org-refile-to-journal</span><span class="p">)</span>
+</pre></div>
+
+<p>
+Enjoy!
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/vimperator-and-firemacs.html" class="u-url">Vimperator and Firemacs!</a></h1>
         <span class="post-date">28 Jul 2010</span>
     </header><div class="e-content entry-content">
     <p>
@@ -748,32 +801,6 @@ Here is a photoset
 </ol>
 </div>
 </div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/just-another-bunch.html" class="u-url">Just another bunch</a></h1>
-        <span class="post-date">18 Mar 2010</span>
-    </header><div class="e-content entry-content">
-    <p class="verse">
-Come spring -<br>
-a fresh lease of green<br>
-drapes the bare branches.<br><br>
-The leaves, dancing and whistling<br>
-to the tunes of the wind<br>
-playing, screaming, and singing,<br>
-in each other's company, enjoying.<br><br>
-Singing to one another<br>
-promises of sticking together,<br>
-come what may, through it all.<br><br>
-The song goes on,<br>
-but the count goes down,<br>
-not noticed or just unacknowledged,<br>
-first by one and then by many more.<br><br>
-the song, still, goes on.<br>
-And the promises too, of course.<br>
-The song goes on and on and on.<br><br>
-Until silence falls upon, when all<br>
-of them are gone. The tree, knowing well,<br>
-watches on - it won't be long before<br>
-a new bunch springs up to sing the song.<br></p>
     </div>
     </article>
 </div>
