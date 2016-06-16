@@ -300,7 +300,8 @@ date-tree.
       <span class="p">(</span><span class="k">save-excursion</span>
 	<span class="p">(</span><span class="nv">org-datetree-file-entry-under</span> <span class="p">(</span><span class="nv">current-kill</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">post-date</span><span class="p">)</span>
 	<span class="p">(</span><span class="nv">bookmark-set</span> <span class="s">"org-refile-last-stored"</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nf">message</span> <span class="s">"Refiled to %s"</span> <span class="nv">journal</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nf">message</span> <span class="s">"Refiled to %s"</span> <span class="nv">journal</span><span class="p">))</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">this-command</span> <span class="ss">'my/org-refile-to-journal</span><span class="p">))</span>
 
 <span class="p">(</span><span class="nb">defun</span> <span class="nv">my/org-agenda-refile-to-journal</span> <span class="p">()</span>
   <span class="s">"Refile the item at point to journal."</span>
@@ -324,6 +325,11 @@ date-tree.
 
 <p>
 Enjoy!
+</p>
+
+<p>
+<b>Update <span class="timestamp-wrapper"><span class="timestamp">[2016-06-16]</span></span></b> <a href="https://twitter.com/raamdev">Raam Dev</a> pointed me to an <a href="http://emacs.stackexchange.com/questions/21322/preventing-org-cut-subtree-from-appending-subsequent-cuts-to-previous-kill-ring">issue</a> and a suggested fix, that
+ I have updated the above code with.
 </p>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/vimperator-and-firemacs.html" class="u-url">Vimperator and Firemacs!</a></h1>
