@@ -18,7 +18,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
     <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
 <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
 <title>
-      Stepping AFK · Noetic Nought
+      Python reload and module dict · Noetic Nought
   </title>
 </head>
 <body class="layout-reverse sidebar-overlay theme-base-0d">
@@ -126,51 +126,83 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
       </div>
 
       <div class="container content">
-<article class="post post-text h-entry hentry postpage" itemscope="itemscope"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/stepping-afk.html" class="u-url">Stepping AFK</a></h1>
+<article class="post post-text h-entry hentry postpage" itemscope="itemscope"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="/posts/python-reload-and-module-dict.html" class="u-url">Python reload and module dict</a></h1>
 
-            <span class="post-date">03 Jun 2016</span>
+            <span class="post-date">23 Jun 2016</span>
         </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>
-In the past few weeks, I noticed three instances where I was forced to take a
-break exactly when I was ready to jump in and write some code to fix a bug or
-add a small feature.  I had to step out of the house and take a walk to meet
-someone, etc.
+I was trying to play around with Nikola's code today and learnt about a
+documented weirdness of Python's reload.
 </p>
 
-<p>
-I ended up getting ideas during the walks, which significantly changed and
-simplified how I would've implemented things, if not for those breaks.  Even if
-I did end up zeroing down to those solutions, I am pretty sure it would've
-taken a couple of not-so-good attempts and much longer than it did.
-</p>
+<div class="highlight"><pre><span class="c"># Work in a temporary directory</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">())</span>
+
+<span class="c"># Module content, original and updated</span>
+<span class="n">ORIGINAL</span> <span class="o">=</span> <span class="s">"# PLUGINS = []"</span>
+<span class="n">UPDATED</span> <span class="o">=</span> <span class="s">"PLUGINS = ['rss']"</span>
+
+<span class="k">def</span> <span class="nf">create_conf_file</span><span class="p">(</span><span class="n">content</span><span class="p">):</span>
+    <span class="sd">"""Create a conf.py module with given content."""</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'conf.py'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+	<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="n">create_conf_file</span><span class="p">(</span><span class="n">ORIGINAL</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">conf</span>
+<span class="c"># PLUGINS is not defined in the module, originally.</span>
+<span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">PLUGINS</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+AttributeError: module 'conf' has no attribute 'PLUGINS'
+</pre>
+
+<div class="highlight"><pre><span class="n">create_conf_file</span><span class="p">(</span><span class="n">UPDATED</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">conf</span>
+<span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">PLUGINS</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+AttributeError: module 'conf' has no attribute 'PLUGINS'
+</pre>
 
 <p>
-Context switches are usually considered to be <a href="http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/">expensive for programmers</a>, but
-taking a break at the exact time when I had all the required context loaded
-into my head seemed to help. It was also probably helpful that I was taking a
-walk, and there wasn't really any other inputs or outputs competing for the
-space in my head.
+<code>conf</code> doesn't yet have a <code>PLUGINS</code> attribute, since the new module isn't
+imported until we reload.
 </p>
 
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">importlib</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">PLUGINS</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+['rss']
+</pre>
+
+<div class="highlight"><pre><span class="c"># We write back the original file. PLUGINS should be empty!</span>
+<span class="n">create_conf_file</span><span class="p">(</span><span class="n">ORIGINAL</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">conf</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">PLUGINS</span><span class="p">,</span> <span class="s">"&lt;---Whaaaat!"</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+['rss'] &lt;---Whaaaat!
+</pre>
+
 <p>
-This got me thinking about doing this more deliberately – I'd love to hear
-about any experiences or any experiments any of you have done with this.  Also,
-I'm reminded of Rich Hickey's <a href="https://www.youtube.com/watch?v=f84n5oFoZBc">Hammock Driven Development</a> talk and I wonder if
-this is a smaller/different version of it, and makes me want to try out the
-things he suggests more deliberately.  If any of you has thoughts and
-suggestions, I'd love to hear from you!
+The behavior is well documented, along with a reasoning of why it is the way it
+is, but you can trip over it if you don't know. I hit a bug and was wondering
+if there was a race condition somewhere, until I read the docs for <a href="https://docs.python.org/3/library/importlib.html#importlib.reload">reload</a>. On
+reload, the module dict is updated, instead of creating a new dict and any
+values not redefined in the new code for the module remain unchanged.
 </p>
     </div>
-    <aside class="postpromonav"><nav><div class="pagination">
-            <span class="pagination-item older">
-                <a href="/posts/pycon-india-2016-propose-a-talk.html" rel="prev" title="PyCon India 2016 - Propose a talk">Previous post</a>
-            </span>
-            <span class="pagination-item newer">
-                <a href="/posts/reading-time-based-scheduling.html" rel="next" title="Reading-time based scheduling">Next post</a>
-            </span>
-        </div>
-
-    </nav></aside></article>
+    <aside class="postpromonav"><nav></nav></aside></article>
 </div>
     </div>
 
@@ -212,22 +244,6 @@ $(document).ready(function() {
     });
 });
 </script><!-- RC Scout --><div class="rc-scout wrap" title="Want to become a better programmer?"></div>
-<script async defer src="https://www.recurse-scout.com/loader.js?t=8b0acf2a60ae4365bee9568bede83f28"></script><section class="related wrap container content"><h2> Related Posts </h2>
-<ul class="related-posts">
-<li><h3><a href="https://punchagan.muse-amuse.in/posts/bookmarks-2014-01-17.html">Bookmarks [2014-01-17]</a></h3></li>
-
-<li><h3><a href="https://punchagan.muse-amuse.in/posts/lost-control.html">Lost Control??</a></h3></li>
-
-<li><h3><a href="https://punchagan.muse-amuse.in/posts/assist-time.html">Assist time</a></h3></li>
-
-<li><h3><a href="https://punchagan.muse-amuse.in/posts/i-love-foss-how-do-i-start-contributing-code.html">I love FOSS.  How do I start contributing (code)?</a></h3></li>
-
-<li><h3><a href="https://punchagan.muse-amuse.in/posts/recurse-center-2014-06-21.html">Recurse Center, 2014-06-21</a></h3></li>
-
-</ul></section><section class="wrap container comments"><p style="text-align: center; font-size: 60%; margin: 10px; background: #F5F5DC; padding: 10px; border-radius: 5px;">
-        If you would like to comment on something I've said here, <a href="mailto:punchagan+blog@muse-amuse.in?subject=Comment%20on%20Stepping%20AFK">send
-        me an email</a> or get in touch with me on <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Stepping%20AFK%20is%20interesting,%20/cc:%20@punchagan&amp;url=https://punchagan.muse-amuse.in/posts/stepping-afk.html">twitter</a>.
-    </p>
-</section>
+<script async defer src="https://www.recurse-scout.com/loader.js?t=8b0acf2a60ae4365bee9568bede83f28"></script>
 </body>
 </html>
