@@ -127,7 +127,80 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-23.html" class="u-url">Recurse Center, 2014-07-23</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-24.html" class="u-url">Recurse Center, 2014-07-24</a></h1>
+        <span class="post-date">24 Jul 2014</span>
+    </header><div class="e-content entry-content">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Glowing LEDs and me</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>It turned out that the SPI driver exposed a faster way to write bits, writing
+to all the LEDs at once, instead of one at a time, and this was sufficient to
+get things working!
+</li>
+
+<li>Kyle and I started to have enough, of the glowing LEDs and decided to wrap up
+the project, but, Nick had different ideas for us! We had talked about having
+the music stream via airplay, but Nick got his DJing tools, and it would be
+too bad to not use it for the party, but doing that meant Airplay's delay
+wouldn't help the DJ. So, we connected a line-in, and thought we'd be done if
+we just read the input and used that data. But, it turns out that's not so
+simple because sending data over the wire, added noise to it, and in a whole
+range of frequencies! I tried removing all the fourier coefficients which
+were lower than a threshold, but I felt like it didn't work very well, until
+Nick reduced the gain of this output on the amp to the very minimum. Finally,
+Kyle and I decided that this was good enough for the party!
+</li>
+
+<li>I also hacked up a quick script to read a font file, and use the grey values
+to get ascii characters to show up on the LED strip.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Miscellaneous</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>While trying to find the RPi on the network, I learnt that <code>sudo nmap -sP
+  10.0.1.*</code> gives us the hostname as well, instead of just IPs.  <code>sudo</code> being
+the key, here.
+</li>
+
+<li>Kyle and I went and grabbed dinner in a restaurant in west village. It was
+good to sit down and talk about various things, and eat. The glowing LEDs
+were totally out of my mind for that period, and the break was good!
+</li>
+
+<li>There were a bunch of HSers doing mock-interviews and it was fun to watch, so
+I stayed on until quite late, when all of us headed out together.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Today</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>I'm excited about trying to build a small version control system from
+scratch today!
+</li>
+
+<li>Though I have had quite a bit of glowing LEDs in my face for the past week,
+I may suck up to it, and figure out how to do scrolling text on the
+display.
+</li>
+
+<li>Also, excited to see how all the cool projects will come together in the
+party tonight!
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-23.html" class="u-url">Recurse Center, 2014-07-23</a></h1>
         <span class="post-date">23 Jul 2014</span>
     </header><div class="e-content entry-content">
     <div id="outline-container-sec-1" class="outline-2">
@@ -542,46 +615,6 @@ index them.  They take very very long!!
 </li>
 <li>I tried to get it working with Numpy, but getting all the headers to include
 wasn't as easy as I assumed it would be!
-</li>
-</ul>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-11.html" class="u-url">Recurse Center, 2014-07-11</a></h1>
-        <span class="post-date">13 Jul 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I didn't spend much time at Hacker School on Friday.  I reached a bit late
-for the start of "Recursion day", and did a few problems.  The problems were
-simple, but interesting.  After lunch, I headed home to start to Philly.
-</li>
-<li>Later in the day, I did some refactoring of the code to have the index reader
-and writer split out.
-</li>
-<li>I also added a setup.py to be able to install the package using the standard
-tools instead of PYTHONPATH hacks and stuff.
-</li>
-<li>During the refactoring, I again hit <i>this bug</i>.  I found out from Pankaj that
-he has <code>from __future__ import print_function, absolute_imports</code> at the start
-of his files these days.  I think I'm going to do it, too.
-</li>
-</ul>
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Saturday &amp; Sunday</h2>
-<div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li>I didn't do much during the weekend. I ended up adding a TXT record for SPF
-for this domain, to work around Gmail marking bulk mails for the
-<a href="http://github.com/punchagan/childrens-park">childrens-park</a> newsletter as spam. I was able to send one newsletter, but not
-sure if only the SPF is enough or I'll have to setup DKIM, and other stuff.
-(I don't understand most of these acronyms!)
-</li>
-
-<li>Someone mentioned <a href="http://github.com/kennethreitz/autoenv">http://github.com/kennethreitz/autoenv</a> on Zulip, and I
-really liked the idea.  I have started using it for a couple of projects and
-also got rid of a couple of my bashrc aliases, and created a new <a href="https://github.com/punchagan/home-bin/blob/master/project">project</a>
-command with completions of the directories in my project directory.  I like
-this setup, as of now.
 </li>
 </ul>
 </div>

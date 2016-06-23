@@ -198,11 +198,17 @@ imported until we reload.
 The behavior is well documented, along with a reasoning of why it is the way it
 is, but you can trip over it if you don't know. I hit a bug and was wondering
 if there was a race condition somewhere, until I read the docs for <a href="https://docs.python.org/3/library/importlib.html#importlib.reload">reload</a>. On
-reload, the module dict is updated, instead of creating a new dict and any
-values not redefined in the new code for the module remain unchanged.
+reload, <b>the module dict is updated</b>, instead of creating a new dict. Any
+values <b>not redefined</b> in the new code for the module <b>remain unchanged</b>.
 </p>
     </div>
-    <aside class="postpromonav"><nav></nav></aside></article>
+    <aside class="postpromonav"><nav><div class="pagination">
+            <span class="pagination-item older">
+                <a href="/posts/assist-time.html" rel="prev" title="Assist time">Previous post</a>
+            </span>
+        </div>
+
+    </nav></aside></article>
 </div>
     </div>
 
@@ -244,6 +250,22 @@ $(document).ready(function() {
     });
 });
 </script><!-- RC Scout --><div class="rc-scout wrap" title="Want to become a better programmer?"></div>
-<script async defer src="https://www.recurse-scout.com/loader.js?t=8b0acf2a60ae4365bee9568bede83f28"></script>
+<script async defer src="https://www.recurse-scout.com/loader.js?t=8b0acf2a60ae4365bee9568bede83f28"></script><section class="related wrap container content"><h2> Related Posts </h2>
+<ul class="related-posts">
+<li><h3><a href="https://punchagan.muse-amuse.in/posts/an-import-gotcha-in-python.html">An import gotcha in Python</a></h3></li>
+
+<li><h3><a href="https://punchagan.muse-amuse.in/posts/recurse-center-2014-07-15.html">Recurse Center, 2014-07-15</a></h3></li>
+
+<li><h3><a href="https://punchagan.muse-amuse.in/posts/bookmarks-2012-05-12.html">Bookmarks [2012/05/12]</a></h3></li>
+
+<li><h3><a href="https://punchagan.muse-amuse.in/posts/augmented-assignment-in-python.html">Augmented assignment in Python</a></h3></li>
+
+<li><h3><a href="https://punchagan.muse-amuse.in/posts/lesson-with-rss-feeds-wordpress.html">Lesson with RSS feeds &amp; Wordpress</a></h3></li>
+
+</ul></section><section class="wrap container comments"><p style="text-align: center; font-size: 60%; margin: 10px; background: #F5F5DC; padding: 10px; border-radius: 5px;">
+        If you would like to comment on something I've said here, <a href="mailto:punchagan+blog@muse-amuse.in?subject=Comment%20on%20Python%20reload%20and%20module%20dict">send
+        me an email</a> or get in touch with me on <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Python%20reload%20and%20module%20dict%20is%20interesting,%20/cc:%20@punchagan&amp;url=https://punchagan.muse-amuse.in/posts/python-reload-and-module-dict.html">twitter</a>.
+    </p>
+</section>
 </body>
 </html>

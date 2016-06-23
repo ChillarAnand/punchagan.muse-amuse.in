@@ -1,5 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (python)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/python.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jun 2016 08:01:37 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Playing music using mpsyt from Emacs</title><link>https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (python)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://punchagan.muse-amuse.in/tags/python.xml"></atom:link><language>en</language><lastBuildDate>Thu, 23 Jun 2016 15:26:21 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python reload and module dict</title><link>https://punchagan.muse-amuse.in/posts/python-reload-and-module-dict.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I was trying to play around with Nikola's code today and learnt about a
+documented weirdness of Python's reload.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Work in a temporary directory&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tempfile&lt;/span&gt;
+&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;chdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tempfile&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mkdtemp&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="c"&gt;# Module content, original and updated&lt;/span&gt;
+&lt;span class="n"&gt;ORIGINAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"# PLUGINS = []"&lt;/span&gt;
+&lt;span class="n"&gt;UPDATED&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"PLUGINS = ['rss']"&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;create_conf_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;"""Create a conf.py module with given content."""&lt;/span&gt;
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'conf.py'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'w'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+	&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;create_conf_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ORIGINAL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;conf&lt;/span&gt;
+&lt;span class="c"&gt;# PLUGINS is not defined in the module, originally.&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+AttributeError: module 'conf' has no attribute 'PLUGINS'
+&lt;/pre&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;create_conf_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;UPDATED&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;conf&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+AttributeError: module 'conf' has no attribute 'PLUGINS'
+&lt;/pre&gt;
+
+&lt;p&gt;
+&lt;code&gt;conf&lt;/code&gt; doesn't yet have a &lt;code&gt;PLUGINS&lt;/code&gt; attribute, since the new module isn't
+imported until we reload.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;importlib&lt;/span&gt;
+&lt;span class="n"&gt;importlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reload&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+['rss']
+&lt;/pre&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# We write back the original file. PLUGINS should be empty!&lt;/span&gt;
+&lt;span class="n"&gt;create_conf_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ORIGINAL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;conf&lt;/span&gt;
+&lt;span class="n"&gt;importlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reload&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;---Whaaaat!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+['rss'] &amp;lt;---Whaaaat!
+&lt;/pre&gt;
+
+&lt;p&gt;
+The behavior is well documented, along with a reasoning of why it is the way it
+is, but you can trip over it if you don't know. I hit a bug and was wondering
+if there was a race condition somewhere, until I read the docs for &lt;a href="https://docs.python.org/3/library/importlib.html#importlib.reload"&gt;reload&lt;/a&gt;. On
+reload, &lt;b&gt;the module dict is updated&lt;/b&gt;, instead of creating a new dict. Any
+values &lt;b&gt;not redefined&lt;/b&gt; in the new code for the module &lt;b&gt;remain unchanged&lt;/b&gt;.
+&lt;/p&gt;</description><category>blag</category><category>python</category><guid>https://punchagan.muse-amuse.in/posts/python-reload-and-module-dict.html</guid><pubDate>Thu, 23 Jun 2016 10:35:30 GMT</pubDate></item><item><title>Playing music using mpsyt from Emacs</title><link>https://punchagan.muse-amuse.in/posts/playing-music-using-mpsyt-from-emacs.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I've started using the wonderful &lt;a href="https://github.com/np1/mps-youtube/"&gt;mpsyt&lt;/a&gt; to play any music from youtube, since
 I'm not really interested in the video.  But, since I use emacs for chat/IRC, I
 end up getting youtube links into emacs and opening them opens them up in my
@@ -193,40 +263,4 @@ the evening finishing off &lt;a href="http://craphound.com/homeland/"&gt;Homelan
 cares about the Government and policies and technology MUST read it!  Thanks
 Cory.
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-14.html</guid><pubDate>Fri, 15 Aug 2014 22:09:59 GMT</pubDate></item><item><title>Recurse Center, 2014-08-13</title><link>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-13.html</link><dc:creator>punchagan</dc:creator><description>&lt;ul class="org-ul"&gt;
-&lt;li&gt;I feel like I didn't get much done yesterday.
-&lt;/li&gt;
-&lt;li&gt;I mostly worked on the API differ, but didn't get much done.  I have a few
-tests, and some code for diffing two functions, but I'm not very happy with
-it.
-&lt;/li&gt;
-&lt;li&gt;I helped Giorgio and Carlos with using my client only &lt;code&gt;hs_oauth&lt;/code&gt;
-  script/library, for their Zulip bot.
-&lt;/li&gt;
-&lt;li&gt;The white boarding group worked on some binary related problems, and it was
-fun.
-&lt;/li&gt;
-&lt;li&gt;I looked at how the HS OAuth backend works on blaggregator and thought about
-how to go about fixing the issue of broken images on the site.  The problem
-happens because the image URLs are returned from the HS API calls, that are
-made whenever a user logs in(?), and the URLs are cached.  Since, HS uses
-cloudfront for its assets, the URLs expire after a period of time, and the
-cached urls in blag's database need to be updated.  There could be two ways
-of doing it -
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;Check if the URL 404s, every time a URL is requested, on the server side.
-&lt;/li&gt;
-&lt;li&gt;Do it on the client side, with some javascript magic.
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-Intuitively, I feel like 2. would be better, but Madhu suggested
-that 1. wouldn't be that bad either.  We could try both out, and see which
-works better I suppose.
-&lt;/p&gt;
-
-&lt;p&gt;
-I'd be interested to try this out, sometime.
-&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-13.html</guid><pubDate>Thu, 14 Aug 2014 15:11:59 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;</description><category>python</category><category>recursecenter</category><guid>https://punchagan.muse-amuse.in/posts/recurse-center-2014-08-14.html</guid><pubDate>Fri, 15 Aug 2014 22:09:59 GMT</pubDate></item></channel></rss>

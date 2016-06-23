@@ -127,7 +127,60 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-01.html" class="u-url">Recurse Center, 2014-07-01</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-03.html" class="u-url">Recurse Center, 2014-07-03</a></h1>
+        <span class="post-date">05 Jul 2014</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>I got distracted trying to add a hack to Hacker School's <a href="https://github.com/sursh/blaggregator">blaggregator</a>, to
+enable posting to different channels on zulip.
+</li>
+<li>I learnt a few things about Django.  Commented out references to views that
+don't exists breaks templating.  Formsets didn't seem very convenient to use,
+for editing data showing the user only partial forms.
+</li>
+<li>I played around with Clang for a bit, to try and use libclang to parse the C
+code for inspection, instead of writing one myself.  It sometimes feels like
+an overkill, but it feels like it'll make the whole code more robust.  I'm
+not sure.  I'll need to play around for a bit more to decide.
+</li>
+<li>I also finally got around to fix the resolution of my tty shells.  I was in a
+bus, and wanted my laptop's battery to last longer, and decided to use a tty
+shell with just emacs running. But, the resolution sucked.  So, I
+fixed. Essentially it involved removing a blacklist file that an old version
+of Nvidia drivers left behind in
+<code>/usr/share/grub-gfxpayload-lists/blacklist/</code> and setting
+<code>GRUB_GFXMODE=1920x1080</code> in <code>/etc/default/grub</code>.
+</li>
+<li>Later in the evening I also bought the domain <code>octo.cat</code>, given there were a
+bunch of people buying cat domains, and talking about it on Zulip!
+</li>
+</ul>
+<p>
+Update [7/7/14]: I forgot to write about the presentations.  There were
+interesting presentations!
+</p>
+<ul class="org-ul">
+<li>
+<a href="https://github.com/ambimorph/protagonist">Protagonist</a>
+</li>
+<li>
+<a href="https://github.com/pirate/mesh-networking">mesh networking</a>
+</li>
+<li>
+<a href="http://writing.brianruslim.com/2014/06/30/the-execution-context/">The Execution Context</a>
+</li>
+<li>
+<a href="https://github.com/stijlist/toolmaker/">toolmaker</a>
+</li>
+<li>
+<a href="http://blog.ontoillogical.com/blog/2014/07/03/doorbot-overflow/">Building a better doorbot</a>
+</li>
+<li>
+<a href="https://github.com/buybackoff/Fredis">Fredis</a>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-01.html" class="u-url">Recurse Center, 2014-07-01</a></h1>
         <span class="post-date">02 Jul 2014</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -576,66 +629,6 @@ xdotool - Homepage
 
 </div>
 </div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/augmented-assignment-in-python.html" class="u-url">Augmented assignment in Python</a></h1>
-        <span class="post-date">04 Oct 2010</span>
-    </header><div class="e-content entry-content">
-    <p>
-If you are new to <code>Python</code>, you should probably stop reading here.
-But, if you have used <code>Python</code> and <code>numpy</code>, then read on. Before, that
-try these bits of code.
-</p>
-
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mf">0.5j</span>
-<span class="k">print</span> <span class="n">a</span>
-</pre></div>
-
-<p>
-The "same thing", in a slightly different way.
-</p>
-
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
-<span class="k">print</span> <span class="n">a</span>
-</pre></div>
-
-<p>
-Both the code blocks, look really the same, until you look carefully.
-Under normal circumstances <code>a = a + b</code> and <code>a += b</code> behave exactly
-similarly, and we really don't need to bother about the differences
-between them.
-</p>
-
-<p>
-But, <code>+=</code>, which is an augmented assignment operator, actually tries
-to perform the operation in-place, unlike the other statement where
-<code>+</code> actually returns a new object which is again being referenced by
-the name <code>a</code>.
-</p>
-
-<p>
-But, when dealing with <code>numpy</code> arrays, this will lead to trouble.
-When assigning to an array, it's <code>dtype</code> is not changed and hence the
-trouble.
-</p>
-
-<p>
-The right way to use the augmented assignment operator, would be:
-</p>
-
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">+=</span> <span class="mf">0.5j</span>
-<span class="k">print</span> <span class="n">a</span>
-</pre></div>
-
-<p>
-The same thing is explained in this thread.  Also, Thanks to
-Bhanukiran for asking me this.
-</p>
     </div>
     </article>
 </div>

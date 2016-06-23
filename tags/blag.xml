@@ -1,5 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Noetic Nought (blag)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link href="https://punchagan.muse-amuse.in/tags/blag.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 14 Jun 2016 17:56:05 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Assist time</title><link>https://punchagan.muse-amuse.in/posts/assist-time.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="/assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Noetic Nought (blag)</title><link>https://punchagan.muse-amuse.in/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://punchagan.muse-amuse.in/tags/blag.xml"></atom:link><language>en</language><lastBuildDate>Thu, 23 Jun 2016 15:26:23 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python reload and module dict</title><link>https://punchagan.muse-amuse.in/posts/python-reload-and-module-dict.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
+I was trying to play around with Nikola's code today and learnt about a
+documented weirdness of Python's reload.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Work in a temporary directory&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tempfile&lt;/span&gt;
+&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;chdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tempfile&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mkdtemp&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="c"&gt;# Module content, original and updated&lt;/span&gt;
+&lt;span class="n"&gt;ORIGINAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"# PLUGINS = []"&lt;/span&gt;
+&lt;span class="n"&gt;UPDATED&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"PLUGINS = ['rss']"&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;create_conf_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;"""Create a conf.py module with given content."""&lt;/span&gt;
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'conf.py'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'w'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+	&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;create_conf_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ORIGINAL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;conf&lt;/span&gt;
+&lt;span class="c"&gt;# PLUGINS is not defined in the module, originally.&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+AttributeError: module 'conf' has no attribute 'PLUGINS'
+&lt;/pre&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;create_conf_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;UPDATED&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;conf&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+AttributeError: module 'conf' has no attribute 'PLUGINS'
+&lt;/pre&gt;
+
+&lt;p&gt;
+&lt;code&gt;conf&lt;/code&gt; doesn't yet have a &lt;code&gt;PLUGINS&lt;/code&gt; attribute, since the new module isn't
+imported until we reload.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;importlib&lt;/span&gt;
+&lt;span class="n"&gt;importlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reload&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+['rss']
+&lt;/pre&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# We write back the original file. PLUGINS should be empty!&lt;/span&gt;
+&lt;span class="n"&gt;create_conf_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ORIGINAL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;conf&lt;/span&gt;
+&lt;span class="n"&gt;importlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reload&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;---Whaaaat!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+['rss'] &amp;lt;---Whaaaat!
+&lt;/pre&gt;
+
+&lt;p&gt;
+The behavior is well documented, along with a reasoning of why it is the way it
+is, but you can trip over it if you don't know. I hit a bug and was wondering
+if there was a race condition somewhere, until I read the docs for &lt;a href="https://docs.python.org/3/library/importlib.html#importlib.reload"&gt;reload&lt;/a&gt;. On
+reload, &lt;b&gt;the module dict is updated&lt;/b&gt;, instead of creating a new dict. Any
+values &lt;b&gt;not redefined&lt;/b&gt; in the new code for the module &lt;b&gt;remain unchanged&lt;/b&gt;.
+&lt;/p&gt;</description><category>blag</category><category>python</category><guid>https://punchagan.muse-amuse.in/posts/python-reload-and-module-dict.html</guid><pubDate>Thu, 23 Jun 2016 10:35:30 GMT</pubDate></item><item><title>Assist time</title><link>https://punchagan.muse-amuse.in/posts/assist-time.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
 I sometimes hang out on &lt;a href="http://webchat.freenode.net/?channels=%2523org-mode"&gt;#org-mode&lt;/a&gt; or &lt;a href="http://webchat.freenode.net/?channels=%2523nikola"&gt;#nikola&lt;/a&gt; and answer questions. I usually am
 not able to answer off the top of my head and I look up docs or dig through the
 code.  Sometimes, we find ready-made documented answers, but other times we end
@@ -345,35 +415,4 @@ method or function to use to do something.
 &lt;p&gt;
 What are some such level-up tools for you? Is there a systematic approach to
 discovering tools?
-&lt;/p&gt;</description><category>blab</category><category>blag</category><category>learning</category><category>life</category><category>programming</category><guid>https://punchagan.muse-amuse.in/posts/level-up-tools.html</guid><pubDate>Mon, 23 May 2016 16:08:14 GMT</pubDate></item><item><title>blog-admin and Nikola</title><link>https://punchagan.muse-amuse.in/posts/blog-admin-and-nikola.html</link><dc:creator>punchagan</dc:creator><description>&lt;p&gt;
-Another post about blogging.
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;a href="https://github.com/CodeFalling/blog-admin"&gt;blog-admin&lt;/a&gt; now supports &lt;a href="http://getnikola.com"&gt;Nikola&lt;/a&gt;, thanks to yours truly. &lt;code&gt;blog-admin&lt;/code&gt; is an Emacs
-package by &lt;a href="https://twitter.com/codefalling"&gt;CodeFalling&lt;/a&gt; that lets you view and manage your (static site
-generated) blog from within inside Emacs.
-&lt;/p&gt;
-
-&lt;p&gt;
-Nikola's command line utility is pretty nifty and does a bunch of useful
-things. I had a few utility functions to do common tasks like create new post
-and deploy blog. This worked well, but moment I came across this &lt;code&gt;blog-admin&lt;/code&gt;'s
-tabular view, I was sold!
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;a href="https://github.com/punchagan/org2blog"&gt;org2blog&lt;/a&gt; (a blogging tool I used previously) had a tracking file that kept
-track of all the posts I made, and I used it quite a bit for navigation –
-thanks to &lt;code&gt;org-mode&lt;/code&gt;'s search functionality. The tabular view of &lt;code&gt;blog-admin&lt;/code&gt;
-is even better!  I really like the fact that the author has tried to keep the
-package generic enough to support any blog, and adding support for Nikola has
-been quite easy.
-&lt;/p&gt;
-
-&lt;p&gt;
-The filtering functionality is crude, but good enough for a start. One thing I
-want to add is a preview functionality for drafts. Showing some (writing)
-statistics would also be nice – No. posts in the last month, total published
-posts, etc.  No promises, but you may see some of these things, soon. :)
-&lt;/p&gt;</description><category>blab</category><category>blag</category><category>blog</category><category>emacs</category><category>nikola</category><guid>https://punchagan.muse-amuse.in/posts/blog-admin-and-nikola.html</guid><pubDate>Sat, 21 May 2016 14:58:07 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>blab</category><category>blag</category><category>learning</category><category>life</category><category>programming</category><guid>https://punchagan.muse-amuse.in/posts/level-up-tools.html</guid><pubDate>Mon, 23 May 2016 16:08:14 GMT</pubDate></item></channel></rss>

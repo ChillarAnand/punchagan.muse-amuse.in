@@ -127,7 +127,48 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-12.html" class="u-url">Recurse Center, 2014-08-12</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-13.html" class="u-url">Recurse Center, 2014-08-13</a></h1>
+        <span class="post-date">14 Aug 2014</span>
+    </header><div class="e-content entry-content">
+    <ul class="org-ul">
+<li>I feel like I didn't get much done yesterday.
+</li>
+<li>I mostly worked on the API differ, but didn't get much done.  I have a few
+tests, and some code for diffing two functions, but I'm not very happy with
+it.
+</li>
+<li>I helped Giorgio and Carlos with using my client only <code>hs_oauth</code>
+  script/library, for their Zulip bot.
+</li>
+<li>The white boarding group worked on some binary related problems, and it was
+fun.
+</li>
+<li>I looked at how the HS OAuth backend works on blaggregator and thought about
+how to go about fixing the issue of broken images on the site.  The problem
+happens because the image URLs are returned from the HS API calls, that are
+made whenever a user logs in(?), and the URLs are cached.  Since, HS uses
+cloudfront for its assets, the URLs expire after a period of time, and the
+cached urls in blag's database need to be updated.  There could be two ways
+of doing it -
+<ol class="org-ol">
+<li>Check if the URL 404s, every time a URL is requested, on the server side.
+</li>
+<li>Do it on the client side, with some javascript magic.
+</li>
+</ol>
+<p>
+Intuitively, I feel like 2. would be better, but Madhu suggested
+that 1. wouldn't be that bad either.  We could try both out, and see which
+works better I suppose.
+</p>
+
+<p>
+I'd be interested to try this out, sometime.
+</p>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-12.html" class="u-url">Recurse Center, 2014-08-12</a></h1>
         <span class="post-date">13 Aug 2014</span>
     </header><div class="e-content entry-content">
     <ul class="org-ul">
@@ -528,57 +569,6 @@ yesterday.
 <li>May be write up the whole thing, and make the code available.
 </li>
 <li>Learn a little bit about Parsers from rntz.
-</li>
-</ul>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-07-21.html" class="u-url">Recurse Center, 2014-07-21</a></h1>
-        <span class="post-date">22 Jul 2014</span>
-    </header><div class="e-content entry-content">
-    <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Yesterday</h2>
-<div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li>It was exciting to have so many new Hacker Schoolers in the space.  But, the
-excitement was kinda distracting too.
-</li>
-
-<li>I spent most of the day looking at shairport, and libshairport and trying to
-wrap it, so I can use it to get data for the spectrum analyzer via the
-Air-play protocol.  I was able to call it using <code>ctypes</code>, but it doesn't seem
-discoverable.
-</li>
-
-<li>I also briefly looked at Julia and <a href="http://dwm.suckless.org">dwm</a>, to try and port dwm to Julia.  It
-doesn't seem like too much work, but is going to take me a while given how
-comfortable I'm with both Julia and C.
-</li>
-
-<li>Yaron Minsky's talk on distributed systems was a great introduction to
-Distributed systems.
-</li>
-
-<li>After the talk, I spent a little time updating my notes from an old org-mode
-workshop to present it at the emacs user group meet up today.
-</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Today</h2>
-<div class="outline-text-2" id="text-2">
-<ul class="org-ul">
-<li>I hope to get the spectrum analyzer to use <code>libshairport</code> and be able to play
-music sent through Air play.
-</li>
-
-<li>Spend some time talking to the emacs user group about org-mode.
-</li>
-
-<li>If I have any time, after getting this to work, I may play around with the
-dwm port.
 </li>
 </ul>
 </div>

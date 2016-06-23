@@ -127,7 +127,82 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 
       <div class="container content">
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/playing-music-using-mpsyt-from-emacs.html" class="u-url">Playing music using mpsyt from Emacs</a></h1>
+    <article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/python-reload-and-module-dict.html" class="u-url">Python reload and module dict</a></h1>
+        <span class="post-date">23 Jun 2016</span>
+    </header><div class="e-content entry-content">
+    <p>
+I was trying to play around with Nikola's code today and learnt about a
+documented weirdness of Python's reload.
+</p>
+
+<div class="highlight"><pre><span class="c"># Work in a temporary directory</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">())</span>
+
+<span class="c"># Module content, original and updated</span>
+<span class="n">ORIGINAL</span> <span class="o">=</span> <span class="s">"# PLUGINS = []"</span>
+<span class="n">UPDATED</span> <span class="o">=</span> <span class="s">"PLUGINS = ['rss']"</span>
+
+<span class="k">def</span> <span class="nf">create_conf_file</span><span class="p">(</span><span class="n">content</span><span class="p">):</span>
+    <span class="sd">"""Create a conf.py module with given content."""</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'conf.py'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+	<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="n">create_conf_file</span><span class="p">(</span><span class="n">ORIGINAL</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">conf</span>
+<span class="c"># PLUGINS is not defined in the module, originally.</span>
+<span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">PLUGINS</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+AttributeError: module 'conf' has no attribute 'PLUGINS'
+</pre>
+
+<div class="highlight"><pre><span class="n">create_conf_file</span><span class="p">(</span><span class="n">UPDATED</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">conf</span>
+<span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">PLUGINS</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+AttributeError: module 'conf' has no attribute 'PLUGINS'
+</pre>
+
+<p>
+<code>conf</code> doesn't yet have a <code>PLUGINS</code> attribute, since the new module isn't
+imported until we reload.
+</p>
+
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">importlib</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">PLUGINS</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+['rss']
+</pre>
+
+<div class="highlight"><pre><span class="c"># We write back the original file. PLUGINS should be empty!</span>
+<span class="n">create_conf_file</span><span class="p">(</span><span class="n">ORIGINAL</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">conf</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">PLUGINS</span><span class="p">,</span> <span class="s">"&lt;---Whaaaat!"</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+['rss'] &lt;---Whaaaat!
+</pre>
+
+<p>
+The behavior is well documented, along with a reasoning of why it is the way it
+is, but you can trip over it if you don't know. I hit a bug and was wondering
+if there was a race condition somewhere, until I read the docs for <a href="https://docs.python.org/3/library/importlib.html#importlib.reload">reload</a>. On
+reload, <b>the module dict is updated</b>, instead of creating a new dict. Any
+values <b>not redefined</b> in the new code for the module <b>remain unchanged</b>.
+</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/playing-music-using-mpsyt-from-emacs.html" class="u-url">Playing music using mpsyt from Emacs</a></h1>
         <span class="post-date">20 Apr 2015</span>
     </header><div class="e-content entry-content">
     <p>
@@ -365,47 +440,6 @@ would've liked, but Tom thought it was not too bad…
 the evening finishing off <a href="http://craphound.com/homeland/">Homeland</a>. It's a brilliant book, and everyone who
 cares about the Government and policies and technology MUST read it!  Thanks
 Cory.
-</li>
-</ul>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="post-title p-name entry-title"><a href="/posts/recurse-center-2014-08-13.html" class="u-url">Recurse Center, 2014-08-13</a></h1>
-        <span class="post-date">14 Aug 2014</span>
-    </header><div class="e-content entry-content">
-    <ul class="org-ul">
-<li>I feel like I didn't get much done yesterday.
-</li>
-<li>I mostly worked on the API differ, but didn't get much done.  I have a few
-tests, and some code for diffing two functions, but I'm not very happy with
-it.
-</li>
-<li>I helped Giorgio and Carlos with using my client only <code>hs_oauth</code>
-  script/library, for their Zulip bot.
-</li>
-<li>The white boarding group worked on some binary related problems, and it was
-fun.
-</li>
-<li>I looked at how the HS OAuth backend works on blaggregator and thought about
-how to go about fixing the issue of broken images on the site.  The problem
-happens because the image URLs are returned from the HS API calls, that are
-made whenever a user logs in(?), and the URLs are cached.  Since, HS uses
-cloudfront for its assets, the URLs expire after a period of time, and the
-cached urls in blag's database need to be updated.  There could be two ways
-of doing it -
-<ol class="org-ol">
-<li>Check if the URL 404s, every time a URL is requested, on the server side.
-</li>
-<li>Do it on the client side, with some javascript magic.
-</li>
-</ol>
-<p>
-Intuitively, I feel like 2. would be better, but Madhu suggested
-that 1. wouldn't be that bad either.  We could try both out, and see which
-works better I suppose.
-</p>
-
-<p>
-I'd be interested to try this out, sometime.
-</p>
 </li>
 </ul>
 </div>
